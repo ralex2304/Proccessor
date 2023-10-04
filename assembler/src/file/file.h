@@ -1,0 +1,85 @@
+#ifndef FILE_H_
+#define FILE_H_
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <stdarg.h>
+
+#include "../utils/statuses.h"
+#include "../text/text_lib.h"
+
+Status::Statuses file_open_read_close(const char* filename, char** buf);
+
+/**
+ * @brief Opens file
+ *
+ * @param file
+ * @param filename
+ * @param mode
+ * @return true success
+ * @return false failure
+ */
+bool file_open(FILE** file, const char* filename, const char* mode);
+
+/**
+ * @brief Gets file len
+ *
+ * @param file
+ * @return long -1 in case of error
+ */
+long file_get_len(FILE* file);
+
+/**
+ * @brief Reads data from char to buffer. Buffer must be big enough
+ *
+ * @param file
+ * @param buf
+ * @param file_len
+ * @return true
+ * @return false
+ */
+bool file_read(FILE* file, char* buf, long file_len);
+
+/**
+ * @brief Writes line (string) to file
+ *
+ * @param file
+ * @param line
+ * @return true
+ * @return false
+ */
+bool file_write_line(FILE* file, const char* line);
+
+/**
+ * @brief Writes data to file
+ *
+ * @param file
+ * @param data
+ * @param len data size in bytes
+ * @return true
+ * @return false
+ */
+bool file_write_bytes(FILE* file, const void* data, size_t len);
+
+/**
+ * @brief Error handler for fprintf
+ *
+ * @param file
+ * @param format
+ * @param ...
+ * @return true
+ * @return false
+ */
+bool file_printf(FILE* file, const char* format, ...);
+
+/**
+ * @brief Closes file
+ *
+ * @param file
+ * @return true success
+ * @return false failure
+ */
+bool file_close(FILE* file);
+
+#endif // #ifndef FILE_H_
