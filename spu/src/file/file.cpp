@@ -1,6 +1,6 @@
 #include "file.h"
 
-Status::Statuses file_open_read_close(const char* filename, char** buf) {
+Status::Statuses file_open_read_bin_close(const char* filename, char** buf, long* file_len) {
     assert(filename);
     assert(buf);
     assert(*buf == nullptr);
@@ -9,20 +9,20 @@ Status::Statuses file_open_read_close(const char* filename, char** buf) {
     if (!file_open(&file, filename, "rb"))
         return Status::INP_FILE_ERROR;
 
-    long file_len = file_get_len(file);
-    if (file_len < 0) {
+    *file_len = file_get_len(file);
+    if (*file_len < 0) {
         file_close(file);
         return Status::INP_FILE_ERROR;
     }
 
-    *buf = (char*)calloc(file_len + 1, sizeof(char));
+    *buf = (char*)calloc(*file_len, sizeof(char));
     if (*buf == nullptr) {
         printf("Memory alloc error\n");
         file_close(file);
         return Status::MEMORY_EXCEED;
     }
 
-    if (!file_read(file, *buf, file_len)) {
+    if (!file_read(file, *buf, *file_len)) {
         file_close(file);
         return Status::INP_FILE_ERROR;
     }
@@ -70,49 +70,6 @@ bool file_read(FILE* file, char* buf, long file_len) {
     size_t readed = fread(buf, sizeof(char), file_len, file);
     if (readed != (size_t)file_len || ferror(file)) {
         perror("File read error");
-        return false;
-    }
-
-    return true;
-}
-
-bool file_write_line(FILE* file, const char* line) {
-    assert(file);
-    assert(line);
-
-    if (fputs(line, file) == EOF) {
-        perror("File write error");
-        return false;
-    }
-
-    return true;
-}
-
-bool file_write_bytes(FILE* file, const void* data, size_t len) {
-    assert(file);
-    assert(data);
-
-    if (fwrite(data, 1, len, file) != len) {
-        perror("File write error");
-        return false;
-    }
-
-    return true;
-}
-
-bool file_printf(FILE* file, const char* format, ...){
-    assert(file);
-    assert(format);
-
-    va_list args = {};
-    va_start(args, format);
-
-    int res = vfprintf(file, format, args);
-
-    va_end(args);
-
-    if (res < 0) {
-        perror("File write error");
         return false;
     }
 

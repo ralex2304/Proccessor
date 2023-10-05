@@ -7,16 +7,16 @@
 #include <stdarg.h>
 
 #include "../utils/statuses.h"
-#include "../text/text_lib.h"
 
 /**
- * @brief Opens, reads and closes file. Allocates memory
+ * @brief Opens file, reads binary data from it, closes file. Allocates memory
  *
  * @param filename
  * @param buf
+ * @param file_len
  * @return Status::Statuses
  */
-Status::Statuses file_open_read_close(const char* filename, char** buf);
+Status::Statuses file_open_read_bin_close(const char* filename, char** buf, long* file_len);
 
 /**
  * @brief Opens file
@@ -47,38 +47,6 @@ long file_get_len(FILE* file);
  * @return false
  */
 bool file_read(FILE* file, char* buf, long file_len);
-
-/**
- * @brief Writes line (string) to file
- *
- * @param file
- * @param line
- * @return true
- * @return false
- */
-bool file_write_line(FILE* file, const char* line);
-
-/**
- * @brief Writes data to file
- *
- * @param file
- * @param data
- * @param len data size in bytes
- * @return true
- * @return false
- */
-bool file_write_bytes(FILE* file, const void* data, size_t len);
-
-/**
- * @brief Error handler for fprintf
- *
- * @param file
- * @param format
- * @param ...
- * @return true
- * @return false
- */
-bool file_printf(FILE* file, const char* format, ...);
 
 /**
  * @brief Closes file

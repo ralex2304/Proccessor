@@ -9,14 +9,15 @@
  */
 struct Status {
     enum Statuses {
-        DEFAULT        = -2,  //< Poison value
-        NORMAL_WORK    = -1,  //< Normal mode system value (isn't returned in main())
-        OK_EXIT        =  0,  //< OK and exit
-        ARGS_ERROR     =  1,  //< Console arguments error
-        INP_FILE_ERROR =  2,  //< Input file opening or reading error
-        OUT_FILE_ERROR =  3,  //< Output file opening or writing error
-        MEMORY_EXCEED  =  4,  //< Memory allocation failed
-        SYNTAX_ERROR   =  5,  //< Syntax error in input file found
+        DEFAULT          = -2,  //< Poison value
+        NORMAL_WORK      = -1,  //< Normal mode system value (isn't returned in main())
+        OK_EXIT          =  0,  //< OK and exit
+        ARGS_ERROR       =  1,  //< Console arguments error
+        INP_FILE_ERROR   =  2,  //< Input file opening or reading error
+        MEMORY_EXCEED    =  4,  //< Memory allocation failed
+        RUNTIME_ERROR    =  6,  //< Runtime error
+        WRONG_USER_INPUT =  7,  //< Wrong user input
+        OUTPUT_ERROR     =  8,  //< Console output error
     };
 
     /**

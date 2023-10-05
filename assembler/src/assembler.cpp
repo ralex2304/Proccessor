@@ -49,14 +49,14 @@ Status::Statuses parse_and_write_line(FILE* file, String line, const size_t line
     }
 
     if (!text_mode)
-        res = file_write_bytes(file, &command->num, COMMAND_NUM_SIZE);
+        res = file_write_bytes(file, &command->num, sizeof(command->num));
     else
         res = file_printf(file, "/*%5zu*/ %d", binary_file_offset, command->num);
 
     if (!res)
         return Status::OUT_FILE_ERROR;
 
-    binary_file_offset += COMMAND_NUM_SIZE;
+    binary_file_offset += sizeof(command->num);
 
     Status::Statuses write_res = Status::DEFAULT;
 
@@ -106,7 +106,6 @@ Status::Statuses write_double_arg(FILE* file, const char* str, const size_t line
     assert(str);
 
     double arg = NAN;
-
 
     int res = sscanf(str, "%lf", &arg);
 
