@@ -7,19 +7,22 @@
 #include <math.h>
 
 #include "config.h"
-#include "utils/html.h"
-#include "utils/console.h"
-#include "utils/macros.h"
+#include "lib/utils/html.h"
+#include "lib/utils/console.h"
 #include "hash/crc32.h"
 #include "log/log.h"
-#include "utils/ptr_valid.h"
+#include "lib/utils/ptr_valid.h"
+#include "lib/utils/macros.h"
 
-struct VarCodeData { // REVIEW
+struct VarCodeData {
     const char* name = "Not specified";
     const char* file = "Not specified";
           int   line = -1;
     const char* func = "Not specified";
 };
+
+#define VAR_CODE_DATA(name) {# name, __FILE__, __LINE__, __func__}
+#define VAR_CODE_DATA_PTR(name) {(# name) + 1, __FILE__, __LINE__, __func__}
 
 /**
  * @brief Stack data struct

@@ -5,9 +5,8 @@
 #include <assert.h>
 #include <string.h>
 
+#include "../../cmd.h"
 #include "statuses.h"
-
-#include "../../../Commands.h"
 
 /**
  * @brief Specifies int main() returns
@@ -25,7 +24,7 @@ struct ArgsVars {
     const char* input_filename = nullptr;
     const char* output_filename = nullptr;
 
-    bool text_mode = false;
+    bool debug_mode = false;
 };
 
 /**
@@ -82,7 +81,7 @@ ArgsMode read_output_filename(const Argument args_dict[], const int args_dict_le
                               int* arg_i, int argc, char* argv[], ArgsVars* args_vars);
 
 /**
- * @brief Enables text mode
+ * @brief Enables debug mode
  *
  * @param[in] args_dict
  * @param[in] args_dict_len
@@ -92,8 +91,8 @@ ArgsMode read_output_filename(const Argument args_dict[], const int args_dict_le
  * @param[out] args_vars
  * @return ArgsMode
  */
-ArgsMode enable_text_mode(const Argument args_dict[], const int args_dict_len,
-                          int* arg_i, int argc, char* argv[], ArgsVars* args_vars);
+ArgsMode enable_debug_mode(const Argument args_dict[], const int args_dict_len,
+                           int* arg_i, int argc, char* argv[], ArgsVars* args_vars);
 
 /**
  * @brief Parses console arguments
@@ -101,9 +100,12 @@ ArgsMode enable_text_mode(const Argument args_dict[], const int args_dict_len,
  * @param[in] argc
  * @param[in] argv
  * @param[out] args_vars
+ * @param[in] args_dict
+ * @param[in] args_dict_len
  * @return Status::Statuses
  */
-Status::Statuses args_parse(int argc, char* argv[], ArgsVars* args_vars);
+Status::Statuses args_parse(int argc, char* argv[], ArgsVars* args_vars,
+                            const Argument args_dict[], const int args_dict_len);
 
 /**
  * @brief Prints commands list

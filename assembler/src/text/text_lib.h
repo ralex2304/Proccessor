@@ -48,4 +48,18 @@ inline size_t cntchar(const char* str, const char ch) {
     return cnt;
 }
 
+/**
+ * @brief Finds symb in str and replaces it with '\0'
+ *
+ * @param str
+ * @param symb
+ */
+inline void text_throw_out_comment(char* str, const char symb = ';') {
+    assert(str);
+
+    char* comment_beginning = strchr(str, symb);
+    if   (comment_beginning != nullptr)
+         *comment_beginning = '\0';
+}
+
 #endif // #ifndef MY_STRING_H_

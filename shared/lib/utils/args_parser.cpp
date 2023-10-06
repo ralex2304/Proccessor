@@ -1,28 +1,18 @@
 #include "args_parser.h"
 
-Status::Statuses args_parse(int argc, char* argv[], ArgsVars* args_vars) {
+Status::Statuses args_parse(int argc, char* argv[], ArgsVars* args_vars,
+                            const Argument args_dict[], const int args_dict_len) {
     assert(argv);
     assert(argc);
     assert(args_vars);
-
-    /**
-     * @brief This array contains console options, their functions and descriptions
-     */
-    static Argument args_dict[] = {
-        {"-h", print_help,           "#   -h - prints help information\n"},             ///< Help option
-
-        {"-i", read_input_filename,  "#   -i - specify input file name after this\n"},  ///< Input filename
-    };
-
-    static const int ARGS_DICT_LEN = sizeof(args_dict) / sizeof(args_dict[0]); ///< args_dict array len
 
     bool exit = false;
     for (int i = 1; i < argc; i++) {
         bool is_found = false;
 
-        for (int j = 0; j < ARGS_DICT_LEN; j++) {
+        for (int j = 0; j < args_dict_len; j++) {
             if (strcmp(argv[i], args_dict[j].arg) == 0) {
-                switch (args_dict[j].func(args_dict, ARGS_DICT_LEN, &i, argc, argv, args_vars)) {
+                switch (args_dict[j].func(args_dict, args_dict_len, &i, argc, argv, args_vars)) {
                     case ArgsMode::CONTINUE:
                         break;
                     case ArgsMode::EXIT:
@@ -59,8 +49,7 @@ ArgsMode print_help(const Argument args_dict[], const int args_dict_len,
     assert(argv);
     assert(args_vars);
 
-    printf("# SPU\n"
-           "# Recieves assembled file and executes it\n"
+    printf("# Assembler, disassembler, SPU\n"
            "# Console args:\n");
 
     for (int i = 0; i < args_dict_len; i++)
@@ -82,7 +71,7 @@ ArgsMode read_input_filename(const Argument args_dict[], const int args_dict_len
     assert(args_vars);
 
     if (++(*arg_i) >= argc) {
-        printf("No input file name found\n");
+        fprintf(stderr, "No input file name found\n");
         return ArgsMode::ERROR;
     }
 
@@ -90,19 +79,55 @@ ArgsMode read_input_filename(const Argument args_dict[], const int args_dict_len
     return ArgsMode::CONTINUE;
 }
 
+ArgsMode read_output_filename(const Argument args_dict[], const int args_dict_len,
+                              int* arg_i, int argc, char* argv[], ArgsVars* args_vars) {
+    (void) args_dict_len;
+
+    assert(args_dict);
+    assert(arg_i);
+    assert(argv);
+    assert(args_vars);
+
+    if (++(*arg_i) >= argc) {
+        fprintf(stderr, "No output file name found\n");
+        return ArgsMode::ERROR;
+    }
+
+    args_vars->output_filename = argv[*arg_i];
+    return ArgsMode::CONTINUE;
+}
+
+ArgsMode enable_debug_mode(const Argument args_dict[], const int args_dict_len,
+                           int* arg_i, int argc, char* argv[], ArgsVars* args_vars) {
+    (void) args_dict_len;
+
+    assert(args_dict);
+    assert(arg_i);
+    assert(argc);
+    assert(argv);
+    assert(args_vars);
+
+    args_vars->debug_mode = true;
+
+    return ArgsMode::CONTINUE;
+}
+
 void print_commands_list() {
     printf("# Commands list:\n");
 
-    for (size_t i = 0; i < COMMANDS_NUM; i++) {
-        const Command command = COMMANDS[i];
+    for (size_t i = 0; i < CMDS_NUM; i++) {
+        const Cmd command = CMDS[i];
 
         printf("#    %3d) %-5s --- %s\n", command.num, command.name, command.description);
 
-        if (command.args[0] != ArgType::NONE) {
+        if (command.args.reg || command.args.imm) {
             printf("#    %3s%5s ", "", "");
 
-            for (size_t j = 0; j < COMMAND_MAX_ARGS_COUNT && command.args[j] != ArgType::NONE; j++)
-                printf(" <%s>", com_arg_type_str(command.args[j]));
+            if (command.args.reg)
+                printf(" <reg>");
+
+            if (command.args.imm)
+                printf("<+><immed>");
 
             printf("\n");
         }

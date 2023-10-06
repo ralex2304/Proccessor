@@ -3,22 +3,22 @@
 
 #include <math.h>
 
-#include "utils/statuses.h"
+#include "lib/utils/statuses.h"
 #include "text/text_proccessor.h"
-#include "file/file.h"
-#include "../../Commands.h"
-#include "utils/console.h"
+#include "lib/file/file.h"
+#include "cmd.h"
+#include "lib/utils/console.h"
 
 /**
  * @brief Assembles code and writes it to binary or text file
  *
  * @param input_data
  * @param filename
- * @param text_mode
+ * @param debug_mode
  * @return Status::Statuses
  */
 Status::Statuses assmeble_and_write(const InputData* input_data, const char* filename,
-                                    bool text_mode);
+                                    bool debug_mode);
 
 /**
  * @brief Parses and writes one line of code
@@ -26,32 +26,70 @@ Status::Statuses assmeble_and_write(const InputData* input_data, const char* fil
  * @param file
  * @param line
  * @param line_num
- * @param text_mode
+ * @param debug_mode
  * @return Status::Statuses
  */
 Status::Statuses parse_and_write_line(FILE* file, String line, const size_t line_num,
-                                      bool text_mode);
+                                      bool debug_mode);
 
 /**
- * @brief Finds command in COMMANDS[] by name
+ * @brief Reads cmd reg from str
  *
- * @param name
- * @return const Command*
- */
-const Command* find_command_by_name(const char* name);
-
-/**
- * @brief Parses command argument (double)
- *
- * @param file
  * @param str
+ * @param cmd_byte
+ * @param cmd_args
  * @param line_num
- * @param arg_num
- * @param text_mode
- * @param binary_offset
  * @return Status::Statuses
  */
-Status::Statuses write_double_arg(FILE* file, const char* str, const size_t line_num,
-                                  const size_t arg_num, const bool text_mode, size_t* binary_offset);
+Status::Statuses asm_read_reg(const char* str, CmdByte* cmd_byte, CmdArgs* cmd_args,
+                              const size_t line_num);
+
+/**
+ * @brief Reads cmd imm from str
+ *
+ * @param str
+ * @param cmd_byte
+ * @param cmd_args
+ * @param line_num
+ * @return Status::Statuses
+ */
+Status::Statuses asm_read_imm(const char* str, CmdByte* cmd_byte, CmdArgs* cmd_args,
+                              const size_t line_num);
+
+/**
+ * @brief Writes cmd in text mode
+ *
+ * @param file
+ * @param cmd_byte
+ * @param cmd_args
+ * @param binary_pos
+ * @return Status::Statuses
+ */
+Status::Statuses asm_write_cmd_text(FILE* file, const CmdByte* cmd_byte,
+                                    const CmdArgs* cmd_args, const size_t binary_pos);
+
+/**
+ * @brief Writes cmd in binary mode
+ *
+ * @param file
+ * @param cmd_byte
+ * @param cmd_args
+ * @return Status::Statuses
+ */
+Status::Statuses asm_write_cmd_bin(FILE* file, const CmdByte* cmd_byte,
+                                   const CmdArgs* cmd_args);
+
+/**
+ * @brief Writes command to file
+ *
+ * @param file
+ * @param cmd_byte
+ * @param cmd_args
+ * @param binary_pos
+ * @param debug_mode
+ * @return Status::Statuses
+ */
+Status::Statuses asm_write_cmd(FILE* file, const CmdByte* cmd_byte, const CmdArgs* cmd_args,
+                               size_t* binary_pos, const bool debug_mode);
 
 #endif // #ifndef ASSEMBLER_H_

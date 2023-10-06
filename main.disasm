@@ -1,0 +1,8 @@
+push 1.000000          ;byte=0
+pop rcx          ;byte=9
+push rcx+1.000000          ;byte=11
+in          ;byte=21
+sqrt          ;byte=22
+out          ;byte=23
+out          ;byte=24
+HLT          ;byte=25

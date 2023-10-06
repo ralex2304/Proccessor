@@ -15,6 +15,7 @@ int log_printf(LogFileData* log_file, const char* format, ...) {
     va_start(arg_list, format);
 
     int ret = vfprintf(log_file->file, format, arg_list);
+    fflush(log_file->file);
 
     if (file_is_opened_here)
         if (!log_close_file(log_file))

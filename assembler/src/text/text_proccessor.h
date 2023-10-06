@@ -3,10 +3,10 @@
 
 #include <stdio.h>
 
-#include "../utils/macros.h"
+#include "lib/utils/macros.h"
 #include "text_lib.h"
-#include "../utils/statuses.h"
-#include "../file/file.h"
+#include "lib/utils/statuses.h"
+#include "lib/file/file.h"
 
 /**
  * @brief Specifies input text file data

@@ -6,19 +6,28 @@ Status::Statuses Status::raise(const Statuses status) {
             assert(0 && "Status::raise(): NORMAL_WORK mustn't be raised");
             break;
         case ARGS_ERROR:
-            printf("Exiting. Args error\n");
+            fprintf(stderr, "Exiting. Args error\n");
             break;
         case INP_FILE_ERROR:
-            printf("Exiting. Input file error\n");
+            fprintf(stderr, "Exiting. Input file error\n");
             break;
         case OUT_FILE_ERROR:
-            printf("Exiting. Output file error\n");
+            fprintf(stderr, "Exiting. Output file error\n");
             break;
         case MEMORY_EXCEED:
-            printf("Exiting. Not enough memory\n");
+            fprintf(stderr, "Exiting. Not enough memory\n");
             break;
         case SYNTAX_ERROR:
-            printf("Exiting. Syntax error\n");
+            fprintf(stderr, "Exiting. Syntax error\n");
+            break;
+        case RUNTIME_ERROR:
+            fprintf(stderr, "Exiting. Runtime error\n");
+            break;
+        case WRONG_USER_INPUT:
+            fprintf(stderr, "Exiting. Wrong user input\n");
+            break;
+        case OUTPUT_ERROR:
+            fprintf(stderr, "Exiting. stdout error");
             break;
         case OK_EXIT:
         case DEFAULT:

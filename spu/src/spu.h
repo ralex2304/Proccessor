@@ -5,11 +5,17 @@
 #include <assert.h>
 #include <math.h>
 
-#include "../../Commands.h"
-#include "utils/statuses.h"
+#include "cmd.h"
+#include "lib/utils/statuses.h"
 #include "stack/log/log.h"
 #include "stack/stack.h"
-#include "stack/utils/console.h"
+#include "lib/utils/console.h"
+
+struct SpuData {
+    Stack stk = {};
+
+    Imm_t reg[REGS_NUM] = {};
+};
 
 /**
  * @brief Parses data and executes it
@@ -23,22 +29,14 @@ Status::Statuses spu_parse(const char* data, const size_t size);
 /**
  * @brief Executes one command
  *
- * @param stk
+ * @param spu
  * @param command
  * @param args
  * @param command_byte
  * @return Status::Statuses
  */
-Status::Statuses spu_execute_command(Stack* stk, const Command* command, const ArgVar* args,
-                                     const size_t command_byte);
-
-/**
- * @brief Finds command in COMMANDS by num
- *
- * @param num
- * @return const Command*
- */
-const Command* find_command_by_num(const Command_num_t num);
+Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const CmdByte* cmd_byte,
+                                     const CmdArgs* cmd_args, const size_t op);
 
 /**
  * @brief Prints double to stdout

@@ -14,8 +14,11 @@ CFLAGS_SANITIZER = -fsanitize=address,alignment,bool,bounds,enum,float-cast-over
 				   object-size,return,returns-nonnull-attribute,shift,signed-integer-overflow,$\
 				   undefined,unreachable,vla-bound,vptr
 
+EXTERNAL_DIR = ../shared
+IFLAGS = -I$(EXTERNAL_DIR)/
+
 SRC_DIR = src
-BUILD_DIR = build
+BUILD_DIR = build/own
 DOCS_DIR = docs
 NON_CODE_DIRS = $(BUILD_DIR) $(DOCS_DIR) .vscode .git
 TARGET = main
@@ -24,10 +27,15 @@ CD = $(shell pwd)
 DOCS_TARGET = $(DOCS_DIR)/docs_generated
 
 
-NESTED_CODE_DIRS_CD = $(shell find ./$(SRC_DIR) -maxdepth 5 -type d $(NON_CODE_DIRS:%=! -path "*%*"))
+NESTED_CODE_DIRS_CD = $(shell find ./$(SRC_DIR) -maxdepth 5 -type d $(NON_CODE_DIRS:%=! -path "*%*"))      \
+					  $(shell find ./$(EXTERNAL_DIR) -maxdepth 5 -type d $(NON_CODE_DIRS:%=! -path "*%*"))
 NESTED_CODE_DIRS = $(NESTED_CODE_DIRS_CD:.%=%)
 
-FILES_FULL = $(shell find ./$(SRC_DIR) -name "*.cpp")
+
+
+FILES_FULL = $(shell find ./$(SRC_DIR) -name "*.cpp")\
+			 $(shell find ./$(EXTERNAL_DIR) -name "*.cpp")
+
 FILES = $(FILES_FULL:.%=%)
 
 MAKE_DIRS = $(NESTED_CODE_DIRS:%=$(BUILD_DIR)%)
@@ -38,7 +46,7 @@ OBJECTS = $(OBJ:%.cpp=%.o)
 all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
-	@$(CC) $(CFLAGS) $(if $(sanitizer), $(CFLAGS_SANITIZER)) $^ -o $@
+	@$(CC) $(IFLAGS) $(CFLAGS) $(if $(sanitizer), $(CFLAGS_SANITIZER)) $^ -o $@
 
 $(BUILD_DIR):
 	@mkdir ./$@
@@ -49,7 +57,7 @@ $(MAKE_DIRS): | $(BUILD_DIR)
 -include $(DEPENDS)
 
 $(BUILD_DIR)/%.o: %.cpp | $(BUILD_DIR) $(MAKE_DIRS)
-	@$(CC) $(CFLAGS) $(if $(sanitizer), $(CFLAGS_SANITIZER)) -MMD -MP -c $< -o $@
+	@$(CC) $(IFLAGS) $(CFLAGS) $(if $(sanitizer), $(CFLAGS_SANITIZER)) -MMD -MP -c $< -o $@
 
 .PHONY: doxygen dox
 

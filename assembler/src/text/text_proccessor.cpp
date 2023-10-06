@@ -3,7 +3,7 @@
 Status::Statuses InputData::ctor(const char* filename) {
     assert(filename);
 
-    Status::Statuses res = file_open_read_close(filename, &text);
+    Status::Statuses res = file_open_read_close(filename, &text, 1);
     if (res != Status::NORMAL_WORK)
         return res;
 

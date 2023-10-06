@@ -1,6 +1,5 @@
 #ifndef MACROS_H_
 #define MACROS_H_
-
 #include <stdlib.h>
 #include <memory.h>
 
@@ -30,15 +29,5 @@ inline void fill(void* array, size_t len, const void* elem, const size_t elem_si
         array = (char*)array + elem_size;
     }
 }
-
-/*struct VarCodeData {
-    const char* name = "Not specified";
-    const char* file = "Not specified";
-          int   line = -1;
-    const char* func = "Not specified";
-};*/ // REVIEW
-
-#define VAR_CODE_DATA(name) {# name, __FILE__, __LINE__, __func__}
-#define VAR_CODE_DATA_PTR(name) {(# name) + 1, __FILE__, __LINE__, __func__}
 
 #endif // #ifndef MACROS_H_
