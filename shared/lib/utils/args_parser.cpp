@@ -115,8 +115,8 @@ ArgsMode enable_debug_mode(const Argument args_dict[], const int args_dict_len,
 void print_commands_list() {
     printf("# Commands list:\n");
 
-    for (size_t i = 0; i < CMDS_NUM; i++) {
-        const Cmd command = CMDS[i];
+    for (size_t i = 0; i < CMDS_DICT_SIZE; i++) {
+        const CmdInfo command = CMDS_DICT[i];
 
         printf("#    %3d) %-5s --- %s\n", command.num, command.name, command.description);
 

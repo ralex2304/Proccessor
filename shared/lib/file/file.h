@@ -77,10 +77,9 @@ bool file_write_bytes(FILE* file, const void* data, size_t len);
  * @param file
  * @param format
  * @param ...
- * @return true
- * @return false
+ * @return int number of printed symbols or EOF
  */
-bool file_printf(FILE* file, const char* format, ...);
+int file_printf(FILE* file, const char* format, ...);
 
 /**
  * @brief Closes file

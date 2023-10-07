@@ -1,36 +1,36 @@
 #include "cmd.h"
 
-const Cmd* find_command_by_num(const Cmd_num_t num) {
-    if (num == CMDS[num].num)
-        return CMDS + num;
+const CmdInfo* find_command_by_num(const Cmd_num_t num) {
+    if (num == CMDS_DICT[num].num)
+        return CMDS_DICT + num;
 
-    assert(0 && "Command num and index in CMDS array must be the same");
+    assert(0 && "Command num and index in CMDS_DICT array must be the same");
 }
 
-const Cmd* find_command_by_name(const char* name) {
+const CmdInfo* find_command_by_name(const char* name) {
     assert(name);
 
-    for (size_t i = 0; i < CMDS_NUM; i++) {
-        if (strcmp(CMDS[i].name, name) == 0)
-            return CMDS + i;
+    for (size_t i = 0; i < CMDS_DICT_SIZE; i++) {
+        if (strcmp(CMDS_DICT[i].name, name) == 0)
+            return CMDS_DICT + i;
     }
 
     return nullptr;
 }
 
-const Reg* find_reg_by_num(const RegNum_t reg) {
-    if (reg == REGS[reg - 1].num)
-        return REGS + reg - 1;
+const RegInfo* find_reg_by_num(const RegNum_t reg) {
+    if (reg == REGS_DICT[reg].num)
+        return REGS_DICT + reg;
 
-    assert(0 && "Ref num and index in REGS array must be the same");
+    assert(0 && "Ref num and index in REGS_DICT array must be the same");
 }
 
-const Reg* find_reg_by_name(const char* name) {
+const RegInfo* find_reg_by_name(const char* name) {
     assert(name);
 
     for (size_t i = 0; i < REGS_NUM; i++) {
-        if (strcmp(REGS[i].name, name) == 0)
-            return REGS + i;
+        if (strcmp(REGS_DICT[i].name, name) == 0)
+            return REGS_DICT + i;
     }
 
     return nullptr;

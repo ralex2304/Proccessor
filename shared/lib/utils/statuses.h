@@ -35,23 +35,29 @@ struct Status {
  * @brief Macros for validating function return in main() with raise() call
  *
  * @param func function
+ * @param ... fallback operations
  */
-#define STATUS_CHECK_RAISE(func)    do {                                    \
-                                        Status::Statuses res = func;        \
-                                        if (res != Status::NORMAL_WORK)     \
-                                            return Status::raise(res);      \
+#define STATUS_CHECK_RAISE(func, ...)   do {                                    \
+                                            Status::Statuses res = func;        \
+                                            if (res != Status::NORMAL_WORK) {   \
+                                                __VA_ARGS__;                    \
+                                                return Status::raise(res);      \
+                                            }                                   \
                                         } while (0)
 
 /**
  * @brief Macros for validating function return
  *
  * @param func function
+ * @param ... fallback operations
  */
-#define STATUS_CHECK(func)  do {                                        \
-                                Status::Statuses status_res_ = func;    \
-                                if (status_res_ != Status::NORMAL_WORK) \
-                                    return status_res_;                 \
-                            } while (0)
+#define STATUS_CHECK(func, ...) do {                                            \
+                                    Status::Statuses status_res_ = func;        \
+                                    if (status_res_ != Status::NORMAL_WORK) {   \
+                                        __VA_ARGS__;                            \
+                                        return status_res_;                     \
+                                    }                                           \
+                                } while (0)
 
 
 #endif // #ifndef STATUSES_H_

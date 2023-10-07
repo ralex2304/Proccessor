@@ -8,9 +8,9 @@ LogFileData log_file = {STACK_LOG_FILENAME};
             return Status::RUNTIME_ERROR;                                                   \
         } while(0)
 
-#define DATA_GET_VAL_(dest, val_t)  do {                                            \
-                                        dest = *((const val_t*)(data + cur_byte));  \
-                                        cur_byte += sizeof(val_t);                  \
+#define DATA_GET_VAL_(dest, val_t)  do {                                                \
+                                        memcpy(&dest, data + cur_byte, sizeof(val_t));  \
+                                        cur_byte += sizeof(val_t);                      \
                                     } while(0)
 
 Status::Statuses spu_parse(const char* data, const size_t size) {
@@ -23,44 +23,39 @@ Status::Statuses spu_parse(const char* data, const size_t size) {
     size_t cur_byte = 0;
     size_t op = 0;
 
-    CmdArgs cmd_args = {};
-    CmdByte cmd_byte = {};
+    Cmd cmd = {};
 
-    const Cmd* cmd = nullptr;
+    while (cur_byte + sizeof(cmd.byte) <= size) {
+        DATA_GET_VAL_(cmd.byte, CmdByte);
 
-    while (cur_byte + sizeof(cmd_byte) <= size) {
-        DATA_GET_VAL_(cmd_byte, CmdByte);
+        cmd.info = find_command_by_num(cmd.byte.num);
 
-        cmd = find_command_by_num(cmd_byte.num);
-
-        if (cur_byte + cmd_byte.reg * sizeof(cmd_args.reg)
-                     + cmd_byte.imm * sizeof(cmd_args.imm) > size) {
+        if (cur_byte + cmd.byte.reg * sizeof(cmd.args.reg)
+                     + cmd.byte.imm * sizeof(cmd.args.imm) > size) {
             stk_dtor(&spu.stk);
 
             THROW_RUNTIME_ERROR_("EOF instead of args");
         }
 
-        if (cmd_byte.reg)
-            DATA_GET_VAL_(cmd_args.reg, RegNum_t);
+        if (cmd.byte.reg)
+            DATA_GET_VAL_(cmd.args.reg, RegNum_t);
 
-        if (cmd_byte.imm)
-            DATA_GET_VAL_(cmd_args.imm, Imm_t);
+        if (cmd.byte.imm)
+            DATA_GET_VAL_(cmd.args.imm, Imm_t);
 
-        Status::Statuses res = spu_execute_command(&spu, cmd, &cmd_byte, &cmd_args, op);
+        Status::Statuses res = spu_execute_command(&spu, &cmd, op);
         if (res != Status::NORMAL_WORK) {
             stk_dtor(&spu.stk);
             return res;
         }
 
-        cmd = nullptr;
-        cmd_byte = {};
-        cmd_args = {};
+        cmd = {};
         op = cur_byte;
     }
 
     stk_dtor(&spu.stk);
 
-    THROW_RUNTIME_ERROR_("Program has no halt!"); // REVIEW
+    THROW_RUNTIME_ERROR_("Program has no halt!");
 
     return Status::NORMAL_WORK;
 }
@@ -70,48 +65,48 @@ Status::Statuses spu_parse(const char* data, const size_t size) {
 #define STK_POP_AND_PUSH_ONE_(expression)   stk_res |= stk_pop(&spu->stk, &a);  \
                                                                                 \
                                             if (stk_res == Stack::OK)           \
-                                                stk_push(&spu->stk, expression)
+                                                stk_res |= stk_push(&spu->stk, expression)
 
 #define STK_POP_AND_PUSH_TWO_(expression)   stk_res |= stk_pop(&spu->stk, &b);  \
+                                                                                \
+                                            if (stk_res != Stack::OK) break;    \
+                                                                                \
                                             stk_res |= stk_pop(&spu->stk, &a);  \
                                                                                 \
                                             if (stk_res == Stack::OK)           \
-                                                stk_push(&spu->stk, expression)
+                                                stk_res |= stk_push(&spu->stk, expression)
 
-Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const CmdByte* cmd_byte,
-                                     const CmdArgs* cmd_args, const size_t op) {
+Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const size_t op) {
     assert(spu);
     assert(cmd);
-    assert(cmd_byte);
-    assert(cmd_args);
 
     int stk_res = Stack::OK;
 
     double a = NAN;
     double b = NAN;
 
-    switch (cmd->num) {
+    switch (cmd->info->num) {
         case CMD_HLT:
             return Status::OK_EXIT;
         case CMD_PUSH:
-            if (!cmd_byte->reg && !cmd_byte->imm)
+            if (!cmd->byte.reg && !cmd->byte.imm)
                 THROW_RUNTIME_ERROR_("\"push\" requires at least one argument");
 
             a = 0;
 
-            if (cmd_byte->reg)
-                a += spu->reg[cmd_args->reg];
+            if (cmd->byte.reg)
+                a += spu->reg[cmd->args.reg];
 
-            if (cmd_byte->imm)
-                a += cmd_args->imm;
+            if (cmd->byte.imm)
+                a += cmd->args.imm;
 
             stk_res |= stk_push(&spu->stk, a);
             break;
         case CMD_POP:
-            if (!cmd_byte->reg)
+            if (!cmd->byte.reg)
                 THROW_RUNTIME_ERROR_("\"pop\" requires reg");
 
-            stk_res |= stk_pop(&spu->stk, &spu->reg[cmd_args->reg]);
+            stk_res |= stk_pop(&spu->stk, &spu->reg[cmd->args.reg]);
             break;
         case CMD_IN:
             a = spu_get_double_from_input();

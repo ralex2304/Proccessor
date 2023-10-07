@@ -36,60 +36,54 @@ Status::Statuses parse_and_write_line(FILE* file, String line, const size_t line
  * @brief Reads cmd reg from str
  *
  * @param str
- * @param cmd_byte
- * @param cmd_args
+ * @param cmd
  * @param line_num
  * @return Status::Statuses
  */
-Status::Statuses asm_read_reg(const char* str, CmdByte* cmd_byte, CmdArgs* cmd_args,
-                              const size_t line_num);
+Status::Statuses asm_read_reg(const char* str, Cmd* cmd, const size_t line_num);
 
 /**
  * @brief Reads cmd imm from str
  *
  * @param str
- * @param cmd_byte
- * @param cmd_args
+ * @param cmd
  * @param line_num
  * @return Status::Statuses
  */
-Status::Statuses asm_read_imm(const char* str, CmdByte* cmd_byte, CmdArgs* cmd_args,
-                              const size_t line_num);
+Status::Statuses asm_read_imm(const char* str, Cmd* cmd, const size_t line_num);
 
 /**
  * @brief Writes cmd in text mode
  *
  * @param file
- * @param cmd_byte
- * @param cmd_args
+ * @param cmd
  * @param binary_pos
+ * @param line_num
  * @return Status::Statuses
  */
-Status::Statuses asm_write_cmd_text(FILE* file, const CmdByte* cmd_byte,
-                                    const CmdArgs* cmd_args, const size_t binary_pos);
+Status::Statuses asm_write_cmd_debug(FILE* file, const Cmd* cmd,
+                                    const size_t binary_pos, const size_t line_num);
 
 /**
  * @brief Writes cmd in binary mode
  *
  * @param file
- * @param cmd_byte
- * @param cmd_args
+ * @param cmd
  * @return Status::Statuses
  */
-Status::Statuses asm_write_cmd_bin(FILE* file, const CmdByte* cmd_byte,
-                                   const CmdArgs* cmd_args);
+Status::Statuses asm_write_cmd_bin(FILE* file, const Cmd* cmd);
 
 /**
  * @brief Writes command to file
  *
  * @param file
- * @param cmd_byte
- * @param cmd_args
+ * @param cmd
  * @param binary_pos
+ * @param line_num
  * @param debug_mode
  * @return Status::Statuses
  */
-Status::Statuses asm_write_cmd(FILE* file, const CmdByte* cmd_byte, const CmdArgs* cmd_args,
-                               size_t* binary_pos, const bool debug_mode);
+Status::Statuses asm_write_cmd(FILE* file, const Cmd* cmd, size_t* binary_pos,
+                               const size_t line_num, const bool debug_mode);
 
 #endif // #ifndef ASSEMBLER_H_

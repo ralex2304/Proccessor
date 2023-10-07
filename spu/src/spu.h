@@ -30,13 +30,11 @@ Status::Statuses spu_parse(const char* data, const size_t size);
  * @brief Executes one command
  *
  * @param spu
- * @param command
- * @param args
- * @param command_byte
+ * @param cmd
+ * @param op operation pointer
  * @return Status::Statuses
  */
-Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const CmdByte* cmd_byte,
-                                     const CmdArgs* cmd_args, const size_t op);
+Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const size_t op);
 
 /**
  * @brief Prints double to stdout

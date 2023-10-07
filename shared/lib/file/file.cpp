@@ -107,7 +107,7 @@ bool file_write_bytes(FILE* file, const void* data, size_t len) {
     return true;
 }
 
-bool file_printf(FILE* file, const char* format, ...){
+int file_printf(FILE* file, const char* format, ...){
     assert(file);
     assert(format);
 
@@ -118,12 +118,10 @@ bool file_printf(FILE* file, const char* format, ...){
 
     va_end(args);
 
-    if (res < 0) {
+    if (res == EOF)
         perror("File write error");
-        return false;
-    }
 
-    return true;
+    return res;
 }
 
 bool file_close(FILE* file) {

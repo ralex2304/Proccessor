@@ -5,14 +5,16 @@
             return Status::SYNTAX_ERROR;                                           \
         } while(0)
 
-#define DATA_GET_VAL_(dest, val_t)  do {                                            \
-                                        dest = *((const val_t*)(data + cur_byte));  \
-                                        cur_byte += sizeof(val_t);                  \
+#define DATA_GET_VAL_(dest, val_t)  do {                                                \
+                                        memcpy(&dest, data + cur_byte, sizeof(val_t));  \
+                                        cur_byte += sizeof(val_t);                      \
                                     } while(0)
 
-#define F_PRINTF_(...)  do {                                        \
-                            if (!file_printf(file, __VA_ARGS__))    \
-                                return Status::OUT_FILE_ERROR;      \
+#define F_PRINTF_(...)  do {                                                    \
+                            int printf_res = file_printf(file, __VA_ARGS__);    \
+                            if (printf_res == EOF)                              \
+                                return Status::OUT_FILE_ERROR;                  \
+                            printed_cnt += printf_res;                          \
                         } while(0)
 
 Status::Statuses disasm_parse(const char* data, const size_t size, const char* output_filename,
@@ -27,40 +29,46 @@ Status::Statuses disasm_parse(const char* data, const size_t size, const char* o
     size_t cur_byte = 0;
     size_t op = 0;
 
-    const Cmd* cmd = nullptr;
-    CmdByte cmd_byte = {};
-    CmdArgs cmd_args = {};
+    Cmd cmd = {};
 
+    while (cur_byte + sizeof(cmd.byte) <= size) {
+        DATA_GET_VAL_(cmd.byte, CmdByte);
 
-    while (cur_byte + sizeof(cmd_byte) <= size) {
-        DATA_GET_VAL_(cmd_byte, CmdByte);
+        cmd.info = find_command_by_num(cmd.byte.num);
 
-        cmd = find_command_by_num(cmd_byte.num);
-
-        if (cmd == nullptr)
+        if (cmd.info == nullptr)
             THROW_SYNTAX_ERROR_("Unknown command number");
 
-        F_PRINTF_("%s", cmd->name);
+        size_t printed_cnt = 0;
 
-        if (cmd_byte.reg) {
-            DATA_GET_VAL_(cmd_args.reg, RegNum_t);
+        F_PRINTF_("%s", cmd.info->name);
 
-            F_PRINTF_(" %s", find_reg_by_num(cmd_args.reg)->name);
+        if (cmd.byte.reg) {
+            DATA_GET_VAL_(cmd.args.reg, RegNum_t);
+
+            F_PRINTF_(" %s", find_reg_by_num(cmd.args.reg)->name);
         }
 
-        if (cmd_byte.imm) {
-            if (cmd_byte.reg)
+        if (cmd.byte.imm) {
+            if (cmd.byte.reg)
                 F_PRINTF_("+");
             else
                 F_PRINTF_(" ");
 
-            DATA_GET_VAL_(cmd_args.imm, Imm_t);
+            DATA_GET_VAL_(cmd.args.imm, Imm_t);
 
-            F_PRINTF_(IMM_T_PRINTF, cmd_args.imm);
+            F_PRINTF_(IMM_T_PRINTF, cmd.args.imm);
         }
 
-        if (debug_mode)
-            F_PRINTF_("%*s;byte=%zu", 10, "", op);
+        if (debug_mode) {
+            static const size_t DISASM_COMMENTS_OFFSET = 50;
+
+            if (printed_cnt < DISASM_COMMENTS_OFFSET)
+                F_PRINTF_("%*s", DISASM_COMMENTS_OFFSET - printed_cnt, "");
+
+            F_PRINTF_(";byte=%zu", op);
+        }
+
 
         F_PRINTF_("\n");
 

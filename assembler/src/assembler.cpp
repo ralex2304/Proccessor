@@ -11,6 +11,10 @@ Status::Statuses assmeble_and_write(const InputData* input_data, const char* fil
 
     Status::Statuses res = Status::DEFAULT;
 
+    if (debug_mode)
+        if (file_printf(file, ";line - byte - command\n") == EOF)
+            return Status::OUT_FILE_ERROR;
+
     for (size_t i = 0; i < input_data->lines_cnt; i++) {
         res = parse_and_write_line(file, input_data->lines[i], i + 1, debug_mode);
 
@@ -26,7 +30,7 @@ Status::Statuses assmeble_and_write(const InputData* input_data, const char* fil
     return Status::NORMAL_WORK;
 }
 
-#define THROW_SYNTAX_ERROR_(text, ...)  do {                                               \
+#define THROW_SYNTAX_ERROR_(text, ...)  do {                                                        \
             fprintf(stderr, CONSOLE_RED("Syntax error. " text) " Line %zu\n", __VA_ARGS__ line_num);\
             return Status::SYNTAX_ERROR;                                                            \
         } while(0)
@@ -36,8 +40,8 @@ Status::Statuses parse_and_write_line(FILE* file, String line, const size_t line
     assert(file);
     assert(line.str);
 
-    CmdByte cmd_byte = {};
-    CmdArgs cmd_args = {};
+    Cmd cmd = {};
+
     static size_t binary_pos = 0;
     char inp_buf[MAX_LINE_LEN] = {};
 
@@ -49,55 +53,59 @@ Status::Statuses parse_and_write_line(FILE* file, String line, const size_t line
     if (res != 1)
         THROW_SYNTAX_ERROR_("Can't read command name.");
 
-    const Cmd* cmd = find_command_by_name(inp_buf);
-    if (cmd == nullptr)
+    cmd.info = find_command_by_name(inp_buf);
+    if (cmd.info == nullptr)
         THROW_SYNTAX_ERROR_("Command not found.");
 
-    cmd_byte.num = cmd->num & 0b00011111; // REVIEW
+    cmd.byte.num = cmd.info->num & CMD_BYTE_NUM_BIT_MASK;
 
-    if (cmd->args.reg) {
+    if (cmd.info->args.reg) {
         line.str = strtok(nullptr, " +");
-        STATUS_CHECK(asm_read_reg(line.str, &cmd_byte, &cmd_args, line_num));
+        STATUS_CHECK(asm_read_reg(line.str, &cmd, line_num));
     }
 
-    if (cmd->args.imm) {
-        if (!cmd->args.reg || cmd_byte.reg)
+    if (cmd.info->args.imm) {
+        if (!cmd.info->args.reg || cmd.byte.reg)
             line.str = strtok(nullptr, " ");
 
-        STATUS_CHECK(asm_read_imm(line.str, &cmd_byte, &cmd_args, line_num));
+        STATUS_CHECK(asm_read_imm(line.str, &cmd, line_num));
     }
 
-    if ((cmd->args.imm || cmd->args.reg) &&
-        !(cmd_byte.imm || cmd_byte.reg))
+    if ((cmd.info->args.imm || cmd.info->args.reg) &&
+        !(cmd.byte.imm || cmd.byte.reg))
             THROW_SYNTAX_ERROR_("At least one argument required.");
 
-    return asm_write_cmd(file, &cmd_byte, &cmd_args, &binary_pos, debug_mode);
+    return asm_write_cmd(file, &cmd, &binary_pos, line_num, debug_mode);
 }
 
-Status::Statuses asm_read_reg(const char* str, CmdByte* cmd_byte, CmdArgs* cmd_args,
-                              const size_t line_num) {
+Status::Statuses asm_read_reg(const char* str, Cmd* cmd, const size_t line_num) {
+    assert(str);
+    assert(cmd);
+
     if (str != nullptr && isalpha(str[0])) {
-        const Reg* reg = find_reg_by_name(str);
+        const RegInfo* reg = find_reg_by_name(str);
 
         if (reg == nullptr)
             THROW_SYNTAX_ERROR_("Invalid reg name \"%s\"", str,);
 
-        cmd_args->reg = reg->num;
-        cmd_byte->reg = true;
+        cmd->args.reg = reg->num;
+        cmd->byte.reg = true;
     }
 
     return Status::NORMAL_WORK;
 }
 
-Status::Statuses asm_read_imm(const char* str, CmdByte* cmd_byte, CmdArgs* cmd_args,
-                              const size_t line_num) {
+Status::Statuses asm_read_imm(const char* str, Cmd* cmd, const size_t line_num) {
+    assert(str);
+    assert(cmd);
+
     if (str != nullptr) {
-        int sscanf_res = sscanf(str, IMM_T_PRINTF, &cmd_args->imm);
+        int sscanf_res = sscanf(str, IMM_T_PRINTF, &cmd->args.imm);
 
         if (sscanf_res != 1)
             THROW_SYNTAX_ERROR_("Invalid immediate argument \"%s\"", str,);
 
-        cmd_byte->imm = true;
+        cmd->byte.imm = true;
     }
 
     return Status::NORMAL_WORK;
@@ -105,51 +113,67 @@ Status::Statuses asm_read_imm(const char* str, CmdByte* cmd_byte, CmdArgs* cmd_a
 #undef THROW_SYNTAX_ERROR_
 
 
-Status::Statuses asm_write_cmd(FILE* file, const CmdByte* cmd_byte, const CmdArgs* cmd_args,
-                               size_t* binary_pos, const bool debug_mode) {
+Status::Statuses asm_write_cmd(FILE* file, const Cmd* cmd, size_t* binary_pos,
+                               const size_t line_num, const bool debug_mode) {
     assert(file);
-    assert(cmd_byte);
-    assert(cmd_args);
+    assert(cmd);
 
     Status::Statuses res = Status::DEFAULT;
 
     if (debug_mode)
-        res = asm_write_cmd_text(file, cmd_byte, cmd_args, *binary_pos);
+        res = asm_write_cmd_debug(file, cmd, *binary_pos, line_num);
     else
-        res = asm_write_cmd_bin(file, cmd_byte, cmd_args);
+        res = asm_write_cmd_bin(file, cmd);
 
     if (res != Status::NORMAL_WORK)
         return res;
 
-    *binary_pos += sizeof(*cmd_byte) + cmd_byte->reg * sizeof(cmd_args->reg)
-                                     + cmd_byte->imm * sizeof(cmd_args->imm);
+    *binary_pos += sizeof(cmd->byte) + cmd->byte.reg * sizeof(cmd->args.reg)
+                                     + cmd->byte.imm * sizeof(cmd->args.imm);
 
     return res;
 }
 
 
-#define F_PRINTF_CHECK_(printf)    if (!printf) return Status::OUT_FILE_ERROR
+#define F_PRINTF_CHECK_(printf)    if (printf == EOF) return Status::OUT_FILE_ERROR
 
-Status::Statuses asm_write_cmd_text(FILE* file, const CmdByte* cmd_byte,
-                                    const CmdArgs* cmd_args, const size_t binary_pos) {
+Status::Statuses asm_write_cmd_debug(FILE* file, const Cmd* cmd,
+                                     const size_t binary_pos, const size_t line_num) {
     assert(file);
-    assert(cmd_byte);
-    assert(cmd_args);
+    assert(cmd);
 
+    F_PRINTF_CHECK_(file_printf(file, ";%4zu - %4zu -", line_num, binary_pos));
 
-    F_PRINTF_CHECK_(file_printf(file, ";(%5zu) %d", binary_pos, cmd_byte->num));
+    // Command in hex format
 
-    if (cmd_byte->reg)
-        F_PRINTF_CHECK_(file_printf(file, " %d", cmd_args->reg));
+    F_PRINTF_CHECK_(file_printf(file, " %02X", cmd->byte));
 
-    if (cmd_byte->imm) {
-        if (cmd_byte->reg) {
+    if (cmd->byte.reg)
+        for (size_t i = 0; i < sizeof(cmd->args.reg); i++)
+            F_PRINTF_CHECK_(file_printf(file, " %02hhX", ((const char*)&cmd->args.reg)[i]));
+
+    if (cmd->byte.imm)
+        for (size_t i = 0; i < sizeof(cmd->args.imm); i++)
+            F_PRINTF_CHECK_(file_printf(file, " %02hhX", ((const char*)&cmd->args.imm)[i]));
+
+    F_PRINTF_CHECK_(file_printf(file, "%*s", (!cmd->byte.reg) * sizeof(cmd->args.reg) * 3 +
+                                             (!cmd->byte.imm) * sizeof(cmd->args.imm) * 3, ""));
+
+    // Command in text format
+
+    F_PRINTF_CHECK_(file_printf(file, " - %s", cmd->info->name));
+
+    if (cmd->byte.reg)
+        F_PRINTF_CHECK_(file_printf(file, " %s", find_reg_by_num(cmd->args.reg)->name));
+
+    if (cmd->byte.imm) {
+        if (cmd->byte.reg) {
             F_PRINTF_CHECK_(file_printf(file, "+"));
         } else {
             F_PRINTF_CHECK_(file_printf(file, " "));
         }
 
-        F_PRINTF_CHECK_(file_printf(file, IMM_T_PRINTF, cmd_args->imm));
+        F_PRINTF_CHECK_(file_printf(file, IMM_T_PRINTF, cmd->args.imm));
     }
 
     F_PRINTF_CHECK_(file_printf(file, "\n"));
@@ -161,19 +185,17 @@ Status::Statuses asm_write_cmd_text(FILE* file, const CmdByte* cmd_byte,
 
 #define F_WRITE_CHECK_(write)    if (!write) return Status::OUT_FILE_ERROR
 
-Status::Statuses asm_write_cmd_bin(FILE* file, const CmdByte* cmd_byte,
-                                   const CmdArgs* cmd_args) {
+Status::Statuses asm_write_cmd_bin(FILE* file, const Cmd* cmd) {
     assert(file);
-    assert(cmd_byte);
-    assert(cmd_args);
+    assert(cmd);
 
-    F_WRITE_CHECK_(file_write_bytes(file, cmd_byte, sizeof(*cmd_byte)));
+    F_WRITE_CHECK_(file_write_bytes(file, &cmd->byte, sizeof(cmd->byte)));
 
-    if (cmd_byte->reg)
-        F_WRITE_CHECK_(file_write_bytes(file, &cmd_args->reg, sizeof(cmd_args->reg)));
+    if (cmd->byte.reg)
+        F_WRITE_CHECK_(file_write_bytes(file, &cmd->args.reg, sizeof(cmd->args.reg)));
 
-    if (cmd_byte->imm)
-        F_WRITE_CHECK_(file_write_bytes(file, &cmd_args->imm, sizeof(cmd_args->imm)));
+    if (cmd->byte.imm)
+        F_WRITE_CHECK_(file_write_bytes(file, &cmd->args.imm, sizeof(cmd->args.imm)));
 
     return Status::NORMAL_WORK;
 }

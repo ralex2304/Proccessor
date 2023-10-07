@@ -27,11 +27,13 @@ int main(int argc, char* argv[]) {
     /// Reading input data
     char* inp_data = nullptr;
     long size = 0;
-    STATUS_CHECK_RAISE(file_open_read_close(args_vars.input_filename, &inp_data, 0, &size));
+    STATUS_CHECK_RAISE(file_open_read_close(args_vars.input_filename, &inp_data, 0, &size),
+                       FREE(inp_data););
     /// Reading input data end
 
     /// Parsing and executing input file
-    STATUS_CHECK_RAISE(spu_parse(inp_data, size));
+    STATUS_CHECK_RAISE(spu_parse(inp_data, size),
+                       FREE(inp_data));
     /// Parsing and executing input file end
 
     FREE(inp_data);

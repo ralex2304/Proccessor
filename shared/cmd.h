@@ -6,7 +6,7 @@
 #include <math.h>
 #include <string.h>
 
-
+const size_t MAX_LINE_LEN = 64;   //< max command text line len
 
 struct CmdByte {
     unsigned char num: 5;
@@ -14,31 +14,30 @@ struct CmdByte {
     bool imm: 1;
 };
 
-const size_t MAX_LINE_LEN = 64;   //< max command text line len
+const unsigned char CMD_BYTE_NUM_BIT_MASK = 0b0001'1111;
 
 typedef unsigned char RegNum_t;
 
-const RegNum_t REGS_NUM = 4; //< SPU registers number
-
 enum RegNums: RegNum_t {
-    RERROR = 0,
-    RAX    = 1,
-    RBX    = 2,
-    RCX    = 3,
-    RDX    = 4,
+    RAX = 0,
+    RBX = 1,
+    RCX = 2,
+    RDX = 3,
 };
 
-struct Reg {
+struct RegInfo {
     const RegNums num;
     const char* name = nullptr;
 };
 
-const Reg REGS[] {
+const RegInfo REGS_DICT[] {
     {RAX, "rax"},
     {RBX, "rbx"},
     {RCX, "rcx"},
     {RDX, "rdx"},
 };
+
+const RegNum_t REGS_NUM = sizeof(REGS_DICT) / sizeof(RegInfo); //< SPU registers number
 
 typedef double Imm_t;
 
@@ -72,7 +71,7 @@ enum CmdNum: Cmd_num_t {
     CMD_COS  = 11,
 };
 
-struct Cmd {
+struct CmdInfo {
     const CmdNum num;
     const char* name = nullptr;
     ArgsEn args;
@@ -80,7 +79,7 @@ struct Cmd {
     const char* description = nullptr;
 };
 
-const Cmd CMDS[] {
+const CmdInfo CMDS_DICT[] {
 
     {CMD_HLT,   "HLT",  {},             "halt - end of program"},
     {CMD_PUSH,  "push", {true,  true }, "push one element to stack || take from reg and push || take from reg + imm and push"},
@@ -97,39 +96,45 @@ const Cmd CMDS[] {
 
 };
 
-const size_t CMDS_NUM = sizeof(CMDS) / sizeof(Cmd); //< Number of commands
+const size_t CMDS_DICT_SIZE = sizeof(CMDS_DICT) / sizeof(CmdInfo); //< Number of commands
 
+struct Cmd {
+    const CmdInfo* info = nullptr;
+
+    CmdByte byte = {};
+    CmdArgs args = {};
+};
 
 /**
- * @brief Finds command in CMDS by num
+ * @brief Finds command in CMDS_DICT by num
  *
  * @param num
  * @return const Command*
  */
-const Cmd* find_command_by_num(const Cmd_num_t num);
+const CmdInfo* find_command_by_num(const Cmd_num_t num);
 
 /**
- * @brief Finds command in CMDS[] by name
+ * @brief Finds command in CMDS_DICT[] by name
  *
  * @param name
  * @return const Command*
  */
-const Cmd* find_command_by_name(const char* name);
+const CmdInfo* find_command_by_name(const char* name);
 
 /**
- * @brief Finds reg in REGS[] by num
+ * @brief Finds reg in REGS_DICT[] by num
  *
  * @param reg
- * @return const Reg*
+ * @return const RegInfo*
  */
-const Reg* find_reg_by_num(const RegNum_t reg);
+const RegInfo* find_reg_by_num(const RegNum_t reg);
 
 /**
- * @brief Finds reg in REGS[] by name
+ * @brief Finds reg in REGS_DICT[] by name
  *
  * @param name
- * @return const Reg*
+ * @return const RegInfo*
  */
-const Reg* find_reg_by_name(const char* name);
+const RegInfo* find_reg_by_name(const char* name);
 
 #endif // #ifndef CMD_H_

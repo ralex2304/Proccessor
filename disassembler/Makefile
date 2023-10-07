@@ -72,6 +72,7 @@ $(DOCS_DIR):
 
 clean:
 	@rm -rf ./$(BUILD_DIR)/*
+	@rm -rf ./$(BUILD_DIR)/$(EXTERNAL_DIR)/*
 	@rm -rf ./$(TARGET)
 	@rm -rf ./$(DOCS_TARGET)
 
