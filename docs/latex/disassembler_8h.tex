@@ -1,0 +1,184 @@
+\doxysection{disassembler/src/disassembler.h File Reference}
+\hypertarget{disassembler_8h}{}\label{disassembler_8h}\index{disassembler/src/disassembler.h@{disassembler/src/disassembler.h}}
+{\ttfamily \#include \"{}lib/utils/statuses.\+h\"{}}\newline
+{\ttfamily \#include \"{}cmd.\+h\"{}}\newline
+{\ttfamily \#include \"{}lib/utils/console.\+h\"{}}\newline
+{\ttfamily \#include \"{}lib/file/file.\+h\"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{disassembler_8h_a6713d7a3995575e1981fb20ab849184a}{disasm\+\_\+parse}} (const char \texorpdfstring{$\ast$}{*}data, const size\+\_\+t size, const char \texorpdfstring{$\ast$}{*}output\+\_\+filename, const bool debug\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em disassembles data to output file \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{disassembler_8h_ab6875f0f0cb374df97b99f77597ff21a}{disasm\+\_\+write\+\_\+signature}} (FILE \texorpdfstring{$\ast$}{*}file, const \mbox{\hyperlink{struct_signature}{Signature}} sign)
+\begin{DoxyCompactList}\small\item\em Writes signature to file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{disassembler_8h_a6713d7a3995575e1981fb20ab849184a}\label{disassembler_8h_a6713d7a3995575e1981fb20ab849184a} 
+\index{disassembler.h@{disassembler.h}!disasm\_parse@{disasm\_parse}}
+\index{disasm\_parse@{disasm\_parse}!disassembler.h@{disassembler.h}}
+\doxysubsubsection{\texorpdfstring{disasm\_parse()}{disasm\_parse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} disasm\+\_\+parse (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{data,  }\item[{const size\+\_\+t}]{size,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{output\+\_\+filename,  }\item[{const bool}]{debug\+\_\+mode }\end{DoxyParamCaption})}
+
+
+
+disassembles data to output file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+{\em size} & \\
+\hline
+{\em output\+\_\+filename} & \\
+\hline
+{\em debug\+\_\+mode} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{disassembler_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{disassembler_8cpp_source}{disassembler.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ assert(data);}
+\DoxyCodeLine{00025\ \ \ \ \ assert(output\_filename);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{struct_signature}{Signature}}\ sign\ =\ \{\};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (size\ <\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{cmd_8h_af46692534430a47d73d9904057ed74df}{SIGNATURE}})\ ||\ !(sign\ =\ *((\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_signature}{Signature}}*)\ data)).check())}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca26565794e5f270e88acbed09b3d26e61}{Status::SIGNATURE\_ERROR}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ FILE*\ file\ =\ \{\};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_abb897c7e353e490dd5c92b5a13d14fa6}{file\_open}}(\&file,\ output\_filename,\ \textcolor{stringliteral}{"{}wb"{}}))}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{disassembler_8cpp_ab6875f0f0cb374df97b99f77597ff21a}{disasm\_write\_signature}}(file,\ sign)\ ==\ EOF)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(file);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ cur\_byte\ =\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{cmd_8h_af46692534430a47d73d9904057ed74df}{SIGNATURE}});}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ ip\ =\ cur\_byte;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ Instruction\ pointer}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{struct_cmd}{Cmd}}\ cmd\ =\ \{\};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{while}\ (cur\_byte\ +\ \textcolor{keyword}{sizeof}(cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}})\ <=\ size)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_af0caa752175ed6935756d158d26848fd}{DATA\_GET\_VAL\_}}(cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}},\ \mbox{\hyperlink{struct_cmd_byte}{CmdByte}});}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ cmd.\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}\ =\ \mbox{\hyperlink{cmd_8cpp_ae4f1f8a5e27cc0597a1762987ca19f7f}{find\_command\_by\_num}}(cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_a161f0c4c0d653d3d3f8cf22b58df1457}{num}});}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd.\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_adb430e0b85e35f2bde65b055c94ed91a}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Unknown\ command\ number"{}});}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ printed\_cnt\ =\ 0;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_a5ed4437d6ccd8c1be2e787923b44018f}{F\_PRINTF\_}}(\textcolor{stringliteral}{"{}\%s"{}},\ cmd.\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}-\/>\mbox{\hyperlink{struct_cmd_info_a6d2c25d356a40a51bddecfb15288266e}{name}});}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_a64f32a2c5de062d496ece180759dd940}{ram}})}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_a5ed4437d6ccd8c1be2e787923b44018f}{F\_PRINTF\_}}(\textcolor{stringliteral}{"{}\ ["{}});}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae86855d817fa5c60367ce99d1c826287}{imm}}\ ||\ cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae9e14c718597b6998c4189592e775054}{reg}})}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_a5ed4437d6ccd8c1be2e787923b44018f}{F\_PRINTF\_}}(\textcolor{stringliteral}{"{}\ "{}});}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae9e14c718597b6998c4189592e775054}{reg}})\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_af0caa752175ed6935756d158d26848fd}{DATA\_GET\_VAL\_}}(cmd.\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a49949ad6edf5cb3523025913f2c0adc5}{reg}},\ \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{RegNum\_t}});}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_a5ed4437d6ccd8c1be2e787923b44018f}{F\_PRINTF\_}}(\textcolor{stringliteral}{"{}\%s"{}},\ \mbox{\hyperlink{cmd_8cpp_a1f8806cd553fbea836faef7a35f6cb97}{find\_reg\_by\_num}}(cmd.\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a49949ad6edf5cb3523025913f2c0adc5}{reg}})-\/>\mbox{\hyperlink{struct_reg_info_a55f7bac0cb70f2b12dcc0be560d4d24f}{name}});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae86855d817fa5c60367ce99d1c826287}{imm}})\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae9e14c718597b6998c4189592e775054}{reg}})}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_a5ed4437d6ccd8c1be2e787923b44018f}{F\_PRINTF\_}}(\textcolor{stringliteral}{"{}+"{}});}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_a64f32a2c5de062d496ece180759dd940}{ram}})\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_af0caa752175ed6935756d158d26848fd}{DATA\_GET\_VAL\_}}(cmd.\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_ada3b2b497527f608e6ccd7f4b4a2b166}{imm\_ram}},\ \mbox{\hyperlink{cmd_8h_aa9cee96bd541b988a38cef8e728fdb14}{Imm\_ram\_t}});}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_a5ed4437d6ccd8c1be2e787923b44018f}{F\_PRINTF\_}}(\mbox{\hyperlink{cmd_8h_a99ba326f1a226d2c12abbfb5005df65a}{IMM\_RAM\_T\_PRINTF}},\ cmd.\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_ada3b2b497527f608e6ccd7f4b4a2b166}{imm\_ram}});}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_af0caa752175ed6935756d158d26848fd}{DATA\_GET\_VAL\_}}(cmd.\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a5aef979bf03c8e615ba60d47d364a14b}{imm}},\ \mbox{\hyperlink{cmd_8h_a37e21d5c10fb766b5bb72edd3503f946}{Imm\_t}});}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_a5ed4437d6ccd8c1be2e787923b44018f}{F\_PRINTF\_}}(\mbox{\hyperlink{cmd_8h_a55c597e69a4f998286a49ce487a64f08}{IMM\_T\_PRINTF}},\ cmd.\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a5aef979bf03c8e615ba60d47d364a14b}{imm}});}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_a64f32a2c5de062d496ece180759dd940}{ram}})}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_a5ed4437d6ccd8c1be2e787923b44018f}{F\_PRINTF\_}}(\textcolor{stringliteral}{"{}]"{}});}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (debug\_mode)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ DISASM\_COMMENTS\_OFFSET\ =\ 50;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (printed\_cnt\ <\ DISASM\_COMMENTS\_OFFSET)}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_a5ed4437d6ccd8c1be2e787923b44018f}{F\_PRINTF\_}}(\textcolor{stringliteral}{"{}\%*s"{}},\ DISASM\_COMMENTS\_OFFSET\ -\/\ printed\_cnt,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_a5ed4437d6ccd8c1be2e787923b44018f}{F\_PRINTF\_}}(\textcolor{stringliteral}{"{};byte=\%zu"{}},\ ip);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_a5ed4437d6ccd8c1be2e787923b44018f}{F\_PRINTF\_}}(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ ip\ =\ cur\_byte;}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(file))}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00103\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{cmd_8h_source_l00132}{Cmd\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00131}{Cmd\+::byte}}, \mbox{\hyperlink{disassembler_8cpp_source_l00008}{DATA\+\_\+\+GET\+\_\+\+VAL\+\_\+}}, \mbox{\hyperlink{disassembler_8cpp_source_l00113}{disasm\+\_\+write\+\_\+signature()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00013}{F\+\_\+\+PRINTF\+\_\+}}, \mbox{\hyperlink{file_8cpp_source_l00127}{file\+\_\+close()}}, \mbox{\hyperlink{file_8cpp_source_l00042}{file\+\_\+open()}}, \mbox{\hyperlink{cmd_8cpp_source_l00021}{find\+\_\+command\+\_\+by\+\_\+num()}}, \mbox{\hyperlink{cmd_8cpp_source_l00042}{find\+\_\+reg\+\_\+by\+\_\+num()}}, \mbox{\hyperlink{cmd_8h_source_l00018}{Cmd\+Byte\+::imm}}, \mbox{\hyperlink{cmd_8h_source_l00058}{Cmd\+Args\+::imm}}, \mbox{\hyperlink{cmd_8h_source_l00060}{Cmd\+Args\+::imm\+\_\+ram}}, \mbox{\hyperlink{cmd_8h_source_l00055}{IMM\+\_\+\+RAM\+\_\+\+T\+\_\+\+PRINTF}}, \mbox{\hyperlink{cmd_8h_source_l00051}{IMM\+\_\+\+T\+\_\+\+PRINTF}}, \mbox{\hyperlink{cmd_8h_source_l00129}{Cmd\+::info}}, \mbox{\hyperlink{cmd_8h_source_l00037}{Reg\+Info\+::name}}, \mbox{\hyperlink{cmd_8h_source_l00088}{Cmd\+Info\+::name}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, \mbox{\hyperlink{cmd_8h_source_l00016}{Cmd\+Byte\+::num}}, \mbox{\hyperlink{statuses_8h_source_l00017}{Status\+::\+OUT\+\_\+\+FILE\+\_\+\+ERROR}}, \mbox{\hyperlink{cmd_8h_source_l00019}{Cmd\+Byte\+::ram}}, \mbox{\hyperlink{cmd_8h_source_l00017}{Cmd\+Byte\+::reg}}, \mbox{\hyperlink{cmd_8h_source_l00059}{Cmd\+Args\+::reg}}, \mbox{\hyperlink{cmd_8h_source_l00126}{SIGNATURE}}, \mbox{\hyperlink{statuses_8h_source_l00023}{Status\+::\+SIGNATURE\+\_\+\+ERROR}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00003}{THROW\+\_\+\+SYNTAX\+\_\+\+ERROR\+\_\+}}.
+
+
+
+Referenced by \mbox{\hyperlink{disassembler_2src_2main_8cpp_source_l00024}{main()}}.
+
+\Hypertarget{disassembler_8h_ab6875f0f0cb374df97b99f77597ff21a}\label{disassembler_8h_ab6875f0f0cb374df97b99f77597ff21a} 
+\index{disassembler.h@{disassembler.h}!disasm\_write\_signature@{disasm\_write\_signature}}
+\index{disasm\_write\_signature@{disasm\_write\_signature}!disassembler.h@{disassembler.h}}
+\doxysubsubsection{\texorpdfstring{disasm\_write\_signature()}{disasm\_write\_signature()}}
+{\footnotesize\ttfamily int disasm\+\_\+write\+\_\+signature (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file,  }\item[{const \mbox{\hyperlink{struct_signature}{Signature}}}]{sign }\end{DoxyParamCaption})}
+
+
+
+Writes signature to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \\
+\hline
+{\em sign} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{disassembler_8cpp_source_l00113}{113}} of file \mbox{\hyperlink{disassembler_8cpp_source}{disassembler.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ assert(file);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(sign.\mbox{\hyperlink{struct_signature_ad4dab7a4f06d2b1e6d43e41de1bc9a8e}{name}})\ ==\ 2);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_a82ac9ef1e62798eb8e30c7723d8929d2}{F\_PRINTF\_CHECK\_}}(\mbox{\hyperlink{file_8cpp_acecf8d97922690834a1cd9ba8915a82b}{file\_printf}}(file,\ \textcolor{stringliteral}{"{};Signature:\ \%c\%c\(\backslash\)n"{}}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{};Version:\ \%d\(\backslash\)n"{}},}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sign.\mbox{\hyperlink{struct_signature_ad4dab7a4f06d2b1e6d43e41de1bc9a8e}{name}}[0],\ sign.\mbox{\hyperlink{struct_signature_ad4dab7a4f06d2b1e6d43e41de1bc9a8e}{name}}[1],\ sign.\mbox{\hyperlink{struct_signature_a9f7bb78af67a5958baa792ee5f8e93e2}{version}}));}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00123\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{disassembler_8cpp_source_l00108}{F\+\_\+\+PRINTF\+\_\+\+CHECK\+\_\+}}, \mbox{\hyperlink{file_8cpp_source_l00110}{file\+\_\+printf()}}, \mbox{\hyperlink{cmd_8h_source_l00118}{Signature\+::name}}, and \mbox{\hyperlink{cmd_8h_source_l00119}{Signature\+::version}}.
+
+
+
+Referenced by \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}.
+

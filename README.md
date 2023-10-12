@@ -1,3 +1,3 @@
-# Proccessor (assembler + spu + disassembler)
+# Processor (assembler + spu + disassembler)
 
 MIPT project

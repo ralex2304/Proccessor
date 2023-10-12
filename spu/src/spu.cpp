@@ -4,7 +4,7 @@ LogFileData log_file = {STACK_LOG_FILENAME};
 
 
 #define THROW_RUNTIME_ERROR_(text)  do {                                                    \
-            fprintf(stderr, CONSOLE_RED("Runtime error occured. " text) " Byte %zu\n", op); \
+            fprintf(stderr, CONSOLE_RED("Runtime error occured. " text) " Byte %zu\n", ip); \
             return Status::RUNTIME_ERROR;                                                   \
         } while(0)
 
@@ -16,12 +16,14 @@ LogFileData log_file = {STACK_LOG_FILENAME};
 Status::Statuses spu_parse(const char* data, const size_t size) {
     assert(data);
 
+    if (size < sizeof(SIGNATURE) || !((const Signature*) data)->check())
+        return Status::SIGNATURE_ERROR;
 
     SpuData spu = {};
     STK_CTOR(&spu.stk);
 
-    size_t cur_byte = 0;
-    size_t op = 0;
+    size_t cur_byte = sizeof(SIGNATURE);
+    size_t ip = cur_byte;                   //< instruction pointer
 
     Cmd cmd = {};
 
@@ -30,8 +32,12 @@ Status::Statuses spu_parse(const char* data, const size_t size) {
 
         cmd.info = find_command_by_num(cmd.byte.num);
 
+        if (cmd.info == nullptr)
+            THROW_RUNTIME_ERROR_("Invalid command");
+
         if (cur_byte + cmd.byte.reg * sizeof(cmd.args.reg)
-                     + cmd.byte.imm * sizeof(cmd.args.imm) > size) {
+                     + cmd.byte.imm * (cmd.byte.ram ? sizeof(cmd.args.imm_ram)
+                                                    : sizeof(cmd.args.imm)) > size) {
             stk_dtor(&spu.stk);
 
             THROW_RUNTIME_ERROR_("EOF instead of args");
@@ -40,17 +46,21 @@ Status::Statuses spu_parse(const char* data, const size_t size) {
         if (cmd.byte.reg)
             DATA_GET_VAL_(cmd.args.reg, RegNum_t);
 
-        if (cmd.byte.imm)
-            DATA_GET_VAL_(cmd.args.imm, Imm_t);
+        if (cmd.byte.imm) {
+            if (cmd.byte.ram)
+                DATA_GET_VAL_(cmd.args.imm_ram, Imm_ram_t);
+            else
+                DATA_GET_VAL_(cmd.args.imm, Imm_t);
+        }
 
-        Status::Statuses res = spu_execute_command(&spu, &cmd, op);
+        Status::Statuses res = spu_execute_command(&spu, &cmd, ip);
         if (res != Status::NORMAL_WORK) {
             stk_dtor(&spu.stk);
             return res;
         }
 
         cmd = {};
-        op = cur_byte;
+        ip = cur_byte;
     }
 
     stk_dtor(&spu.stk);
@@ -76,9 +86,12 @@ Status::Statuses spu_parse(const char* data, const size_t size) {
                                             if (stk_res == Stack::OK)           \
                                                 stk_res |= stk_push(&spu->stk, expression)
 
-Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const size_t op) {
+Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const size_t ip) {
     assert(spu);
     assert(cmd);
+
+    if (cmd->byte.ram)
+        THROW_RUNTIME_ERROR_("SPU doesn't support RAM yet :-("); // FIXME
 
     int stk_res = Stack::OK;
 
@@ -90,7 +103,7 @@ Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const size_t 
             return Status::OK_EXIT;
         case CMD_PUSH:
             if (!cmd->byte.reg && !cmd->byte.imm)
-                THROW_RUNTIME_ERROR_("\"push\" requires at least one argument");
+                THROW_RUNTIME_ERROR_("\"push\" requires at least one argument.");
 
             a = 0;
 
@@ -104,7 +117,7 @@ Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const size_t 
             break;
         case CMD_POP:
             if (!cmd->byte.reg)
-                THROW_RUNTIME_ERROR_("\"pop\" requires reg");
+                THROW_RUNTIME_ERROR_("\"pop\" requires reg.");
 
             stk_res |= stk_pop(&spu->stk, &spu->reg[cmd->args.reg]);
             break;
@@ -147,7 +160,7 @@ Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const size_t 
     }
 
     if (stk_res != Stack::OK) {
-        fprintf(stderr, CONSOLE_RED("Runtime error occured! ") "Byte %zu\n", op);
+        fprintf(stderr, CONSOLE_RED("Runtime error occured! ") "Byte %zu\n", ip);
         stk_print_error_to_user(stk_res);
         return Status::RUNTIME_ERROR;
     }
@@ -155,3 +168,5 @@ Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const size_t 
     return Status::NORMAL_WORK;
 }
 #undef THROW_RUNTIME_ERROR_
+#undef STK_POP_AND_PUSH_ONE_
+#undef STK_POP_AND_PUSH_TWO_

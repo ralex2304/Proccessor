@@ -1,0 +1,39 @@
+\doxysection{macros.\+h}
+\hypertarget{macros_8h_source}{}\label{macros_8h_source}\index{shared/lib/utils/macros.h@{shared/lib/utils/macros.h}}
+\mbox{\hyperlink{macros_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ MACROS\_H\_}}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ MACROS\_H\_}}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <memory.h>}}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00006}\mbox{\hyperlink{macros_8h_a3acffbd305ee72dcd4593c0d8af64a4f}{00006}}\ \textcolor{preprocessor}{\#define\ MIN(a,\ b)\ ((a)\ <\ (b)\ ?\ (a)\ :\ (b))}}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00007}\mbox{\hyperlink{macros_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{00007}}\ \textcolor{preprocessor}{\#define\ MAX(a,\ b)\ ((a)\ >\ (b)\ ?\ (a)\ :\ (b))}}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00009}\mbox{\hyperlink{macros_8h_a105949c59c998e38aad80266afac92bf}{00009}}\ \textcolor{preprocessor}{\#define\ FREE(ptr)\ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00010}00010\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ free(ptr);\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00011}00011\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptr\ =\ nullptr;\ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00012}00012\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while\ (0)}}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00014}\mbox{\hyperlink{macros_8h_a3e542cb9c488f76f1d0cb4b6ef234203}{00014}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{macros_8h_a3e542cb9c488f76f1d0cb4b6ef234203}{recalloc}}(\textcolor{keywordtype}{void}*\ ptr,\ \textcolor{keywordtype}{size\_t}\ old\_size,\ \textcolor{keywordtype}{size\_t}\ new\_size)\ \{}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00015}00015\ \ \ \ \ ptr\ =\ realloc(ptr,\ new\_size);}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (!ptr)}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ptr;}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_size\ >\ old\_size)}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ memset((\textcolor{keywordtype}{char}*)ptr\ +\ old\_size,\ 0,\ new\_size\ -\/\ old\_size);}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{return}\ ptr;}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00024}00024\ \}}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00026}\mbox{\hyperlink{macros_8h_ad912cc7e09788a9730d3a7133b5c4251}{00026}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{macros_8h_ad912cc7e09788a9730d3a7133b5c4251}{fill}}(\textcolor{keywordtype}{void}*\ array,\ \textcolor{keywordtype}{size\_t}\ len,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ elem,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ elem\_size)\ \{}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{while}\ (len-\/-\/)\ \{}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ memcpy(array,\ elem,\ elem\_size);}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ array\ =\ (\textcolor{keywordtype}{char}*)array\ +\ elem\_size;}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{macros_8h_source_l00033}00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ MACROS\_H\_}}
+
+\end{DoxyCode}

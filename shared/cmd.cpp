@@ -1,6 +1,27 @@
 #include "cmd.h"
 
+bool Signature::check() const {
+    if (strncmp(name, SIGNATURE.name, sizeof(name)) != 0) {
+        static_assert(sizeof(name) == 2);
+
+        printf(CONSOLE_RED("Error. Wrong signature.") " \"%c%c\" instead of \"%c%c\"\n",
+               name[0], name[1], SIGNATURE.name[0], SIGNATURE.name[1]);
+        return false;
+    }
+
+    if (version != SIGNATURE.version) {
+        printf(CONSOLE_RED("Error. Wrong version.") " \"%d\" instead of \"%d\"\n",
+               version, SIGNATURE.version);
+        return false;
+    }
+
+    return true;
+}
+
 const CmdInfo* find_command_by_num(const Cmd_num_t num) {
+    if (num >= CMDS_DICT_SIZE)
+        return nullptr;
+
     if (num == CMDS_DICT[num].num)
         return CMDS_DICT + num;
 
@@ -19,6 +40,9 @@ const CmdInfo* find_command_by_name(const char* name) {
 }
 
 const RegInfo* find_reg_by_num(const RegNum_t reg) {
+    if (reg >= REGS_NUM)
+        return nullptr;
+
     if (reg == REGS_DICT[reg].num)
         return REGS_DICT + reg;
 

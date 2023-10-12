@@ -1,0 +1,169 @@
+\doxysection{Input\+Data Struct Reference}
+\hypertarget{struct_input_data}{}\label{struct_input_data}\index{InputData@{InputData}}
+
+
+Specifies input text file data.  
+
+
+
+
+{\ttfamily \#include $<$text\+\_\+proccessor.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{struct_input_data_ac8aaf8175b920369abfcfba744af844a}{ctor}} (const char \texorpdfstring{$\ast$}{*}filename)
+\item 
+void \mbox{\hyperlink{struct_input_data_a007abeabd2f7b29f15b38b52cf4f7010}{detor}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+FILE \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_input_data_a2d95eba2156ae23b31ccf1a8d4cd7dec}{file}} = nullptr
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_input_data_a3ef948ecd7175ccc4c68bf9455bc15a5}{text}} = nullptr
+\item 
+\mbox{\hyperlink{struct_string}{String}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_input_data_a21828a6c4ee0b4519f2956d450e4762b}{lines}} = nullptr
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_input_data_aab59d007503e1acdbdbc93be20ef0a7d}{lines\+\_\+cnt}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Specifies input text file data. 
+
+Definition at line \mbox{\hyperlink{text__proccessor_8h_source_l00014}{14}} of file \mbox{\hyperlink{text__proccessor_8h_source}{text\+\_\+proccessor.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_input_data_ac8aaf8175b920369abfcfba744af844a}\label{struct_input_data_ac8aaf8175b920369abfcfba744af844a} 
+\index{InputData@{InputData}!ctor@{ctor}}
+\index{ctor@{ctor}!InputData@{InputData}}
+\doxysubsubsection{\texorpdfstring{ctor()}{ctor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} Input\+Data\+::ctor (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{text__proccessor_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{text__proccessor_8cpp_source}{text\+\_\+proccessor.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00004\ \ \ \ \ assert(filename);}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ res\ =\ \mbox{\hyperlink{file_8cpp_acda06f1ad7ecb836b8cf08abb873404a}{file\_open\_read\_close}}(filename,\ \&\mbox{\hyperlink{struct_input_data_a3ef948ecd7175ccc4c68bf9455bc15a5}{text}},\ 1);}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordflow}{if}\ (res\ !=\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}})}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ assert(\mbox{\hyperlink{struct_input_data_a3ef948ecd7175ccc4c68bf9455bc15a5}{text}});}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{struct_input_data_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}}\ =\ \mbox{\hyperlink{text__lib_8h_a97e0134cb3db1552c2b7f6f3ffa11698}{cntchar}}(\mbox{\hyperlink{struct_input_data_a3ef948ecd7175ccc4c68bf9455bc15a5}{text}},\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{struct_input_data_a21828a6c4ee0b4519f2956d450e4762b}{lines}}\ =\ (\mbox{\hyperlink{struct_string}{String}}*)calloc(\mbox{\hyperlink{struct_input_data_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}}\ +\ 1,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_string}{String}}));}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{struct_input_data_a21828a6c4ee0b4519f2956d450e4762b}{lines}}\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Memory\ allocation\ error!\(\backslash\)n"{}});}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7}{Status::MEMORY\_EXCEED}};}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{text__lib_8cpp_aeb373f3703f99992ad5d95d8526f1149}{split\_text\_to\_lines}}(\mbox{\hyperlink{struct_input_data_a3ef948ecd7175ccc4c68bf9455bc15a5}{text}},\ \mbox{\hyperlink{struct_input_data_a21828a6c4ee0b4519f2956d450e4762b}{lines}});}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{text__lib_8h_source_l00041}{cntchar()}}, \mbox{\hyperlink{file_8cpp_source_l00003}{file\+\_\+open\+\_\+read\+\_\+close()}}, \mbox{\hyperlink{text__proccessor_8h_source_l00020}{lines}}, \mbox{\hyperlink{text__proccessor_8h_source_l00021}{lines\+\_\+cnt}}, \mbox{\hyperlink{statuses_8h_source_l00018}{Status\+::\+MEMORY\+\_\+\+EXCEED}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, \mbox{\hyperlink{text__lib_8cpp_source_l00039}{split\+\_\+text\+\_\+to\+\_\+lines()}}, and \mbox{\hyperlink{text__proccessor_8h_source_l00018}{text}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_2src_2main_8cpp_source_l00022}{main()}}.
+
+\Hypertarget{struct_input_data_a007abeabd2f7b29f15b38b52cf4f7010}\label{struct_input_data_a007abeabd2f7b29f15b38b52cf4f7010} 
+\index{InputData@{InputData}!detor@{detor}}
+\index{detor@{detor}!InputData@{InputData}}
+\doxysubsubsection{\texorpdfstring{detor()}{detor()}}
+{\footnotesize\ttfamily void Input\+Data\+::detor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{text__proccessor_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{text__proccessor_8cpp_source}{text\+\_\+proccessor.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{macros_8h_a105949c59c998e38aad80266afac92bf}{FREE}}(\mbox{\hyperlink{struct_input_data_a21828a6c4ee0b4519f2956d450e4762b}{lines}});}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{macros_8h_a105949c59c998e38aad80266afac92bf}{FREE}}(\mbox{\hyperlink{struct_input_data_a3ef948ecd7175ccc4c68bf9455bc15a5}{text}});}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{macros_8h_source_l00009}{FREE}}, \mbox{\hyperlink{text__proccessor_8h_source_l00020}{lines}}, and \mbox{\hyperlink{text__proccessor_8h_source_l00018}{text}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_2src_2main_8cpp_source_l00022}{main()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_input_data_a2d95eba2156ae23b31ccf1a8d4cd7dec}\label{struct_input_data_a2d95eba2156ae23b31ccf1a8d4cd7dec} 
+\index{InputData@{InputData}!file@{file}}
+\index{file@{file}!InputData@{InputData}}
+\doxysubsubsection{\texorpdfstring{file}{file}}
+{\footnotesize\ttfamily FILE\texorpdfstring{$\ast$}{*} Input\+Data\+::file = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{text__proccessor_8h_source_l00016}{16}} of file \mbox{\hyperlink{text__proccessor_8h_source}{text\+\_\+proccessor.\+h}}.
+
+\Hypertarget{struct_input_data_a21828a6c4ee0b4519f2956d450e4762b}\label{struct_input_data_a21828a6c4ee0b4519f2956d450e4762b} 
+\index{InputData@{InputData}!lines@{lines}}
+\index{lines@{lines}!InputData@{InputData}}
+\doxysubsubsection{\texorpdfstring{lines}{lines}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_string}{String}}\texorpdfstring{$\ast$}{*} Input\+Data\+::lines = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{text__proccessor_8h_source_l00020}{20}} of file \mbox{\hyperlink{text__proccessor_8h_source}{text\+\_\+proccessor.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00003}{assemeble\+\_\+and\+\_\+write()}}, \mbox{\hyperlink{text__proccessor_8cpp_source_l00003}{ctor()}}, and \mbox{\hyperlink{text__proccessor_8cpp_source_l00025}{detor()}}.
+
+\Hypertarget{struct_input_data_aab59d007503e1acdbdbc93be20ef0a7d}\label{struct_input_data_aab59d007503e1acdbdbc93be20ef0a7d} 
+\index{InputData@{InputData}!lines\_cnt@{lines\_cnt}}
+\index{lines\_cnt@{lines\_cnt}!InputData@{InputData}}
+\doxysubsubsection{\texorpdfstring{lines\_cnt}{lines\_cnt}}
+{\footnotesize\ttfamily size\+\_\+t Input\+Data\+::lines\+\_\+cnt = 0}
+
+
+
+Definition at line \mbox{\hyperlink{text__proccessor_8h_source_l00021}{21}} of file \mbox{\hyperlink{text__proccessor_8h_source}{text\+\_\+proccessor.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00003}{assemeble\+\_\+and\+\_\+write()}}, and \mbox{\hyperlink{text__proccessor_8cpp_source_l00003}{ctor()}}.
+
+\Hypertarget{struct_input_data_a3ef948ecd7175ccc4c68bf9455bc15a5}\label{struct_input_data_a3ef948ecd7175ccc4c68bf9455bc15a5} 
+\index{InputData@{InputData}!text@{text}}
+\index{text@{text}!InputData@{InputData}}
+\doxysubsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} Input\+Data\+::text = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{text__proccessor_8h_source_l00018}{18}} of file \mbox{\hyperlink{text__proccessor_8h_source}{text\+\_\+proccessor.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{text__proccessor_8cpp_source_l00003}{ctor()}}, and \mbox{\hyperlink{text__proccessor_8cpp_source_l00025}{detor()}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+assembler/src/text/\mbox{\hyperlink{text__proccessor_8h}{text\+\_\+proccessor.\+h}}\item 
+assembler/src/text/\mbox{\hyperlink{text__proccessor_8cpp}{text\+\_\+proccessor.\+cpp}}\end{DoxyCompactItemize}

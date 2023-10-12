@@ -1,0 +1,43 @@
+\doxysection{main.\+cpp}
+\hypertarget{assembler_2src_2main_8cpp_source}{}\label{assembler_2src_2main_8cpp_source}\index{assembler/src/main.cpp@{assembler/src/main.cpp}}
+\mbox{\hyperlink{assembler_2src_2main_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{statuses_8h}{lib/utils/statuses.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{args__parser_8h}{lib/utils/args\_parser.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{text__proccessor_8h}{text/text\_proccessor.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{assembler_8h}{assembler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00009}\mbox{\hyperlink{assembler_2src_2main_8cpp_a70f364d39afe05aad72ad2bde345b945}{00009}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_argument}{Argument}}\ \mbox{\hyperlink{assembler_2src_2main_8cpp_a70f364d39afe05aad72ad2bde345b945}{ARGS\_DICT}}[]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00010}00010\ \ \ \ \ \{\textcolor{stringliteral}{"{}-\/h"{}},\ \mbox{\hyperlink{args__parser_8cpp_a588357a358b0a2f4369558537ffcb259}{print\_help}},\ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\#\ \ \ -\/h\ -\/\ prints\ help\ information\(\backslash\)n"{}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ Help\ option}}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00012}00012\ \ \ \ \ \{\textcolor{stringliteral}{"{}-\/i"{}},\ \mbox{\hyperlink{args__parser_8cpp_a7b761898455b1312fa4b52594ed10b7d}{read\_input\_filename}},\ \ \textcolor{stringliteral}{"{}\#\ \ \ -\/i\ -\/\ specify\ input\ file\ name\ after\ this\(\backslash\)n"{}}\},\ \ \textcolor{comment}{//<\ Input\ filename}}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00014}00014\ \ \ \ \ \{\textcolor{stringliteral}{"{}-\/o"{}},\ \mbox{\hyperlink{args__parser_8cpp_a87a6361c68c0184ccf8a9a1a04329ff7}{read\_output\_filename}},\ \textcolor{stringliteral}{"{}\#\ \ \ -\/o\ -\/\ specify\ output\ file\ name\ after\ this\(\backslash\)n"{}}\},\ \textcolor{comment}{//<\ Output\ filename}}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00016}00016\ \ \ \ \ \{\textcolor{stringliteral}{"{}-\/d"{}},\ \mbox{\hyperlink{args__parser_8cpp_a6974cb2ff0387131a046097a494c41df}{enable\_debug\_mode}},\ \ \ \ \textcolor{stringliteral}{"{}\#\ \ \ -\/d\ -\/\ enables\ debug\ mode\ (text\ format)\(\backslash\)n"{}}\},\ \ \ \ \textcolor{comment}{//<\ Debug\ mode}}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00017}00017\ \};}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00019}\mbox{\hyperlink{assembler_2src_2main_8cpp_a77beb676f2043bf8630ee0c7ec23d7fe}{00019}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{assembler_2src_2main_8cpp_a77beb676f2043bf8630ee0c7ec23d7fe}{ARGS\_DICT\_LEN}}\ =\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{assembler_2src_2main_8cpp_a70f364d39afe05aad72ad2bde345b945}{ARGS\_DICT}})\ /\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{assembler_2src_2main_8cpp_a70f364d39afe05aad72ad2bde345b945}{ARGS\_DICT}}[0]);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ args\_dict\ array\ len}}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00022}\mbox{\hyperlink{assembler_2src_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00022}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{assembler_2src_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{struct_args_vars}{ArgsVars}}\ args\_vars\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00026}00026\ \ \ \ \ args\_vars.\mbox{\hyperlink{struct_args_vars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}}\ \ =\ \textcolor{stringliteral}{"{}../main.code"{}};\ \textcolor{comment}{//<\ default\ value}}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00027}00027\ \ \ \ \ args\_vars.\mbox{\hyperlink{struct_args_vars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}}\ =\ \textcolor{stringliteral}{"{}../main.exec"{}};\ \textcolor{comment}{//<\ default\ value}}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00028}00028\ \ \ \ \ args\_vars.\mbox{\hyperlink{struct_args_vars_a8ce4b7b542f29f331f3256b4d1896bef}{debug\_mode}}\ \ \ \ \ \ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ default\ value}}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{statuses_8h_af4627700f3927986c7c7d2e526b77a0e}{STATUS\_CHECK\_RAISE}}(\mbox{\hyperlink{args__parser_8cpp_ac63644e05122cdb240ea43e7085f75ca}{args\_parse}}(argc,\ argv,\ \&args\_vars,\ \mbox{\hyperlink{assembler_2src_2main_8cpp_a70f364d39afe05aad72ad2bde345b945}{ARGS\_DICT}},\ \mbox{\hyperlink{assembler_2src_2main_8cpp_a77beb676f2043bf8630ee0c7ec23d7fe}{ARGS\_DICT\_LEN}}));}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{struct_input_data}{InputData}}\ input\_data\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00035}00035\ \ \ \ \ input\_data.\mbox{\hyperlink{struct_input_data_ac8aaf8175b920369abfcfba744af844a}{ctor}}(args\_vars.\mbox{\hyperlink{struct_args_vars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}});}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{statuses_8h_af4627700f3927986c7c7d2e526b77a0e}{STATUS\_CHECK\_RAISE}}(\mbox{\hyperlink{assembler_8cpp_a41d7810457da067d17030bce3b338f4e}{assemeble\_and\_write}}(\&input\_data,\ args\_vars.\mbox{\hyperlink{struct_args_vars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}},\ args\_vars.\mbox{\hyperlink{struct_args_vars_a8ce4b7b542f29f331f3256b4d1896bef}{debug\_mode}}),}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ input\_data.\mbox{\hyperlink{struct_input_data_a007abeabd2f7b29f15b38b52cf4f7010}{detor}}(););}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00043}00043\ \ \ \ \ input\_data.\mbox{\hyperlink{struct_input_data_a007abeabd2f7b29f15b38b52cf4f7010}{detor}}();}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a}{Status::OK\_EXIT}};}
+\DoxyCodeLine{\Hypertarget{assembler_2src_2main_8cpp_source_l00046}00046\ \}}
+
+\end{DoxyCode}

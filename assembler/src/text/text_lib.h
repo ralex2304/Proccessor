@@ -53,13 +53,16 @@ inline size_t cntchar(const char* str, const char ch) {
  *
  * @param str
  * @param symb
+ * @return returns pointer to the comment beginning
  */
-inline void text_throw_out_comment(char* str, const char symb = ';') {
+inline const char* text_throw_out_comment(char* str, const char symb = ';') {
     assert(str);
 
     char* comment_beginning = strchr(str, symb);
     if   (comment_beginning != nullptr)
          *comment_beginning = '\0';
+
+    return comment_beginning + (comment_beginning == nullptr ? 0 : 1);
 }
 
 #endif // #ifndef MY_STRING_H_

@@ -35,14 +35,14 @@ int main(int argc, char* argv[]) {
     /// Reading input data
     char* inp_data = nullptr;
     long size = 0;
-    STATUS_CHECK_RAISE(file_open_read_close(args_vars.input_filename, &inp_data, 0, &size));
+    STATUS_CHECK_RAISE(file_open_read_close(args_vars.input_filename, &inp_data, 0, &size),
+                       FREE(inp_data));
     /// Reading input data end
 
     /// Parsing and writing commands
-    STATUS_CHECK_RAISE(disasm_parse(inp_data, size, args_vars.output_filename, args_vars.debug_mode));
+    STATUS_CHECK_RAISE(disasm_parse(inp_data, size, args_vars.output_filename, args_vars.debug_mode),
+                       FREE(inp_data));
     /// Parsing and writing command end
-
-    FREE(inp_data);
 
     FREE(inp_data);
 

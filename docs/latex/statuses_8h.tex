@@ -1,0 +1,83 @@
+\doxysection{shared/lib/utils/statuses.h File Reference}
+\hypertarget{statuses_8h}{}\label{statuses_8h}\index{shared/lib/utils/statuses.h@{shared/lib/utils/statuses.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_status}{Status}}
+\begin{DoxyCompactList}\small\item\em Specifies functions status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{statuses_8h_af4627700f3927986c7c7d2e526b77a0e}{STATUS\+\_\+\+CHECK\+\_\+\+RAISE}}(func, ...)
+\begin{DoxyCompactList}\small\item\em Macros for validating function return in \doxylink{assembler_2src_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main()} with raise() call. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\+\_\+\+CHECK}}(func, ...)
+\begin{DoxyCompactList}\small\item\em Macros for validating function return. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}\label{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6} 
+\index{statuses.h@{statuses.h}!STATUS\_CHECK@{STATUS\_CHECK}}
+\index{STATUS\_CHECK@{STATUS\_CHECK}!statuses.h@{statuses.h}}
+\doxysubsubsection{\texorpdfstring{STATUS\_CHECK}{STATUS\_CHECK}}
+{\footnotesize\ttfamily \#define STATUS\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{func,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ status\_res\_\ =\ func;\ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (status\_res\_\ !=\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}})\ \{\ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_VA\_ARGS\_\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ status\_res\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (0)}
+
+\end{DoxyCode}
+
+
+Macros for validating function return. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & function \\
+\hline
+{\em ...} & fallback operations \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{statuses_8h_source_l00055}{55}} of file \mbox{\hyperlink{statuses_8h_source}{statuses.\+h}}.
+
+\Hypertarget{statuses_8h_af4627700f3927986c7c7d2e526b77a0e}\label{statuses_8h_af4627700f3927986c7c7d2e526b77a0e} 
+\index{statuses.h@{statuses.h}!STATUS\_CHECK\_RAISE@{STATUS\_CHECK\_RAISE}}
+\index{STATUS\_CHECK\_RAISE@{STATUS\_CHECK\_RAISE}!statuses.h@{statuses.h}}
+\doxysubsubsection{\texorpdfstring{STATUS\_CHECK\_RAISE}{STATUS\_CHECK\_RAISE}}
+{\footnotesize\ttfamily \#define STATUS\+\_\+\+CHECK\+\_\+\+RAISE(\begin{DoxyParamCaption}\item[{}]{func,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ res\ =\ func;\ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (res\ !=\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}})\ \{\ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_VA\_ARGS\_\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(res);\ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (0)}
+
+\end{DoxyCode}
+
+
+Macros for validating function return in \doxylink{assembler_2src_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main()} with raise() call. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & function \\
+\hline
+{\em ...} & fallback operations \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{statuses_8h_source_l00041}{41}} of file \mbox{\hyperlink{statuses_8h_source}{statuses.\+h}}.
+

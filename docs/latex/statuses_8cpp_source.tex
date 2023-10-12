@@ -1,0 +1,49 @@
+\doxysection{statuses.\+cpp}
+\hypertarget{statuses_8cpp_source}{}\label{statuses_8cpp_source}\index{shared/lib/utils/statuses.cpp@{shared/lib/utils/statuses.cpp}}
+\mbox{\hyperlink{statuses_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{statuses_8h}{statuses.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00003}\mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{00003}}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{struct_status_a30c8084592b2ff90cfc22c1860e58dab}{Status::raise}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Statuses}}\ status)\ \{}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00004}00004\ \ \ \ \ \textcolor{keywordflow}{switch}\ (status)\ \{}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00005}00005\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{NORMAL\_WORK}}:}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00006}00006\ \ \ \ \ \ \ \ \ \ \ \ \ assert(0\ \&\&\ \textcolor{stringliteral}{"{}Status::raise():\ NORMAL\_WORK\ mustn't\ be\ raised"{}});}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00007}00007\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca6a20124380bbecfc574b68b7aa4ab5ef}{ARGS\_ERROR}}:}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Exiting.\ Args\ error\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c}{INP\_FILE\_ERROR}}:}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Exiting.\ Input\ file\ error\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{OUT\_FILE\_ERROR}}:}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Exiting.\ Output\ file\ error\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7}{MEMORY\_EXCEED}}:}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Exiting.\ Not\ enough\ memory\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabb9ae17ad4d7d55ccce75d9d38d7926e}{SYNTAX\_ERROR}}:}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Exiting.\ Syntax\ error\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306}{RUNTIME\_ERROR}}:}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Exiting.\ Runtime\ error\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca74a1dcf53dd0430f856c203aa43e0364}{WRONG\_USER\_INPUT}}:}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Exiting.\ Wrong\ user\ input\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca6d1d6a5832bcd12949e74fc041ce5064}{OUTPUT\_ERROR}}:}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Exiting.\ stdout\ error\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca26565794e5f270e88acbed09b3d26e61}{SIGNATURE\_ERROR}}:}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Exiting.\ Signature\ error\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a}{OK\_EXIT}}:}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604caa1be15eed6fe6869628b5c62338587f1}{DEFAULT}}:}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ assert(0\ \&\&\ \textcolor{stringliteral}{"{}Error::raise():\ wrong\ error"{}});}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00041}00041\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{\Hypertarget{statuses_8cpp_source_l00043}00043\ \}}
+
+\end{DoxyCode}

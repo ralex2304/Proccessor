@@ -19,12 +19,10 @@ IFLAGS = -I$(EXTERNAL_DIR)/
 
 SRC_DIR = src
 BUILD_DIR = build/own
-DOCS_DIR = docs
-NON_CODE_DIRS = $(BUILD_DIR) $(DOCS_DIR) .vscode .git
+NON_CODE_DIRS = $(BUILD_DIR) .vscode .git
 TARGET = main
 
 CD = $(shell pwd)
-DOCS_TARGET = $(DOCS_DIR)/docs_generated
 
 
 NESTED_CODE_DIRS_CD = $(shell find ./$(SRC_DIR) -maxdepth 5 -type d $(NON_CODE_DIRS:%=! -path "*%*"))      \
@@ -59,21 +57,8 @@ $(MAKE_DIRS): | $(BUILD_DIR)
 $(BUILD_DIR)/%.o: %.cpp | $(BUILD_DIR) $(MAKE_DIRS)
 	@$(CC) $(IFLAGS) $(CFLAGS) $(if $(sanitizer), $(CFLAGS_SANITIZER)) -MMD -MP -c $< -o $@
 
-.PHONY: doxygen dox
-
-doxygen dox: $(DOCS_TARGET)
-
-$(DOCS_TARGET): $(FILES:/%=%) | $(DOCS_DIR)
-	@echo "Doxygen generated %date% %time%" > $(DOCS_TARGET)
-	@doxygen.exe docs/Doxyfile
-
-$(DOCS_DIR):
-	@mkdir ./$@
-
 clean:
 	@rm -rf ./$(BUILD_DIR)/*
 	@rm -rf ./$(BUILD_DIR)/$(EXTERNAL_DIR)/*
 	@rm -rf ./$(TARGET)
-	@rm -rf ./$(DOCS_TARGET)
-
 

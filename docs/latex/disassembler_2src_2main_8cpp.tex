@@ -1,0 +1,116 @@
+\doxysection{disassembler/src/main.cpp File Reference}
+\hypertarget{disassembler_2src_2main_8cpp}{}\label{disassembler_2src_2main_8cpp}\index{disassembler/src/main.cpp@{disassembler/src/main.cpp}}
+{\ttfamily \#include \"{}lib/utils/statuses.\+h\"{}}\newline
+{\ttfamily \#include \"{}lib/utils/args\+\_\+parser.\+h\"{}}\newline
+{\ttfamily \#include \"{}lib/file/file.\+h\"{}}\newline
+{\ttfamily \#include \"{}lib/utils/macros.\+h\"{}}\newline
+{\ttfamily \#include \"{}disassembler.\+h\"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{disassembler_2src_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{struct_argument}{Argument}} \mbox{\hyperlink{disassembler_2src_2main_8cpp_a70f364d39afe05aad72ad2bde345b945}{ARGS\+\_\+\+DICT}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em This array contains console options, their functions and descriptions. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{disassembler_2src_2main_8cpp_a77beb676f2043bf8630ee0c7ec23d7fe}{ARGS\+\_\+\+DICT\+\_\+\+LEN}} = sizeof(\mbox{\hyperlink{assembler_2src_2main_8cpp_a70f364d39afe05aad72ad2bde345b945}{ARGS\+\_\+\+DICT}}) / sizeof(\mbox{\hyperlink{assembler_2src_2main_8cpp_a70f364d39afe05aad72ad2bde345b945}{ARGS\+\_\+\+DICT}}\mbox{[}0\mbox{]})
+\begin{DoxyCompactList}\small\item\em args\+\_\+dict array len \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{disassembler_2src_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{disassembler_2src_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Parsing console arguments
+
+Parsing console arguments end
+
+Reading input data
+
+Reading input data end
+
+Parsing and writing commands
+
+Parsing and writing command end
+
+Definition at line \mbox{\hyperlink{disassembler_2src_2main_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{disassembler_2src_2main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{struct_args_vars}{ArgsVars}}\ args\_vars\ =\ \{\};}
+\DoxyCodeLine{00028\ \ \ \ \ args\_vars.\mbox{\hyperlink{struct_args_vars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}}\ \ =\ \textcolor{stringliteral}{"{}../main.exec"{}};\ \ \ \textcolor{comment}{//<\ default\ value}}
+\DoxyCodeLine{00029\ \ \ \ \ args\_vars.\mbox{\hyperlink{struct_args_vars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}}\ =\ \textcolor{stringliteral}{"{}../main.disasm"{}};\ \textcolor{comment}{//<\ default\ value}}
+\DoxyCodeLine{00030\ \ \ \ \ args\_vars.\mbox{\hyperlink{struct_args_vars_a8ce4b7b542f29f331f3256b4d1896bef}{debug\_mode}}\ \ \ \ \ \ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ default\ value}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{statuses_8h_af4627700f3927986c7c7d2e526b77a0e}{STATUS\_CHECK\_RAISE}}(\mbox{\hyperlink{args__parser_8cpp_ac63644e05122cdb240ea43e7085f75ca}{args\_parse}}(argc,\ argv,\ \&args\_vars,\ \mbox{\hyperlink{assembler_2src_2main_8cpp_a70f364d39afe05aad72ad2bde345b945}{ARGS\_DICT}},\ \mbox{\hyperlink{assembler_2src_2main_8cpp_a77beb676f2043bf8630ee0c7ec23d7fe}{ARGS\_DICT\_LEN}}));}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{char}*\ inp\_data\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{long}\ size\ =\ 0;}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{statuses_8h_af4627700f3927986c7c7d2e526b77a0e}{STATUS\_CHECK\_RAISE}}(\mbox{\hyperlink{file_8cpp_acda06f1ad7ecb836b8cf08abb873404a}{file\_open\_read\_close}}(args\_vars.\mbox{\hyperlink{struct_args_vars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}},\ \&inp\_data,\ 0,\ \&size),}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{macros_8h_a105949c59c998e38aad80266afac92bf}{FREE}}(inp\_data));}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{statuses_8h_af4627700f3927986c7c7d2e526b77a0e}{STATUS\_CHECK\_RAISE}}(\mbox{\hyperlink{disassembler_8cpp_a6713d7a3995575e1981fb20ab849184a}{disasm\_parse}}(inp\_data,\ size,\ args\_vars.\mbox{\hyperlink{struct_args_vars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}},\ args\_vars.\mbox{\hyperlink{struct_args_vars_a8ce4b7b542f29f331f3256b4d1896bef}{debug\_mode}}),}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{macros_8h_a105949c59c998e38aad80266afac92bf}{FREE}}(inp\_data));}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{macros_8h_a105949c59c998e38aad80266afac92bf}{FREE}}(inp\_data);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a}{Status::OK\_EXIT}};}
+\DoxyCodeLine{00050\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{assembler_2src_2main_8cpp_source_l00009}{ARGS\+\_\+\+DICT}}, \mbox{\hyperlink{assembler_2src_2main_8cpp_source_l00019}{ARGS\+\_\+\+DICT\+\_\+\+LEN}}, \mbox{\hyperlink{args__parser_8cpp_source_l00003}{args\+\_\+parse()}}, \mbox{\hyperlink{args__parser_8h_source_l00027}{Args\+Vars\+::debug\+\_\+mode}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, \mbox{\hyperlink{file_8cpp_source_l00003}{file\+\_\+open\+\_\+read\+\_\+close()}}, \mbox{\hyperlink{macros_8h_source_l00009}{FREE}}, \mbox{\hyperlink{args__parser_8h_source_l00024}{Args\+Vars\+::input\+\_\+filename}}, \mbox{\hyperlink{statuses_8h_source_l00014}{Status\+::\+OK\+\_\+\+EXIT}}, \mbox{\hyperlink{args__parser_8h_source_l00025}{Args\+Vars\+::output\+\_\+filename}}, and \mbox{\hyperlink{statuses_8h_source_l00041}{STATUS\+\_\+\+CHECK\+\_\+\+RAISE}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{disassembler_2src_2main_8cpp_a70f364d39afe05aad72ad2bde345b945}\label{disassembler_2src_2main_8cpp_a70f364d39afe05aad72ad2bde345b945} 
+\index{main.cpp@{main.cpp}!ARGS\_DICT@{ARGS\_DICT}}
+\index{ARGS\_DICT@{ARGS\_DICT}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{ARGS\_DICT}{ARGS\_DICT}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_argument}{Argument}} ARGS\+\_\+\+DICT\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}-\/h"{}},\ \mbox{\hyperlink{args__parser_8cpp_a588357a358b0a2f4369558537ffcb259}{print\_help}},\ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\#\ \ \ -\/h\ -\/\ prints\ help\ information\(\backslash\)n"{}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}-\/i"{}},\ \mbox{\hyperlink{args__parser_8cpp_a7b761898455b1312fa4b52594ed10b7d}{read\_input\_filename}},\ \ \textcolor{stringliteral}{"{}\#\ \ \ -\/i\ -\/\ specify\ input\ file\ name\ after\ this\(\backslash\)n"{}}\},\ \ }
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}-\/o"{}},\ \mbox{\hyperlink{args__parser_8cpp_a87a6361c68c0184ccf8a9a1a04329ff7}{read\_output\_filename}},\ \textcolor{stringliteral}{"{}\#\ \ \ -\/o\ -\/\ specify\ output\ file\ name\ after\ this\(\backslash\)n"{}}\},\ }
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}-\/d"{}},\ \mbox{\hyperlink{args__parser_8cpp_a6974cb2ff0387131a046097a494c41df}{enable\_debug\_mode}},\ \ \ \ \textcolor{stringliteral}{"{}\#\ \ \ -\/d\ -\/\ enables\ debug\ mode\ "{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}(writes\ byte\ posiotion\ of\ every\ command)\(\backslash\)n"{}}\},\ \ \ \ \ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+This array contains console options, their functions and descriptions. 
+
+
+
+Definition at line \mbox{\hyperlink{disassembler_2src_2main_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{disassembler_2src_2main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{disassembler_2src_2main_8cpp_a77beb676f2043bf8630ee0c7ec23d7fe}\label{disassembler_2src_2main_8cpp_a77beb676f2043bf8630ee0c7ec23d7fe} 
+\index{main.cpp@{main.cpp}!ARGS\_DICT\_LEN@{ARGS\_DICT\_LEN}}
+\index{ARGS\_DICT\_LEN@{ARGS\_DICT\_LEN}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{ARGS\_DICT\_LEN}{ARGS\_DICT\_LEN}}
+{\footnotesize\ttfamily const int ARGS\+\_\+\+DICT\+\_\+\+LEN = sizeof(\mbox{\hyperlink{assembler_2src_2main_8cpp_a70f364d39afe05aad72ad2bde345b945}{ARGS\+\_\+\+DICT}}) / sizeof(\mbox{\hyperlink{assembler_2src_2main_8cpp_a70f364d39afe05aad72ad2bde345b945}{ARGS\+\_\+\+DICT}}\mbox{[}0\mbox{]})}
+
+
+
+args\+\_\+dict array len 
+
+
+
+Definition at line \mbox{\hyperlink{disassembler_2src_2main_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{disassembler_2src_2main_8cpp_source}{main.\+cpp}}.
+

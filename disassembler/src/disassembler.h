@@ -18,5 +18,13 @@
 Status::Statuses disasm_parse(const char* data, const size_t size, const char* output_filename,
                               const bool debug_mode);
 
+/**
+ * @brief Writes signature to file
+ *
+ * @param file
+ * @param sign
+ * @return int
+ */
+int disasm_write_signature(FILE* file, const Signature sign);
 
 #endif // #ifndef DISASSEMBLER_H_

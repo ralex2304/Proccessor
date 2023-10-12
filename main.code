@@ -1,8 +1,13 @@
-push 1
-pop rcx
-push rcx+1
+push [1] ;push from address 1 to stack
+pop [rcx]
+push [rcx+1]
 in
-sqrt
+
+sqrt ;square root
 out
+;print
 out
 HLT
+
+;end
+

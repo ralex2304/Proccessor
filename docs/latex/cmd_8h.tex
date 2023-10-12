@@ -1,0 +1,605 @@
+\doxysection{shared/cmd.h File Reference}
+\hypertarget{cmd_8h}{}\label{cmd_8h}\index{shared/cmd.h@{shared/cmd.h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
+{\ttfamily \#include \"{}lib/utils/console.\+h\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_cmd_byte}{Cmd\+Byte}}
+\item 
+struct \mbox{\hyperlink{struct_reg_info}{Reg\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_cmd_args}{Cmd\+Args}}
+\item 
+struct \mbox{\hyperlink{struct_args_en}{Args\+En}}
+\item 
+struct \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_signature}{Signature}}
+\item 
+struct \mbox{\hyperlink{struct_cmd}{Cmd}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{cmd_8h_a55c597e69a4f998286a49ce487a64f08}{IMM\+\_\+\+T\+\_\+\+PRINTF}}~\"{}\%lf\"{}
+\item 
+\#define \mbox{\hyperlink{cmd_8h_a99ba326f1a226d2c12abbfb5005df65a}{IMM\+\_\+\+RAM\+\_\+\+T\+\_\+\+PRINTF}}~\"{}\%lu\"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{Reg\+Num\+\_\+t}}
+\item 
+typedef double \mbox{\hyperlink{cmd_8h_a37e21d5c10fb766b5bb72edd3503f946}{Imm\+\_\+t}}
+\item 
+typedef unsigned long \mbox{\hyperlink{cmd_8h_aa9cee96bd541b988a38cef8e728fdb14}{Imm\+\_\+ram\+\_\+t}}
+\item 
+typedef unsigned char \mbox{\hyperlink{cmd_8h_ab1d5b54818808a2c92c5632aaf961cd0}{Cmd\+\_\+num\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64}{Reg\+Nums}} \+: Reg\+Num\+\_\+t \{ \mbox{\hyperlink{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64ad8a2b3cfd37dc1215cf782d326e5186c}{RAX}} = 0
+, \mbox{\hyperlink{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64a3fca113e3a8a54281655d842075690be}{RBX}} = 1
+, \mbox{\hyperlink{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64a9319e76c0baaa9e53113184ab7d25944}{RCX}} = 2
+, \mbox{\hyperlink{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64a0358584dab0bc3a6ff014581cf6f4660}{RDX}} = 3
+ \}
+\item 
+enum \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14}{Cmd\+Num}} \+: Cmd\+\_\+num\+\_\+t \{ \newline
+\mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14adb27a7a0ffd29254758e190e6ced95d3}{CMD\+\_\+\+HLT}} = 0
+, \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a757970b025eec89847a8c24d2d9b25b2}{CMD\+\_\+\+PUSH}} = 1
+, \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a9147b396759b87cd5c0f32344ac92379}{CMD\+\_\+\+POP}} = 2
+, \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a52be801ea4236a7fc09ba1b4638f5319}{CMD\+\_\+\+IN}} = 3
+, \newline
+\mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a2362d4598ba9820d06142c86113bbb6f}{CMD\+\_\+\+OUT}} = 4
+, \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a055360a89fac584d1244429c71a1cd72}{CMD\+\_\+\+ADD}} = 5
+, \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14aa2e4d65c8e602db526dc72d159a05801}{CMD\+\_\+\+SUB}} = 6
+, \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a4efd5cc5d2f7a7d5cded5174df59be0a}{CMD\+\_\+\+MUL}} = 7
+, \newline
+\mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a67d20add7d52cf256ea237ecb1984f5c}{CMD\+\_\+\+DIV}} = 8
+, \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a14947f5975952a02eda1208f3db263a3}{CMD\+\_\+\+SQRT}} = 9
+, \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a2a4044269c782b979085faef707a43a5}{CMD\+\_\+\+SIN}} = 10
+, \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14ae8d26bb23ca3412db2c2dd00a4d96edc}{CMD\+\_\+\+COS}} = 11
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8h_ae4f1f8a5e27cc0597a1762987ca19f7f}{find\+\_\+command\+\_\+by\+\_\+num}} (const \mbox{\hyperlink{cmd_8h_ab1d5b54818808a2c92c5632aaf961cd0}{Cmd\+\_\+num\+\_\+t}} num)
+\begin{DoxyCompactList}\small\item\em Finds command in CMDS\+\_\+\+DICT by num. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8h_ab9418768cddebf9e17af4644cc3b93fc}{find\+\_\+command\+\_\+by\+\_\+name}} (const char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em Finds command in CMDS\+\_\+\+DICT\mbox{[}\mbox{]} by name. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8h_a1f8806cd553fbea836faef7a35f6cb97}{find\+\_\+reg\+\_\+by\+\_\+num}} (const \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{Reg\+Num\+\_\+t}} reg)
+\begin{DoxyCompactList}\small\item\em Finds reg in REGS\+\_\+\+DICT\mbox{[}\mbox{]} by num. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8h_a21261870d3dfc4b4e1ce443a6b1477cc}{find\+\_\+reg\+\_\+by\+\_\+name}} (const char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em Finds reg in REGS\+\_\+\+DICT\mbox{[}\mbox{]} by name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const size\+\_\+t \mbox{\hyperlink{cmd_8h_a150c0fc704c3322a038de77fa5ff4e7b}{MAX\+\_\+\+LINE\+\_\+\+LEN}} = 64
+\item 
+const unsigned char \mbox{\hyperlink{cmd_8h_a2199b74094b7063794c4ce9e639726d6}{CMD\+\_\+\+BYTE\+\_\+\+NUM\+\_\+\+BIT\+\_\+\+MASK}} = 0b0001\textquotesingle{}1111
+\item 
+const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} \mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\+\_\+\+DICT}} \mbox{[}$\,$\mbox{]}
+\item 
+const \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{Reg\+Num\+\_\+t}} \mbox{\hyperlink{cmd_8h_a55559e71614b4b4ba24d073b1b813120}{REGS\+\_\+\+NUM}} = sizeof(\mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\+\_\+\+DICT}}) / sizeof(\mbox{\hyperlink{struct_reg_info}{Reg\+Info}})
+\item 
+const short \mbox{\hyperlink{cmd_8h_ac6fd8a0b61158e50a7d52538ba0e5be9}{CMD\+\_\+\+VERSION}} = 0
+\item 
+const \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}} \mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\+\_\+\+DICT}} \mbox{[}$\,$\mbox{]}
+\item 
+const size\+\_\+t \mbox{\hyperlink{cmd_8h_aeb56c6b7cc2375d32bf528f71e8d34a0}{CMDS\+\_\+\+DICT\+\_\+\+SIZE}} = sizeof(\mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\+\_\+\+DICT}}) / sizeof(\mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}})
+\item 
+const \mbox{\hyperlink{struct_signature}{Signature}} \mbox{\hyperlink{cmd_8h_af46692534430a47d73d9904057ed74df}{SIGNATURE}} = \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{cmd_8h_a99ba326f1a226d2c12abbfb5005df65a}\label{cmd_8h_a99ba326f1a226d2c12abbfb5005df65a} 
+\index{cmd.h@{cmd.h}!IMM\_RAM\_T\_PRINTF@{IMM\_RAM\_T\_PRINTF}}
+\index{IMM\_RAM\_T\_PRINTF@{IMM\_RAM\_T\_PRINTF}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{IMM\_RAM\_T\_PRINTF}{IMM\_RAM\_T\_PRINTF}}
+{\footnotesize\ttfamily \#define IMM\+\_\+\+RAM\+\_\+\+T\+\_\+\+PRINTF~\"{}\%lu\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00055}{55}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+\Hypertarget{cmd_8h_a55c597e69a4f998286a49ce487a64f08}\label{cmd_8h_a55c597e69a4f998286a49ce487a64f08} 
+\index{cmd.h@{cmd.h}!IMM\_T\_PRINTF@{IMM\_T\_PRINTF}}
+\index{IMM\_T\_PRINTF@{IMM\_T\_PRINTF}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{IMM\_T\_PRINTF}{IMM\_T\_PRINTF}}
+{\footnotesize\ttfamily \#define IMM\+\_\+\+T\+\_\+\+PRINTF~\"{}\%lf\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00051}{51}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{cmd_8h_ab1d5b54818808a2c92c5632aaf961cd0}\label{cmd_8h_ab1d5b54818808a2c92c5632aaf961cd0} 
+\index{cmd.h@{cmd.h}!Cmd\_num\_t@{Cmd\_num\_t}}
+\index{Cmd\_num\_t@{Cmd\_num\_t}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{Cmd\_num\_t}{Cmd\_num\_t}}
+{\footnotesize\ttfamily typedef unsigned char \mbox{\hyperlink{cmd_8h_ab1d5b54818808a2c92c5632aaf961cd0}{Cmd\+\_\+num\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00069}{69}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+\Hypertarget{cmd_8h_aa9cee96bd541b988a38cef8e728fdb14}\label{cmd_8h_aa9cee96bd541b988a38cef8e728fdb14} 
+\index{cmd.h@{cmd.h}!Imm\_ram\_t@{Imm\_ram\_t}}
+\index{Imm\_ram\_t@{Imm\_ram\_t}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{Imm\_ram\_t}{Imm\_ram\_t}}
+{\footnotesize\ttfamily typedef unsigned long \mbox{\hyperlink{cmd_8h_aa9cee96bd541b988a38cef8e728fdb14}{Imm\+\_\+ram\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00053}{53}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+\Hypertarget{cmd_8h_a37e21d5c10fb766b5bb72edd3503f946}\label{cmd_8h_a37e21d5c10fb766b5bb72edd3503f946} 
+\index{cmd.h@{cmd.h}!Imm\_t@{Imm\_t}}
+\index{Imm\_t@{Imm\_t}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{Imm\_t}{Imm\_t}}
+{\footnotesize\ttfamily typedef double \mbox{\hyperlink{cmd_8h_a37e21d5c10fb766b5bb72edd3503f946}{Imm\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00049}{49}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+\Hypertarget{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}\label{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366} 
+\index{cmd.h@{cmd.h}!RegNum\_t@{RegNum\_t}}
+\index{RegNum\_t@{RegNum\_t}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{RegNum\_t}{RegNum\_t}}
+{\footnotesize\ttfamily typedef unsigned char \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{Reg\+Num\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00026}{26}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{cmd_8h_a797039060eebcda99793fb7f223a0b14}\label{cmd_8h_a797039060eebcda99793fb7f223a0b14} 
+\index{cmd.h@{cmd.h}!CmdNum@{CmdNum}}
+\index{CmdNum@{CmdNum}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{CmdNum}{CmdNum}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14}{Cmd\+Num}} \+: \mbox{\hyperlink{cmd_8h_ab1d5b54818808a2c92c5632aaf961cd0}{Cmd\+\_\+num\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_HLT@{CMD\_HLT}!cmd.h@{cmd.h}}\index{cmd.h@{cmd.h}!CMD\_HLT@{CMD\_HLT}}}\Hypertarget{cmd_8h_a797039060eebcda99793fb7f223a0b14adb27a7a0ffd29254758e190e6ced95d3}\label{cmd_8h_a797039060eebcda99793fb7f223a0b14adb27a7a0ffd29254758e190e6ced95d3} 
+CMD\+\_\+\+HLT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_PUSH@{CMD\_PUSH}!cmd.h@{cmd.h}}\index{cmd.h@{cmd.h}!CMD\_PUSH@{CMD\_PUSH}}}\Hypertarget{cmd_8h_a797039060eebcda99793fb7f223a0b14a757970b025eec89847a8c24d2d9b25b2}\label{cmd_8h_a797039060eebcda99793fb7f223a0b14a757970b025eec89847a8c24d2d9b25b2} 
+CMD\+\_\+\+PUSH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_POP@{CMD\_POP}!cmd.h@{cmd.h}}\index{cmd.h@{cmd.h}!CMD\_POP@{CMD\_POP}}}\Hypertarget{cmd_8h_a797039060eebcda99793fb7f223a0b14a9147b396759b87cd5c0f32344ac92379}\label{cmd_8h_a797039060eebcda99793fb7f223a0b14a9147b396759b87cd5c0f32344ac92379} 
+CMD\+\_\+\+POP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_IN@{CMD\_IN}!cmd.h@{cmd.h}}\index{cmd.h@{cmd.h}!CMD\_IN@{CMD\_IN}}}\Hypertarget{cmd_8h_a797039060eebcda99793fb7f223a0b14a52be801ea4236a7fc09ba1b4638f5319}\label{cmd_8h_a797039060eebcda99793fb7f223a0b14a52be801ea4236a7fc09ba1b4638f5319} 
+CMD\+\_\+\+IN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_OUT@{CMD\_OUT}!cmd.h@{cmd.h}}\index{cmd.h@{cmd.h}!CMD\_OUT@{CMD\_OUT}}}\Hypertarget{cmd_8h_a797039060eebcda99793fb7f223a0b14a2362d4598ba9820d06142c86113bbb6f}\label{cmd_8h_a797039060eebcda99793fb7f223a0b14a2362d4598ba9820d06142c86113bbb6f} 
+CMD\+\_\+\+OUT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_ADD@{CMD\_ADD}!cmd.h@{cmd.h}}\index{cmd.h@{cmd.h}!CMD\_ADD@{CMD\_ADD}}}\Hypertarget{cmd_8h_a797039060eebcda99793fb7f223a0b14a055360a89fac584d1244429c71a1cd72}\label{cmd_8h_a797039060eebcda99793fb7f223a0b14a055360a89fac584d1244429c71a1cd72} 
+CMD\+\_\+\+ADD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_SUB@{CMD\_SUB}!cmd.h@{cmd.h}}\index{cmd.h@{cmd.h}!CMD\_SUB@{CMD\_SUB}}}\Hypertarget{cmd_8h_a797039060eebcda99793fb7f223a0b14aa2e4d65c8e602db526dc72d159a05801}\label{cmd_8h_a797039060eebcda99793fb7f223a0b14aa2e4d65c8e602db526dc72d159a05801} 
+CMD\+\_\+\+SUB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_MUL@{CMD\_MUL}!cmd.h@{cmd.h}}\index{cmd.h@{cmd.h}!CMD\_MUL@{CMD\_MUL}}}\Hypertarget{cmd_8h_a797039060eebcda99793fb7f223a0b14a4efd5cc5d2f7a7d5cded5174df59be0a}\label{cmd_8h_a797039060eebcda99793fb7f223a0b14a4efd5cc5d2f7a7d5cded5174df59be0a} 
+CMD\+\_\+\+MUL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_DIV@{CMD\_DIV}!cmd.h@{cmd.h}}\index{cmd.h@{cmd.h}!CMD\_DIV@{CMD\_DIV}}}\Hypertarget{cmd_8h_a797039060eebcda99793fb7f223a0b14a67d20add7d52cf256ea237ecb1984f5c}\label{cmd_8h_a797039060eebcda99793fb7f223a0b14a67d20add7d52cf256ea237ecb1984f5c} 
+CMD\+\_\+\+DIV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_SQRT@{CMD\_SQRT}!cmd.h@{cmd.h}}\index{cmd.h@{cmd.h}!CMD\_SQRT@{CMD\_SQRT}}}\Hypertarget{cmd_8h_a797039060eebcda99793fb7f223a0b14a14947f5975952a02eda1208f3db263a3}\label{cmd_8h_a797039060eebcda99793fb7f223a0b14a14947f5975952a02eda1208f3db263a3} 
+CMD\+\_\+\+SQRT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_SIN@{CMD\_SIN}!cmd.h@{cmd.h}}\index{cmd.h@{cmd.h}!CMD\_SIN@{CMD\_SIN}}}\Hypertarget{cmd_8h_a797039060eebcda99793fb7f223a0b14a2a4044269c782b979085faef707a43a5}\label{cmd_8h_a797039060eebcda99793fb7f223a0b14a2a4044269c782b979085faef707a43a5} 
+CMD\+\_\+\+SIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_COS@{CMD\_COS}!cmd.h@{cmd.h}}\index{cmd.h@{cmd.h}!CMD\_COS@{CMD\_COS}}}\Hypertarget{cmd_8h_a797039060eebcda99793fb7f223a0b14ae8d26bb23ca3412db2c2dd00a4d96edc}\label{cmd_8h_a797039060eebcda99793fb7f223a0b14ae8d26bb23ca3412db2c2dd00a4d96edc} 
+CMD\+\_\+\+COS&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00071}{71}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{cmd_8h_ab1d5b54818808a2c92c5632aaf961cd0}{Cmd\_num\_t}}\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14adb27a7a0ffd29254758e190e6ced95d3}{CMD\_HLT}}\ \ =\ \ 0,}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a757970b025eec89847a8c24d2d9b25b2}{CMD\_PUSH}}\ =\ \ 1,}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a9147b396759b87cd5c0f32344ac92379}{CMD\_POP}}\ \ =\ \ 2,}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a52be801ea4236a7fc09ba1b4638f5319}{CMD\_IN}}\ \ \ =\ \ 3,}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a2362d4598ba9820d06142c86113bbb6f}{CMD\_OUT}}\ \ =\ \ 4,}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a055360a89fac584d1244429c71a1cd72}{CMD\_ADD}}\ \ =\ \ 5,}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14aa2e4d65c8e602db526dc72d159a05801}{CMD\_SUB}}\ \ =\ \ 6,}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a4efd5cc5d2f7a7d5cded5174df59be0a}{CMD\_MUL}}\ \ =\ \ 7,}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a67d20add7d52cf256ea237ecb1984f5c}{CMD\_DIV}}\ \ =\ \ 8,}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a14947f5975952a02eda1208f3db263a3}{CMD\_SQRT}}\ =\ \ 9,}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a2a4044269c782b979085faef707a43a5}{CMD\_SIN}}\ \ =\ 10,}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14ae8d26bb23ca3412db2c2dd00a4d96edc}{CMD\_COS}}\ \ =\ 11,}
+\DoxyCodeLine{00084\ \};}
+
+\end{DoxyCode}
+\Hypertarget{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64}\label{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64} 
+\index{cmd.h@{cmd.h}!RegNums@{RegNums}}
+\index{RegNums@{RegNums}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{RegNums}{RegNums}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64}{Reg\+Nums}} \+: \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{Reg\+Num\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RAX@{RAX}!cmd.h@{cmd.h}}\index{cmd.h@{cmd.h}!RAX@{RAX}}}\Hypertarget{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64ad8a2b3cfd37dc1215cf782d326e5186c}\label{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64ad8a2b3cfd37dc1215cf782d326e5186c} 
+RAX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RBX@{RBX}!cmd.h@{cmd.h}}\index{cmd.h@{cmd.h}!RBX@{RBX}}}\Hypertarget{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64a3fca113e3a8a54281655d842075690be}\label{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64a3fca113e3a8a54281655d842075690be} 
+RBX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RCX@{RCX}!cmd.h@{cmd.h}}\index{cmd.h@{cmd.h}!RCX@{RCX}}}\Hypertarget{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64a9319e76c0baaa9e53113184ab7d25944}\label{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64a9319e76c0baaa9e53113184ab7d25944} 
+RCX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RDX@{RDX}!cmd.h@{cmd.h}}\index{cmd.h@{cmd.h}!RDX@{RDX}}}\Hypertarget{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64a0358584dab0bc3a6ff014581cf6f4660}\label{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64a0358584dab0bc3a6ff014581cf6f4660} 
+RDX&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00028}{28}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{RegNum\_t}}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64ad8a2b3cfd37dc1215cf782d326e5186c}{RAX}}\ =\ 0,}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64a3fca113e3a8a54281655d842075690be}{RBX}}\ =\ 1,}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64a9319e76c0baaa9e53113184ab7d25944}{RCX}}\ =\ 2,}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64a0358584dab0bc3a6ff014581cf6f4660}{RDX}}\ =\ 3,}
+\DoxyCodeLine{00033\ \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{cmd_8h_ab9418768cddebf9e17af4644cc3b93fc}\label{cmd_8h_ab9418768cddebf9e17af4644cc3b93fc} 
+\index{cmd.h@{cmd.h}!find\_command\_by\_name@{find\_command\_by\_name}}
+\index{find\_command\_by\_name@{find\_command\_by\_name}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{find\_command\_by\_name()}{find\_command\_by\_name()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} find\+\_\+command\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+
+
+
+Finds command in CMDS\+\_\+\+DICT\mbox{[}\mbox{]} by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const Command\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{cmd_8cpp_source}{cmd.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ assert(name);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_aeb56c6b7cc2375d32bf528f71e8d34a0}{CMDS\_DICT\_SIZE}};\ i++)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(\mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\_DICT}}[i].name,\ name)\ ==\ 0)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\_DICT}}\ +\ i;}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00040\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{cmd_8h_source_l00096}{CMDS\+\_\+\+DICT}}, and \mbox{\hyperlink{cmd_8h_source_l00115}{CMDS\+\_\+\+DICT\+\_\+\+SIZE}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00034}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}.
+
+\Hypertarget{cmd_8h_ae4f1f8a5e27cc0597a1762987ca19f7f}\label{cmd_8h_ae4f1f8a5e27cc0597a1762987ca19f7f} 
+\index{cmd.h@{cmd.h}!find\_command\_by\_num@{find\_command\_by\_num}}
+\index{find\_command\_by\_num@{find\_command\_by\_num}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{find\_command\_by\_num()}{find\_command\_by\_num()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} find\+\_\+command\+\_\+by\+\_\+num (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{cmd_8h_ab1d5b54818808a2c92c5632aaf961cd0}{Cmd\+\_\+num\+\_\+t}}}]{num }\end{DoxyParamCaption})}
+
+
+
+Finds command in CMDS\+\_\+\+DICT by num. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const Command\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{cmd_8cpp_source}{cmd.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (num\ >=\ \mbox{\hyperlink{cmd_8h_aeb56c6b7cc2375d32bf528f71e8d34a0}{CMDS\_DICT\_SIZE}})}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (num\ ==\ \mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\_DICT}}[num].num)}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\_DICT}}\ +\ num;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ assert(0\ \&\&\ \textcolor{stringliteral}{"{}Command\ num\ and\ index\ in\ CMDS\_DICT\ array\ must\ be\ the\ same"{}});}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{cmd_8h_source_l00096}{CMDS\+\_\+\+DICT}}, and \mbox{\hyperlink{cmd_8h_source_l00115}{CMDS\+\_\+\+DICT\+\_\+\+SIZE}}.
+
+
+
+Referenced by \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, and \mbox{\hyperlink{spu_8cpp_source_l00016}{spu\+\_\+parse()}}.
+
+\Hypertarget{cmd_8h_a21261870d3dfc4b4e1ce443a6b1477cc}\label{cmd_8h_a21261870d3dfc4b4e1ce443a6b1477cc} 
+\index{cmd.h@{cmd.h}!find\_reg\_by\_name@{find\_reg\_by\_name}}
+\index{find\_reg\_by\_name@{find\_reg\_by\_name}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{find\_reg\_by\_name()}{find\_reg\_by\_name()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} \texorpdfstring{$\ast$}{*} find\+\_\+reg\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+
+
+
+Finds reg in REGS\+\_\+\+DICT\mbox{[}\mbox{]} by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const Reg\+Info\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{cmd_8cpp_source}{cmd.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ assert(name);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a55559e71614b4b4ba24d073b1b813120}{REGS\_NUM}};\ i++)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(\mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}[i].name,\ name)\ ==\ 0)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}\ +\ i;}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00061\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{cmd_8h_source_l00040}{REGS\+\_\+\+DICT}}, and \mbox{\hyperlink{cmd_8h_source_l00047}{REGS\+\_\+\+NUM}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00098}{asm\+\_\+read\+\_\+reg()}}.
+
+\Hypertarget{cmd_8h_a1f8806cd553fbea836faef7a35f6cb97}\label{cmd_8h_a1f8806cd553fbea836faef7a35f6cb97} 
+\index{cmd.h@{cmd.h}!find\_reg\_by\_num@{find\_reg\_by\_num}}
+\index{find\_reg\_by\_num@{find\_reg\_by\_num}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{find\_reg\_by\_num()}{find\_reg\_by\_num()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} \texorpdfstring{$\ast$}{*} find\+\_\+reg\+\_\+by\+\_\+num (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{Reg\+Num\+\_\+t}}}]{reg }\end{DoxyParamCaption})}
+
+
+
+Finds reg in REGS\+\_\+\+DICT\mbox{[}\mbox{]} by num. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const Reg\+Info\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{cmd_8cpp_source}{cmd.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (reg\ >=\ \mbox{\hyperlink{cmd_8h_a55559e71614b4b4ba24d073b1b813120}{REGS\_NUM}})}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (reg\ ==\ \mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}[reg].num)}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}\ +\ reg;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ assert(0\ \&\&\ \textcolor{stringliteral}{"{}Ref\ num\ and\ index\ in\ REGS\_DICT\ array\ must\ be\ the\ same"{}});}
+\DoxyCodeLine{00050\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{cmd_8h_source_l00040}{REGS\+\_\+\+DICT}}, and \mbox{\hyperlink{cmd_8h_source_l00047}{REGS\+\_\+\+NUM}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00162}{asm\+\_\+write\+\_\+cmd\+\_\+debug()}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{cmd_8h_a2199b74094b7063794c4ce9e639726d6}\label{cmd_8h_a2199b74094b7063794c4ce9e639726d6} 
+\index{cmd.h@{cmd.h}!CMD\_BYTE\_NUM\_BIT\_MASK@{CMD\_BYTE\_NUM\_BIT\_MASK}}
+\index{CMD\_BYTE\_NUM\_BIT\_MASK@{CMD\_BYTE\_NUM\_BIT\_MASK}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{CMD\_BYTE\_NUM\_BIT\_MASK}{CMD\_BYTE\_NUM\_BIT\_MASK}}
+{\footnotesize\ttfamily const unsigned char CMD\+\_\+\+BYTE\+\_\+\+NUM\+\_\+\+BIT\+\_\+\+MASK = 0b0001\textquotesingle{}1111}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00024}{24}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00034}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}.
+
+\Hypertarget{cmd_8h_ac6fd8a0b61158e50a7d52538ba0e5be9}\label{cmd_8h_ac6fd8a0b61158e50a7d52538ba0e5be9} 
+\index{cmd.h@{cmd.h}!CMD\_VERSION@{CMD\_VERSION}}
+\index{CMD\_VERSION@{CMD\_VERSION}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{CMD\_VERSION}{CMD\_VERSION}}
+{\footnotesize\ttfamily const short CMD\+\_\+\+VERSION = 0}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00094}{94}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+\Hypertarget{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}\label{cmd_8h_a4fe71afcf45e14656ccefffff4cae444} 
+\index{cmd.h@{cmd.h}!CMDS\_DICT@{CMDS\_DICT}}
+\index{CMDS\_DICT@{CMDS\_DICT}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{CMDS\_DICT}{CMDS\_DICT}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}} CMDS\+\_\+\+DICT\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14adb27a7a0ffd29254758e190e6ced95d3}{CMD\_HLT}},\ \ \ \textcolor{stringliteral}{"{}HLT"{}},\ \ \{\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}halt\ -\/\ end\ of\ program"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a757970b025eec89847a8c24d2d9b25b2}{CMD\_PUSH}},\ \ \textcolor{stringliteral}{"{}push"{}},\ \{\textcolor{keyword}{true},\ \ \textcolor{keyword}{true},\ \ \textcolor{keyword}{true}\},\ \ \ \textcolor{stringliteral}{"{}push\ one\ element\ to\ stack\ ||"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ take\ from\ reg\ and\ push\ ||"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ take\ from\ reg\ +\ imm\ and\ push"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a9147b396759b87cd5c0f32344ac92379}{CMD\_POP}},\ \ \ \textcolor{stringliteral}{"{}pop"{}},\ \ \{\textcolor{keyword}{true},\ \ \textcolor{keyword}{false},\ \textcolor{keyword}{true}\},\ \ \ \textcolor{stringliteral}{"{}pop\ from\ stack\ and\ write\ to\ reg"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a52be801ea4236a7fc09ba1b4638f5319}{CMD\_IN}},\ \ \ \ \textcolor{stringliteral}{"{}in"{}},\ \ \ \{\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}push\ one\ element\ to\ stack\ from\ user\ input"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a2362d4598ba9820d06142c86113bbb6f}{CMD\_OUT}},\ \ \ \textcolor{stringliteral}{"{}out"{}},\ \ \{\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}pop\ and\ print\ element\ from\ stack"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a055360a89fac584d1244429c71a1cd72}{CMD\_ADD}},\ \ \ \textcolor{stringliteral}{"{}add"{}},\ \ \{\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}+"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14aa2e4d65c8e602db526dc72d159a05801}{CMD\_SUB}},\ \ \ \textcolor{stringliteral}{"{}sub"{}},\ \ \{\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}-\/"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a4efd5cc5d2f7a7d5cded5174df59be0a}{CMD\_MUL}},\ \ \ \textcolor{stringliteral}{"{}mul"{}},\ \ \{\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}*"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a67d20add7d52cf256ea237ecb1984f5c}{CMD\_DIV}},\ \ \ \textcolor{stringliteral}{"{}div"{}},\ \ \{\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}/"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a14947f5975952a02eda1208f3db263a3}{CMD\_SQRT}},\ \ \textcolor{stringliteral}{"{}sqrt"{}},\ \{\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}sqaure\ root"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a2a4044269c782b979085faef707a43a5}{CMD\_SIN}},\ \ \ \textcolor{stringliteral}{"{}sin"{}},\ \ \{\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}sinus"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14ae8d26bb23ca3412db2c2dd00a4d96edc}{CMD\_COS}},\ \ \ \textcolor{stringliteral}{"{}cos"{}},\ \ \{\},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}cosinus"{}}\},}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00096}{96}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{cmd_8cpp_source_l00031}{find\+\_\+command\+\_\+by\+\_\+name()}}, \mbox{\hyperlink{cmd_8cpp_source_l00021}{find\+\_\+command\+\_\+by\+\_\+num()}}, and \mbox{\hyperlink{args__parser_8cpp_source_l00115}{print\+\_\+commands\+\_\+list()}}.
+
+\Hypertarget{cmd_8h_aeb56c6b7cc2375d32bf528f71e8d34a0}\label{cmd_8h_aeb56c6b7cc2375d32bf528f71e8d34a0} 
+\index{cmd.h@{cmd.h}!CMDS\_DICT\_SIZE@{CMDS\_DICT\_SIZE}}
+\index{CMDS\_DICT\_SIZE@{CMDS\_DICT\_SIZE}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{CMDS\_DICT\_SIZE}{CMDS\_DICT\_SIZE}}
+{\footnotesize\ttfamily const size\+\_\+t CMDS\+\_\+\+DICT\+\_\+\+SIZE = sizeof(\mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\+\_\+\+DICT}}) / sizeof(\mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}})}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00115}{115}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{cmd_8cpp_source_l00031}{find\+\_\+command\+\_\+by\+\_\+name()}}, \mbox{\hyperlink{cmd_8cpp_source_l00021}{find\+\_\+command\+\_\+by\+\_\+num()}}, and \mbox{\hyperlink{args__parser_8cpp_source_l00115}{print\+\_\+commands\+\_\+list()}}.
+
+\Hypertarget{cmd_8h_a150c0fc704c3322a038de77fa5ff4e7b}\label{cmd_8h_a150c0fc704c3322a038de77fa5ff4e7b} 
+\index{cmd.h@{cmd.h}!MAX\_LINE\_LEN@{MAX\_LINE\_LEN}}
+\index{MAX\_LINE\_LEN@{MAX\_LINE\_LEN}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_LINE\_LEN}{MAX\_LINE\_LEN}}
+{\footnotesize\ttfamily const size\+\_\+t MAX\+\_\+\+LINE\+\_\+\+LEN = 64}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00013}{13}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00034}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}.
+
+\Hypertarget{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}\label{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724} 
+\index{cmd.h@{cmd.h}!REGS\_DICT@{REGS\_DICT}}
+\index{REGS\_DICT@{REGS\_DICT}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{REGS\_DICT}{REGS\_DICT}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} REGS\+\_\+\+DICT\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64ad8a2b3cfd37dc1215cf782d326e5186c}{RAX}},\ \textcolor{stringliteral}{"{}rax"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64a3fca113e3a8a54281655d842075690be}{RBX}},\ \textcolor{stringliteral}{"{}rbx"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64a9319e76c0baaa9e53113184ab7d25944}{RCX}},\ \textcolor{stringliteral}{"{}rcx"{}}\},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{cmd_8h_adc8d3ec079482a8a8b6861151bd4dc64a0358584dab0bc3a6ff014581cf6f4660}{RDX}},\ \textcolor{stringliteral}{"{}rdx"{}}\},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00040}{40}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{cmd_8cpp_source_l00052}{find\+\_\+reg\+\_\+by\+\_\+name()}}, and \mbox{\hyperlink{cmd_8cpp_source_l00042}{find\+\_\+reg\+\_\+by\+\_\+num()}}.
+
+\Hypertarget{cmd_8h_a55559e71614b4b4ba24d073b1b813120}\label{cmd_8h_a55559e71614b4b4ba24d073b1b813120} 
+\index{cmd.h@{cmd.h}!REGS\_NUM@{REGS\_NUM}}
+\index{REGS\_NUM@{REGS\_NUM}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{REGS\_NUM}{REGS\_NUM}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{Reg\+Num\+\_\+t}} REGS\+\_\+\+NUM = sizeof(\mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\+\_\+\+DICT}}) / sizeof(\mbox{\hyperlink{struct_reg_info}{Reg\+Info}})}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00047}{47}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{cmd_8cpp_source_l00052}{find\+\_\+reg\+\_\+by\+\_\+name()}}, and \mbox{\hyperlink{cmd_8cpp_source_l00042}{find\+\_\+reg\+\_\+by\+\_\+num()}}.
+
+\Hypertarget{cmd_8h_af46692534430a47d73d9904057ed74df}\label{cmd_8h_af46692534430a47d73d9904057ed74df} 
+\index{cmd.h@{cmd.h}!SIGNATURE@{SIGNATURE}}
+\index{SIGNATURE@{SIGNATURE}!cmd.h@{cmd.h}}
+\doxysubsubsection{\texorpdfstring{SIGNATURE}{SIGNATURE}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_signature}{Signature}} SIGNATURE = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00126}{126}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00034}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}, \mbox{\hyperlink{assembler_8cpp_source_l00247}{asm\+\_\+write\+\_\+signature()}}, \mbox{\hyperlink{cmd_8cpp_source_l00003}{Signature\+::check()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, and \mbox{\hyperlink{spu_8cpp_source_l00016}{spu\+\_\+parse()}}.
+

@@ -5,6 +5,10 @@
 #include <assert.h>
 #include <math.h>
 #include <string.h>
+#include <stdio.h>
+#include <inttypes.h>
+
+#include "lib/utils/console.h"
 
 const size_t MAX_LINE_LEN = 64;   //< max command text line len
 
@@ -12,7 +16,10 @@ struct CmdByte {
     unsigned char num: 5;
     bool reg: 1;
     bool imm: 1;
+    bool ram: 1;
 };
+
+static_assert(sizeof(CmdByte) == 1);
 
 const unsigned char CMD_BYTE_NUM_BIT_MASK = 0b0001'1111;
 
@@ -43,15 +50,20 @@ typedef double Imm_t;
 
 #define IMM_T_PRINTF "%lf"
 
+typedef unsigned long Imm_ram_t;
+
+#define IMM_RAM_T_PRINTF "%lu"
 
 struct CmdArgs {
     Imm_t imm = NAN;
     unsigned char reg = -1;
+    Imm_ram_t imm_ram = 0;
 };
 
 struct ArgsEn {
     bool reg: 1;
     bool imm: 1;
+    bool ram: 1;
 };
 
 typedef unsigned char Cmd_num_t;
@@ -79,24 +91,39 @@ struct CmdInfo {
     const char* description = nullptr;
 };
 
+const short CMD_VERSION = 0;
+
 const CmdInfo CMDS_DICT[] {
 
-    {CMD_HLT,   "HLT",  {},             "halt - end of program"},
-    {CMD_PUSH,  "push", {true,  true }, "push one element to stack || take from reg and push || take from reg + imm and push"},
-    {CMD_POP,   "pop",  {true,  false}, "pop from stack and write to reg"},
-    {CMD_IN,    "in",   {},             "push one element to stack from user input"},
-    {CMD_OUT,   "out",  {},             "pop and print element from stack"},
-    {CMD_ADD,   "add",  {},             "+"},
-    {CMD_SUB,   "sub",  {},             "-"},
-    {CMD_MUL,   "mul",  {},             "*"},
-    {CMD_DIV,   "div",  {},             "/"},
-    {CMD_SQRT,  "sqrt", {},             "sqaure root"},
-    {CMD_SIN,   "sin",  {},             "sinus"},
-    {CMD_COS,   "cos",  {},             "cosinus"},
+    {CMD_HLT,   "HLT",  {},                     "halt - end of program"},
+    {CMD_PUSH,  "push", {true,  true,  true},   "push one element to stack ||"
+                                                " take from reg and push ||"
+                                                " take from reg + imm and push"},
+    {CMD_POP,   "pop",  {true,  false, true},   "pop from stack and write to reg"},
+    {CMD_IN,    "in",   {},                     "push one element to stack from user input"},
+    {CMD_OUT,   "out",  {},                     "pop and print element from stack"},
+    {CMD_ADD,   "add",  {},                     "+"},
+    {CMD_SUB,   "sub",  {},                     "-"},
+    {CMD_MUL,   "mul",  {},                     "*"},
+    {CMD_DIV,   "div",  {},                     "/"},
+    {CMD_SQRT,  "sqrt", {},                     "sqaure root"},
+    {CMD_SIN,   "sin",  {},                     "sinus"},
+    {CMD_COS,   "cos",  {},                     "cosinus"},
 
 };
 
 const size_t CMDS_DICT_SIZE = sizeof(CMDS_DICT) / sizeof(CmdInfo); //< Number of commands
+
+struct Signature {
+    char name[2] = {'K','U'};
+    short version = CMD_VERSION;
+
+    bool check() const;
+};
+
+static_assert(sizeof(Signature) == 4);
+
+const Signature SIGNATURE = {};
 
 struct Cmd {
     const CmdInfo* info = nullptr;

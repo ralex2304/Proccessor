@@ -1,0 +1,16 @@
+;Signature: KU
+;Version: 0
+;line - byte - command
+;   1 -    4 - C1 00 00 00 00 00 00 F8 7F    - push [1] ;push from address 1 to stack
+;   2 -   13 - A2 02                         - pop [rcx]
+;   3 -   15 - E1 02 00 00 00 00 00 00 F8 7F - push [rcx+1]
+;   4 -   25 - 03                            - in
+;   5 -   26 -                               -
+;   6 -   26 - 09                            - sqrt ;square root
+;   7 -   27 - 04                            - out
+;   8 -   28 -                               - ;print
+;   9 -   28 - 04                            - out
+;  10 -   29 - 00                            - HLT
+;  11 -   30 -                               -
+;  12 -   30 -                               - ;end
+;  13 -   30 -                               -

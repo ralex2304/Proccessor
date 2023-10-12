@@ -1,8 +1,10 @@
-push 1.000000                                     ;byte=0
-pop rcx                                           ;byte=9
-push rcx+1.000000                                 ;byte=11
-in                                                ;byte=21
-sqrt                                              ;byte=22
-out                                               ;byte=23
-out                                               ;byte=24
-HLT                                               ;byte=25
+;Signature: KU
+;Version: 0
+push [1]                                          ;byte=4
+pop [rcx]                                         ;byte=13
+push [rcx+1]                                      ;byte=15
+in                                                ;byte=25
+sqrt                                              ;byte=26
+out                                               ;byte=27
+out                                               ;byte=28
+HLT                                               ;byte=29
