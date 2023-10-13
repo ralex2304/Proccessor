@@ -1,16 +1,17 @@
 var searchData=
 [
-  ['imm_0',['imm',['../struct_cmd_byte.html#ae86855d817fa5c60367ce99d1c826287',1,'CmdByte::imm'],['../struct_cmd_args.html#a5aef979bf03c8e615ba60d47d364a14b',1,'CmdArgs::imm'],['../struct_args_en.html#a5fd69cd0fd22ffb5e4216a19bedce75a',1,'ArgsEn::imm']]],
-  ['imm_5fram_1',['imm_ram',['../struct_cmd_args.html#ada3b2b497527f608e6ccd7f4b4a2b166',1,'CmdArgs']]],
-  ['imm_5fram_5ft_2',['Imm_ram_t',['../cmd_8h.html#a6c224545f3adf99483ea18e36199cb23',1,'cmd.h']]],
-  ['imm_5fram_5ft_5fprintf_3',['IMM_RAM_T_PRINTF',['../cmd_8h.html#a99ba326f1a226d2c12abbfb5005df65a',1,'cmd.h']]],
-  ['imm_5ft_4',['Imm_t',['../cmd_8h.html#a37e21d5c10fb766b5bb72edd3503f946',1,'cmd.h']]],
-  ['imm_5ft_5fprintf_5',['IMM_T_PRINTF',['../cmd_8h.html#a55c597e69a4f998286a49ce487a64f08',1,'cmd.h']]],
-  ['info_6',['info',['../struct_cmd.html#a8df32ebe09e03d38de8c20f6266611b4',1,'Cmd']]],
-  ['inp_5ffile_5ferror_7',['INP_FILE_ERROR',['../struct_status.html#ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c',1,'Status']]],
-  ['input_5ffilename_8',['input_filename',['../struct_args_vars.html#afee9f78a6ba610ff6a2ee809ebbdb56b',1,'ArgsVars']]],
-  ['inputdata_9',['InputData',['../struct_input_data.html',1,'']]],
-  ['invalid_5fcapacity_10',['INVALID_CAPACITY',['../struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5aa41ce2e438b0124421ebaa0a7bd4a8b2',1,'Stack']]],
-  ['is_5fpoison_11',['is_poison',['../config_8h.html#ab77683e8a25070f813aa006636770700',1,'config.h']]],
-  ['is_5fptr_5fvalid_12',['is_ptr_valid',['../ptr__valid_8h.html#a9118aa9878b41057b6d2067e5d5dff2b',1,'ptr_valid.h']]]
+  ['halt_0',['HALT',['../spu__dsl_8h.html#a597f2881b60f9b4f9ae6451abaaa1b7c',1,'spu_dsl.h']]],
+  ['hash_5fprotect_1',['HASH_PROTECT',['../config_8h.html#a3d1311d889954a0ddf65567d3913eb29',1,'config.h']]],
+  ['html_2eh_2',['html.h',['../html_8h.html',1,'']]],
+  ['html_5fbegin_3',['HTML_BEGIN',['../html_8h.html#a010fbac8fc4096415b18c664d84b12da',1,'html.h']]],
+  ['html_5fend_4',['HTML_END',['../html_8h.html#a2df8677bea55f26352fc8982b34337f2',1,'html.h']]],
+  ['html_5fend_5ffont_5',['HTML_END_FONT',['../html_8h.html#ac6fb27458082955e7224ade5783bd229',1,'html.h']]],
+  ['html_5ffont_5fgreen_6',['HTML_FONT_GREEN',['../html_8h.html#a73b206148938552599ef8836e6c6e850',1,'html.h']]],
+  ['html_5ffont_5fred_7',['HTML_FONT_RED',['../html_8h.html#a436e7328a8ecee2a70a733687b38baa7',1,'html.h']]],
+  ['html_5fgreen_8',['HTML_GREEN',['../html_8h.html#a3208c6e370f00379a74f19180fbc6462',1,'html.h']]],
+  ['html_5fh1_9',['HTML_H1',['../html_8h.html#a9f5368223c1b5d131b7614bd65aa3dbd',1,'html.h']]],
+  ['html_5fh2_10',['HTML_H2',['../html_8h.html#a4f37d26f15ba36163d63280545df246b',1,'html.h']]],
+  ['html_5fh3_11',['HTML_H3',['../html_8h.html#af97a9d1e610abb2dccfa0419ac5361ed',1,'html.h']]],
+  ['html_5fred_12',['HTML_RED',['../html_8h.html#aeff0254241bdd079cf60aa19016e3c44',1,'html.h']]],
+  ['html_5ftext_13',['HTML_TEXT',['../html_8h.html#af5420035dccd3dfd5325ca0638081475',1,'html.h']]]
 ];

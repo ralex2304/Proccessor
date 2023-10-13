@@ -49,12 +49,12 @@
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00046}00046\ \}}
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00048}\mbox{\hyperlink{cmd_8cpp_a1f8806cd553fbea836faef7a35f6cb97}{00048}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_reg_info}{RegInfo}}*\ \mbox{\hyperlink{cmd_8cpp_a1f8806cd553fbea836faef7a35f6cb97}{find\_reg\_by\_num}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{RegNum\_t}}\ reg)\ \{}
-\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (reg\ >=\ \mbox{\hyperlink{cmd_8h_a55559e71614b4b4ba24d073b1b813120}{REGS\_NUM}})}
+\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00048}\mbox{\hyperlink{cmd_8cpp_a1f8806cd553fbea836faef7a35f6cb97}{00048}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_reg_info}{RegInfo}}*\ \mbox{\hyperlink{cmd_8cpp_a1f8806cd553fbea836faef7a35f6cb97}{find\_reg\_by\_num}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{RegNum\_t}}\ \mbox{\hyperlink{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}{reg}})\ \{}
+\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}{reg}}\ >=\ \mbox{\hyperlink{cmd_8h_a55559e71614b4b4ba24d073b1b813120}{REGS\_NUM}})}
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00051}00051\ }
-\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{if}\ (reg\ ==\ \mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}[reg].num)}
-\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}\ +\ reg;}
+\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}{reg}}\ ==\ \mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}[\mbox{\hyperlink{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}{reg}}].num)}
+\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}\ +\ \mbox{\hyperlink{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}{reg}};}
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00054}00054\ }
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00055}00055\ \ \ \ \ assert(0\ \&\&\ \textcolor{stringliteral}{"{}Ref\ num\ and\ index\ in\ REGS\_DICT\ array\ must\ be\ the\ same"{}});}
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00056}00056\ \}}

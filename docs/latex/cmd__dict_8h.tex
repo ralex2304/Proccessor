@@ -1,0 +1,128 @@
+\doxysection{shared/cmd\+\_\+dict.h File Reference}
+\hypertarget{cmd__dict_8h}{}\label{cmd__dict_8h}\index{shared/cmd\_dict.h@{shared/cmd\_dict.h}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cmd__dict_8h_adca31b522f9c737cf78bd9e0fd431e0b}{DEF\+\_\+\+CMD}} (push, 1, \mbox{\hyperlink{cmd__dict_8h_a1a24fc2eb8c1af6d06ac15bcec47f088}{true}}, \mbox{\hyperlink{cmd__dict_8h_a1a24fc2eb8c1af6d06ac15bcec47f088}{true}}, \mbox{\hyperlink{cmd__dict_8h_a1a24fc2eb8c1af6d06ac15bcec47f088}{true}}, \"{}push one element to \mbox{\hyperlink{cmd__dict_8h_af65c1bc5ae1ac40f31acc4fbbdcf3774}{stack}} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} take from \mbox{\hyperlink{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}{reg}} and push \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}\"{} \"{} take from \mbox{\hyperlink{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}{reg}} + imm and push\"{}, \{ \mbox{\hyperlink{spu__dsl_8h_a226e577a36ed0a410a8affc1cd05ce25}{CHECK\+\_\+\+AND\+\_\+\+THROW\+\_\+\+ERR}}(\mbox{\hyperlink{spu__dsl_8h_a487a6897858a9db1907ebf1906b9db7e}{IS\+\_\+\+ARG\+\_\+\+REG}}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{spu__dsl_8h_a6e11fe2cdb7ebb3f3c6c3ce953ccad61}{IS\+\_\+\+ARG\+\_\+\+IMM}}, \"{}\textbackslash{}\"{}push\textbackslash{}\"{} requires at least one argument.\"{});\mbox{\hyperlink{spu__dsl_8h_afa935d43c9addc1630eee32fb792a6fc}{IMM\+\_\+T}} \mbox{\hyperlink{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}{a}}=0;\mbox{\hyperlink{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}{a}}+=\mbox{\hyperlink{spu__dsl_8h_ad6ade6409c5ca69f90efdfd1acce35fa}{REG}}(\mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\+\_\+\+REG}});\mbox{\hyperlink{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}{a}}+=\mbox{\hyperlink{spu__dsl_8h_a94d7fa0746bc605f9ce2552764e5eeef}{ARG\+\_\+\+IMM}};\mbox{\hyperlink{spu__dsl_8h_ae12240a3f4de46ee0616d67825971f44}{PUSH}}(\mbox{\hyperlink{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}{a}});\}) DEF\+\_\+\+CMD(pop
+\item 
+pop from \mbox{\hyperlink{cmd__dict_8h_af65c1bc5ae1ac40f31acc4fbbdcf3774}{stack}} and write to \mbox{\hyperlink{spu__dsl_8h_a8e6708d01dec9fd978f58748eda35132}{POP}} \& \mbox{\hyperlink{cmd__dict_8h_acd3b17ba5a2f1ada4035b8bbbe446912}{REG}} (\mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\+\_\+\+REG}})
+\item 
+\mbox{\hyperlink{cmd__dict_8h_aa278a2dd61c2e8f04a7787f3e2451eb3}{DEF\+\_\+\+CMD}} (in, 3, \mbox{\hyperlink{cmd__dict_8h_ae6c865df784842196d411c1466b01686}{false}}, \mbox{\hyperlink{cmd__dict_8h_ae6c865df784842196d411c1466b01686}{false}}, \mbox{\hyperlink{cmd__dict_8h_ae6c865df784842196d411c1466b01686}{false}}, \"{}push one element to \mbox{\hyperlink{cmd__dict_8h_af65c1bc5ae1ac40f31acc4fbbdcf3774}{stack}} from user input\"{}, \{ \mbox{\hyperlink{spu__dsl_8h_afa935d43c9addc1630eee32fb792a6fc}{IMM\+\_\+T}} \mbox{\hyperlink{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}{a}}=0;\mbox{\hyperlink{spu__dsl_8h_a1f92e847fc8c4ba1353b03992c5eeb5a}{GET\+\_\+\+FROM\+\_\+\+INPUT}}(\&\mbox{\hyperlink{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}{a}});\mbox{\hyperlink{spu__dsl_8h_ae12240a3f4de46ee0616d67825971f44}{PUSH}}(\mbox{\hyperlink{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}{a}});\}) DEF\+\_\+\+CMD(out
+\item 
+\mbox{\hyperlink{cmd__dict_8h_af842c31f6f3956f3b08979c3964b09cf}{PRINT}} (\mbox{\hyperlink{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}{a}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cmd__dict_8h_a1a24fc2eb8c1af6d06ac15bcec47f088}{true}}
+\item 
+\mbox{\hyperlink{cmd__dict_8h_ae6c865df784842196d411c1466b01686}{false}}
+\item 
+pop from \mbox{\hyperlink{cmd__dict_8h_af65c1bc5ae1ac40f31acc4fbbdcf3774}{stack}} and write to \mbox{\hyperlink{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}{reg}}
+\item 
+pop and print element from \mbox{\hyperlink{cmd__dict_8h_af65c1bc5ae1ac40f31acc4fbbdcf3774}{stack}}
+\item 
+pop and print element from \mbox{\hyperlink{spu__dsl_8h_a8e6708d01dec9fd978f58748eda35132}{POP}} \& \mbox{\hyperlink{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}{a}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{cmd__dict_8h_aa278a2dd61c2e8f04a7787f3e2451eb3}\label{cmd__dict_8h_aa278a2dd61c2e8f04a7787f3e2451eb3} 
+\index{cmd\_dict.h@{cmd\_dict.h}!DEF\_CMD@{DEF\_CMD}}
+\index{DEF\_CMD@{DEF\_CMD}!cmd\_dict.h@{cmd\_dict.h}}
+\doxysubsubsection{\texorpdfstring{DEF\_CMD()}{DEF\_CMD()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily DEF\+\_\+\+CMD (\begin{DoxyParamCaption}\item[{in}]{,  }\item[{3}]{,  }\item[{\mbox{\hyperlink{cmd__dict_8h_ae6c865df784842196d411c1466b01686}{false}}}]{,  }\item[{\mbox{\hyperlink{cmd__dict_8h_ae6c865df784842196d411c1466b01686}{false}}}]{,  }\item[{\mbox{\hyperlink{cmd__dict_8h_ae6c865df784842196d411c1466b01686}{false}}}]{,  }\item[{\"{}push one element to \mbox{\hyperlink{cmd__dict_8h_af65c1bc5ae1ac40f31acc4fbbdcf3774}{stack}} from user input\"{}}]{,  }\item[{\{ \mbox{\hyperlink{spu__dsl_8h_afa935d43c9addc1630eee32fb792a6fc}{IMM\+\_\+T}} \mbox{\hyperlink{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}{a}}=0;\mbox{\hyperlink{spu__dsl_8h_a1f92e847fc8c4ba1353b03992c5eeb5a}{GET\+\_\+\+FROM\+\_\+\+INPUT}}(\&\mbox{\hyperlink{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}{a}});\mbox{\hyperlink{spu__dsl_8h_ae12240a3f4de46ee0616d67825971f44}{PUSH}}(\mbox{\hyperlink{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}{a}});\}}]{ }\end{DoxyParamCaption})}
+
+
+
+References \mbox{\hyperlink{cmd__dict_8h_source_l00033}{a}}, \mbox{\hyperlink{spu__dsl_8h_source_l00054}{GET\+\_\+\+FROM\+\_\+\+INPUT}}, \mbox{\hyperlink{spu__dsl_8h_source_l00004}{IMM\+\_\+T}}, and \mbox{\hyperlink{spu__dsl_8h_source_l00036}{PUSH}}.
+
+\Hypertarget{cmd__dict_8h_adca31b522f9c737cf78bd9e0fd431e0b}\label{cmd__dict_8h_adca31b522f9c737cf78bd9e0fd431e0b} 
+\index{cmd\_dict.h@{cmd\_dict.h}!DEF\_CMD@{DEF\_CMD}}
+\index{DEF\_CMD@{DEF\_CMD}!cmd\_dict.h@{cmd\_dict.h}}
+\doxysubsubsection{\texorpdfstring{DEF\_CMD()}{DEF\_CMD()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily DEF\+\_\+\+CMD (\begin{DoxyParamCaption}\item[{push}]{,  }\item[{1}]{,  }\item[{\mbox{\hyperlink{cmd__dict_8h_a1a24fc2eb8c1af6d06ac15bcec47f088}{true}}}]{,  }\item[{\mbox{\hyperlink{cmd__dict_8h_a1a24fc2eb8c1af6d06ac15bcec47f088}{true}}}]{,  }\item[{\mbox{\hyperlink{cmd__dict_8h_a1a24fc2eb8c1af6d06ac15bcec47f088}{true}}}]{,  }\item[{\"{}push one element to \mbox{\hyperlink{cmd__dict_8h_af65c1bc5ae1ac40f31acc4fbbdcf3774}{stack}} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} take from \mbox{\hyperlink{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}{reg}} and push \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}\"{} \"{} take from \mbox{\hyperlink{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}{reg}} + imm and push\"{}}]{,  }\item[{\{ \mbox{\hyperlink{spu__dsl_8h_a226e577a36ed0a410a8affc1cd05ce25}{CHECK\+\_\+\+AND\+\_\+\+THROW\+\_\+\+ERR}}(\mbox{\hyperlink{spu__dsl_8h_a487a6897858a9db1907ebf1906b9db7e}{IS\+\_\+\+ARG\+\_\+\+REG}}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{spu__dsl_8h_a6e11fe2cdb7ebb3f3c6c3ce953ccad61}{IS\+\_\+\+ARG\+\_\+\+IMM}}, \"{}\textbackslash{}\"{}push\textbackslash{}\"{} requires at least one argument.\"{});\mbox{\hyperlink{spu__dsl_8h_afa935d43c9addc1630eee32fb792a6fc}{IMM\+\_\+T}} \mbox{\hyperlink{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}{a}}=0;\mbox{\hyperlink{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}{a}}+=\mbox{\hyperlink{spu__dsl_8h_ad6ade6409c5ca69f90efdfd1acce35fa}{REG}}(\mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\+\_\+\+REG}});\mbox{\hyperlink{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}{a}}+=\mbox{\hyperlink{spu__dsl_8h_a94d7fa0746bc605f9ce2552764e5eeef}{ARG\+\_\+\+IMM}};\mbox{\hyperlink{spu__dsl_8h_ae12240a3f4de46ee0616d67825971f44}{PUSH}}(\mbox{\hyperlink{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}{a}});\}}]{ }\end{DoxyParamCaption})}
+
+
+
+References \mbox{\hyperlink{cmd__dict_8h_source_l00033}{a}}, \mbox{\hyperlink{spu__dsl_8h_source_l00011}{ARG\+\_\+\+IMM}}, \mbox{\hyperlink{spu__dsl_8h_source_l00010}{ARG\+\_\+\+REG}}, \mbox{\hyperlink{spu__dsl_8h_source_l00027}{CHECK\+\_\+\+AND\+\_\+\+THROW\+\_\+\+ERR}}, \mbox{\hyperlink{spu__dsl_8h_source_l00004}{IMM\+\_\+T}}, \mbox{\hyperlink{spu__dsl_8h_source_l00007}{IS\+\_\+\+ARG\+\_\+\+IMM}}, \mbox{\hyperlink{spu__dsl_8h_source_l00006}{IS\+\_\+\+ARG\+\_\+\+REG}}, \mbox{\hyperlink{spu__dsl_8h_source_l00036}{PUSH}}, and \mbox{\hyperlink{spu__dsl_8h_source_l00014}{REG}}.
+
+\Hypertarget{cmd__dict_8h_af842c31f6f3956f3b08979c3964b09cf}\label{cmd__dict_8h_af842c31f6f3956f3b08979c3964b09cf} 
+\index{cmd\_dict.h@{cmd\_dict.h}!PRINT@{PRINT}}
+\index{PRINT@{PRINT}!cmd\_dict.h@{cmd\_dict.h}}
+\doxysubsubsection{\texorpdfstring{PRINT()}{PRINT()}}
+{\footnotesize\ttfamily PRINT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}{a}}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{cmd__dict_8h_acd3b17ba5a2f1ada4035b8bbbe446912}\label{cmd__dict_8h_acd3b17ba5a2f1ada4035b8bbbe446912} 
+\index{cmd\_dict.h@{cmd\_dict.h}!REG@{REG}}
+\index{REG@{REG}!cmd\_dict.h@{cmd\_dict.h}}
+\doxysubsubsection{\texorpdfstring{REG()}{REG()}}
+{\footnotesize\ttfamily pop from \mbox{\hyperlink{cmd__dict_8h_af65c1bc5ae1ac40f31acc4fbbdcf3774}{stack}} and write to \mbox{\hyperlink{spu__dsl_8h_a8e6708d01dec9fd978f58748eda35132}{POP}} \& REG (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\+\_\+\+REG}}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}\label{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c} 
+\index{cmd\_dict.h@{cmd\_dict.h}!a@{a}}
+\index{a@{a}!cmd\_dict.h@{cmd\_dict.h}}
+\doxysubsubsection{\texorpdfstring{a}{a}}
+{\footnotesize\ttfamily pop and print element from \mbox{\hyperlink{spu__dsl_8h_a8e6708d01dec9fd978f58748eda35132}{POP}}\& a}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{spu__dsl_8h_afa935d43c9addc1630eee32fb792a6fc}{IMM\_T}}\ \mbox{\hyperlink{cmd__dict_8h_a42ff13fda43b949960557234877c2d7c}{a}}\ =\ 0}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{cmd__dict_8h_source_l00033}{33}} of file \mbox{\hyperlink{cmd__dict_8h_source}{cmd\+\_\+dict.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{cmd__dict_8h_aa278a2dd61c2e8f04a7787f3e2451eb3}{DEF\+\_\+\+CMD()}}, and \mbox{\hyperlink{cmd__dict_8h_adca31b522f9c737cf78bd9e0fd431e0b}{DEF\+\_\+\+CMD()}}.
+
+\Hypertarget{cmd__dict_8h_ae6c865df784842196d411c1466b01686}\label{cmd__dict_8h_ae6c865df784842196d411c1466b01686} 
+\index{cmd\_dict.h@{cmd\_dict.h}!false@{false}}
+\index{false@{false}!cmd\_dict.h@{cmd\_dict.h}}
+\doxysubsubsection{\texorpdfstring{false}{false}}
+{\footnotesize\ttfamily false}
+
+
+
+Definition at line \mbox{\hyperlink{cmd__dict_8h_source_l00018}{18}} of file \mbox{\hyperlink{cmd__dict_8h_source}{cmd\+\_\+dict.\+h}}.
+
+\Hypertarget{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}\label{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e} 
+\index{cmd\_dict.h@{cmd\_dict.h}!reg@{reg}}
+\index{reg@{reg}!cmd\_dict.h@{cmd\_dict.h}}
+\doxysubsubsection{\texorpdfstring{reg}{reg}}
+{\footnotesize\ttfamily pop from \mbox{\hyperlink{cmd__dict_8h_af65c1bc5ae1ac40f31acc4fbbdcf3774}{stack}} and write to reg}
+
+
+
+Definition at line \mbox{\hyperlink{cmd__dict_8h_source_l00018}{18}} of file \mbox{\hyperlink{cmd__dict_8h_source}{cmd\+\_\+dict.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00128}{asm\+\_\+read\+\_\+reg()}}, and \mbox{\hyperlink{cmd_8cpp_source_l00048}{find\+\_\+reg\+\_\+by\+\_\+num()}}.
+
+\Hypertarget{cmd__dict_8h_af65c1bc5ae1ac40f31acc4fbbdcf3774}\label{cmd__dict_8h_af65c1bc5ae1ac40f31acc4fbbdcf3774} 
+\index{cmd\_dict.h@{cmd\_dict.h}!stack@{stack}}
+\index{stack@{stack}!cmd\_dict.h@{cmd\_dict.h}}
+\doxysubsubsection{\texorpdfstring{stack}{stack}}
+{\footnotesize\ttfamily pop and print element from stack}
+
+
+
+Definition at line \mbox{\hyperlink{cmd__dict_8h_source_l00031}{31}} of file \mbox{\hyperlink{cmd__dict_8h_source}{cmd\+\_\+dict.\+h}}.
+
+\Hypertarget{cmd__dict_8h_a1a24fc2eb8c1af6d06ac15bcec47f088}\label{cmd__dict_8h_a1a24fc2eb8c1af6d06ac15bcec47f088} 
+\index{cmd\_dict.h@{cmd\_dict.h}!true@{true}}
+\index{true@{true}!cmd\_dict.h@{cmd\_dict.h}}
+\doxysubsubsection{\texorpdfstring{true}{true}}
+{\footnotesize\ttfamily true}
+
+
+
+Definition at line \mbox{\hyperlink{cmd__dict_8h_source_l00018}{18}} of file \mbox{\hyperlink{cmd__dict_8h_source}{cmd\+\_\+dict.\+h}}.
+

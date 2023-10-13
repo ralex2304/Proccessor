@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('cmd_8h.html',''); initResizable(); });
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;inttypes.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="console_8h_source.html">lib/utils/console.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="cmd__dict_8h_source.html">cmd_dict.h</a>&quot;</code><br />
 </div>
 <p><a href="cmd_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -130,8 +131,14 @@ Classes</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:a55c597e69a4f998286a49ce487a64f08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a55c597e69a4f998286a49ce487a64f08">IMM_T_PRINTF</a>&#160;&#160;&#160;&quot;%lf&quot;</td></tr>
 <tr class="separator:a55c597e69a4f998286a49ce487a64f08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51f08f7bb03dd9351ed17c6c2b9bb4ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a51f08f7bb03dd9351ed17c6c2b9bb4ad">CHECK_IMM</a>(var)&#160;&#160;&#160;!isnan(var)</td></tr>
+<tr class="separator:a51f08f7bb03dd9351ed17c6c2b9bb4ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99ba326f1a226d2c12abbfb5005df65a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a99ba326f1a226d2c12abbfb5005df65a">IMM_RAM_T_PRINTF</a>&#160;&#160;&#160;&quot;%ld&quot;</td></tr>
 <tr class="separator:a99ba326f1a226d2c12abbfb5005df65a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bb21be9ee8eee6830a1e91886e03617"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a2bb21be9ee8eee6830a1e91886e03617">DEF_CMD</a>(name,  num, ...)&#160;&#160;&#160;CMD_##name = num,</td></tr>
+<tr class="separator:a2bb21be9ee8eee6830a1e91886e03617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa03944b3b514bec1f6edf23d103de0e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#aa03944b3b514bec1f6edf23d103de0e6">DEF_CMD</a>(name,  num,  arg1,  arg2,  arg3,  description, ...)&#160;&#160;&#160;{CMD_##name, #name, {arg1, arg2, arg3}, description},</td></tr>
+<tr class="separator:aa03944b3b514bec1f6edf23d103de0e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -152,23 +159,7 @@ Enumerations</h2></td></tr>
 , <a class="el" href="cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a0358584dab0bc3a6ff014581cf6f4660">RDX</a> = 3
  }</td></tr>
 <tr class="separator:adc8d3ec079482a8a8b6861151bd4dc64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a797039060eebcda99793fb7f223a0b14"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14">CmdNum</a> : Cmd_num_t { <br />
-&#160;&#160;<a class="el" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14adb27a7a0ffd29254758e190e6ced95d3">CMD_HLT</a> = 0
-, <a class="el" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a757970b025eec89847a8c24d2d9b25b2">CMD_PUSH</a> = 1
-, <a class="el" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a9147b396759b87cd5c0f32344ac92379">CMD_POP</a> = 2
-, <a class="el" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a52be801ea4236a7fc09ba1b4638f5319">CMD_IN</a> = 3
-, <br />
-&#160;&#160;<a class="el" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a2362d4598ba9820d06142c86113bbb6f">CMD_OUT</a> = 4
-, <a class="el" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a055360a89fac584d1244429c71a1cd72">CMD_ADD</a> = 5
-, <a class="el" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14aa2e4d65c8e602db526dc72d159a05801">CMD_SUB</a> = 6
-, <a class="el" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a4efd5cc5d2f7a7d5cded5174df59be0a">CMD_MUL</a> = 7
-, <br />
-&#160;&#160;<a class="el" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a67d20add7d52cf256ea237ecb1984f5c">CMD_DIV</a> = 8
-, <a class="el" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a14947f5975952a02eda1208f3db263a3">CMD_SQRT</a> = 9
-, <a class="el" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a2a4044269c782b979085faef707a43a5">CMD_SIN</a> = 10
-, <a class="el" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14ae8d26bb23ca3412db2c2dd00a4d96edc">CMD_COS</a> = 11
-<br />
- }</td></tr>
+<tr class="memitem:a797039060eebcda99793fb7f223a0b14"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14">CmdNum</a> : Cmd_num_t </td></tr>
 <tr class="separator:a797039060eebcda99793fb7f223a0b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -179,7 +170,7 @@ Functions</h2></td></tr>
 <tr class="memitem:ab9418768cddebf9e17af4644cc3b93fc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_cmd_info.html">CmdInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#ab9418768cddebf9e17af4644cc3b93fc">find_command_by_name</a> (const char *name)</td></tr>
 <tr class="memdesc:ab9418768cddebf9e17af4644cc3b93fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds command in CMDS_DICT[] by name.  <br /></td></tr>
 <tr class="separator:ab9418768cddebf9e17af4644cc3b93fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f8806cd553fbea836faef7a35f6cb97"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_reg_info.html">RegInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a1f8806cd553fbea836faef7a35f6cb97">find_reg_by_num</a> (const <a class="el" href="cmd_8h.html#a428ff6e9ffc07d578a8a207c72dc3366">RegNum_t</a> reg)</td></tr>
+<tr class="memitem:a1f8806cd553fbea836faef7a35f6cb97"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_reg_info.html">RegInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a1f8806cd553fbea836faef7a35f6cb97">find_reg_by_num</a> (const <a class="el" href="cmd_8h.html#a428ff6e9ffc07d578a8a207c72dc3366">RegNum_t</a> <a class="el" href="cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e">reg</a>)</td></tr>
 <tr class="memdesc:a1f8806cd553fbea836faef7a35f6cb97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds reg in REGS_DICT[] by num.  <br /></td></tr>
 <tr class="separator:a1f8806cd553fbea836faef7a35f6cb97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21261870d3dfc4b4e1ce443a6b1477cc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_reg_info.html">RegInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a21261870d3dfc4b4e1ce443a6b1477cc">find_reg_by_name</a> (const char *name)</td></tr>
@@ -188,6 +179,8 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:ac6fd8a0b61158e50a7d52538ba0e5be9"><td class="memItemLeft" align="right" valign="top">const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#ac6fd8a0b61158e50a7d52538ba0e5be9">CMD_VERSION</a> = 0</td></tr>
+<tr class="separator:ac6fd8a0b61158e50a7d52538ba0e5be9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a150c0fc704c3322a038de77fa5ff4e7b"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a150c0fc704c3322a038de77fa5ff4e7b">MAX_LINE_LEN</a> = 64</td></tr>
 <tr class="separator:a150c0fc704c3322a038de77fa5ff4e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2199b74094b7063794c4ce9e639726d6"><td class="memItemLeft" align="right" valign="top">const unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a2199b74094b7063794c4ce9e639726d6">CMD_BYTE_NUM_BIT_MASK</a> = 0b0001'1111</td></tr>
@@ -196,8 +189,6 @@ Variables</h2></td></tr>
 <tr class="separator:a4ea04ae05ebfffb0e476551db61b7724"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55559e71614b4b4ba24d073b1b813120"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="cmd_8h.html#a428ff6e9ffc07d578a8a207c72dc3366">RegNum_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a55559e71614b4b4ba24d073b1b813120">REGS_NUM</a> = sizeof(<a class="el" href="cmd_8h.html#a4ea04ae05ebfffb0e476551db61b7724">REGS_DICT</a>) / sizeof(<a class="el" href="struct_reg_info.html">RegInfo</a>)</td></tr>
 <tr class="separator:a55559e71614b4b4ba24d073b1b813120"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6fd8a0b61158e50a7d52538ba0e5be9"><td class="memItemLeft" align="right" valign="top">const short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#ac6fd8a0b61158e50a7d52538ba0e5be9">CMD_VERSION</a> = 0</td></tr>
-<tr class="separator:ac6fd8a0b61158e50a7d52538ba0e5be9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fe71afcf45e14656ccefffff4cae444"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_cmd_info.html">CmdInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a4fe71afcf45e14656ccefffff4cae444">CMDS_DICT</a> []</td></tr>
 <tr class="separator:a4fe71afcf45e14656ccefffff4cae444"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb56c6b7cc2375d32bf528f71e8d34a0"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#aeb56c6b7cc2375d32bf528f71e8d34a0">CMDS_DICT_SIZE</a> = sizeof(<a class="el" href="cmd_8h.html#a4fe71afcf45e14656ccefffff4cae444">CMDS_DICT</a>) / sizeof(<a class="el" href="struct_cmd_info.html">CmdInfo</a>)</td></tr>
@@ -206,6 +197,122 @@ Variables</h2></td></tr>
 <tr class="separator:af46692534430a47d73d9904057ed74df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a51f08f7bb03dd9351ed17c6c2b9bb4ad" name="a51f08f7bb03dd9351ed17c6c2b9bb4ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51f08f7bb03dd9351ed17c6c2b9bb4ad">&#9670;&#160;</a></span>CHECK_IMM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CHECK_IMM</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">var</td><td>)</td>
+          <td>&#160;&#160;&#160;!isnan(var)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00055">55</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+
+</div>
+</div>
+<a id="aa03944b3b514bec1f6edf23d103de0e6" name="aa03944b3b514bec1f6edf23d103de0e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa03944b3b514bec1f6edf23d103de0e6">&#9670;&#160;</a></span>DEF_CMD <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEF_CMD</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">num, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">arg1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">arg2, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">arg3, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">description, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{CMD_##name, #name, {arg1, arg2, arg3}, description},</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00077">77</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+
+</div>
+</div>
+<a id="a2bb21be9ee8eee6830a1e91886e03617" name="a2bb21be9ee8eee6830a1e91886e03617"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bb21be9ee8eee6830a1e91886e03617">&#9670;&#160;</a></span>DEF_CMD <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEF_CMD</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">num, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;CMD_##name = num,</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00077">77</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+
+</div>
+</div>
 <a id="a99ba326f1a226d2c12abbfb5005df65a" name="a99ba326f1a226d2c12abbfb5005df65a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a99ba326f1a226d2c12abbfb5005df65a">&#9670;&#160;</a></span>IMM_RAM_T_PRINTF</h2>
 
@@ -218,7 +325,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00055">55</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00060">60</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
 </div>
 </div>
@@ -234,7 +341,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00051">51</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00053">53</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
 </div>
 </div>
@@ -251,7 +358,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00069">69</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00074">74</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
 </div>
 </div>
@@ -267,7 +374,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00053">53</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00058">58</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
 </div>
 </div>
@@ -283,7 +390,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00049">49</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00051">51</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
 </div>
 </div>
@@ -299,7 +406,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00026">26</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00028">28</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
 </div>
 </div>
@@ -315,49 +422,13 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a797039060eebcda99793fb7f223a0b14adb27a7a0ffd29254758e190e6ced95d3" name="a797039060eebcda99793fb7f223a0b14adb27a7a0ffd29254758e190e6ced95d3"></a>CMD_HLT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a797039060eebcda99793fb7f223a0b14a757970b025eec89847a8c24d2d9b25b2" name="a797039060eebcda99793fb7f223a0b14a757970b025eec89847a8c24d2d9b25b2"></a>CMD_PUSH&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a797039060eebcda99793fb7f223a0b14a9147b396759b87cd5c0f32344ac92379" name="a797039060eebcda99793fb7f223a0b14a9147b396759b87cd5c0f32344ac92379"></a>CMD_POP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a797039060eebcda99793fb7f223a0b14a52be801ea4236a7fc09ba1b4638f5319" name="a797039060eebcda99793fb7f223a0b14a52be801ea4236a7fc09ba1b4638f5319"></a>CMD_IN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a797039060eebcda99793fb7f223a0b14a2362d4598ba9820d06142c86113bbb6f" name="a797039060eebcda99793fb7f223a0b14a2362d4598ba9820d06142c86113bbb6f"></a>CMD_OUT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a797039060eebcda99793fb7f223a0b14a055360a89fac584d1244429c71a1cd72" name="a797039060eebcda99793fb7f223a0b14a055360a89fac584d1244429c71a1cd72"></a>CMD_ADD&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a797039060eebcda99793fb7f223a0b14aa2e4d65c8e602db526dc72d159a05801" name="a797039060eebcda99793fb7f223a0b14aa2e4d65c8e602db526dc72d159a05801"></a>CMD_SUB&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a797039060eebcda99793fb7f223a0b14a4efd5cc5d2f7a7d5cded5174df59be0a" name="a797039060eebcda99793fb7f223a0b14a4efd5cc5d2f7a7d5cded5174df59be0a"></a>CMD_MUL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a797039060eebcda99793fb7f223a0b14a67d20add7d52cf256ea237ecb1984f5c" name="a797039060eebcda99793fb7f223a0b14a67d20add7d52cf256ea237ecb1984f5c"></a>CMD_DIV&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a797039060eebcda99793fb7f223a0b14a14947f5975952a02eda1208f3db263a3" name="a797039060eebcda99793fb7f223a0b14a14947f5975952a02eda1208f3db263a3"></a>CMD_SQRT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a797039060eebcda99793fb7f223a0b14a2a4044269c782b979085faef707a43a5" name="a797039060eebcda99793fb7f223a0b14a2a4044269c782b979085faef707a43a5"></a>CMD_SIN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a797039060eebcda99793fb7f223a0b14ae8d26bb23ca3412db2c2dd00a4d96edc" name="a797039060eebcda99793fb7f223a0b14ae8d26bb23ca3412db2c2dd00a4d96edc"></a>CMD_COS&#160;</td><td class="fielddoc"></td></tr>
-</table>
 
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00071">71</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span>           : <a class="code hl_typedef" href="cmd_8h.html#ab1d5b54818808a2c92c5632aaf961cd0">Cmd_num_t</a> {</div>
-<div class="line"><span class="lineno">   72</span>    <a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14adb27a7a0ffd29254758e190e6ced95d3">CMD_HLT</a>  =  0,</div>
-<div class="line"><span class="lineno">   73</span>    <a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a757970b025eec89847a8c24d2d9b25b2">CMD_PUSH</a> =  1,</div>
-<div class="line"><span class="lineno">   74</span>    <a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a9147b396759b87cd5c0f32344ac92379">CMD_POP</a>  =  2,</div>
-<div class="line"><span class="lineno">   75</span>    <a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a52be801ea4236a7fc09ba1b4638f5319">CMD_IN</a>   =  3,</div>
-<div class="line"><span class="lineno">   76</span>    <a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a2362d4598ba9820d06142c86113bbb6f">CMD_OUT</a>  =  4,</div>
-<div class="line"><span class="lineno">   77</span>    <a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a055360a89fac584d1244429c71a1cd72">CMD_ADD</a>  =  5,</div>
-<div class="line"><span class="lineno">   78</span>    <a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14aa2e4d65c8e602db526dc72d159a05801">CMD_SUB</a>  =  6,</div>
-<div class="line"><span class="lineno">   79</span>    <a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a4efd5cc5d2f7a7d5cded5174df59be0a">CMD_MUL</a>  =  7,</div>
-<div class="line"><span class="lineno">   80</span>    <a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a67d20add7d52cf256ea237ecb1984f5c">CMD_DIV</a>  =  8,</div>
-<div class="line"><span class="lineno">   81</span>    <a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a14947f5975952a02eda1208f3db263a3">CMD_SQRT</a> =  9,</div>
-<div class="line"><span class="lineno">   82</span>    <a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a2a4044269c782b979085faef707a43a5">CMD_SIN</a>  = 10,</div>
-<div class="line"><span class="lineno">   83</span>    <a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14ae8d26bb23ca3412db2c2dd00a4d96edc">CMD_COS</a>  = 11,</div>
-<div class="line"><span class="lineno">   84</span>};</div>
-<div class="ttc" id="acmd_8h_html_a797039060eebcda99793fb7f223a0b14a055360a89fac584d1244429c71a1cd72"><div class="ttname"><a href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a055360a89fac584d1244429c71a1cd72">CMD_ADD</a></div><div class="ttdeci">@ CMD_ADD</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00077">cmd.h:77</a></div></div>
-<div class="ttc" id="acmd_8h_html_a797039060eebcda99793fb7f223a0b14a14947f5975952a02eda1208f3db263a3"><div class="ttname"><a href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a14947f5975952a02eda1208f3db263a3">CMD_SQRT</a></div><div class="ttdeci">@ CMD_SQRT</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00081">cmd.h:81</a></div></div>
-<div class="ttc" id="acmd_8h_html_a797039060eebcda99793fb7f223a0b14a2362d4598ba9820d06142c86113bbb6f"><div class="ttname"><a href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a2362d4598ba9820d06142c86113bbb6f">CMD_OUT</a></div><div class="ttdeci">@ CMD_OUT</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00076">cmd.h:76</a></div></div>
-<div class="ttc" id="acmd_8h_html_a797039060eebcda99793fb7f223a0b14a2a4044269c782b979085faef707a43a5"><div class="ttname"><a href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a2a4044269c782b979085faef707a43a5">CMD_SIN</a></div><div class="ttdeci">@ CMD_SIN</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00082">cmd.h:82</a></div></div>
-<div class="ttc" id="acmd_8h_html_a797039060eebcda99793fb7f223a0b14a4efd5cc5d2f7a7d5cded5174df59be0a"><div class="ttname"><a href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a4efd5cc5d2f7a7d5cded5174df59be0a">CMD_MUL</a></div><div class="ttdeci">@ CMD_MUL</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00079">cmd.h:79</a></div></div>
-<div class="ttc" id="acmd_8h_html_a797039060eebcda99793fb7f223a0b14a52be801ea4236a7fc09ba1b4638f5319"><div class="ttname"><a href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a52be801ea4236a7fc09ba1b4638f5319">CMD_IN</a></div><div class="ttdeci">@ CMD_IN</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00075">cmd.h:75</a></div></div>
-<div class="ttc" id="acmd_8h_html_a797039060eebcda99793fb7f223a0b14a67d20add7d52cf256ea237ecb1984f5c"><div class="ttname"><a href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a67d20add7d52cf256ea237ecb1984f5c">CMD_DIV</a></div><div class="ttdeci">@ CMD_DIV</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00080">cmd.h:80</a></div></div>
-<div class="ttc" id="acmd_8h_html_a797039060eebcda99793fb7f223a0b14a757970b025eec89847a8c24d2d9b25b2"><div class="ttname"><a href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a757970b025eec89847a8c24d2d9b25b2">CMD_PUSH</a></div><div class="ttdeci">@ CMD_PUSH</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00073">cmd.h:73</a></div></div>
-<div class="ttc" id="acmd_8h_html_a797039060eebcda99793fb7f223a0b14a9147b396759b87cd5c0f32344ac92379"><div class="ttname"><a href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a9147b396759b87cd5c0f32344ac92379">CMD_POP</a></div><div class="ttdeci">@ CMD_POP</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00074">cmd.h:74</a></div></div>
-<div class="ttc" id="acmd_8h_html_a797039060eebcda99793fb7f223a0b14aa2e4d65c8e602db526dc72d159a05801"><div class="ttname"><a href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14aa2e4d65c8e602db526dc72d159a05801">CMD_SUB</a></div><div class="ttdeci">@ CMD_SUB</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00078">cmd.h:78</a></div></div>
-<div class="ttc" id="acmd_8h_html_a797039060eebcda99793fb7f223a0b14adb27a7a0ffd29254758e190e6ced95d3"><div class="ttname"><a href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14adb27a7a0ffd29254758e190e6ced95d3">CMD_HLT</a></div><div class="ttdeci">@ CMD_HLT</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00072">cmd.h:72</a></div></div>
-<div class="ttc" id="acmd_8h_html_a797039060eebcda99793fb7f223a0b14ae8d26bb23ca3412db2c2dd00a4d96edc"><div class="ttname"><a href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14ae8d26bb23ca3412db2c2dd00a4d96edc">CMD_COS</a></div><div class="ttdeci">@ CMD_COS</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00083">cmd.h:83</a></div></div>
-<div class="ttc" id="acmd_8h_html_ab1d5b54818808a2c92c5632aaf961cd0"><div class="ttname"><a href="cmd_8h.html#ab1d5b54818808a2c92c5632aaf961cd0">Cmd_num_t</a></div><div class="ttdeci">unsigned char Cmd_num_t</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00069">cmd.h:69</a></div></div>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00078">78</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>           : <a class="code hl_typedef" href="cmd_8h.html#ab1d5b54818808a2c92c5632aaf961cd0">Cmd_num_t</a> {</div>
+<div class="line"><span class="lineno">   79</span><span class="preprocessor">    #include &quot;<a class="code" href="cmd__dict_8h.html">cmd_dict.h</a>&quot;</span></div>
+<div class="line"><span class="lineno">   80</span>};</div>
+<div class="ttc" id="acmd_8h_html_ab1d5b54818808a2c92c5632aaf961cd0"><div class="ttname"><a href="cmd_8h.html#ab1d5b54818808a2c92c5632aaf961cd0">Cmd_num_t</a></div><div class="ttdeci">unsigned char Cmd_num_t</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00074">cmd.h:74</a></div></div>
+<div class="ttc" id="acmd__dict_8h_html"><div class="ttname"><a href="cmd__dict_8h.html">cmd_dict.h</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -379,18 +450,18 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="adc8d3ec079482a8a8b6861151bd4dc64a0358584dab0bc3a6ff014581cf6f4660" name="adc8d3ec079482a8a8b6861151bd4dc64a0358584dab0bc3a6ff014581cf6f4660"></a>RDX&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00028">28</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>            : <a class="code hl_typedef" href="cmd_8h.html#a428ff6e9ffc07d578a8a207c72dc3366">RegNum_t</a> {</div>
-<div class="line"><span class="lineno">   29</span>    <a class="code hl_enumvalue" href="cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64ad8a2b3cfd37dc1215cf782d326e5186c">RAX</a> = 0,</div>
-<div class="line"><span class="lineno">   30</span>    <a class="code hl_enumvalue" href="cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a3fca113e3a8a54281655d842075690be">RBX</a> = 1,</div>
-<div class="line"><span class="lineno">   31</span>    <a class="code hl_enumvalue" href="cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a9319e76c0baaa9e53113184ab7d25944">RCX</a> = 2,</div>
-<div class="line"><span class="lineno">   32</span>    <a class="code hl_enumvalue" href="cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a0358584dab0bc3a6ff014581cf6f4660">RDX</a> = 3,</div>
-<div class="line"><span class="lineno">   33</span>};</div>
-<div class="ttc" id="acmd_8h_html_a428ff6e9ffc07d578a8a207c72dc3366"><div class="ttname"><a href="cmd_8h.html#a428ff6e9ffc07d578a8a207c72dc3366">RegNum_t</a></div><div class="ttdeci">unsigned char RegNum_t</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00026">cmd.h:26</a></div></div>
-<div class="ttc" id="acmd_8h_html_adc8d3ec079482a8a8b6861151bd4dc64a0358584dab0bc3a6ff014581cf6f4660"><div class="ttname"><a href="cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a0358584dab0bc3a6ff014581cf6f4660">RDX</a></div><div class="ttdeci">@ RDX</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00032">cmd.h:32</a></div></div>
-<div class="ttc" id="acmd_8h_html_adc8d3ec079482a8a8b6861151bd4dc64a3fca113e3a8a54281655d842075690be"><div class="ttname"><a href="cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a3fca113e3a8a54281655d842075690be">RBX</a></div><div class="ttdeci">@ RBX</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00030">cmd.h:30</a></div></div>
-<div class="ttc" id="acmd_8h_html_adc8d3ec079482a8a8b6861151bd4dc64a9319e76c0baaa9e53113184ab7d25944"><div class="ttname"><a href="cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a9319e76c0baaa9e53113184ab7d25944">RCX</a></div><div class="ttdeci">@ RCX</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00031">cmd.h:31</a></div></div>
-<div class="ttc" id="acmd_8h_html_adc8d3ec079482a8a8b6861151bd4dc64ad8a2b3cfd37dc1215cf782d326e5186c"><div class="ttname"><a href="cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64ad8a2b3cfd37dc1215cf782d326e5186c">RAX</a></div><div class="ttdeci">@ RAX</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00029">cmd.h:29</a></div></div>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00030">30</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>            : <a class="code hl_typedef" href="cmd_8h.html#a428ff6e9ffc07d578a8a207c72dc3366">RegNum_t</a> {</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_enumvalue" href="cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64ad8a2b3cfd37dc1215cf782d326e5186c">RAX</a> = 0,</div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_enumvalue" href="cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a3fca113e3a8a54281655d842075690be">RBX</a> = 1,</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_enumvalue" href="cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a9319e76c0baaa9e53113184ab7d25944">RCX</a> = 2,</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_enumvalue" href="cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a0358584dab0bc3a6ff014581cf6f4660">RDX</a> = 3,</div>
+<div class="line"><span class="lineno">   35</span>};</div>
+<div class="ttc" id="acmd_8h_html_a428ff6e9ffc07d578a8a207c72dc3366"><div class="ttname"><a href="cmd_8h.html#a428ff6e9ffc07d578a8a207c72dc3366">RegNum_t</a></div><div class="ttdeci">unsigned char RegNum_t</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00028">cmd.h:28</a></div></div>
+<div class="ttc" id="acmd_8h_html_adc8d3ec079482a8a8b6861151bd4dc64a0358584dab0bc3a6ff014581cf6f4660"><div class="ttname"><a href="cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a0358584dab0bc3a6ff014581cf6f4660">RDX</a></div><div class="ttdeci">@ RDX</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00034">cmd.h:34</a></div></div>
+<div class="ttc" id="acmd_8h_html_adc8d3ec079482a8a8b6861151bd4dc64a3fca113e3a8a54281655d842075690be"><div class="ttname"><a href="cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a3fca113e3a8a54281655d842075690be">RBX</a></div><div class="ttdeci">@ RBX</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00032">cmd.h:32</a></div></div>
+<div class="ttc" id="acmd_8h_html_adc8d3ec079482a8a8b6861151bd4dc64a9319e76c0baaa9e53113184ab7d25944"><div class="ttname"><a href="cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a9319e76c0baaa9e53113184ab7d25944">RCX</a></div><div class="ttdeci">@ RCX</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00033">cmd.h:33</a></div></div>
+<div class="ttc" id="acmd_8h_html_adc8d3ec079482a8a8b6861151bd4dc64ad8a2b3cfd37dc1215cf782d326e5186c"><div class="ttname"><a href="cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64ad8a2b3cfd37dc1215cf782d326e5186c">RAX</a></div><div class="ttdeci">@ RAX</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00031">cmd.h:31</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -431,10 +502,10 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   44</span> </div>
 <div class="line"><span class="lineno">   45</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><span class="lineno">   46</span>}</div>
-<div class="ttc" id="acmd_8h_html_a4fe71afcf45e14656ccefffff4cae444"><div class="ttname"><a href="cmd_8h.html#a4fe71afcf45e14656ccefffff4cae444">CMDS_DICT</a></div><div class="ttdeci">const CmdInfo CMDS_DICT[]</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00096">cmd.h:96</a></div></div>
-<div class="ttc" id="acmd_8h_html_aeb56c6b7cc2375d32bf528f71e8d34a0"><div class="ttname"><a href="cmd_8h.html#aeb56c6b7cc2375d32bf528f71e8d34a0">CMDS_DICT_SIZE</a></div><div class="ttdeci">const size_t CMDS_DICT_SIZE</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00115">cmd.h:115</a></div></div>
+<div class="ttc" id="acmd_8h_html_a4fe71afcf45e14656ccefffff4cae444"><div class="ttname"><a href="cmd_8h.html#a4fe71afcf45e14656ccefffff4cae444">CMDS_DICT</a></div><div class="ttdeci">const CmdInfo CMDS_DICT[]</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00092">cmd.h:92</a></div></div>
+<div class="ttc" id="acmd_8h_html_aeb56c6b7cc2375d32bf528f71e8d34a0"><div class="ttname"><a href="cmd_8h.html#aeb56c6b7cc2375d32bf528f71e8d34a0">CMDS_DICT_SIZE</a></div><div class="ttdeci">const size_t CMDS_DICT_SIZE</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00097">cmd.h:97</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="cmd_8h_source.html#l00096">CMDS_DICT</a>, and <a class="el" href="cmd_8h_source.html#l00115">CMDS_DICT_SIZE</a>.</p>
+<p class="reference">References <a class="el" href="cmd_8h_source.html#l00092">CMDS_DICT</a>, and <a class="el" href="cmd_8h_source.html#l00097">CMDS_DICT_SIZE</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00034">asm_parse_and_write_line()</a>.</p>
 
@@ -476,7 +547,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   34</span>    assert(0 &amp;&amp; <span class="stringliteral">&quot;Command num and index in CMDS_DICT array must be the same&quot;</span>);</div>
 <div class="line"><span class="lineno">   35</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="cmd_8h_source.html#l00096">CMDS_DICT</a>, and <a class="el" href="cmd_8h_source.html#l00115">CMDS_DICT_SIZE</a>.</p>
+<p class="reference">References <a class="el" href="cmd_8h_source.html#l00092">CMDS_DICT</a>, and <a class="el" href="cmd_8h_source.html#l00097">CMDS_DICT_SIZE</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="disassembler_8cpp_source.html#l00022">disasm_parse()</a>, and <a class="el" href="spu_8cpp_source.html#l00039">spu_parse()</a>.</p>
 
@@ -518,12 +589,12 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   65</span> </div>
 <div class="line"><span class="lineno">   66</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><span class="lineno">   67</span>}</div>
-<div class="ttc" id="acmd_8h_html_a4ea04ae05ebfffb0e476551db61b7724"><div class="ttname"><a href="cmd_8h.html#a4ea04ae05ebfffb0e476551db61b7724">REGS_DICT</a></div><div class="ttdeci">const RegInfo REGS_DICT[]</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00040">cmd.h:40</a></div></div>
-<div class="ttc" id="acmd_8h_html_a55559e71614b4b4ba24d073b1b813120"><div class="ttname"><a href="cmd_8h.html#a55559e71614b4b4ba24d073b1b813120">REGS_NUM</a></div><div class="ttdeci">const RegNum_t REGS_NUM</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00047">cmd.h:47</a></div></div>
+<div class="ttc" id="acmd_8h_html_a4ea04ae05ebfffb0e476551db61b7724"><div class="ttname"><a href="cmd_8h.html#a4ea04ae05ebfffb0e476551db61b7724">REGS_DICT</a></div><div class="ttdeci">const RegInfo REGS_DICT[]</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00042">cmd.h:42</a></div></div>
+<div class="ttc" id="acmd_8h_html_a55559e71614b4b4ba24d073b1b813120"><div class="ttname"><a href="cmd_8h.html#a55559e71614b4b4ba24d073b1b813120">REGS_NUM</a></div><div class="ttdeci">const RegNum_t REGS_NUM</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00049">cmd.h:49</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="cmd_8h_source.html#l00040">REGS_DICT</a>, and <a class="el" href="cmd_8h_source.html#l00047">REGS_NUM</a>.</p>
+<p class="reference">References <a class="el" href="cmd_8h_source.html#l00042">REGS_DICT</a>, and <a class="el" href="cmd_8h_source.html#l00049">REGS_NUM</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00116">asm_read_reg()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00128">asm_read_reg()</a>.</p>
 
 </div>
 </div>
@@ -554,18 +625,19 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="cmd_8cpp_source.html#l00048">48</a> of file <a class="el" href="cmd_8cpp_source.html">cmd.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   48</span>                                                   {</div>
-<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (reg &gt;= <a class="code hl_variable" href="cmd_8h.html#a55559e71614b4b4ba24d073b1b813120">REGS_NUM</a>)</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e">reg</a> &gt;= <a class="code hl_variable" href="cmd_8h.html#a55559e71614b4b4ba24d073b1b813120">REGS_NUM</a>)</div>
 <div class="line"><span class="lineno">   50</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (reg == <a class="code hl_variable" href="cmd_8h.html#a4ea04ae05ebfffb0e476551db61b7724">REGS_DICT</a>[reg].num)</div>
-<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="cmd_8h.html#a4ea04ae05ebfffb0e476551db61b7724">REGS_DICT</a> + reg;</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e">reg</a> == <a class="code hl_variable" href="cmd_8h.html#a4ea04ae05ebfffb0e476551db61b7724">REGS_DICT</a>[<a class="code hl_variable" href="cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e">reg</a>].num)</div>
+<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="cmd_8h.html#a4ea04ae05ebfffb0e476551db61b7724">REGS_DICT</a> + <a class="code hl_variable" href="cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e">reg</a>;</div>
 <div class="line"><span class="lineno">   54</span> </div>
 <div class="line"><span class="lineno">   55</span>    assert(0 &amp;&amp; <span class="stringliteral">&quot;Ref num and index in REGS_DICT array must be the same&quot;</span>);</div>
 <div class="line"><span class="lineno">   56</span>}</div>
+<div class="ttc" id="acmd__dict_8h_html_ade7b1c34e02557e0d03d7632f471016e"><div class="ttname"><a href="cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e">reg</a></div><div class="ttdeci">pop from stack and write to reg</div><div class="ttdef"><b>Definition</b> <a href="cmd__dict_8h_source.html#l00018">cmd_dict.h:18</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="cmd_8h_source.html#l00040">REGS_DICT</a>, and <a class="el" href="cmd_8h_source.html#l00047">REGS_NUM</a>.</p>
+<p class="reference">References <a class="el" href="cmd__dict_8h_source.html#l00018">reg</a>, <a class="el" href="cmd_8h_source.html#l00042">REGS_DICT</a>, and <a class="el" href="cmd_8h_source.html#l00049">REGS_NUM</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00183">asm_write_cmd_debug()</a>, and <a class="el" href="disassembler_8cpp_source.html#l00022">disasm_parse()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00201">asm_write_cmd_debug()</a>, and <a class="el" href="disassembler_8cpp_source.html#l00022">disasm_parse()</a>.</p>
 
 </div>
 </div>
@@ -582,7 +654,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00024">24</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00026">26</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00034">asm_parse_and_write_line()</a>.</p>
 
@@ -600,7 +672,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00094">94</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00013">13</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
 </div>
 </div>
@@ -616,25 +688,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line"> </div>
-<div class="line">    {<a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14adb27a7a0ffd29254758e190e6ced95d3">CMD_HLT</a>,   <span class="stringliteral">&quot;HLT&quot;</span>,  {},                     <span class="stringliteral">&quot;halt - end of program&quot;</span>},</div>
-<div class="line">    {<a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a757970b025eec89847a8c24d2d9b25b2">CMD_PUSH</a>,  <span class="stringliteral">&quot;push&quot;</span>, {<span class="keyword">true</span>,  <span class="keyword">true</span>,  <span class="keyword">true</span>},   <span class="stringliteral">&quot;push one element to stack ||&quot;</span></div>
-<div class="line">                                                <span class="stringliteral">&quot; take from reg and push ||&quot;</span></div>
-<div class="line">                                                <span class="stringliteral">&quot; take from reg + imm and push&quot;</span>},</div>
-<div class="line">    {<a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a9147b396759b87cd5c0f32344ac92379">CMD_POP</a>,   <span class="stringliteral">&quot;pop&quot;</span>,  {<span class="keyword">true</span>,  <span class="keyword">false</span>, <span class="keyword">true</span>},   <span class="stringliteral">&quot;pop from stack and write to reg&quot;</span>},</div>
-<div class="line">    {<a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a52be801ea4236a7fc09ba1b4638f5319">CMD_IN</a>,    <span class="stringliteral">&quot;in&quot;</span>,   {},                     <span class="stringliteral">&quot;push one element to stack from user input&quot;</span>},</div>
-<div class="line">    {<a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a2362d4598ba9820d06142c86113bbb6f">CMD_OUT</a>,   <span class="stringliteral">&quot;out&quot;</span>,  {},                     <span class="stringliteral">&quot;pop and print element from stack&quot;</span>},</div>
-<div class="line">    {<a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a055360a89fac584d1244429c71a1cd72">CMD_ADD</a>,   <span class="stringliteral">&quot;add&quot;</span>,  {},                     <span class="stringliteral">&quot;+&quot;</span>},</div>
-<div class="line">    {<a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14aa2e4d65c8e602db526dc72d159a05801">CMD_SUB</a>,   <span class="stringliteral">&quot;sub&quot;</span>,  {},                     <span class="stringliteral">&quot;-&quot;</span>},</div>
-<div class="line">    {<a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a4efd5cc5d2f7a7d5cded5174df59be0a">CMD_MUL</a>,   <span class="stringliteral">&quot;mul&quot;</span>,  {},                     <span class="stringliteral">&quot;*&quot;</span>},</div>
-<div class="line">    {<a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a67d20add7d52cf256ea237ecb1984f5c">CMD_DIV</a>,   <span class="stringliteral">&quot;div&quot;</span>,  {},                     <span class="stringliteral">&quot;/&quot;</span>},</div>
-<div class="line">    {<a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a14947f5975952a02eda1208f3db263a3">CMD_SQRT</a>,  <span class="stringliteral">&quot;sqrt&quot;</span>, {},                     <span class="stringliteral">&quot;sqaure root&quot;</span>},</div>
-<div class="line">    {<a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14a2a4044269c782b979085faef707a43a5">CMD_SIN</a>,   <span class="stringliteral">&quot;sin&quot;</span>,  {},                     <span class="stringliteral">&quot;sinus&quot;</span>},</div>
-<div class="line">    {<a class="code hl_enumvalue" href="cmd_8h.html#a797039060eebcda99793fb7f223a0b14ae8d26bb23ca3412db2c2dd00a4d96edc">CMD_COS</a>,   <span class="stringliteral">&quot;cos&quot;</span>,  {},                     <span class="stringliteral">&quot;cosinus&quot;</span>},</div>
-<div class="line"> </div>
+<div class="line"><span class="preprocessor"># 93 &quot;//wsl.localhost/Ubuntu/home/alex/ded32/Proccessor/shared/cmd.h&quot;</span> 2</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00096">96</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00092">92</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="cmd_8cpp_source.html#l00037">find_command_by_name()</a>, <a class="el" href="cmd_8cpp_source.html#l00027">find_command_by_num()</a>, and <a class="el" href="args__parser_8cpp_source.html#l00115">print_commands_list()</a>.</p>
 
@@ -652,7 +709,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00115">115</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00097">97</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="cmd_8cpp_source.html#l00037">find_command_by_name()</a>, <a class="el" href="cmd_8cpp_source.html#l00027">find_command_by_num()</a>, and <a class="el" href="args__parser_8cpp_source.html#l00115">print_commands_list()</a>.</p>
 
@@ -670,7 +727,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00013">13</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00015">15</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00034">asm_parse_and_write_line()</a>.</p>
 
@@ -694,7 +751,7 @@ Variables</h2></td></tr>
 <div class="line">    {<a class="code hl_enumvalue" href="cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a0358584dab0bc3a6ff014581cf6f4660">RDX</a>, <span class="stringliteral">&quot;rdx&quot;</span>},</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00040">40</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00042">42</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="cmd_8cpp_source.html#l00058">find_reg_by_name()</a>, and <a class="el" href="cmd_8cpp_source.html#l00048">find_reg_by_num()</a>.</p>
 
@@ -712,7 +769,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00047">47</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00049">49</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="cmd_8cpp_source.html#l00058">find_reg_by_name()</a>, and <a class="el" href="cmd_8cpp_source.html#l00048">find_reg_by_num()</a>.</p>
 
@@ -730,9 +787,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00126">126</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00108">108</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00034">asm_parse_and_write_line()</a>, <a class="el" href="assembler_8cpp_source.html#l00268">asm_write_signature()</a>, <a class="el" href="cmd_8cpp_source.html#l00003">Signature::check()</a>, <a class="el" href="disassembler_8cpp_source.html#l00022">disasm_parse()</a>, and <a class="el" href="spu_8cpp_source.html#l00039">spu_parse()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00034">asm_parse_and_write_line()</a>, <a class="el" href="assembler_8cpp_source.html#l00296">asm_write_signature()</a>, <a class="el" href="cmd_8cpp_source.html#l00003">Signature::check()</a>, <a class="el" href="disassembler_8cpp_source.html#l00022">disasm_parse()</a>, and <a class="el" href="spu_8cpp_source.html#l00039">spu_parse()</a>.</p>
 
 </div>
 </div>

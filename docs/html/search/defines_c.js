@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['var_5fcode_5fdata_0',['VAR_CODE_DATA',['../stack_8h.html#a68960fb933bea9b067598ca388e5b6d5',1,'stack.h']]],
-  ['var_5fcode_5fdata_5fptr_1',['VAR_CODE_DATA_PTR',['../stack_8h.html#a8b6dac4dee6062b891084db600caa7ec',1,'stack.h']]]
+  ['reg_0',['REG',['../spu__dsl_8h.html#ad6ade6409c5ca69f90efdfd1acce35fa',1,'spu_dsl.h']]]
 ];

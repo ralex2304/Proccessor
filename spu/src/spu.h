@@ -46,7 +46,7 @@ Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const size_t 
  * @return true
  * @return false
  */
-inline bool spu_print_double(const double x) {
+inline bool spu_print_imm(const double x) {
     return printf("%lf\n", x) > 0;
 }
 
@@ -66,7 +66,7 @@ inline int spu_flush_input() {
  *
  * @return double NAN if error
  */
-inline double spu_get_double_from_input() {
+inline double spu_get_imm_from_input() {
     double x = NAN;
 
     static const ssize_t MAX_INPUT_ATTEMPTS = 5;

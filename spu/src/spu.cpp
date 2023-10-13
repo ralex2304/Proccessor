@@ -91,21 +91,21 @@ Status::Statuses spu_parse(const char* data, const size_t size) {
     return Status::NORMAL_WORK;
 }
 #undef DATA_GET_VAL_
+#undef THROW_RUNTIME_ERROR_
 
 
-#define STK_POP_AND_PUSH_ONE_(expression)   stk_res |= stk_pop(&spu->stk, &a);  \
-                                                                                \
-                                            if (stk_res == Stack::OK)           \
-                                                stk_res |= stk_push(&spu->stk, expression)
 
-#define STK_POP_AND_PUSH_TWO_(expression)   stk_res |= stk_pop(&spu->stk, &b);  \
-                                                                                \
-                                            if (stk_res != Stack::OK) break;    \
-                                                                                \
-                                            stk_res |= stk_pop(&spu->stk, &a);  \
-                                                                                \
-                                            if (stk_res == Stack::OK)           \
-                                                stk_res |= stk_push(&spu->stk, expression)
+#include <spu_dsl.h>
+
+#define THROW_RUNTIME_ERROR_(text)  do {                                                    \
+            fprintf(stderr, CONSOLE_RED("Runtime error occured. " text) " Byte %zu\n", ip); \
+            return Status::RUNTIME_ERROR;                                                   \
+        } while(0)
+
+#define DEF_CMD(name, num, arg1, arg2, arg3, descr, ...)    \
+    case CMD_##name:                                        \
+        __VA_ARGS__                                         \
+        break;                                              \
 
 Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const size_t ip) {
     assert(spu);
@@ -116,67 +116,11 @@ Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const size_t 
 
     int stk_res = Stack::OK;
 
-    double a = NAN;
-    double b = NAN;
-
     switch (cmd->info->num) {
-        case CMD_HLT:
-            return Status::OK_EXIT;
-        case CMD_PUSH:
-            if (!cmd->byte.reg && !cmd->byte.imm)
-                THROW_RUNTIME_ERROR_("\"push\" requires at least one argument.");
+        #include "cmd_dict.h"
 
-            a = 0;
-
-            if (cmd->byte.reg)
-                a += spu->reg[cmd->args.reg];
-
-            if (cmd->byte.imm)
-                a += cmd->args.imm;
-
-            stk_res |= stk_push(&spu->stk, a);
-            break;
-        case CMD_POP:
-            if (!cmd->byte.reg)
-                THROW_RUNTIME_ERROR_("\"pop\" requires reg.");
-
-            stk_res |= stk_pop(&spu->stk, &spu->reg[cmd->args.reg]);
-            break;
-        case CMD_IN:
-            a = spu_get_double_from_input();
-            if (isnan(a))
-                return Status::WRONG_USER_INPUT;
-            stk_res |= stk_push(&spu->stk, a);
-            break;
-        case CMD_OUT:
-            stk_res |= stk_pop(&spu->stk, &a);
-
-            if (stk_res == Stack::OK)
-                if (!spu_print_double(a))
-                    return Status::OUTPUT_ERROR;
-            break;
-        case CMD_ADD:
-            STK_POP_AND_PUSH_TWO_(a + b);
-            break;
-        case CMD_SUB:
-            STK_POP_AND_PUSH_TWO_(a - b);
-            break;
-        case CMD_MUL:
-            STK_POP_AND_PUSH_TWO_(a * b);
-            break;
-        case CMD_DIV:
-            STK_POP_AND_PUSH_TWO_(a / b);
-            break;
-        case CMD_SQRT:
-            STK_POP_AND_PUSH_ONE_(sqrt(a));
-            break;
-        case CMD_SIN:
-            STK_POP_AND_PUSH_ONE_(sin(a));
-            break;
-        case CMD_COS:
-            STK_POP_AND_PUSH_ONE_(cos(a));
-            break;
         default:
+            assert(0 && "Wrong command num given");
             break;
     }
 
@@ -188,6 +132,7 @@ Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const size_t 
 
     return Status::NORMAL_WORK;
 }
+#undef DEF_CMD
 #undef THROW_RUNTIME_ERROR_
-#undef STK_POP_AND_PUSH_ONE_
-#undef STK_POP_AND_PUSH_TWO_
+
+// REVIEW can't undef DSL

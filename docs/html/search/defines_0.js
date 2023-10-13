@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['back_5fcolor_5fblack_0',['BACK_COLOR_BLACK',['../console_8h.html#a4a4890b94c4627eb51a3b82cb3138203',1,'console.h']]],
-  ['back_5fcolor_5fblue_1',['BACK_COLOR_BLUE',['../console_8h.html#abbe80bec2f0ecc0d76bd8be9ff9e5585',1,'console.h']]],
-  ['back_5fcolor_5fgreen_2',['BACK_COLOR_GREEN',['../console_8h.html#a40365adf0b534eaad84b2eabaaab9525',1,'console.h']]],
-  ['back_5fcolor_5fred_3',['BACK_COLOR_RED',['../console_8h.html#a0162bca1cd5aa86347d936ab7b5f6e4e',1,'console.h']]],
-  ['back_5fcolor_5fwhite_4',['BACK_COLOR_WHITE',['../console_8h.html#adcfd786c497276c69d962d2a90b531a2',1,'console.h']]],
-  ['back_5fcolor_5fyellow_5',['BACK_COLOR_YELLOW',['../console_8h.html#a4b7dd4f774b1503f3cef732ee3bfa76f',1,'console.h']]]
+  ['arg_5fimm_0',['ARG_IMM',['../spu__dsl_8h.html#a94d7fa0746bc605f9ce2552764e5eeef',1,'spu_dsl.h']]],
+  ['arg_5fram_5fimm_1',['ARG_RAM_IMM',['../spu__dsl_8h.html#a1dff822bd45bb88ccb71fd358c299835',1,'spu_dsl.h']]],
+  ['arg_5freg_2',['ARG_REG',['../spu__dsl_8h.html#affc73a1d6edef707baa2c67176322169',1,'spu_dsl.h']]]
 ];

@@ -1,6 +1,8 @@
 \doxysection{spu/src/spu.cpp File Reference}
 \hypertarget{spu_8cpp}{}\label{spu_8cpp}\index{spu/src/spu.cpp@{spu/src/spu.cpp}}
 {\ttfamily \#include \"{}spu.\+h\"{}}\newline
+{\ttfamily \#include $<$spu\+\_\+dsl.\+h$>$}\newline
+{\ttfamily \#include \"{}cmd\+\_\+dict.\+h\"{}}\newline
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -8,9 +10,9 @@
 \item 
 \#define \mbox{\hyperlink{spu_8cpp_af0caa752175ed6935756d158d26848fd}{DATA\+\_\+\+GET\+\_\+\+VAL\+\_\+}}(dest,  val\+\_\+t)
 \item 
-\#define \mbox{\hyperlink{spu_8cpp_a450509e30b40f9b9ba6610328e37b02f}{STK\+\_\+\+POP\+\_\+\+AND\+\_\+\+PUSH\+\_\+\+ONE\+\_\+}}(expression)
+\#define \mbox{\hyperlink{spu_8cpp_a52ea00555388d76aef5567107cee7132}{THROW\+\_\+\+RUNTIME\+\_\+\+ERROR\+\_\+}}(text)
 \item 
-\#define \mbox{\hyperlink{spu_8cpp_a05b6b39eaf67dc47f5cc147c71386493}{STK\+\_\+\+POP\+\_\+\+AND\+\_\+\+PUSH\+\_\+\+TWO\+\_\+}}(expression)
+\#define \mbox{\hyperlink{spu_8cpp_ab54f687cb3af22616435e26f6af08942}{DEF\+\_\+\+CMD}}(name,  num,  arg1,  arg2,  arg3,  descr, ...)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -45,50 +47,45 @@
 
 Definition at line \mbox{\hyperlink{spu_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{spu_8cpp_source}{spu.\+cpp}}.
 
-\Hypertarget{spu_8cpp_a450509e30b40f9b9ba6610328e37b02f}\label{spu_8cpp_a450509e30b40f9b9ba6610328e37b02f} 
-\index{spu.cpp@{spu.cpp}!STK\_POP\_AND\_PUSH\_ONE\_@{STK\_POP\_AND\_PUSH\_ONE\_}}
-\index{STK\_POP\_AND\_PUSH\_ONE\_@{STK\_POP\_AND\_PUSH\_ONE\_}!spu.cpp@{spu.cpp}}
-\doxysubsubsection{\texorpdfstring{STK\_POP\_AND\_PUSH\_ONE\_}{STK\_POP\_AND\_PUSH\_ONE\_}}
-{\footnotesize\ttfamily \#define STK\+\_\+\+POP\+\_\+\+AND\+\_\+\+PUSH\+\_\+\+ONE\+\_\+(\begin{DoxyParamCaption}\item[{}]{expression }\end{DoxyParamCaption})}
+\Hypertarget{spu_8cpp_ab54f687cb3af22616435e26f6af08942}\label{spu_8cpp_ab54f687cb3af22616435e26f6af08942} 
+\index{spu.cpp@{spu.cpp}!DEF\_CMD@{DEF\_CMD}}
+\index{DEF\_CMD@{DEF\_CMD}!spu.cpp@{spu.cpp}}
+\doxysubsubsection{\texorpdfstring{DEF\_CMD}{DEF\_CMD}}
+{\footnotesize\ttfamily \#define DEF\+\_\+\+CMD(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{num,  }\item[{}]{arg1,  }\item[{}]{arg2,  }\item[{}]{arg3,  }\item[{}]{descr,  }\item[{}]{... }\end{DoxyParamCaption})}
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stk\_res\ |=\ \mbox{\hyperlink{stack_8cpp_af81453e30590dfee9dd3f4b35b9b30c1}{stk\_pop}}(\&spu-\/>stk,\ \&a);\ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (stk\_res\ ==\ \mbox{\hyperlink{struct_stack_ae8242b5f1b2c3d98a6dbafc302e509d5a146633a2ef2a9bbb1c05ec4cd31ba019}{Stack::OK}})\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stk\_res\ |=\ \mbox{\hyperlink{stack_8cpp_aa30787d931ba7ff16b8aa1ddfa7337d3}{stk\_push}}(\&spu-\/>stk,\ expression)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{case}\ CMD\_\#\#name:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \_\_VA\_ARGS\_\_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ break;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
 
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{spu_8cpp_source_l00096}{96}} of file \mbox{\hyperlink{spu_8cpp_source}{spu.\+cpp}}.
-
-\Hypertarget{spu_8cpp_a05b6b39eaf67dc47f5cc147c71386493}\label{spu_8cpp_a05b6b39eaf67dc47f5cc147c71386493} 
-\index{spu.cpp@{spu.cpp}!STK\_POP\_AND\_PUSH\_TWO\_@{STK\_POP\_AND\_PUSH\_TWO\_}}
-\index{STK\_POP\_AND\_PUSH\_TWO\_@{STK\_POP\_AND\_PUSH\_TWO\_}!spu.cpp@{spu.cpp}}
-\doxysubsubsection{\texorpdfstring{STK\_POP\_AND\_PUSH\_TWO\_}{STK\_POP\_AND\_PUSH\_TWO\_}}
-{\footnotesize\ttfamily \#define STK\+\_\+\+POP\+\_\+\+AND\+\_\+\+PUSH\+\_\+\+TWO\+\_\+(\begin{DoxyParamCaption}\item[{}]{expression }\end{DoxyParamCaption})}
-
-{\bfseries Value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stk\_res\ |=\ \mbox{\hyperlink{stack_8cpp_af81453e30590dfee9dd3f4b35b9b30c1}{stk\_pop}}(\&spu-\/>stk,\ \&b);\ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (stk\_res\ !=\ \mbox{\hyperlink{struct_stack_ae8242b5f1b2c3d98a6dbafc302e509d5a146633a2ef2a9bbb1c05ec4cd31ba019}{Stack::OK}})\ \textcolor{keywordflow}{break};\ \ \ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stk\_res\ |=\ \mbox{\hyperlink{stack_8cpp_af81453e30590dfee9dd3f4b35b9b30c1}{stk\_pop}}(\&spu-\/>stk,\ \&a);\ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (stk\_res\ ==\ \mbox{\hyperlink{struct_stack_ae8242b5f1b2c3d98a6dbafc302e509d5a146633a2ef2a9bbb1c05ec4cd31ba019}{Stack::OK}})\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stk\_res\ |=\ \mbox{\hyperlink{stack_8cpp_aa30787d931ba7ff16b8aa1ddfa7337d3}{stk\_push}}(\&spu-\/>stk,\ expression)}
-
-\end{DoxyCode}
-
-
-Definition at line \mbox{\hyperlink{spu_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{spu_8cpp_source}{spu.\+cpp}}.
+Definition at line \mbox{\hyperlink{spu_8cpp_source_l00105}{105}} of file \mbox{\hyperlink{spu_8cpp_source}{spu.\+cpp}}.
 
 \Hypertarget{spu_8cpp_a52ea00555388d76aef5567107cee7132}\label{spu_8cpp_a52ea00555388d76aef5567107cee7132} 
 \index{spu.cpp@{spu.cpp}!THROW\_RUNTIME\_ERROR\_@{THROW\_RUNTIME\_ERROR\_}}
 \index{THROW\_RUNTIME\_ERROR\_@{THROW\_RUNTIME\_ERROR\_}!spu.cpp@{spu.cpp}}
-\doxysubsubsection{\texorpdfstring{THROW\_RUNTIME\_ERROR\_}{THROW\_RUNTIME\_ERROR\_}}
+\doxysubsubsection{\texorpdfstring{THROW\_RUNTIME\_ERROR\_}{THROW\_RUNTIME\_ERROR\_}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define THROW\+\_\+\+RUNTIME\+\_\+\+ERROR\+\_\+(\begin{DoxyParamCaption}\item[{}]{text }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_ad220b7c98ce4bd06bf25860ca62d7aba}{CONSOLE\_RED}}(\textcolor{stringliteral}{"{}Runtime\ error\ occured.\ "{}}\ text)\ \textcolor{stringliteral}{"{}\ Byte\ \%zu\(\backslash\)n"{}},\ ip);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306}{Status::RUNTIME\_ERROR}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{spu_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{spu_8cpp_source}{spu.\+cpp}}.
+
+\Hypertarget{spu_8cpp_a52ea00555388d76aef5567107cee7132}\label{spu_8cpp_a52ea00555388d76aef5567107cee7132} 
+\index{spu.cpp@{spu.cpp}!THROW\_RUNTIME\_ERROR\_@{THROW\_RUNTIME\_ERROR\_}}
+\index{THROW\_RUNTIME\_ERROR\_@{THROW\_RUNTIME\_ERROR\_}!spu.cpp@{spu.cpp}}
+\doxysubsubsection{\texorpdfstring{THROW\_RUNTIME\_ERROR\_}{THROW\_RUNTIME\_ERROR\_}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \#define THROW\+\_\+\+RUNTIME\+\_\+\+ERROR\+\_\+(\begin{DoxyParamCaption}\item[{}]{text }\end{DoxyParamCaption})}
 
 {\bfseries Value\+:}
@@ -143,83 +140,27 @@ Definition at line \mbox{\hyperlink{spu_8cpp_source_l00110}{110}} of file \mbox{
 \DoxyCodeLine{00116\ }
 \DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{int}\ stk\_res\ =\ \mbox{\hyperlink{struct_stack_ae8242b5f1b2c3d98a6dbafc302e509d5a146633a2ef2a9bbb1c05ec4cd31ba019}{Stack::OK}};}
 \DoxyCodeLine{00118\ }
-\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{double}\ a\ =\ NAN;}
-\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{double}\ b\ =\ NAN;}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordflow}{switch}\ (cmd-\/>\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}-\/>\mbox{\hyperlink{struct_cmd_info_a8c0cbd30b5f5d99be1e3b93668995c7e}{num}})\ \{}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#include\ "{}\mbox{\hyperlink{cmd__dict_8h}{cmd\_dict.h}}"{}}}
 \DoxyCodeLine{00121\ }
-\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{switch}\ (cmd-\/>\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}-\/>\mbox{\hyperlink{struct_cmd_info_a8c0cbd30b5f5d99be1e3b93668995c7e}{num}})\ \{}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14adb27a7a0ffd29254758e190e6ced95d3}{CMD\_HLT}}:}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a}{Status::OK\_EXIT}};}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a757970b025eec89847a8c24d2d9b25b2}{CMD\_PUSH}}:}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!cmd-\/>\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae9e14c718597b6998c4189592e775054}{reg}}\ \&\&\ !cmd-\/>\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae86855d817fa5c60367ce99d1c826287}{imm}})}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{spu_8cpp_a52ea00555388d76aef5567107cee7132}{THROW\_RUNTIME\_ERROR\_}}(\textcolor{stringliteral}{"{}\(\backslash\)"{}push\(\backslash\)"{}\ requires\ at\ least\ one\ argument."{}});}
-\DoxyCodeLine{00128\ }
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ 0;}
-\DoxyCodeLine{00130\ }
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd-\/>\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae9e14c718597b6998c4189592e775054}{reg}})}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ +=\ spu-\/>\mbox{\hyperlink{struct_spu_data_aabfc96caea688f2fa16f1b857b1e2c69}{reg}}[cmd-\/>\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a49949ad6edf5cb3523025913f2c0adc5}{reg}}];}
-\DoxyCodeLine{00133\ }
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd-\/>\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae86855d817fa5c60367ce99d1c826287}{imm}})}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ +=\ cmd-\/>\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a5aef979bf03c8e615ba60d47d364a14b}{imm}};}
-\DoxyCodeLine{00136\ }
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ stk\_res\ |=\ \mbox{\hyperlink{stack_8cpp_aa30787d931ba7ff16b8aa1ddfa7337d3}{stk\_push}}(\&spu-\/>\mbox{\hyperlink{struct_spu_data_abc84b16c7ed76fea5ed82082897443c2}{stk}},\ a);}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a9147b396759b87cd5c0f32344ac92379}{CMD\_POP}}:}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!cmd-\/>\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae9e14c718597b6998c4189592e775054}{reg}})}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{spu_8cpp_a52ea00555388d76aef5567107cee7132}{THROW\_RUNTIME\_ERROR\_}}(\textcolor{stringliteral}{"{}\(\backslash\)"{}pop\(\backslash\)"{}\ requires\ reg."{}});}
-\DoxyCodeLine{00142\ }
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ stk\_res\ |=\ \mbox{\hyperlink{stack_8cpp_af81453e30590dfee9dd3f4b35b9b30c1}{stk\_pop}}(\&spu-\/>\mbox{\hyperlink{struct_spu_data_abc84b16c7ed76fea5ed82082897443c2}{stk}},\ \&spu-\/>\mbox{\hyperlink{struct_spu_data_aabfc96caea688f2fa16f1b857b1e2c69}{reg}}[cmd-\/>\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a49949ad6edf5cb3523025913f2c0adc5}{reg}}]);}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a52be801ea4236a7fc09ba1b4638f5319}{CMD\_IN}}:}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ \mbox{\hyperlink{spu_8h_afd9d70dee639cf92630f4ac866c61a63}{spu\_get\_double\_from\_input}}();}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isnan(a))}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca74a1dcf53dd0430f856c203aa43e0364}{Status::WRONG\_USER\_INPUT}};}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ stk\_res\ |=\ \mbox{\hyperlink{stack_8cpp_aa30787d931ba7ff16b8aa1ddfa7337d3}{stk\_push}}(\&spu-\/>\mbox{\hyperlink{struct_spu_data_abc84b16c7ed76fea5ed82082897443c2}{stk}},\ a);}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a2362d4598ba9820d06142c86113bbb6f}{CMD\_OUT}}:}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ stk\_res\ |=\ \mbox{\hyperlink{stack_8cpp_af81453e30590dfee9dd3f4b35b9b30c1}{stk\_pop}}(\&spu-\/>\mbox{\hyperlink{struct_spu_data_abc84b16c7ed76fea5ed82082897443c2}{stk}},\ \&a);}
-\DoxyCodeLine{00153\ }
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stk\_res\ ==\ \mbox{\hyperlink{struct_stack_ae8242b5f1b2c3d98a6dbafc302e509d5a146633a2ef2a9bbb1c05ec4cd31ba019}{Stack::OK}})}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{spu_8h_ac01e183889af8a757b1453fc51124001}{spu\_print\_double}}(a))}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca6d1d6a5832bcd12949e74fc041ce5064}{Status::OUTPUT\_ERROR}};}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a055360a89fac584d1244429c71a1cd72}{CMD\_ADD}}:}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{spu_8cpp_a05b6b39eaf67dc47f5cc147c71386493}{STK\_POP\_AND\_PUSH\_TWO\_}}(a\ +\ b);}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14aa2e4d65c8e602db526dc72d159a05801}{CMD\_SUB}}:}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{spu_8cpp_a05b6b39eaf67dc47f5cc147c71386493}{STK\_POP\_AND\_PUSH\_TWO\_}}(a\ -\/\ b);}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a4efd5cc5d2f7a7d5cded5174df59be0a}{CMD\_MUL}}:}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{spu_8cpp_a05b6b39eaf67dc47f5cc147c71386493}{STK\_POP\_AND\_PUSH\_TWO\_}}(a\ *\ b);}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a67d20add7d52cf256ea237ecb1984f5c}{CMD\_DIV}}:}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{spu_8cpp_a05b6b39eaf67dc47f5cc147c71386493}{STK\_POP\_AND\_PUSH\_TWO\_}}(a\ /\ b);}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a14947f5975952a02eda1208f3db263a3}{CMD\_SQRT}}:}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{spu_8cpp_a450509e30b40f9b9ba6610328e37b02f}{STK\_POP\_AND\_PUSH\_ONE\_}}(sqrt(a));}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14a2a4044269c782b979085faef707a43a5}{CMD\_SIN}}:}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{spu_8cpp_a450509e30b40f9b9ba6610328e37b02f}{STK\_POP\_AND\_PUSH\_ONE\_}}(sin(a));}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14ae8d26bb23ca3412db2c2dd00a4d96edc}{CMD\_COS}}:}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{spu_8cpp_a450509e30b40f9b9ba6610328e37b02f}{STK\_POP\_AND\_PUSH\_ONE\_}}(cos(a));}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00181\ \ \ \ \ \}}
-\DoxyCodeLine{00182\ }
-\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordflow}{if}\ (stk\_res\ !=\ \mbox{\hyperlink{struct_stack_ae8242b5f1b2c3d98a6dbafc302e509d5a146633a2ef2a9bbb1c05ec4cd31ba019}{Stack::OK}})\ \{}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_ad220b7c98ce4bd06bf25860ca62d7aba}{CONSOLE\_RED}}(\textcolor{stringliteral}{"{}Runtime\ error\ occured!"{}})\ \textcolor{stringliteral}{"{}\ Stack\ error.\ Byte\ \%zu\(\backslash\)n"{}},\ ip);}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{stack_8cpp_a16351279f5d0c48665e03ccbfe77aad3}{stk\_print\_error\_to\_user}}(stk\_res);}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306}{Status::RUNTIME\_ERROR}};}
-\DoxyCodeLine{00187\ \ \ \ \ \}}
-\DoxyCodeLine{00188\ }
-\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
-\DoxyCodeLine{00190\ \}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ assert(0\ \&\&\ \textcolor{stringliteral}{"{}Wrong\ command\ num\ given"{}});}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{if}\ (stk\_res\ !=\ \mbox{\hyperlink{struct_stack_ae8242b5f1b2c3d98a6dbafc302e509d5a146633a2ef2a9bbb1c05ec4cd31ba019}{Stack::OK}})\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_ad220b7c98ce4bd06bf25860ca62d7aba}{CONSOLE\_RED}}(\textcolor{stringliteral}{"{}Runtime\ error\ occured!"{}})\ \textcolor{stringliteral}{"{}\ Stack\ error.\ Byte\ \%zu\(\backslash\)n"{}},\ ip);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{stack_8cpp_a16351279f5d0c48665e03ccbfe77aad3}{stk\_print\_error\_to\_user}}(stk\_res);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306}{Status::RUNTIME\_ERROR}};}
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00134\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{cmd_8h_source_l00132}{Cmd\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00131}{Cmd\+::byte}}, \mbox{\hyperlink{cmd_8h_source_l00077}{CMD\+\_\+\+ADD}}, \mbox{\hyperlink{cmd_8h_source_l00083}{CMD\+\_\+\+COS}}, \mbox{\hyperlink{cmd_8h_source_l00080}{CMD\+\_\+\+DIV}}, \mbox{\hyperlink{cmd_8h_source_l00072}{CMD\+\_\+\+HLT}}, \mbox{\hyperlink{cmd_8h_source_l00075}{CMD\+\_\+\+IN}}, \mbox{\hyperlink{cmd_8h_source_l00079}{CMD\+\_\+\+MUL}}, \mbox{\hyperlink{cmd_8h_source_l00076}{CMD\+\_\+\+OUT}}, \mbox{\hyperlink{cmd_8h_source_l00074}{CMD\+\_\+\+POP}}, \mbox{\hyperlink{cmd_8h_source_l00073}{CMD\+\_\+\+PUSH}}, \mbox{\hyperlink{cmd_8h_source_l00082}{CMD\+\_\+\+SIN}}, \mbox{\hyperlink{cmd_8h_source_l00081}{CMD\+\_\+\+SQRT}}, \mbox{\hyperlink{cmd_8h_source_l00078}{CMD\+\_\+\+SUB}}, \mbox{\hyperlink{console_8h_source_l00033}{CONSOLE\+\_\+\+RED}}, \mbox{\hyperlink{cmd_8h_source_l00018}{Cmd\+Byte\+::imm}}, \mbox{\hyperlink{cmd_8h_source_l00058}{Cmd\+Args\+::imm}}, \mbox{\hyperlink{cmd_8h_source_l00129}{Cmd\+::info}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, \mbox{\hyperlink{cmd_8h_source_l00087}{Cmd\+Info\+::num}}, \mbox{\hyperlink{stack_8h_source_l00036}{Stack\+::\+OK}}, \mbox{\hyperlink{statuses_8h_source_l00014}{Status\+::\+OK\+\_\+\+EXIT}}, \mbox{\hyperlink{statuses_8h_source_l00022}{Status\+::\+OUTPUT\+\_\+\+ERROR}}, \mbox{\hyperlink{cmd_8h_source_l00019}{Cmd\+Byte\+::ram}}, \mbox{\hyperlink{cmd_8h_source_l00017}{Cmd\+Byte\+::reg}}, \mbox{\hyperlink{cmd_8h_source_l00059}{Cmd\+Args\+::reg}}, \mbox{\hyperlink{spu_8h_source_l00017}{Spu\+Data\+::reg}}, \mbox{\hyperlink{statuses_8h_source_l00020}{Status\+::\+RUNTIME\+\_\+\+ERROR}}, \mbox{\hyperlink{spu_8h_source_l00069}{spu\+\_\+get\+\_\+double\+\_\+from\+\_\+input()}}, \mbox{\hyperlink{spu_8h_source_l00049}{spu\+\_\+print\+\_\+double()}}, \mbox{\hyperlink{spu_8h_source_l00015}{Spu\+Data\+::stk}}, \mbox{\hyperlink{stack_8cpp_source_l00164}{stk\+\_\+pop()}}, \mbox{\hyperlink{spu_8cpp_source_l00096}{STK\+\_\+\+POP\+\_\+\+AND\+\_\+\+PUSH\+\_\+\+ONE\+\_\+}}, \mbox{\hyperlink{spu_8cpp_source_l00101}{STK\+\_\+\+POP\+\_\+\+AND\+\_\+\+PUSH\+\_\+\+TWO\+\_\+}}, \mbox{\hyperlink{stack_8cpp_source_l00228}{stk\+\_\+print\+\_\+error\+\_\+to\+\_\+user()}}, \mbox{\hyperlink{stack_8cpp_source_l00138}{stk\+\_\+push()}}, \mbox{\hyperlink{spu_8cpp_source_l00029}{THROW\+\_\+\+RUNTIME\+\_\+\+ERROR\+\_\+}}, and \mbox{\hyperlink{statuses_8h_source_l00021}{Status\+::\+WRONG\+\_\+\+USER\+\_\+\+INPUT}}.
+References \mbox{\hyperlink{cmd_8h_source_l00113}{Cmd\+::byte}}, \mbox{\hyperlink{console_8h_source_l00033}{CONSOLE\+\_\+\+RED}}, \mbox{\hyperlink{cmd_8h_source_l00111}{Cmd\+::info}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, \mbox{\hyperlink{cmd_8h_source_l00084}{Cmd\+Info\+::num}}, \mbox{\hyperlink{stack_8h_source_l00036}{Stack\+::\+OK}}, \mbox{\hyperlink{cmd_8h_source_l00021}{Cmd\+Byte\+::ram}}, \mbox{\hyperlink{statuses_8h_source_l00020}{Status\+::\+RUNTIME\+\_\+\+ERROR}}, \mbox{\hyperlink{stack_8cpp_source_l00228}{stk\+\_\+print\+\_\+error\+\_\+to\+\_\+user()}}, and \mbox{\hyperlink{spu_8cpp_source_l00029}{THROW\+\_\+\+RUNTIME\+\_\+\+ERROR\+\_\+}}.
 
 
 
@@ -309,7 +250,7 @@ Definition at line \mbox{\hyperlink{spu_8cpp_source_l00039}{39}} of file \mbox{\
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{cmd_8h_source_l00132}{Cmd\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00131}{Cmd\+::byte}}, \mbox{\hyperlink{spu_8cpp_source_l00005}{Spu\+Data\+::ctor()}}, \mbox{\hyperlink{spu_8cpp_source_l00034}{DATA\+\_\+\+GET\+\_\+\+VAL\+\_\+}}, \mbox{\hyperlink{spu_8cpp_source_l00017}{Spu\+Data\+::dtor()}}, \mbox{\hyperlink{cmd_8cpp_source_l00027}{find\+\_\+command\+\_\+by\+\_\+num()}}, \mbox{\hyperlink{cmd_8h_source_l00018}{Cmd\+Byte\+::imm}}, \mbox{\hyperlink{cmd_8h_source_l00058}{Cmd\+Args\+::imm}}, \mbox{\hyperlink{cmd_8h_source_l00060}{Cmd\+Args\+::imm\+\_\+ram}}, \mbox{\hyperlink{cmd_8h_source_l00129}{Cmd\+::info}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, \mbox{\hyperlink{cmd_8h_source_l00016}{Cmd\+Byte\+::num}}, \mbox{\hyperlink{cmd_8h_source_l00019}{Cmd\+Byte\+::ram}}, \mbox{\hyperlink{cmd_8h_source_l00017}{Cmd\+Byte\+::reg}}, \mbox{\hyperlink{cmd_8h_source_l00059}{Cmd\+Args\+::reg}}, \mbox{\hyperlink{cmd_8h_source_l00126}{SIGNATURE}}, \mbox{\hyperlink{statuses_8h_source_l00023}{Status\+::\+SIGNATURE\+\_\+\+ERROR}}, \mbox{\hyperlink{cmd_8cpp_source_l00021}{Cmd\+::size()}}, \mbox{\hyperlink{spu_8cpp_source_l00110}{spu\+\_\+execute\+\_\+command()}}, \mbox{\hyperlink{statuses_8h_source_l00055}{STATUS\+\_\+\+CHECK}}, \mbox{\hyperlink{spu_8h_source_l00015}{Spu\+Data\+::stk}}, \mbox{\hyperlink{stack_8cpp_source_l00069}{stk\+\_\+dtor()}}, and \mbox{\hyperlink{spu_8cpp_source_l00029}{THROW\+\_\+\+RUNTIME\+\_\+\+ERROR\+\_\+}}.
+References \mbox{\hyperlink{cmd_8h_source_l00114}{Cmd\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00113}{Cmd\+::byte}}, \mbox{\hyperlink{spu_8cpp_source_l00005}{Spu\+Data\+::ctor()}}, \mbox{\hyperlink{spu_8cpp_source_l00034}{DATA\+\_\+\+GET\+\_\+\+VAL\+\_\+}}, \mbox{\hyperlink{spu_8cpp_source_l00017}{Spu\+Data\+::dtor()}}, \mbox{\hyperlink{cmd_8cpp_source_l00027}{find\+\_\+command\+\_\+by\+\_\+num()}}, \mbox{\hyperlink{cmd_8h_source_l00020}{Cmd\+Byte\+::imm}}, \mbox{\hyperlink{cmd_8h_source_l00063}{Cmd\+Args\+::imm}}, \mbox{\hyperlink{cmd_8h_source_l00065}{Cmd\+Args\+::imm\+\_\+ram}}, \mbox{\hyperlink{cmd_8h_source_l00111}{Cmd\+::info}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, \mbox{\hyperlink{cmd_8h_source_l00018}{Cmd\+Byte\+::num}}, \mbox{\hyperlink{cmd_8h_source_l00021}{Cmd\+Byte\+::ram}}, \mbox{\hyperlink{cmd_8h_source_l00019}{Cmd\+Byte\+::reg}}, \mbox{\hyperlink{cmd_8h_source_l00064}{Cmd\+Args\+::reg}}, \mbox{\hyperlink{cmd_8h_source_l00108}{SIGNATURE}}, \mbox{\hyperlink{statuses_8h_source_l00023}{Status\+::\+SIGNATURE\+\_\+\+ERROR}}, \mbox{\hyperlink{cmd_8cpp_source_l00021}{Cmd\+::size()}}, \mbox{\hyperlink{spu_8cpp_source_l00110}{spu\+\_\+execute\+\_\+command()}}, \mbox{\hyperlink{statuses_8h_source_l00055}{STATUS\+\_\+\+CHECK}}, \mbox{\hyperlink{spu_8h_source_l00015}{Spu\+Data\+::stk}}, \mbox{\hyperlink{stack_8cpp_source_l00069}{stk\+\_\+dtor()}}, and \mbox{\hyperlink{spu_8cpp_source_l00029}{THROW\+\_\+\+RUNTIME\+\_\+\+ERROR\+\_\+}}.
 
 
 

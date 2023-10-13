@@ -10,6 +10,8 @@
 
 #include "lib/utils/console.h"
 
+const short CMD_VERSION = 0;
+
 const size_t MAX_LINE_LEN = 64;   //< max command text line len
 
 struct CmdByte {
@@ -50,6 +52,9 @@ typedef double Imm_t;
 
 #define IMM_T_PRINTF "%lf"
 
+#define CHECK_IMM(var) !isnan(var)
+
+
 typedef long Imm_ram_t;
 
 #define IMM_RAM_T_PRINTF "%ld"
@@ -68,20 +73,12 @@ struct ArgsEn {
 
 typedef unsigned char Cmd_num_t;
 
+
+#define DEF_CMD(name, num, ...) CMD_##name = num,
 enum CmdNum: Cmd_num_t {
-    CMD_HLT  =  0,
-    CMD_PUSH =  1,
-    CMD_POP  =  2,
-    CMD_IN   =  3,
-    CMD_OUT  =  4,
-    CMD_ADD  =  5,
-    CMD_SUB  =  6,
-    CMD_MUL  =  7,
-    CMD_DIV  =  8,
-    CMD_SQRT =  9,
-    CMD_SIN  = 10,
-    CMD_COS  = 11,
+    #include "cmd_dict.h"
 };
+#undef DEF_CMD
 
 struct CmdInfo {
     const CmdNum num;
@@ -91,26 +88,11 @@ struct CmdInfo {
     const char* description = nullptr;
 };
 
-const short CMD_VERSION = 0;
-
+#define DEF_CMD(name, num, arg1, arg2, arg3, description, ...) {CMD_##name, #name, {arg1, arg2, arg3}, description},
 const CmdInfo CMDS_DICT[] {
-
-    {CMD_HLT,   "HLT",  {},                     "halt - end of program"},
-    {CMD_PUSH,  "push", {true,  true,  true},   "push one element to stack ||"
-                                                " take from reg and push ||"
-                                                " take from reg + imm and push"},
-    {CMD_POP,   "pop",  {true,  false, true},   "pop from stack and write to reg"},
-    {CMD_IN,    "in",   {},                     "push one element to stack from user input"},
-    {CMD_OUT,   "out",  {},                     "pop and print element from stack"},
-    {CMD_ADD,   "add",  {},                     "+"},
-    {CMD_SUB,   "sub",  {},                     "-"},
-    {CMD_MUL,   "mul",  {},                     "*"},
-    {CMD_DIV,   "div",  {},                     "/"},
-    {CMD_SQRT,  "sqrt", {},                     "sqaure root"},
-    {CMD_SIN,   "sin",  {},                     "sinus"},
-    {CMD_COS,   "cos",  {},                     "cosinus"},
-
+    #include "cmd_dict.h"
 };
+#undef DEF_CMD
 
 const size_t CMDS_DICT_SIZE = sizeof(CMDS_DICT) / sizeof(CmdInfo); //< Number of commands
 

@@ -87,6 +87,12 @@ Status::Statuses asm_parse_and_write_line(FILE* file, String line, const size_t 
 
     return Status::NORMAL_WORK;
 }
+#undef THROW_SYNTAX_ERROR
+
+#define THROW_SYNTAX_ERROR_(text, ...)  do {                                                        \
+            fprintf(stderr, CONSOLE_RED("Syntax error. " text) " Line %zu\n", __VA_ARGS__ line_num);\
+            return Status::SYNTAX_ERROR;                                                            \
+        } while(0)
 
 Status::Statuses asm_parse_is_arg_ram(char** str, Cmd* cmd, const size_t line_num) {
     assert(cmd);
@@ -112,6 +118,12 @@ Status::Statuses asm_parse_is_arg_ram(char** str, Cmd* cmd, const size_t line_nu
 
     return Status::NORMAL_WORK;
 }
+#undef THROW_SYNTAX_ERROR
+
+#define THROW_SYNTAX_ERROR_(text, ...)  do {                                                        \
+            fprintf(stderr, CONSOLE_RED("Syntax error. " text) " Line %zu\n", __VA_ARGS__ line_num);\
+            return Status::SYNTAX_ERROR;                                                            \
+        } while(0)
 
 Status::Statuses asm_read_reg(const char* str, Cmd* cmd, const size_t line_num) {
     assert(cmd);
@@ -131,6 +143,12 @@ Status::Statuses asm_read_reg(const char* str, Cmd* cmd, const size_t line_num) 
 
     return Status::NORMAL_WORK;
 }
+#undef THROW_SYNTAX_ERROR
+
+#define THROW_SYNTAX_ERROR_(text, ...)  do {                                                        \
+            fprintf(stderr, CONSOLE_RED("Syntax error. " text) " Line %zu\n", __VA_ARGS__ line_num);\
+            return Status::SYNTAX_ERROR;                                                            \
+        } while(0)
 
 Status::Statuses asm_read_imm(const char* str, Cmd* cmd, const size_t line_num) {
     assert(cmd);
@@ -242,6 +260,11 @@ Status::Statuses asm_write_cmd_debug(FILE* file, const Cmd* cmd,
 
     return Status::NORMAL_WORK;
 }
+#undef F_PRINTF_CHECK_
+#undef F_WRITE_CHECK_
+
+#define F_PRINTF_CHECK_(printf)  if (printf == EOF) return Status::OUT_FILE_ERROR
+#define F_WRITE_CHECK_(write)    if (!write)        return Status::OUT_FILE_ERROR
 
 Status::Statuses asm_write_cmd_bin(FILE* file, const Cmd* cmd) {
     assert(file);
@@ -264,6 +287,11 @@ Status::Statuses asm_write_cmd_bin(FILE* file, const Cmd* cmd) {
 
     return Status::NORMAL_WORK;
 }
+#undef F_PRINTF_CHECK_
+#undef F_WRITE_CHECK_
+
+#define F_PRINTF_CHECK_(printf)  if (printf == EOF) return Status::OUT_FILE_ERROR
+#define F_WRITE_CHECK_(write)    if (!write)        return Status::OUT_FILE_ERROR
 
 Status::Statuses asm_write_signature(FILE* file, const bool debug_mode) {
     assert(file);
@@ -280,7 +308,6 @@ Status::Statuses asm_write_signature(FILE* file, const bool debug_mode) {
 
     return Status::NORMAL_WORK;
 }
-
 #undef F_WRITE_CHECK_
 #undef F_PRINTF_CHECK_
 
