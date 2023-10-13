@@ -21,5 +21,6 @@ var searchData=
   ['stk_5fresize_5fcalc_5fdown_18',['stk_resize_calc_down',['../stack_8h.html#aeb392b549704a476d9e40e86d7e7c148',1,'stack.h']]],
   ['stk_5fresize_5fcalc_5fup_19',['stk_resize_calc_up',['../stack_8h.html#a391dde569392473706030d7db6eb84c4',1,'stack.h']]],
   ['stk_5fstruct_5fhash_5fcalc_20',['stk_struct_hash_calc',['../stack_8h.html#a536ddddf9bb8810b9703d5e405a073b9',1,'stack.h']]],
-  ['stk_5fverify_21',['stk_verify',['../stack_8cpp.html#aa5801fe77f92f99b324b972ee22ed326',1,'stk_verify(Stack *stk):&#160;stack.cpp'],['../stack_8h.html#aa5801fe77f92f99b324b972ee22ed326',1,'stk_verify(Stack *stk):&#160;stack.cpp']]]
+  ['stk_5fverify_21',['stk_verify',['../stack_8cpp.html#aa5801fe77f92f99b324b972ee22ed326',1,'stk_verify(Stack *stk):&#160;stack.cpp'],['../stack_8h.html#aa5801fe77f92f99b324b972ee22ed326',1,'stk_verify(Stack *stk):&#160;stack.cpp']]],
+  ['str_5fskip_5fspaces_22',['str_skip_spaces',['../text__lib_8h.html#a908995c5e99f20e9adb9a71152c91864',1,'str_skip_spaces(char *str):&#160;text_lib.h'],['../text__lib_8h.html#a7dd8b8931c3f93aebb70ec632e3a98b8',1,'str_skip_spaces(const char *str):&#160;text_lib.h']]]
 ];

@@ -4,6 +4,7 @@ var assembler_8cpp =
     [ "F_WRITE_CHECK_", "assembler_8cpp.html#a887220b6e73f53cc8831dc9be061f938", null ],
     [ "THROW_SYNTAX_ERROR_", "assembler_8cpp.html#ab1877074925c08a214b5f75c5cb0e335", null ],
     [ "asm_parse_and_write_line", "assembler_8cpp.html#afb4775e59f95c37c7a8907336a0175ce", null ],
+    [ "asm_parse_is_arg_ram", "assembler_8cpp.html#ab9b80d44b196ea4e52b26bdc447d9e7a", null ],
     [ "asm_read_imm", "assembler_8cpp.html#aa65f846ee48ebb731d61f22c015e92b0", null ],
     [ "asm_read_reg", "assembler_8cpp.html#add0155cdcf619dbe80134c285cd15671", null ],
     [ "asm_write_cmd", "assembler_8cpp.html#a15d1fb203a34d9a3e85896a45398f9f0", null ],

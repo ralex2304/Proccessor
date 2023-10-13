@@ -10,7 +10,7 @@ var cmd_8h =
     [ "IMM_RAM_T_PRINTF", "cmd_8h.html#a99ba326f1a226d2c12abbfb5005df65a", null ],
     [ "IMM_T_PRINTF", "cmd_8h.html#a55c597e69a4f998286a49ce487a64f08", null ],
     [ "Cmd_num_t", "cmd_8h.html#ab1d5b54818808a2c92c5632aaf961cd0", null ],
-    [ "Imm_ram_t", "cmd_8h.html#aa9cee96bd541b988a38cef8e728fdb14", null ],
+    [ "Imm_ram_t", "cmd_8h.html#a6c224545f3adf99483ea18e36199cb23", null ],
     [ "Imm_t", "cmd_8h.html#a37e21d5c10fb766b5bb72edd3503f946", null ],
     [ "RegNum_t", "cmd_8h.html#a428ff6e9ffc07d578a8a207c72dc3366", null ],
     [ "CmdNum", "cmd_8h.html#a797039060eebcda99793fb7f223a0b14", [

@@ -29,7 +29,7 @@ struct \mbox{\hyperlink{struct_cmd}{Cmd}}
 \item 
 \#define \mbox{\hyperlink{cmd_8h_a55c597e69a4f998286a49ce487a64f08}{IMM\+\_\+\+T\+\_\+\+PRINTF}}~\"{}\%lf\"{}
 \item 
-\#define \mbox{\hyperlink{cmd_8h_a99ba326f1a226d2c12abbfb5005df65a}{IMM\+\_\+\+RAM\+\_\+\+T\+\_\+\+PRINTF}}~\"{}\%lu\"{}
+\#define \mbox{\hyperlink{cmd_8h_a99ba326f1a226d2c12abbfb5005df65a}{IMM\+\_\+\+RAM\+\_\+\+T\+\_\+\+PRINTF}}~\"{}\%ld\"{}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
@@ -38,7 +38,7 @@ typedef unsigned char \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}
 \item 
 typedef double \mbox{\hyperlink{cmd_8h_a37e21d5c10fb766b5bb72edd3503f946}{Imm\+\_\+t}}
 \item 
-typedef unsigned long \mbox{\hyperlink{cmd_8h_aa9cee96bd541b988a38cef8e728fdb14}{Imm\+\_\+ram\+\_\+t}}
+typedef long \mbox{\hyperlink{cmd_8h_a6c224545f3adf99483ea18e36199cb23}{Imm\+\_\+ram\+\_\+t}}
 \item 
 typedef unsigned char \mbox{\hyperlink{cmd_8h_ab1d5b54818808a2c92c5632aaf961cd0}{Cmd\+\_\+num\+\_\+t}}
 \end{DoxyCompactItemize}
@@ -105,7 +105,7 @@ const \mbox{\hyperlink{struct_signature}{Signature}} \mbox{\hyperlink{cmd_8h_af4
 \index{cmd.h@{cmd.h}!IMM\_RAM\_T\_PRINTF@{IMM\_RAM\_T\_PRINTF}}
 \index{IMM\_RAM\_T\_PRINTF@{IMM\_RAM\_T\_PRINTF}!cmd.h@{cmd.h}}
 \doxysubsubsection{\texorpdfstring{IMM\_RAM\_T\_PRINTF}{IMM\_RAM\_T\_PRINTF}}
-{\footnotesize\ttfamily \#define IMM\+\_\+\+RAM\+\_\+\+T\+\_\+\+PRINTF~\"{}\%lu\"{}}
+{\footnotesize\ttfamily \#define IMM\+\_\+\+RAM\+\_\+\+T\+\_\+\+PRINTF~\"{}\%ld\"{}}
 
 
 
@@ -134,11 +134,11 @@ Definition at line \mbox{\hyperlink{cmd_8h_source_l00051}{51}} of file \mbox{\hy
 
 Definition at line \mbox{\hyperlink{cmd_8h_source_l00069}{69}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
 
-\Hypertarget{cmd_8h_aa9cee96bd541b988a38cef8e728fdb14}\label{cmd_8h_aa9cee96bd541b988a38cef8e728fdb14} 
+\Hypertarget{cmd_8h_a6c224545f3adf99483ea18e36199cb23}\label{cmd_8h_a6c224545f3adf99483ea18e36199cb23} 
 \index{cmd.h@{cmd.h}!Imm\_ram\_t@{Imm\_ram\_t}}
 \index{Imm\_ram\_t@{Imm\_ram\_t}!cmd.h@{cmd.h}}
 \doxysubsubsection{\texorpdfstring{Imm\_ram\_t}{Imm\_ram\_t}}
-{\footnotesize\ttfamily typedef unsigned long \mbox{\hyperlink{cmd_8h_aa9cee96bd541b988a38cef8e728fdb14}{Imm\+\_\+ram\+\_\+t}}}
+{\footnotesize\ttfamily typedef long \mbox{\hyperlink{cmd_8h_a6c224545f3adf99483ea18e36199cb23}{Imm\+\_\+ram\+\_\+t}}}
 
 
 
@@ -415,7 +415,7 @@ References \mbox{\hyperlink{cmd_8h_source_l00040}{REGS\+\_\+\+DICT}}, and \mbox{
 
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00098}{asm\+\_\+read\+\_\+reg()}}.
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00116}{asm\+\_\+read\+\_\+reg()}}.
 
 \Hypertarget{cmd_8h_a1f8806cd553fbea836faef7a35f6cb97}\label{cmd_8h_a1f8806cd553fbea836faef7a35f6cb97} 
 \index{cmd.h@{cmd.h}!find\_reg\_by\_num@{find\_reg\_by\_num}}
@@ -458,7 +458,7 @@ References \mbox{\hyperlink{cmd_8h_source_l00040}{REGS\+\_\+\+DICT}}, and \mbox{
 
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00162}{asm\+\_\+write\+\_\+cmd\+\_\+debug()}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}.
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00183}{asm\+\_\+write\+\_\+cmd\+\_\+debug()}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}.
 
 
 
@@ -601,5 +601,5 @@ Definition at line \mbox{\hyperlink{cmd_8h_source_l00126}{126}} of file \mbox{\h
 
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00034}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}, \mbox{\hyperlink{assembler_8cpp_source_l00247}{asm\+\_\+write\+\_\+signature()}}, \mbox{\hyperlink{cmd_8cpp_source_l00003}{Signature\+::check()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, and \mbox{\hyperlink{spu_8cpp_source_l00016}{spu\+\_\+parse()}}.
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00034}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}, \mbox{\hyperlink{assembler_8cpp_source_l00268}{asm\+\_\+write\+\_\+signature()}}, \mbox{\hyperlink{cmd_8cpp_source_l00003}{Signature\+::check()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, and \mbox{\hyperlink{spu_8cpp_source_l00016}{spu\+\_\+parse()}}.
 

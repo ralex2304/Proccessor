@@ -20,7 +20,11 @@ void \mbox{\hyperlink{text__lib_8h_aeb373f3703f99992ad5d95d8526f1149}{split\+\_\
 size\+\_\+t \mbox{\hyperlink{text__lib_8h_a97e0134cb3db1552c2b7f6f3ffa11698}{cntchar}} (const char \texorpdfstring{$\ast$}{*}str, const char ch)
 \begin{DoxyCompactList}\small\item\em Counts ch in str. \end{DoxyCompactList}\item 
 const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{text__lib_8h_a398d656d25ab5e1fd3a6b701b037e399}{text\+\_\+throw\+\_\+out\+\_\+comment}} (char \texorpdfstring{$\ast$}{*}str, const char symb=\textquotesingle{};\textquotesingle{})
-\begin{DoxyCompactList}\small\item\em Finds symb in str and replaces it with \textquotesingle{}\textbackslash{}0\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Finds symb in str and replaces it with \textquotesingle{}\textbackslash{}0\textquotesingle{}. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{text__lib_8h_a908995c5e99f20e9adb9a71152c91864}{str\+\_\+skip\+\_\+spaces}} (char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Returns pointer to first non space symbol or \textquotesingle{}\textbackslash{}0\textquotesingle{}. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{text__lib_8h_a7dd8b8931c3f93aebb70ec632e3a98b8}{str\+\_\+skip\+\_\+spaces}} (const char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Returns pointer to first non space symbol or \textquotesingle{}\textbackslash{}0\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -177,6 +181,76 @@ References \mbox{\hyperlink{text__lib_8cpp_source_l00003}{my\+\_\+strtok\+\_\+li
 
 Referenced by \mbox{\hyperlink{text__proccessor_8cpp_source_l00003}{Input\+Data\+::ctor()}}.
 
+\Hypertarget{text__lib_8h_a908995c5e99f20e9adb9a71152c91864}\label{text__lib_8h_a908995c5e99f20e9adb9a71152c91864} 
+\index{text\_lib.h@{text\_lib.h}!str\_skip\_spaces@{str\_skip\_spaces}}
+\index{str\_skip\_spaces@{str\_skip\_spaces}!text\_lib.h@{text\_lib.h}}
+\doxysubsubsection{\texorpdfstring{str\_skip\_spaces()}{str\_skip\_spaces()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} str\+\_\+skip\+\_\+spaces (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns pointer to first non space symbol or \textquotesingle{}\textbackslash{}0\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const char\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{text__lib_8h_source_l00074}{74}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{if}\ (str\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{while}\ (*str\ !=\ \textcolor{charliteral}{'\(\backslash\)0'}\ \&\&\ isspace(*str))\ str++;}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{00080\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00034}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}.
+
+\Hypertarget{text__lib_8h_a7dd8b8931c3f93aebb70ec632e3a98b8}\label{text__lib_8h_a7dd8b8931c3f93aebb70ec632e3a98b8} 
+\index{text\_lib.h@{text\_lib.h}!str\_skip\_spaces@{str\_skip\_spaces}}
+\index{str\_skip\_spaces@{str\_skip\_spaces}!text\_lib.h@{text\_lib.h}}
+\doxysubsubsection{\texorpdfstring{str\_skip\_spaces()}{str\_skip\_spaces()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} str\+\_\+skip\+\_\+spaces (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns pointer to first non space symbol or \textquotesingle{}\textbackslash{}0\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const char\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{text__lib_8h_source_l00088}{88}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{if}\ (str\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{while}\ (*str\ !=\ \textcolor{charliteral}{'\(\backslash\)0'}\ \&\&\ isspace(*str))\ str++;}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{00094\ \}}
+
+\end{DoxyCode}
 \Hypertarget{text__lib_8h_a398d656d25ab5e1fd3a6b701b037e399}\label{text__lib_8h_a398d656d25ab5e1fd3a6b701b037e399} 
 \index{text\_lib.h@{text\_lib.h}!text\_throw\_out\_comment@{text\_throw\_out\_comment}}
 \index{text\_throw\_out\_comment@{text\_throw\_out\_comment}!text\_lib.h@{text\_lib.h}}

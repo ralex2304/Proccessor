@@ -50,9 +50,9 @@ typedef double Imm_t;
 
 #define IMM_T_PRINTF "%lf"
 
-typedef unsigned long Imm_ram_t;
+typedef long Imm_ram_t;
 
-#define IMM_RAM_T_PRINTF "%lu"
+#define IMM_RAM_T_PRINTF "%ld"
 
 struct CmdArgs {
     Imm_t imm = NAN;

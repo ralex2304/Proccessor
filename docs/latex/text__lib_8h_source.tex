@@ -40,6 +40,22 @@
 \DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{return}\ comment\_beginning\ +\ (comment\_beginning\ ==\ \textcolor{keyword}{nullptr}\ ?\ 0\ :\ 1);}
 \DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00066}00066\ \}}
 \DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00067}00067\ }
-\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00068}00068\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ MY\_STRING\_H\_}}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00074}\mbox{\hyperlink{text__lib_8h_a908995c5e99f20e9adb9a71152c91864}{00074}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{text__lib_8h_a908995c5e99f20e9adb9a71152c91864}{str\_skip\_spaces}}(\textcolor{keywordtype}{char}*\ str)\ \{}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{if}\ (str\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{while}\ (*str\ !=\ \textcolor{charliteral}{'\(\backslash\)0'}\ \&\&\ isspace(*str))\ str++;}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00080}00080\ \}}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00088}\mbox{\hyperlink{text__lib_8h_a7dd8b8931c3f93aebb70ec632e3a98b8}{00088}}\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{text__lib_8h_a908995c5e99f20e9adb9a71152c91864}{str\_skip\_spaces}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str)\ \{}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{if}\ (str\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{while}\ (*str\ !=\ \textcolor{charliteral}{'\(\backslash\)0'}\ \&\&\ isspace(*str))\ str++;}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00093}00093\ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00094}00094\ \}}
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8h_source_l00096}00096\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ MY\_STRING\_H\_}}
 
 \end{DoxyCode}

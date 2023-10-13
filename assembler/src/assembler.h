@@ -33,6 +33,16 @@ Status::Statuses asm_parse_and_write_line(FILE* file, String line, const size_t 
                                           bool debug_mode);
 
 /**
+ * @brief Checks if [] are specified (ram arguments)
+ *
+ * @param str
+ * @param cmd
+ * @param line_num
+ * @return Status::Statuses
+ */
+Status::Statuses asm_parse_is_arg_ram(char** str, Cmd* cmd, const size_t line_num);
+
+/**
  * @brief Reads cmd reg from str
  *
  * @param str
