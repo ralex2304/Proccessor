@@ -90,6 +90,7 @@ $(document).ready(function(){initNavTree('struct_cmd.html',''); initResizable();
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="struct_cmd-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Cmd Struct Reference</div></div>
@@ -98,6 +99,11 @@ $(document).ready(function(){initNavTree('struct_cmd.html',''); initResizable();
 
 <p><code>#include &lt;<a class="el" href="cmd_8h_source.html">cmd.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:abfc0c3cf11132a789381d22376978555"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_cmd.html#abfc0c3cf11132a789381d22376978555">size</a> () const</td></tr>
+<tr class="separator:abfc0c3cf11132a789381d22376978555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a8df32ebe09e03d38de8c20f6266611b4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_cmd_info.html">CmdInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_cmd.html#a8df32ebe09e03d38de8c20f6266611b4">info</a> = nullptr</td></tr>
@@ -110,7 +116,40 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00128">128</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="abfc0c3cf11132a789381d22376978555" name="abfc0c3cf11132a789381d22376978555"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfc0c3cf11132a789381d22376978555">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Cmd::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cmd_8cpp_source.html#l00021">21</a> of file <a class="el" href="cmd_8cpp_source.html">cmd.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>                       {</div>
+<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">return</span> <span class="keywordtype">byte</span>.reg * <span class="keyword">sizeof</span>(<a class="code hl_variable" href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">args</a>.<a class="code hl_variable" href="struct_cmd_args.html#a49949ad6edf5cb3523025913f2c0adc5">reg</a>)</div>
+<div class="line"><span class="lineno">   23</span>         + <span class="keywordtype">byte</span>.imm * (<span class="keywordtype">byte</span>.ram ? <span class="keyword">sizeof</span>(<a class="code hl_variable" href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">args</a>.<a class="code hl_variable" href="struct_cmd_args.html#ada3b2b497527f608e6ccd7f4b4a2b166">imm_ram</a>)</div>
+<div class="line"><span class="lineno">   24</span>                                : <span class="keyword">sizeof</span>(<a class="code hl_variable" href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">args</a>.<a class="code hl_variable" href="struct_cmd_args.html#a5aef979bf03c8e615ba60d47d364a14b">imm</a>));</div>
+<div class="line"><span class="lineno">   25</span>}</div>
+<div class="ttc" id="astruct_cmd_args_html_a49949ad6edf5cb3523025913f2c0adc5"><div class="ttname"><a href="struct_cmd_args.html#a49949ad6edf5cb3523025913f2c0adc5">CmdArgs::reg</a></div><div class="ttdeci">unsigned char reg</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00059">cmd.h:59</a></div></div>
+<div class="ttc" id="astruct_cmd_args_html_a5aef979bf03c8e615ba60d47d364a14b"><div class="ttname"><a href="struct_cmd_args.html#a5aef979bf03c8e615ba60d47d364a14b">CmdArgs::imm</a></div><div class="ttdeci">Imm_t imm</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00058">cmd.h:58</a></div></div>
+<div class="ttc" id="astruct_cmd_args_html_ada3b2b497527f608e6ccd7f4b4a2b166"><div class="ttname"><a href="struct_cmd_args.html#ada3b2b497527f608e6ccd7f4b4a2b166">CmdArgs::imm_ram</a></div><div class="ttdeci">Imm_ram_t imm_ram</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00060">cmd.h:60</a></div></div>
+<div class="ttc" id="astruct_cmd_html_ad3fa66964fc662181ab833aef4a72db0"><div class="ttname"><a href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">Cmd::args</a></div><div class="ttdeci">CmdArgs args</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00132">cmd.h:132</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="cmd_8h_source.html#l00132">args</a>, <a class="el" href="cmd_8h_source.html#l00058">CmdArgs::imm</a>, <a class="el" href="cmd_8h_source.html#l00060">CmdArgs::imm_ram</a>, and <a class="el" href="cmd_8h_source.html#l00059">CmdArgs::reg</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="disassembler_8cpp_source.html#l00022">disasm_parse()</a>, and <a class="el" href="spu_8cpp_source.html#l00039">spu_parse()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
 <a id="ad3fa66964fc662181ab833aef4a72db0" name="ad3fa66964fc662181ab833aef4a72db0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad3fa66964fc662181ab833aef4a72db0">&#9670;&#160;</a></span>args</h2>
 
@@ -125,7 +164,7 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00132">132</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="assembler_8h_source.html#l00127">asm_debug_calc_tab()</a>, <a class="el" href="assembler_8cpp_source.html#l00135">asm_read_imm()</a>, <a class="el" href="assembler_8cpp_source.html#l00116">asm_read_reg()</a>, <a class="el" href="assembler_8cpp_source.html#l00160">asm_write_cmd()</a>, <a class="el" href="assembler_8cpp_source.html#l00246">asm_write_cmd_bin()</a>, <a class="el" href="assembler_8cpp_source.html#l00183">asm_write_cmd_debug()</a>, <a class="el" href="disassembler_8cpp_source.html#l00022">disasm_parse()</a>, <a class="el" href="spu_8cpp_source.html#l00089">spu_execute_command()</a>, and <a class="el" href="spu_8cpp_source.html#l00016">spu_parse()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="assembler_8h_source.html#l00127">asm_debug_calc_tab()</a>, <a class="el" href="assembler_8cpp_source.html#l00135">asm_read_imm()</a>, <a class="el" href="assembler_8cpp_source.html#l00116">asm_read_reg()</a>, <a class="el" href="assembler_8cpp_source.html#l00160">asm_write_cmd()</a>, <a class="el" href="assembler_8cpp_source.html#l00246">asm_write_cmd_bin()</a>, <a class="el" href="assembler_8cpp_source.html#l00183">asm_write_cmd_debug()</a>, <a class="el" href="disassembler_8cpp_source.html#l00022">disasm_parse()</a>, <a class="el" href="cmd_8cpp_source.html#l00021">size()</a>, <a class="el" href="spu_8cpp_source.html#l00110">spu_execute_command()</a>, and <a class="el" href="spu_8cpp_source.html#l00039">spu_parse()</a>.</p>
 
 </div>
 </div>
@@ -143,7 +182,7 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00131">131</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="assembler_8h_source.html#l00127">asm_debug_calc_tab()</a>, <a class="el" href="assembler_8cpp_source.html#l00034">asm_parse_and_write_line()</a>, <a class="el" href="assembler_8cpp_source.html#l00091">asm_parse_is_arg_ram()</a>, <a class="el" href="assembler_8cpp_source.html#l00135">asm_read_imm()</a>, <a class="el" href="assembler_8cpp_source.html#l00116">asm_read_reg()</a>, <a class="el" href="assembler_8cpp_source.html#l00160">asm_write_cmd()</a>, <a class="el" href="assembler_8cpp_source.html#l00246">asm_write_cmd_bin()</a>, <a class="el" href="assembler_8cpp_source.html#l00183">asm_write_cmd_debug()</a>, <a class="el" href="disassembler_8cpp_source.html#l00022">disasm_parse()</a>, <a class="el" href="spu_8cpp_source.html#l00089">spu_execute_command()</a>, and <a class="el" href="spu_8cpp_source.html#l00016">spu_parse()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="assembler_8h_source.html#l00127">asm_debug_calc_tab()</a>, <a class="el" href="assembler_8cpp_source.html#l00034">asm_parse_and_write_line()</a>, <a class="el" href="assembler_8cpp_source.html#l00091">asm_parse_is_arg_ram()</a>, <a class="el" href="assembler_8cpp_source.html#l00135">asm_read_imm()</a>, <a class="el" href="assembler_8cpp_source.html#l00116">asm_read_reg()</a>, <a class="el" href="assembler_8cpp_source.html#l00160">asm_write_cmd()</a>, <a class="el" href="assembler_8cpp_source.html#l00246">asm_write_cmd_bin()</a>, <a class="el" href="assembler_8cpp_source.html#l00183">asm_write_cmd_debug()</a>, <a class="el" href="disassembler_8cpp_source.html#l00022">disasm_parse()</a>, <a class="el" href="spu_8cpp_source.html#l00110">spu_execute_command()</a>, and <a class="el" href="spu_8cpp_source.html#l00039">spu_parse()</a>.</p>
 
 </div>
 </div>
@@ -161,12 +200,13 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00129">129</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00034">asm_parse_and_write_line()</a>, <a class="el" href="assembler_8cpp_source.html#l00091">asm_parse_is_arg_ram()</a>, <a class="el" href="assembler_8cpp_source.html#l00183">asm_write_cmd_debug()</a>, <a class="el" href="disassembler_8cpp_source.html#l00022">disasm_parse()</a>, <a class="el" href="spu_8cpp_source.html#l00089">spu_execute_command()</a>, and <a class="el" href="spu_8cpp_source.html#l00016">spu_parse()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00034">asm_parse_and_write_line()</a>, <a class="el" href="assembler_8cpp_source.html#l00091">asm_parse_is_arg_ram()</a>, <a class="el" href="assembler_8cpp_source.html#l00183">asm_write_cmd_debug()</a>, <a class="el" href="disassembler_8cpp_source.html#l00022">disasm_parse()</a>, <a class="el" href="spu_8cpp_source.html#l00110">spu_execute_command()</a>, and <a class="el" href="spu_8cpp_source.html#l00039">spu_parse()</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li>shared/<a class="el" href="cmd_8h_source.html">cmd.h</a></li>
+<li>shared/<a class="el" href="cmd_8cpp_source.html">cmd.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

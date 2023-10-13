@@ -130,6 +130,8 @@ struct Cmd {
 
     CmdByte byte = {};
     CmdArgs args = {};
+
+    size_t size() const;
 };
 
 /**

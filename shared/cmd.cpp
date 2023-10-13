@@ -18,6 +18,12 @@ bool Signature::check() const {
     return true;
 }
 
+size_t Cmd::size() const {
+    return byte.reg * sizeof(args.reg)
+         + byte.imm * (byte.ram ? sizeof(args.imm_ram)
+                                : sizeof(args.imm));
+}
+
 const CmdInfo* find_command_by_num(const Cmd_num_t num) {
     if (num >= CMDS_DICT_SIZE)
         return nullptr;

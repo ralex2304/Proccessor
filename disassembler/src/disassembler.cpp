@@ -49,7 +49,10 @@ Status::Statuses disasm_parse(const char* data, const size_t size, const char* o
         cmd.info = find_command_by_num(cmd.byte.num);
 
         if (cmd.info == nullptr)
-            THROW_SYNTAX_ERROR_("Unknown command number");
+            THROW_SYNTAX_ERROR_("Unknown command number.");
+
+        if (cur_byte + cmd.size() > size)
+            THROW_SYNTAX_ERROR_("Arguments not found.");
 
         size_t printed_cnt = 0;
 

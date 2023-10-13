@@ -2,6 +2,29 @@
 
 LogFileData log_file = {STACK_LOG_FILENAME};
 
+Status::Statuses SpuData::ctor() {
+    int stk_res = STK_CTOR(&stk);
+
+    if (stk_res != Stack::OK) {
+        fprintf(stderr, CONSOLE_RED("Stack initialising error\n"));
+        stk_print_error_to_user(stk_res);
+        return Status::RUNTIME_ERROR;
+    }
+
+    return Status::NORMAL_WORK;
+}
+
+Status::Statuses SpuData::dtor() {
+    int stk_res = stk_dtor(&stk);
+
+    if (stk_res != Stack::OK) {
+        fprintf(stderr, CONSOLE_RED("Stack error\n"));
+        stk_print_error_to_user(stk_res);
+        return Status::RUNTIME_ERROR;
+    }
+
+    return Status::NORMAL_WORK;
+}
 
 #define THROW_RUNTIME_ERROR_(text)  do {                                                    \
             fprintf(stderr, CONSOLE_RED("Runtime error occured. " text) " Byte %zu\n", ip); \
@@ -20,7 +43,7 @@ Status::Statuses spu_parse(const char* data, const size_t size) {
         return Status::SIGNATURE_ERROR;
 
     SpuData spu = {};
-    STK_CTOR(&spu.stk);
+    STATUS_CHECK(spu.ctor());
 
     size_t cur_byte = sizeof(SIGNATURE);
     size_t ip = cur_byte;                   //< instruction pointer
@@ -33,14 +56,12 @@ Status::Statuses spu_parse(const char* data, const size_t size) {
         cmd.info = find_command_by_num(cmd.byte.num);
 
         if (cmd.info == nullptr)
-            THROW_RUNTIME_ERROR_("Invalid command");
+            THROW_RUNTIME_ERROR_("Invalid command.");
 
-        if (cur_byte + cmd.byte.reg * sizeof(cmd.args.reg)
-                     + cmd.byte.imm * (cmd.byte.ram ? sizeof(cmd.args.imm_ram)
-                                                    : sizeof(cmd.args.imm)) > size) {
+        if (cur_byte + cmd.size() > size) {
             stk_dtor(&spu.stk);
 
-            THROW_RUNTIME_ERROR_("EOF instead of args");
+            THROW_RUNTIME_ERROR_("Arguments not found.");
         }
 
         if (cmd.byte.reg)
@@ -63,7 +84,7 @@ Status::Statuses spu_parse(const char* data, const size_t size) {
         ip = cur_byte;
     }
 
-    stk_dtor(&spu.stk);
+    spu.dtor();
 
     THROW_RUNTIME_ERROR_("Program has no halt!");
 
@@ -160,7 +181,7 @@ Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const size_t 
     }
 
     if (stk_res != Stack::OK) {
-        fprintf(stderr, CONSOLE_RED("Runtime error occured! ") "Byte %zu\n", ip);
+        fprintf(stderr, CONSOLE_RED("Runtime error occured!") " Stack error. Byte %zu\n", ip);
         stk_print_error_to_user(stk_res);
         return Status::RUNTIME_ERROR;
     }

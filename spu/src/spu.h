@@ -15,6 +15,9 @@ struct SpuData {
     Stack stk = {};
 
     Imm_t reg[REGS_NUM] = {};
+
+    Status::Statuses ctor();
+    Status::Statuses dtor();
 };
 
 /**
@@ -84,6 +87,5 @@ inline double spu_get_double_from_input() {
 
     return NAN;
 }
-
 
 #endif // #ifndef SPU_H_

@@ -51,5 +51,5 @@ var searchData=
   ['crc32_2eh_48',['crc32.h',['../crc32_8h.html',1,'']]],
   ['crc32_5ft_49',['CRC32_t',['../crc32_8h.html#aec0adc213b23c34ec982fa84dceb81fd',1,'crc32.h']]],
   ['crc_5fadd_50',['crc_add',['../crc32_8cpp.html#ac24ce753a192608e6a70627eecea4adb',1,'crc_add(CRC32_t crc, const char *data, ssize_t data_size):&#160;crc32.cpp'],['../crc32_8h.html#ac24ce753a192608e6a70627eecea4adb',1,'crc_add(CRC32_t crc, const char *data, ssize_t data_size):&#160;crc32.cpp']]],
-  ['ctor_51',['ctor',['../struct_input_data.html#ac8aaf8175b920369abfcfba744af844a',1,'InputData']]]
+  ['ctor_51',['ctor',['../struct_spu_data.html#a455f6fed24f70e695c87ecfc7cb2fde1',1,'SpuData::ctor()'],['../struct_input_data.html#ac8aaf8175b920369abfcfba744af844a',1,'InputData::ctor()']]]
 ];

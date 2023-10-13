@@ -3,7 +3,7 @@ var searchData=
   ['signature_0',['Signature',['../struct_signature.html',1,'']]],
   ['signature_1',['SIGNATURE',['../cmd_8h.html#af46692534430a47d73d9904057ed74df',1,'cmd.h']]],
   ['signature_5ferror_2',['SIGNATURE_ERROR',['../struct_status.html#ab31bb94cc29a302cab703638615b604ca26565794e5f270e88acbed09b3d26e61',1,'Status']]],
-  ['size_3',['size',['../struct_stack.html#a3b6cb0b4ff732c7bbbaaa5d3860bcd1a',1,'Stack']]],
+  ['size_3',['size',['../struct_stack.html#a3b6cb0b4ff732c7bbbaaa5d3860bcd1a',1,'Stack::size'],['../struct_cmd.html#abfc0c3cf11132a789381d22376978555',1,'Cmd::size()']]],
   ['split_5ftext_5fto_5flines_4',['split_text_to_lines',['../text__lib_8cpp.html#aeb373f3703f99992ad5d95d8526f1149',1,'split_text_to_lines(const char *text, String *lines_array):&#160;text_lib.cpp'],['../text__lib_8h.html#aeb373f3703f99992ad5d95d8526f1149',1,'split_text_to_lines(const char *text, String *lines_array):&#160;text_lib.cpp']]],
   ['spu_2ecpp_5',['spu.cpp',['../spu_8cpp.html',1,'']]],
   ['spu_2ed_6',['spu.d',['../spu_8d.html',1,'']]],

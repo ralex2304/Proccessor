@@ -17,5 +17,6 @@ var searchData=
   ['disasm_5fwrite_5fsignature_14',['disasm_write_signature',['../disassembler_8cpp.html#ab6875f0f0cb374df97b99f77597ff21a',1,'disasm_write_signature(FILE *file, const Signature sign):&#160;disassembler.cpp'],['../disassembler_8h.html#ab6875f0f0cb374df97b99f77597ff21a',1,'disasm_write_signature(FILE *file, const Signature sign):&#160;disassembler.cpp']]],
   ['disassembler_2ecpp_15',['disassembler.cpp',['../disassembler_8cpp.html',1,'']]],
   ['disassembler_2ed_16',['disassembler.d',['../disassembler_8d.html',1,'']]],
-  ['disassembler_2eh_17',['disassembler.h',['../disassembler_8h.html',1,'']]]
+  ['disassembler_2eh_17',['disassembler.h',['../disassembler_8h.html',1,'']]],
+  ['dtor_18',['dtor',['../struct_spu_data.html#ab8279902c19cd3fd61a692f2781b0668',1,'SpuData']]]
 ];
