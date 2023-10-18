@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unitialised_5fcapacity_0',['UNITIALISED_CAPACITY',['../struct_stack.html#aa50c905a38095756b153a80c4e974ee2',1,'Stack']]]
+  ['text_0',['text',['../struct_input_data.html#a3ef948ecd7175ccc4c68bf9455bc15a5',1,'InputData']]]
 ];

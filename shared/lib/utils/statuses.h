@@ -20,7 +20,7 @@ struct Status {
         RUNTIME_ERROR    =  6,  //< Runtime error
         WRONG_USER_INPUT =  7,  //< Wrong user input
         OUTPUT_ERROR     =  8,  //< Console output error
-        SIGNATURE_ERROR  =  9,  //< Signature name or version is not valid
+        SIGNATURE_ERROR  =  9,  //< FileHeader sign or version is not valid
     };
 
     /**

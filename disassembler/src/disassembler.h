@@ -25,6 +25,6 @@ Status::Statuses disasm_parse(const char* data, const size_t size, const char* o
  * @param sign
  * @return int
  */
-int disasm_write_signature(FILE* file, const Signature sign);
+int disasm_write_signature(FILE* file, const FileHeader sign);
 
 #endif // #ifndef DISASSEMBLER_H_

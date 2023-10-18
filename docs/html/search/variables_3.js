@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['data_0',['data',['../struct_stack.html#a02ed96691b2e6636bd9155758e8ee8cd',1,'Stack']]],
+  ['data_0',['data',['../struct_buffer.html#aeec1fd4af0ddf6765b0187466d4361b8',1,'Buffer::data'],['../struct_stack.html#a02ed96691b2e6636bd9155758e8ee8cd',1,'Stack::data']]],
   ['data_5fhash_1',['data_hash',['../struct_stack.html#a0313f9fb25ba1f5ce41bcaf465777ead',1,'Stack']]],
   ['debug_5fmode_2',['debug_mode',['../struct_args_vars.html#a8ce4b7b542f29f331f3256b4d1896bef',1,'ArgsVars']]],
   ['default_5fcapacity_3',['DEFAULT_CAPACITY',['../struct_stack.html#a02dd99e7282f168c46deef6f08f40a58',1,'Stack']]],

@@ -97,6 +97,24 @@ ArgsMode read_output_filename(const Argument args_dict[], const int args_dict_le
     return ArgsMode::CONTINUE;
 }
 
+ArgsMode read_listing_filename(const Argument args_dict[], const int args_dict_len,
+                               int* arg_i, int argc, char* argv[], ArgsVars* args_vars) {
+    (void) args_dict_len;
+
+    assert(args_dict);
+    assert(arg_i);
+    assert(argv);
+    assert(args_vars);
+
+    if (++(*arg_i) >= argc) {
+        fprintf(stderr, "No listing file name found\n");
+        return ArgsMode::ERROR;
+    }
+
+    args_vars->listing_filename = argv[*arg_i];
+    return ArgsMode::CONTINUE;
+}
+
 ArgsMode enable_debug_mode(const Argument args_dict[], const int args_dict_len,
                            int* arg_i, int argc, char* argv[], ArgsVars* args_vars) {
     (void) args_dict_len;
@@ -116,18 +134,28 @@ void print_commands_list() {
     printf("# Commands list:\n");
 
     for (size_t i = 0; i < CMDS_DICT_SIZE; i++) {
-        const CmdInfo command = CMDS_DICT[i];
+        const CmdInfo* cmd_info = CMDS_DICT + i;
 
-        printf("#    %3d) %-5s --- %s\n", command.num, command.name, command.description);
+        printf("#    %3d) %-5s --- %s\n", cmd_info->num, cmd_info->name, cmd_info->description);
 
-        if (command.args.reg || command.args.imm) {
+        if (cmd_info->args.reg || cmd_info->args.imm_double || cmd_info->args.imm_int
+            || cmd_info->args.ram || cmd_info->args.label) {
             printf("#    %3s%5s ", "", "");
 
-            if (command.args.reg)
+            if (cmd_info->args.reg)
                 printf(" <reg>");
 
-            if (command.args.imm)
-                printf("<+><immed>");
+            if (cmd_info->args.imm_double)
+                printf(" <imm_double>");
+
+            if (cmd_info->args.imm_int)
+                printf(" <imm_int>");
+
+            if (cmd_info->args.ram)
+                printf(" <[]>");
+
+            if (cmd_info->args.label)
+                printf(" !label!");
 
             printf("\n");
         }

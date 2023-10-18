@@ -5,12 +5,15 @@
 #include <assert.h>
 #include <math.h>
 #include <string.h>
+#include <strings.h>
 #include <stdio.h>
 #include <inttypes.h>
 
 #include "lib/utils/console.h"
 
 const short CMD_VERSION = 0;
+
+const size_t MAX_LABEL_NUM = 128;
 
 const size_t MAX_LINE_LEN = 64;   //< max command text line len
 
@@ -48,47 +51,62 @@ const RegInfo REGS_DICT[] {
 
 const RegNum_t REGS_NUM = sizeof(REGS_DICT) / sizeof(RegInfo); //< SPU registers number
 
-typedef double Imm_t;
+typedef double Imm_double_t;
 
-#define IMM_T_PRINTF "%lf"
+#define IMM_DOUBLE_T_EPSILON    0.000001
 
-#define CHECK_IMM(var) !isnan(var)
+#define IMM_DOUBLE_T_PRINTF     "%lf"
+
+#define CHECK_IMM_DOUBLE(var) !isnan(var)
 
 
-typedef long Imm_ram_t;
+typedef long Imm_int_t;
 
-#define IMM_RAM_T_PRINTF "%ld"
+#define IMM_INT_T_PRINTF "%ld"
 
 struct CmdArgs {
-    Imm_t imm = NAN;
+    Imm_double_t imm_double = NAN;
     unsigned char reg = -1;
-    Imm_ram_t imm_ram = 0;
+    Imm_int_t imm_int = 0;
 };
 
 struct ArgsEn {
-    bool reg: 1;
-    bool imm: 1;
-    bool ram: 1;
+    bool reg:           1;
+    bool imm_double:    1;
+    bool imm_int:       1;
+    bool ram:           1;
+    bool label:         1;
 };
 
 typedef unsigned char Cmd_num_t;
 
 
-#define DEF_CMD(name, num, ...) CMD_##name = num,
+
 enum CmdNum: Cmd_num_t {
+    #define DEF_CMD(name, num, ...) CMD_##name = num,
+
     #include "cmd_dict.h"
+
+    #undef DEF_CMD
 };
-#undef DEF_CMD
 
 struct CmdInfo {
     const CmdNum num;
     const char* name = nullptr;
-    ArgsEn args;
+    ArgsEn args = {};
 
     const char* description = nullptr;
 };
 
-#define DEF_CMD(name, num, arg1, arg2, arg3, description, ...) {CMD_##name, #name, {arg1, arg2, arg3}, description},
+
+#define DEF_CMD(name, num, args, description, ...) {CMD_##name, #name,              \
+                                                        {(bool) (args & 0b10000),   \
+                                                         (bool) (args & 0b01000),   \
+                                                         (bool) (args & 0b00100),   \
+                                                         (bool) (args & 0b00010),   \
+                                                         (bool) (args & 0b00001)},  \
+                                                        description},
+
 const CmdInfo CMDS_DICT[] {
     #include "cmd_dict.h"
 };
@@ -96,16 +114,16 @@ const CmdInfo CMDS_DICT[] {
 
 const size_t CMDS_DICT_SIZE = sizeof(CMDS_DICT) / sizeof(CmdInfo); //< Number of commands
 
-struct Signature {
-    char name[2] = {'K','U'};
+struct FileHeader {
+    char sign[2] = {'K','U'};
     short version = CMD_VERSION;
 
     bool check() const;
 };
 
-static_assert(sizeof(Signature) == 4);
+static_assert(sizeof(FileHeader) == 4);
 
-const Signature SIGNATURE = {};
+const FileHeader FILE_HEADER = {};
 
 struct Cmd {
     const CmdInfo* info = nullptr;

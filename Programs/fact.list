@@ -1,0 +1,32 @@
+;Signature: KU
+;Version: 0
+;line - byte - command
+;   1 -    4 -                               - ; Calculates factorial of number from input
+;   2 -    4 -                               -
+;   3 -    4 - 41 00 00 00 00 00 00 F0 3F    - push 1.000000
+;   4 -   13 - 22 00                         - pop rax ;iterator
+;   5 -   15 -                               -
+;   6 -   15 - 41 00 00 00 00 00 00 F0 3F    - push 1.000000 ;result is always in stack as first element
+;   7 -   24 -                               -
+;   8 -   24 - 10                            - in
+;   9 -   25 - 22 02                         - pop rcx ;target
+;  10 -   27 -                               -
+;  12 -   27 -                               - ;loop clause
+;  13 -   27 - 21 00                         - push rax
+;  14 -   29 - 21 02                         - push rcx
+;  15 -   31 - 44 40 00 00 00 00 00 00 00    - ja 64 ;break if rax > rcx (iterator > target)
+;  16 -   40 -                               -
+;  17 -   40 -                               - ;multiple iterator and result
+;  18 -   40 - 21 00                         - push rax
+;  19 -   42 - 14                            - mul
+;  20 -   43 -                               -
+;  21 -   43 -                               - ;increment iterator
+;  22 -   43 - 61 00 00 00 00 00 00 00 F0 3F - push rax+1.000000
+;  23 -   53 - 22 00                         - pop rax
+;  24 -   55 -                               -
+;  25 -   55 - 43 1B 00 00 00 00 00 00 00    - jmp 27 ;continue loop
+;  26 -   64 -                               -
+;  27 -   64 -                               -
+;  28 -   64 -                               -
+;  30 -   64 - 11                            - out
+;  31 -   65 - 00                            - hlt

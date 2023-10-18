@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <math.h>
+#include <time.h>
 
 #include "cmd.h"
 #include "lib/utils/statuses.h"
@@ -14,7 +15,7 @@
 struct SpuData {
     Stack stk = {};
 
-    Imm_t reg[REGS_NUM] = {};
+    Imm_double_t reg[REGS_NUM] = {};
 
     Status::Statuses ctor();
     Status::Statuses dtor();
@@ -34,10 +35,12 @@ Status::Statuses spu_parse(const char* data, const size_t size);
  *
  * @param spu
  * @param cmd
+ * @param cur_byte
  * @param op operation pointer
  * @return Status::Statuses
  */
-Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const size_t op);
+Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, size_t* cur_byte,
+                                     const size_t op);
 
 /**
  * @brief Prints double to stdout

@@ -21,6 +21,16 @@ Status::Statuses file_open_read_close(const char* filename, char** buf, const si
                                       long* size = nullptr);
 
 /**
+ * @brief Opens, writes bytes and closes file
+ *
+ * @param filename
+ * @param buf
+ * @param size
+ * @return Status::Statuses
+ */
+Status::Statuses file_open_write_bytes_close(const char* filename, char* buf, const size_t size);
+
+/**
  * @brief Opens file
  *
  * @param file

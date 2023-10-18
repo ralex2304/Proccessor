@@ -1,0 +1,36 @@
+\doxysection{read.\+h}
+\hypertarget{read_8h_source}{}\label{read_8h_source}\index{assembler/src/asm/read.h@{assembler/src/asm/read.h}}
+\mbox{\hyperlink{read_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ ASM\_READ\_H\_}}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ ASM\_READ\_H\_}}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <ctype.h>}}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{statuses_8h}{lib/utils/statuses.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cmd_8h}{cmd.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{jump_8h}{jump.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00024}00024\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{read_8h_a4440303dab26931b5ef1a774dc12ec08}{asm\_read\_args}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}**\ tokens,\ \textcolor{keywordtype}{size\_t}*\ cur\_token,\ \mbox{\hyperlink{struct_cmd}{Cmd}}*\ cmd,}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_jump_label}{JumpLabel}}*\ labels,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ line\_num,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ first\_pass);}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00036}00036\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{read_8h_aeac35f1dc277a52e21921ecf7ba9f1da}{asm\_read\_args\_ram}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}**\ tokens,\ \textcolor{keywordtype}{size\_t}*\ cur\_token,\ \mbox{\hyperlink{struct_cmd}{Cmd}}*\ cmd,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ line\_num);}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00047}00047\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{read_8h_a5bd7c4ffe9651a2c37eed0242b175ab9}{asm\_read\_arg\_reg}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}**\ tokens,\ \textcolor{keywordtype}{size\_t}*\ cur\_token,}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_cmd}{Cmd}}*\ cmd,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ line\_num);}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00059}00059\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{read_8h_acc74324114f2fa709e4765ff04918c56}{asm\_read\_arg\_imm}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}**\ tokens,\ \textcolor{keywordtype}{size\_t}*\ cur\_token,}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_cmd}{Cmd}}*\ cmd,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ line\_num);}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00071}00071\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{read_8h_affe585b9d7b0029bcd60741f0b9cffa9}{asm\_read\_arg\_imm\_int}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}**\ tokens,\ \textcolor{keywordtype}{size\_t}*\ cur\_token,}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_cmd}{Cmd}}*\ cmd,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ line\_num);}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00083}00083\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{read_8h_ac58428a20ec016842816dd8db2bed348}{asm\_read\_arg\_imm\_double}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}**\ tokens,\ \textcolor{keywordtype}{size\_t}*\ cur\_token,}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_cmd}{Cmd}}*\ cmd,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ line\_num);}
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{read_8h_source_l00086}00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//<\ \#ifndef\ ASM\_READ\_H\_}}
+
+\end{DoxyCode}

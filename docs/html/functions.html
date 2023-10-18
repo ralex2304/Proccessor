@@ -101,21 +101,22 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_b" name="index_b"></a>- b -</h3><ul>
-<li>byte&#160;:&#160;<a class="el" href="struct_cmd.html#a17b4ff328f42e8fb71669338f10d82f6">Cmd</a></li>
+<li>byte&#160;:&#160;<a class="el" href="struct_cmd.html#a17b4ff328f42e8fb71669338f10d82f6">Cmd</a>, <a class="el" href="struct_jump_label.html#a47eb97b0f19afde28f027698882d8550">JumpLabel</a></li>
 </ul>
 
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>canary_left&#160;:&#160;<a class="el" href="struct_stack.html#a93649663411b07293ec66851c09c99c9">Stack</a></li>
 <li>canary_right&#160;:&#160;<a class="el" href="struct_stack.html#a26e3a891c804d0a2deef354cb6d7f13b">Stack</a></li>
-<li>capacity&#160;:&#160;<a class="el" href="struct_stack.html#a2f2b41ebbf7c8adce40da902814e1c7b">Stack</a></li>
-<li>check()&#160;:&#160;<a class="el" href="struct_signature.html#af37f9ccc0a6338a6288e8cf6f6118c6e">Signature</a></li>
-<li>ctor()&#160;:&#160;<a class="el" href="struct_input_data.html#ac8aaf8175b920369abfcfba744af844a">InputData</a>, <a class="el" href="struct_spu_data.html#a455f6fed24f70e695c87ecfc7cb2fde1">SpuData</a></li>
+<li>capacity&#160;:&#160;<a class="el" href="struct_buffer.html#a0a7fe9496e5e642f14f1975abb95824c">Buffer</a>, <a class="el" href="struct_stack.html#a2f2b41ebbf7c8adce40da902814e1c7b">Stack</a></li>
+<li>cat()&#160;:&#160;<a class="el" href="struct_buffer.html#a73dfd504fe4d4f6dffa9e5949b1fdcae">Buffer</a></li>
+<li>check()&#160;:&#160;<a class="el" href="struct_file_header.html#a161aa6703e01462d26a20668a5fd4bf5">FileHeader</a></li>
+<li>ctor()&#160;:&#160;<a class="el" href="struct_buffer.html#ad1535950a41eefad8fb8c7706af8f5a7">Buffer</a>, <a class="el" href="struct_input_data.html#ac8aaf8175b920369abfcfba744af844a">InputData</a>, <a class="el" href="struct_spu_data.html#a455f6fed24f70e695c87ecfc7cb2fde1">SpuData</a></li>
 </ul>
 
 
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
-<li>data&#160;:&#160;<a class="el" href="struct_stack.html#a02ed96691b2e6636bd9155758e8ee8cd">Stack</a></li>
+<li>data&#160;:&#160;<a class="el" href="struct_buffer.html#aeec1fd4af0ddf6765b0187466d4361b8">Buffer</a>, <a class="el" href="struct_stack.html#a02ed96691b2e6636bd9155758e8ee8cd">Stack</a></li>
 <li>data_hash&#160;:&#160;<a class="el" href="struct_stack.html#a0313f9fb25ba1f5ce41bcaf465777ead">Stack</a></li>
 <li>DATA_HASH_ERR&#160;:&#160;<a class="el" href="struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5a2dbe0f67c49b72aef7d6253cdc1f9d43">Stack</a></li>
 <li>DATA_INVALID_PTR&#160;:&#160;<a class="el" href="struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5ab37ce957889466c726330c2b5b513b4f">Stack</a></li>
@@ -126,7 +127,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>DEFAULT_CAPACITY&#160;:&#160;<a class="el" href="struct_stack.html#a02dd99e7282f168c46deef6f08f40a58">Stack</a></li>
 <li>description&#160;:&#160;<a class="el" href="struct_argument.html#adb43c510da59c8a0c88611a0781f96d7">Argument</a>, <a class="el" href="struct_cmd_info.html#ae96c1b352223eed37a7c9c16761e176d">CmdInfo</a></li>
 <li>detor()&#160;:&#160;<a class="el" href="struct_input_data.html#a007abeabd2f7b29f15b38b52cf4f7010">InputData</a></li>
-<li>dtor()&#160;:&#160;<a class="el" href="struct_spu_data.html#ab8279902c19cd3fd61a692f2781b0668">SpuData</a></li>
+<li>dtor()&#160;:&#160;<a class="el" href="struct_buffer.html#accef32f248ec05ad669b1de0dc3ae6a5">Buffer</a>, <a class="el" href="struct_spu_data.html#ab8279902c19cd3fd61a692f2781b0668">SpuData</a></li>
 </ul>
 
 
@@ -138,9 +139,11 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
-<li>imm&#160;:&#160;<a class="el" href="struct_args_en.html#a5fd69cd0fd22ffb5e4216a19bedce75a">ArgsEn</a>, <a class="el" href="struct_cmd_args.html#a5aef979bf03c8e615ba60d47d364a14b">CmdArgs</a>, <a class="el" href="struct_cmd_byte.html#ae86855d817fa5c60367ce99d1c826287">CmdByte</a></li>
-<li>imm_ram&#160;:&#160;<a class="el" href="struct_cmd_args.html#ada3b2b497527f608e6ccd7f4b4a2b166">CmdArgs</a></li>
+<li>imm&#160;:&#160;<a class="el" href="struct_cmd_byte.html#ae86855d817fa5c60367ce99d1c826287">CmdByte</a></li>
+<li>imm_double&#160;:&#160;<a class="el" href="struct_args_en.html#a32436d51611eb10f8c0a003acf02d876">ArgsEn</a>, <a class="el" href="struct_cmd_args.html#af4f115f325b0b1e91f03bea48354fa82">CmdArgs</a></li>
+<li>imm_int&#160;:&#160;<a class="el" href="struct_args_en.html#a0750bd83c2ac938393537562ffe3f000">ArgsEn</a>, <a class="el" href="struct_cmd_args.html#a7280dbc4d3d9bee564f6815e969bdd07">CmdArgs</a></li>
 <li>info&#160;:&#160;<a class="el" href="struct_cmd.html#a8df32ebe09e03d38de8c20f6266611b4">Cmd</a></li>
+<li>INIT_CAPACITY&#160;:&#160;<a class="el" href="struct_buffer.html#afd5cd659ecca36f2c4c0ea31169f0d16">Buffer</a></li>
 <li>INP_FILE_ERROR&#160;:&#160;<a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c">Status</a></li>
 <li>input_filename&#160;:&#160;<a class="el" href="struct_args_vars.html#afee9f78a6ba610ff6a2ee809ebbdb56b">ArgsVars</a></li>
 <li>INVALID_CAPACITY&#160;:&#160;<a class="el" href="struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5aa41ce2e438b0124421ebaa0a7bd4a8b2">Stack</a></li>
@@ -148,10 +151,12 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
+<li>label&#160;:&#160;<a class="el" href="struct_args_en.html#a2602d15845006ade8d73d8bbad851c61">ArgsEn</a></li>
 <li>len&#160;:&#160;<a class="el" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">String</a></li>
 <li>line&#160;:&#160;<a class="el" href="struct_var_code_data.html#a57de68d99a4698c17ae07e31c8e6de6c">VarCodeData</a></li>
 <li>lines&#160;:&#160;<a class="el" href="struct_input_data.html#a21828a6c4ee0b4519f2956d450e4762b">InputData</a></li>
 <li>lines_cnt&#160;:&#160;<a class="el" href="struct_input_data.html#aab59d007503e1acdbdbc93be20ef0a7d">InputData</a></li>
+<li>listing_filename&#160;:&#160;<a class="el" href="struct_args_vars.html#a8653f2722b159469ef513b037496968e">ArgsVars</a></li>
 <li>LOW_CAPACITY&#160;:&#160;<a class="el" href="struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5a0a4d618cba92355bcf446359ec408e60">Stack</a></li>
 </ul>
 
@@ -162,7 +167,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_n" name="index_n"></a>- n -</h3><ul>
-<li>name&#160;:&#160;<a class="el" href="struct_cmd_info.html#a6d2c25d356a40a51bddecfb15288266e">CmdInfo</a>, <a class="el" href="struct_reg_info.html#a55f7bac0cb70f2b12dcc0be560d4d24f">RegInfo</a>, <a class="el" href="struct_signature.html#ad4dab7a4f06d2b1e6d43e41de1bc9a8e">Signature</a>, <a class="el" href="struct_var_code_data.html#a0bde6b05c83fb7bdf1a0f20fa4677762">VarCodeData</a></li>
+<li>name&#160;:&#160;<a class="el" href="struct_cmd_info.html#a6d2c25d356a40a51bddecfb15288266e">CmdInfo</a>, <a class="el" href="struct_jump_label.html#a1c44b5b778d489531336a39e02bb9cb8">JumpLabel</a>, <a class="el" href="struct_reg_info.html#a55f7bac0cb70f2b12dcc0be560d4d24f">RegInfo</a>, <a class="el" href="struct_var_code_data.html#a0bde6b05c83fb7bdf1a0f20fa4677762">VarCodeData</a></li>
 <li>NEGATIVE_CAPACITY&#160;:&#160;<a class="el" href="struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5af68a03245ae05bdfca1879f027972e0c">Stack</a></li>
 <li>NEGATIVE_SIZE&#160;:&#160;<a class="el" href="struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5ad85f8db9f888d5f54791ec3dbe8dae1c">Stack</a></li>
 <li>NON_POISON_EMPTY&#160;:&#160;<a class="el" href="struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5a9e1e940df37869517f75f4d2198aebad">Stack</a></li>
@@ -190,15 +195,17 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
 <li>raise()&#160;:&#160;<a class="el" href="struct_status.html#a30c8084592b2ff90cfc22c1860e58dab">Status</a></li>
 <li>ram&#160;:&#160;<a class="el" href="struct_args_en.html#a242a2ff489e2e3db94724f185858b649">ArgsEn</a>, <a class="el" href="struct_cmd_byte.html#a64f32a2c5de062d496ece180759dd940">CmdByte</a></li>
-<li>reg&#160;:&#160;<a class="el" href="struct_args_en.html#a63d5185473c449ea08983c877e083122">ArgsEn</a>, <a class="el" href="struct_cmd_args.html#a49949ad6edf5cb3523025913f2c0adc5">CmdArgs</a>, <a class="el" href="struct_cmd_byte.html#ae9e14c718597b6998c4189592e775054">CmdByte</a>, <a class="el" href="struct_spu_data.html#aabfc96caea688f2fa16f1b857b1e2c69">SpuData</a></li>
+<li>reg&#160;:&#160;<a class="el" href="struct_args_en.html#a63d5185473c449ea08983c877e083122">ArgsEn</a>, <a class="el" href="struct_cmd_args.html#a49949ad6edf5cb3523025913f2c0adc5">CmdArgs</a>, <a class="el" href="struct_cmd_byte.html#ae9e14c718597b6998c4189592e775054">CmdByte</a>, <a class="el" href="struct_spu_data.html#a0c082f4479ce66efb50b95259f98e457">SpuData</a></li>
+<li>resize()&#160;:&#160;<a class="el" href="struct_buffer.html#a6446660135f46c6a88fd863ec0a57a88">Buffer</a></li>
 <li>Results&#160;:&#160;<a class="el" href="struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5">Stack</a></li>
 <li>RUNTIME_ERROR&#160;:&#160;<a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306">Status</a></li>
 </ul>
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
+<li>sign&#160;:&#160;<a class="el" href="struct_file_header.html#ad489a5342f5135b1ea05167420897484">FileHeader</a></li>
 <li>SIGNATURE_ERROR&#160;:&#160;<a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca26565794e5f270e88acbed09b3d26e61">Status</a></li>
-<li>size()&#160;:&#160;<a class="el" href="struct_cmd.html#abfc0c3cf11132a789381d22376978555">Cmd</a>, <a class="el" href="struct_stack.html#a3b6cb0b4ff732c7bbbaaa5d3860bcd1a">Stack</a></li>
+<li>size&#160;:&#160;<a class="el" href="struct_buffer.html#aea1b7416d53cd6e281718e607d81ae51">Buffer</a>, <a class="el" href="struct_cmd.html#abfc0c3cf11132a789381d22376978555">Cmd</a>, <a class="el" href="struct_stack.html#a3b6cb0b4ff732c7bbbaaa5d3860bcd1a">Stack</a></li>
 <li>Statuses&#160;:&#160;<a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status</a></li>
 <li>stk&#160;:&#160;<a class="el" href="struct_spu_data.html#abc84b16c7ed76fea5ed82082897443c2">SpuData</a></li>
 <li>str&#160;:&#160;<a class="el" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">String</a></li>
@@ -223,7 +230,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_v" name="index_v"></a>- v -</h3><ul>
 <li>var_data&#160;:&#160;<a class="el" href="struct_stack.html#ada9ac9dd578c2f702547fbf23447dfc5">Stack</a></li>
-<li>version&#160;:&#160;<a class="el" href="struct_signature.html#a9f7bb78af67a5958baa792ee5f8e93e2">Signature</a></li>
+<li>version&#160;:&#160;<a class="el" href="struct_file_header.html#a3c0fb698efe175bbe23b23f8e4d614e5">FileHeader</a></li>
 </ul>
 
 

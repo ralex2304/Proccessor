@@ -24,21 +24,21 @@ Status::Statuses disasm_parse(const char* data, const size_t size, const char* o
     assert(data);
     assert(output_filename);
 
-    Signature sign = {};
+    FileHeader header = {};
 
-    if (size < sizeof(SIGNATURE) || !(sign = *((const Signature*) data)).check())
+    if (size < sizeof(FILE_HEADER) || !(header = *((const FileHeader*) data)).check())
         return Status::SIGNATURE_ERROR;
 
     FILE* file = {};
     if (!file_open(&file, output_filename, "wb"))
         return Status::OUT_FILE_ERROR;
 
-    if (disasm_write_signature(file, sign) == EOF) {
+    if (disasm_write_signature(file, header) == EOF) {
         file_close(file);
         return Status::OUT_FILE_ERROR;
     }
 
-    size_t cur_byte = sizeof(SIGNATURE);
+    size_t cur_byte = sizeof(FILE_HEADER);
     size_t ip = cur_byte;                 //< Instruction pointer
 
     Cmd cmd = {};
@@ -73,12 +73,12 @@ Status::Statuses disasm_parse(const char* data, const size_t size, const char* o
             if (cmd.byte.reg)
                 F_PRINTF_("+");
 
-            if (cmd.byte.ram) {
-                DATA_GET_VAL_(cmd.args.imm_ram, Imm_ram_t);
-                F_PRINTF_(IMM_RAM_T_PRINTF, cmd.args.imm_ram);
+            if (cmd.info->args.label || cmd.byte.ram) {
+                DATA_GET_VAL_(cmd.args.imm_int, Imm_int_t);
+                F_PRINTF_(IMM_INT_T_PRINTF, cmd.args.imm_int);
             } else {
-                DATA_GET_VAL_(cmd.args.imm, Imm_t);
-                F_PRINTF_(IMM_T_PRINTF, cmd.args.imm);
+                DATA_GET_VAL_(cmd.args.imm_double, Imm_double_t);
+                F_PRINTF_(IMM_DOUBLE_T_PRINTF, cmd.args.imm_double);
             }
         }
 
@@ -113,14 +113,14 @@ Status::Statuses disasm_parse(const char* data, const size_t size, const char* o
                                         return EOF;     \
                                 } while(0)
 
-int disasm_write_signature(FILE* file, const Signature sign) {
+int disasm_write_signature(FILE* file, const FileHeader header) {
     assert(file);
 
-    static_assert(sizeof(sign.name) == 2);
+    static_assert(sizeof(header.sign) == 2);
 
     F_PRINTF_CHECK_(file_printf(file, ";Signature: %c%c\n"
                                       ";Version: %d\n",
-                                      sign.name[0], sign.name[1], sign.version));
+                                      header.sign[0], header.sign[1], header.version));
 
     return 1;
 }

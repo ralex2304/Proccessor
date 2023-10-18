@@ -1,0 +1,31 @@
+; Calculates factorial of number from input
+
+push 1
+pop rax ;iterator
+
+push 1 ;result is always in stack as first element
+
+in
+pop rcx ;target
+
+for:
+    ;loop clause
+    push rax
+    push rcx
+    ja exit ;break if rax > rcx (iterator > target)
+
+    ;multiple iterator and result
+    push rax
+    mul
+
+    ;increment iterator
+    push rax+1
+    pop rax
+
+    jmp for ;continue loop
+
+
+
+exit:
+    out
+    hlt

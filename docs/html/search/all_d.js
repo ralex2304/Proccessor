@@ -1,15 +1,11 @@
 var searchData=
 [
-  ['poison_0',['POISON',['../struct_stack.html#a48bbbcc55325f72dcbe2414dd9598a30',1,'Stack']]],
-  ['poison_5fval_5ffound_1',['POISON_VAL_FOUND',['../struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5aa17ea00c21ef8ada8344e88a5d63a0de',1,'Stack']]],
-  ['pop_2',['POP',['../spu__dsl_8h.html#a8e6708d01dec9fd978f58748eda35132',1,'spu_dsl.h']]],
-  ['print_3',['PRINT',['../spu__dsl_8h.html#a14f23f2619c0fefec5f6852ed0c2ba6a',1,'PRINT:&#160;spu_dsl.h'],['../cmd__dict_8h.html#af842c31f6f3956f3b08979c3964b09cf',1,'PRINT(a):&#160;cmd_dict.h']]],
-  ['print_5fcommands_5flist_4',['print_commands_list',['../args__parser_8cpp.html#ac8ca3149b4647516ae35706e9d8510d2',1,'print_commands_list():&#160;args_parser.cpp'],['../args__parser_8h.html#ac8ca3149b4647516ae35706e9d8510d2',1,'print_commands_list():&#160;args_parser.cpp']]],
-  ['print_5ferr_5f_5',['PRINT_ERR_',['../stack_8cpp.html#a4f9e8dba978737f226f1698e5d4ac66f',1,'PRINT_ERR_:&#160;stack.cpp'],['../stack_8cpp.html#a4f9e8dba978737f226f1698e5d4ac66f',1,'PRINT_ERR_:&#160;stack.cpp']]],
-  ['print_5fhelp_6',['print_help',['../args__parser_8cpp.html#a588357a358b0a2f4369558537ffcb259',1,'print_help(const Argument args_dict[], const int args_dict_len, int *arg_i, const int argc, char *argv[], ArgsVars *args_vars):&#160;args_parser.cpp'],['../args__parser_8h.html#ab5a6ebf8128db298e98d9af16db223b8',1,'print_help(const Argument args_dict[], const int args_dict_len, int *arg_i, int argc, char *argv[], ArgsVars *args_vars):&#160;args_parser.cpp']]],
-  ['processor_20_28assembler_20_2b_20spu_20_2b_20disassembler_29_7',['Processor (assembler + spu + disassembler)',['../index.html',1,'']]],
-  ['ptr_5fvalid_2ecpp_8',['ptr_valid.cpp',['../ptr__valid_8cpp.html',1,'']]],
-  ['ptr_5fvalid_2ed_9',['ptr_valid.d',['../assembler_2build_2shared_2lib_2utils_2ptr__valid_8d.html',1,'(Global Namespace)'],['../disassembler_2build_2shared_2lib_2utils_2ptr__valid_8d.html',1,'(Global Namespace)'],['../spu_2build_2shared_2lib_2utils_2ptr__valid_8d.html',1,'(Global Namespace)']]],
-  ['ptr_5fvalid_2eh_10',['ptr_valid.h',['../ptr__valid_8h.html',1,'']]],
-  ['push_11',['PUSH',['../spu__dsl_8h.html#ae12240a3f4de46ee0616d67825971f44',1,'spu_dsl.h']]]
+  ['ok_0',['OK',['../struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5a146633a2ef2a9bbb1c05ec4cd31ba019',1,'Stack']]],
+  ['ok_5fexit_1',['OK_EXIT',['../struct_status.html#ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a',1,'Status']]],
+  ['on_5fcanary_5fprotect_2',['ON_CANARY_PROTECT',['../stack_8h.html#ae09c894ab7c3c3daa2c838cde400b7fc',1,'stack.h']]],
+  ['on_5fdebug_3',['ON_DEBUG',['../stack_8h.html#a1bdd7c1369b250215a080e8421d4ecf3',1,'stack.h']]],
+  ['on_5fhash_5fprotect_4',['ON_HASH_PROTECT',['../stack_8h.html#a1dc689bb2898fa51bd45a9e016fc2777',1,'stack.h']]],
+  ['out_5ffile_5ferror_5',['OUT_FILE_ERROR',['../struct_status.html#ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003',1,'Status']]],
+  ['output_5ferror_6',['OUTPUT_ERROR',['../struct_status.html#ab31bb94cc29a302cab703638615b604ca6d1d6a5832bcd12949e74fc041ce5064',1,'Status']]],
+  ['output_5ffilename_7',['output_filename',['../struct_args_vars.html#a4f2b7471e1b7080ecb00867fccf04fc9',1,'ArgsVars']]]
 ];

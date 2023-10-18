@@ -11,7 +11,7 @@ const \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14}{Cmd\+Num}} \mbo
 \item 
 const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_cmd_info_a6d2c25d356a40a51bddecfb15288266e}{name}} = nullptr
 \item 
-\mbox{\hyperlink{struct_args_en}{Args\+En}} \mbox{\hyperlink{struct_cmd_info_a533a901273935ace5b3b91cd67ae69d5}{args}}
+\mbox{\hyperlink{struct_args_en}{Args\+En}} \mbox{\hyperlink{struct_cmd_info_a533a901273935ace5b3b91cd67ae69d5}{args}} = \{\}
 \item 
 const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_cmd_info_ae96c1b352223eed37a7c9c16761e176d}{description}} = nullptr
 \end{DoxyCompactItemize}
@@ -20,7 +20,7 @@ const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_cmd_info_ae96c1b35
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{cmd_8h_source_l00083}{83}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00093}{93}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
 
 
 
@@ -29,15 +29,15 @@ Definition at line \mbox{\hyperlink{cmd_8h_source_l00083}{83}} of file \mbox{\hy
 \index{CmdInfo@{CmdInfo}!args@{args}}
 \index{args@{args}!CmdInfo@{CmdInfo}}
 \doxysubsubsection{\texorpdfstring{args}{args}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_args_en}{Args\+En}} Cmd\+Info\+::args}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_args_en}{Args\+En}} Cmd\+Info\+::args = \{\}}
 
 
 
-Definition at line \mbox{\hyperlink{cmd_8h_source_l00086}{86}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00096}{96}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
 
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00034}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}, \mbox{\hyperlink{assembler_8cpp_source_l00097}{asm\+\_\+parse\+\_\+is\+\_\+arg\+\_\+ram()}}, and \mbox{\hyperlink{args__parser_8cpp_source_l00115}{print\+\_\+commands\+\_\+list()}}.
+Referenced by \mbox{\hyperlink{write_8h_source_l00058}{asm\+\_\+calc\+\_\+cmd\+\_\+size()}}, \mbox{\hyperlink{assembler_8h_source_l00050}{asm\+\_\+is\+\_\+arg\+\_\+required()}}, \mbox{\hyperlink{listing_8h_source_l00050}{asm\+\_\+listing\+\_\+calc\+\_\+tab()}}, \mbox{\hyperlink{read_8cpp_source_l00109}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, \mbox{\hyperlink{read_8cpp_source_l00090}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}, \mbox{\hyperlink{read_8cpp_source_l00053}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}, \mbox{\hyperlink{read_8cpp_source_l00031}{asm\+\_\+read\+\_\+args()}}, \mbox{\hyperlink{read_8cpp_source_l00008}{asm\+\_\+read\+\_\+args\+\_\+ram()}}, \mbox{\hyperlink{write_8cpp_source_l00019}{asm\+\_\+write\+\_\+cmd\+\_\+bin()}}, \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, \mbox{\hyperlink{args__parser_8cpp_source_l00133}{print\+\_\+commands\+\_\+list()}}, and \mbox{\hyperlink{spu_8cpp_source_l00039}{spu\+\_\+parse()}}.
 
 \Hypertarget{struct_cmd_info_ae96c1b352223eed37a7c9c16761e176d}\label{struct_cmd_info_ae96c1b352223eed37a7c9c16761e176d} 
 \index{CmdInfo@{CmdInfo}!description@{description}}
@@ -47,11 +47,11 @@ Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00034}{asm\+\_\+parse\+\_\
 
 
 
-Definition at line \mbox{\hyperlink{cmd_8h_source_l00088}{88}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00098}{98}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
 
 
 
-Referenced by \mbox{\hyperlink{args__parser_8cpp_source_l00115}{print\+\_\+commands\+\_\+list()}}.
+Referenced by \mbox{\hyperlink{args__parser_8cpp_source_l00133}{print\+\_\+commands\+\_\+list()}}.
 
 \Hypertarget{struct_cmd_info_a6d2c25d356a40a51bddecfb15288266e}\label{struct_cmd_info_a6d2c25d356a40a51bddecfb15288266e} 
 \index{CmdInfo@{CmdInfo}!name@{name}}
@@ -61,11 +61,11 @@ Referenced by \mbox{\hyperlink{args__parser_8cpp_source_l00115}{print\+\_\+comma
 
 
 
-Definition at line \mbox{\hyperlink{cmd_8h_source_l00085}{85}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00095}{95}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
 
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00201}{asm\+\_\+write\+\_\+cmd\+\_\+debug()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, and \mbox{\hyperlink{args__parser_8cpp_source_l00115}{print\+\_\+commands\+\_\+list()}}.
+Referenced by \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, and \mbox{\hyperlink{args__parser_8cpp_source_l00133}{print\+\_\+commands\+\_\+list()}}.
 
 \Hypertarget{struct_cmd_info_a8c0cbd30b5f5d99be1e3b93668995c7e}\label{struct_cmd_info_a8c0cbd30b5f5d99be1e3b93668995c7e} 
 \index{CmdInfo@{CmdInfo}!num@{num}}
@@ -75,11 +75,11 @@ Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00201}{asm\+\_\+write\+\_\
 
 
 
-Definition at line \mbox{\hyperlink{cmd_8h_source_l00084}{84}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00094}{94}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
 
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00034}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}, \mbox{\hyperlink{args__parser_8cpp_source_l00115}{print\+\_\+commands\+\_\+list()}}, and \mbox{\hyperlink{spu_8cpp_source_l00110}{spu\+\_\+execute\+\_\+command()}}.
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00077}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}, \mbox{\hyperlink{args__parser_8cpp_source_l00133}{print\+\_\+commands\+\_\+list()}}, and \mbox{\hyperlink{spu_8cpp_source_l00107}{spu\+\_\+execute\+\_\+command()}}.
 
 
 

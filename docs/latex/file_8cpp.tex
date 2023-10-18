@@ -6,12 +6,14 @@
 \item 
 \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{file_8cpp_acda06f1ad7ecb836b8cf08abb873404a}{file\+\_\+open\+\_\+read\+\_\+close}} (const char \texorpdfstring{$\ast$}{*}filename, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}buf, const size\+\_\+t additional\+\_\+memory, long \texorpdfstring{$\ast$}{*}size)
 \begin{DoxyCompactList}\small\item\em Opens, reads and closes file. Allocates memory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{file_8cpp_a6ab5d9a2ccdbe22341b16fc8c101a484}{file\+\_\+open\+\_\+write\+\_\+bytes\+\_\+close}} (const char \texorpdfstring{$\ast$}{*}filename, char \texorpdfstring{$\ast$}{*}buf, const size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Opens, writes bytes and closes file. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{file_8cpp_abb897c7e353e490dd5c92b5a13d14fa6}{file\+\_\+open}} (FILE \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}file, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}mode)
 \begin{DoxyCompactList}\small\item\em Opens file. \end{DoxyCompactList}\item 
 long \mbox{\hyperlink{file_8cpp_a16fe6f53850088221a60ac2eeeded1a3}{file\+\_\+get\+\_\+len}} (FILE \texorpdfstring{$\ast$}{*}file)
 \begin{DoxyCompactList}\small\item\em Gets file len. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{file_8cpp_ab8abec266bd97945de2b5124b50f26af}{file\+\_\+read}} (FILE \texorpdfstring{$\ast$}{*}file, char \texorpdfstring{$\ast$}{*}buf, long file\+\_\+len)
-\begin{DoxyCompactList}\small\item\em Reads data from char to buffer. Buffer must be big enough. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Reads data from char to buffer. \doxylink{struct_buffer}{Buffer} must be big enough. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{file_8cpp_ae7c38fbf3eca43ddec86ae4a00ed3ad6}{file\+\_\+write\+\_\+line}} (FILE \texorpdfstring{$\ast$}{*}file, const char \texorpdfstring{$\ast$}{*}line)
 \begin{DoxyCompactList}\small\item\em Writes line (string) to file. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{file_8cpp_a68a322f778a4f850372b482bcc35c0d5}{file\+\_\+write\+\_\+bytes}} (FILE \texorpdfstring{$\ast$}{*}file, const void \texorpdfstring{$\ast$}{*}data, size\+\_\+t len)
@@ -45,25 +47,25 @@ false failure
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{file_8cpp_source_l00127}{127}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
+Definition at line \mbox{\hyperlink{file_8cpp_source_l00141}{141}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00128\ \ \ \ \ assert(file);}
-\DoxyCodeLine{00129\ }
-\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordflow}{if}\ (fclose(file)\ !=\ 0)\ \{}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}File\ close\ error"{}});}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00133\ \ \ \ \ \}}
-\DoxyCodeLine{00134\ }
-\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00136\ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ assert(file);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordflow}{if}\ (fclose(file)\ !=\ 0)\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}File\ close\ error"{}});}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00147\ \ \ \ \ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00150\ \}}
 
 \end{DoxyCode}
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00003}{assemeble\+\_\+and\+\_\+write()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, and \mbox{\hyperlink{file_8cpp_source_l00003}{file\+\_\+open\+\_\+read\+\_\+close()}}.
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\+\_\+write()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, \mbox{\hyperlink{file_8cpp_source_l00003}{file\+\_\+open\+\_\+read\+\_\+close()}}, and \mbox{\hyperlink{file_8cpp_source_l00038}{file\+\_\+open\+\_\+write\+\_\+bytes\+\_\+close()}}.
 
 \Hypertarget{file_8cpp_a16fe6f53850088221a60ac2eeeded1a3}\label{file_8cpp_a16fe6f53850088221a60ac2eeeded1a3} 
 \index{file.cpp@{file.cpp}!file\_get\_len@{file\_get\_len}}
@@ -85,25 +87,25 @@ long -\/1 in case of error
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{file_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
+Definition at line \mbox{\hyperlink{file_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00057\ \ \ \ \ assert(file);}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{long}\ file\_len\ =\ -\/1;}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (fseek(file,\ 0,\ SEEK\_END)\ !=\ 0\ ||}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ (file\_len\ =\ ftell(file))\ ==\ -\/1L\ ||}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ fseek(file,\ 0,\ SEEK\_SET)\ !=\ 0)\ \{}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}File\ len\ detection\ error"{}});}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
-\DoxyCodeLine{00067\ \ \ \ \ \}}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ file\_len;}
-\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ assert(file);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{long}\ file\_len\ =\ -\/1;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{if}\ (fseek(file,\ 0,\ SEEK\_END)\ !=\ 0\ ||}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ (file\_len\ =\ ftell(file))\ ==\ -\/1L\ ||}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ fseek(file,\ 0,\ SEEK\_SET)\ !=\ 0)\ \{}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}File\ len\ detection\ error"{}});}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{return}\ file\_len;}
+\DoxyCodeLine{00084\ \}}
 
 \end{DoxyCode}
 
@@ -136,28 +138,28 @@ false failure
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{file_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
+Definition at line \mbox{\hyperlink{file_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00043\ \ \ \ \ assert(file);}
-\DoxyCodeLine{00044\ \ \ \ \ assert(filename);}
-\DoxyCodeLine{00045\ \ \ \ \ assert(mode);}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \ \ *file\ =\ fopen(filename,\ mode);}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (*file\ ==\ \textcolor{keyword}{nullptr})\ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Error\ opening\ file\ \%s:\(\backslash\)n"{}},\ filename);}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00052\ \ \ \ \ \}}
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00054\ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ assert(file);}
+\DoxyCodeLine{00058\ \ \ \ \ assert(filename);}
+\DoxyCodeLine{00059\ \ \ \ \ assert(mode);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ *file\ =\ fopen(filename,\ mode);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{if}\ (*file\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Error\ opening\ file\ \%s:\(\backslash\)n"{}},\ filename);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00068\ \}}
 
 \end{DoxyCode}
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00003}{assemeble\+\_\+and\+\_\+write()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, and \mbox{\hyperlink{file_8cpp_source_l00003}{file\+\_\+open\+\_\+read\+\_\+close()}}.
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\+\_\+write()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, \mbox{\hyperlink{file_8cpp_source_l00003}{file\+\_\+open\+\_\+read\+\_\+close()}}, and \mbox{\hyperlink{file_8cpp_source_l00038}{file\+\_\+open\+\_\+write\+\_\+bytes\+\_\+close()}}.
 
 \Hypertarget{file_8cpp_acda06f1ad7ecb836b8cf08abb873404a}\label{file_8cpp_acda06f1ad7ecb836b8cf08abb873404a} 
 \index{file.cpp@{file.cpp}!file\_open\_read\_close@{file\_open\_read\_close}}
@@ -201,40 +203,91 @@ Definition at line \mbox{\hyperlink{file_8cpp_source_l00003}{3}} of file \mbox{\
 \DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c}{Status::INP\_FILE\_ERROR}};}
 \DoxyCodeLine{00014\ }
 \DoxyCodeLine{00015\ \ \ \ \ file\_size\ =\ \mbox{\hyperlink{file_8cpp_a16fe6f53850088221a60ac2eeeded1a3}{file\_get\_len}}(file);}
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (file\_size\ <\ 0)\ \{}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(file);}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c}{Status::INP\_FILE\_ERROR}};}
-\DoxyCodeLine{00019\ \ \ \ \ \}}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (size\ !=\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ *size\ =\ file\_size;}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ *buf\ =\ (\textcolor{keywordtype}{char}*)calloc(file\_size\ +\ additional\_memory,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (*buf\ ==\ \textcolor{keyword}{nullptr})\ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Memory\ alloc\ error\(\backslash\)n"{}});}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(file);}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7}{Status::MEMORY\_EXCEED}};}
-\DoxyCodeLine{00029\ \ \ \ \ \}}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_ab8abec266bd97945de2b5124b50f26af}{file\_read}}(file,\ *buf,\ file\_size))\ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(file);}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (file\_size\ <\ 0)}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c}{Status::INP\_FILE\_ERROR}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (size\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ *size\ =\ file\_size;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ *buf\ =\ (\textcolor{keywordtype}{char}*)calloc(file\_size\ +\ additional\_memory,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (*buf\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Memory\ alloc\ error\(\backslash\)n"{}});}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(file);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7}{Status::MEMORY\_EXCEED}};}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_ab8abec266bd97945de2b5124b50f26af}{file\_read}}(file,\ *buf,\ file\_size))}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c}{Status::INP\_FILE\_ERROR}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(file))}
 \DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c}{Status::INP\_FILE\_ERROR}};}
-\DoxyCodeLine{00034\ \ \ \ \ \}}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(file))}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c}{Status::INP\_FILE\_ERROR}};}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
-\DoxyCodeLine{00040\ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00036\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{file_8cpp_source_l00127}{file\+\_\+close()}}, \mbox{\hyperlink{file_8cpp_source_l00056}{file\+\_\+get\+\_\+len()}}, \mbox{\hyperlink{file_8cpp_source_l00042}{file\+\_\+open()}}, \mbox{\hyperlink{file_8cpp_source_l00072}{file\+\_\+read()}}, \mbox{\hyperlink{statuses_8h_source_l00016}{Status\+::\+INP\+\_\+\+FILE\+\_\+\+ERROR}}, \mbox{\hyperlink{statuses_8h_source_l00018}{Status\+::\+MEMORY\+\_\+\+EXCEED}}, and \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}.
+References \mbox{\hyperlink{file_8cpp_source_l00141}{file\+\_\+close()}}, \mbox{\hyperlink{file_8cpp_source_l00070}{file\+\_\+get\+\_\+len()}}, \mbox{\hyperlink{file_8cpp_source_l00056}{file\+\_\+open()}}, \mbox{\hyperlink{file_8cpp_source_l00086}{file\+\_\+read()}}, \mbox{\hyperlink{statuses_8h_source_l00016}{Status\+::\+INP\+\_\+\+FILE\+\_\+\+ERROR}}, \mbox{\hyperlink{statuses_8h_source_l00018}{Status\+::\+MEMORY\+\_\+\+EXCEED}}, and \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}.
 
 
 
 Referenced by \mbox{\hyperlink{text__proccessor_8cpp_source_l00003}{Input\+Data\+::ctor()}}, and \mbox{\hyperlink{disassembler_2src_2main_8cpp_source_l00024}{main()}}.
+
+\Hypertarget{file_8cpp_a6ab5d9a2ccdbe22341b16fc8c101a484}\label{file_8cpp_a6ab5d9a2ccdbe22341b16fc8c101a484} 
+\index{file.cpp@{file.cpp}!file\_open\_write\_bytes\_close@{file\_open\_write\_bytes\_close}}
+\index{file\_open\_write\_bytes\_close@{file\_open\_write\_bytes\_close}!file.cpp@{file.cpp}}
+\doxysubsubsection{\texorpdfstring{file\_open\_write\_bytes\_close()}{file\_open\_write\_bytes\_close()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} file\+\_\+open\+\_\+write\+\_\+bytes\+\_\+close (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{char \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{const size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Opens, writes bytes and closes file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+{\em buf} & \\
+\hline
+{\em size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{file_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ assert(filename);}
+\DoxyCodeLine{00040\ \ \ \ \ assert(buf);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ FILE*\ file\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_abb897c7e353e490dd5c92b5a13d14fa6}{file\_open}}(\&file,\ filename,\ \textcolor{stringliteral}{"{}wb"{}}))}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_a68a322f778a4f850372b482bcc35c0d5}{file\_write\_bytes}}(file,\ buf,\ size))}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(file))}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00054\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{file_8cpp_source_l00141}{file\+\_\+close()}}, \mbox{\hyperlink{file_8cpp_source_l00056}{file\+\_\+open()}}, \mbox{\hyperlink{file_8cpp_source_l00112}{file\+\_\+write\+\_\+bytes()}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, and \mbox{\hyperlink{statuses_8h_source_l00017}{Status\+::\+OUT\+\_\+\+FILE\+\_\+\+ERROR}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\+\_\+write()}}.
 
 \Hypertarget{file_8cpp_acecf8d97922690834a1cd9ba8915a82b}\label{file_8cpp_acecf8d97922690834a1cd9ba8915a82b} 
 \index{file.cpp@{file.cpp}!file\_printf@{file\_printf}}
@@ -260,31 +313,31 @@ int number of printed symbols or EOF
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{file_8cpp_source_l00110}{110}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
+Definition at line \mbox{\hyperlink{file_8cpp_source_l00124}{124}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00111\ \ \ \ \ assert(file);}
-\DoxyCodeLine{00112\ \ \ \ \ assert(format);}
-\DoxyCodeLine{00113\ }
-\DoxyCodeLine{00114\ \ \ \ \ va\_list\ args\ =\ \{\};}
-\DoxyCodeLine{00115\ \ \ \ \ va\_start(args,\ format);}
-\DoxyCodeLine{00116\ }
-\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{int}\ res\ =\ vfprintf(file,\ format,\ args);}
-\DoxyCodeLine{00118\ }
-\DoxyCodeLine{00119\ \ \ \ \ va\_end(args);}
-\DoxyCodeLine{00120\ }
-\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{if}\ (res\ ==\ EOF)}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}File\ write\ error"{}});}
-\DoxyCodeLine{00123\ }
-\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
-\DoxyCodeLine{00125\ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ assert(file);}
+\DoxyCodeLine{00126\ \ \ \ \ assert(format);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ va\_list\ args\ =\ \{\};}
+\DoxyCodeLine{00129\ \ \ \ \ va\_start(args,\ format);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{int}\ res\ =\ vfprintf(file,\ format,\ args);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ va\_end(args);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordflow}{if}\ (res\ ==\ EOF)}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}File\ write\ error"{}});}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00139\ \}}
 
 \end{DoxyCode}
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00201}{asm\+\_\+write\+\_\+cmd\+\_\+debug()}}, \mbox{\hyperlink{assembler_8cpp_source_l00314}{asm\+\_\+write\+\_\+debug\+\_\+comment()}}, \mbox{\hyperlink{assembler_8cpp_source_l00296}{asm\+\_\+write\+\_\+signature()}}, \mbox{\hyperlink{assembler_8cpp_source_l00003}{assemeble\+\_\+and\+\_\+write()}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00116}{disasm\+\_\+write\+\_\+signature()}}.
+Referenced by \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{listing_8cpp_source_l00077}{asm\+\_\+write\+\_\+header\+\_\+listing()}}, \mbox{\hyperlink{listing_8cpp_source_l00092}{asm\+\_\+write\+\_\+listing\+\_\+comment()}}, \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\+\_\+write()}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00116}{disasm\+\_\+write\+\_\+signature()}}.
 
 \Hypertarget{file_8cpp_ab8abec266bd97945de2b5124b50f26af}\label{file_8cpp_ab8abec266bd97945de2b5124b50f26af} 
 \index{file.cpp@{file.cpp}!file\_read@{file\_read}}
@@ -294,7 +347,7 @@ Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00201}{asm\+\_\+write\+\_\
 
 
 
-Reads data from char to buffer. Buffer must be big enough. 
+Reads data from char to buffer. \doxylink{struct_buffer}{Buffer} must be big enough. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -312,22 +365,22 @@ false
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{file_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
+Definition at line \mbox{\hyperlink{file_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00073\ \ \ \ \ assert(file);}
-\DoxyCodeLine{00074\ \ \ \ \ assert(buf);}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ readed\ =\ fread(buf,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}),\ file\_len,\ file);}
-\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{if}\ (readed\ !=\ (\textcolor{keywordtype}{size\_t})file\_len\ ||\ ferror(file))\ \{}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}File\ read\ error"{}});}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00080\ \ \ \ \ \}}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00083\ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ assert(file);}
+\DoxyCodeLine{00088\ \ \ \ \ assert(buf);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ readed\ =\ fread(buf,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}),\ file\_len,\ file);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{if}\ (readed\ !=\ (\textcolor{keywordtype}{size\_t})file\_len\ ||\ ferror(file))\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}File\ read\ error"{}});}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00097\ \}}
 
 \end{DoxyCode}
 
@@ -360,26 +413,26 @@ false
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{file_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
+Definition at line \mbox{\hyperlink{file_8cpp_source_l00112}{112}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00099\ \ \ \ \ assert(file);}
-\DoxyCodeLine{00100\ \ \ \ \ assert(data);}
-\DoxyCodeLine{00101\ }
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{if}\ (fwrite(data,\ 1,\ len,\ file)\ !=\ len)\ \{}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}File\ write\ error"{}});}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00105\ \ \ \ \ \}}
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ assert(file);}
+\DoxyCodeLine{00114\ \ \ \ \ assert(data);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{if}\ (fwrite(data,\ 1,\ len,\ file)\ !=\ len)\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}File\ write\ error"{}});}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00122\ \}}
 
 \end{DoxyCode}
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00269}{asm\+\_\+write\+\_\+cmd\+\_\+bin()}}, and \mbox{\hyperlink{assembler_8cpp_source_l00296}{asm\+\_\+write\+\_\+signature()}}.
+Referenced by \mbox{\hyperlink{file_8cpp_source_l00038}{file\+\_\+open\+\_\+write\+\_\+bytes\+\_\+close()}}.
 
 \Hypertarget{file_8cpp_ae7c38fbf3eca43ddec86ae4a00ed3ad6}\label{file_8cpp_ae7c38fbf3eca43ddec86ae4a00ed3ad6} 
 \index{file.cpp@{file.cpp}!file\_write\_line@{file\_write\_line}}
@@ -405,20 +458,20 @@ false
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{file_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
+Definition at line \mbox{\hyperlink{file_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{file_8cpp_source}{file.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00087\ \ \ \ \ assert(file);}
-\DoxyCodeLine{00088\ \ \ \ \ assert(line);}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{if}\ (fputs(line,\ file)\ ==\ EOF)\ \{}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}File\ write\ error"{}});}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00093\ \ \ \ \ \}}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00096\ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ assert(file);}
+\DoxyCodeLine{00102\ \ \ \ \ assert(line);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{if}\ (fputs(line,\ file)\ ==\ EOF)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}File\ write\ error"{}});}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00110\ \}}
 
 \end{DoxyCode}

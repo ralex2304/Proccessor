@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['wrong_5fuser_5finput_0',['WRONG_USER_INPUT',['../struct_status.html#ab31bb94cc29a302cab703638615b604ca74a1dcf53dd0430f856c203aa43e0364',1,'Status']]]
+  ['var_5fcode_5fdata_0',['VAR_CODE_DATA',['../stack_8h.html#a68960fb933bea9b067598ca388e5b6d5',1,'stack.h']]],
+  ['var_5fcode_5fdata_5fptr_1',['VAR_CODE_DATA_PTR',['../stack_8h.html#a8b6dac4dee6062b891084db600caa7ec',1,'stack.h']]],
+  ['var_5fdata_2',['var_data',['../struct_stack.html#ada9ac9dd578c2f702547fbf23447dfc5',1,'Stack']]],
+  ['varcodedata_3',['VarCodeData',['../struct_var_code_data.html',1,'']]],
+  ['version_4',['version',['../struct_file_header.html#a3c0fb698efe175bbe23b23f8e4d614e5',1,'FileHeader']]]
 ];

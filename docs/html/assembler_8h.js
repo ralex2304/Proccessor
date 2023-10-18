@@ -1,14 +1,6 @@
 var assembler_8h =
 [
-    [ "asm_debug_calc_tab", "assembler_8h.html#a16b05005479acdc2c6d7814c0fd2e1ec", null ],
-    [ "asm_parse_and_write_line", "assembler_8h.html#afb4775e59f95c37c7a8907336a0175ce", null ],
-    [ "asm_parse_is_arg_ram", "assembler_8h.html#ab9b80d44b196ea4e52b26bdc447d9e7a", null ],
-    [ "asm_read_imm", "assembler_8h.html#aa65f846ee48ebb731d61f22c015e92b0", null ],
-    [ "asm_read_reg", "assembler_8h.html#add0155cdcf619dbe80134c285cd15671", null ],
-    [ "asm_write_cmd", "assembler_8h.html#a15d1fb203a34d9a3e85896a45398f9f0", null ],
-    [ "asm_write_cmd_bin", "assembler_8h.html#a8a8daa2148ded220f21321bc101d88bd", null ],
-    [ "asm_write_cmd_debug", "assembler_8h.html#ab344a72004bf5c61593cb2e64726e0c7", null ],
-    [ "asm_write_debug_comment", "assembler_8h.html#ad5e9591adf405d701b5291f35fa51824", null ],
-    [ "asm_write_signature", "assembler_8h.html#a51dce0d0240698a2cb780a6b5cb85fa3", null ],
-    [ "assemeble_and_write", "assembler_8h.html#a41d7810457da067d17030bce3b338f4e", null ]
+    [ "asm_is_arg_required", "assembler_8h.html#a5849736d04a0cbad92c3d7563746ce83", null ],
+    [ "asm_parse_and_write_line", "assembler_8h.html#a37fa39e56f0a10f9a0957f09d441fcc7", null ],
+    [ "assemeble_and_write", "assembler_8h.html#a1ae0268a27667ac8e496a21282646b6c", null ]
 ];

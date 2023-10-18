@@ -5,5 +5,6 @@ var args__parser_8cpp =
     [ "print_commands_list", "args__parser_8cpp.html#ac8ca3149b4647516ae35706e9d8510d2", null ],
     [ "print_help", "args__parser_8cpp.html#a588357a358b0a2f4369558537ffcb259", null ],
     [ "read_input_filename", "args__parser_8cpp.html#a7b761898455b1312fa4b52594ed10b7d", null ],
+    [ "read_listing_filename", "args__parser_8cpp.html#ab0d272921fc02dad91323c5c176dc9a2", null ],
     [ "read_output_filename", "args__parser_8cpp.html#a87a6361c68c0184ccf8a9a1a04329ff7", null ]
 ];

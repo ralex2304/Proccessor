@@ -1,0 +1,400 @@
+\doxysection{assembler/src/asm/read.cpp File Reference}
+\hypertarget{read_8cpp}{}\label{read_8cpp}\index{assembler/src/asm/read.cpp@{assembler/src/asm/read.cpp}}
+{\ttfamily \#include \"{}read.\+h\"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{read_8cpp_ab1877074925c08a214b5f75c5cb0e335}{THROW\+\_\+\+SYNTAX\+\_\+\+ERROR\+\_\+}}(text, ...)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{read_8cpp_aeac35f1dc277a52e21921ecf7ba9f1da}{asm\+\_\+read\+\_\+args\+\_\+ram}} (const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}tokens, size\+\_\+t \texorpdfstring{$\ast$}{*}cur\+\_\+token, \mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}cmd, const size\+\_\+t line\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Reads ram arguments. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{read_8cpp_a4440303dab26931b5ef1a774dc12ec08}{asm\+\_\+read\+\_\+args}} (const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}tokens, size\+\_\+t \texorpdfstring{$\ast$}{*}cur\+\_\+token, \mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}cmd, \mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}labels, const size\+\_\+t line\+\_\+num, const bool first\+\_\+pass)
+\begin{DoxyCompactList}\small\item\em Reads command args from tokens. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{read_8cpp_a5bd7c4ffe9651a2c37eed0242b175ab9}{asm\+\_\+read\+\_\+arg\+\_\+reg}} (const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}tokens, size\+\_\+t \texorpdfstring{$\ast$}{*}cur\+\_\+token, \mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}cmd, const size\+\_\+t line\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Reads reg argument. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{read_8cpp_acc74324114f2fa709e4765ff04918c56}{asm\+\_\+read\+\_\+arg\+\_\+imm}} (const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}tokens, size\+\_\+t \texorpdfstring{$\ast$}{*}cur\+\_\+token, \mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}cmd, const size\+\_\+t line\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Reads immutable args. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{read_8cpp_affe585b9d7b0029bcd60741f0b9cffa9}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int}} (const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}tokens, size\+\_\+t \texorpdfstring{$\ast$}{*}cur\+\_\+token, \mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}cmd, const size\+\_\+t line\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Reads integer immutable argument. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{read_8cpp_ac58428a20ec016842816dd8db2bed348}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double}} (const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}tokens, size\+\_\+t \texorpdfstring{$\ast$}{*}cur\+\_\+token, \mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}cmd, const size\+\_\+t line\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Reads double immutable argument. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{read_8cpp_ab1877074925c08a214b5f75c5cb0e335}\label{read_8cpp_ab1877074925c08a214b5f75c5cb0e335} 
+\index{read.cpp@{read.cpp}!THROW\_SYNTAX\_ERROR\_@{THROW\_SYNTAX\_ERROR\_}}
+\index{THROW\_SYNTAX\_ERROR\_@{THROW\_SYNTAX\_ERROR\_}!read.cpp@{read.cpp}}
+\doxysubsubsection{\texorpdfstring{THROW\_SYNTAX\_ERROR\_}{THROW\_SYNTAX\_ERROR\_}}
+{\footnotesize\ttfamily \#define THROW\+\_\+\+SYNTAX\+\_\+\+ERROR\+\_\+(\begin{DoxyParamCaption}\item[{}]{text,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_ad220b7c98ce4bd06bf25860ca62d7aba}{CONSOLE\_RED}}(\textcolor{stringliteral}{"{}Syntax\ error.\ "{}}\ text)\ \textcolor{stringliteral}{"{}\ Line\ \%zu\(\backslash\)n"{}},\ \_\_VA\_ARGS\_\_\ line\_num);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabb9ae17ad4d7d55ccce75d9d38d7926e}{Status::SYNTAX\_ERROR}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{read_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{read_8cpp_source}{read.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{read_8cpp_acc74324114f2fa709e4765ff04918c56}\label{read_8cpp_acc74324114f2fa709e4765ff04918c56} 
+\index{read.cpp@{read.cpp}!asm\_read\_arg\_imm@{asm\_read\_arg\_imm}}
+\index{asm\_read\_arg\_imm@{asm\_read\_arg\_imm}!read.cpp@{read.cpp}}
+\doxysubsubsection{\texorpdfstring{asm\_read\_arg\_imm()}{asm\_read\_arg\_imm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+read\+\_\+arg\+\_\+imm (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{tokens,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{cur\+\_\+token,  }\item[{\mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}}]{cmd,  }\item[{const size\+\_\+t}]{line\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Reads immutable args. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tokens} & \\
+\hline
+{\em cur\+\_\+token} & \\
+\hline
+{\em cmd} & \\
+\hline
+{\em line\+\_\+num} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{read_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{read_8cpp_source}{read.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ assert(cmd);}
+\DoxyCodeLine{00079\ \ \ \ \ assert(tokens);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens[*cur\_token]\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{read_8cpp_ac58428a20ec016842816dd8db2bed348}{asm\_read\_arg\_imm\_double}}(tokens,\ cur\_token,\ cmd,\ line\_num);}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{read_8cpp_affe585b9d7b0029bcd60741f0b9cffa9}{asm\_read\_arg\_imm\_int}}\ \ \ (tokens,\ cur\_token,\ cmd,\ line\_num);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00088\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{read_8cpp_source_l00109}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, \mbox{\hyperlink{read_8cpp_source_l00090}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}, and \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}.
+
+
+
+Referenced by \mbox{\hyperlink{read_8cpp_source_l00031}{asm\+\_\+read\+\_\+args()}}.
+
+\Hypertarget{read_8cpp_ac58428a20ec016842816dd8db2bed348}\label{read_8cpp_ac58428a20ec016842816dd8db2bed348} 
+\index{read.cpp@{read.cpp}!asm\_read\_arg\_imm\_double@{asm\_read\_arg\_imm\_double}}
+\index{asm\_read\_arg\_imm\_double@{asm\_read\_arg\_imm\_double}!read.cpp@{read.cpp}}
+\doxysubsubsection{\texorpdfstring{asm\_read\_arg\_imm\_double()}{asm\_read\_arg\_imm\_double()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{tokens,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{cur\+\_\+token,  }\item[{\mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}}]{cmd,  }\item[{const size\+\_\+t}]{line\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Reads double immutable argument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tokens} & \\
+\hline
+{\em cur\+\_\+token} & \\
+\hline
+{\em cmd} & \\
+\hline
+{\em line\+\_\+num} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{read_8cpp_source_l00109}{109}} of file \mbox{\hyperlink{read_8cpp_source}{read.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ assert(cmd);}
+\DoxyCodeLine{00112\ \ \ \ \ assert(tokens);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{if}\ (!cmd-\/>\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}-\/>\mbox{\hyperlink{struct_cmd_info_a533a901273935ace5b3b91cd67ae69d5}{args}}.\mbox{\hyperlink{struct_args_en_a32436d51611eb10f8c0a003acf02d876}{imm\_double}}\ ||\ tokens[*cur\_token]\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{int}\ sscanf\_res\ =\ sscanf(tokens[*cur\_token],\ \mbox{\hyperlink{cmd_8h_a8851999375ab12991d66ed751e1e2fdb}{IMM\_DOUBLE\_T\_PRINTF}},\ \&cmd-\/>\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_af4f115f325b0b1e91f03bea48354fa82}{imm\_double}});}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordflow}{if}\ (sscanf\_res\ !=\ 1)}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read_8cpp_ab1877074925c08a214b5f75c5cb0e335}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Invalid\ immediate\ argument\ \(\backslash\)"{}\%s\(\backslash\)"{}"{}},\ tokens[*cur\_token],);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ cmd-\/>\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae86855d817fa5c60367ce99d1c826287}{imm}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00123\ \ \ \ \ *cur\_token\ +=\ 1;}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00126\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{cmd_8h_source_l00096}{Cmd\+Info\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00132}{Cmd\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00131}{Cmd\+::byte}}, \mbox{\hyperlink{cmd_8h_source_l00023}{Cmd\+Byte\+::imm}}, \mbox{\hyperlink{cmd_8h_source_l00068}{Cmd\+Args\+::imm\+\_\+double}}, \mbox{\hyperlink{cmd_8h_source_l00075}{Args\+En\+::imm\+\_\+double}}, \mbox{\hyperlink{cmd_8h_source_l00058}{IMM\+\_\+\+DOUBLE\+\_\+\+T\+\_\+\+PRINTF}}, \mbox{\hyperlink{cmd_8h_source_l00129}{Cmd\+::info}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, and \mbox{\hyperlink{read_8cpp_source_l00003}{THROW\+\_\+\+SYNTAX\+\_\+\+ERROR\+\_\+}}.
+
+
+
+Referenced by \mbox{\hyperlink{read_8cpp_source_l00076}{asm\+\_\+read\+\_\+arg\+\_\+imm()}}.
+
+\Hypertarget{read_8cpp_affe585b9d7b0029bcd60741f0b9cffa9}\label{read_8cpp_affe585b9d7b0029bcd60741f0b9cffa9} 
+\index{read.cpp@{read.cpp}!asm\_read\_arg\_imm\_int@{asm\_read\_arg\_imm\_int}}
+\index{asm\_read\_arg\_imm\_int@{asm\_read\_arg\_imm\_int}!read.cpp@{read.cpp}}
+\doxysubsubsection{\texorpdfstring{asm\_read\_arg\_imm\_int()}{asm\_read\_arg\_imm\_int()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{tokens,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{cur\+\_\+token,  }\item[{\mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}}]{cmd,  }\item[{const size\+\_\+t}]{line\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Reads integer immutable argument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tokens} & \\
+\hline
+{\em cur\+\_\+token} & \\
+\hline
+{\em cmd} & \\
+\hline
+{\em line\+\_\+num} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{read_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{read_8cpp_source}{read.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ assert(cmd);}
+\DoxyCodeLine{00093\ \ \ \ \ assert(tokens);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{if}\ (!cmd-\/>\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}-\/>\mbox{\hyperlink{struct_cmd_info_a533a901273935ace5b3b91cd67ae69d5}{args}}.\mbox{\hyperlink{struct_args_en_a0750bd83c2ac938393537562ffe3f000}{imm\_int}}\ ||\ tokens[*cur\_token]\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{int}\ sscanf\_res\ =\ sscanf(tokens[*cur\_token],\ \mbox{\hyperlink{cmd_8h_ae358dd974987b830c99920a390e0b6f9}{IMM\_INT\_T\_PRINTF}},\ \&cmd-\/>\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a7280dbc4d3d9bee564f6815e969bdd07}{imm\_int}});}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{if}\ (sscanf\_res\ !=\ 1)}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read_8cpp_ab1877074925c08a214b5f75c5cb0e335}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Invalid\ immediate\ argument\ \(\backslash\)"{}\%s\(\backslash\)"{}"{}},\ tokens[*cur\_token],);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ cmd-\/>\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae86855d817fa5c60367ce99d1c826287}{imm}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00104\ \ \ \ \ *cur\_token\ +=\ 1;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00107\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{cmd_8h_source_l00096}{Cmd\+Info\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00132}{Cmd\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00131}{Cmd\+::byte}}, \mbox{\hyperlink{cmd_8h_source_l00023}{Cmd\+Byte\+::imm}}, \mbox{\hyperlink{cmd_8h_source_l00070}{Cmd\+Args\+::imm\+\_\+int}}, \mbox{\hyperlink{cmd_8h_source_l00076}{Args\+En\+::imm\+\_\+int}}, \mbox{\hyperlink{cmd_8h_source_l00065}{IMM\+\_\+\+INT\+\_\+\+T\+\_\+\+PRINTF}}, \mbox{\hyperlink{cmd_8h_source_l00129}{Cmd\+::info}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, and \mbox{\hyperlink{read_8cpp_source_l00003}{THROW\+\_\+\+SYNTAX\+\_\+\+ERROR\+\_\+}}.
+
+
+
+Referenced by \mbox{\hyperlink{read_8cpp_source_l00076}{asm\+\_\+read\+\_\+arg\+\_\+imm()}}, and \mbox{\hyperlink{read_8cpp_source_l00008}{asm\+\_\+read\+\_\+args\+\_\+ram()}}.
+
+\Hypertarget{read_8cpp_a5bd7c4ffe9651a2c37eed0242b175ab9}\label{read_8cpp_a5bd7c4ffe9651a2c37eed0242b175ab9} 
+\index{read.cpp@{read.cpp}!asm\_read\_arg\_reg@{asm\_read\_arg\_reg}}
+\index{asm\_read\_arg\_reg@{asm\_read\_arg\_reg}!read.cpp@{read.cpp}}
+\doxysubsubsection{\texorpdfstring{asm\_read\_arg\_reg()}{asm\_read\_arg\_reg()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+read\+\_\+arg\+\_\+reg (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{tokens,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{cur\+\_\+token,  }\item[{\mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}}]{cmd,  }\item[{const size\+\_\+t}]{line\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Reads reg argument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tokens} & \\
+\hline
+{\em cur\+\_\+token} & \\
+\hline
+{\em cmd} & \\
+\hline
+{\em line\+\_\+num} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{read_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{read_8cpp_source}{read.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ assert(cmd);}
+\DoxyCodeLine{00056\ \ \ \ \ assert(tokens);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{if}\ (!cmd-\/>\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}-\/>\mbox{\hyperlink{struct_cmd_info_a533a901273935ace5b3b91cd67ae69d5}{args}}.\mbox{\hyperlink{struct_args_en_a63d5185473c449ea08983c877e083122}{reg}}\ ||\ tokens[*cur\_token]\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (isalpha(tokens[*cur\_token][0]))\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_reg_info}{RegInfo}}*\ \mbox{\hyperlink{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}{reg}}\ =\ \mbox{\hyperlink{cmd_8cpp_a21261870d3dfc4b4e1ce443a6b1477cc}{find\_reg\_by\_name}}(tokens[*cur\_token]);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}{reg}}\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read_8cpp_ab1877074925c08a214b5f75c5cb0e335}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Invalid\ reg\ name\ \(\backslash\)"{}\%s\(\backslash\)"{}"{}},\ tokens[*cur\_token],);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ cmd-\/>\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a49949ad6edf5cb3523025913f2c0adc5}{reg}}\ =\ \mbox{\hyperlink{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}{reg}}-\/>num;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ cmd-\/>\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae9e14c718597b6998c4189592e775054}{reg}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ *cur\_token\ +=\ 1;}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00074\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{cmd_8h_source_l00096}{Cmd\+Info\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00132}{Cmd\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00131}{Cmd\+::byte}}, \mbox{\hyperlink{cmd_8cpp_source_l00053}{find\+\_\+reg\+\_\+by\+\_\+name()}}, \mbox{\hyperlink{cmd_8h_source_l00129}{Cmd\+::info}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, \mbox{\hyperlink{cmd_8h_source_l00022}{Cmd\+Byte\+::reg}}, \mbox{\hyperlink{cmd_8h_source_l00069}{Cmd\+Args\+::reg}}, \mbox{\hyperlink{cmd_8h_source_l00074}{Args\+En\+::reg}}, \mbox{\hyperlink{cmd__dict_8h_source_l00025}{reg}}, and \mbox{\hyperlink{read_8cpp_source_l00003}{THROW\+\_\+\+SYNTAX\+\_\+\+ERROR\+\_\+}}.
+
+
+
+Referenced by \mbox{\hyperlink{read_8cpp_source_l00031}{asm\+\_\+read\+\_\+args()}}, and \mbox{\hyperlink{read_8cpp_source_l00008}{asm\+\_\+read\+\_\+args\+\_\+ram()}}.
+
+\Hypertarget{read_8cpp_a4440303dab26931b5ef1a774dc12ec08}\label{read_8cpp_a4440303dab26931b5ef1a774dc12ec08} 
+\index{read.cpp@{read.cpp}!asm\_read\_args@{asm\_read\_args}}
+\index{asm\_read\_args@{asm\_read\_args}!read.cpp@{read.cpp}}
+\doxysubsubsection{\texorpdfstring{asm\_read\_args()}{asm\_read\_args()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+read\+\_\+args (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{tokens,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{cur\+\_\+token,  }\item[{\mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}}]{cmd,  }\item[{\mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}}]{labels,  }\item[{const size\+\_\+t}]{line\+\_\+num,  }\item[{const bool}]{first\+\_\+pass }\end{DoxyParamCaption})}
+
+
+
+Reads command args from tokens. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tokens} & \\
+\hline
+{\em cur\+\_\+token} & \\
+\hline
+{\em cmd} & \\
+\hline
+{\em labels} & \\
+\hline
+{\em line\+\_\+num} & \\
+\hline
+{\em first\+\_\+pass} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{read_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{read_8cpp_source}{read.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ assert(tokens);}
+\DoxyCodeLine{00034\ \ \ \ \ assert(cur\_token);}
+\DoxyCodeLine{00035\ \ \ \ \ assert(cmd);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd-\/>\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}-\/>\mbox{\hyperlink{struct_cmd_info_a533a901273935ace5b3b91cd67ae69d5}{args}}.\mbox{\hyperlink{struct_args_en_a2602d15845006ade8d73d8bbad851c61}{label}})\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{jump_8cpp_ab71000fe53def25d4df470428a4f488d}{asm\_get\_label}}(labels,\ tokens[*cur\_token],\ \&cmd-\/>\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a7280dbc4d3d9bee564f6815e969bdd07}{imm\_int}},}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ line\_num,\ first\_pass));}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ cmd-\/>\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae86855d817fa5c60367ce99d1c826287}{imm}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ *cur\_token\ +=\ 1;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{read_8cpp_a5bd7c4ffe9651a2c37eed0242b175ab9}{asm\_read\_arg\_reg}}(tokens,\ cur\_token,\ cmd,\ line\_num));}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{read_8cpp_acc74324114f2fa709e4765ff04918c56}{asm\_read\_arg\_imm}}(tokens,\ cur\_token,\ cmd,\ line\_num));}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00051\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{cmd_8h_source_l00096}{Cmd\+Info\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00132}{Cmd\+::args}}, \mbox{\hyperlink{jump_8cpp_source_l00029}{asm\+\_\+get\+\_\+label()}}, \mbox{\hyperlink{read_8cpp_source_l00076}{asm\+\_\+read\+\_\+arg\+\_\+imm()}}, \mbox{\hyperlink{read_8cpp_source_l00053}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}, \mbox{\hyperlink{cmd_8h_source_l00131}{Cmd\+::byte}}, \mbox{\hyperlink{cmd_8h_source_l00023}{Cmd\+Byte\+::imm}}, \mbox{\hyperlink{cmd_8h_source_l00070}{Cmd\+Args\+::imm\+\_\+int}}, \mbox{\hyperlink{cmd_8h_source_l00129}{Cmd\+::info}}, \mbox{\hyperlink{cmd_8h_source_l00078}{Args\+En\+::label}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, and \mbox{\hyperlink{statuses_8h_source_l00055}{STATUS\+\_\+\+CHECK}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00077}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}.
+
+\Hypertarget{read_8cpp_aeac35f1dc277a52e21921ecf7ba9f1da}\label{read_8cpp_aeac35f1dc277a52e21921ecf7ba9f1da} 
+\index{read.cpp@{read.cpp}!asm\_read\_args\_ram@{asm\_read\_args\_ram}}
+\index{asm\_read\_args\_ram@{asm\_read\_args\_ram}!read.cpp@{read.cpp}}
+\doxysubsubsection{\texorpdfstring{asm\_read\_args\_ram()}{asm\_read\_args\_ram()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+read\+\_\+args\+\_\+ram (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{tokens,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{cur\+\_\+token,  }\item[{\mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}}]{cmd,  }\item[{const size\+\_\+t}]{line\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Reads ram arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tokens} & \\
+\hline
+{\em cur\+\_\+token} & \\
+\hline
+{\em cmd} & \\
+\hline
+{\em line\+\_\+num} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{read_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{read_8cpp_source}{read.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ assert(tokens);}
+\DoxyCodeLine{00010\ \ \ \ \ assert(cur\_token);}
+\DoxyCodeLine{00011\ \ \ \ \ assert(cmd);}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (!cmd-\/>\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}-\/>\mbox{\hyperlink{struct_cmd_info_a533a901273935ace5b3b91cd67ae69d5}{args}}.\mbox{\hyperlink{struct_args_en_a242a2ff489e2e3db94724f185858b649}{ram}})}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read_8cpp_ab1877074925c08a214b5f75c5cb0e335}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Command\ doesn't\ support\ ram\ args."{}});}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ cmd-\/>\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_a64f32a2c5de062d496ece180759dd940}{ram}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{read_8cpp_a5bd7c4ffe9651a2c37eed0242b175ab9}{asm\_read\_arg\_reg}}(tokens,\ cur\_token,\ cmd,\ line\_num));}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens[*cur\_token]\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ tokens[*cur\_token][0]\ !=\ \textcolor{charliteral}{']'})}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{read_8cpp_affe585b9d7b0029bcd60741f0b9cffa9}{asm\_read\_arg\_imm\_int}}(tokens,\ cur\_token,\ cmd,\ line\_num));}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens[*cur\_token]\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ tokens[*cur\_token][0]\ !=\ \textcolor{charliteral}{']'})}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{read_8cpp_ab1877074925c08a214b5f75c5cb0e335}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Expected\ \(\backslash\)"{}]\(\backslash\)"{}."{}});}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ *cur\_token\ +=\ 1;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{cmd_8h_source_l00096}{Cmd\+Info\+::args}}, \mbox{\hyperlink{read_8cpp_source_l00090}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}, \mbox{\hyperlink{read_8cpp_source_l00053}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}, \mbox{\hyperlink{cmd_8h_source_l00131}{Cmd\+::byte}}, \mbox{\hyperlink{cmd_8h_source_l00129}{Cmd\+::info}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, \mbox{\hyperlink{cmd_8h_source_l00024}{Cmd\+Byte\+::ram}}, \mbox{\hyperlink{cmd_8h_source_l00077}{Args\+En\+::ram}}, \mbox{\hyperlink{statuses_8h_source_l00055}{STATUS\+\_\+\+CHECK}}, and \mbox{\hyperlink{read_8cpp_source_l00003}{THROW\+\_\+\+SYNTAX\+\_\+\+ERROR\+\_\+}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00077}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}.
+

@@ -30,7 +30,7 @@ Status::Statuses Status::raise(const Statuses status) {
             fprintf(stderr, "Exiting. stdout error\n");
             break;
         case SIGNATURE_ERROR:
-            fprintf(stderr, "Exiting. Signature error\n");
+            fprintf(stderr, "Exiting. FileHeader error\n");
             break;
         case OK_EXIT:
         case DEFAULT:

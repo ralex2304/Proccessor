@@ -100,24 +100,162 @@ $(document).ready(function(){initNavTree('text__lib_8cpp.html',''); initResizabl
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad8e76050fc876e450a1df783ec020ce6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__lib_8cpp.html#ad8e76050fc876e450a1df783ec020ce6">my_strtok_line</a> (const char *input)</td></tr>
-<tr class="memdesc:ad8e76050fc876e450a1df783ec020ce6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenizator for lines.  <br /></td></tr>
-<tr class="separator:ad8e76050fc876e450a1df783ec020ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb373f3703f99992ad5d95d8526f1149"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__lib_8cpp.html#aeb373f3703f99992ad5d95d8526f1149">split_text_to_lines</a> (const char *text, <a class="el" href="struct_string.html">String</a> *lines_array)</td></tr>
-<tr class="memdesc:aeb373f3703f99992ad5d95d8526f1149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses my_strtok_lines and writes results into array.  <br /></td></tr>
-<tr class="separator:aeb373f3703f99992ad5d95d8526f1149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a755c92bd1a2ab4d8313a8852c8bf26d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__lib_8cpp.html#a755c92bd1a2ab4d8313a8852c8bf26d4">string_strtok_line</a> (char *input)</td></tr>
+<tr class="memdesc:a755c92bd1a2ab4d8313a8852c8bf26d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenizator for lines.  <br /></td></tr>
+<tr class="separator:a755c92bd1a2ab4d8313a8852c8bf26d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe00240816bfba4512c5eb970d7213f7"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__lib_8cpp.html#afe00240816bfba4512c5eb970d7213f7">strtok_special</a> (char *input, const char *delim, const char *special_delim)</td></tr>
+<tr class="memdesc:afe00240816bfba4512c5eb970d7213f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Works as strtok, but also finds special_delim. If found, puts it in found_special and quits.  <br /></td></tr>
+<tr class="separator:afe00240816bfba4512c5eb970d7213f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fad299f3c741aa15b6aae9efa743daf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__lib_8cpp.html#a9fad299f3c741aa15b6aae9efa743daf">split_text_to_lines</a> (char *text, <a class="el" href="struct_string.html">String</a> *lines_array)</td></tr>
+<tr class="memdesc:a9fad299f3c741aa15b6aae9efa743daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses my_strtok_lines and writes results into array.  <br /></td></tr>
+<tr class="separator:a9fad299f3c741aa15b6aae9efa743daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2de6a72375b7b9e1403a740b8ab946f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__lib_8cpp.html#a2de6a72375b7b9e1403a740b8ab946f7">split_line_with_special_delims</a> (char *str, const char *delims, const char *special_delims, const char **array, const size_t array_max_size)</td></tr>
+<tr class="memdesc:a2de6a72375b7b9e1403a740b8ab946f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits text to array of tokens. If founds special delim, treats it as single token.  <br /></td></tr>
+<tr class="separator:a2de6a72375b7b9e1403a740b8ab946f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ad8e76050fc876e450a1df783ec020ce6" name="ad8e76050fc876e450a1df783ec020ce6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8e76050fc876e450a1df783ec020ce6">&#9670;&#160;</a></span>my_strtok_line()</h2>
+<a id="a2de6a72375b7b9e1403a740b8ab946f7" name="a2de6a72375b7b9e1403a740b8ab946f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2de6a72375b7b9e1403a740b8ab946f7">&#9670;&#160;</a></span>split_line_with_special_delims()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_string.html">String</a> my_strtok_line </td>
+          <td class="memname">void split_line_with_special_delims </td>
           <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>delims</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>special_delims</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char **&#160;</td>
+          <td class="paramname"><em>array</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>array_max_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Splits text to array of tokens. If founds special delim, treats it as single token. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td></td></tr>
+    <tr><td class="paramname">delims</td><td></td></tr>
+    <tr><td class="paramname">special_delims</td><td></td></tr>
+    <tr><td class="paramname">array</td><td></td></tr>
+    <tr><td class="paramname">array_max_size</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="text__lib_8cpp_source.html#l00106">106</a> of file <a class="el" href="text__lib_8cpp_source.html">text_lib.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  107</span>                                                                                     {</div>
+<div class="line"><span class="lineno">  108</span>    assert(str);</div>
+<div class="line"><span class="lineno">  109</span>    assert(delims);</div>
+<div class="line"><span class="lineno">  110</span>    assert(special_delims);</div>
+<div class="line"><span class="lineno">  111</span>    assert(array);</div>
+<div class="line"><span class="lineno">  112</span>    assert(array_max_size &gt; 0);</div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>    array[0] = <a class="code hl_function" href="text__lib_8cpp.html#afe00240816bfba4512c5eb970d7213f7">strtok_special</a>(str, delims, special_delims);</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; array_max_size &amp;&amp; array[i - 1] != <span class="keyword">nullptr</span>; i++) {</div>
+<div class="line"><span class="lineno">  116</span>        array[i] = <a class="code hl_function" href="text__lib_8cpp.html#afe00240816bfba4512c5eb970d7213f7">strtok_special</a>(<span class="keyword">nullptr</span>, delims, special_delims);</div>
+<div class="line"><span class="lineno">  117</span>    }</div>
+<div class="line"><span class="lineno">  118</span>}</div>
+<div class="ttc" id="atext__lib_8cpp_html_afe00240816bfba4512c5eb970d7213f7"><div class="ttname"><a href="text__lib_8cpp.html#afe00240816bfba4512c5eb970d7213f7">strtok_special</a></div><div class="ttdeci">const char * strtok_special(char *input, const char *delim, const char *special_delim)</div><div class="ttdoc">Works as strtok, but also finds special_delim. If found, puts it in found_special and quits.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00039">text_lib.cpp:39</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="text__lib_8cpp_source.html#l00039">strtok_special()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00077">asm_parse_and_write_line()</a>.</p>
+
+</div>
+</div>
+<a id="a9fad299f3c741aa15b6aae9efa743daf" name="a9fad299f3c741aa15b6aae9efa743daf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fad299f3c741aa15b6aae9efa743daf">&#9670;&#160;</a></span>split_text_to_lines()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void split_text_to_lines </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_string.html">String</a> *&#160;</td>
+          <td class="paramname"><em>lines_array</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Uses my_strtok_lines and writes results into array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td></td></tr>
+    <tr><td class="paramname">lines_array</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="text__lib_8cpp_source.html#l00095">95</a> of file <a class="el" href="text__lib_8cpp_source.html">text_lib.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>                                                          {</div>
+<div class="line"><span class="lineno">   96</span>    assert(text);</div>
+<div class="line"><span class="lineno">   97</span>    assert(lines_array);</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>    lines_array[0] = <a class="code hl_function" href="text__lib_8cpp.html#a755c92bd1a2ab4d8313a8852c8bf26d4">string_strtok_line</a>(text);</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; lines_array[i - 1].<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> != <span class="keyword">nullptr</span>; i++) {</div>
+<div class="line"><span class="lineno">  102</span>        lines_array[i] = <a class="code hl_function" href="text__lib_8cpp.html#a755c92bd1a2ab4d8313a8852c8bf26d4">string_strtok_line</a>(<span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  103</span>    }</div>
+<div class="line"><span class="lineno">  104</span>}</div>
+<div class="ttc" id="astruct_string_html_a7028cb0053f3138200b398a23ad2f2b8"><div class="ttname"><a href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">String::str</a></div><div class="ttdeci">char * str</div><div class="ttdoc">string</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00014">text_lib.h:14</a></div></div>
+<div class="ttc" id="atext__lib_8cpp_html_a755c92bd1a2ab4d8313a8852c8bf26d4"><div class="ttname"><a href="text__lib_8cpp.html#a755c92bd1a2ab4d8313a8852c8bf26d4">string_strtok_line</a></div><div class="ttdeci">String string_strtok_line(char *input)</div><div class="ttdoc">Tokenizator for lines.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00003">text_lib.cpp:3</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="text__lib_8h_source.html#l00014">String::str</a>, and <a class="el" href="text__lib_8cpp_source.html#l00003">string_strtok_line()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="text__proccessor_8cpp_source.html#l00003">InputData::ctor()</a>.</p>
+
+</div>
+</div>
+<a id="a755c92bd1a2ab4d8313a8852c8bf26d4" name="a755c92bd1a2ab4d8313a8852c8bf26d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a755c92bd1a2ab4d8313a8852c8bf26d4">&#9670;&#160;</a></span>string_strtok_line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_string.html">String</a> string_strtok_line </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
           <td></td>
         </tr>
@@ -134,11 +272,11 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_string.html" title="Struct to keep string and len together.">String</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="text__lib_8cpp_source.html#l00003">3</a> of file <a class="el" href="text__lib_8cpp_source.html">text_lib.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    3</span>                                         {</div>
+<div class="fragment"><div class="line"><span class="lineno">    3</span>                                       {</div>
 <div class="line"><span class="lineno">    4</span>    <span class="keyword">static</span> <span class="keywordtype">char</span>* str = <span class="keyword">nullptr</span>;</div>
 <div class="line"><span class="lineno">    5</span> </div>
 <div class="line"><span class="lineno">    6</span>    <span class="keywordflow">if</span> (input != <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">    7</span>        str = <span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(input);</div>
+<div class="line"><span class="lineno">    7</span>        str = input;</div>
 <div class="line"><span class="lineno">    8</span>    <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">    9</span>        input = str;</div>
 <div class="line"><span class="lineno">   10</span> </div>
@@ -170,32 +308,37 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   36</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><span class="lineno">   37</span>}</div>
 <div class="ttc" id="astruct_string_html"><div class="ttname"><a href="struct_string.html">String</a></div><div class="ttdoc">Struct to keep string and len together.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00013">text_lib.h:13</a></div></div>
-<div class="ttc" id="astruct_string_html_a7028cb0053f3138200b398a23ad2f2b8"><div class="ttname"><a href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">String::str</a></div><div class="ttdeci">char * str</div><div class="ttdoc">string</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00014">text_lib.h:14</a></div></div>
 <div class="ttc" id="astruct_string_html_a7fe1a0ef5b6253becac99444295dab0e"><div class="ttname"><a href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">String::len</a></div><div class="ttdeci">ssize_t len</div><div class="ttdoc">string len</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00015">text_lib.h:15</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="text__lib_8h_source.html#l00015">String::len</a>, and <a class="el" href="text__lib_8h_source.html#l00014">String::str</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="text__lib_8cpp_source.html#l00039">split_text_to_lines()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="text__lib_8cpp_source.html#l00095">split_text_to_lines()</a>.</p>
 
 </div>
 </div>
-<a id="aeb373f3703f99992ad5d95d8526f1149" name="aeb373f3703f99992ad5d95d8526f1149"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb373f3703f99992ad5d95d8526f1149">&#9670;&#160;</a></span>split_text_to_lines()</h2>
+<a id="afe00240816bfba4512c5eb970d7213f7" name="afe00240816bfba4512c5eb970d7213f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe00240816bfba4512c5eb970d7213f7">&#9670;&#160;</a></span>strtok_special()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void split_text_to_lines </td>
+          <td class="memname">const char * strtok_special </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>text</em>, </td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_string.html">String</a> *&#160;</td>
-          <td class="paramname"><em>lines_array</em>&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>delim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>special_delim</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -205,31 +348,74 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Uses my_strtok_lines and writes results into array. </p>
+<p>Works as strtok, but also finds special_delim. If found, puts it in found_special and quits. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">text</td><td></td></tr>
-    <tr><td class="paramname">lines_array</td><td></td></tr>
+    <tr><td class="paramname">input</td><td></td></tr>
+    <tr><td class="paramname">delim</td><td></td></tr>
+    <tr><td class="paramname">special_delim</td><td></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>char* </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="text__lib_8cpp_source.html#l00039">39</a> of file <a class="el" href="text__lib_8cpp_source.html">text_lib.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>                                                                {</div>
-<div class="line"><span class="lineno">   40</span>    assert(text);</div>
-<div class="line"><span class="lineno">   41</span>    assert(lines_array);</div>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>                                                                                      {</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keyword">static</span> <span class="keywordtype">char</span>* str = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* special = <span class="keyword">nullptr</span>;</div>
 <div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>    lines_array[0] = <a class="code hl_function" href="text__lib_8cpp.html#ad8e76050fc876e450a1df783ec020ce6">my_strtok_line</a>(text);</div>
-<div class="line"><span class="lineno">   44</span> </div>
-<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; lines_array[i - 1].<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> != <span class="keyword">nullptr</span>; i++) {</div>
-<div class="line"><span class="lineno">   46</span>        lines_array[i] = <a class="code hl_function" href="text__lib_8cpp.html#ad8e76050fc876e450a1df783ec020ce6">my_strtok_line</a>(<span class="keyword">nullptr</span>);</div>
-<div class="line"><span class="lineno">   47</span>    }</div>
-<div class="line"><span class="lineno">   48</span>}</div>
-<div class="ttc" id="atext__lib_8cpp_html_ad8e76050fc876e450a1df783ec020ce6"><div class="ttname"><a href="text__lib_8cpp.html#ad8e76050fc876e450a1df783ec020ce6">my_strtok_line</a></div><div class="ttdeci">String my_strtok_line(const char *input)</div><div class="ttdoc">Tokenizator for lines.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00003">text_lib.cpp:3</a></div></div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">if</span> (input != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">   44</span>        str = input;</div>
+<div class="line"><span class="lineno">   45</span>        special = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   46</span>    }</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">if</span> (special != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">   49</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* ret = special;</div>
+<div class="line"><span class="lineno">   50</span>        special = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span> (str == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   55</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">while</span> (*str &amp;&amp; strchr(delim, *str) != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">   58</span>        str++;</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* ret = str;</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* special_found = strchr(special_delim, *str);</div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span> (*str &amp;&amp; special_found != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">   65</span>        *str = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   66</span>        str++;</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>        ret = special_found;</div>
+<div class="line"><span class="lineno">   69</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">while</span> (*str &amp;&amp; strchr(delim, *str) == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">   71</span>            special_found = strchr(special_delim, *str);</div>
+<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">if</span> (special_found != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">   73</span>                special = special_found;</div>
+<div class="line"><span class="lineno">   74</span>                *str = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   75</span>                str++;</div>
+<div class="line"><span class="lineno">   76</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   77</span>            }</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>            str++;</div>
+<div class="line"><span class="lineno">   80</span>        }</div>
+<div class="line"><span class="lineno">   81</span>    }</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">while</span> (*str &amp;&amp; strchr(delim, *str) != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">   84</span>        *str = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   85</span>        str++;</div>
+<div class="line"><span class="lineno">   86</span>    }</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">if</span> (*str == <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><span class="lineno">   89</span>        str = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">   92</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="text__lib_8cpp_source.html#l00003">my_strtok_line()</a>, and <a class="el" href="text__lib_8h_source.html#l00014">String::str</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="text__proccessor_8cpp_source.html#l00003">InputData::ctor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="text__lib_8cpp_source.html#l00106">split_line_with_special_delims()</a>.</p>
 
 </div>
 </div>

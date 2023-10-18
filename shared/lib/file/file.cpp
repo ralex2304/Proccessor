@@ -13,10 +13,8 @@ Status::Statuses file_open_read_close(const char* filename, char** buf, const si
         return Status::INP_FILE_ERROR;
 
     file_size = file_get_len(file);
-    if (file_size < 0) {
-        file_close(file);
+    if (file_size < 0)
         return Status::INP_FILE_ERROR;
-    }
 
     if (size != nullptr)
         *size = file_size;
@@ -28,13 +26,29 @@ Status::Statuses file_open_read_close(const char* filename, char** buf, const si
         return Status::MEMORY_EXCEED;
     }
 
-    if (!file_read(file, *buf, file_size)) {
-        file_close(file);
+    if (!file_read(file, *buf, file_size))
         return Status::INP_FILE_ERROR;
-    }
 
     if (!file_close(file))
         return Status::INP_FILE_ERROR;
+
+    return Status::NORMAL_WORK;
+}
+
+Status::Statuses file_open_write_bytes_close(const char* filename, char* buf, const size_t size) {
+    assert(filename);
+    assert(buf);
+
+    FILE* file = nullptr;
+
+    if (!file_open(&file, filename, "wb"))
+        return Status::OUT_FILE_ERROR;
+
+    if (!file_write_bytes(file, buf, size))
+        return Status::OUT_FILE_ERROR;
+
+    if (!file_close(file))
+        return Status::OUT_FILE_ERROR;
 
     return Status::NORMAL_WORK;
 }

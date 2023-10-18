@@ -94,11 +94,11 @@ $(document).ready(function(){initNavTree('text__lib_8cpp_source.html',''); initR
 <div class="contents">
 <a href="text__lib_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="text__lib_8h.html">text_lib.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="text__lib_8cpp.html#ad8e76050fc876e450a1df783ec020ce6">    3</a></span><a class="code hl_struct" href="struct_string.html">String</a> <a class="code hl_function" href="text__lib_8cpp.html#ad8e76050fc876e450a1df783ec020ce6">my_strtok_line</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* input) {</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="text__lib_8cpp.html#a755c92bd1a2ab4d8313a8852c8bf26d4">    3</a></span><a class="code hl_struct" href="struct_string.html">String</a> <a class="code hl_function" href="text__lib_8cpp.html#a755c92bd1a2ab4d8313a8852c8bf26d4">string_strtok_line</a>(<span class="keywordtype">char</span>* input) {</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="keyword">static</span> <span class="keywordtype">char</span>* str = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keywordflow">if</span> (input != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        str = <span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(input);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        str = input;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        input = str;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
@@ -130,22 +130,94 @@ $(document).ready(function(){initNavTree('text__lib_8cpp_source.html',''); initR
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="text__lib_8cpp.html#aeb373f3703f99992ad5d95d8526f1149">   39</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="text__lib_8cpp.html#aeb373f3703f99992ad5d95d8526f1149">split_text_to_lines</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* text, <a class="code hl_struct" href="struct_string.html">String</a>* lines_array) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    assert(text);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    assert(lines_array);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="text__lib_8cpp.html#afe00240816bfba4512c5eb970d7213f7">   39</a></span><span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="text__lib_8cpp.html#afe00240816bfba4512c5eb970d7213f7">strtok_special</a>(<span class="keywordtype">char</span>* input, <span class="keyword">const</span> <span class="keywordtype">char</span>* delim, <span class="keyword">const</span> <span class="keywordtype">char</span>* special_delim) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">static</span> <span class="keywordtype">char</span>* str = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* special = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    lines_array[0] = <a class="code hl_function" href="text__lib_8cpp.html#ad8e76050fc876e450a1df783ec020ce6">my_strtok_line</a>(text);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; lines_array[i - 1].<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> != <span class="keyword">nullptr</span>; i++) {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        lines_array[i] = <a class="code hl_function" href="text__lib_8cpp.html#ad8e76050fc876e450a1df783ec020ce6">my_strtok_line</a>(<span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> (input != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        str = input;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        special = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">if</span> (special != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* ret = special;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        special = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">if</span> (str == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">while</span> (*str &amp;&amp; strchr(delim, *str) != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        str++;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* ret = str;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* special_found = strchr(special_delim, *str);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">if</span> (*str &amp;&amp; special_found != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        *str = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        str++;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        ret = special_found;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">while</span> (*str &amp;&amp; strchr(delim, *str) == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            special_found = strchr(special_delim, *str);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordflow">if</span> (special_found != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                special = special_found;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                *str = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                str++;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            str++;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">while</span> (*str &amp;&amp; strchr(delim, *str) != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        *str = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        str++;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">if</span> (*str == <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        str = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="text__lib_8cpp.html#a9fad299f3c741aa15b6aae9efa743daf">   95</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="text__lib_8cpp.html#a9fad299f3c741aa15b6aae9efa743daf">split_text_to_lines</a>(<span class="keywordtype">char</span>* text, <a class="code hl_struct" href="struct_string.html">String</a>* lines_array) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    assert(text);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    assert(lines_array);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    lines_array[0] = <a class="code hl_function" href="text__lib_8cpp.html#a755c92bd1a2ab4d8313a8852c8bf26d4">string_strtok_line</a>(text);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; lines_array[i - 1].<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> != <span class="keyword">nullptr</span>; i++) {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        lines_array[i] = <a class="code hl_function" href="text__lib_8cpp.html#a755c92bd1a2ab4d8313a8852c8bf26d4">string_strtok_line</a>(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="text__lib_8cpp.html#a2de6a72375b7b9e1403a740b8ab946f7">  106</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="text__lib_8cpp.html#a2de6a72375b7b9e1403a740b8ab946f7">split_line_with_special_delims</a>(<span class="keywordtype">char</span>* str, <span class="keyword">const</span> <span class="keywordtype">char</span>* delims, <span class="keyword">const</span> <span class="keywordtype">char</span>* special_delims,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                                    <span class="keyword">const</span> <span class="keywordtype">char</span>** array, <span class="keyword">const</span> <span class="keywordtype">size_t</span> array_max_size) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    assert(str);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    assert(delims);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    assert(special_delims);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    assert(array);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    assert(array_max_size &gt; 0);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    array[0] = <a class="code hl_function" href="text__lib_8cpp.html#afe00240816bfba4512c5eb970d7213f7">strtok_special</a>(str, delims, special_delims);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; array_max_size &amp;&amp; array[i - 1] != <span class="keyword">nullptr</span>; i++) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        array[i] = <a class="code hl_function" href="text__lib_8cpp.html#afe00240816bfba4512c5eb970d7213f7">strtok_special</a>(<span class="keyword">nullptr</span>, delims, special_delims);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
 <div class="ttc" id="astruct_string_html"><div class="ttname"><a href="struct_string.html">String</a></div><div class="ttdoc">Struct to keep string and len together.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00013">text_lib.h:13</a></div></div>
 <div class="ttc" id="astruct_string_html_a7028cb0053f3138200b398a23ad2f2b8"><div class="ttname"><a href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">String::str</a></div><div class="ttdeci">char * str</div><div class="ttdoc">string</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00014">text_lib.h:14</a></div></div>
 <div class="ttc" id="astruct_string_html_a7fe1a0ef5b6253becac99444295dab0e"><div class="ttname"><a href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">String::len</a></div><div class="ttdeci">ssize_t len</div><div class="ttdoc">string len</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00015">text_lib.h:15</a></div></div>
-<div class="ttc" id="atext__lib_8cpp_html_ad8e76050fc876e450a1df783ec020ce6"><div class="ttname"><a href="text__lib_8cpp.html#ad8e76050fc876e450a1df783ec020ce6">my_strtok_line</a></div><div class="ttdeci">String my_strtok_line(const char *input)</div><div class="ttdoc">Tokenizator for lines.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00003">text_lib.cpp:3</a></div></div>
-<div class="ttc" id="atext__lib_8cpp_html_aeb373f3703f99992ad5d95d8526f1149"><div class="ttname"><a href="text__lib_8cpp.html#aeb373f3703f99992ad5d95d8526f1149">split_text_to_lines</a></div><div class="ttdeci">void split_text_to_lines(const char *text, String *lines_array)</div><div class="ttdoc">Uses my_strtok_lines and writes results into array.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00039">text_lib.cpp:39</a></div></div>
+<div class="ttc" id="atext__lib_8cpp_html_a2de6a72375b7b9e1403a740b8ab946f7"><div class="ttname"><a href="text__lib_8cpp.html#a2de6a72375b7b9e1403a740b8ab946f7">split_line_with_special_delims</a></div><div class="ttdeci">void split_line_with_special_delims(char *str, const char *delims, const char *special_delims, const char **array, const size_t array_max_size)</div><div class="ttdoc">Splits text to array of tokens. If founds special delim, treats it as single token.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00106">text_lib.cpp:106</a></div></div>
+<div class="ttc" id="atext__lib_8cpp_html_a755c92bd1a2ab4d8313a8852c8bf26d4"><div class="ttname"><a href="text__lib_8cpp.html#a755c92bd1a2ab4d8313a8852c8bf26d4">string_strtok_line</a></div><div class="ttdeci">String string_strtok_line(char *input)</div><div class="ttdoc">Tokenizator for lines.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00003">text_lib.cpp:3</a></div></div>
+<div class="ttc" id="atext__lib_8cpp_html_a9fad299f3c741aa15b6aae9efa743daf"><div class="ttname"><a href="text__lib_8cpp.html#a9fad299f3c741aa15b6aae9efa743daf">split_text_to_lines</a></div><div class="ttdeci">void split_text_to_lines(char *text, String *lines_array)</div><div class="ttdoc">Uses my_strtok_lines and writes results into array.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00095">text_lib.cpp:95</a></div></div>
+<div class="ttc" id="atext__lib_8cpp_html_afe00240816bfba4512c5eb970d7213f7"><div class="ttname"><a href="text__lib_8cpp.html#afe00240816bfba4512c5eb970d7213f7">strtok_special</a></div><div class="ttdeci">const char * strtok_special(char *input, const char *delim, const char *special_delim)</div><div class="ttdoc">Works as strtok, but also finds special_delim. If found, puts it in found_special and quits.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00039">text_lib.cpp:39</a></div></div>
 <div class="ttc" id="atext__lib_8h_html"><div class="ttname"><a href="text__lib_8h.html">text_lib.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

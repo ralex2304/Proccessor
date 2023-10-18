@@ -2,43 +2,99 @@
 static_assert(0 && "DEF_CMD is not defined");
 #endif
 
-DEF_CMD(HLT,   0, false, false, false, "halt - end of program", {HALT();})
+//  reg | imm_double | imm_int | ram | label
 
-DEF_CMD(push,  1, true,  true,  true,  "push one element to stack || take from reg and push ||"
-                                       " take from reg + imm and push", {
+DEF_CMD(hlt,   0, 0b00000, "halt - end of program", {HALT();})
+
+DEF_CMD(push,  1, 0b11110, "push one element to stack || take from reg and push ||"
+                                       " take from reg + imm_double and push", {
+
     CHECK_AND_THROW_ERR(IS_ARG_REG || IS_ARG_IMM, "\"push\" requires at least one argument.");
 
-    IMM_T a = 0;
-    a += REG(ARG_REG);
-    a += ARG_IMM;
+    IMM_DOUBLE_T a = 0;
+
+    if (IS_ARG_REG)
+        a += REG(ARG_REG);
+
+    if (IS_ARG_IMM)
+        a += ARG_IMM_DOUBLE;
 
     PUSH(a);
 })
 
-DEF_CMD(pop,   2, true,  false, true,  "pop from stack and write to reg", {
+DEF_CMD(pop,   2, 0b10110,  "pop from stack and write to reg", {
     CHECK_AND_THROW_ERR(IS_ARG_REG, "\"pop\" requires reg.");
 
     POP(&REG(ARG_REG));
 })
 
-DEF_CMD(in ,   3, false, false, false, "push one element to stack from user input", {
-    IMM_T a = 0;
+DEF_CMD(jmp,   3, 0b00001, "jump", {
+    CHECK_AND_THROW_ERR(IS_ARG_IMM, "\"jump\" commands require byte address.");
+
+    JUMP(ARG_IMM_INT);
+})
+
+DEF_CMD(ja,    4, 0b00001, "jump >", {
+    CHECK_AND_THROW_ERR(IS_ARG_IMM, "\"jump\" commands require byte address.");
+
+    JUMP_CLAUSE_FUNC(IS_GREATER_IMM_DOUBLE, ARG_IMM_INT);
+})
+
+DEF_CMD(jae,   5, 0b00001, "jump >=", {
+    CHECK_AND_THROW_ERR(IS_ARG_IMM, "\"jump\" commands require byte address.");
+
+    JUMP_CLAUSE_FUNC(IS_GREATER_EQUAL_IMM_DOUBLE, ARG_IMM_INT);
+})
+
+DEF_CMD(jb,    6, 0b00001, "jump <", {
+    CHECK_AND_THROW_ERR(IS_ARG_IMM, "\"jump\" commands require byte address.");
+
+    JUMP_CLAUSE_FUNC(IS_LOWER_IMM_DOUBLE, ARG_IMM_INT);
+})
+
+DEF_CMD(jbe,   7, 0b00001, "jump <=", {
+    CHECK_AND_THROW_ERR(IS_ARG_IMM, "\"jump\" commands require byte address.");
+
+    JUMP_CLAUSE_FUNC(IS_LOWER_EQUAL_IMM_DOUBLE, ARG_IMM_INT);
+})
+
+DEF_CMD(je,    8, 0b00001, "jump ==", {
+    CHECK_AND_THROW_ERR(IS_ARG_IMM, "\"jump\" commands require byte address.");
+
+    JUMP_CLAUSE_FUNC(IS_EQUAL_IMM_DOUBLE, ARG_IMM_INT);
+})
+
+DEF_CMD(jne,   9, 0b00001, "jump !=", {
+    CHECK_AND_THROW_ERR(IS_ARG_IMM, "\"jump\" commands require byte address.");
+
+    JUMP_CLAUSE_FUNC(!IS_EQUAL_IMM_DOUBLE, ARG_IMM_INT);
+})
+
+DEF_CMD(jf,   10, 0b00001, "jump on Fridays", {
+    CHECK_AND_THROW_ERR(IS_ARG_IMM, "\"jump\" commands require byte address.");
+
+    if (WEEKDAY() == 5)
+        JUMP(ARG_IMM_INT);
+})
+
+DEF_CMD(in ,  16, 0b00000, "push one element to stack from user input", {
+    IMM_DOUBLE_T a = 0;
     GET_FROM_INPUT(&a);
 
     PUSH(a);
 })
 
-DEF_CMD(out,   4, false, false, false, "pop and print element from stack", {
-    IMM_T a = 0;
+DEF_CMD(out,  17, 0b00000, "pop and print element from stack", {
+    IMM_DOUBLE_T a = 0;
     POP(&a);
 
     PRINT(a);
 })
 
-DEF_CMD(add,   5, false, false, false, "+",           {TWO_OPERANDS_POP_AND_PUSH(+);})
-DEF_CMD(sub,   6, false, false, false, "-",           {TWO_OPERANDS_POP_AND_PUSH(-);})
-DEF_CMD(mul,   7, false, false, false, "*",           {TWO_OPERANDS_POP_AND_PUSH(*);})
-DEF_CMD(div,   8, false, false, false, "/",           {TWO_OPERANDS_POP_AND_PUSH(/);})
-DEF_CMD(sqrt,  9, false, false, false, "sqaure root", {ONE_OPERAND_POP_AND_PUSH(sqrt);})
-DEF_CMD(sin,  10, false, false, false, "sinus",       {ONE_OPERAND_POP_AND_PUSH(sin);})
-DEF_CMD(cos,  11, false, false, false, "cosinus",     {ONE_OPERAND_POP_AND_PUSH(cos);})
+DEF_CMD(add,  18, 0b00000, "+",           {BINARY_OPERATOR(+);})
+DEF_CMD(sub,  19, 0b00000, "-",           {BINARY_OPERATOR(-);})
+DEF_CMD(mul,  20, 0b00000, "*",           {BINARY_OPERATOR(*);})
+DEF_CMD(div,  21, 0b00000, "/",           {BINARY_OPERATOR(/);})
+DEF_CMD(sqrt, 22, 0b00000, "sqaure root", {UNARY_OPERATOR(sqrt);})
+DEF_CMD(sin,  23, 0b00000, "sinus",       {UNARY_OPERATOR(sin);})
+DEF_CMD(cos,  24, 0b00000, "cosinus",     {UNARY_OPERATOR(cos);})

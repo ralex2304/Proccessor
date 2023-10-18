@@ -100,31 +100,27 @@ $(document).ready(function(){initNavTree('cmd__dict_8h.html',''); initResizable(
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:adca31b522f9c737cf78bd9e0fd431e0b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__dict_8h.html#adca31b522f9c737cf78bd9e0fd431e0b">DEF_CMD</a> (push, 1, <a class="el" href="cmd__dict_8h.html#a1a24fc2eb8c1af6d06ac15bcec47f088">true</a>, <a class="el" href="cmd__dict_8h.html#a1a24fc2eb8c1af6d06ac15bcec47f088">true</a>, <a class="el" href="cmd__dict_8h.html#a1a24fc2eb8c1af6d06ac15bcec47f088">true</a>, &quot;push one element to <a class="el" href="cmd__dict_8h.html#af65c1bc5ae1ac40f31acc4fbbdcf3774">stack</a> || take from <a class="el" href="cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e">reg</a> and push ||&quot; &quot; take from <a class="el" href="cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e">reg</a> + imm and push&quot;, { <a class="el" href="spu__dsl_8h.html#a226e577a36ed0a410a8affc1cd05ce25">CHECK_AND_THROW_ERR</a>(<a class="el" href="spu__dsl_8h.html#a487a6897858a9db1907ebf1906b9db7e">IS_ARG_REG</a>||<a class="el" href="spu__dsl_8h.html#a6e11fe2cdb7ebb3f3c6c3ce953ccad61">IS_ARG_IMM</a>, &quot;\&quot;push\&quot; requires at least one argument.&quot;);<a class="el" href="spu__dsl_8h.html#afa935d43c9addc1630eee32fb792a6fc">IMM_T</a> <a class="el" href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a>=0;<a class="el" href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a>+=<a class="el" href="spu__dsl_8h.html#ad6ade6409c5ca69f90efdfd1acce35fa">REG</a>(<a class="el" href="spu__dsl_8h.html#affc73a1d6edef707baa2c67176322169">ARG_REG</a>);<a class="el" href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a>+=<a class="el" href="spu__dsl_8h.html#a94d7fa0746bc605f9ce2552764e5eeef">ARG_IMM</a>;<a class="el" href="spu__dsl_8h.html#ae12240a3f4de46ee0616d67825971f44">PUSH</a>(<a class="el" href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a>);}) DEF_CMD(pop</td></tr>
-<tr class="separator:adca31b522f9c737cf78bd9e0fd431e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd3b17ba5a2f1ada4035b8bbbe446912"><td class="memItemLeft" align="right" valign="top">pop from <a class="el" href="cmd__dict_8h.html#af65c1bc5ae1ac40f31acc4fbbdcf3774">stack</a> and write to <a class="el" href="spu__dsl_8h.html#a8e6708d01dec9fd978f58748eda35132">POP</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__dict_8h.html#acd3b17ba5a2f1ada4035b8bbbe446912">REG</a> (<a class="el" href="spu__dsl_8h.html#affc73a1d6edef707baa2c67176322169">ARG_REG</a>)</td></tr>
+<tr class="memitem:a1c7e6287ccb119895b5b8e82d2b5d4fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__dict_8h.html#a1c7e6287ccb119895b5b8e82d2b5d4fe">DEF_CMD</a> (push, 1, 0b11110, &quot;push one element to stack || take from <a class="el" href="cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e">reg</a> and push ||&quot; &quot; take from <a class="el" href="cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e">reg</a> + imm_double and push&quot;, { <a class="el" href="spu__dsl_8h.html#a226e577a36ed0a410a8affc1cd05ce25">CHECK_AND_THROW_ERR</a>(<a class="el" href="spu__dsl_8h.html#a487a6897858a9db1907ebf1906b9db7e">IS_ARG_REG</a>||<a class="el" href="spu__dsl_8h.html#a6e11fe2cdb7ebb3f3c6c3ce953ccad61">IS_ARG_IMM</a>, &quot;\&quot;push\&quot; requires at least one argument.&quot;);<a class="el" href="spu__dsl_8h.html#a303b93cbec67fcc7b8c811304b46fd9a">IMM_DOUBLE_T</a> a=0;if(<a class="el" href="spu__dsl_8h.html#a487a6897858a9db1907ebf1906b9db7e">IS_ARG_REG</a>) a+=<a class="el" href="spu__dsl_8h.html#ad6ade6409c5ca69f90efdfd1acce35fa">REG</a>(<a class="el" href="spu__dsl_8h.html#affc73a1d6edef707baa2c67176322169">ARG_REG</a>);if(<a class="el" href="spu__dsl_8h.html#a6e11fe2cdb7ebb3f3c6c3ce953ccad61">IS_ARG_IMM</a>) a+=<a class="el" href="spu__dsl_8h.html#ab61b6344b067c61cf8a583577051c78e">ARG_IMM_DOUBLE</a>;<a class="el" href="spu__dsl_8h.html#ae12240a3f4de46ee0616d67825971f44">PUSH</a>(a);}) DEF_CMD(pop</td></tr>
+<tr class="separator:a1c7e6287ccb119895b5b8e82d2b5d4fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd3b17ba5a2f1ada4035b8bbbe446912"><td class="memItemLeft" align="right" valign="top">pop from stack and write to <a class="el" href="spu__dsl_8h.html#a8e6708d01dec9fd978f58748eda35132">POP</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__dict_8h.html#acd3b17ba5a2f1ada4035b8bbbe446912">REG</a> (<a class="el" href="spu__dsl_8h.html#affc73a1d6edef707baa2c67176322169">ARG_REG</a>)</td></tr>
 <tr class="separator:acd3b17ba5a2f1ada4035b8bbbe446912"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa278a2dd61c2e8f04a7787f3e2451eb3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__dict_8h.html#aa278a2dd61c2e8f04a7787f3e2451eb3">DEF_CMD</a> (in, 3, <a class="el" href="cmd__dict_8h.html#ae6c865df784842196d411c1466b01686">false</a>, <a class="el" href="cmd__dict_8h.html#ae6c865df784842196d411c1466b01686">false</a>, <a class="el" href="cmd__dict_8h.html#ae6c865df784842196d411c1466b01686">false</a>, &quot;push one element to <a class="el" href="cmd__dict_8h.html#af65c1bc5ae1ac40f31acc4fbbdcf3774">stack</a> from user input&quot;, { <a class="el" href="spu__dsl_8h.html#afa935d43c9addc1630eee32fb792a6fc">IMM_T</a> <a class="el" href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a>=0;<a class="el" href="spu__dsl_8h.html#a1f92e847fc8c4ba1353b03992c5eeb5a">GET_FROM_INPUT</a>(&amp;<a class="el" href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a>);<a class="el" href="spu__dsl_8h.html#ae12240a3f4de46ee0616d67825971f44">PUSH</a>(<a class="el" href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a>);}) DEF_CMD(out</td></tr>
-<tr class="separator:aa278a2dd61c2e8f04a7787f3e2451eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af842c31f6f3956f3b08979c3964b09cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__dict_8h.html#af842c31f6f3956f3b08979c3964b09cf">PRINT</a> (<a class="el" href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a>)</td></tr>
-<tr class="separator:af842c31f6f3956f3b08979c3964b09cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4281189bda72b7e9919b27185a4fbb88"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__dict_8h.html#a4281189bda72b7e9919b27185a4fbb88">DEF_CMD</a> (jmp, 3, 0b00001, &quot;jump&quot;, { <a class="el" href="spu__dsl_8h.html#a226e577a36ed0a410a8affc1cd05ce25">CHECK_AND_THROW_ERR</a>(<a class="el" href="spu__dsl_8h.html#a6e11fe2cdb7ebb3f3c6c3ce953ccad61">IS_ARG_IMM</a>, &quot;\&quot;jump\&quot; commands require byte address.&quot;);<a class="el" href="spu__dsl_8h.html#aaf30322f59aa465eb1161227f8986838">JUMP</a>(<a class="el" href="spu__dsl_8h.html#a2f622510378832f7dd7e9abdebaafac3">ARG_IMM_INT</a>);}) DEF_CMD(ja</td></tr>
+<tr class="separator:a4281189bda72b7e9919b27185a4fbb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6fbee42173ce32a7d9d91e67808bd21"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__dict_8h.html#ad6fbee42173ce32a7d9d91e67808bd21">JUMP_CLAUSE_FUNC</a> (<a class="el" href="spu__dsl_8h.html#af20bfd59843f7585f68991ebce472c8f">IS_GREATER_IMM_DOUBLE</a>, <a class="el" href="spu__dsl_8h.html#a2f622510378832f7dd7e9abdebaafac3">ARG_IMM_INT</a>)</td></tr>
+<tr class="separator:ad6fbee42173ce32a7d9d91e67808bd21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad882211cbcb2588132d0310e99453495"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__dict_8h.html#ad882211cbcb2588132d0310e99453495">DEF_CMD</a> (jae, 5, 0b00001, &quot;jump &gt;=&quot;, { CHECK_AND_THROW_ERR(<a class="el" href="spu__dsl_8h.html#a6e11fe2cdb7ebb3f3c6c3ce953ccad61">IS_ARG_IMM</a>, &quot;\&quot;jump\&quot; commands require byte address.&quot;);<a class="el" href="spu__dsl_8h.html#a8da47d72071c71c053638fde446eb8cf">JUMP_CLAUSE_FUNC</a>(<a class="el" href="spu__dsl_8h.html#ad04464cd2bebd34a53966d4f46865b24">IS_GREATER_EQUAL_IMM_DOUBLE</a>, <a class="el" href="spu__dsl_8h.html#a2f622510378832f7dd7e9abdebaafac3">ARG_IMM_INT</a>);}) DEF_CMD(jb</td></tr>
+<tr class="separator:ad882211cbcb2588132d0310e99453495"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a1a24fc2eb8c1af6d06ac15bcec47f088"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__dict_8h.html#a1a24fc2eb8c1af6d06ac15bcec47f088">true</a></td></tr>
-<tr class="separator:a1a24fc2eb8c1af6d06ac15bcec47f088"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6c865df784842196d411c1466b01686"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__dict_8h.html#ae6c865df784842196d411c1466b01686">false</a></td></tr>
-<tr class="separator:ae6c865df784842196d411c1466b01686"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade7b1c34e02557e0d03d7632f471016e"><td class="memItemLeft" align="right" valign="top">pop from <a class="el" href="cmd__dict_8h.html#af65c1bc5ae1ac40f31acc4fbbdcf3774">stack</a> and write to&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e">reg</a></td></tr>
+<tr class="memitem:ade7b1c34e02557e0d03d7632f471016e"><td class="memItemLeft" align="right" valign="top">pop from stack and write to&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e">reg</a></td></tr>
 <tr class="separator:ade7b1c34e02557e0d03d7632f471016e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af65c1bc5ae1ac40f31acc4fbbdcf3774"><td class="memItemLeft" align="right" valign="top">pop and print element from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__dict_8h.html#af65c1bc5ae1ac40f31acc4fbbdcf3774">stack</a></td></tr>
-<tr class="separator:af65c1bc5ae1ac40f31acc4fbbdcf3774"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42ff13fda43b949960557234877c2d7c"><td class="memItemLeft" align="right" valign="top">pop and print element from <a class="el" href="spu__dsl_8h.html#a8e6708d01dec9fd978f58748eda35132">POP</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a></td></tr>
-<tr class="separator:a42ff13fda43b949960557234877c2d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d20db0930a979497282087a4b7dbe1e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__dict_8h.html#a0d20db0930a979497282087a4b7dbe1e">jump</a></td></tr>
+<tr class="separator:a0d20db0930a979497282087a4b7dbe1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aa278a2dd61c2e8f04a7787f3e2451eb3" name="aa278a2dd61c2e8f04a7787f3e2451eb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa278a2dd61c2e8f04a7787f3e2451eb3">&#9670;&#160;</a></span>DEF_CMD() <span class="overload">[1/2]</span></h2>
+<a id="ad882211cbcb2588132d0310e99453495" name="ad882211cbcb2588132d0310e99453495"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad882211cbcb2588132d0310e99453495">&#9670;&#160;</a></span>DEF_CMD() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -132,7 +128,55 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">DEF_CMD </td>
           <td>(</td>
-          <td class="paramtype">in&#160;</td>
+          <td class="paramtype">jae&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">5&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">0b00001&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;jump &gt;=&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">{ <a class="el" href="spu__dsl_8h.html#a226e577a36ed0a410a8affc1cd05ce25">CHECK_AND_THROW_ERR</a>(<a class="el" href="spu__dsl_8h.html#a6e11fe2cdb7ebb3f3c6c3ce953ccad61">IS_ARG_IMM</a>, &quot;\&quot;jump\&quot; commands require byte address.&quot;);<a class="el" href="spu__dsl_8h.html#a8da47d72071c71c053638fde446eb8cf">JUMP_CLAUSE_FUNC</a>(<a class="el" href="spu__dsl_8h.html#ad04464cd2bebd34a53966d4f46865b24">IS_GREATER_EQUAL_IMM_DOUBLE</a>, <a class="el" href="spu__dsl_8h.html#a2f622510378832f7dd7e9abdebaafac3">ARG_IMM_INT</a>);}&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="spu__dsl_8h_source.html#l00015">ARG_IMM_INT</a>, <a class="el" href="spu__dsl_8h_source.html#l00062">CHECK_AND_THROW_ERR</a>, <a class="el" href="spu__dsl_8h_source.html#l00010">IS_ARG_IMM</a>, <a class="el" href="spu__dsl_8h_source.html#l00028">IS_GREATER_EQUAL_IMM_DOUBLE</a>, and <a class="el" href="spu__dsl_8h_source.html#l00142">JUMP_CLAUSE_FUNC</a>.</p>
+
+</div>
+</div>
+<a id="a4281189bda72b7e9919b27185a4fbb88" name="a4281189bda72b7e9919b27185a4fbb88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4281189bda72b7e9919b27185a4fbb88">&#9670;&#160;</a></span>DEF_CMD() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DEF_CMD </td>
+          <td>(</td>
+          <td class="paramtype">jmp&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -144,31 +188,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="cmd__dict_8h.html#ae6c865df784842196d411c1466b01686">false</a>&#160;</td>
+          <td class="paramtype">0b00001&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="cmd__dict_8h.html#ae6c865df784842196d411c1466b01686">false</a>&#160;</td>
+          <td class="paramtype">&quot;jump&quot;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="cmd__dict_8h.html#ae6c865df784842196d411c1466b01686">false</a>&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&quot;push one element to <a class="el" href="cmd__dict_8h.html#af65c1bc5ae1ac40f31acc4fbbdcf3774">stack</a> from user input&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">{ <a class="el" href="spu__dsl_8h.html#afa935d43c9addc1630eee32fb792a6fc">IMM_T</a> <a class="el" href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a>=0;<a class="el" href="spu__dsl_8h.html#a1f92e847fc8c4ba1353b03992c5eeb5a">GET_FROM_INPUT</a>(&amp;<a class="el" href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a>);<a class="el" href="spu__dsl_8h.html#ae12240a3f4de46ee0616d67825971f44">PUSH</a>(<a class="el" href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a>);}&#160;</td>
+          <td class="paramtype">{ <a class="el" href="spu__dsl_8h.html#a226e577a36ed0a410a8affc1cd05ce25">CHECK_AND_THROW_ERR</a>(<a class="el" href="spu__dsl_8h.html#a6e11fe2cdb7ebb3f3c6c3ce953ccad61">IS_ARG_IMM</a>, &quot;\&quot;jump\&quot; commands require byte address.&quot;);<a class="el" href="spu__dsl_8h.html#aaf30322f59aa465eb1161227f8986838">JUMP</a>(<a class="el" href="spu__dsl_8h.html#a2f622510378832f7dd7e9abdebaafac3">ARG_IMM_INT</a>);}&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -179,12 +211,12 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="cmd__dict_8h_source.html#l00033">a</a>, <a class="el" href="spu__dsl_8h_source.html#l00054">GET_FROM_INPUT</a>, <a class="el" href="spu__dsl_8h_source.html#l00004">IMM_T</a>, and <a class="el" href="spu__dsl_8h_source.html#l00036">PUSH</a>.</p>
+<p class="reference">References <a class="el" href="spu__dsl_8h_source.html#l00015">ARG_IMM_INT</a>, <a class="el" href="spu__dsl_8h_source.html#l00062">CHECK_AND_THROW_ERR</a>, <a class="el" href="spu__dsl_8h_source.html#l00010">IS_ARG_IMM</a>, and <a class="el" href="spu__dsl_8h_source.html#l00054">JUMP</a>.</p>
 
 </div>
 </div>
-<a id="adca31b522f9c737cf78bd9e0fd431e0b" name="adca31b522f9c737cf78bd9e0fd431e0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adca31b522f9c737cf78bd9e0fd431e0b">&#9670;&#160;</a></span>DEF_CMD() <span class="overload">[2/2]</span></h2>
+<a id="a1c7e6287ccb119895b5b8e82d2b5d4fe" name="a1c7e6287ccb119895b5b8e82d2b5d4fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c7e6287ccb119895b5b8e82d2b5d4fe">&#9670;&#160;</a></span>DEF_CMD() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,31 +236,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="cmd__dict_8h.html#a1a24fc2eb8c1af6d06ac15bcec47f088">true</a>&#160;</td>
+          <td class="paramtype">0b11110&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="cmd__dict_8h.html#a1a24fc2eb8c1af6d06ac15bcec47f088">true</a>&#160;</td>
+          <td class="paramtype">&quot;push one element to stack || take from <a class="el" href="cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e">reg</a> and push ||&quot; &quot; take from <a class="el" href="cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e">reg</a> + imm_double and push&quot;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="cmd__dict_8h.html#a1a24fc2eb8c1af6d06ac15bcec47f088">true</a>&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&quot;push one element to <a class="el" href="cmd__dict_8h.html#af65c1bc5ae1ac40f31acc4fbbdcf3774">stack</a> || take from <a class="el" href="cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e">reg</a> and push ||&quot; &quot; take from <a class="el" href="cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e">reg</a> + imm and push&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">{ <a class="el" href="spu__dsl_8h.html#a226e577a36ed0a410a8affc1cd05ce25">CHECK_AND_THROW_ERR</a>(<a class="el" href="spu__dsl_8h.html#a487a6897858a9db1907ebf1906b9db7e">IS_ARG_REG</a>||<a class="el" href="spu__dsl_8h.html#a6e11fe2cdb7ebb3f3c6c3ce953ccad61">IS_ARG_IMM</a>, &quot;\&quot;push\&quot; requires at least one argument.&quot;);<a class="el" href="spu__dsl_8h.html#afa935d43c9addc1630eee32fb792a6fc">IMM_T</a> <a class="el" href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a>=0;<a class="el" href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a>+=<a class="el" href="spu__dsl_8h.html#ad6ade6409c5ca69f90efdfd1acce35fa">REG</a>(<a class="el" href="spu__dsl_8h.html#affc73a1d6edef707baa2c67176322169">ARG_REG</a>);<a class="el" href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a>+=<a class="el" href="spu__dsl_8h.html#a94d7fa0746bc605f9ce2552764e5eeef">ARG_IMM</a>;<a class="el" href="spu__dsl_8h.html#ae12240a3f4de46ee0616d67825971f44">PUSH</a>(<a class="el" href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a>);}&#160;</td>
+          <td class="paramtype">{ <a class="el" href="spu__dsl_8h.html#a226e577a36ed0a410a8affc1cd05ce25">CHECK_AND_THROW_ERR</a>(<a class="el" href="spu__dsl_8h.html#a487a6897858a9db1907ebf1906b9db7e">IS_ARG_REG</a>||<a class="el" href="spu__dsl_8h.html#a6e11fe2cdb7ebb3f3c6c3ce953ccad61">IS_ARG_IMM</a>, &quot;\&quot;push\&quot; requires at least one argument.&quot;);<a class="el" href="spu__dsl_8h.html#a303b93cbec67fcc7b8c811304b46fd9a">IMM_DOUBLE_T</a> a=0;if(<a class="el" href="spu__dsl_8h.html#a487a6897858a9db1907ebf1906b9db7e">IS_ARG_REG</a>) a+=<a class="el" href="spu__dsl_8h.html#ad6ade6409c5ca69f90efdfd1acce35fa">REG</a>(<a class="el" href="spu__dsl_8h.html#affc73a1d6edef707baa2c67176322169">ARG_REG</a>);if(<a class="el" href="spu__dsl_8h.html#a6e11fe2cdb7ebb3f3c6c3ce953ccad61">IS_ARG_IMM</a>) a+=<a class="el" href="spu__dsl_8h.html#ab61b6344b067c61cf8a583577051c78e">ARG_IMM_DOUBLE</a>;<a class="el" href="spu__dsl_8h.html#ae12240a3f4de46ee0616d67825971f44">PUSH</a>(a);}&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -239,22 +259,32 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="cmd__dict_8h_source.html#l00033">a</a>, <a class="el" href="spu__dsl_8h_source.html#l00011">ARG_IMM</a>, <a class="el" href="spu__dsl_8h_source.html#l00010">ARG_REG</a>, <a class="el" href="spu__dsl_8h_source.html#l00027">CHECK_AND_THROW_ERR</a>, <a class="el" href="spu__dsl_8h_source.html#l00004">IMM_T</a>, <a class="el" href="spu__dsl_8h_source.html#l00007">IS_ARG_IMM</a>, <a class="el" href="spu__dsl_8h_source.html#l00006">IS_ARG_REG</a>, <a class="el" href="spu__dsl_8h_source.html#l00036">PUSH</a>, and <a class="el" href="spu__dsl_8h_source.html#l00014">REG</a>.</p>
+<p class="reference">References <a class="el" href="spu__dsl_8h_source.html#l00014">ARG_IMM_DOUBLE</a>, <a class="el" href="spu__dsl_8h_source.html#l00013">ARG_REG</a>, <a class="el" href="spu__dsl_8h_source.html#l00062">CHECK_AND_THROW_ERR</a>, <a class="el" href="spu__dsl_8h_source.html#l00004">IMM_DOUBLE_T</a>, <a class="el" href="spu__dsl_8h_source.html#l00010">IS_ARG_IMM</a>, <a class="el" href="spu__dsl_8h_source.html#l00009">IS_ARG_REG</a>, <a class="el" href="spu__dsl_8h_source.html#l00071">PUSH</a>, and <a class="el" href="spu__dsl_8h_source.html#l00017">REG</a>.</p>
 
 </div>
 </div>
-<a id="af842c31f6f3956f3b08979c3964b09cf" name="af842c31f6f3956f3b08979c3964b09cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af842c31f6f3956f3b08979c3964b09cf">&#9670;&#160;</a></span>PRINT()</h2>
+<a id="ad6fbee42173ce32a7d9d91e67808bd21" name="ad6fbee42173ce32a7d9d91e67808bd21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6fbee42173ce32a7d9d91e67808bd21">&#9670;&#160;</a></span>JUMP_CLAUSE_FUNC()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">PRINT </td>
+          <td class="memname">JUMP_CLAUSE_FUNC </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a>&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="spu__dsl_8h.html#af20bfd59843f7585f68991ebce472c8f">IS_GREATER_IMM_DOUBLE</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="spu__dsl_8h.html#a2f622510378832f7dd7e9abdebaafac3">ARG_IMM_INT</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -268,7 +298,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">pop from <a class="el" href="cmd__dict_8h.html#af65c1bc5ae1ac40f31acc4fbbdcf3774">stack</a> and write to <a class="el" href="spu__dsl_8h.html#a8e6708d01dec9fd978f58748eda35132">POP</a> &amp; REG </td>
+          <td class="memname">pop from stack and write to <a class="el" href="spu__dsl_8h.html#a8e6708d01dec9fd978f58748eda35132">POP</a> &amp; REG </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="spu__dsl_8h.html#affc73a1d6edef707baa2c67176322169">ARG_REG</a>&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -280,41 +310,19 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a42ff13fda43b949960557234877c2d7c" name="a42ff13fda43b949960557234877c2d7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42ff13fda43b949960557234877c2d7c">&#9670;&#160;</a></span>a</h2>
+<a id="a0d20db0930a979497282087a4b7dbe1e" name="a0d20db0930a979497282087a4b7dbe1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d20db0930a979497282087a4b7dbe1e">&#9670;&#160;</a></span>jump</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">pop and print element from <a class="el" href="spu__dsl_8h.html#a8e6708d01dec9fd978f58748eda35132">POP</a>&amp; a</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">    <a class="code hl_define" href="spu__dsl_8h.html#afa935d43c9addc1630eee32fb792a6fc">IMM_T</a> <a class="code hl_variable" href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a> = 0</div>
-<div class="ttc" id="acmd__dict_8h_html_a42ff13fda43b949960557234877c2d7c"><div class="ttname"><a href="cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c">a</a></div><div class="ttdeci">pop and print element from POP &amp; a</div><div class="ttdef"><b>Definition</b> <a href="cmd__dict_8h_source.html#l00033">cmd_dict.h:33</a></div></div>
-<div class="ttc" id="aspu__dsl_8h_html_afa935d43c9addc1630eee32fb792a6fc"><div class="ttname"><a href="spu__dsl_8h.html#afa935d43c9addc1630eee32fb792a6fc">IMM_T</a></div><div class="ttdeci">#define IMM_T</div><div class="ttdoc">Immutable var type.</div><div class="ttdef"><b>Definition</b> <a href="spu__dsl_8h_source.html#l00004">spu_dsl.h:4</a></div></div>
-</div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="cmd__dict_8h_source.html#l00033">33</a> of file <a class="el" href="cmd__dict_8h_source.html">cmd_dict.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="cmd__dict_8h.html#aa278a2dd61c2e8f04a7787f3e2451eb3">DEF_CMD()</a>, and <a class="el" href="cmd__dict_8h.html#adca31b522f9c737cf78bd9e0fd431e0b">DEF_CMD()</a>.</p>
-
-</div>
-</div>
-<a id="ae6c865df784842196d411c1466b01686" name="ae6c865df784842196d411c1466b01686"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6c865df784842196d411c1466b01686">&#9670;&#160;</a></span>false</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">false</td>
+          <td class="memname">jump</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cmd__dict_8h_source.html#l00018">18</a> of file <a class="el" href="cmd__dict_8h_source.html">cmd_dict.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd__dict_8h_source.html#l00037">37</a> of file <a class="el" href="cmd__dict_8h_source.html">cmd_dict.h</a>.</p>
 
 </div>
 </div>
@@ -325,46 +333,14 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">pop from <a class="el" href="cmd__dict_8h.html#af65c1bc5ae1ac40f31acc4fbbdcf3774">stack</a> and write to reg</td>
+          <td class="memname">pop from stack and write to reg</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cmd__dict_8h_source.html#l00018">18</a> of file <a class="el" href="cmd__dict_8h_source.html">cmd_dict.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd__dict_8h_source.html#l00025">25</a> of file <a class="el" href="cmd__dict_8h_source.html">cmd_dict.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00128">asm_read_reg()</a>, and <a class="el" href="cmd_8cpp_source.html#l00048">find_reg_by_num()</a>.</p>
-
-</div>
-</div>
-<a id="af65c1bc5ae1ac40f31acc4fbbdcf3774" name="af65c1bc5ae1ac40f31acc4fbbdcf3774"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af65c1bc5ae1ac40f31acc4fbbdcf3774">&#9670;&#160;</a></span>stack</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">pop and print element from stack</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="cmd__dict_8h_source.html#l00031">31</a> of file <a class="el" href="cmd__dict_8h_source.html">cmd_dict.h</a>.</p>
-
-</div>
-</div>
-<a id="a1a24fc2eb8c1af6d06ac15bcec47f088" name="a1a24fc2eb8c1af6d06ac15bcec47f088"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a24fc2eb8c1af6d06ac15bcec47f088">&#9670;&#160;</a></span>true</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">true</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="cmd__dict_8h_source.html#l00018">18</a> of file <a class="el" href="cmd__dict_8h_source.html">cmd_dict.h</a>.</p>
+<p class="reference">Referenced by <a class="el" href="read_8cpp_source.html#l00053">asm_read_arg_reg()</a>.</p>
 
 </div>
 </div>

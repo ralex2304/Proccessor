@@ -16,7 +16,9 @@ const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_args_vars_afee9f78
 \item 
 const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_args_vars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\+\_\+filename}} = nullptr
 \item 
-bool \mbox{\hyperlink{struct_args_vars_a8ce4b7b542f29f331f3256b4d1896bef}{debug\+\_\+mode}} = \mbox{\hyperlink{cmd__dict_8h_ae6c865df784842196d411c1466b01686}{false}}
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_args_vars_a8653f2722b159469ef513b037496968e}{listing\+\_\+filename}} = nullptr
+\item 
+bool \mbox{\hyperlink{struct_args_vars_a8ce4b7b542f29f331f3256b4d1896bef}{debug\+\_\+mode}} = false
 \end{DoxyCompactItemize}
 
 
@@ -32,15 +34,15 @@ Definition at line \mbox{\hyperlink{args__parser_8h_source_l00023}{23}} of file 
 \index{ArgsVars@{ArgsVars}!debug\_mode@{debug\_mode}}
 \index{debug\_mode@{debug\_mode}!ArgsVars@{ArgsVars}}
 \doxysubsubsection{\texorpdfstring{debug\_mode}{debug\_mode}}
-{\footnotesize\ttfamily bool Args\+Vars\+::debug\+\_\+mode = \mbox{\hyperlink{cmd__dict_8h_ae6c865df784842196d411c1466b01686}{false}}}
+{\footnotesize\ttfamily bool Args\+Vars\+::debug\+\_\+mode = false}
 
 
 
-Definition at line \mbox{\hyperlink{args__parser_8h_source_l00027}{27}} of file \mbox{\hyperlink{args__parser_8h_source}{args\+\_\+parser.\+h}}.
+Definition at line \mbox{\hyperlink{args__parser_8h_source_l00029}{29}} of file \mbox{\hyperlink{args__parser_8h_source}{args\+\_\+parser.\+h}}.
 
 
 
-Referenced by \mbox{\hyperlink{args__parser_8cpp_source_l00100}{enable\+\_\+debug\+\_\+mode()}}, and \mbox{\hyperlink{assembler_2src_2main_8cpp_source_l00022}{main()}}.
+Referenced by \mbox{\hyperlink{args__parser_8cpp_source_l00118}{enable\+\_\+debug\+\_\+mode()}}, and \mbox{\hyperlink{disassembler_2src_2main_8cpp_source_l00024}{main()}}.
 
 \Hypertarget{struct_args_vars_afee9f78a6ba610ff6a2ee809ebbdb56b}\label{struct_args_vars_afee9f78a6ba610ff6a2ee809ebbdb56b} 
 \index{ArgsVars@{ArgsVars}!input\_filename@{input\_filename}}
@@ -55,6 +57,20 @@ Definition at line \mbox{\hyperlink{args__parser_8h_source_l00024}{24}} of file 
 
 
 Referenced by \mbox{\hyperlink{assembler_2src_2main_8cpp_source_l00022}{main()}}, and \mbox{\hyperlink{args__parser_8cpp_source_l00064}{read\+\_\+input\+\_\+filename()}}.
+
+\Hypertarget{struct_args_vars_a8653f2722b159469ef513b037496968e}\label{struct_args_vars_a8653f2722b159469ef513b037496968e} 
+\index{ArgsVars@{ArgsVars}!listing\_filename@{listing\_filename}}
+\index{listing\_filename@{listing\_filename}!ArgsVars@{ArgsVars}}
+\doxysubsubsection{\texorpdfstring{listing\_filename}{listing\_filename}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} Args\+Vars\+::listing\+\_\+filename = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{args__parser_8h_source_l00027}{27}} of file \mbox{\hyperlink{args__parser_8h_source}{args\+\_\+parser.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_2src_2main_8cpp_source_l00022}{main()}}, and \mbox{\hyperlink{args__parser_8cpp_source_l00100}{read\+\_\+listing\+\_\+filename()}}.
 
 \Hypertarget{struct_args_vars_a4f2b7471e1b7080ecb00867fccf04fc9}\label{struct_args_vars_a4f2b7471e1b7080ecb00867fccf04fc9} 
 \index{ArgsVars@{ArgsVars}!output\_filename@{output\_filename}}

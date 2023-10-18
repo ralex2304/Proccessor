@@ -1,12 +1,18 @@
-push [1] ;push from address 1 to stack
-pop [rcx]
-push [rcx+1]
+; 123
+
+jf exit
+push 1 ;push from address 1 to stack
+pop rcx
+push rcx+1
 in
+label:
 
 sqrt ;square root
 out
 ;print
 out
+
+exit:
 HLT
 
 ;end

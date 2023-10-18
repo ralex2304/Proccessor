@@ -1,0 +1,227 @@
+\doxysection{Buffer Struct Reference}
+\hypertarget{struct_buffer}{}\label{struct_buffer}\index{Buffer@{Buffer}}
+
+
+{\ttfamily \#include $<$buf\+\_\+lib.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{struct_buffer_ad1535950a41eefad8fb8c7706af8f5a7}{ctor}} (ssize\+\_\+t init\+\_\+capacity=\mbox{\hyperlink{struct_buffer_afd5cd659ecca36f2c4c0ea31169f0d16}{INIT\+\_\+\+CAPACITY}})
+\item 
+void \mbox{\hyperlink{struct_buffer_accef32f248ec05ad669b1de0dc3ae6a5}{dtor}} ()
+\item 
+bool \mbox{\hyperlink{struct_buffer_a6446660135f46c6a88fd863ec0a57a88}{resize}} (ssize\+\_\+t new\+\_\+capacity)
+\item 
+bool \mbox{\hyperlink{struct_buffer_a73dfd504fe4d4f6dffa9e5949b1fdcae}{cat}} (const char \texorpdfstring{$\ast$}{*}cat, const size\+\_\+t cat\+\_\+size)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{data}} = nullptr
+\item 
+ssize\+\_\+t \mbox{\hyperlink{struct_buffer_a0a7fe9496e5e642f14f1975abb95824c}{capacity}} = 0
+\item 
+ssize\+\_\+t \mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{size}} = 0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const size\+\_\+t \mbox{\hyperlink{struct_buffer_afd5cd659ecca36f2c4c0ea31169f0d16}{INIT\+\_\+\+CAPACITY}} = 256
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{buf__lib_8h_source_l00009}{9}} of file \mbox{\hyperlink{buf__lib_8h_source}{buf\+\_\+lib.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_buffer_a73dfd504fe4d4f6dffa9e5949b1fdcae}\label{struct_buffer_a73dfd504fe4d4f6dffa9e5949b1fdcae} 
+\index{Buffer@{Buffer}!cat@{cat}}
+\index{cat@{cat}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{cat()}{cat()}}
+{\footnotesize\ttfamily bool Buffer\+::cat (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{cat,  }\item[{const size\+\_\+t}]{cat\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{buf__lib_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{buf__lib_8cpp_source}{buf\+\_\+lib.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{struct_buffer_a0a7fe9496e5e642f14f1975abb95824c}{capacity}}\ <\ \mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{size}}\ +\ (ssize\_t)cat\_size)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{struct_buffer_a6446660135f46c6a88fd863ec0a57a88}{resize}}(\mbox{\hyperlink{struct_buffer_a0a7fe9496e5e642f14f1975abb95824c}{capacity}}\ *\ 2))}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ memcpy(\mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{data}}\ +\ \mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{size}},\ \mbox{\hyperlink{struct_buffer_a73dfd504fe4d4f6dffa9e5949b1fdcae}{cat}},\ cat\_size);}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{size}}\ +=\ cat\_size;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{buf__lib_8h_source_l00014}{capacity}}, \mbox{\hyperlink{buf__lib_8cpp_source_l00034}{cat()}}, \mbox{\hyperlink{buf__lib_8h_source_l00012}{data}}, \mbox{\hyperlink{buf__lib_8cpp_source_l00020}{resize()}}, and \mbox{\hyperlink{buf__lib_8h_source_l00015}{size}}.
+
+
+
+Referenced by \mbox{\hyperlink{buf__lib_8cpp_source_l00034}{cat()}}.
+
+\Hypertarget{struct_buffer_ad1535950a41eefad8fb8c7706af8f5a7}\label{struct_buffer_ad1535950a41eefad8fb8c7706af8f5a7} 
+\index{Buffer@{Buffer}!ctor@{ctor}}
+\index{ctor@{ctor}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{ctor()}{ctor()}}
+{\footnotesize\ttfamily bool Buffer\+::ctor (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{init\+\_\+capacity = {\ttfamily \mbox{\hyperlink{struct_buffer_afd5cd659ecca36f2c4c0ea31169f0d16}{INIT\+\_\+\+CAPACITY}}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{buf__lib_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{buf__lib_8cpp_source}{buf\+\_\+lib.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00004\ \ \ \ \ assert(init\_capacity\ >\ 0);}
+\DoxyCodeLine{00005\ \ \ \ \ assert(\mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{data}}\ ==\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{data}}\ =\ (\textcolor{keywordtype}{char}*)calloc(init\_capacity,\ 1);}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{data}}\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{struct_buffer_a0a7fe9496e5e642f14f1975abb95824c}{capacity}}\ =\ init\_capacity;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00014\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{buf__lib_8h_source_l00014}{capacity}}, and \mbox{\hyperlink{buf__lib_8h_source_l00012}{data}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\+\_\+write()}}.
+
+\Hypertarget{struct_buffer_accef32f248ec05ad669b1de0dc3ae6a5}\label{struct_buffer_accef32f248ec05ad669b1de0dc3ae6a5} 
+\index{Buffer@{Buffer}!dtor@{dtor}}
+\index{dtor@{dtor}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{dtor()}{dtor()}}
+{\footnotesize\ttfamily void Buffer\+::dtor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{buf__lib_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{buf__lib_8cpp_source}{buf\+\_\+lib.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{macros_8h_a105949c59c998e38aad80266afac92bf}{FREE}}(\mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{data}});}
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{buf__lib_8h_source_l00012}{data}}, and \mbox{\hyperlink{macros_8h_source_l00009}{FREE}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\+\_\+write()}}.
+
+\Hypertarget{struct_buffer_a6446660135f46c6a88fd863ec0a57a88}\label{struct_buffer_a6446660135f46c6a88fd863ec0a57a88} 
+\index{Buffer@{Buffer}!resize@{resize}}
+\index{resize@{resize}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily bool Buffer\+::resize (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{new\+\_\+capacity }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{buf__lib_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{buf__lib_8cpp_source}{buf\+\_\+lib.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ assert(new\_capacity\ >\ 0);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{char}*\ tmp\ =\ \mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{data}};}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{data}}\ =\ (\textcolor{keywordtype}{char}*)\mbox{\hyperlink{macros_8h_a3e542cb9c488f76f1d0cb4b6ef234203}{recalloc}}(\mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{data}},\ \mbox{\hyperlink{struct_buffer_a0a7fe9496e5e642f14f1975abb95824c}{capacity}},\ new\_capacity);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{data}}\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{data}}\ =\ tmp;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{struct_buffer_a0a7fe9496e5e642f14f1975abb95824c}{capacity}}\ =\ new\_capacity;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00032\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{buf__lib_8h_source_l00014}{capacity}}, \mbox{\hyperlink{buf__lib_8h_source_l00012}{data}}, and \mbox{\hyperlink{macros_8h_source_l00014}{recalloc()}}.
+
+
+
+Referenced by \mbox{\hyperlink{buf__lib_8cpp_source_l00034}{cat()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_buffer_a0a7fe9496e5e642f14f1975abb95824c}\label{struct_buffer_a0a7fe9496e5e642f14f1975abb95824c} 
+\index{Buffer@{Buffer}!capacity@{capacity}}
+\index{capacity@{capacity}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{capacity}{capacity}}
+{\footnotesize\ttfamily ssize\+\_\+t Buffer\+::capacity = 0}
+
+
+
+Definition at line \mbox{\hyperlink{buf__lib_8h_source_l00014}{14}} of file \mbox{\hyperlink{buf__lib_8h_source}{buf\+\_\+lib.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{buf__lib_8cpp_source_l00034}{cat()}}, \mbox{\hyperlink{buf__lib_8cpp_source_l00003}{ctor()}}, and \mbox{\hyperlink{buf__lib_8cpp_source_l00020}{resize()}}.
+
+\Hypertarget{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}\label{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8} 
+\index{Buffer@{Buffer}!data@{data}}
+\index{data@{data}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} Buffer\+::data = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{buf__lib_8h_source_l00012}{12}} of file \mbox{\hyperlink{buf__lib_8h_source}{buf\+\_\+lib.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\+\_\+write()}}, \mbox{\hyperlink{buf__lib_8cpp_source_l00034}{cat()}}, \mbox{\hyperlink{buf__lib_8cpp_source_l00003}{ctor()}}, \mbox{\hyperlink{buf__lib_8cpp_source_l00016}{dtor()}}, and \mbox{\hyperlink{buf__lib_8cpp_source_l00020}{resize()}}.
+
+\Hypertarget{struct_buffer_afd5cd659ecca36f2c4c0ea31169f0d16}\label{struct_buffer_afd5cd659ecca36f2c4c0ea31169f0d16} 
+\index{Buffer@{Buffer}!INIT\_CAPACITY@{INIT\_CAPACITY}}
+\index{INIT\_CAPACITY@{INIT\_CAPACITY}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{INIT\_CAPACITY}{INIT\_CAPACITY}}
+{\footnotesize\ttfamily const size\+\_\+t Buffer\+::\+INIT\+\_\+\+CAPACITY = 256\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{buf__lib_8h_source_l00010}{10}} of file \mbox{\hyperlink{buf__lib_8h_source}{buf\+\_\+lib.\+h}}.
+
+\Hypertarget{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}\label{struct_buffer_aea1b7416d53cd6e281718e607d81ae51} 
+\index{Buffer@{Buffer}!size@{size}}
+\index{size@{size}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily ssize\+\_\+t Buffer\+::size = 0}
+
+
+
+Definition at line \mbox{\hyperlink{buf__lib_8h_source_l00015}{15}} of file \mbox{\hyperlink{buf__lib_8h_source}{buf\+\_\+lib.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00077}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}, \mbox{\hyperlink{write_8cpp_source_l00003}{asm\+\_\+write\+\_\+cmd()}}, \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\+\_\+write()}}, and \mbox{\hyperlink{buf__lib_8cpp_source_l00034}{cat()}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+shared/lib/utils/\mbox{\hyperlink{buf__lib_8h}{buf\+\_\+lib.\+h}}\item 
+shared/lib/utils/\mbox{\hyperlink{buf__lib_8cpp}{buf\+\_\+lib.\+cpp}}\end{DoxyCompactItemize}

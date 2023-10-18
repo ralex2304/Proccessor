@@ -1,12 +1,10 @@
 var cmd__dict_8h =
 [
-    [ "DEF_CMD", "cmd__dict_8h.html#aa278a2dd61c2e8f04a7787f3e2451eb3", null ],
-    [ "DEF_CMD", "cmd__dict_8h.html#adca31b522f9c737cf78bd9e0fd431e0b", null ],
-    [ "PRINT", "cmd__dict_8h.html#af842c31f6f3956f3b08979c3964b09cf", null ],
+    [ "DEF_CMD", "cmd__dict_8h.html#ad882211cbcb2588132d0310e99453495", null ],
+    [ "DEF_CMD", "cmd__dict_8h.html#a4281189bda72b7e9919b27185a4fbb88", null ],
+    [ "DEF_CMD", "cmd__dict_8h.html#a1c7e6287ccb119895b5b8e82d2b5d4fe", null ],
+    [ "JUMP_CLAUSE_FUNC", "cmd__dict_8h.html#ad6fbee42173ce32a7d9d91e67808bd21", null ],
     [ "REG", "cmd__dict_8h.html#acd3b17ba5a2f1ada4035b8bbbe446912", null ],
-    [ "a", "cmd__dict_8h.html#a42ff13fda43b949960557234877c2d7c", null ],
-    [ "false", "cmd__dict_8h.html#ae6c865df784842196d411c1466b01686", null ],
-    [ "reg", "cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e", null ],
-    [ "stack", "cmd__dict_8h.html#af65c1bc5ae1ac40f31acc4fbbdcf3774", null ],
-    [ "true", "cmd__dict_8h.html#a1a24fc2eb8c1af6d06ac15bcec47f088", null ]
+    [ "jump", "cmd__dict_8h.html#a0d20db0930a979497282087a4b7dbe1e", null ],
+    [ "reg", "cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e", null ]
 ];

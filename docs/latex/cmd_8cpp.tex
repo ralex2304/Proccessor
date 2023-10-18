@@ -8,7 +8,7 @@ const \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} \
 \begin{DoxyCompactList}\small\item\em Finds command in CMDS\+\_\+\+DICT by num. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8cpp_ab9418768cddebf9e17af4644cc3b93fc}{find\+\_\+command\+\_\+by\+\_\+name}} (const char \texorpdfstring{$\ast$}{*}name)
 \begin{DoxyCompactList}\small\item\em Finds command in CMDS\+\_\+\+DICT\mbox{[}\mbox{]} by name. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8cpp_a1f8806cd553fbea836faef7a35f6cb97}{find\+\_\+reg\+\_\+by\+\_\+num}} (const \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{Reg\+Num\+\_\+t}} \mbox{\hyperlink{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}{reg}})
+const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8cpp_af63027691c37894de471b76a4e74b68c}{find\+\_\+reg\+\_\+by\+\_\+num}} (const \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{Reg\+Num\+\_\+t}} num)
 \begin{DoxyCompactList}\small\item\em Finds reg in REGS\+\_\+\+DICT\mbox{[}\mbox{]} by num. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8cpp_a21261870d3dfc4b4e1ce443a6b1477cc}{find\+\_\+reg\+\_\+by\+\_\+name}} (const char \texorpdfstring{$\ast$}{*}name)
 \begin{DoxyCompactList}\small\item\em Finds reg in REGS\+\_\+\+DICT\mbox{[}\mbox{]} by name. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -35,29 +35,28 @@ const Command\texorpdfstring{$\ast$}{*}
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{cmd_8cpp_source}{cmd.\+cpp}}.
+Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{cmd_8cpp_source}{cmd.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00038\ \ \ \ \ assert(name);}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_aeb56c6b7cc2375d32bf528f71e8d34a0}{CMDS\_DICT\_SIZE}};\ i++)\ \{}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(\mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\_DICT}}[i].name,\ name)\ ==\ 0)}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\_DICT}}\ +\ i;}
-\DoxyCodeLine{00043\ \ \ \ \ \}}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ assert(name);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_aeb56c6b7cc2375d32bf528f71e8d34a0}{CMDS\_DICT\_SIZE}};\ i++)}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcasecmp(\mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\_DICT}}[i].name,\ name)\ ==\ 0)}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\_DICT}}\ +\ i;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00043\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{cmd_8h_source_l00092}{CMDS\+\_\+\+DICT}}, and \mbox{\hyperlink{cmd_8h_source_l00097}{CMDS\+\_\+\+DICT\+\_\+\+SIZE}}.
+References \mbox{\hyperlink{cmd_8h_source_l00110}{CMDS\+\_\+\+DICT}}, and \mbox{\hyperlink{cmd_8h_source_l00115}{CMDS\+\_\+\+DICT\+\_\+\+SIZE}}.
 
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00034}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}.
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00077}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}.
 
 \Hypertarget{cmd_8cpp_ae4f1f8a5e27cc0597a1762987ca19f7f}\label{cmd_8cpp_ae4f1f8a5e27cc0597a1762987ca19f7f} 
 \index{cmd.cpp@{cmd.cpp}!find\_command\_by\_num@{find\_command\_by\_num}}
@@ -84,19 +83,17 @@ Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00027}{27}} of file \mbox{\
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (num\ >=\ \mbox{\hyperlink{cmd_8h_aeb56c6b7cc2375d32bf528f71e8d34a0}{CMDS\_DICT\_SIZE}})}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (num\ ==\ \mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\_DICT}}[num].num)}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\_DICT}}\ +\ num;}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ assert(0\ \&\&\ \textcolor{stringliteral}{"{}Command\ num\ and\ index\ in\ CMDS\_DICT\ array\ must\ be\ the\ same"{}});}
-\DoxyCodeLine{00035\ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_aeb56c6b7cc2375d32bf528f71e8d34a0}{CMDS\_DICT\_SIZE}};\ i++)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\_DICT}}[i].num\ ==\ num)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\_DICT}}\ +\ i;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00033\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{cmd_8h_source_l00092}{CMDS\+\_\+\+DICT}}, and \mbox{\hyperlink{cmd_8h_source_l00097}{CMDS\+\_\+\+DICT\+\_\+\+SIZE}}.
+References \mbox{\hyperlink{cmd_8h_source_l00110}{CMDS\+\_\+\+DICT}}, and \mbox{\hyperlink{cmd_8h_source_l00115}{CMDS\+\_\+\+DICT\+\_\+\+SIZE}}.
 
 
 
@@ -122,31 +119,30 @@ const Reg\+Info\texorpdfstring{$\ast$}{*}
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{cmd_8cpp_source}{cmd.\+cpp}}.
+Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{cmd_8cpp_source}{cmd.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00059\ \ \ \ \ assert(name);}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a55559e71614b4b4ba24d073b1b813120}{REGS\_NUM}};\ i++)\ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(\mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}[i].name,\ name)\ ==\ 0)}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}\ +\ i;}
-\DoxyCodeLine{00064\ \ \ \ \ \}}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00067\ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ assert(name);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a55559e71614b4b4ba24d073b1b813120}{REGS\_NUM}};\ i++)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(\mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}[i].name,\ name)\ ==\ 0)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}\ +\ i;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00061\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{cmd_8h_source_l00042}{REGS\+\_\+\+DICT}}, and \mbox{\hyperlink{cmd_8h_source_l00049}{REGS\+\_\+\+NUM}}.
+References \mbox{\hyperlink{cmd_8h_source_l00045}{REGS\+\_\+\+DICT}}, and \mbox{\hyperlink{cmd_8h_source_l00052}{REGS\+\_\+\+NUM}}.
 
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00128}{asm\+\_\+read\+\_\+reg()}}.
+Referenced by \mbox{\hyperlink{read_8cpp_source_l00053}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}.
 
-\Hypertarget{cmd_8cpp_a1f8806cd553fbea836faef7a35f6cb97}\label{cmd_8cpp_a1f8806cd553fbea836faef7a35f6cb97} 
+\Hypertarget{cmd_8cpp_af63027691c37894de471b76a4e74b68c}\label{cmd_8cpp_af63027691c37894de471b76a4e74b68c} 
 \index{cmd.cpp@{cmd.cpp}!find\_reg\_by\_num@{find\_reg\_by\_num}}
 \index{find\_reg\_by\_num@{find\_reg\_by\_num}!cmd.cpp@{cmd.cpp}}
 \doxysubsubsection{\texorpdfstring{find\_reg\_by\_num()}{find\_reg\_by\_num()}}
@@ -166,26 +162,24 @@ const Reg\+Info\texorpdfstring{$\ast$}{*}
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{cmd_8cpp_source}{cmd.\+cpp}}.
+Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{cmd_8cpp_source}{cmd.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}{reg}}\ >=\ \mbox{\hyperlink{cmd_8h_a55559e71614b4b4ba24d073b1b813120}{REGS\_NUM}})}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}{reg}}\ ==\ \mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}[\mbox{\hyperlink{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}{reg}}].num)}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}\ +\ \mbox{\hyperlink{cmd__dict_8h_ade7b1c34e02557e0d03d7632f471016e}{reg}};}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ assert(0\ \&\&\ \textcolor{stringliteral}{"{}Ref\ num\ and\ index\ in\ REGS\_DICT\ array\ must\ be\ the\ same"{}});}
-\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a55559e71614b4b4ba24d073b1b813120}{REGS\_NUM}};\ i++)}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}[i].num\ ==\ num)}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}\ +\ i;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00051\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{cmd__dict_8h_source_l00018}{reg}}, \mbox{\hyperlink{cmd_8h_source_l00042}{REGS\+\_\+\+DICT}}, and \mbox{\hyperlink{cmd_8h_source_l00049}{REGS\+\_\+\+NUM}}.
+References \mbox{\hyperlink{cmd_8h_source_l00045}{REGS\+\_\+\+DICT}}, and \mbox{\hyperlink{cmd_8h_source_l00052}{REGS\+\_\+\+NUM}}.
 
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00201}{asm\+\_\+write\+\_\+cmd\+\_\+debug()}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}.
+Referenced by \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}.
 

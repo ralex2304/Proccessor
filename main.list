@@ -1,16 +1,17 @@
+;line - byte - command
 ;Signature: KU
 ;Version: 0
-;line - byte - command
-;   1 -    4 - C1 00 00 00 00 00 00 F8 7F    - push [1] ;push from address 1 to stack
-;   2 -   13 - A2 02                         - pop [rcx]
-;   3 -   15 - E1 02 00 00 00 00 00 00 F8 7F - push [rcx+1]
-;   4 -   25 - 03                            - in
-;   5 -   26 -                               -
-;   6 -   26 - 09                            - sqrt ;square root
-;   7 -   27 - 04                            - out
-;   8 -   28 -                               - ;print
-;   9 -   28 - 04                            - out
-;  10 -   29 - 00                            - HLT
-;  11 -   30 -                               -
-;  12 -   30 -                               - ;end
-;  13 -   30 -                               -
+;   1 -    4 - 41 00 00 00 00 00 00 F0 3F    - push 1.000000 ;push from address 1 to stack
+;   2 -   13 - 22 02                         - pop rcx
+;   3 -   15 - 61 02 00 00 00 00 00 00 F0 3F - push rcx+1.000000
+;   4 -   25 - 10                            - in
+;   6 -   26 -                               -
+;   7 -   26 - 16                            - sqrt ;square root
+;   8 -   27 - 11                            - out
+;   9 -   28 -                               - ;print
+;  10 -   28 - 11                            - out
+;  11 -   29 - 43 1A 00 00 00 00 00 00 00    - jmp 26
+;  12 -   38 - 00                            - hlt
+;  13 -   39 -                               -
+;  14 -   39 -                               - ;end
+;  15 -   39 -                               -

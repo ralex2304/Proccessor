@@ -39,14 +39,16 @@ Status::Statuses SpuData::dtor() {
 Status::Statuses spu_parse(const char* data, const size_t size) {
     assert(data);
 
-    if (size < sizeof(SIGNATURE) || !((const Signature*) data)->check())
+    size_t cur_byte = sizeof(FILE_HEADER);
+    size_t ip = cur_byte;                   //< instruction pointer
+
+    if (size < sizeof(FILE_HEADER) || !((const FileHeader*) data)->check()) {
+        THROW_RUNTIME_ERROR_("Invalid or corrupted file.");
         return Status::SIGNATURE_ERROR;
+    }
 
     SpuData spu = {};
     STATUS_CHECK(spu.ctor());
-
-    size_t cur_byte = sizeof(SIGNATURE);
-    size_t ip = cur_byte;                   //< instruction pointer
 
     Cmd cmd = {};
 
@@ -68,13 +70,13 @@ Status::Statuses spu_parse(const char* data, const size_t size) {
             DATA_GET_VAL_(cmd.args.reg, RegNum_t);
 
         if (cmd.byte.imm) {
-            if (cmd.byte.ram)
-                DATA_GET_VAL_(cmd.args.imm_ram, Imm_ram_t);
+            if (cmd.byte.ram || cmd.info->args.label)
+                DATA_GET_VAL_(cmd.args.imm_int, Imm_int_t);
             else
-                DATA_GET_VAL_(cmd.args.imm, Imm_t);
+                DATA_GET_VAL_(cmd.args.imm_double, Imm_double_t);
         }
 
-        Status::Statuses res = spu_execute_command(&spu, &cmd, ip);
+        Status::Statuses res = spu_execute_command(&spu, &cmd, &cur_byte, ip);
         if (res != Status::NORMAL_WORK) {
             stk_dtor(&spu.stk);
             return res;
@@ -95,21 +97,18 @@ Status::Statuses spu_parse(const char* data, const size_t size) {
 
 
 
-#include <spu_dsl.h>
+#include "spu_dsl.h"
 
 #define THROW_RUNTIME_ERROR_(text)  do {                                                    \
             fprintf(stderr, CONSOLE_RED("Runtime error occured. " text) " Byte %zu\n", ip); \
             return Status::RUNTIME_ERROR;                                                   \
         } while(0)
 
-#define DEF_CMD(name, num, arg1, arg2, arg3, descr, ...)    \
-    case CMD_##name:                                        \
-        __VA_ARGS__                                         \
-        break;                                              \
-
-Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const size_t ip) {
+Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, size_t* cur_byte,
+                                     const size_t ip) {
     assert(spu);
     assert(cmd);
+    assert(cur_byte);
 
     if (cmd->byte.ram)
         THROW_RUNTIME_ERROR_("SPU doesn't support RAM yet :-("); // FIXME
@@ -117,7 +116,14 @@ Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const size_t 
     int stk_res = Stack::OK;
 
     switch (cmd->info->num) {
+        #define DEF_CMD(name, num, args, descr, ...)    \
+            case CMD_##name:                            \
+                __VA_ARGS__                             \
+                break;
+
         #include "cmd_dict.h"
+
+        #undef DEF_CMD
 
         default:
             assert(0 && "Wrong command num given");
@@ -132,7 +138,5 @@ Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, const size_t 
 
     return Status::NORMAL_WORK;
 }
-#undef DEF_CMD
 #undef THROW_RUNTIME_ERROR_
 
-// REVIEW can't undef DSL

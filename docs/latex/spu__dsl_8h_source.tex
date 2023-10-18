@@ -1,51 +1,87 @@
 \doxysection{spu\+\_\+dsl.\+h}
-\hypertarget{spu__dsl_8h_source}{}\label{spu__dsl_8h_source}\index{shared/spu\_dsl.h@{shared/spu\_dsl.h}}
+\hypertarget{spu__dsl_8h_source}{}\label{spu__dsl_8h_source}\index{spu/src/spu\_dsl.h@{spu/src/spu\_dsl.h}}
 \mbox{\hyperlink{spu__dsl_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00001}00001\ }
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00004}\mbox{\hyperlink{spu__dsl_8h_afa935d43c9addc1630eee32fb792a6fc}{00004}}\ \textcolor{preprocessor}{\#define\ IMM\_T\ Imm\_t}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00005}00005\ }
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00006}\mbox{\hyperlink{spu__dsl_8h_a487a6897858a9db1907ebf1906b9db7e}{00006}}\ \textcolor{preprocessor}{\#define\ IS\_ARG\_REG\ cmd-\/>byte.reg\ }\textcolor{comment}{//<\ is\ reg\ given}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00007}\mbox{\hyperlink{spu__dsl_8h_a6e11fe2cdb7ebb3f3c6c3ce953ccad61}{00007}}\ \textcolor{preprocessor}{\#define\ IS\_ARG\_IMM\ cmd-\/>byte.imm\ }\textcolor{comment}{//<\ is\ imm\ given}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00008}\mbox{\hyperlink{spu__dsl_8h_a554fbdda16072b5702ba49969cc10e4c}{00008}}\ \textcolor{preprocessor}{\#define\ IS\_ARG\_RAM\ cmd-\/>byte.ram\ }\textcolor{comment}{//<\ is\ ram\ given}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00009}00009\ }
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00010}\mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{00010}}\ \textcolor{preprocessor}{\#define\ ARG\_REG\ \ \ \ \ \ cmd-\/>args.reg\ \ \ \ \ \ }\textcolor{comment}{//<\ reg\ num}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00011}\mbox{\hyperlink{spu__dsl_8h_a94d7fa0746bc605f9ce2552764e5eeef}{00011}}\ \textcolor{preprocessor}{\#define\ ARG\_IMM\ \ \ \ \ \ cmd-\/>args.imm\ \ \ \ \ \ }\textcolor{comment}{//<\ imm\ var}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00012}\mbox{\hyperlink{spu__dsl_8h_a1dff822bd45bb88ccb71fd358c299835}{00012}}\ \textcolor{preprocessor}{\#define\ ARG\_RAM\_IMM\ \ cmd-\/>args.imm\_ram\ \ }\textcolor{comment}{//<\ ram\ imm\ var}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00013}00013\ }
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00014}\mbox{\hyperlink{spu__dsl_8h_ad6ade6409c5ca69f90efdfd1acce35fa}{00014}}\ \textcolor{preprocessor}{\#define\ REG(num)\ spu-\/>reg[num]\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//<\ reg\ var\ by\ num}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00015}00015\ }
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00019}\mbox{\hyperlink{spu__dsl_8h_a597f2881b60f9b4f9ae6451abaaa1b7c}{00019}}\ \textcolor{preprocessor}{\#define\ HALT()\ return\ Status::OK\_EXIT}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00020}00020\ }
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00027}\mbox{\hyperlink{spu__dsl_8h_a226e577a36ed0a410a8affc1cd05ce25}{00027}}\ \textcolor{preprocessor}{\#define\ CHECK\_AND\_THROW\_ERR(condition,\ error\_msg)\ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00028}00028\ \textcolor{preprocessor}{\ \ \ \ if\ (!(condition))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00029}00029\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ THROW\_RUNTIME\_ERROR\_(error\_msg)}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00030}00030\ }
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00036}\mbox{\hyperlink{spu__dsl_8h_ae12240a3f4de46ee0616d67825971f44}{00036}}\ \textcolor{preprocessor}{\#define\ PUSH(var)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00037}00037\ \textcolor{preprocessor}{\ \ \ \ stk\_res\ |=\ stk\_push(\&spu-\/>stk,\ var);\ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00038}00038\ \textcolor{preprocessor}{\ \ \ \ if\ (stk\_res\ !=\ Stack::OK)\ break}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00039}00039\ }
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00045}\mbox{\hyperlink{spu__dsl_8h_a8e6708d01dec9fd978f58748eda35132}{00045}}\ \textcolor{preprocessor}{\#define\ POP(var)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00046}00046\ \textcolor{preprocessor}{\ \ \ \ stk\_res\ |=\ stk\_pop(\&spu-\/>stk,\ var);\ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00047}00047\ \textcolor{preprocessor}{\ \ \ \ if\ (stk\_res\ !=\ Stack::OK)\ break}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00004}\mbox{\hyperlink{spu__dsl_8h_a303b93cbec67fcc7b8c811304b46fd9a}{00004}}\ \textcolor{preprocessor}{\#define\ IMM\_DOUBLE\_T\ \ \ \ Imm\_double\_t}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00005}\mbox{\hyperlink{spu__dsl_8h_a40fcaa519b75155facdb1ccc7c5e596b}{00005}}\ \textcolor{preprocessor}{\#define\ INT\_IMM\_T\ \ \ \ \ \ \ Imm\_int\_t}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00007}\mbox{\hyperlink{spu__dsl_8h_a0aef18805c12a685c2b65d6756bc0fa7}{00007}}\ \textcolor{preprocessor}{\#define\ IMM\_DOUBLE\_EPS\ \ IMM\_DOUBLE\_T\_EPSILON}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00009}\mbox{\hyperlink{spu__dsl_8h_a487a6897858a9db1907ebf1906b9db7e}{00009}}\ \textcolor{preprocessor}{\#define\ IS\_ARG\_REG\ \ cmd-\/>byte.reg\ \ \ }\textcolor{comment}{//<\ is\ reg\ given}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00010}\mbox{\hyperlink{spu__dsl_8h_a6e11fe2cdb7ebb3f3c6c3ce953ccad61}{00010}}\ \textcolor{preprocessor}{\#define\ IS\_ARG\_IMM\ \ cmd-\/>byte.imm\ \ \ }\textcolor{comment}{//<\ is\ imm\ given}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00011}\mbox{\hyperlink{spu__dsl_8h_a554fbdda16072b5702ba49969cc10e4c}{00011}}\ \textcolor{preprocessor}{\#define\ IS\_ARG\_RAM\ \ cmd-\/>byte.ram\ \ \ }\textcolor{comment}{//<\ is\ int\ imm\ given}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00013}\mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{00013}}\ \textcolor{preprocessor}{\#define\ ARG\_REG\ \ \ \ \ \ \ \ \ cmd-\/>args.reg\ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//<\ reg\ num}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00014}\mbox{\hyperlink{spu__dsl_8h_ab61b6344b067c61cf8a583577051c78e}{00014}}\ \textcolor{preprocessor}{\#define\ ARG\_IMM\_DOUBLE\ \ cmd-\/>args.imm\_double\ \ \ \ }\textcolor{comment}{//<\ double\ imm\ var}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00015}\mbox{\hyperlink{spu__dsl_8h_a2f622510378832f7dd7e9abdebaafac3}{00015}}\ \textcolor{preprocessor}{\#define\ ARG\_IMM\_INT\ \ \ \ \ cmd-\/>args.imm\_int\ \ \ \ \ \ \ }\textcolor{comment}{//<\ int\ imm\ var}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00017}\mbox{\hyperlink{spu__dsl_8h_ad6ade6409c5ca69f90efdfd1acce35fa}{00017}}\ \textcolor{preprocessor}{\#define\ REG(num)\ spu-\/>reg[num]\ \ }\textcolor{comment}{//<\ reg\ var\ by\ num}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00022}\mbox{\hyperlink{spu__dsl_8h_a26e58264549368d4389379a288396829}{00022}}\ \textcolor{preprocessor}{\#define\ IS\_EQUAL\_IMM\_DOUBLE(a,\ b)\ \ \ \ \ \ \ \ \ \ \ (abs((a)\ -\/\ (b))\ <\ IMM\_DOUBLE\_EPS)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00024}\mbox{\hyperlink{spu__dsl_8h_af20bfd59843f7585f68991ebce472c8f}{00024}}\ \textcolor{preprocessor}{\#define\ IS\_GREATER\_IMM\_DOUBLE(a,\ b)\ \ \ \ \ \ \ \ \ ((a)\ >\ (b)\ \&\&\ !IS\_EQUAL\_IMM\_DOUBLE(a,\ b))}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00026}\mbox{\hyperlink{spu__dsl_8h_afd5d285cb1c8f414db8ebe957435d821}{00026}}\ \textcolor{preprocessor}{\#define\ IS\_LOWER\_IMM\_DOUBLE(a,\ b)\ \ \ \ \ \ \ \ \ \ \ ((a)\ <\ (b)\ \&\&\ !IS\_EQUAL\_IMM\_DOUBLE(a,\ b))}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00028}\mbox{\hyperlink{spu__dsl_8h_ad04464cd2bebd34a53966d4f46865b24}{00028}}\ \textcolor{preprocessor}{\#define\ IS\_GREATER\_EQUAL\_IMM\_DOUBLE(a,\ b)\ \ \ ((a)\ >\ (b)\ ||\ IS\_EQUAL\_IMM\_DOUBLE(a,\ b))}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00030}\mbox{\hyperlink{spu__dsl_8h_a340ff9bde723761c762599f264168925}{00030}}\ \textcolor{preprocessor}{\#define\ IS\_LOWER\_EQUAL\_IMM\_DOUBLE(a,\ b)\ \ \ \ \ ((a)\ <\ (b)\ ||\ IS\_EQUAL\_IMM\_DOUBLE(a,\ b))}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00038}\mbox{\hyperlink{spu__dsl_8h_a8caccf4e8da6d5009b7b4a8f0bb48098}{00038}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{spu__dsl_8h_a8caccf4e8da6d5009b7b4a8f0bb48098}{WEEKDAY}}()\ \{}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00039}00039\ \ \ \ \ time\_t\ t\ =\ time(NULL);}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00040}00040\ \ \ \ \ tm\ *now\ =\ localtime(\&t);}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{return}\ now-\/>tm\_wday;}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00047}\mbox{\hyperlink{spu__dsl_8h_a597f2881b60f9b4f9ae6451abaaa1b7c}{00047}}\ \textcolor{preprocessor}{\#define\ HALT()\ return\ Status::OK\_EXIT}}
 \DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00054}\mbox{\hyperlink{spu__dsl_8h_a1f92e847fc8c4ba1353b03992c5eeb5a}{00054}}\ \textcolor{preprocessor}{\#define\ GET\_FROM\_INPUT(var)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00055}00055\ \textcolor{preprocessor}{\ \ \ \ *var\ =\ spu\_get\_imm\_from\_input();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00056}00056\ \textcolor{preprocessor}{\ \ \ \ if\ (!CHECK\_IMM(*var))\ return\ Status::WRONG\_USER\_INPUT}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00057}00057\ }
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00063}\mbox{\hyperlink{spu__dsl_8h_a14f23f2619c0fefec5f6852ed0c2ba6a}{00063}}\ \textcolor{preprocessor}{\#define\ PRINT(var)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00064}00064\ \textcolor{preprocessor}{\ \ \ \ if\ (!spu\_print\_imm(a))\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00065}00065\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ Status::OUTPUT\_ERROR}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00066}00066\ }
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00072}\mbox{\hyperlink{spu__dsl_8h_af6346c5cfe4217fee535251ef8ac6dab}{00072}}\ \textcolor{preprocessor}{\#define\ ONE\_OPERAND\_POP\_AND\_PUSH(operator)\ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00073}00073\ \textcolor{preprocessor}{\ \ \ \ IMM\_T\ a\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00074}00074\ \textcolor{preprocessor}{\ \ \ \ POP(\&a);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00075}00075\ \textcolor{preprocessor}{\ \ \ \ PUSH(operator(a))}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00076}00076\ }
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00082}\mbox{\hyperlink{spu__dsl_8h_a1136f564bbebae3ebf70914410b14568}{00082}}\ \textcolor{preprocessor}{\#define\ TWO\_OPERANDS\_POP\_AND\_PUSH(operator)\ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00083}00083\ \textcolor{preprocessor}{\ \ \ \ IMM\_T\ a\ =\ 0,\ b\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00084}00084\ \textcolor{preprocessor}{\ \ \ \ POP(\&b);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00085}00085\ \textcolor{preprocessor}{\ \ \ \ POP(\&a);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00086}00086\ \textcolor{preprocessor}{\ \ \ \ PUSH((a)\ operator\ (b))}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00054}\mbox{\hyperlink{spu__dsl_8h_aaf30322f59aa465eb1161227f8986838}{00054}}\ \textcolor{preprocessor}{\#define\ JUMP(addr)\ *cur\_byte\ =\ addr}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00062}\mbox{\hyperlink{spu__dsl_8h_a226e577a36ed0a410a8affc1cd05ce25}{00062}}\ \textcolor{preprocessor}{\#define\ CHECK\_AND\_THROW\_ERR(condition,\ error\_msg)\ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00063}00063\ \textcolor{preprocessor}{\ \ \ \ if\ (!(condition))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00064}00064\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ THROW\_RUNTIME\_ERROR\_(error\_msg)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00071}\mbox{\hyperlink{spu__dsl_8h_ae12240a3f4de46ee0616d67825971f44}{00071}}\ \textcolor{preprocessor}{\#define\ PUSH(var)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00072}00072\ \textcolor{preprocessor}{\ \ \ \ stk\_res\ |=\ stk\_push(\&spu-\/>stk,\ var);\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00073}00073\ \textcolor{preprocessor}{\ \ \ \ if\ (stk\_res\ !=\ Stack::OK)\ break}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00080}\mbox{\hyperlink{spu__dsl_8h_a8e6708d01dec9fd978f58748eda35132}{00080}}\ \textcolor{preprocessor}{\#define\ POP(var)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00081}00081\ \textcolor{preprocessor}{\ \ \ \ stk\_res\ |=\ stk\_pop(\&spu-\/>stk,\ var);\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00082}00082\ \textcolor{preprocessor}{\ \ \ \ if\ (stk\_res\ !=\ Stack::OK)\ break}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00089}\mbox{\hyperlink{spu__dsl_8h_a1f92e847fc8c4ba1353b03992c5eeb5a}{00089}}\ \textcolor{preprocessor}{\#define\ GET\_FROM\_INPUT(var)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00090}00090\ \textcolor{preprocessor}{\ \ \ \ *var\ =\ spu\_get\_imm\_from\_input();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00091}00091\ \textcolor{preprocessor}{\ \ \ \ if\ (!CHECK\_IMM\_DOUBLE(*var))\ return\ Status::WRONG\_USER\_INPUT}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00098}\mbox{\hyperlink{spu__dsl_8h_a14f23f2619c0fefec5f6852ed0c2ba6a}{00098}}\ \textcolor{preprocessor}{\#define\ PRINT(var)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00099}00099\ \textcolor{preprocessor}{\ \ \ \ if\ (!spu\_print\_imm(a))\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00100}00100\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ Status::OUTPUT\_ERROR}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00107}\mbox{\hyperlink{spu__dsl_8h_a0e78009ab0c6fe5165541468db781072}{00107}}\ \textcolor{preprocessor}{\#define\ UNARY\_OPERATOR(operator)\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00108}00108\ \textcolor{preprocessor}{\ \ \ \ IMM\_DOUBLE\_T\ a\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00109}00109\ \textcolor{preprocessor}{\ \ \ \ POP(\&a);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00110}00110\ \textcolor{preprocessor}{\ \ \ \ PUSH(operator(a))}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00117}\mbox{\hyperlink{spu__dsl_8h_a81c98de12ee60ca088f9addf8e178cb2}{00117}}\ \textcolor{preprocessor}{\#define\ BINARY\_OPERATOR(operator)\ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00118}00118\ \textcolor{preprocessor}{\ \ \ \ IMM\_DOUBLE\_T\ a\ =\ 0,\ b\ =\ 0;\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00119}00119\ \textcolor{preprocessor}{\ \ \ \ POP(\&b);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00120}00120\ \textcolor{preprocessor}{\ \ \ \ POP(\&a);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00121}00121\ \textcolor{preprocessor}{\ \ \ \ PUSH((a)\ operator\ (b))}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00129}\mbox{\hyperlink{spu__dsl_8h_a1cf72c3e92ee96c0deff85926ec6199a}{00129}}\ \textcolor{preprocessor}{\#define\ JUMP\_CLAUSE(operator,\ addr)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00130}00130\ \textcolor{preprocessor}{\ \ \ \ IMM\_DOUBLE\_T\ a\ =\ 0,\ b\ =\ 0;\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00131}00131\ \textcolor{preprocessor}{\ \ \ \ POP(\&b);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00132}00132\ \textcolor{preprocessor}{\ \ \ \ POP(\&a);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00133}00133\ \textcolor{preprocessor}{\ \ \ \ if\ ((a)\ operator\ (b))\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00134}00134\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ JUMP(addr);}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00142}\mbox{\hyperlink{spu__dsl_8h_a8da47d72071c71c053638fde446eb8cf}{00142}}\ \textcolor{preprocessor}{\#define\ JUMP\_CLAUSE\_FUNC(func,\ addr)\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00143}00143\ \textcolor{preprocessor}{\ \ \ \ IMM\_DOUBLE\_T\ a\ =\ 0,\ b\ =\ 0;\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00144}00144\ \textcolor{preprocessor}{\ \ \ \ POP(\&b);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00145}00145\ \textcolor{preprocessor}{\ \ \ \ POP(\&a);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00146}00146\ \textcolor{preprocessor}{\ \ \ \ if\ (func(a,\ b))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{spu__dsl_8h_source_l00147}00147\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ JUMP(addr);}}
 
 \end{DoxyCode}
