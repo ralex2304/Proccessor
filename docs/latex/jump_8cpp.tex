@@ -11,8 +11,10 @@
 \item 
 \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{jump_8cpp_ab2ccbbd12ce9667f1c48762d93c56daf}{asm\+\_\+new\+\_\+label}} (\mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}labels, const char \texorpdfstring{$\ast$}{*}name, const size\+\_\+t byte, const size\+\_\+t line\+\_\+num)
 \begin{DoxyCompactList}\small\item\em Puts new label to labels array. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{jump_8cpp_ab71000fe53def25d4df470428a4f488d}{asm\+\_\+get\+\_\+label}} (\mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}labels, const char \texorpdfstring{$\ast$}{*}name, \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\+\_\+int\+\_\+t}} \texorpdfstring{$\ast$}{*}byte, const size\+\_\+t line\+\_\+num, const bool first\+\_\+pass)
-\begin{DoxyCompactList}\small\item\em Gets label from labels array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{jump_8cpp_a7fb8a5a4165fe5a508ab2323e7354e74}{asm\+\_\+get\+\_\+label\+\_\+byte}} (\mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}labels, const char \texorpdfstring{$\ast$}{*}name, \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\+\_\+int\+\_\+t}} \texorpdfstring{$\ast$}{*}byte, const size\+\_\+t line\+\_\+num, const bool first\+\_\+pass)
+\begin{DoxyCompactList}\small\item\em Gets label from labels array. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{jump_8cpp_ac49a4e643237ff9d209d1f1b9df40904}{asm\+\_\+get\+\_\+label\+\_\+name}} (const \mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}labels, const \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\+\_\+int\+\_\+t}} byte)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -37,11 +39,11 @@ Definition at line \mbox{\hyperlink{jump_8cpp_source_l00003}{3}} of file \mbox{\
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{jump_8cpp_ab71000fe53def25d4df470428a4f488d}\label{jump_8cpp_ab71000fe53def25d4df470428a4f488d} 
-\index{jump.cpp@{jump.cpp}!asm\_get\_label@{asm\_get\_label}}
-\index{asm\_get\_label@{asm\_get\_label}!jump.cpp@{jump.cpp}}
-\doxysubsubsection{\texorpdfstring{asm\_get\_label()}{asm\_get\_label()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+get\+\_\+label (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}}]{labels,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{\mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\+\_\+int\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{byte,  }\item[{const size\+\_\+t}]{line\+\_\+num,  }\item[{const bool}]{first\+\_\+pass }\end{DoxyParamCaption})}
+\Hypertarget{jump_8cpp_a7fb8a5a4165fe5a508ab2323e7354e74}\label{jump_8cpp_a7fb8a5a4165fe5a508ab2323e7354e74} 
+\index{jump.cpp@{jump.cpp}!asm\_get\_label\_byte@{asm\_get\_label\_byte}}
+\index{asm\_get\_label\_byte@{asm\_get\_label\_byte}!jump.cpp@{jump.cpp}}
+\doxysubsubsection{\texorpdfstring{asm\_get\_label\_byte()}{asm\_get\_label\_byte()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+get\+\_\+label\+\_\+byte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}}]{labels,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{\mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\+\_\+int\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{byte,  }\item[{const size\+\_\+t}]{line\+\_\+num,  }\item[{const bool}]{first\+\_\+pass }\end{DoxyParamCaption})}
 
 
 
@@ -69,7 +71,7 @@ Definition at line \mbox{\hyperlink{jump_8cpp_source_l00029}{29}} of file \mbox{
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00032\ \ \ \ \ assert(labels);}
 \DoxyCodeLine{00033\ \ \ \ \ assert(name);}
 \DoxyCodeLine{00034\ }
@@ -94,6 +96,36 @@ References \mbox{\hyperlink{jump_8h_source_l00017}{Jump\+Label\+::byte}}, \mbox{
 
 
 Referenced by \mbox{\hyperlink{read_8cpp_source_l00031}{asm\+\_\+read\+\_\+args()}}.
+
+\Hypertarget{jump_8cpp_ac49a4e643237ff9d209d1f1b9df40904}\label{jump_8cpp_ac49a4e643237ff9d209d1f1b9df40904} 
+\index{jump.cpp@{jump.cpp}!asm\_get\_label\_name@{asm\_get\_label\_name}}
+\index{asm\_get\_label\_name@{asm\_get\_label\_name}!jump.cpp@{jump.cpp}}
+\doxysubsubsection{\texorpdfstring{asm\_get\_label\_name()}{asm\_get\_label\_name()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} asm\+\_\+get\+\_\+label\+\_\+name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}}]{labels,  }\item[{const \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\+\_\+int\+\_\+t}}}]{byte }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{jump_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{jump_8cpp_source}{jump.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}};\ i++)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (labels[i].\textcolor{keywordtype}{byte}\ ==\ \textcolor{keywordtype}{byte})}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ labels[i].\mbox{\hyperlink{struct_jump_label_a1c44b5b778d489531336a39e02bb9cb8}{name}};}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}!Label\ name\ not\ found!"{}};}
+\DoxyCodeLine{00056\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{cmd_8h_source_l00016}{MAX\+\_\+\+LABEL\+\_\+\+NUM}}, and \mbox{\hyperlink{jump_8h_source_l00016}{Jump\+Label\+::name}}.
+
+
+
+Referenced by \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}.
 
 \Hypertarget{jump_8cpp_ab2ccbbd12ce9667f1c48762d93c56daf}\label{jump_8cpp_ab2ccbbd12ce9667f1c48762d93c56daf} 
 \index{jump.cpp@{jump.cpp}!asm\_new\_label@{asm\_new\_label}}

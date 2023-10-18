@@ -99,8 +99,8 @@ Status::Statuses asm_parse_and_write_line(Buffer* buf, String line, JumpLabel* l
 
     // Empty line check
     if (tokens[cur_token] == nullptr || tokens[cur_token][0] == '\0') {
-        STATUS_CHECK(asm_write_cmd(buf, nullptr, line_num,
-                                   listing_file, first_pass, comment));
+        STATUS_CHECK(asm_write_cmd(buf, nullptr, labels, line_num,
+                                   listing_file, first_pass, ';', comment));
 
         return Status::NORMAL_WORK;
     }
@@ -116,7 +116,8 @@ Status::Statuses asm_parse_and_write_line(Buffer* buf, String line, JumpLabel* l
             if (first_pass)
                 STATUS_CHECK(asm_new_label(labels, tokens[cur_token], buf->size, line_num));
 
-            // TODO write label to listing
+            STATUS_CHECK(asm_write_cmd(buf, nullptr, labels, line_num,
+                                       listing_file, first_pass, '\0', str_skip_spaces(line.str)));
             return Status::NORMAL_WORK;
         } else
             THROW_SYNTAX_ERROR_("Command \"%s\" not found.", tokens[cur_token],);
@@ -144,7 +145,8 @@ Status::Statuses asm_parse_and_write_line(Buffer* buf, String line, JumpLabel* l
     if (asm_is_arg_required(&cmd) && !(cmd.byte.imm || cmd.byte.ram || cmd.byte.reg))
         THROW_SYNTAX_ERROR_("At least one argument required.");
 
-    STATUS_CHECK(asm_write_cmd(buf, &cmd, line_num, listing_file, first_pass, comment));
+    STATUS_CHECK(asm_write_cmd(buf, &cmd, labels, line_num,
+                               listing_file, first_pass, ';', comment));
 
     LOCAL_DTOR_();
 

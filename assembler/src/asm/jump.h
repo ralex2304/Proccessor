@@ -39,9 +39,10 @@ Status::Statuses asm_new_label(JumpLabel* labels, const char* name,
  * @param first_pass
  * @return Status::Statuses
  */
-Status::Statuses asm_get_label(JumpLabel* labels, const char* name,
-                               Imm_int_t* byte, const size_t line_num,
-                               const bool first_pass);
+Status::Statuses asm_get_label_byte(JumpLabel* labels, const char* name,
+                                    Imm_int_t* byte, const size_t line_num,
+                                    const bool first_pass);
 
+const char* asm_get_label_name(const JumpLabel* lables, const Imm_int_t byte);
 
 #endif //< #ifndef ASM_JUM_H_

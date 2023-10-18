@@ -35,7 +35,7 @@ Status::Statuses asm_read_args(const char** tokens, size_t* cur_token, Cmd* cmd,
     assert(cmd);
 
     if (cmd->info->args.label) {
-        STATUS_CHECK(asm_get_label(labels, tokens[*cur_token], &cmd->args.imm_int,
+        STATUS_CHECK(asm_get_label_byte(labels, tokens[*cur_token], &cmd->args.imm_int,
                                    line_num, first_pass));
 
         cmd->byte.imm = true;

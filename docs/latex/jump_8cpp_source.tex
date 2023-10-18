@@ -30,9 +30,9 @@
 \DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{jump_8cpp_ab1877074925c08a214b5f75c5cb0e335}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Too\ many\ labels\ specified.\ Max\ \%zu."{}},\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}},);}
 \DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00027}00027\ \}}
 \DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00028}00028\ }
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00029}\mbox{\hyperlink{jump_8cpp_ab71000fe53def25d4df470428a4f488d}{00029}}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{jump_8cpp_ab71000fe53def25d4df470428a4f488d}{asm\_get\_label}}(\mbox{\hyperlink{struct_jump_label}{JumpLabel}}*\ labels,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\_int\_t}}*\ \textcolor{keywordtype}{byte},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ line\_num,}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ first\_pass)\ \{}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00029}\mbox{\hyperlink{jump_8cpp_a7fb8a5a4165fe5a508ab2323e7354e74}{00029}}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{jump_8cpp_a7fb8a5a4165fe5a508ab2323e7354e74}{asm\_get\_label\_byte}}(\mbox{\hyperlink{struct_jump_label}{JumpLabel}}*\ labels,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\_int\_t}}*\ \textcolor{keywordtype}{byte},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ line\_num,}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ first\_pass)\ \{}
 \DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00032}00032\ \ \ \ \ assert(labels);}
 \DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00033}00033\ \ \ \ \ assert(name);}
 \DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00034}00034\ }
@@ -49,5 +49,14 @@
 \DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
 \DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00046}00046\ \}}
 \DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00047}00047\ \textcolor{preprocessor}{\#undef\ THROW\_SYNTAX\_ERROR\_}}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00049}\mbox{\hyperlink{jump_8cpp_ac49a4e643237ff9d209d1f1b9df40904}{00049}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{jump_8cpp_ac49a4e643237ff9d209d1f1b9df40904}{asm\_get\_label\_name}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_jump_label}{JumpLabel}}*\ labels,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\_int\_t}}\ \textcolor{keywordtype}{byte})\ \{}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}};\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (labels[i].\textcolor{keywordtype}{byte}\ ==\ \textcolor{keywordtype}{byte})}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ labels[i].\mbox{\hyperlink{struct_jump_label_a1c44b5b778d489531336a39e02bb9cb8}{name}};}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}!Label\ name\ not\ found!"{}};}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00056}00056\ \}}
 
 \end{DoxyCode}

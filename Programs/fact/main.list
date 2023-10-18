@@ -11,10 +11,11 @@
 ;   8 -   24 - 10                            - in
 ;   9 -   25 - 22 02                         - pop rcx ;target
 ;  10 -   27 -                               -
+;  11 -   27 -                               - for:
 ;  12 -   27 -                               - ;loop clause
 ;  13 -   27 - 21 00                         - push rax
 ;  14 -   29 - 21 02                         - push rcx
-;  15 -   31 - 44 40 00 00 00 00 00 00 00    - ja 64 ;break if rax > rcx (iterator > target)
+;  15 -   31 - 44 40 00 00 00 00 00 00 00    - ja exit (64) ;break if rax > rcx (iterator > target)
 ;  16 -   40 -                               -
 ;  17 -   40 -                               - ;multiple iterator and result
 ;  18 -   40 - 21 00                         - push rax
@@ -24,9 +25,9 @@
 ;  22 -   43 - 61 00 00 00 00 00 00 00 F0 3F - push rax+1.000000
 ;  23 -   53 - 22 00                         - pop rax
 ;  24 -   55 -                               -
-;  25 -   55 - 43 1B 00 00 00 00 00 00 00    - jmp 27 ;continue loop
+;  25 -   55 - 43 1B 00 00 00 00 00 00 00    - jmp for (27) ;continue loop
 ;  26 -   64 -                               -
 ;  27 -   64 -                               -
-;  28 -   64 -                               -
-;  30 -   64 - 11                            - out
-;  31 -   65 - 00                            - hlt
+;  28 -   64 -                               - exit:
+;  29 -   64 - 11                            - out
+;  30 -   65 - 00                            - hlt

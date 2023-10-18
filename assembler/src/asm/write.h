@@ -13,14 +13,18 @@
  *
  * @param buf
  * @param cmd
+ * @param labels
  * @param line_num
  * @param listing_file
  * @param first_pass
+ * @param comment_symb
  * @param comment
  * @return Status::Statuses
  */
-Status::Statuses asm_write_cmd(Buffer* buf, const Cmd* cmd, const size_t line_num,
-                               FILE* listing_file, const bool first_pass, const char* comment);
+Status::Statuses asm_write_cmd(Buffer* buf, const Cmd* cmd, JumpLabel* labels,
+                               const size_t line_num,
+                               FILE* listing_file, const bool first_pass,
+                               const char comment_symb, const char* comment);
 
 /**
  * @brief Writes one cmd to bin file

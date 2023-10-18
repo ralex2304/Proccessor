@@ -25,7 +25,6 @@ for:
     jmp for ;continue loop
 
 
-
 exit:
     out
     hlt

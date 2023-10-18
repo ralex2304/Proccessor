@@ -3,9 +3,9 @@
 #define F_PRINTF_CHECK_(printf)  if (printf == EOF) return Status::OUT_FILE_ERROR
 #define F_WRITE_CHECK_(write)    if (!write)        return Status::OUT_FILE_ERROR
 
-Status::Statuses asm_write_cmd_listing(FILE* file, const Cmd* cmd,
-                                     const size_t line_num, const size_t binary_pos,
-                                     const char* comment) {
+Status::Statuses asm_write_cmd_listing(FILE* file, const Cmd* cmd, JumpLabel* labels,
+                                       const size_t line_num, const size_t binary_pos,
+                                       const char comment_symb, const char* comment) {
     assert(file);
     // cmd assertion is not needed
 
@@ -13,7 +13,7 @@ Status::Statuses asm_write_cmd_listing(FILE* file, const Cmd* cmd,
 
     if (cmd == nullptr) {
         F_PRINTF_CHECK_(file_printf(file, "%*s -", asm_listing_calc_tab(cmd), ""));
-        F_WRITE_CHECK_(asm_write_listing_comment(file, comment));
+        F_WRITE_CHECK_(asm_write_listing_comment(file, comment_symb, comment));
         F_PRINTF_CHECK_(file_printf(file, "\n"));
 
         return Status::NORMAL_WORK;
@@ -57,8 +57,11 @@ Status::Statuses asm_write_cmd_listing(FILE* file, const Cmd* cmd,
     }
 
     if (cmd->byte.imm) {
-        if (cmd->info->args.label || cmd->byte.ram) {
+        if (cmd->byte.ram) {
             F_PRINTF_CHECK_(file_printf(file, IMM_INT_T_PRINTF, cmd->args.imm_int));
+        } else if (cmd->info->args.label) {
+            F_PRINTF_CHECK_(file_printf(file, "%s (" IMM_INT_T_PRINTF ")",
+                                asm_get_label_name(labels, cmd->args.imm_int), cmd->args.imm_int));
         } else {
             F_PRINTF_CHECK_(file_printf(file, IMM_DOUBLE_T_PRINTF, cmd->args.imm_double));
         }
@@ -67,7 +70,7 @@ Status::Statuses asm_write_cmd_listing(FILE* file, const Cmd* cmd,
     if (cmd->info->args.ram && cmd->byte.ram)
         F_PRINTF_CHECK_(file_printf(file, "]"));
 
-    F_WRITE_CHECK_(asm_write_listing_comment(file, comment));
+    F_WRITE_CHECK_(asm_write_listing_comment(file, comment_symb, comment));
 
     F_PRINTF_CHECK_(file_printf(file, "\n"));
 
@@ -89,12 +92,17 @@ Status::Statuses asm_write_header_listing(FILE* listing_file) {
 #undef F_WRITE_CHECK_
 
 
-bool asm_write_listing_comment(FILE* file, const char* comment) {
+bool asm_write_listing_comment(FILE* file, const char comment_symb, const char* comment) {
     if (comment == nullptr)
         return true;
 
-    if (file_printf(file, " ;%s", comment) == EOF)
-        return false;
+    if (comment_symb) {
+        if (file_printf(file, " %c%s", comment_symb, comment) == EOF)
+            return false;
+    } else {
+        if (file_printf(file, " %s", comment) == EOF)
+            return false;
+    }
 
     return true;
 }

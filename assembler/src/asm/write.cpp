@@ -1,11 +1,14 @@
 #include "write.h"
 
-Status::Statuses asm_write_cmd(Buffer* buf, const Cmd* cmd, const size_t line_num,
-                               FILE* listing_file, const bool first_pass, const char* comment) {
+Status::Statuses asm_write_cmd(Buffer* buf, const Cmd* cmd, JumpLabel* labels,
+                               const size_t line_num,
+                               FILE* listing_file, const bool first_pass,
+                               const char comment_symb, const char* comment) {
     assert(buf);
 
     if (!first_pass && listing_file != nullptr)
-        STATUS_CHECK(asm_write_cmd_listing(listing_file, cmd, line_num, buf->size, comment));
+        STATUS_CHECK(asm_write_cmd_listing(listing_file, cmd, labels, line_num, buf->size,
+                                           comment_symb, comment));
 
     STATUS_CHECK(asm_write_cmd_bin(buf, cmd));
 
