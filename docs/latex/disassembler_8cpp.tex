@@ -17,8 +17,8 @@
 \item 
 \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{disassembler_8cpp_a6713d7a3995575e1981fb20ab849184a}{disasm\+\_\+parse}} (const char \texorpdfstring{$\ast$}{*}data, const size\+\_\+t size, const char \texorpdfstring{$\ast$}{*}output\+\_\+filename, const bool debug\+\_\+mode)
 \begin{DoxyCompactList}\small\item\em disassembles data to output file \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{disassembler_8cpp_abd2c4a1dd7b7519c51d82cc56570d655}{disasm\+\_\+write\+\_\+signature}} (FILE \texorpdfstring{$\ast$}{*}file, const \mbox{\hyperlink{struct_file_header}{File\+Header}} header)
-\begin{DoxyCompactList}\small\item\em Writes signature to file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+int \mbox{\hyperlink{disassembler_8cpp_acade6b71b297388f7d7b85f9bcdafe8d}{disasm\+\_\+write\+\_\+header}} (FILE \texorpdfstring{$\ast$}{*}file, const \mbox{\hyperlink{struct_file_header}{File\+Header}} header)
+\begin{DoxyCompactList}\small\item\em Writes header to file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -144,7 +144,7 @@ Definition at line \mbox{\hyperlink{disassembler_8cpp_source_l00022}{22}} of fil
 \DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_abb897c7e353e490dd5c92b5a13d14fa6}{file\_open}}(\&file,\ output\_filename,\ \textcolor{stringliteral}{"{}wb"{}}))}
 \DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};}
 \DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{disassembler_8cpp_abd2c4a1dd7b7519c51d82cc56570d655}{disasm\_write\_signature}}(file,\ header)\ ==\ EOF)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{disassembler_8cpp_acade6b71b297388f7d7b85f9bcdafe8d}{disasm\_write\_header}}(file,\ header)\ ==\ EOF)\ \{}
 \DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(file);}
 \DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};}
 \DoxyCodeLine{00039\ \ \ \ \ \}}
@@ -167,7 +167,7 @@ Definition at line \mbox{\hyperlink{disassembler_8cpp_source_l00022}{22}} of fil
 \DoxyCodeLine{00056\ }
 \DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ printed\_cnt\ =\ 0;}
 \DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_a5ed4437d6ccd8c1be2e787923b44018f}{F\_PRINTF\_}}(\textcolor{stringliteral}{"{}\%s"{}},\ cmd.\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}-\/>\mbox{\hyperlink{struct_cmd_info_a6d2c25d356a40a51bddecfb15288266e}{name}});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_a5ed4437d6ccd8c1be2e787923b44018f}{F\_PRINTF\_}}(\textcolor{stringliteral}{"{}\%s"{}},\ cmd.\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}-\/>\mbox{\hyperlink{struct_cmd_info_a78ddf55610665e631a9356114523aa5e}{name}});}
 \DoxyCodeLine{00060\ }
 \DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_a64f32a2c5de062d496ece180759dd940}{ram}})}
 \DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_a5ed4437d6ccd8c1be2e787923b44018f}{F\_PRINTF\_}}(\textcolor{stringliteral}{"{}\ ["{}});}
@@ -177,7 +177,7 @@ Definition at line \mbox{\hyperlink{disassembler_8cpp_source_l00022}{22}} of fil
 \DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae9e14c718597b6998c4189592e775054}{reg}})\ \{}
 \DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_af0caa752175ed6935756d158d26848fd}{DATA\_GET\_VAL\_}}(cmd.\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a49949ad6edf5cb3523025913f2c0adc5}{reg}},\ \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{RegNum\_t}});}
 \DoxyCodeLine{00068\ }
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_a5ed4437d6ccd8c1be2e787923b44018f}{F\_PRINTF\_}}(\textcolor{stringliteral}{"{}\%s"{}},\ \mbox{\hyperlink{cmd_8cpp_af63027691c37894de471b76a4e74b68c}{find\_reg\_by\_num}}(cmd.\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a49949ad6edf5cb3523025913f2c0adc5}{reg}})-\/>\mbox{\hyperlink{struct_reg_info_a55f7bac0cb70f2b12dcc0be560d4d24f}{name}});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{disassembler_8cpp_a5ed4437d6ccd8c1be2e787923b44018f}{F\_PRINTF\_}}(\textcolor{stringliteral}{"{}\%s"{}},\ \mbox{\hyperlink{cmd_8cpp_af63027691c37894de471b76a4e74b68c}{find\_reg\_by\_num}}(cmd.\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a49949ad6edf5cb3523025913f2c0adc5}{reg}})-\/>\mbox{\hyperlink{struct_reg_info_a13748761bb8f8962021d7e7e77f148db}{name}});}
 \DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00071\ }
 \DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae86855d817fa5c60367ce99d1c826287}{imm}})\ \{}
@@ -219,27 +219,27 @@ Definition at line \mbox{\hyperlink{disassembler_8cpp_source_l00022}{22}} of fil
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{cmd_8h_source_l00096}{Cmd\+Info\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00132}{Cmd\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00131}{Cmd\+::byte}}, \mbox{\hyperlink{disassembler_8cpp_source_l00008}{DATA\+\_\+\+GET\+\_\+\+VAL\+\_\+}}, \mbox{\hyperlink{disassembler_8cpp_source_l00116}{disasm\+\_\+write\+\_\+signature()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00013}{F\+\_\+\+PRINTF\+\_\+}}, \mbox{\hyperlink{file_8cpp_source_l00141}{file\+\_\+close()}}, \mbox{\hyperlink{cmd_8h_source_l00126}{FILE\+\_\+\+HEADER}}, \mbox{\hyperlink{file_8cpp_source_l00056}{file\+\_\+open()}}, \mbox{\hyperlink{cmd_8cpp_source_l00027}{find\+\_\+command\+\_\+by\+\_\+num()}}, \mbox{\hyperlink{cmd_8cpp_source_l00045}{find\+\_\+reg\+\_\+by\+\_\+num()}}, \mbox{\hyperlink{cmd_8h_source_l00023}{Cmd\+Byte\+::imm}}, \mbox{\hyperlink{cmd_8h_source_l00068}{Cmd\+Args\+::imm\+\_\+double}}, \mbox{\hyperlink{cmd_8h_source_l00058}{IMM\+\_\+\+DOUBLE\+\_\+\+T\+\_\+\+PRINTF}}, \mbox{\hyperlink{cmd_8h_source_l00070}{Cmd\+Args\+::imm\+\_\+int}}, \mbox{\hyperlink{cmd_8h_source_l00065}{IMM\+\_\+\+INT\+\_\+\+T\+\_\+\+PRINTF}}, \mbox{\hyperlink{cmd_8h_source_l00129}{Cmd\+::info}}, \mbox{\hyperlink{cmd_8h_source_l00078}{Args\+En\+::label}}, \mbox{\hyperlink{cmd_8h_source_l00042}{Reg\+Info\+::name}}, \mbox{\hyperlink{cmd_8h_source_l00095}{Cmd\+Info\+::name}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, \mbox{\hyperlink{cmd_8h_source_l00021}{Cmd\+Byte\+::num}}, \mbox{\hyperlink{statuses_8h_source_l00017}{Status\+::\+OUT\+\_\+\+FILE\+\_\+\+ERROR}}, \mbox{\hyperlink{cmd_8h_source_l00024}{Cmd\+Byte\+::ram}}, \mbox{\hyperlink{cmd_8h_source_l00022}{Cmd\+Byte\+::reg}}, \mbox{\hyperlink{cmd_8h_source_l00069}{Cmd\+Args\+::reg}}, \mbox{\hyperlink{statuses_8h_source_l00023}{Status\+::\+SIGNATURE\+\_\+\+ERROR}}, \mbox{\hyperlink{cmd_8cpp_source_l00021}{Cmd\+::size()}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00003}{THROW\+\_\+\+SYNTAX\+\_\+\+ERROR\+\_\+}}.
+References \mbox{\hyperlink{cmd_8h_source_l00120}{Cmd\+Info\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00166}{Cmd\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00165}{Cmd\+::byte}}, \mbox{\hyperlink{disassembler_8cpp_source_l00008}{DATA\+\_\+\+GET\+\_\+\+VAL\+\_\+}}, \mbox{\hyperlink{disassembler_8cpp_source_l00116}{disasm\+\_\+write\+\_\+header()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00013}{F\+\_\+\+PRINTF\+\_\+}}, \mbox{\hyperlink{file_8cpp_source_l00141}{file\+\_\+close()}}, \mbox{\hyperlink{cmd_8h_source_l00157}{FILE\+\_\+\+HEADER}}, \mbox{\hyperlink{file_8cpp_source_l00056}{file\+\_\+open()}}, \mbox{\hyperlink{cmd_8cpp_source_l00027}{find\+\_\+command\+\_\+by\+\_\+num()}}, \mbox{\hyperlink{cmd_8cpp_source_l00045}{find\+\_\+reg\+\_\+by\+\_\+num()}}, \mbox{\hyperlink{cmd_8h_source_l00027}{Cmd\+Byte\+::imm}}, \mbox{\hyperlink{cmd_8h_source_l00084}{Cmd\+Args\+::imm\+\_\+double}}, \mbox{\hyperlink{cmd_8h_source_l00071}{IMM\+\_\+\+DOUBLE\+\_\+\+T\+\_\+\+PRINTF}}, \mbox{\hyperlink{cmd_8h_source_l00086}{Cmd\+Args\+::imm\+\_\+int}}, \mbox{\hyperlink{cmd_8h_source_l00078}{IMM\+\_\+\+INT\+\_\+\+T\+\_\+\+PRINTF}}, \mbox{\hyperlink{cmd_8h_source_l00163}{Cmd\+::info}}, \mbox{\hyperlink{cmd_8h_source_l00098}{Args\+En\+::label}}, \mbox{\hyperlink{cmd_8h_source_l00052}{Reg\+Info\+::name}}, \mbox{\hyperlink{cmd_8h_source_l00119}{Cmd\+Info\+::name}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, \mbox{\hyperlink{cmd_8h_source_l00025}{Cmd\+Byte\+::num}}, \mbox{\hyperlink{statuses_8h_source_l00017}{Status\+::\+OUT\+\_\+\+FILE\+\_\+\+ERROR}}, \mbox{\hyperlink{cmd_8h_source_l00028}{Cmd\+Byte\+::ram}}, \mbox{\hyperlink{cmd_8h_source_l00026}{Cmd\+Byte\+::reg}}, \mbox{\hyperlink{cmd_8h_source_l00085}{Cmd\+Args\+::reg}}, \mbox{\hyperlink{statuses_8h_source_l00023}{Status\+::\+SIGNATURE\+\_\+\+ERROR}}, \mbox{\hyperlink{cmd_8cpp_source_l00021}{Cmd\+::size()}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00003}{THROW\+\_\+\+SYNTAX\+\_\+\+ERROR\+\_\+}}.
 
 
 
 Referenced by \mbox{\hyperlink{disassembler_2src_2main_8cpp_source_l00024}{main()}}.
 
-\Hypertarget{disassembler_8cpp_abd2c4a1dd7b7519c51d82cc56570d655}\label{disassembler_8cpp_abd2c4a1dd7b7519c51d82cc56570d655} 
-\index{disassembler.cpp@{disassembler.cpp}!disasm\_write\_signature@{disasm\_write\_signature}}
-\index{disasm\_write\_signature@{disasm\_write\_signature}!disassembler.cpp@{disassembler.cpp}}
-\doxysubsubsection{\texorpdfstring{disasm\_write\_signature()}{disasm\_write\_signature()}}
-{\footnotesize\ttfamily int disasm\+\_\+write\+\_\+signature (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file,  }\item[{const \mbox{\hyperlink{struct_file_header}{File\+Header}}}]{sign }\end{DoxyParamCaption})}
+\Hypertarget{disassembler_8cpp_acade6b71b297388f7d7b85f9bcdafe8d}\label{disassembler_8cpp_acade6b71b297388f7d7b85f9bcdafe8d} 
+\index{disassembler.cpp@{disassembler.cpp}!disasm\_write\_header@{disasm\_write\_header}}
+\index{disasm\_write\_header@{disasm\_write\_header}!disassembler.cpp@{disassembler.cpp}}
+\doxysubsubsection{\texorpdfstring{disasm\_write\_header()}{disasm\_write\_header()}}
+{\footnotesize\ttfamily int disasm\+\_\+write\+\_\+header (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file,  }\item[{const \mbox{\hyperlink{struct_file_header}{File\+Header}}}]{header }\end{DoxyParamCaption})}
 
 
 
-Writes signature to file. 
+Writes header to file. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em file} & \\
 \hline
-{\em sign} & \\
+{\em header} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -251,7 +251,7 @@ Definition at line \mbox{\hyperlink{disassembler_8cpp_source_l00116}{116}} of fi
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00117\ \ \ \ \ assert(file);}
 \DoxyCodeLine{00118\ }
 \DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(header.\mbox{\hyperlink{struct_file_header_ad489a5342f5135b1ea05167420897484}{sign}})\ ==\ 2);}
@@ -266,7 +266,7 @@ Definition at line \mbox{\hyperlink{disassembler_8cpp_source_l00116}{116}} of fi
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{disassembler_8cpp_source_l00111}{F\+\_\+\+PRINTF\+\_\+\+CHECK\+\_\+}}, \mbox{\hyperlink{file_8cpp_source_l00124}{file\+\_\+printf()}}, \mbox{\hyperlink{cmd_8h_source_l00118}{File\+Header\+::sign}}, and \mbox{\hyperlink{cmd_8h_source_l00119}{File\+Header\+::version}}.
+References \mbox{\hyperlink{disassembler_8cpp_source_l00111}{F\+\_\+\+PRINTF\+\_\+\+CHECK\+\_\+}}, \mbox{\hyperlink{file_8cpp_source_l00124}{file\+\_\+printf()}}, \mbox{\hyperlink{cmd_8h_source_l00149}{File\+Header\+::sign}}, and \mbox{\hyperlink{cmd_8h_source_l00150}{File\+Header\+::version}}.
 
 
 

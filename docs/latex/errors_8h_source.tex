@@ -1,0 +1,29 @@
+\doxysection{errors.\+h}
+\hypertarget{errors_8h_source}{}\label{errors_8h_source}\index{assembler/src/asm/errors.h@{assembler/src/asm/errors.h}}
+\mbox{\hyperlink{errors_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ ASM\_ERRORS\_}}
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ ASM\_ERRORS\_}}
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <stdarg.h>}}
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{statuses_8h}{lib/utils/statuses.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{text__lib_8h}{lib/text/text\_lib.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{console_8h}{lib/utils/console.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00016}\mbox{\hyperlink{struct_input_file_info}{00016}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_input_file_info}{InputFileInfo}}\ \{}
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00017}\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{00017}}\ \ \ \ \ \mbox{\hyperlink{struct_string}{String}}\ \mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}\ =\ \{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ current\ line\ text}}
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00018}\mbox{\hyperlink{struct_input_file_info_abcfe72db9b1599647de9a7457eeb193c}{00018}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_input_file_info_abcfe72db9b1599647de9a7457eeb193c}{line\_num}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ current\ line\ number}}
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00019}\mbox{\hyperlink{struct_input_file_info_a24788948955238f67472fb4fbcc1126e}{00019}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_input_file_info_a24788948955238f67472fb4fbcc1126e}{comment}}\ =\ \textcolor{keyword}{nullptr};\ \ \textcolor{comment}{//<\ current\ line\ comment}}
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00020}\mbox{\hyperlink{struct_input_file_info_ade8c5dc519ae52c36d351cbaf07a458b}{00020}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_input_file_info_ade8c5dc519ae52c36d351cbaf07a458b}{filename}}\ =\ \textcolor{keyword}{nullptr};\ \textcolor{comment}{//<\ input\ filename}}
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00021}00021\ \};}
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00032}00032\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{errors_8h_a6c7dd2b5c489314491e98e778335aafb}{asm\_throw\_syntax\_error}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}\ token,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_input_file_info}{InputFileInfo}}*\ file\_info,}
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ err\_msg,\ ...);}
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{errors_8h_source_l00035}00035\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ ASM\_ERRORS\_}}
+
+\end{DoxyCode}

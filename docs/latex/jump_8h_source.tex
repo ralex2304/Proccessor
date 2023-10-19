@@ -12,21 +12,22 @@
 \DoxyCodeLine{\Hypertarget{jump_8h_source_l00008}00008\ }
 \DoxyCodeLine{\Hypertarget{jump_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{statuses_8h}{lib/utils/statuses.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{jump_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cmd_8h}{cmd.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{jump_8h_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{jump_8h_source_l00015}\mbox{\hyperlink{struct_jump_label}{00015}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_jump_label}{JumpLabel}}\ \{}
-\DoxyCodeLine{\Hypertarget{jump_8h_source_l00016}\mbox{\hyperlink{struct_jump_label_a1c44b5b778d489531336a39e02bb9cb8}{00016}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_jump_label_a1c44b5b778d489531336a39e02bb9cb8}{name}}\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{jump_8h_source_l00017}\mbox{\hyperlink{struct_jump_label_a47eb97b0f19afde28f027698882d8550}{00017}}\ \ \ \ \ ssize\_t\ \textcolor{keywordtype}{byte}\ =\ -\/1;}
-\DoxyCodeLine{\Hypertarget{jump_8h_source_l00018}00018\ \};}
-\DoxyCodeLine{\Hypertarget{jump_8h_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{jump_8h_source_l00029}00029\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{jump_8h_ab2ccbbd12ce9667f1c48762d93c56daf}{asm\_new\_label}}(\mbox{\hyperlink{struct_jump_label}{JumpLabel}}*\ labels,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,}
-\DoxyCodeLine{\Hypertarget{jump_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \textcolor{keywordtype}{byte},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ line\_num);}
-\DoxyCodeLine{\Hypertarget{jump_8h_source_l00031}00031\ }
-\DoxyCodeLine{\Hypertarget{jump_8h_source_l00042}00042\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{jump_8h_a7fb8a5a4165fe5a508ab2323e7354e74}{asm\_get\_label\_byte}}(\mbox{\hyperlink{struct_jump_label}{JumpLabel}}*\ labels,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,}
-\DoxyCodeLine{\Hypertarget{jump_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\_int\_t}}*\ \textcolor{keywordtype}{byte},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ line\_num,}
-\DoxyCodeLine{\Hypertarget{jump_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ first\_pass);}
-\DoxyCodeLine{\Hypertarget{jump_8h_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{jump_8h_source_l00046}00046\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{jump_8h_a7b8a54adf5a3c0e89e34af019fcb0bb6}{asm\_get\_label\_name}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_jump_label}{JumpLabel}}*\ lables,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\_int\_t}}\ \textcolor{keywordtype}{byte});}
-\DoxyCodeLine{\Hypertarget{jump_8h_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{jump_8h_source_l00048}00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//<\ \#ifndef\ ASM\_JUM\_H\_}}
+\DoxyCodeLine{\Hypertarget{jump_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{errors_8h}{errors.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{jump_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{jump_8h_source_l00016}\mbox{\hyperlink{struct_jump_label}{00016}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_jump_label}{JumpLabel}}\ \{}
+\DoxyCodeLine{\Hypertarget{jump_8h_source_l00017}\mbox{\hyperlink{struct_jump_label_a0840f89616d10aeb07e92667452e0a58}{00017}}\ \ \ \ \ \mbox{\hyperlink{struct_string}{String}}\ \mbox{\hyperlink{struct_jump_label_a0840f89616d10aeb07e92667452e0a58}{name}}\ =\ \{\textcolor{keyword}{nullptr},\ 0\};}
+\DoxyCodeLine{\Hypertarget{jump_8h_source_l00018}\mbox{\hyperlink{struct_jump_label_a47eb97b0f19afde28f027698882d8550}{00018}}\ \ \ \ \ ssize\_t\ \textcolor{keywordtype}{byte}\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{jump_8h_source_l00019}00019\ \};}
+\DoxyCodeLine{\Hypertarget{jump_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{jump_8h_source_l00030}00030\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{jump_8h_abfa9520cd188b0949a9333504e23cbc7}{asm\_new\_label}}(\mbox{\hyperlink{struct_jump_label}{JumpLabel}}*\ labels,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}\ name,}
+\DoxyCodeLine{\Hypertarget{jump_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_input_file_info}{InputFileInfo}}*\ inp\_file,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \textcolor{keywordtype}{byte});}
+\DoxyCodeLine{\Hypertarget{jump_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{jump_8h_source_l00043}00043\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{jump_8h_a9c7ee72f9b735d877734567f77227bfb}{asm\_get\_label\_byte}}(\mbox{\hyperlink{struct_jump_label}{JumpLabel}}*\ labels,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}\ name,}
+\DoxyCodeLine{\Hypertarget{jump_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_input_file_info}{InputFileInfo}}*\ inp\_file,\ \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\_int\_t}}*\ \textcolor{keywordtype}{byte},}
+\DoxyCodeLine{\Hypertarget{jump_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ final\_pass);}
+\DoxyCodeLine{\Hypertarget{jump_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{jump_8h_source_l00054}00054\ \mbox{\hyperlink{structc___string}{c\_String}}\ \mbox{\hyperlink{jump_8h_a8ee3ed07719ae1c7689d457375b168c7}{asm\_get\_label\_name}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_jump_label}{JumpLabel}}*\ lables,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\_int\_t}}\ \textcolor{keywordtype}{byte});}
+\DoxyCodeLine{\Hypertarget{jump_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{jump_8h_source_l00056}00056\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//<\ \#ifndef\ ASM\_JUM\_H\_}}
 
 \end{DoxyCode}

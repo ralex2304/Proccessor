@@ -1,0 +1,47 @@
+\doxysection{errors.\+cpp}
+\hypertarget{errors_8cpp_source}{}\label{errors_8cpp_source}\index{assembler/src/asm/errors.cpp@{assembler/src/asm/errors.cpp}}
+\mbox{\hyperlink{errors_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{errors_8h}{errors.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00003}\mbox{\hyperlink{errors_8cpp_a6c7dd2b5c489314491e98e778335aafb}{00003}}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{errors_8cpp_a6c7dd2b5c489314491e98e778335aafb}{asm\_throw\_syntax\_error}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}\ token,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_input_file_info}{InputFileInfo}}*\ file\_info,}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00004}00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ err\_msg,\ ...)\ \{}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00005}00005\ \ \ \ \ assert(err\_msg);}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00006}00006\ \ \ \ \ assert(file\_info-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ ==\ 0\ ||\ file\_info-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00007}00007\ \ \ \ \ assert(\ \ \ \ \ \ \ \ \ \ token.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ ==\ 0\ ||\ \ \ \ \ \ \ \ \ \ \ token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00008}00008\ \ \ \ \ assert(file\_info-\/>\mbox{\hyperlink{struct_input_file_info_ade8c5dc519ae52c36d351cbaf07a458b}{filename}});}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ token\_begin\ =\ (token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ ==\ \textcolor{keyword}{nullptr})\ ?\ (\textcolor{keywordtype}{int})file\_info-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (int)(token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ -\/\ file\_info-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ token\_end\ \ \ =\ (token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ ==\ \textcolor{keyword}{nullptr})\ ?\ (\textcolor{keywordtype}{int})file\_info-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (int)(token\_begin\ +\ token.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}});}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00015}00015\ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_a038ef7e954c5cdc42f96cabd07c56dec}{CONSOLE\_STYLE}}(\mbox{\hyperlink{console_8h_a7ce3d6fee94f21c9e3d0ffdd90aadc2e}{STYLE\_BOLD}},\ \textcolor{stringliteral}{"{}\%s:\%zu:\%d\ "{}}}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{console_8h_ad86358bf19927183dd7b4ae215a29731}{COLOR\_RED}}\ \textcolor{stringliteral}{"{}syntax\ error:\ "{}}),\ file\_info-\/>\mbox{\hyperlink{struct_input_file_info_ade8c5dc519ae52c36d351cbaf07a458b}{filename}},}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ file\_info-\/>\mbox{\hyperlink{struct_input_file_info_abcfe72db9b1599647de9a7457eeb193c}{line\_num}},\ token\_begin\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00019}00019\ \ \ \ \ va\_list\ arg\_list\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00020}00020\ \ \ \ \ va\_start(arg\_list,\ err\_msg);}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00021}00021\ \ \ \ \ vfprintf(stderr,\ err\_msg,\ arg\_list);}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00022}00022\ \ \ \ \ va\_end(arg\_list);}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00023}00023\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00025}00025\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%5zu\ |\ "{}},\ file\_info-\/>\mbox{\hyperlink{struct_input_file_info_abcfe72db9b1599647de9a7457eeb193c}{line\_num}});}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00027}00027\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%.*s"{}},\ token\_begin,\ file\_info-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00028}00028\ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_a038ef7e954c5cdc42f96cabd07c56dec}{CONSOLE\_STYLE}}(\mbox{\hyperlink{console_8h_a7ce3d6fee94f21c9e3d0ffdd90aadc2e}{STYLE\_BOLD}}\ \mbox{\hyperlink{console_8h_ad86358bf19927183dd7b4ae215a29731}{COLOR\_RED}},\ \textcolor{stringliteral}{"{}\%.*s"{}}),\ (\textcolor{keywordtype}{int})token.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}},\ token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00029}00029\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%.*s\(\backslash\)n"{}},\ (\textcolor{keywordtype}{int})(file\_info-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ -\/\ token\_end),}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\_info-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ +\ token\_end);}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00032}00032\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%5s\ |\ "{}},\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00034}00034\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%*s"{}},\ token\_begin,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00035}00035\ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_ad86358bf19927183dd7b4ae215a29731}{COLOR\_RED}}\ \mbox{\hyperlink{console_8h_a7ce3d6fee94f21c9e3d0ffdd90aadc2e}{STYLE\_BOLD}}\ \textcolor{stringliteral}{"{}\string^"{}});}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{for}\ (ssize\_t\ i\ =\ 0;\ i\ <\ token\_end\ -\/\ token\_begin\ -\/\ 1;\ i++)}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\string~"{}});}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00038}00038\ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_a0afe503629a0074b6d24bbce318f85f2}{STYLE\_RESET}}\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabb9ae17ad4d7d55ccce75d9d38d7926e}{Status::SYNTAX\_ERROR}};}
+\DoxyCodeLine{\Hypertarget{errors_8cpp_source_l00041}00041\ \}}
+
+\end{DoxyCode}

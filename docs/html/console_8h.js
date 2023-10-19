@@ -14,6 +14,7 @@ var console_8h =
     [ "COLOR_YELLOW", "console_8h.html#a4534b577b74a58b0f4b7be027af664e0", null ],
     [ "CONSOLE_GREEN", "console_8h.html#a3d65c0a458538bfc412e586e89dbf130", null ],
     [ "CONSOLE_RED", "console_8h.html#ad220b7c98ce4bd06bf25860ca62d7aba", null ],
+    [ "CONSOLE_STYLE", "console_8h.html#a038ef7e954c5cdc42f96cabd07c56dec", null ],
     [ "STYLE_BLINK_OFF", "console_8h.html#a90d5198d0e1fdba8fc116dcafc4a3f55", null ],
     [ "STYLE_BOLD", "console_8h.html#a7ce3d6fee94f21c9e3d0ffdd90aadc2e", null ],
     [ "STYLE_FAINT", "console_8h.html#a52bc634953ffb7fb8a57e58aa51f88cd", null ],

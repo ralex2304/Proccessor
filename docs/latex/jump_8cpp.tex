@@ -4,32 +4,31 @@
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{jump_8cpp_ab1877074925c08a214b5f75c5cb0e335}{THROW\+\_\+\+SYNTAX\+\_\+\+ERROR\+\_\+}}(text, ...)
+\#define \mbox{\hyperlink{jump_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{THROW\+\_\+\+SYNTAX\+\_\+\+ERROR\+\_\+}}(...)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{jump_8cpp_ab2ccbbd12ce9667f1c48762d93c56daf}{asm\+\_\+new\+\_\+label}} (\mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}labels, const char \texorpdfstring{$\ast$}{*}name, const size\+\_\+t byte, const size\+\_\+t line\+\_\+num)
-\begin{DoxyCompactList}\small\item\em Puts new label to labels array. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{jump_8cpp_a7fb8a5a4165fe5a508ab2323e7354e74}{asm\+\_\+get\+\_\+label\+\_\+byte}} (\mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}labels, const char \texorpdfstring{$\ast$}{*}name, \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\+\_\+int\+\_\+t}} \texorpdfstring{$\ast$}{*}byte, const size\+\_\+t line\+\_\+num, const bool first\+\_\+pass)
-\begin{DoxyCompactList}\small\item\em Gets label from labels array. \end{DoxyCompactList}\item 
-const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{jump_8cpp_ac49a4e643237ff9d209d1f1b9df40904}{asm\+\_\+get\+\_\+label\+\_\+name}} (const \mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}labels, const \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\+\_\+int\+\_\+t}} byte)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{jump_8cpp_abfa9520cd188b0949a9333504e23cbc7}{asm\+\_\+new\+\_\+label}} (\mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}labels, const \mbox{\hyperlink{struct_string}{String}} name, const \mbox{\hyperlink{struct_input_file_info}{Input\+File\+Info}} \texorpdfstring{$\ast$}{*}inp\+\_\+file, const size\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em Adds new label to labels. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{jump_8cpp_a9c7ee72f9b735d877734567f77227bfb}{asm\+\_\+get\+\_\+label\+\_\+byte}} (\mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}labels, const \mbox{\hyperlink{struct_string}{String}} name, const \mbox{\hyperlink{struct_input_file_info}{Input\+File\+Info}} \texorpdfstring{$\ast$}{*}inp\+\_\+file, \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\+\_\+int\+\_\+t}} \texorpdfstring{$\ast$}{*}byte, const bool final\+\_\+pass)
+\begin{DoxyCompactList}\small\item\em Gets label byte by name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structc___string}{c\+\_\+\+String}} \mbox{\hyperlink{jump_8cpp_a9f236543c60a67fb27ba9fae09eb32e8}{asm\+\_\+get\+\_\+label\+\_\+name}} (const \mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}labels, const \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\+\_\+int\+\_\+t}} byte)
+\begin{DoxyCompactList}\small\item\em Returns label name by byte. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
-\Hypertarget{jump_8cpp_ab1877074925c08a214b5f75c5cb0e335}\label{jump_8cpp_ab1877074925c08a214b5f75c5cb0e335} 
+\Hypertarget{jump_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}\label{jump_8cpp_aaaf08e4360cf604f52f9a4595a34d28a} 
 \index{jump.cpp@{jump.cpp}!THROW\_SYNTAX\_ERROR\_@{THROW\_SYNTAX\_ERROR\_}}
 \index{THROW\_SYNTAX\_ERROR\_@{THROW\_SYNTAX\_ERROR\_}!jump.cpp@{jump.cpp}}
 \doxysubsubsection{\texorpdfstring{THROW\_SYNTAX\_ERROR\_}{THROW\_SYNTAX\_ERROR\_}}
-{\footnotesize\ttfamily \#define THROW\+\_\+\+SYNTAX\+\_\+\+ERROR\+\_\+(\begin{DoxyParamCaption}\item[{}]{text,  }\item[{}]{... }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \#define THROW\+\_\+\+SYNTAX\+\_\+\+ERROR\+\_\+(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_ad220b7c98ce4bd06bf25860ca62d7aba}{CONSOLE\_RED}}(\textcolor{stringliteral}{"{}Syntax\ error.\ "{}}\ text)\ \textcolor{stringliteral}{"{}\ Line\ \%zu\(\backslash\)n"{}},\ \_\_VA\_ARGS\_\_\ line\_num);\(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabb9ae17ad4d7d55ccce75d9d38d7926e}{Status::SYNTAX\_ERROR}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{errors_8cpp_a6c7dd2b5c489314491e98e778335aafb}{asm\_throw\_syntax\_error}}(name,\ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inp\_file,\ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_VA\_ARGS\_\_)}
 
 \end{DoxyCode}
 
@@ -39,15 +38,15 @@ Definition at line \mbox{\hyperlink{jump_8cpp_source_l00003}{3}} of file \mbox{\
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{jump_8cpp_a7fb8a5a4165fe5a508ab2323e7354e74}\label{jump_8cpp_a7fb8a5a4165fe5a508ab2323e7354e74} 
+\Hypertarget{jump_8cpp_a9c7ee72f9b735d877734567f77227bfb}\label{jump_8cpp_a9c7ee72f9b735d877734567f77227bfb} 
 \index{jump.cpp@{jump.cpp}!asm\_get\_label\_byte@{asm\_get\_label\_byte}}
 \index{asm\_get\_label\_byte@{asm\_get\_label\_byte}!jump.cpp@{jump.cpp}}
 \doxysubsubsection{\texorpdfstring{asm\_get\_label\_byte()}{asm\_get\_label\_byte()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+get\+\_\+label\+\_\+byte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}}]{labels,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{\mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\+\_\+int\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{byte,  }\item[{const size\+\_\+t}]{line\+\_\+num,  }\item[{const bool}]{first\+\_\+pass }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+get\+\_\+label\+\_\+byte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}}]{labels,  }\item[{const \mbox{\hyperlink{struct_string}{String}}}]{name,  }\item[{const \mbox{\hyperlink{struct_input_file_info}{Input\+File\+Info}} \texorpdfstring{$\ast$}{*}}]{inp\+\_\+file,  }\item[{\mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\+\_\+int\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{byte,  }\item[{const bool}]{final\+\_\+pass }\end{DoxyParamCaption})}
 
 
 
-Gets label from labels array. 
+Gets label byte by name. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -55,11 +54,11 @@ Gets label from labels array.
 \hline
 {\em name} & \\
 \hline
+{\em inp\+\_\+file} & \\
+\hline
 {\em byte} & \\
 \hline
-{\em line\+\_\+num} & \\
-\hline
-{\em first\+\_\+pass} & \\
+{\em final\+\_\+pass} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -73,69 +72,85 @@ Definition at line \mbox{\hyperlink{jump_8cpp_source_l00029}{29}} of file \mbox{
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00032\ \ \ \ \ assert(labels);}
-\DoxyCodeLine{00033\ \ \ \ \ assert(name);}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}};\ i++)\ \{}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (labels[i].name\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ strcmp(labels[i].name,\ name)\ ==\ 0)\ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ *\textcolor{keywordtype}{byte}\ =\ labels[i].\mbox{\hyperlink{struct_jump_label_a47eb97b0f19afde28f027698882d8550}{byte}};}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00040\ \ \ \ \ \}}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (!first\_pass)}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{jump_8cpp_ab1877074925c08a214b5f75c5cb0e335}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Unknown\ label\ \(\backslash\)"{}\%s\(\backslash\)"{}"{}},\ name,);}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
-\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00033\ \ \ \ \ assert(name.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{00034\ \ \ \ \ assert(inp\_file);}
+\DoxyCodeLine{00035\ \ \ \ \ assert(\textcolor{keywordtype}{byte});}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}};\ i++)\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{text__lib_8h_accfdbf6001411f4d546036819f3d00bd}{String\_strcmp}}(\mbox{\hyperlink{text__lib_8h_a0227c409258b64a76f4fc5299c0ae42e}{String\_TO\_c}}(labels[i].name),\ \mbox{\hyperlink{text__lib_8h_a0227c409258b64a76f4fc5299c0ae42e}{String\_TO\_c}}(name))\ ==\ 0)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ *\textcolor{keywordtype}{byte}\ =\ labels[i].\mbox{\hyperlink{struct_jump_label_a47eb97b0f19afde28f027698882d8550}{byte}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (final\_pass)}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{jump_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Unknown\ label\ \(\backslash\)"{}\%.*s\(\backslash\)"{}"{}},\ name.len,\ name.str);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00048\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{jump_8h_source_l00017}{Jump\+Label\+::byte}}, \mbox{\hyperlink{cmd_8h_source_l00016}{MAX\+\_\+\+LABEL\+\_\+\+NUM}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, and \mbox{\hyperlink{jump_8cpp_source_l00003}{THROW\+\_\+\+SYNTAX\+\_\+\+ERROR\+\_\+}}.
+References \mbox{\hyperlink{jump_8h_source_l00018}{Jump\+Label\+::byte}}, \mbox{\hyperlink{text__lib_8h_source_l00024}{String\+::len}}, \mbox{\hyperlink{cmd_8h_source_l00017}{MAX\+\_\+\+LABEL\+\_\+\+NUM}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, \mbox{\hyperlink{text__lib_8h_source_l00023}{String\+::str}}, \mbox{\hyperlink{text__lib_8h_source_l00151}{String\+\_\+strcmp()}}, \mbox{\hyperlink{text__lib_8h_source_l00038}{String\+\_\+\+TO\+\_\+c}}, and \mbox{\hyperlink{jump_8cpp_source_l00003}{THROW\+\_\+\+SYNTAX\+\_\+\+ERROR\+\_\+}}.
 
 
 
-Referenced by \mbox{\hyperlink{read_8cpp_source_l00031}{asm\+\_\+read\+\_\+args()}}.
+Referenced by \mbox{\hyperlink{read_8cpp_source_l00033}{asm\+\_\+read\+\_\+args()}}.
 
-\Hypertarget{jump_8cpp_ac49a4e643237ff9d209d1f1b9df40904}\label{jump_8cpp_ac49a4e643237ff9d209d1f1b9df40904} 
+\Hypertarget{jump_8cpp_a9f236543c60a67fb27ba9fae09eb32e8}\label{jump_8cpp_a9f236543c60a67fb27ba9fae09eb32e8} 
 \index{jump.cpp@{jump.cpp}!asm\_get\_label\_name@{asm\_get\_label\_name}}
 \index{asm\_get\_label\_name@{asm\_get\_label\_name}!jump.cpp@{jump.cpp}}
 \doxysubsubsection{\texorpdfstring{asm\_get\_label\_name()}{asm\_get\_label\_name()}}
-{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} asm\+\_\+get\+\_\+label\+\_\+name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}}]{labels,  }\item[{const \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\+\_\+int\+\_\+t}}}]{byte }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structc___string}{c\+\_\+\+String}} asm\+\_\+get\+\_\+label\+\_\+name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}}]{lables,  }\item[{const \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\+\_\+int\+\_\+t}}}]{byte }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{jump_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{jump_8cpp_source}{jump.\+cpp}}.
+Returns label name by byte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lables} & \\
+\hline
+{\em byte} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structc___string}{c\+\_\+\+String} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{jump_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{jump_8cpp_source}{jump.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}};\ i++)\ \{}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (labels[i].\textcolor{keywordtype}{byte}\ ==\ \textcolor{keywordtype}{byte})}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ labels[i].\mbox{\hyperlink{struct_jump_label_a1c44b5b778d489531336a39e02bb9cb8}{name}};}
-\DoxyCodeLine{00053\ \ \ \ \ \}}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}!Label\ name\ not\ found!"{}};}
-\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}};\ i++)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (labels[i].\textcolor{keywordtype}{byte}\ ==\ \textcolor{keywordtype}{byte})}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{labels[i].\mbox{\hyperlink{struct_jump_label_a0840f89616d10aeb07e92667452e0a58}{name}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}},\ labels[i].\mbox{\hyperlink{struct_jump_label_a0840f89616d10aeb07e92667452e0a58}{name}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\};}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{text__lib_8h_a62644cba8542352b76b0e4bf9eb25c73}{String\_CONST}}(\textcolor{stringliteral}{"{}!Label\ name\ not\ found!"{}});}
+\DoxyCodeLine{00058\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{cmd_8h_source_l00016}{MAX\+\_\+\+LABEL\+\_\+\+NUM}}, and \mbox{\hyperlink{jump_8h_source_l00016}{Jump\+Label\+::name}}.
+References \mbox{\hyperlink{text__lib_8h_source_l00024}{String\+::len}}, \mbox{\hyperlink{cmd_8h_source_l00017}{MAX\+\_\+\+LABEL\+\_\+\+NUM}}, \mbox{\hyperlink{jump_8h_source_l00017}{Jump\+Label\+::name}}, \mbox{\hyperlink{text__lib_8h_source_l00023}{String\+::str}}, and \mbox{\hyperlink{text__lib_8h_source_l00032}{String\+\_\+\+CONST}}.
 
 
 
 Referenced by \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}.
 
-\Hypertarget{jump_8cpp_ab2ccbbd12ce9667f1c48762d93c56daf}\label{jump_8cpp_ab2ccbbd12ce9667f1c48762d93c56daf} 
+\Hypertarget{jump_8cpp_abfa9520cd188b0949a9333504e23cbc7}\label{jump_8cpp_abfa9520cd188b0949a9333504e23cbc7} 
 \index{jump.cpp@{jump.cpp}!asm\_new\_label@{asm\_new\_label}}
 \index{asm\_new\_label@{asm\_new\_label}!jump.cpp@{jump.cpp}}
 \doxysubsubsection{\texorpdfstring{asm\_new\_label()}{asm\_new\_label()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+new\+\_\+label (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}}]{labels,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{const size\+\_\+t}]{byte,  }\item[{const size\+\_\+t}]{line\+\_\+num }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+new\+\_\+label (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_jump_label}{Jump\+Label}} \texorpdfstring{$\ast$}{*}}]{labels,  }\item[{const \mbox{\hyperlink{struct_string}{String}}}]{name,  }\item[{const \mbox{\hyperlink{struct_input_file_info}{Input\+File\+Info}} \texorpdfstring{$\ast$}{*}}]{inp\+\_\+file,  }\item[{const size\+\_\+t}]{byte }\end{DoxyParamCaption})}
 
 
 
-Puts new label to labels array. 
+Adds new label to labels. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -143,9 +158,9 @@ Puts new label to labels array.
 \hline
 {\em name} & \\
 \hline
-{\em byte} & \\
+{\em inp\+\_\+file} & \\
 \hline
-{\em line\+\_\+num} & \\
+{\em byte} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -153,36 +168,37 @@ Puts new label to labels array.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{jump_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{jump_8cpp_source}{jump.\+cpp}}.
+Definition at line \mbox{\hyperlink{jump_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{jump_8cpp_source}{jump.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00010\ \ \ \ \ assert(labels);}
-\DoxyCodeLine{00011\ \ \ \ \ assert(name);}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ assert(labels);}
+\DoxyCodeLine{00010\ \ \ \ \ assert(name.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{00011\ \ \ \ \ assert(inp\_file);}
 \DoxyCodeLine{00012\ }
 \DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}};\ i++)\ \{}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (labels[i].name\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ strcmp(labels[i].name,\ name)\ ==\ 0)}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{jump_8cpp_ab1877074925c08a214b5f75c5cb0e335}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Label\ name\ \(\backslash\)"{}\%s\(\backslash\)"{}\ used\ twice."{}},\ name,);}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{text__lib_8h_accfdbf6001411f4d546036819f3d00bd}{String\_strcmp}}(\mbox{\hyperlink{text__lib_8h_a0227c409258b64a76f4fc5299c0ae42e}{String\_TO\_c}}(labels[i].name),\ \mbox{\hyperlink{text__lib_8h_a0227c409258b64a76f4fc5299c0ae42e}{String\_TO\_c}}(name))\ ==\ 0)}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{jump_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Label\ name\ \(\backslash\)"{}\%.*s\(\backslash\)"{}\ used\ twice."{}},\ name.len,\ name.str);}
 \DoxyCodeLine{00016\ \ \ \ \ \}}
 \DoxyCodeLine{00017\ }
 \DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}};\ i++)\ \{}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (labels[i].name\ ==\ \textcolor{keyword}{nullptr}\ \&\&\ labels[i].\textcolor{keywordtype}{byte}\ ==\ -\/1)\ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ labels[i].\mbox{\hyperlink{struct_jump_label_a1c44b5b778d489531336a39e02bb9cb8}{name}}\ =\ name;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (labels[i].name.str\ ==\ \textcolor{keyword}{nullptr}\ \&\&\ labels[i].name.len\ ==\ 0\ \&\&\ labels[i].byte\ ==\ -\/1)\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ labels[i].\mbox{\hyperlink{struct_jump_label_a0840f89616d10aeb07e92667452e0a58}{name}}\ =\ name;}
 \DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ labels[i].\mbox{\hyperlink{struct_jump_label_a47eb97b0f19afde28f027698882d8550}{byte}}\ =\ byte;}
 \DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
 \DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00024\ \ \ \ \ \}}
 \DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{jump_8cpp_ab1877074925c08a214b5f75c5cb0e335}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Too\ many\ labels\ specified.\ Max\ \%zu."{}},\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}},);}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{jump_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Too\ many\ labels\ specified.\ Max\ \%zu."{}},\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}});}
 \DoxyCodeLine{00027\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{jump_8h_source_l00017}{Jump\+Label\+::byte}}, \mbox{\hyperlink{cmd_8h_source_l00016}{MAX\+\_\+\+LABEL\+\_\+\+NUM}}, \mbox{\hyperlink{jump_8h_source_l00016}{Jump\+Label\+::name}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, and \mbox{\hyperlink{jump_8cpp_source_l00003}{THROW\+\_\+\+SYNTAX\+\_\+\+ERROR\+\_\+}}.
+References \mbox{\hyperlink{jump_8h_source_l00018}{Jump\+Label\+::byte}}, \mbox{\hyperlink{text__lib_8h_source_l00024}{String\+::len}}, \mbox{\hyperlink{cmd_8h_source_l00017}{MAX\+\_\+\+LABEL\+\_\+\+NUM}}, \mbox{\hyperlink{jump_8h_source_l00017}{Jump\+Label\+::name}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, \mbox{\hyperlink{text__lib_8h_source_l00023}{String\+::str}}, \mbox{\hyperlink{text__lib_8h_source_l00151}{String\+\_\+strcmp()}}, \mbox{\hyperlink{text__lib_8h_source_l00038}{String\+\_\+\+TO\+\_\+c}}, and \mbox{\hyperlink{jump_8cpp_source_l00003}{THROW\+\_\+\+SYNTAX\+\_\+\+ERROR\+\_\+}}.
 
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00077}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}.
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00080}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}.
 

@@ -36,11 +36,11 @@
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00033}00033\ \}}
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00034}00034\ }
-\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00035}\mbox{\hyperlink{cmd_8cpp_ab9418768cddebf9e17af4644cc3b93fc}{00035}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_cmd_info}{CmdInfo}}*\ \mbox{\hyperlink{cmd_8cpp_ab9418768cddebf9e17af4644cc3b93fc}{find\_command\_by\_name}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name)\ \{}
-\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00036}00036\ \ \ \ \ assert(name);}
+\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00035}\mbox{\hyperlink{cmd_8cpp_a354e23dddbbfc5534320a6c3ba894a5b}{00035}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_cmd_info}{CmdInfo}}*\ \mbox{\hyperlink{cmd_8cpp_a354e23dddbbfc5534320a6c3ba894a5b}{find\_command\_by\_name}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00036}00036\ \ \ \ \ assert(name.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00037}00037\ }
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_aeb56c6b7cc2375d32bf528f71e8d34a0}{CMDS\_DICT\_SIZE}};\ i++)}
-\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcasecmp(\mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\_DICT}}[i].name,\ name)\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{text__lib_8h_a6420b100c6752639f1e1f2378b89820d}{String\_strcasecmp}}(\mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\_DICT}}[i].name,\ \mbox{\hyperlink{text__lib_8h_a0227c409258b64a76f4fc5299c0ae42e}{String\_TO\_c}}(name))\ ==\ 0)}
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\_DICT}}\ +\ i;}
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00041}00041\ }
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
@@ -54,11 +54,11 @@
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00051}00051\ \}}
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00052}00052\ }
-\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00053}\mbox{\hyperlink{cmd_8cpp_a21261870d3dfc4b4e1ce443a6b1477cc}{00053}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_reg_info}{RegInfo}}*\ \mbox{\hyperlink{cmd_8cpp_a21261870d3dfc4b4e1ce443a6b1477cc}{find\_reg\_by\_name}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name)\ \{}
-\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00054}00054\ \ \ \ \ assert(name);}
+\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00053}\mbox{\hyperlink{cmd_8cpp_abd1dd6c1800194955343388311c50e9e}{00053}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_reg_info}{RegInfo}}*\ \mbox{\hyperlink{cmd_8cpp_abd1dd6c1800194955343388311c50e9e}{find\_reg\_by\_name}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00054}00054\ \ \ \ \ assert(name.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00055}00055\ }
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a55559e71614b4b4ba24d073b1b813120}{REGS\_NUM}};\ i++)}
-\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(\mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}[i].name,\ name)\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{text__lib_8h_accfdbf6001411f4d546036819f3d00bd}{String\_strcmp}}(\mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}[i].name,\ \mbox{\hyperlink{text__lib_8h_a0227c409258b64a76f4fc5299c0ae42e}{String\_TO\_c}}(name))\ ==\ 0)}
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}\ +\ i;}
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00059}00059\ }
 \DoxyCodeLine{\Hypertarget{cmd_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}

@@ -1,5 +1,7 @@
 var dir_785453eeba93c7ee73b2f8df063bd993 =
 [
+    [ "errors.cpp", "errors_8cpp.html", "errors_8cpp" ],
+    [ "errors.h", "errors_8h.html", "errors_8h" ],
     [ "jump.cpp", "jump_8cpp.html", "jump_8cpp" ],
     [ "jump.h", "jump_8h.html", "jump_8h" ],
     [ "listing.cpp", "listing_8cpp.html", "listing_8cpp" ],

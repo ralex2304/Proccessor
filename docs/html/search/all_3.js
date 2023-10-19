@@ -15,7 +15,7 @@ var searchData=
   ['description_12',['description',['../struct_cmd_info.html#ae96c1b352223eed37a7c9c16761e176d',1,'CmdInfo::description'],['../struct_argument.html#adb43c510da59c8a0c88611a0781f96d7',1,'Argument::description']]],
   ['detor_13',['detor',['../struct_input_data.html#a007abeabd2f7b29f15b38b52cf4f7010',1,'InputData']]],
   ['disasm_5fparse_14',['disasm_parse',['../disassembler_8cpp.html#a6713d7a3995575e1981fb20ab849184a',1,'disasm_parse(const char *data, const size_t size, const char *output_filename, const bool debug_mode):&#160;disassembler.cpp'],['../disassembler_8h.html#a6713d7a3995575e1981fb20ab849184a',1,'disasm_parse(const char *data, const size_t size, const char *output_filename, const bool debug_mode):&#160;disassembler.cpp']]],
-  ['disasm_5fwrite_5fsignature_15',['disasm_write_signature',['../disassembler_8cpp.html#abd2c4a1dd7b7519c51d82cc56570d655',1,'disasm_write_signature(FILE *file, const FileHeader header):&#160;disassembler.cpp'],['../disassembler_8h.html#a82bd6eff5ff043002e90f38b8ca85c32',1,'disasm_write_signature(FILE *file, const FileHeader sign):&#160;disassembler.cpp']]],
+  ['disasm_5fwrite_5fheader_15',['disasm_write_header',['../disassembler_8cpp.html#acade6b71b297388f7d7b85f9bcdafe8d',1,'disasm_write_header(FILE *file, const FileHeader header):&#160;disassembler.cpp'],['../disassembler_8h.html#acade6b71b297388f7d7b85f9bcdafe8d',1,'disasm_write_header(FILE *file, const FileHeader header):&#160;disassembler.cpp']]],
   ['disassembler_2ecpp_16',['disassembler.cpp',['../disassembler_8cpp.html',1,'']]],
   ['disassembler_2ed_17',['disassembler.d',['../disassembler_8d.html',1,'']]],
   ['disassembler_2eh_18',['disassembler.h',['../disassembler_8h.html',1,'']]],

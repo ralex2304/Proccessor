@@ -13,7 +13,7 @@
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{struct_spu_data}{Spu\+Data}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Keeps spu structs and variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -97,7 +97,7 @@ Definition at line \mbox{\hyperlink{spu_8cpp_source_l00107}{107}} of file \mbox{
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{cmd_8h_source_l00131}{Cmd\+::byte}}, \mbox{\hyperlink{console_8h_source_l00033}{CONSOLE\+\_\+\+RED}}, \mbox{\hyperlink{cmd_8h_source_l00129}{Cmd\+::info}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, \mbox{\hyperlink{cmd_8h_source_l00094}{Cmd\+Info\+::num}}, \mbox{\hyperlink{stack_8h_source_l00036}{Stack\+::\+OK}}, \mbox{\hyperlink{cmd_8h_source_l00024}{Cmd\+Byte\+::ram}}, \mbox{\hyperlink{statuses_8h_source_l00020}{Status\+::\+RUNTIME\+\_\+\+ERROR}}, \mbox{\hyperlink{stack_8cpp_source_l00228}{stk\+\_\+print\+\_\+error\+\_\+to\+\_\+user()}}, and \mbox{\hyperlink{spu_8cpp_source_l00029}{THROW\+\_\+\+RUNTIME\+\_\+\+ERROR\+\_\+}}.
+References \mbox{\hyperlink{cmd_8h_source_l00165}{Cmd\+::byte}}, \mbox{\hyperlink{console_8h_source_l00033}{CONSOLE\+\_\+\+RED}}, \mbox{\hyperlink{cmd_8h_source_l00163}{Cmd\+::info}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, \mbox{\hyperlink{cmd_8h_source_l00118}{Cmd\+Info\+::num}}, \mbox{\hyperlink{stack_8h_source_l00036}{Stack\+::\+OK}}, \mbox{\hyperlink{cmd_8h_source_l00028}{Cmd\+Byte\+::ram}}, \mbox{\hyperlink{statuses_8h_source_l00020}{Status\+::\+RUNTIME\+\_\+\+ERROR}}, \mbox{\hyperlink{stack_8cpp_source_l00228}{stk\+\_\+print\+\_\+error\+\_\+to\+\_\+user()}}, and \mbox{\hyperlink{spu_8cpp_source_l00029}{THROW\+\_\+\+RUNTIME\+\_\+\+ERROR\+\_\+}}.
 
 
 
@@ -118,20 +118,20 @@ int last read symbol (EOF if end of input reached)
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{spu_8h_source_l00061}{61}} of file \mbox{\hyperlink{spu_8h_source}{spu.\+h}}.
+Definition at line \mbox{\hyperlink{spu_8h_source_l00064}{64}} of file \mbox{\hyperlink{spu_8h_source}{spu.\+h}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{while}\ ((c\ =\ getchar())\ !=\ \textcolor{charliteral}{'\(\backslash\)n'}\ \&\&\ c\ !=\ EOF)\ \{\}}
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ c;}
-\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{while}\ ((c\ =\ getchar())\ !=\ \textcolor{charliteral}{'\(\backslash\)n'}\ \&\&\ c\ !=\ EOF)\ \{\}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{return}\ c;}
+\DoxyCodeLine{00068\ \}}
 
 \end{DoxyCode}
 
 
-Referenced by \mbox{\hyperlink{spu_8h_source_l00072}{spu\+\_\+get\+\_\+imm\+\_\+from\+\_\+input()}}.
+Referenced by \mbox{\hyperlink{spu_8h_source_l00075}{spu\+\_\+get\+\_\+imm\+\_\+from\+\_\+input()}}.
 
 \Hypertarget{spu_8h_a6ef819013e0bae6f935eba0644d137e8}\label{spu_8h_a6ef819013e0bae6f935eba0644d137e8} 
 \index{spu.h@{spu.h}!spu\_get\_imm\_from\_input@{spu\_get\_imm\_from\_input}}
@@ -148,36 +148,36 @@ double NAN if error
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{spu_8h_source_l00072}{72}} of file \mbox{\hyperlink{spu_8h_source}{spu.\+h}}.
+Definition at line \mbox{\hyperlink{spu_8h_source_l00075}{75}} of file \mbox{\hyperlink{spu_8h_source}{spu.\+h}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{double}\ x\ =\ NAN;}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ ssize\_t\ MAX\_INPUT\_ATTEMPTS\ =\ 5;}
-\DoxyCodeLine{00076\ \ \ \ \ ssize\_t\ attempts\ =\ MAX\_INPUT\_ATTEMPTS;}
-\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{while}\ (attempts-\/-\/)\ \{}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Enter\ double\ number:\ "{}});}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scanf(\textcolor{stringliteral}{"{}\%lf"{}},\ \&x)\ ==\ 1)}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{double}\ x\ =\ NAN;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ ssize\_t\ MAX\_INPUT\_ATTEMPTS\ =\ 5;}
+\DoxyCodeLine{00079\ \ \ \ \ ssize\_t\ attempts\ =\ MAX\_INPUT\_ATTEMPTS;}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{while}\ (attempts-\/-\/)\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Enter\ double\ number:\ "{}});}
 \DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{spu_8h_a20990021c554572a00ad8d4c5663fc81}{spu\_flush\_input}}()\ ==\ EOF)}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scanf(\textcolor{stringliteral}{"{}\%lf"{}},\ \&x)\ ==\ 1)}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
 \DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Wrong\ input.\ Try\ again\(\backslash\)n"{}});}
-\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{spu_8h_a20990021c554572a00ad8d4c5663fc81}{spu\_flush\_input}}()\ ==\ EOF)}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{00088\ }
-\DoxyCodeLine{00089\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Too\ many\ wrong\ attempts\(\backslash\)n"{}});}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{return}\ NAN;}
-\DoxyCodeLine{00092\ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Wrong\ input.\ Try\ again\(\backslash\)n"{}});}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Too\ many\ wrong\ attempts\(\backslash\)n"{}});}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{return}\ NAN;}
+\DoxyCodeLine{00095\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{spu_8h_source_l00061}{spu\+\_\+flush\+\_\+input()}}.
+References \mbox{\hyperlink{spu_8h_source_l00064}{spu\+\_\+flush\+\_\+input()}}.
 
 \Hypertarget{spu_8h_ae261bf9063f48da30ac455d8337386fe}\label{spu_8h_ae261bf9063f48da30ac455d8337386fe} 
 \index{spu.h@{spu.h}!spu\_parse@{spu\_parse}}
@@ -265,7 +265,7 @@ Definition at line \mbox{\hyperlink{spu_8cpp_source_l00039}{39}} of file \mbox{\
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{cmd_8h_source_l00096}{Cmd\+Info\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00132}{Cmd\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00131}{Cmd\+::byte}}, \mbox{\hyperlink{spu_8cpp_source_l00005}{Spu\+Data\+::ctor()}}, \mbox{\hyperlink{spu_8cpp_source_l00034}{DATA\+\_\+\+GET\+\_\+\+VAL\+\_\+}}, \mbox{\hyperlink{spu_8cpp_source_l00017}{Spu\+Data\+::dtor()}}, \mbox{\hyperlink{cmd_8h_source_l00126}{FILE\+\_\+\+HEADER}}, \mbox{\hyperlink{cmd_8cpp_source_l00027}{find\+\_\+command\+\_\+by\+\_\+num()}}, \mbox{\hyperlink{cmd_8h_source_l00023}{Cmd\+Byte\+::imm}}, \mbox{\hyperlink{cmd_8h_source_l00068}{Cmd\+Args\+::imm\+\_\+double}}, \mbox{\hyperlink{cmd_8h_source_l00070}{Cmd\+Args\+::imm\+\_\+int}}, \mbox{\hyperlink{cmd_8h_source_l00129}{Cmd\+::info}}, \mbox{\hyperlink{cmd_8h_source_l00078}{Args\+En\+::label}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, \mbox{\hyperlink{cmd_8h_source_l00021}{Cmd\+Byte\+::num}}, \mbox{\hyperlink{cmd_8h_source_l00024}{Cmd\+Byte\+::ram}}, \mbox{\hyperlink{cmd_8h_source_l00022}{Cmd\+Byte\+::reg}}, \mbox{\hyperlink{cmd_8h_source_l00069}{Cmd\+Args\+::reg}}, \mbox{\hyperlink{statuses_8h_source_l00023}{Status\+::\+SIGNATURE\+\_\+\+ERROR}}, \mbox{\hyperlink{cmd_8cpp_source_l00021}{Cmd\+::size()}}, \mbox{\hyperlink{spu_8cpp_source_l00107}{spu\+\_\+execute\+\_\+command()}}, \mbox{\hyperlink{statuses_8h_source_l00055}{STATUS\+\_\+\+CHECK}}, \mbox{\hyperlink{spu_8h_source_l00016}{Spu\+Data\+::stk}}, \mbox{\hyperlink{stack_8cpp_source_l00069}{stk\+\_\+dtor()}}, and \mbox{\hyperlink{spu_8cpp_source_l00029}{THROW\+\_\+\+RUNTIME\+\_\+\+ERROR\+\_\+}}.
+References \mbox{\hyperlink{cmd_8h_source_l00120}{Cmd\+Info\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00166}{Cmd\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00165}{Cmd\+::byte}}, \mbox{\hyperlink{spu_8cpp_source_l00005}{Spu\+Data\+::ctor()}}, \mbox{\hyperlink{spu_8cpp_source_l00034}{DATA\+\_\+\+GET\+\_\+\+VAL\+\_\+}}, \mbox{\hyperlink{spu_8cpp_source_l00017}{Spu\+Data\+::dtor()}}, \mbox{\hyperlink{cmd_8h_source_l00157}{FILE\+\_\+\+HEADER}}, \mbox{\hyperlink{cmd_8cpp_source_l00027}{find\+\_\+command\+\_\+by\+\_\+num()}}, \mbox{\hyperlink{cmd_8h_source_l00027}{Cmd\+Byte\+::imm}}, \mbox{\hyperlink{cmd_8h_source_l00084}{Cmd\+Args\+::imm\+\_\+double}}, \mbox{\hyperlink{cmd_8h_source_l00086}{Cmd\+Args\+::imm\+\_\+int}}, \mbox{\hyperlink{cmd_8h_source_l00163}{Cmd\+::info}}, \mbox{\hyperlink{cmd_8h_source_l00098}{Args\+En\+::label}}, \mbox{\hyperlink{statuses_8h_source_l00013}{Status\+::\+NORMAL\+\_\+\+WORK}}, \mbox{\hyperlink{cmd_8h_source_l00025}{Cmd\+Byte\+::num}}, \mbox{\hyperlink{cmd_8h_source_l00028}{Cmd\+Byte\+::ram}}, \mbox{\hyperlink{cmd_8h_source_l00026}{Cmd\+Byte\+::reg}}, \mbox{\hyperlink{cmd_8h_source_l00085}{Cmd\+Args\+::reg}}, \mbox{\hyperlink{statuses_8h_source_l00023}{Status\+::\+SIGNATURE\+\_\+\+ERROR}}, \mbox{\hyperlink{cmd_8cpp_source_l00021}{Cmd\+::size()}}, \mbox{\hyperlink{spu_8cpp_source_l00107}{spu\+\_\+execute\+\_\+command()}}, \mbox{\hyperlink{statuses_8h_source_l00055}{STATUS\+\_\+\+CHECK}}, \mbox{\hyperlink{spu_8h_source_l00019}{Spu\+Data\+::stk}}, \mbox{\hyperlink{stack_8cpp_source_l00069}{stk\+\_\+dtor()}}, and \mbox{\hyperlink{spu_8cpp_source_l00029}{THROW\+\_\+\+RUNTIME\+\_\+\+ERROR\+\_\+}}.
 
 
 
@@ -293,12 +293,12 @@ false
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{spu_8h_source_l00052}{52}} of file \mbox{\hyperlink{spu_8h_source}{spu.\+h}}.
+Definition at line \mbox{\hyperlink{spu_8h_source_l00055}{55}} of file \mbox{\hyperlink{spu_8h_source}{spu.\+h}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ printf(\textcolor{stringliteral}{"{}\%lf\(\backslash\)n"{}},\ x)\ >\ 0;}
-\DoxyCodeLine{00054\ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{return}\ printf(\textcolor{stringliteral}{"{}\%lf\(\backslash\)n"{}},\ x)\ >\ 0;}
+\DoxyCodeLine{00057\ \}}
 
 \end{DoxyCode}

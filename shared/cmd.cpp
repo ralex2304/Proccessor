@@ -32,11 +32,11 @@ const CmdInfo* find_command_by_num(const Cmd_num_t num) {
     return nullptr;
 }
 
-const CmdInfo* find_command_by_name(const char* name) {
-    assert(name);
+const CmdInfo* find_command_by_name(const String name) {
+    assert(name.str);
 
     for (size_t i = 0; i < CMDS_DICT_SIZE; i++)
-        if (strcasecmp(CMDS_DICT[i].name, name) == 0)
+        if (String_strcasecmp(CMDS_DICT[i].name, String_TO_c(name)) == 0)
             return CMDS_DICT + i;
 
     return nullptr;
@@ -50,11 +50,11 @@ const RegInfo* find_reg_by_num(const RegNum_t num) {
     return nullptr;
 }
 
-const RegInfo* find_reg_by_name(const char* name) {
-    assert(name);
+const RegInfo* find_reg_by_name(const String name) {
+    assert(name.str);
 
     for (size_t i = 0; i < REGS_NUM; i++)
-        if (strcmp(REGS_DICT[i].name, name) == 0)
+        if (String_strcmp(REGS_DICT[i].name, String_TO_c(name)) == 0)
             return REGS_DICT + i;
 
     return nullptr;

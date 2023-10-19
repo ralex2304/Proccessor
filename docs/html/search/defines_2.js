@@ -12,5 +12,6 @@ var searchData=
   ['color_5fwhite_9',['COLOR_WHITE',['../console_8h.html#a9b44987ffdc2af19b635206b94334b69',1,'console.h']]],
   ['color_5fyellow_10',['COLOR_YELLOW',['../console_8h.html#a4534b577b74a58b0f4b7be027af664e0',1,'console.h']]],
   ['console_5fgreen_11',['CONSOLE_GREEN',['../console_8h.html#a3d65c0a458538bfc412e586e89dbf130',1,'console.h']]],
-  ['console_5fred_12',['CONSOLE_RED',['../console_8h.html#ad220b7c98ce4bd06bf25860ca62d7aba',1,'console.h']]]
+  ['console_5fred_12',['CONSOLE_RED',['../console_8h.html#ad220b7c98ce4bd06bf25860ca62d7aba',1,'console.h']]],
+  ['console_5fstyle_13',['CONSOLE_STYLE',['../console_8h.html#a038ef7e954c5cdc42f96cabd07c56dec',1,'console.h']]]
 ];

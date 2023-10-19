@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ptr_5fvalid_2ecpp_0',['ptr_valid.cpp',['../ptr__valid_8cpp.html',1,'']]],
-  ['ptr_5fvalid_2ed_1',['ptr_valid.d',['../assembler_2build_2shared_2lib_2utils_2ptr__valid_8d.html',1,'(Global Namespace)'],['../disassembler_2build_2shared_2lib_2utils_2ptr__valid_8d.html',1,'(Global Namespace)'],['../spu_2build_2shared_2lib_2utils_2ptr__valid_8d.html',1,'(Global Namespace)']]],
-  ['ptr_5fvalid_2eh_2',['ptr_valid.h',['../ptr__valid_8h.html',1,'']]]
+  ['macros_2eh_0',['macros.h',['../macros_8h.html',1,'']]],
+  ['main_2ecpp_1',['main.cpp',['../assembler_2src_2main_8cpp.html',1,'(Global Namespace)'],['../disassembler_2src_2main_8cpp.html',1,'(Global Namespace)'],['../spu_2src_2main_8cpp.html',1,'(Global Namespace)']]],
+  ['main_2ed_2',['main.d',['../assembler_2build_2own_2src_2main_8d.html',1,'(Global Namespace)'],['../disassembler_2build_2own_2src_2main_8d.html',1,'(Global Namespace)'],['../disassembler_2build_2src_2main_8d.html',1,'(Global Namespace)'],['../spu_2build_2own_2src_2main_8d.html',1,'(Global Namespace)']]]
 ];

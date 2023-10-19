@@ -12,10 +12,13 @@
 #include "stack/stack.h"
 #include "lib/utils/console.h"
 
+/**
+ * @brief Keeps spu structs and variables
+ */
 struct SpuData {
-    Stack stk = {};
+    Stack stk = {};                     //< Stack
 
-    Imm_double_t reg[REGS_NUM] = {};
+    Imm_double_t reg[REGS_NUM] = {};    //< registers
 
     Status::Statuses ctor();
     Status::Statuses dtor();

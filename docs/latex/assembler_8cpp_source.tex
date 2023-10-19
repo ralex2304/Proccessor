@@ -16,147 +16,150 @@
 \DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
 \DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while(0)}}
 \DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00014}00014\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00015}\mbox{\hyperlink{assembler_8cpp_a0ac9e74c3eab7bdb96b26651336a456f}{00015}}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{assembler_8cpp_a0ac9e74c3eab7bdb96b26651336a456f}{assemeble\_and\_write}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_input_data}{InputData}}*\ input\_data,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ bin\_filename,}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ listing\_filename)\ \{}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00015}\mbox{\hyperlink{assembler_8cpp_aeb3f3fe5f00d320592bc3d0246d9399b}{00015}}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{assembler_8cpp_aeb3f3fe5f00d320592bc3d0246d9399b}{assemeble\_and\_write}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_input_data}{InputData}}*\ input\_data,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ bin\_filename,}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ inp\_filename,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ listing\_filename)\ \{}
 \DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00017}00017\ \ \ \ \ assert(input\_data);}
 \DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00018}00018\ \ \ \ \ assert(bin\_filename);}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00020}00020\ \ \ \ \ FILE*\ listing\_file\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{struct_buffer}{Buffer}}\ buf\ =\ \{\};}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (!buf.\mbox{\hyperlink{struct_buffer_ad1535950a41eefad8fb8c7706af8f5a7}{ctor}}())}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7}{Status::MEMORY\_EXCEED}};}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{struct_jump_label}{JumpLabel}}\ labels[\mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}}]\ =\ \{\};}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{write_8cpp_a37c25beca46b1097b2c68bd9e084cb6a}{asm\_write\_header}}(\&buf,\ listing\_file,\ \textcolor{keyword}{true}),\ \mbox{\hyperlink{assembler_8cpp_ab2dc970b54859fa32bab4d3204a0a2b5}{LOCAL\_DTOR\_}}());}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ input\_data-\/>\mbox{\hyperlink{struct_input_data_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}};\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{assembler_8cpp_a37fa39e56f0a10f9a0957f09d441fcc7}{asm\_parse\_and\_write\_line}}(\&buf,\ input\_data-\/>\mbox{\hyperlink{struct_input_data_a21828a6c4ee0b4519f2956d450e4762b}{lines}}[i],}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ labels,\ i\ +\ 1,\ listing\_file,\ \textcolor{keyword}{true}),}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_ab2dc970b54859fa32bab4d3204a0a2b5}{LOCAL\_DTOR\_}}());}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00034}00034\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00035}00035\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ Second\ pass}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (listing\_filename\ !=\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_a896c6cb0d43540a9b3be6eb4b4283fb8}{FILE\_CHECK\_}}(\mbox{\hyperlink{file_8cpp_abb897c7e353e490dd5c92b5a13d14fa6}{file\_open}}(\&listing\_file,\ listing\_filename,\ \textcolor{stringliteral}{"{}wb"{}}),\ \mbox{\hyperlink{assembler_8cpp_ab2dc970b54859fa32bab4d3204a0a2b5}{LOCAL\_DTOR\_}}());}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00019}00019\ \ \ \ \ assert(inp\_filename);}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00021}00021\ \ \ \ \ FILE*\ listing\_file\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{struct_input_file_info}{InputFileInfo}}\ inp\_file\ =\ \{\{\},\ 0,\ \textcolor{keyword}{nullptr},\ inp\_filename\};}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{struct_buffer}{Buffer}}\ buf\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (!buf.\mbox{\hyperlink{struct_buffer_ad1535950a41eefad8fb8c7706af8f5a7}{ctor}}())}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7}{Status::MEMORY\_EXCEED}};}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{struct_jump_label}{JumpLabel}}\ labels[\mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}}]\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{write_8cpp_a37c25beca46b1097b2c68bd9e084cb6a}{asm\_write\_header}}(\&buf,\ listing\_file,\ \textcolor{keyword}{true}),\ \mbox{\hyperlink{assembler_8cpp_ab2dc970b54859fa32bab4d3204a0a2b5}{LOCAL\_DTOR\_}}());}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ input\_data-\/>\mbox{\hyperlink{struct_input_data_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}};\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ inp\_file.\mbox{\hyperlink{struct_input_file_info_abcfe72db9b1599647de9a7457eeb193c}{line\_num}}\ =\ i\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ inp\_file.\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}\ =\ input\_data-\/>\mbox{\hyperlink{struct_input_data_a21828a6c4ee0b4519f2956d450e4762b}{lines}}[i];}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{assembler_8cpp_a75b5d6b159699d95557c1783eb511b17}{asm\_parse\_and\_write\_line}}(\&buf,\ labels,\ \&inp\_file,\ \textcolor{keyword}{false},\ listing\_file),}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_ab2dc970b54859fa32bab4d3204a0a2b5}{LOCAL\_DTOR\_}}());}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00039}00039\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00041}00041\ \ \ \ \ buf.\mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{size}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ Second\ pass}}
 \DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00042}00042\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{write_8cpp_a37c25beca46b1097b2c68bd9e084cb6a}{asm\_write\_header}}(\&buf,\ listing\_file,\ \textcolor{keyword}{false}),\ \mbox{\hyperlink{assembler_8cpp_ab2dc970b54859fa32bab4d3204a0a2b5}{LOCAL\_DTOR\_}}());}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00044}00044\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{if}\ (listing\_filename\ !=\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{file_8cpp_acecf8d97922690834a1cd9ba8915a82b}{file\_printf}}(listing\_file,\ \textcolor{stringliteral}{"{};line\ -\/\ byte\ -\/\ command\(\backslash\)n"{}})\ ==\ EOF)}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ input\_data-\/>\mbox{\hyperlink{struct_input_data_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}};\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{assembler_8cpp_a37fa39e56f0a10f9a0957f09d441fcc7}{asm\_parse\_and\_write\_line}}(\&buf,\ input\_data-\/>\mbox{\hyperlink{struct_input_data_a21828a6c4ee0b4519f2956d450e4762b}{lines}}[i],}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ labels,\ i\ +\ 1,\ listing\_file,\ \textcolor{keyword}{false}),}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_ab2dc970b54859fa32bab4d3204a0a2b5}{LOCAL\_DTOR\_}}());}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00053}00053\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00054}00054\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{if}\ (listing\_filename\ !=\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_a896c6cb0d43540a9b3be6eb4b4283fb8}{FILE\_CHECK\_}}(\mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(listing\_file),\ buf.\mbox{\hyperlink{struct_buffer_accef32f248ec05ad669b1de0dc3ae6a5}{dtor}}());}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (listing\_filename\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_a896c6cb0d43540a9b3be6eb4b4283fb8}{FILE\_CHECK\_}}(\mbox{\hyperlink{file_8cpp_abb897c7e353e490dd5c92b5a13d14fa6}{file\_open}}(\&listing\_file,\ listing\_filename,\ \textcolor{stringliteral}{"{}wb"{}}),\ \mbox{\hyperlink{assembler_8cpp_ab2dc970b54859fa32bab4d3204a0a2b5}{LOCAL\_DTOR\_}}());}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00046}00046\ \ \ \ \ buf.\mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{size}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{write_8cpp_a37c25beca46b1097b2c68bd9e084cb6a}{asm\_write\_header}}(\&buf,\ listing\_file,\ \textcolor{keyword}{false}),\ \mbox{\hyperlink{assembler_8cpp_ab2dc970b54859fa32bab4d3204a0a2b5}{LOCAL\_DTOR\_}}());}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (listing\_filename\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{file_8cpp_acecf8d97922690834a1cd9ba8915a82b}{file\_printf}}(listing\_file,\ \textcolor{stringliteral}{"{};line\ -\/\ byte\ -\/\ command\(\backslash\)n"{}})\ ==\ EOF)}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ input\_data-\/>\mbox{\hyperlink{struct_input_data_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}};\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ inp\_file.\mbox{\hyperlink{struct_input_file_info_abcfe72db9b1599647de9a7457eeb193c}{line\_num}}\ =\ i\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ inp\_file.\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}\ =\ input\_data-\/>\mbox{\hyperlink{struct_input_data_a21828a6c4ee0b4519f2956d450e4762b}{lines}}[i];}
 \DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00057}00057\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//\ Binary\ file\ write}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{file_8cpp_a6ab5d9a2ccdbe22341b16fc8c101a484}{file\_open\_write\_bytes\_close}}(bin\_filename,\ buf.\mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{data}},\ buf.\mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{size}}),\ \mbox{\hyperlink{assembler_8cpp_ab2dc970b54859fa32bab4d3204a0a2b5}{LOCAL\_DTOR\_}}());}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{assembler_8cpp_a75b5d6b159699d95557c1783eb511b17}{asm\_parse\_and\_write\_line}}(\&buf,\ labels,\ \&inp\_file,\ \textcolor{keyword}{true},\ listing\_file),}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_ab2dc970b54859fa32bab4d3204a0a2b5}{LOCAL\_DTOR\_}}());}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00060}00060\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00061}00061\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00063}00063\ \}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00064}00064\ \textcolor{preprocessor}{\#undef\ LOCAL\_DTOR\_}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{if}\ (listing\_filename\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_a896c6cb0d43540a9b3be6eb4b4283fb8}{FILE\_CHECK\_}}(\mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(listing\_file),\ \mbox{\hyperlink{assembler_8cpp_ab2dc970b54859fa32bab4d3204a0a2b5}{LOCAL\_DTOR\_}}());}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{comment}{//\ Binary\ file\ write}}
 \DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00066}00066\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00067}00067\ \textcolor{preprocessor}{\#define\ LOCAL\_DTOR\_()\ \ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00068}00068\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FREE(str);\ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00069}00069\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while(0)}}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00067}00067\ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{file_8cpp_a6ab5d9a2ccdbe22341b16fc8c101a484}{file\_open\_write\_bytes\_close}}(bin\_filename,\ buf.\mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{data}},\ buf.\mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{size}}),\ \mbox{\hyperlink{assembler_8cpp_ab2dc970b54859fa32bab4d3204a0a2b5}{LOCAL\_DTOR\_}}());}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00069}00069\ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_ab2dc970b54859fa32bab4d3204a0a2b5}{LOCAL\_DTOR\_}}();}
 \DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00070}00070\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00071}\mbox{\hyperlink{assembler_8cpp_ab1877074925c08a214b5f75c5cb0e335}{00071}}\ \textcolor{preprocessor}{\#define\ THROW\_SYNTAX\_ERROR\_(text,\ ...)\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00072}00072\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ CONSOLE\_RED("{}Syntax\ error.\ "{}}\ text)\ "{}\ Line\ \%zu\(\backslash\)n"{},\ \_\_VA\_ARGS\_\_\ line\_num);\(\backslash\)}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ LOCAL\_DTOR\_();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ return\ Status::SYNTAX\_ERROR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \}\ while(0)}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00076}00076\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00077}\mbox{\hyperlink{assembler_8cpp_a37fa39e56f0a10f9a0957f09d441fcc7}{00077}}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{assembler_8cpp_a37fa39e56f0a10f9a0957f09d441fcc7}{asm\_parse\_and\_write\_line}}(\mbox{\hyperlink{struct_buffer}{Buffer}}*\ buf,\ \mbox{\hyperlink{struct_string}{String}}\ line,\ \mbox{\hyperlink{struct_jump_label}{JumpLabel}}*\ labels,}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ line\_num,\ FILE*\ listing\_file,}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ first\_pass)\ \{}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00080}00080\ \ \ \ \ assert(buf);}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00081}00081\ \ \ \ \ assert(line.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00082}00082\ \ \ \ \ assert(labels);}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00083}00083\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00084}00084\ \ \ \ \ \mbox{\hyperlink{struct_cmd}{Cmd}}\ cmd\ =\ \{\};}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00085}00085\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordtype}{char}*\ str\ =\ strdup(line.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{if}\ (str\ ==\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7}{Status::MEMORY\_EXCEED}};}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00072}00072\ \}}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00073}00073\ \textcolor{preprocessor}{\#undef\ LOCAL\_DTOR\_}}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00076}\mbox{\hyperlink{assembler_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{00076}}\ \textcolor{preprocessor}{\#define\ THROW\_SYNTAX\_ERROR\_(...)\ \ return\ asm\_throw\_syntax\_error(tokens[cur\_token],\ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00077}00077\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inp\_file,\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00078}00078\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00080}\mbox{\hyperlink{assembler_8cpp_a75b5d6b159699d95557c1783eb511b17}{00080}}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{assembler_8cpp_a75b5d6b159699d95557c1783eb511b17}{asm\_parse\_and\_write\_line}}(\mbox{\hyperlink{struct_buffer}{Buffer}}*\ buf,\ \mbox{\hyperlink{struct_jump_label}{JumpLabel}}*\ labels,\ \mbox{\hyperlink{struct_input_file_info}{InputFileInfo}}*\ inp\_file,}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ final\_pass,\ FILE*\ listing\_file)\ \{}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00082}00082\ \ \ \ \ assert(buf);}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00083}00083\ \ \ \ \ assert(inp\_file);}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00084}00084\ \ \ \ \ assert(inp\_file-\/>\mbox{\hyperlink{struct_input_file_info_ade8c5dc519ae52c36d351cbaf07a458b}{filename}});}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00085}00085\ \ \ \ \ assert(inp\_file-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00086}00086\ \ \ \ \ assert(labels);}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{struct_cmd}{Cmd}}\ cmd\ =\ \{\};}
 \DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00089}00089\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ comment\ =\ \mbox{\hyperlink{text__lib_8h_a398d656d25ab5e1fd3a6b701b037e399}{text\_throw\_out\_comment}}(str);}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00090}00090\ \ \ \ \ inp\_file-\/>\mbox{\hyperlink{struct_input_file_info_a24788948955238f67472fb4fbcc1126e}{comment}}\ =\ strchr(inp\_file-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}},\ \textcolor{charliteral}{';'});}
 \DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00091}00091\ }
 \DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ special\_delims\ =\ \textcolor{stringliteral}{"{}[]:"{}};}
 \DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00093}00093\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ tokens[\mbox{\hyperlink{cmd_8h_a150c0fc704c3322a038de77fa5ff4e7b}{MAX\_LINE\_LEN}}\ +\ 1]\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00094}00094\ \ \ \ \ \mbox{\hyperlink{struct_string}{String}}\ tokens[\mbox{\hyperlink{cmd_8h_a150c0fc704c3322a038de77fa5ff4e7b}{MAX\_LINE\_LEN}}\ +\ 1]\ =\ \{\};}
 \DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00095}00095\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00096}00096\ \ \ \ \ \mbox{\hyperlink{text__lib_8cpp_a2de6a72375b7b9e1403a740b8ab946f7}{split\_line\_with\_special\_delims}}(str,\ \textcolor{stringliteral}{"{}\ +\(\backslash\)t"{}},\ special\_delims,\ tokens,\ \mbox{\hyperlink{cmd_8h_a150c0fc704c3322a038de77fa5ff4e7b}{MAX\_LINE\_LEN}});}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00097}00097\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ cur\_token\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00099}00099\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{comment}{//\ Empty\ line\ check}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens[cur\_token]\ ==\ \textcolor{keyword}{nullptr}\ ||\ tokens[cur\_token][0]\ ==\ \textcolor{charliteral}{'\(\backslash\)0'})\ \{}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{write_8cpp_a448e8ee0a742ca8a3852b033c9895c2d}{asm\_write\_cmd}}(buf,\ \textcolor{keyword}{nullptr},\ labels,\ line\_num,}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ listing\_file,\ first\_pass,\ \textcolor{charliteral}{';'},\ comment));}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00104}00104\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00106}00106\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00107}00107\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{comment}{//\ Parsing\ start}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00109}00109\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{if}\ (strchr(special\_delims,\ tokens[cur\_token][0])\ !=\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_ab1877074925c08a214b5f75c5cb0e335}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Unexpected\ '\%c'\ found."{}},\ tokens[cur\_token][0],);}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00112}00112\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00113}00113\ \ \ \ \ cmd.\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}\ =\ \mbox{\hyperlink{cmd_8cpp_ab9418768cddebf9e17af4644cc3b93fc}{find\_command\_by\_name}}(tokens[cur\_token]);}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd.\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}\ ==\ \textcolor{keyword}{nullptr})\ \{}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens[cur\_token\ +\ 1][0]\ ==\ \textcolor{charliteral}{':'})\ \{}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (first\_pass)}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{jump_8cpp_ab2ccbbd12ce9667f1c48762d93c56daf}{asm\_new\_label}}(labels,\ tokens[cur\_token],\ buf-\/>\mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{size}},\ line\_num));}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00118}00118\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{write_8cpp_a448e8ee0a742ca8a3852b033c9895c2d}{asm\_write\_cmd}}(buf,\ \textcolor{keyword}{nullptr},\ labels,\ line\_num,}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ listing\_file,\ first\_pass,\ \textcolor{charliteral}{'\(\backslash\)0'},\ \mbox{\hyperlink{text__lib_8h_a908995c5e99f20e9adb9a71152c91864}{str\_skip\_spaces}}(line.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}})));}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_ab1877074925c08a214b5f75c5cb0e335}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Command\ \(\backslash\)"{}\%s\(\backslash\)"{}\ not\ found."{}},\ tokens[cur\_token],);}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00124}00124\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00125}00125\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00126}00126\ \ \ \ \ cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_a161f0c4c0d653d3d3f8cf22b58df1457}{num}}\ =\ cmd.\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}-\/>\mbox{\hyperlink{struct_cmd_info_a8c0cbd30b5f5d99be1e3b93668995c7e}{num}}\ \&\ \mbox{\hyperlink{cmd_8h_a2199b74094b7063794c4ce9e639726d6}{CMD\_BYTE\_NUM\_BIT\_MASK}};}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00127}00127\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00128}00128\ \ \ \ \ cur\_token\ +=\ 1;}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00129}00129\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens[cur\_token]\ !=\ \textcolor{keyword}{nullptr})\ \{}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strchr(special\_delims,\ tokens[cur\_token][0])\ !=\ \textcolor{keyword}{nullptr})\ \{}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens[cur\_token][0]\ ==\ \textcolor{charliteral}{'['})\ \{}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cur\_token++;}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{read_8cpp_aeac35f1dc277a52e21921ecf7ba9f1da}{asm\_read\_args\_ram}}(tokens,\ \&cur\_token,\ \&cmd,\ line\_num));}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_ab1877074925c08a214b5f75c5cb0e335}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Unexpected\ '\%c'\ found."{}},\ tokens[cur\_token][0],);}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{read_8cpp_a4440303dab26931b5ef1a774dc12ec08}{asm\_read\_args}}(tokens,\ \&cur\_token,\ \&cmd,\ labels,\ line\_num,\ first\_pass));}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00140}00140\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens[cur\_token]\ !=\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_ab1877074925c08a214b5f75c5cb0e335}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Unexpected\ arg\ given."{}});}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00143}00143\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00144}00144\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{assembler_8h_a5849736d04a0cbad92c3d7563746ce83}{asm\_is\_arg\_required}}(\&cmd)\ \&\&\ !(cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae86855d817fa5c60367ce99d1c826287}{imm}}\ ||\ cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_a64f32a2c5de062d496ece180759dd940}{ram}}\ ||\ cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae9e14c718597b6998c4189592e775054}{reg}}))}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_ab1877074925c08a214b5f75c5cb0e335}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}At\ least\ one\ argument\ required."{}});}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00096}00096\ \ \ \ \ \mbox{\hyperlink{text__lib_8cpp_aeeb6f730688f5cd5f8a1262398f2387d}{split\_line\_with\_special\_delims}}(inp\_file-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}},\ \textcolor{stringliteral}{"{}\ +\(\backslash\)t"{}},\ special\_delims,\ \textcolor{stringliteral}{"{};"{}},}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tokens,\ \mbox{\hyperlink{cmd_8h_a150c0fc704c3322a038de77fa5ff4e7b}{MAX\_LINE\_LEN}}\ \textcolor{comment}{/*tokens\ array\ size*/});}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ cur\_token\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{comment}{//\ Empty\ line\ check}}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens[cur\_token].len\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{write_8cpp_aca31685fc5f2250455bdd60a619619bc}{asm\_write\_cmd}}(buf,\ \textcolor{keyword}{nullptr},\ labels,\ inp\_file,}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ listing\_file,\ final\_pass));}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{comment}{//\ Parsing\ start}}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordflow}{if}\ (strchr(special\_delims,\ tokens[cur\_token].str[0])\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Unexpected\ '\%c'\ found."{}},\ tokens[cur\_token].str[0]);}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00114}00114\ \ \ \ \ cmd.\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}\ =\ \mbox{\hyperlink{cmd_8cpp_a354e23dddbbfc5534320a6c3ba894a5b}{find\_command\_by\_name}}(tokens[cur\_token]);}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00115}00115\ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd.\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens[cur\_token\ +\ 1].len\ >=\ 1\ \&\&\ tokens[cur\_token\ +\ 1].str[0]\ ==\ \textcolor{charliteral}{':'})\ \{}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!final\_pass)}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{jump_8cpp_abfa9520cd188b0949a9333504e23cbc7}{asm\_new\_label}}(labels,\ tokens[cur\_token],\ inp\_file,\ buf-\/>\mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{size}}));}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ cur\_token\ +=\ 2;}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ inp\_file-\/>\mbox{\hyperlink{struct_input_file_info_a24788948955238f67472fb4fbcc1126e}{comment}}\ =\ \mbox{\hyperlink{text__lib_8h_a908995c5e99f20e9adb9a71152c91864}{str\_skip\_spaces}}(inp\_file-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{write_8cpp_aca31685fc5f2250455bdd60a619619bc}{asm\_write\_cmd}}(buf,\ \textcolor{keyword}{nullptr},\ labels,\ inp\_file,}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ listing\_file,\ final\_pass));}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens[cur\_token].str\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Unexpected\ arg\ given."{}});}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Command\ \(\backslash\)"{}\%.*s\(\backslash\)"{}\ not\ found."{}},\ tokens[cur\_token].len,}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tokens[cur\_token].str);}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00131}00131\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00133}00133\ \ \ \ \ cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_a161f0c4c0d653d3d3f8cf22b58df1457}{num}}\ =\ cmd.\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}-\/>\mbox{\hyperlink{struct_cmd_info_a8c0cbd30b5f5d99be1e3b93668995c7e}{num}}\ \&\ \mbox{\hyperlink{cmd_8h_a2199b74094b7063794c4ce9e639726d6}{CMD\_BYTE\_NUM\_BIT\_MASK}};}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00135}00135\ \ \ \ \ cur\_token\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00137}00137\ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens[cur\_token].str\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ tokens[cur\_token].len\ !=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strchr(special\_delims,\ tokens[cur\_token].str[0])\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens[cur\_token].str[0]\ ==\ \textcolor{charliteral}{'['})\ \{}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cur\_token++;}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{read_8cpp_ab4091006d860705fdfbc4a28802c5377}{asm\_read\_args\_ram}}(tokens,\ \&cur\_token,\ \&cmd,\ inp\_file));}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Unexpected\ '\%c'\ found."{}},\ tokens[cur\_token].str[0]);}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{read_8cpp_ac32a32c5f4ea7406f98e4f92096c2e0c}{asm\_read\_args}}(tokens,\ \&cur\_token,\ \&cmd,\ inp\_file,\ labels,\ final\_pass));}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00147}00147\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00148}00148\ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{write_8cpp_a448e8ee0a742ca8a3852b033c9895c2d}{asm\_write\_cmd}}(buf,\ \&cmd,\ labels,\ line\_num,}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ listing\_file,\ first\_pass,\ \textcolor{charliteral}{';'},\ comment));}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00150}00150\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00151}00151\ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_ab2dc970b54859fa32bab4d3204a0a2b5}{LOCAL\_DTOR\_}}();}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00152}00152\ }
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00153}00153\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00154}00154\ \}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00155}00155\ \textcolor{preprocessor}{\#undef\ LOCAL\_DTOR\_}}
-\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00156}00156\ \textcolor{preprocessor}{\#undef\ THROW\_SYNTAX\_ERROR\_}}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens[cur\_token].str\ !=\ \textcolor{keyword}{nullptr})\ \textcolor{comment}{//<\ read\_args\ increments\ cur\_token}}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Unexpected\ arg\ given."{}});}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00150}00150\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{assembler_8h_a5849736d04a0cbad92c3d7563746ce83}{asm\_is\_arg\_required}}(\&cmd)\ \&\&\ !(cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae86855d817fa5c60367ce99d1c826287}{imm}}\ ||\ cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_a64f32a2c5de062d496ece180759dd940}{ram}}\ ||\ cmd.\mbox{\hyperlink{struct_cmd_a17b4ff328f42e8fb71669338f10d82f6}{byte}}.\mbox{\hyperlink{struct_cmd_byte_ae9e14c718597b6998c4189592e775054}{reg}}))}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{assembler_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}At\ least\ one\ argument\ required."{}});}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00155}00155\ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{write_8cpp_aca31685fc5f2250455bdd60a619619bc}{asm\_write\_cmd}}(buf,\ \&cmd,\ labels,\ inp\_file,\ listing\_file,\ final\_pass));}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00157}00157\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00158}00158\ \}}
+\DoxyCodeLine{\Hypertarget{assembler_8cpp_source_l00159}00159\ \textcolor{preprocessor}{\#undef\ THROW\_SYNTAX\_ERROR\_}}
 
 \end{DoxyCode}

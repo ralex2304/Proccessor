@@ -2,7 +2,9 @@
 static_assert(0 && "DEF_CMD is not defined");
 #endif
 
-//  reg | imm_double | imm_int | ram | label
+//    name | num | args | description | spu algorithm
+
+// args: reg | imm_double | imm_int | ram | label
 
 DEF_CMD(hlt,   0, 0b00000, "halt - end of program", {HALT();})
 

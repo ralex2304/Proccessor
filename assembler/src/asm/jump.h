@@ -8,41 +8,49 @@
 
 #include "lib/utils/statuses.h"
 #include "cmd.h"
+#include "errors.h"
 
 /**
  * @brief Specifies jump cmd label data
  */
 struct JumpLabel {
-    const char* name = nullptr;
+    String name = {nullptr, 0};
     ssize_t byte = -1;
 };
 
 /**
- * @brief Puts new label to labels array
+ * @brief Adds new label to labels
  *
  * @param labels
  * @param name
+ * @param inp_file
  * @param byte
- * @param line_num
  * @return Status::Statuses
  */
-Status::Statuses asm_new_label(JumpLabel* labels, const char* name,
-                               const size_t byte, const size_t line_num);
+Status::Statuses asm_new_label(JumpLabel* labels, const String name,
+                               const InputFileInfo* inp_file, const size_t byte);
 
 /**
- * @brief Gets label from labels array
+ * @brief Gets label byte by name
  *
  * @param labels
  * @param name
+ * @param inp_file
  * @param byte
- * @param line_num
- * @param first_pass
+ * @param final_pass
  * @return Status::Statuses
  */
-Status::Statuses asm_get_label_byte(JumpLabel* labels, const char* name,
-                                    Imm_int_t* byte, const size_t line_num,
-                                    const bool first_pass);
+Status::Statuses asm_get_label_byte(JumpLabel* labels, const String name,
+                                    const InputFileInfo* inp_file, Imm_int_t* byte,
+                                    const bool final_pass);
 
-const char* asm_get_label_name(const JumpLabel* lables, const Imm_int_t byte);
+/**
+ * @brief Returns label name by byte
+ *
+ * @param lables
+ * @param byte
+ * @return c_String
+ */
+c_String asm_get_label_name(const JumpLabel* lables, const Imm_int_t byte);
 
 #endif //< #ifndef ASM_JUM_H_

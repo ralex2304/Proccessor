@@ -13,5 +13,6 @@ var searchData=
   ['is_5fgreater_5fequal_5fimm_5fdouble_10',['IS_GREATER_EQUAL_IMM_DOUBLE',['../spu__dsl_8h.html#ad04464cd2bebd34a53966d4f46865b24',1,'spu_dsl.h']]],
   ['is_5fgreater_5fimm_5fdouble_11',['IS_GREATER_IMM_DOUBLE',['../spu__dsl_8h.html#af20bfd59843f7585f68991ebce472c8f',1,'spu_dsl.h']]],
   ['is_5flower_5fequal_5fimm_5fdouble_12',['IS_LOWER_EQUAL_IMM_DOUBLE',['../spu__dsl_8h.html#a340ff9bde723761c762599f264168925',1,'spu_dsl.h']]],
-  ['is_5flower_5fimm_5fdouble_13',['IS_LOWER_IMM_DOUBLE',['../spu__dsl_8h.html#afd5d285cb1c8f414db8ebe957435d821',1,'spu_dsl.h']]]
+  ['is_5flower_5fimm_5fdouble_13',['IS_LOWER_IMM_DOUBLE',['../spu__dsl_8h.html#afd5d285cb1c8f414db8ebe957435d821',1,'spu_dsl.h']]],
+  ['is_5fterminator_5f_14',['IS_TERMINATOR_',['../text__lib_8cpp.html#a09c5ba5616bd20bd391f84cfd80abce4',1,'text_lib.cpp']]]
 ];

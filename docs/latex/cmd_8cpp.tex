@@ -6,20 +6,20 @@
 \item 
 const \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8cpp_ae4f1f8a5e27cc0597a1762987ca19f7f}{find\+\_\+command\+\_\+by\+\_\+num}} (const \mbox{\hyperlink{cmd_8h_ab1d5b54818808a2c92c5632aaf961cd0}{Cmd\+\_\+num\+\_\+t}} num)
 \begin{DoxyCompactList}\small\item\em Finds command in CMDS\+\_\+\+DICT by num. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8cpp_ab9418768cddebf9e17af4644cc3b93fc}{find\+\_\+command\+\_\+by\+\_\+name}} (const char \texorpdfstring{$\ast$}{*}name)
+const \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8cpp_a354e23dddbbfc5534320a6c3ba894a5b}{find\+\_\+command\+\_\+by\+\_\+name}} (const \mbox{\hyperlink{struct_string}{String}} name)
 \begin{DoxyCompactList}\small\item\em Finds command in CMDS\+\_\+\+DICT\mbox{[}\mbox{]} by name. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8cpp_af63027691c37894de471b76a4e74b68c}{find\+\_\+reg\+\_\+by\+\_\+num}} (const \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{Reg\+Num\+\_\+t}} num)
 \begin{DoxyCompactList}\small\item\em Finds reg in REGS\+\_\+\+DICT\mbox{[}\mbox{]} by num. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8cpp_a21261870d3dfc4b4e1ce443a6b1477cc}{find\+\_\+reg\+\_\+by\+\_\+name}} (const char \texorpdfstring{$\ast$}{*}name)
+const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8cpp_abd1dd6c1800194955343388311c50e9e}{find\+\_\+reg\+\_\+by\+\_\+name}} (const \mbox{\hyperlink{struct_string}{String}} name)
 \begin{DoxyCompactList}\small\item\em Finds reg in REGS\+\_\+\+DICT\mbox{[}\mbox{]} by name. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{cmd_8cpp_ab9418768cddebf9e17af4644cc3b93fc}\label{cmd_8cpp_ab9418768cddebf9e17af4644cc3b93fc} 
+\Hypertarget{cmd_8cpp_a354e23dddbbfc5534320a6c3ba894a5b}\label{cmd_8cpp_a354e23dddbbfc5534320a6c3ba894a5b} 
 \index{cmd.cpp@{cmd.cpp}!find\_command\_by\_name@{find\_command\_by\_name}}
 \index{find\_command\_by\_name@{find\_command\_by\_name}!cmd.cpp@{cmd.cpp}}
 \doxysubsubsection{\texorpdfstring{find\_command\_by\_name()}{find\_command\_by\_name()}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} find\+\_\+command\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} find\+\_\+command\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_string}{String}}}]{name }\end{DoxyParamCaption})}
 
 
 
@@ -31,7 +31,7 @@ Finds command in CMDS\+\_\+\+DICT\mbox{[}\mbox{]} by name.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-const Command\texorpdfstring{$\ast$}{*} 
+const Cmd\+Info\texorpdfstring{$\ast$}{*} 
 \end{DoxyReturn}
 
 
@@ -39,11 +39,11 @@ Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00035}{35}} of file \mbox{\
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00036\ \ \ \ \ assert(name);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ assert(name.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
 \DoxyCodeLine{00037\ }
 \DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_aeb56c6b7cc2375d32bf528f71e8d34a0}{CMDS\_DICT\_SIZE}};\ i++)}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcasecmp(\mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\_DICT}}[i].name,\ name)\ ==\ 0)}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{text__lib_8h_a6420b100c6752639f1e1f2378b89820d}{String\_strcasecmp}}(\mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\_DICT}}[i].name,\ \mbox{\hyperlink{text__lib_8h_a0227c409258b64a76f4fc5299c0ae42e}{String\_TO\_c}}(name))\ ==\ 0)}
 \DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{cmd_8h_a4fe71afcf45e14656ccefffff4cae444}{CMDS\_DICT}}\ +\ i;}
 \DoxyCodeLine{00041\ }
 \DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
@@ -52,11 +52,11 @@ Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00035}{35}} of file \mbox{\
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{cmd_8h_source_l00110}{CMDS\+\_\+\+DICT}}, and \mbox{\hyperlink{cmd_8h_source_l00115}{CMDS\+\_\+\+DICT\+\_\+\+SIZE}}.
+References \mbox{\hyperlink{cmd_8h_source_l00128}{CMDS\+\_\+\+DICT}}, \mbox{\hyperlink{cmd_8h_source_l00142}{CMDS\+\_\+\+DICT\+\_\+\+SIZE}}, \mbox{\hyperlink{text__lib_8h_source_l00023}{String\+::str}}, \mbox{\hyperlink{text__lib_8h_source_l00179}{String\+\_\+strcasecmp()}}, and \mbox{\hyperlink{text__lib_8h_source_l00038}{String\+\_\+\+TO\+\_\+c}}.
 
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00077}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}.
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00080}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}.
 
 \Hypertarget{cmd_8cpp_ae4f1f8a5e27cc0597a1762987ca19f7f}\label{cmd_8cpp_ae4f1f8a5e27cc0597a1762987ca19f7f} 
 \index{cmd.cpp@{cmd.cpp}!find\_command\_by\_num@{find\_command\_by\_num}}
@@ -74,7 +74,7 @@ Finds command in CMDS\+\_\+\+DICT by num.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-const Command\texorpdfstring{$\ast$}{*} 
+const Cmd\+Info\texorpdfstring{$\ast$}{*} 
 \end{DoxyReturn}
 
 
@@ -93,17 +93,17 @@ Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00027}{27}} of file \mbox{\
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{cmd_8h_source_l00110}{CMDS\+\_\+\+DICT}}, and \mbox{\hyperlink{cmd_8h_source_l00115}{CMDS\+\_\+\+DICT\+\_\+\+SIZE}}.
+References \mbox{\hyperlink{cmd_8h_source_l00128}{CMDS\+\_\+\+DICT}}, and \mbox{\hyperlink{cmd_8h_source_l00142}{CMDS\+\_\+\+DICT\+\_\+\+SIZE}}.
 
 
 
 Referenced by \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, and \mbox{\hyperlink{spu_8cpp_source_l00039}{spu\+\_\+parse()}}.
 
-\Hypertarget{cmd_8cpp_a21261870d3dfc4b4e1ce443a6b1477cc}\label{cmd_8cpp_a21261870d3dfc4b4e1ce443a6b1477cc} 
+\Hypertarget{cmd_8cpp_abd1dd6c1800194955343388311c50e9e}\label{cmd_8cpp_abd1dd6c1800194955343388311c50e9e} 
 \index{cmd.cpp@{cmd.cpp}!find\_reg\_by\_name@{find\_reg\_by\_name}}
 \index{find\_reg\_by\_name@{find\_reg\_by\_name}!cmd.cpp@{cmd.cpp}}
 \doxysubsubsection{\texorpdfstring{find\_reg\_by\_name()}{find\_reg\_by\_name()}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} \texorpdfstring{$\ast$}{*} find\+\_\+reg\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} \texorpdfstring{$\ast$}{*} find\+\_\+reg\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_string}{String}}}]{name }\end{DoxyParamCaption})}
 
 
 
@@ -123,11 +123,11 @@ Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00053}{53}} of file \mbox{\
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00054\ \ \ \ \ assert(name);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ assert(name.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
 \DoxyCodeLine{00055\ }
 \DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a55559e71614b4b4ba24d073b1b813120}{REGS\_NUM}};\ i++)}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(\mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}[i].name,\ name)\ ==\ 0)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{text__lib_8h_accfdbf6001411f4d546036819f3d00bd}{String\_strcmp}}(\mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}[i].name,\ \mbox{\hyperlink{text__lib_8h_a0227c409258b64a76f4fc5299c0ae42e}{String\_TO\_c}}(name))\ ==\ 0)}
 \DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}\ +\ i;}
 \DoxyCodeLine{00059\ }
 \DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
@@ -136,11 +136,11 @@ Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00053}{53}} of file \mbox{\
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{cmd_8h_source_l00045}{REGS\+\_\+\+DICT}}, and \mbox{\hyperlink{cmd_8h_source_l00052}{REGS\+\_\+\+NUM}}.
+References \mbox{\hyperlink{cmd_8h_source_l00058}{REGS\+\_\+\+DICT}}, \mbox{\hyperlink{cmd_8h_source_l00065}{REGS\+\_\+\+NUM}}, \mbox{\hyperlink{text__lib_8h_source_l00023}{String\+::str}}, \mbox{\hyperlink{text__lib_8h_source_l00151}{String\+\_\+strcmp()}}, and \mbox{\hyperlink{text__lib_8h_source_l00038}{String\+\_\+\+TO\+\_\+c}}.
 
 
 
-Referenced by \mbox{\hyperlink{read_8cpp_source_l00053}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}.
+Referenced by \mbox{\hyperlink{read_8cpp_source_l00057}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}.
 
 \Hypertarget{cmd_8cpp_af63027691c37894de471b76a4e74b68c}\label{cmd_8cpp_af63027691c37894de471b76a4e74b68c} 
 \index{cmd.cpp@{cmd.cpp}!find\_reg\_by\_num@{find\_reg\_by\_num}}
@@ -177,7 +177,7 @@ Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00045}{45}} of file \mbox{\
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{cmd_8h_source_l00045}{REGS\+\_\+\+DICT}}, and \mbox{\hyperlink{cmd_8h_source_l00052}{REGS\+\_\+\+NUM}}.
+References \mbox{\hyperlink{cmd_8h_source_l00058}{REGS\+\_\+\+DICT}}, and \mbox{\hyperlink{cmd_8h_source_l00065}{REGS\+\_\+\+NUM}}.
 
 
 

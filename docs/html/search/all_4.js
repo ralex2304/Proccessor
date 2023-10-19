@@ -4,5 +4,8 @@ var searchData=
   ['elem_5ft_5fprintf_1',['ELEM_T_PRINTF',['../config_8h.html#a0e86e404fb41df2a06346b0fd53ccb83',1,'config.h']]],
   ['enable_5fdebug_5fmode_2',['enable_debug_mode',['../args__parser_8cpp.html#a6974cb2ff0387131a046097a494c41df',1,'enable_debug_mode(const Argument args_dict[], const int args_dict_len, int *arg_i, int argc, char *argv[], ArgsVars *args_vars):&#160;args_parser.cpp'],['../args__parser_8h.html#a6974cb2ff0387131a046097a494c41df',1,'enable_debug_mode(const Argument args_dict[], const int args_dict_len, int *arg_i, int argc, char *argv[], ArgsVars *args_vars):&#160;args_parser.cpp']]],
   ['error_3',['ERROR',['../args__parser_8h.html#a1f9b651227837e4a1479f53662e38d2eabb1ca97ec761fc37101737ba0aa2e7c5',1,'args_parser.h']]],
-  ['exit_4',['EXIT',['../args__parser_8h.html#a1f9b651227837e4a1479f53662e38d2eaa42b2fb0e720a080e79a92f4ca97d927',1,'args_parser.h']]]
+  ['errors_2ecpp_4',['errors.cpp',['../errors_8cpp.html',1,'']]],
+  ['errors_2ed_5',['errors.d',['../errors_8d.html',1,'']]],
+  ['errors_2eh_6',['errors.h',['../errors_8h.html',1,'']]],
+  ['exit_7',['EXIT',['../args__parser_8h.html#a1f9b651227837e4a1479f53662e38d2eaa42b2fb0e720a080e79a92f4ca97d927',1,'args_parser.h']]]
 ];

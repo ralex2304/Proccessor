@@ -33,7 +33,7 @@ Status::Statuses disasm_parse(const char* data, const size_t size, const char* o
     if (!file_open(&file, output_filename, "wb"))
         return Status::OUT_FILE_ERROR;
 
-    if (disasm_write_signature(file, header) == EOF) {
+    if (disasm_write_header(file, header) == EOF) {
         file_close(file);
         return Status::OUT_FILE_ERROR;
     }
@@ -113,7 +113,7 @@ Status::Statuses disasm_parse(const char* data, const size_t size, const char* o
                                         return EOF;     \
                                 } while(0)
 
-int disasm_write_signature(FILE* file, const FileHeader header) {
+int disasm_write_header(FILE* file, const FileHeader header) {
     assert(file);
 
     static_assert(sizeof(header.sign) == 2);

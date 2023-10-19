@@ -1,7 +1,8 @@
 ;Signature: KU
 ;Version: 0
+jf 38
 push 1.000000
-pop rcx
+pop [rcx]
 push rcx+1.000000
 in
 sqrt

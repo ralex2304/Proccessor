@@ -136,7 +136,8 @@ void print_commands_list() {
     for (size_t i = 0; i < CMDS_DICT_SIZE; i++) {
         const CmdInfo* cmd_info = CMDS_DICT + i;
 
-        printf("#    %3d) %-5s --- %s\n", cmd_info->num, cmd_info->name, cmd_info->description);
+        printf("#    %3d) %-5s --- %s\n", cmd_info->num, cmd_info->name.str,
+                                          cmd_info->description);
 
         if (cmd_info->args.reg || cmd_info->args.imm_double || cmd_info->args.imm_int
             || cmd_info->args.ram || cmd_info->args.label) {

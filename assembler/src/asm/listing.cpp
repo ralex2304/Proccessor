@@ -4,16 +4,17 @@
 #define F_WRITE_CHECK_(write)    if (!write)        return Status::OUT_FILE_ERROR
 
 Status::Statuses asm_write_cmd_listing(FILE* file, const Cmd* cmd, JumpLabel* labels,
-                                       const size_t line_num, const size_t binary_pos,
-                                       const char comment_symb, const char* comment) {
+                                       const InputFileInfo* inp_file, const size_t binary_pos) {
     assert(file);
+    assert(labels);
+    assert(inp_file);
     // cmd assertion is not needed
 
-    F_PRINTF_CHECK_(file_printf(file, ";%4zu - %4zu -", line_num, binary_pos));
+    F_PRINTF_CHECK_(file_printf(file, ";%4zu - %4zu -", inp_file->line_num, binary_pos));
 
     if (cmd == nullptr) {
         F_PRINTF_CHECK_(file_printf(file, "%*s -", asm_listing_calc_tab(cmd), ""));
-        F_WRITE_CHECK_(asm_write_listing_comment(file, comment_symb, comment));
+        F_WRITE_CHECK_(asm_write_listing_comment(file, inp_file->comment));
         F_PRINTF_CHECK_(file_printf(file, "\n"));
 
         return Status::NORMAL_WORK;
@@ -41,7 +42,7 @@ Status::Statuses asm_write_cmd_listing(FILE* file, const Cmd* cmd, JumpLabel* la
 
     // Command in text format
 
-    F_PRINTF_CHECK_(file_printf(file, " - %s", cmd->info->name));
+    F_PRINTF_CHECK_(file_printf(file, " - %.*s", cmd->info->name.len, cmd->info->name.str));
 
     if (cmd->info->args.ram && cmd->byte.ram) {
         F_PRINTF_CHECK_(file_printf(file, " ["));
@@ -50,7 +51,8 @@ Status::Statuses asm_write_cmd_listing(FILE* file, const Cmd* cmd, JumpLabel* la
     }
 
     if (cmd->byte.reg) {
-        F_PRINTF_CHECK_(file_printf(file, "%s", find_reg_by_num(cmd->args.reg)->name));
+        c_String reg_name = find_reg_by_num(cmd->args.reg)->name;
+        F_PRINTF_CHECK_(file_printf(file, "%.*s", reg_name.len, reg_name.str));
 
         if (cmd->byte.imm)
             F_PRINTF_CHECK_(file_printf(file, "+"));
@@ -60,8 +62,9 @@ Status::Statuses asm_write_cmd_listing(FILE* file, const Cmd* cmd, JumpLabel* la
         if (cmd->byte.ram) {
             F_PRINTF_CHECK_(file_printf(file, IMM_INT_T_PRINTF, cmd->args.imm_int));
         } else if (cmd->info->args.label) {
-            F_PRINTF_CHECK_(file_printf(file, "%s (" IMM_INT_T_PRINTF ")",
-                                asm_get_label_name(labels, cmd->args.imm_int), cmd->args.imm_int));
+            c_String label_name = asm_get_label_name(labels, cmd->args.imm_int);
+            F_PRINTF_CHECK_(file_printf(file, "%.*s (" IMM_INT_T_PRINTF ")",
+                                (int)label_name.len, label_name.str, cmd->args.imm_int));
         } else {
             F_PRINTF_CHECK_(file_printf(file, IMM_DOUBLE_T_PRINTF, cmd->args.imm_double));
         }
@@ -70,7 +73,7 @@ Status::Statuses asm_write_cmd_listing(FILE* file, const Cmd* cmd, JumpLabel* la
     if (cmd->info->args.ram && cmd->byte.ram)
         F_PRINTF_CHECK_(file_printf(file, "]"));
 
-    F_WRITE_CHECK_(asm_write_listing_comment(file, comment_symb, comment));
+    F_WRITE_CHECK_(asm_write_listing_comment(file, inp_file->comment));
 
     F_PRINTF_CHECK_(file_printf(file, "\n"));
 
@@ -92,17 +95,12 @@ Status::Statuses asm_write_header_listing(FILE* listing_file) {
 #undef F_WRITE_CHECK_
 
 
-bool asm_write_listing_comment(FILE* file, const char comment_symb, const char* comment) {
+bool asm_write_listing_comment(FILE* file, const char* comment) {
     if (comment == nullptr)
         return true;
 
-    if (comment_symb) {
-        if (file_printf(file, " %c%s", comment_symb, comment) == EOF)
-            return false;
-    } else {
-        if (file_printf(file, " %s", comment) == EOF)
-            return false;
-    }
+    if (file_printf(file, " %s", comment) == EOF)
+        return false;
 
     return true;
 }

@@ -1,14 +1,15 @@
 #include "write.h"
 
 Status::Statuses asm_write_cmd(Buffer* buf, const Cmd* cmd, JumpLabel* labels,
-                               const size_t line_num,
-                               FILE* listing_file, const bool first_pass,
-                               const char comment_symb, const char* comment) {
+                               const InputFileInfo* inp_file,
+                               FILE* listing_file, const bool final_pass) {
     assert(buf);
+    assert(labels);
+    assert(inp_file);
+    // cmd assertion is not needed
 
-    if (!first_pass && listing_file != nullptr)
-        STATUS_CHECK(asm_write_cmd_listing(listing_file, cmd, labels, line_num, buf->size,
-                                           comment_symb, comment));
+    if (final_pass && listing_file != nullptr)
+        STATUS_CHECK(asm_write_cmd_listing(listing_file, cmd, labels, inp_file, buf->size));
 
     STATUS_CHECK(asm_write_cmd_bin(buf, cmd));
 
@@ -16,8 +17,8 @@ Status::Statuses asm_write_cmd(Buffer* buf, const Cmd* cmd, JumpLabel* labels,
 }
 
 
-#define BUF_CAT_(data_)         if (!buf->cat((const char*)&data_, sizeof(data_))) \
-                                    return Status::MEMORY_EXCEED
+#define BUF_CAT_(data_) if (!buf->cat((const char*)&data_, sizeof(data_))) \
+                            return Status::MEMORY_EXCEED
 
 Status::Statuses asm_write_cmd_bin(Buffer* buf, const Cmd* cmd) {
     assert(buf);

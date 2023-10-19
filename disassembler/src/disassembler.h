@@ -19,12 +19,12 @@ Status::Statuses disasm_parse(const char* data, const size_t size, const char* o
                               const bool debug_mode);
 
 /**
- * @brief Writes signature to file
+ * @brief Writes header to file
  *
  * @param file
- * @param sign
+ * @param header
  * @return int
  */
-int disasm_write_signature(FILE* file, const FileHeader sign);
+int disasm_write_header(FILE* file, const FileHeader header);
 
 #endif // #ifndef DISASSEMBLER_H_

@@ -7,22 +7,24 @@
 #include <ctype.h>
 
 #include "lib/utils/statuses.h"
+#include "lib/text/text_lib.h"
 #include "cmd.h"
 #include "jump.h"
 
 /**
- * @brief Reads command args from tokens
+ * @brief Reads command args
  *
  * @param tokens
  * @param cur_token
  * @param cmd
+ * @param inp_file
  * @param labels
- * @param line_num
- * @param first_pass
+ * @param final_pass
  * @return Status::Statuses
  */
-Status::Statuses asm_read_args(const char** tokens, size_t* cur_token, Cmd* cmd,
-                               JumpLabel* labels, const size_t line_num, const bool first_pass);
+Status::Statuses asm_read_args(String* tokens, size_t* cur_token, Cmd* cmd,
+                               const InputFileInfo* inp_file,
+                               JumpLabel* labels, const bool final_pass);
 
 /**
  * @brief Reads ram arguments
@@ -30,10 +32,11 @@ Status::Statuses asm_read_args(const char** tokens, size_t* cur_token, Cmd* cmd,
  * @param tokens
  * @param cur_token
  * @param cmd
- * @param line_num
+ * @param inp_file
  * @return Status::Statuses
  */
-Status::Statuses asm_read_args_ram(const char** tokens, size_t* cur_token, Cmd* cmd, const size_t line_num);
+Status::Statuses asm_read_args_ram(String* tokens, size_t* cur_token, Cmd* cmd,
+                                   const InputFileInfo* inp_file);
 
 /**
  * @brief Reads reg argument
@@ -41,11 +44,11 @@ Status::Statuses asm_read_args_ram(const char** tokens, size_t* cur_token, Cmd* 
  * @param tokens
  * @param cur_token
  * @param cmd
- * @param line_num
+ * @param inp_file
  * @return Status::Statuses
  */
-Status::Statuses asm_read_arg_reg(const char** tokens, size_t* cur_token,
-                                  Cmd* cmd, const size_t line_num);
+Status::Statuses asm_read_arg_reg(String* tokens, size_t* cur_token, Cmd* cmd,
+                                  const InputFileInfo* inp_file);
 
 /**
  * @brief Reads immutable args
@@ -53,11 +56,11 @@ Status::Statuses asm_read_arg_reg(const char** tokens, size_t* cur_token,
  * @param tokens
  * @param cur_token
  * @param cmd
- * @param line_num
+ * @param inp_file
  * @return Status::Statuses
  */
-Status::Statuses asm_read_arg_imm(const char** tokens, size_t* cur_token,
-                                  Cmd* cmd, const size_t line_num);
+Status::Statuses asm_read_arg_imm(String* tokens, size_t* cur_token, Cmd* cmd,
+                                  const InputFileInfo* inp_file);
 
 /**
  * @brief Reads integer immutable argument
@@ -65,11 +68,11 @@ Status::Statuses asm_read_arg_imm(const char** tokens, size_t* cur_token,
  * @param tokens
  * @param cur_token
  * @param cmd
- * @param line_num
+ * @param inp_file
  * @return Status::Statuses
  */
-Status::Statuses asm_read_arg_imm_int(const char** tokens, size_t* cur_token,
-                                      Cmd* cmd, const size_t line_num);
+Status::Statuses asm_read_arg_imm_int(String* tokens, size_t* cur_token, Cmd* cmd,
+                                      const InputFileInfo* inp_file);
 
 /**
  * @brief Reads double immutable argument
@@ -77,10 +80,10 @@ Status::Statuses asm_read_arg_imm_int(const char** tokens, size_t* cur_token,
  * @param tokens
  * @param cur_token
  * @param cmd
- * @param line_num
+ * @param inp_file
  * @return Status::Statuses
  */
-Status::Statuses asm_read_arg_imm_double(const char** tokens, size_t* cur_token,
-                                         Cmd* cmd, const size_t line_num);
+Status::Statuses asm_read_arg_imm_double(String* tokens, size_t* cur_token, Cmd* cmd,
+                                         const InputFileInfo* inp_file);
 
 #endif //< #ifndef ASM_READ_H_

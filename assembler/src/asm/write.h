@@ -7,24 +7,22 @@
 #include "lib/utils/buf_lib.h"
 #include "lib/utils/statuses.h"
 #include "listing.h"
+#include "errors.h"
 
 /**
- * @brief Writes one cmd
+ * @brief Writes one cmd to buf
  *
  * @param buf
  * @param cmd
  * @param labels
- * @param line_num
+ * @param inp_file
  * @param listing_file
- * @param first_pass
- * @param comment_symb
- * @param comment
+ * @param final_pass
  * @return Status::Statuses
  */
 Status::Statuses asm_write_cmd(Buffer* buf, const Cmd* cmd, JumpLabel* labels,
-                               const size_t line_num,
-                               FILE* listing_file, const bool first_pass,
-                               const char comment_symb, const char* comment);
+                               const InputFileInfo* inp_file,
+                               FILE* listing_file, const bool final_pass);
 
 /**
  * @brief Writes one cmd to bin file

@@ -24,9 +24,9 @@ var cmd_8h =
       [ "RCX", "cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a9319e76c0baaa9e53113184ab7d25944", null ],
       [ "RDX", "cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a0358584dab0bc3a6ff014581cf6f4660", null ]
     ] ],
-    [ "find_command_by_name", "cmd_8h.html#ab9418768cddebf9e17af4644cc3b93fc", null ],
+    [ "find_command_by_name", "cmd_8h.html#a354e23dddbbfc5534320a6c3ba894a5b", null ],
     [ "find_command_by_num", "cmd_8h.html#ae4f1f8a5e27cc0597a1762987ca19f7f", null ],
-    [ "find_reg_by_name", "cmd_8h.html#a21261870d3dfc4b4e1ce443a6b1477cc", null ],
+    [ "find_reg_by_name", "cmd_8h.html#abd1dd6c1800194955343388311c50e9e", null ],
     [ "find_reg_by_num", "cmd_8h.html#a1f8806cd553fbea836faef7a35f6cb97", null ],
     [ "CMD_BYTE_NUM_BIT_MASK", "cmd_8h.html#a2199b74094b7063794c4ce9e639726d6", null ],
     [ "CMD_VERSION", "cmd_8h.html#ac6fd8a0b61158e50a7d52538ba0e5be9", null ],
