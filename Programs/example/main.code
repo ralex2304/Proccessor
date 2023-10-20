@@ -1,13 +1,14 @@
 ; 123
 
-jf exit
+dmp
 push 1 ;push from address 1 to stack
-pop [rcx]
+pop rcx
 push rcx+1
 in
 label:
-
+dmp
 sqrt ;square root
+dmp
 out
 ;print
 out

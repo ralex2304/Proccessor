@@ -42,7 +42,7 @@ Status::Statuses asm_write_cmd_listing(FILE* file, const Cmd* cmd, JumpLabel* la
 
     // Command in text format
 
-    F_PRINTF_CHECK_(file_printf(file, " - %.*s", cmd->info->name.len, cmd->info->name.str));
+    F_PRINTF_CHECK_(file_printf(file, " - %.*s", String_PRINTF(cmd->info->name)));
 
     if (cmd->info->args.ram && cmd->byte.ram) {
         F_PRINTF_CHECK_(file_printf(file, " ["));
@@ -52,7 +52,7 @@ Status::Statuses asm_write_cmd_listing(FILE* file, const Cmd* cmd, JumpLabel* la
 
     if (cmd->byte.reg) {
         c_String reg_name = find_reg_by_num(cmd->args.reg)->name;
-        F_PRINTF_CHECK_(file_printf(file, "%.*s", reg_name.len, reg_name.str));
+        F_PRINTF_CHECK_(file_printf(file, "%.*s", String_PRINTF(reg_name)));
 
         if (cmd->byte.imm)
             F_PRINTF_CHECK_(file_printf(file, "+"));
@@ -64,7 +64,7 @@ Status::Statuses asm_write_cmd_listing(FILE* file, const Cmd* cmd, JumpLabel* la
         } else if (cmd->info->args.label) {
             c_String label_name = asm_get_label_name(labels, cmd->args.imm_int);
             F_PRINTF_CHECK_(file_printf(file, "%.*s (" IMM_INT_T_PRINTF ")",
-                                (int)label_name.len, label_name.str, cmd->args.imm_int));
+                                String_PRINTF(label_name), cmd->args.imm_int));
         } else {
             F_PRINTF_CHECK_(file_printf(file, IMM_DOUBLE_T_PRINTF, cmd->args.imm_double));
         }

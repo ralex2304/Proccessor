@@ -25,7 +25,7 @@ Status::Statuses asm_throw_syntax_error(const String token, const InputFileInfo*
     fprintf(stderr, "%5zu | ", file_info->line_num);
 
     fprintf(stderr, "%.*s", token_begin, file_info->line.str);
-    fprintf(stderr, CONSOLE_STYLE(STYLE_BOLD COLOR_RED, "%.*s"), (int)token.len, token.str);
+    fprintf(stderr, CONSOLE_STYLE(STYLE_BOLD COLOR_RED, "%.*s"), String_PRINTF(token));
     fprintf(stderr, "%.*s\n", (int)(file_info->line.len - token_end),
                               file_info->line.str + token_end);
 

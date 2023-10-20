@@ -19,6 +19,7 @@ var stack_8h =
     [ "right_data_canary_ptr", "stack_8h.html#a8141a491532e1b89ad3bc94fc410d523", null ],
     [ "stk_ctor", "stack_8h.html#af7ef1edc742a93d33af35b9ab80c4196", null ],
     [ "stk_ctor_debug", "stack_8h.html#a03c94c054172abf5fa9fc1e887840ae3", null ],
+    [ "stk_data_dump", "stack_8h.html#ad2c6e9edab1f89bad251ff76dc3579a7", null ],
     [ "stk_data_hash_calc", "stack_8h.html#ae72fe1519dee325a0e6dd4eafc14898b", null ],
     [ "stk_data_hash_push", "stack_8h.html#a5623fe015c076479c94adb3ddd01ad35", null ],
     [ "stk_dtor", "stack_8h.html#a60863cc39088870cab1ccd33d1e8d2f6", null ],

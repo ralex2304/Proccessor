@@ -38,6 +38,11 @@ struct String {
 #define String_TO_c(str_) {str_.str, str_.len}
 
 /**
+ * @brief Macros for printing String (specifier "%.*s")
+ */
+#define String_PRINTF(str_) (int)str_.len, str_.str
+
+/**
  * @brief Tokenizator for lines
  *
  * @param str

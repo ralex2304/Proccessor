@@ -191,6 +191,31 @@ int stk_pop(Stack* stk, Elem_t *const elem) {
 
 //==================================================================================================
 
+void stk_data_dump(const Stack* stk) {
+    assert(stk);
+
+    printf("# Stack dump:\n");
+
+    printf("# capacity = %zd\n"
+           "# size     = %zd\n", stk->capacity, stk->size);
+
+    printf("# data {\n");
+
+    int index_len = 1;
+    ssize_t index = stk->size;
+    while ((index /= 10) > 0)
+        index_len++;
+
+    for (ssize_t i = 0; i < stk->size; i++)
+        printf("#     [%*zu] " ELEM_T_PRINTF "\n", index_len, i, stk->data[i]);
+
+    printf("# }\n");
+
+    fflush(stdout);
+}
+
+//==================================================================================================
+
 #define PRINT_ERR_(code, descr)  if ((err_code) & Stack::code)                                    \
                                     log_printf(&log_file,                                         \
                                                HTML_TEXT(HTML_RED("!!! " #code ": " descr "\n")));

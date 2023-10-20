@@ -126,8 +126,7 @@ Status::Statuses asm_parse_and_write_line(Buffer* buf, JumpLabel* labels, InputF
                 THROW_SYNTAX_ERROR_("Unexpected arg given.");
             return Status::NORMAL_WORK;
         } else
-            THROW_SYNTAX_ERROR_("Command \"%.*s\" not found.", tokens[cur_token].len,
-                                                               tokens[cur_token].str);
+            THROW_SYNTAX_ERROR_("Command \"%.*s\" not found.", String_PRINTF(tokens[cur_token]));
     }
 
     cmd.byte.num = cmd.info->num & CMD_BYTE_NUM_BIT_MASK;

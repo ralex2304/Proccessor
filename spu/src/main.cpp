@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
 
     /// Parsing console arguments
     ArgsVars args_vars = {};
-    args_vars.input_filename  = "../main.exec"; //< default value
+    args_vars.input_filename  = "../Programs/example/main.exec"; //< default value
 
     STATUS_CHECK_RAISE(args_parse(argc, argv, &args_vars, ARGS_DICT, ARGS_DICT_LEN));
     /// Parsing console arguments end

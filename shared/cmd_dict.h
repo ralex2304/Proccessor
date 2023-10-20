@@ -100,3 +100,9 @@ DEF_CMD(div,  21, 0b00000, "/",           {BINARY_OPERATOR(/);})
 DEF_CMD(sqrt, 22, 0b00000, "sqaure root", {UNARY_OPERATOR(sqrt);})
 DEF_CMD(sin,  23, 0b00000, "sinus",       {UNARY_OPERATOR(sin);})
 DEF_CMD(cos,  24, 0b00000, "cosinus",     {UNARY_OPERATOR(cos);})
+
+
+
+DEF_CMD(dmp,  31, 0b00000, "spu data dump", {
+    DUMP();
+})

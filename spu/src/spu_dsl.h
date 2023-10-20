@@ -47,6 +47,11 @@ inline int WEEKDAY() {
 #define HALT() return Status::OK_EXIT
 
 /**
+ * @brief Spu data dump
+ */
+#define DUMP() spu->dump()
+
+/**
  * @brief Moves instruction pointer to specified address
  *
  * @param addr

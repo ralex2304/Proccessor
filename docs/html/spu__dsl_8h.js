@@ -5,6 +5,7 @@ var spu__dsl_8h =
     [ "ARG_REG", "spu__dsl_8h.html#affc73a1d6edef707baa2c67176322169", null ],
     [ "BINARY_OPERATOR", "spu__dsl_8h.html#a81c98de12ee60ca088f9addf8e178cb2", null ],
     [ "CHECK_AND_THROW_ERR", "spu__dsl_8h.html#a226e577a36ed0a410a8affc1cd05ce25", null ],
+    [ "DUMP", "spu__dsl_8h.html#a68e4a10cfd30e33ab1e506f696729336", null ],
     [ "GET_FROM_INPUT", "spu__dsl_8h.html#a1f92e847fc8c4ba1353b03992c5eeb5a", null ],
     [ "HALT", "spu__dsl_8h.html#a597f2881b60f9b4f9ae6451abaaa1b7c", null ],
     [ "IMM_DOUBLE_EPS", "spu__dsl_8h.html#a0aef18805c12a685c2b65d6756bc0fa7", null ],

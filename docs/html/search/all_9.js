@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['jump_0',['JUMP',['../spu__dsl_8h.html#aaf30322f59aa465eb1161227f8986838',1,'spu_dsl.h']]],
-  ['jump_1',['jump',['../cmd__dict_8h.html#a0d20db0930a979497282087a4b7dbe1e',1,'cmd_dict.h']]],
+  ['jump_0',['jump',['../cmd__dict_8h.html#a0d20db0930a979497282087a4b7dbe1e',1,'cmd_dict.h']]],
+  ['jump_1',['JUMP',['../spu__dsl_8h.html#aaf30322f59aa465eb1161227f8986838',1,'spu_dsl.h']]],
   ['jump_2ecpp_2',['jump.cpp',['../jump_8cpp.html',1,'']]],
   ['jump_2ed_3',['jump.d',['../jump_8d.html',1,'']]],
   ['jump_2eh_4',['jump.h',['../jump_8h.html',1,'']]],

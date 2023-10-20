@@ -67,8 +67,7 @@ Status::Statuses asm_read_arg_reg(String* tokens, size_t* cur_token, Cmd* cmd,
         const RegInfo* reg = find_reg_by_name(tokens[*cur_token]);
 
         if (reg == nullptr)
-            THROW_SYNTAX_ERROR_("Invalid reg name \"%.*s\"", tokens[*cur_token].len,
-                                                             tokens[*cur_token].str);
+            THROW_SYNTAX_ERROR_("Invalid reg name \"%.*s\"", String_PRINTF(tokens[*cur_token]));
 
         cmd->args.reg = reg->num;
         cmd->byte.reg = true;
@@ -108,8 +107,8 @@ Status::Statuses asm_read_arg_imm_int(String* tokens, size_t* cur_token, Cmd* cm
                                    &cmd->args.imm_int, &sscanf_num);
 
     if (sscanf_res != 1 || sscanf_num != tokens[*cur_token].len)
-        THROW_SYNTAX_ERROR_("Invalid immediate argument \"%.*s\"", tokens[*cur_token].len,
-                                                                   tokens[*cur_token].str);
+        THROW_SYNTAX_ERROR_("Invalid immediate argument \"%.*s\"",
+                                String_PRINTF(tokens[*cur_token]));
 
     cmd->byte.imm = true;
     *cur_token += 1;
@@ -131,8 +130,8 @@ Status::Statuses asm_read_arg_imm_double(String* tokens, size_t* cur_token, Cmd*
                                    &cmd->args.imm_double, &sscanf_num);
 
     if (sscanf_res != 1 || sscanf_num != tokens[*cur_token].len)
-        THROW_SYNTAX_ERROR_("Invalid immediate argument \"%.*s\"", tokens[*cur_token].len,
-                                                                   tokens[*cur_token].str);
+        THROW_SYNTAX_ERROR_("Invalid immediate argument \"%.*s\"",
+                                String_PRINTF(tokens[*cur_token]));
 
     cmd->byte.imm = true;
     *cur_token += 1;

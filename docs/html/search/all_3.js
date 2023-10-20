@@ -19,5 +19,7 @@ var searchData=
   ['disassembler_2ecpp_16',['disassembler.cpp',['../disassembler_8cpp.html',1,'']]],
   ['disassembler_2ed_17',['disassembler.d',['../disassembler_8d.html',1,'']]],
   ['disassembler_2eh_18',['disassembler.h',['../disassembler_8h.html',1,'']]],
-  ['dtor_19',['dtor',['../struct_buffer.html#accef32f248ec05ad669b1de0dc3ae6a5',1,'Buffer::dtor()'],['../struct_spu_data.html#ab8279902c19cd3fd61a692f2781b0668',1,'SpuData::dtor()']]]
+  ['dtor_19',['dtor',['../struct_spu_data.html#ab8279902c19cd3fd61a692f2781b0668',1,'SpuData::dtor()'],['../struct_buffer.html#accef32f248ec05ad669b1de0dc3ae6a5',1,'Buffer::dtor()']]],
+  ['dump_20',['dump',['../struct_spu_data.html#ae2f8ad06bd42639ff18b4c1b2ee6e5ef',1,'SpuData']]],
+  ['dump_21',['DUMP',['../spu__dsl_8h.html#a68e4a10cfd30e33ab1e506f696729336',1,'spu_dsl.h']]]
 ];

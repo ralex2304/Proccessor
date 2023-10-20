@@ -26,6 +26,25 @@ Status::Statuses SpuData::dtor() {
     return Status::NORMAL_WORK;
 }
 
+void SpuData::dump() {
+    printf("# spu dump():\n"
+           "# \n");
+
+    stk_data_dump(&stk);
+
+    printf("# \n"
+           "# Registers dump:\n");
+
+    for (size_t i = 0; i < REGS_NUM; i++)
+        printf("# %.*s = " IMM_DOUBLE_T_PRINTF "\n", String_PRINTF(REGS_DICT[i].name),
+                                                     reg[REGS_DICT[i].num]);
+
+    printf("# \n"
+           "# dump end\n\n");
+
+    fflush(stdout);
+}
+
 #define THROW_RUNTIME_ERROR_(text)  do {                                                    \
             fprintf(stderr, CONSOLE_RED("Runtime error occured. " text) " Byte %zu\n", ip); \
             return Status::RUNTIME_ERROR;                                                   \

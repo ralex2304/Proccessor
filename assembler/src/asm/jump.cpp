@@ -12,7 +12,7 @@ Status::Statuses asm_new_label(JumpLabel* labels, const String name,
 
     for (size_t i = 0; i < MAX_LABEL_NUM; i++) {
         if (String_strcmp(String_TO_c(labels[i].name), String_TO_c(name)) == 0)
-            THROW_SYNTAX_ERROR_("Label name \"%.*s\" used twice.", name.len, name.str);
+            THROW_SYNTAX_ERROR_("Label name \"%.*s\" used twice.", String_PRINTF(name));
     }
 
     for (size_t i = 0; i < MAX_LABEL_NUM; i++) {
@@ -42,7 +42,7 @@ Status::Statuses asm_get_label_byte(JumpLabel* labels, const String name,
     }
 
     if (final_pass)
-        THROW_SYNTAX_ERROR_("Unknown label \"%.*s\"", name.len, name.str);
+        THROW_SYNTAX_ERROR_("Unknown label \"%.*s\"", String_PRINTF(name));
 
     return Status::NORMAL_WORK;
 }

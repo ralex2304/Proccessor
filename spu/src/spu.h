@@ -22,6 +22,8 @@ struct SpuData {
 
     Status::Statuses ctor();
     Status::Statuses dtor();
+
+    void dump();
 };
 
 /**

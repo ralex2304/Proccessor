@@ -1,0 +1,23 @@
+;Signature: KU
+;Version: 0
+;line - byte - command
+;   1 -    4 -                               - ; 123
+;   2 -    4 -                               -
+;   3 -    4 - 1F                            - dmp
+;   4 -    5 - 41 00 00 00 00 00 00 F0 3F    - push 1.000000 ;push from address 1 to stack
+;   5 -   14 - 22 02                         - pop rcx
+;   6 -   16 - 61 02 00 00 00 00 00 00 F0 3F - push rcx+1.000000
+;   7 -   26 - 10                            - in
+;   8 -   27 -                               - label:
+;   9 -   27 - 1F                            - dmp
+;  10 -   28 - 16                            - sqrt ;square root
+;  11 -   29 - 1F                            - dmp
+;  12 -   30 - 11                            - out
+;  13 -   31 -                               - ;print
+;  14 -   31 - 11                            - out
+;  15 -   32 -                               -
+;  16 -   32 -                               - exit:
+;  17 -   32 - 00                            - hlt
+;  18 -   33 -                               -
+;  19 -   33 -                               - ;end
+;  20 -   33 -                               -

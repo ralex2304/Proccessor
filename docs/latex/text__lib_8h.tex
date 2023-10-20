@@ -19,7 +19,9 @@ struct \mbox{\hyperlink{struct_string}{String}}
 \#define \mbox{\hyperlink{text__lib_8h_a62644cba8542352b76b0e4bf9eb25c73}{String\+\_\+\+CONST}}(str\+\_\+)~\{str\+\_\+, sizeof(str\+\_\+) -\/ 1\}
 \begin{DoxyCompactList}\small\item\em Macros for defining const strings. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{text__lib_8h_a0227c409258b64a76f4fc5299c0ae42e}{String\+\_\+\+TO\+\_\+c}}(str\+\_\+)~\{str\+\_\+.\+str, str\+\_\+.\+len\}
-\begin{DoxyCompactList}\small\item\em \doxylink{struct_string}{String} to \doxylink{structc___string}{c\+\_\+\+String}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \doxylink{struct_string}{String} to \doxylink{structc___string}{c\+\_\+\+String}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{text__lib_8h_a8bda955a9d6dede91b9f9319eb437476}{String\+\_\+\+PRINTF}}(str\+\_\+)~(int)str\+\_\+.\+len, str\+\_\+.\+str
+\begin{DoxyCompactList}\small\item\em Macros for printing \doxylink{struct_string}{String} (specifier \"{}\%.\texorpdfstring{$\ast$}{*}s\"{}) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -67,6 +69,20 @@ Macros for defining const strings.
 
 Definition at line \mbox{\hyperlink{text__lib_8h_source_l00032}{32}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
 
+\Hypertarget{text__lib_8h_a8bda955a9d6dede91b9f9319eb437476}\label{text__lib_8h_a8bda955a9d6dede91b9f9319eb437476} 
+\index{text\_lib.h@{text\_lib.h}!String\_PRINTF@{String\_PRINTF}}
+\index{String\_PRINTF@{String\_PRINTF}!text\_lib.h@{text\_lib.h}}
+\doxysubsubsection{\texorpdfstring{String\_PRINTF}{String\_PRINTF}}
+{\footnotesize\ttfamily \#define String\+\_\+\+PRINTF(\begin{DoxyParamCaption}\item[{}]{str\+\_\+ }\end{DoxyParamCaption})~(int)str\+\_\+.\+len, str\+\_\+.\+str}
+
+
+
+Macros for printing \doxylink{struct_string}{String} (specifier \"{}\%.\texorpdfstring{$\ast$}{*}s\"{}) 
+
+
+
+Definition at line \mbox{\hyperlink{text__lib_8h_source_l00043}{43}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
+
 \Hypertarget{text__lib_8h_a0227c409258b64a76f4fc5299c0ae42e}\label{text__lib_8h_a0227c409258b64a76f4fc5299c0ae42e} 
 \index{text\_lib.h@{text\_lib.h}!String\_TO\_c@{String\_TO\_c}}
 \index{String\_TO\_c@{String\_TO\_c}!text\_lib.h@{text\_lib.h}}
@@ -106,19 +122,19 @@ size\+\_\+t
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{text__lib_8h_source_l00089}{89}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
+Definition at line \mbox{\hyperlink{text__lib_8h_source_l00094}{94}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ cnt\ =\ 0;}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ str[i]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'};\ i++)}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (str[i]\ ==\ ch)}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ cnt++;}
-\DoxyCodeLine{00095\ }
-\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{return}\ cnt;}
-\DoxyCodeLine{00097\ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ cnt\ =\ 0;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ str[i]\ !=\ \textcolor{charliteral}{'\(\backslash\)0'};\ i++)}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (str[i]\ ==\ ch)}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ cnt++;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{return}\ cnt;}
+\DoxyCodeLine{00102\ \}}
 
 \end{DoxyCode}
 
@@ -241,17 +257,17 @@ const char\texorpdfstring{$\ast$}{*}
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{text__lib_8h_source_l00122}{122}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
+Definition at line \mbox{\hyperlink{text__lib_8h_source_l00127}{127}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{if}\ (str\ ==\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordflow}{while}\ (*str\ !=\ \textcolor{charliteral}{'\(\backslash\)0'}\ \&\&\ isspace(*str))\ str++;}
-\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
-\DoxyCodeLine{00128\ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordflow}{if}\ (str\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{while}\ (*str\ !=\ \textcolor{charliteral}{'\(\backslash\)0'}\ \&\&\ isspace(*str))\ str++;}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{00133\ \}}
 
 \end{DoxyCode}
 
@@ -278,17 +294,17 @@ const char\texorpdfstring{$\ast$}{*}
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{text__lib_8h_source_l00136}{136}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
+Definition at line \mbox{\hyperlink{text__lib_8h_source_l00141}{141}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{if}\ (str\ ==\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00139\ }
-\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordflow}{while}\ (*str\ !=\ \textcolor{charliteral}{'\(\backslash\)0'}\ \&\&\ isspace(*str))\ str++;}
-\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
-\DoxyCodeLine{00142\ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordflow}{if}\ (str\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordflow}{while}\ (*str\ !=\ \textcolor{charliteral}{'\(\backslash\)0'}\ \&\&\ isspace(*str))\ str++;}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{00147\ \}}
 
 \end{DoxyCode}
 \Hypertarget{text__lib_8h_a91c9a7523f46e88b8e65f97fae3aa07a}\label{text__lib_8h_a91c9a7523f46e88b8e65f97fae3aa07a} 
@@ -315,26 +331,26 @@ int
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{text__lib_8h_source_l00208}{208}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
+Definition at line \mbox{\hyperlink{text__lib_8h_source_l00213}{213}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00209\ \ \ \ \ assert(format);}
-\DoxyCodeLine{00210\ \ \ \ \ assert(token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
-\DoxyCodeLine{00211\ }
-\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ tmp\ =\ token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}[token.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}];}
-\DoxyCodeLine{00213\ \ \ \ \ token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}[token.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00214\ }
-\DoxyCodeLine{00215\ \ \ \ \ va\_list\ arg\_list\ =\ \{\};}
-\DoxyCodeLine{00216\ \ \ \ \ va\_start(arg\_list,\ format);}
-\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{int}\ ret\ =\ vsscanf(token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}},\ format,\ arg\_list);}
-\DoxyCodeLine{00218\ \ \ \ \ va\_end(arg\_list);}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00214\ \ \ \ \ assert(format);}
+\DoxyCodeLine{00215\ \ \ \ \ assert(token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ tmp\ =\ token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}[token.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}];}
+\DoxyCodeLine{00218\ \ \ \ \ token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}[token.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
 \DoxyCodeLine{00219\ }
-\DoxyCodeLine{00220\ \ \ \ \ token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}[token.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}]\ =\ tmp;}
-\DoxyCodeLine{00221\ }
-\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
-\DoxyCodeLine{00223\ \}}
+\DoxyCodeLine{00220\ \ \ \ \ va\_list\ arg\_list\ =\ \{\};}
+\DoxyCodeLine{00221\ \ \ \ \ va\_start(arg\_list,\ format);}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordtype}{int}\ ret\ =\ vsscanf(token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}},\ format,\ arg\_list);}
+\DoxyCodeLine{00223\ \ \ \ \ va\_end(arg\_list);}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}[token.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}]\ =\ tmp;}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00228\ \}}
 
 \end{DoxyCode}
 
@@ -343,7 +359,7 @@ References \mbox{\hyperlink{text__lib_8h_source_l00024}{String\+::len}}, and \mb
 
 
 
-Referenced by \mbox{\hyperlink{read_8cpp_source_l00120}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, and \mbox{\hyperlink{read_8cpp_source_l00097}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}.
+Referenced by \mbox{\hyperlink{read_8cpp_source_l00119}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, and \mbox{\hyperlink{read_8cpp_source_l00096}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}.
 
 \Hypertarget{text__lib_8h_a6420b100c6752639f1e1f2378b89820d}\label{text__lib_8h_a6420b100c6752639f1e1f2378b89820d} 
 \index{text\_lib.h@{text\_lib.h}!String\_strcasecmp@{String\_strcasecmp}}
@@ -367,30 +383,30 @@ int
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{text__lib_8h_source_l00179}{179}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
+Definition at line \mbox{\hyperlink{text__lib_8h_source_l00184}{184}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00180\ \ \ \ \ assert(s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ ==\ 0\ ||\ s1.\mbox{\hyperlink{structc___string_aed1a560c935608758f338ac5aa145ec3}{str}});}
-\DoxyCodeLine{00181\ \ \ \ \ assert(s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ ==\ 0\ ||\ s2.\mbox{\hyperlink{structc___string_aed1a560c935608758f338ac5aa145ec3}{str}});}
-\DoxyCodeLine{00182\ }
-\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{int}\ c1\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{int}\ c2\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00185\ }
-\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordflow}{while}\ (c1\ ==\ c2\ \&\&\ s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ >\ 0\ \&\&\ s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ >\ 0)\ \{}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ c1\ =\ tolower(*s1.\mbox{\hyperlink{structc___string_aed1a560c935608758f338ac5aa145ec3}{str}}++);}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}-\/-\/;}
-\DoxyCodeLine{00189\ }
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ c2\ =\ tolower(*s2.\mbox{\hyperlink{structc___string_aed1a560c935608758f338ac5aa145ec3}{str}}++);}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}-\/-\/;}
-\DoxyCodeLine{00192\ \ \ \ \ \}}
-\DoxyCodeLine{00193\ }
-\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordflow}{if}\ ((s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ ==\ 0)\ !=\ (s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ ==\ 0))}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{int})(s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ -\/\ s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}});}
-\DoxyCodeLine{00196\ }
-\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordflow}{return}\ c1\ -\/\ c2;}
-\DoxyCodeLine{00198\ \}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00185\ \ \ \ \ assert(s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ ==\ 0\ ||\ s1.\mbox{\hyperlink{structc___string_aed1a560c935608758f338ac5aa145ec3}{str}});}
+\DoxyCodeLine{00186\ \ \ \ \ assert(s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ ==\ 0\ ||\ s2.\mbox{\hyperlink{structc___string_aed1a560c935608758f338ac5aa145ec3}{str}});}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{int}\ c1\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{int}\ c2\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordflow}{while}\ (c1\ ==\ c2\ \&\&\ s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ >\ 0\ \&\&\ s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ >\ 0)\ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ c1\ =\ tolower(*s1.\mbox{\hyperlink{structc___string_aed1a560c935608758f338ac5aa145ec3}{str}}++);}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}-\/-\/;}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ c2\ =\ tolower(*s2.\mbox{\hyperlink{structc___string_aed1a560c935608758f338ac5aa145ec3}{str}}++);}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}-\/-\/;}
+\DoxyCodeLine{00197\ \ \ \ \ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordflow}{if}\ ((s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ ==\ 0)\ !=\ (s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ ==\ 0))}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{int})(s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ -\/\ s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}});}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordflow}{return}\ c1\ -\/\ c2;}
+\DoxyCodeLine{00203\ \}}
 
 \end{DoxyCode}
 
@@ -423,30 +439,30 @@ int
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{text__lib_8h_source_l00151}{151}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
+Definition at line \mbox{\hyperlink{text__lib_8h_source_l00156}{156}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00152\ \ \ \ \ assert(s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ ==\ 0\ ||\ s1.\mbox{\hyperlink{structc___string_aed1a560c935608758f338ac5aa145ec3}{str}});}
-\DoxyCodeLine{00153\ \ \ \ \ assert(s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ ==\ 0\ ||\ s2.\mbox{\hyperlink{structc___string_aed1a560c935608758f338ac5aa145ec3}{str}});}
-\DoxyCodeLine{00154\ }
-\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{char}\ c1\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{char}\ c2\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00157\ }
-\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordflow}{while}\ (c1\ ==\ c2\ \&\&\ s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ >\ 0\ \&\&\ s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ >\ 0)\ \{}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ c1\ =\ *s1.\mbox{\hyperlink{structc___string_aed1a560c935608758f338ac5aa145ec3}{str}}++;}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}-\/-\/;}
-\DoxyCodeLine{00161\ }
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ c2\ =\ *s2.\mbox{\hyperlink{structc___string_aed1a560c935608758f338ac5aa145ec3}{str}}++;}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}-\/-\/;}
-\DoxyCodeLine{00164\ \ \ \ \ \}}
-\DoxyCodeLine{00165\ }
-\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordflow}{if}\ ((s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ ==\ 0)\ !=\ (s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ ==\ 0))}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{int})(s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ -\/\ s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}});}
-\DoxyCodeLine{00168\ }
-\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{return}\ c1\ -\/\ c2;}
-\DoxyCodeLine{00170\ \}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ assert(s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ ==\ 0\ ||\ s1.\mbox{\hyperlink{structc___string_aed1a560c935608758f338ac5aa145ec3}{str}});}
+\DoxyCodeLine{00158\ \ \ \ \ assert(s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ ==\ 0\ ||\ s2.\mbox{\hyperlink{structc___string_aed1a560c935608758f338ac5aa145ec3}{str}});}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{char}\ c1\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{char}\ c2\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordflow}{while}\ (c1\ ==\ c2\ \&\&\ s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ >\ 0\ \&\&\ s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ >\ 0)\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ c1\ =\ *s1.\mbox{\hyperlink{structc___string_aed1a560c935608758f338ac5aa145ec3}{str}}++;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}-\/-\/;}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ c2\ =\ *s2.\mbox{\hyperlink{structc___string_aed1a560c935608758f338ac5aa145ec3}{str}}++;}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}-\/-\/;}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordflow}{if}\ ((s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ ==\ 0)\ !=\ (s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ ==\ 0))}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{int})(s1.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}}\ -\/\ s2.\mbox{\hyperlink{structc___string_aafb842b55b327fbbed79080c8b511786}{len}});}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordflow}{return}\ c1\ -\/\ c2;}
+\DoxyCodeLine{00175\ \}}
 
 \end{DoxyCode}
 
@@ -642,18 +658,18 @@ returns pointer to the comment beginning
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{text__lib_8h_source_l00106}{106}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
+Definition at line \mbox{\hyperlink{text__lib_8h_source_l00111}{111}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00107\ \ \ \ \ assert(str);}
-\DoxyCodeLine{00108\ }
-\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{char}*\ comment\_beginning\ =\ strchr(str,\ symb);}
-\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordflow}{if}\ \ \ (comment\_beginning\ !=\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ *comment\_beginning\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00112\ }
-\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordflow}{return}\ comment\_beginning\ +\ (comment\_beginning\ ==\ \textcolor{keyword}{nullptr}\ ?\ 0\ :\ 1);}
-\DoxyCodeLine{00114\ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ assert(str);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{char}*\ comment\_beginning\ =\ strchr(str,\ symb);}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{if}\ \ \ (comment\_beginning\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ *comment\_beginning\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordflow}{return}\ comment\_beginning\ +\ (comment\_beginning\ ==\ \textcolor{keyword}{nullptr}\ ?\ 0\ :\ 1);}
+\DoxyCodeLine{00119\ \}}
 
 \end{DoxyCode}

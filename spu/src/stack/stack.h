@@ -209,6 +209,13 @@ void stk_print_error_to_user(const int err_code);
  */
 int stk_dtor(Stack* stk);
 
+/**
+ * @brief Dumps stk.data and some information about it
+ *
+ * @param stk
+ */
+void stk_data_dump(const Stack* stk);
+
 #ifdef DEBUG
 
     /**

@@ -3,6 +3,7 @@ var text__lib_8h =
     [ "c_String", "structc___string.html", "structc___string" ],
     [ "String", "struct_string.html", "struct_string" ],
     [ "String_CONST", "text__lib_8h.html#a62644cba8542352b76b0e4bf9eb25c73", null ],
+    [ "String_PRINTF", "text__lib_8h.html#a8bda955a9d6dede91b9f9319eb437476", null ],
     [ "String_TO_c", "text__lib_8h.html#a0227c409258b64a76f4fc5299c0ae42e", null ],
     [ "cntchar", "text__lib_8h.html#a97e0134cb3db1552c2b7f6f3ffa11698", null ],
     [ "split_line_with_special_delims", "text__lib_8h.html#aeeb6f730688f5cd5f8a1262398f2387d", null ],

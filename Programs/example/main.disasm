@@ -1,11 +1,13 @@
 ;Signature: KU
 ;Version: 0
-jf 38
+dmp
 push 1.000000
-pop [rcx]
+pop rcx
 push rcx+1.000000
 in
+dmp
 sqrt
+dmp
 out
 out
 hlt
