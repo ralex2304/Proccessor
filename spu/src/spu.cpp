@@ -71,29 +71,28 @@ Status::Statuses spu_parse(const char* data, const size_t size) {
 
     Cmd cmd = {};
 
-    while (cur_byte + sizeof(cmd.byte) <= size) {
-        DATA_GET_VAL_(cmd.byte, CmdByte);
+    while (cur_byte + sizeof(cmd.keys) <= size) {
+        DATA_GET_VAL_(cmd.keys, CmdKeys);
 
-        cmd.info = find_command_by_num(cmd.byte.num);
+        cmd.info = find_command_by_num(cmd.keys.num);
 
         if (cmd.info == nullptr)
             THROW_RUNTIME_ERROR_("Invalid command.");
 
-        if (cur_byte + cmd.size() > size) {
+        if (cur_byte + cmd.size() - sizeof(cmd.keys) > size) {
             stk_dtor(&spu.stk);
 
             THROW_RUNTIME_ERROR_("Arguments not found.");
         }
 
-        if (cmd.byte.reg)
+        if (cmd.keys.reg)
             DATA_GET_VAL_(cmd.args.reg, RegNum_t);
 
-        if (cmd.byte.imm) {
-            if (cmd.byte.ram || cmd.info->args.label)
-                DATA_GET_VAL_(cmd.args.imm_int, Imm_int_t);
-            else
-                DATA_GET_VAL_(cmd.args.imm_double, Imm_double_t);
-        }
+        if (cmd.keys.imm_double)
+            DATA_GET_VAL_(cmd.args.imm_double, Imm_double_t);
+
+        if (cmd.keys.imm_int)
+            DATA_GET_VAL_(cmd.args.imm_int, Imm_int_t);
 
         Status::Statuses res = spu_execute_command(&spu, &cmd, &cur_byte, ip);
         if (res != Status::NORMAL_WORK) {
@@ -128,9 +127,6 @@ Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, size_t* cur_b
     assert(spu);
     assert(cmd);
     assert(cur_byte);
-
-    if (cmd->byte.ram)
-        THROW_RUNTIME_ERROR_("SPU doesn't support RAM yet :-("); // FIXME
 
     int stk_res = Stack::OK;
 

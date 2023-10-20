@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['ok_0',['OK',['../struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5a146633a2ef2a9bbb1c05ec4cd31ba019',1,'Stack']]],
-  ['ok_5fexit_1',['OK_EXIT',['../struct_status.html#ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a',1,'Status']]],
-  ['on_5fcanary_5fprotect_2',['ON_CANARY_PROTECT',['../stack_8h.html#ae09c894ab7c3c3daa2c838cde400b7fc',1,'stack.h']]],
-  ['on_5fdebug_3',['ON_DEBUG',['../stack_8h.html#a1bdd7c1369b250215a080e8421d4ecf3',1,'stack.h']]],
-  ['on_5fhash_5fprotect_4',['ON_HASH_PROTECT',['../stack_8h.html#a1dc689bb2898fa51bd45a9e016fc2777',1,'stack.h']]],
-  ['out_5ffile_5ferror_5',['OUT_FILE_ERROR',['../struct_status.html#ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003',1,'Status']]],
-  ['output_5ferror_6',['OUTPUT_ERROR',['../struct_status.html#ab31bb94cc29a302cab703638615b604ca6d1d6a5832bcd12949e74fc041ce5064',1,'Status']]],
-  ['output_5ffilename_7',['output_filename',['../struct_args_vars.html#a4f2b7471e1b7080ecb00867fccf04fc9',1,'ArgsVars']]]
+  ['name_0',['name',['../struct_jump_label.html#a0840f89616d10aeb07e92667452e0a58',1,'JumpLabel::name'],['../struct_reg_info.html#a13748761bb8f8962021d7e7e77f148db',1,'RegInfo::name'],['../struct_cmd_info.html#a78ddf55610665e631a9356114523aa5e',1,'CmdInfo::name'],['../struct_var_code_data.html#a0bde6b05c83fb7bdf1a0f20fa4677762',1,'VarCodeData::name']]],
+  ['negative_5fcapacity_1',['NEGATIVE_CAPACITY',['../struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5af68a03245ae05bdfca1879f027972e0c',1,'Stack']]],
+  ['negative_5fsize_2',['NEGATIVE_SIZE',['../struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5ad85f8db9f888d5f54791ec3dbe8dae1c',1,'Stack']]],
+  ['non_5fpoison_5fempty_3',['NON_POISON_EMPTY',['../struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5a9e1e940df37869517f75f4d2198aebad',1,'Stack']]],
+  ['normal_5fwork_4',['NORMAL_WORK',['../struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0',1,'Status']]],
+  ['nothing_5fto_5fpop_5',['NOTHING_TO_POP',['../struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5a21fffebce3cb1827d31bfb5bc44dfca8',1,'Stack']]],
+  ['num_6',['num',['../struct_cmd_keys.html#ad0033340339feb06377aab854e951440',1,'CmdKeys::num'],['../struct_reg_info.html#a2d54508f1c72c2e0f6d0aad23738ef66',1,'RegInfo::num'],['../struct_cmd_info.html#a8c0cbd30b5f5d99be1e3b93668995c7e',1,'CmdInfo::num']]]
 ];

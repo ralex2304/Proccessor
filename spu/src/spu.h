@@ -20,6 +20,8 @@ struct SpuData {
 
     Imm_double_t reg[REGS_NUM] = {};    //< registers
 
+    Imm_double_t ram[RAM_SIZE] = {};    //< ram
+
     Status::Statuses ctor();
     Status::Statuses dtor();
 

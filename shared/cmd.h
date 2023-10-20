@@ -12,25 +12,26 @@
 #include "lib/utils/console.h"
 #include "lib/text/text_lib.h"
 
-const short CMD_VERSION = 0;        //< commands dict version
+const short CMD_VERSION = 1;        //< commands dict version
 
 const size_t MAX_LABEL_NUM = 128;   //< maximum number of labels in program (array size)
 
 const size_t MAX_LINE_LEN = 64;     //< max command text line len
 
+const size_t RAM_SIZE = 256;        //< spu ram size
+
 /**
- * @brief Specifies command byte bit field
+ * @brief Specifies command bit field
  */
-struct CmdByte {
-    unsigned char num: 5;   //< Command number
-    bool reg: 1;            //< reg argument flag
-    bool imm: 1;            //< immutable argument flag
-    bool ram: 1;            //< ram argument flag
+struct CmdKeys {
+    unsigned char num:  8;  //< Command number
+    bool reg:           1;  //< reg argument flag
+    bool imm_double:    1;  //< double immutable argument flag
+    bool imm_int:       1;  //< int immutable argument flag
+    bool ram:           1;  //< ram argument flag
 };
 
-static_assert(sizeof(CmdByte) == 1);    //< CmdByte must be 1 byte (obviously (ochev))
-
-const unsigned char CMD_BYTE_NUM_BIT_MASK = 0b0001'1111;    //< Bit field assignment kostyl'
+const unsigned char CMD_BYTE_NUM_BIT_MASK = 0xFF; //< Bit field assignment kostyl'
 
 typedef unsigned char RegNum_t; //< Reg number type
 
@@ -162,8 +163,8 @@ const FileHeader FILE_HEADER = {};  //< file header const. Used as the standart
 struct Cmd {
     const CmdInfo* info = nullptr;  //< pointer to CMD_DICT
 
-    CmdByte byte = {};              //< command byte
-    CmdArgs args = {};              //< command args
+    CmdKeys keys   = {};    //< command keys
+    CmdArgs args   = {};    //< command args
 
     size_t size() const;            //< returns command size in bytes
 };

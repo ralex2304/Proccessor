@@ -227,4 +227,15 @@ inline int String_sscanf(String token, const char* format, ...) {
     return ret;
 }
 
+/**
+ * @brief isdigit() with + and -
+ *
+ * @param c
+ * @return true
+ * @return false
+ */
+inline bool maybedigit(int c) {
+    return isdigit(c) || c == '-' || c == '+';
+}
+
 #endif // #ifndef MY_STRING_H_

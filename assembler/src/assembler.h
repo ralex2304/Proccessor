@@ -34,23 +34,10 @@ Status::Statuses assemeble_and_write(const InputData* input_data, const char* bi
  * @param buf
  * @param labels
  * @param inp_file
- * @param final_pass
  * @param listing_file
  * @return Status::Statuses
  */
-Status::Statuses asm_parse_and_write_line(Buffer* buf, JumpLabel* labels, InputFileInfo* inp_file,
-                                          const bool final_pass, FILE* listing_file = nullptr);
-
-/**
- * @brief Checks if cmd requires at least one argument
- *
- * @param cmd
- * @return true
- * @return false
- */
-inline bool asm_is_arg_required(const Cmd* cmd) {
-    return cmd->info->args.label || cmd->info->args.imm_int || cmd->info->args.imm_double
-        || cmd->info->args.reg || cmd->info->args.ram;
-}
+Status::Statuses asm_parse_and_write_line(Buffer* buf, JumpLabel* labels, AsmInfo* inp_file,
+                                          FILE* listing_file = nullptr);
 
 #endif // #ifndef ASSEMBLER_H_

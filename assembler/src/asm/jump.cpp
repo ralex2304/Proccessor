@@ -5,7 +5,7 @@
                                                                 __VA_ARGS__)
 
 Status::Statuses asm_new_label(JumpLabel* labels, const String name,
-                               const InputFileInfo* inp_file, const size_t byte) {
+                               const AsmInfo* inp_file, const size_t byte) {
     assert(labels);
     assert(name.str);
     assert(inp_file);
@@ -27,7 +27,7 @@ Status::Statuses asm_new_label(JumpLabel* labels, const String name,
 }
 
 Status::Statuses asm_get_label_byte(JumpLabel* labels, const String name,
-                                    const InputFileInfo* inp_file, Imm_int_t* byte,
+                                    const AsmInfo* inp_file, Imm_int_t* byte,
                                     const bool final_pass) {
     assert(labels);
     assert(name.str);

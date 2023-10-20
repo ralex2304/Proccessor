@@ -1,6 +1,6 @@
 var cmd_8h =
 [
-    [ "CmdByte", "struct_cmd_byte.html", "struct_cmd_byte" ],
+    [ "CmdKeys", "struct_cmd_keys.html", "struct_cmd_keys" ],
     [ "RegInfo", "struct_reg_info.html", "struct_reg_info" ],
     [ "CmdArgs", "struct_cmd_args.html", "struct_cmd_args" ],
     [ "ArgsEn", "struct_args_en.html", "struct_args_en" ],
@@ -35,6 +35,7 @@ var cmd_8h =
     [ "FILE_HEADER", "cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be", null ],
     [ "MAX_LABEL_NUM", "cmd_8h.html#a32f204b97db01e62c58e0158ee40b1cf", null ],
     [ "MAX_LINE_LEN", "cmd_8h.html#a150c0fc704c3322a038de77fa5ff4e7b", null ],
+    [ "RAM_SIZE", "cmd_8h.html#abe1e1b2bfd2932377e15b323ee0fb530", null ],
     [ "REGS_DICT", "cmd_8h.html#a4ea04ae05ebfffb0e476551db61b7724", null ],
     [ "REGS_NUM", "cmd_8h.html#a55559e71614b4b4ba24d073b1b813120", null ]
 ];

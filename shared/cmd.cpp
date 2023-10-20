@@ -19,9 +19,10 @@ bool FileHeader::check() const {
 }
 
 size_t Cmd::size() const {
-    return byte.reg * sizeof(args.reg)
-         + byte.imm * (byte.ram ? sizeof(args.imm_int)
-                                    : sizeof(args.imm_double));
+    return sizeof(keys)
+           + keys.reg * sizeof(args.reg)
+           + keys.imm_int * sizeof(args.imm_int)
+           + keys.imm_double * sizeof(args.imm_double);
 }
 
 const CmdInfo* find_command_by_num(const Cmd_num_t num) {

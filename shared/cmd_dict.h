@@ -8,76 +8,127 @@ static_assert(0 && "DEF_CMD is not defined");
 
 DEF_CMD(hlt,   0, 0b00000, "halt - end of program", {HALT();})
 
-DEF_CMD(push,  1, 0b11110, "push one element to stack || take from reg and push ||"
+DEF_CMD(push,  1, 0b11111, "push one element to stack || take from reg and push ||"
                                        " take from reg + imm_double and push", {
 
-    CHECK_AND_THROW_ERR(IS_ARG_REG || IS_ARG_IMM, "\"push\" requires at least one argument.");
+    CHECK_AND_THROW_ERR(IS_ARG_REG || IS_ARG_IMM_DOUBLE || IS_ARG_IMM_INT,
+                        "\"push\" requires at least one argument.");
 
     IMM_DOUBLE_T a = 0;
 
-    if (IS_ARG_REG)
-        a += REG(ARG_REG);
+    if (IS_ARG_RAM) {
+        IMM_INT_T b = 0;
 
-    if (IS_ARG_IMM)
-        a += ARG_IMM_DOUBLE;
+        if (IS_ARG_REG)
+            b += (IMM_INT_T)REG(ARG_REG);
+
+        if (IS_ARG_IMM_INT)
+            b += ARG_IMM_INT;
+
+        a = RAM(b);
+    } else {
+        if (IS_ARG_REG)
+            a += REG(ARG_REG);
+
+        if (IS_ARG_IMM_DOUBLE)
+            a += ARG_IMM_DOUBLE;
+
+        if (IS_ARG_IMM_INT)
+            a += (IMM_DOUBLE_T)ARG_IMM_INT;
+    }
 
     PUSH(a);
 })
 
 DEF_CMD(pop,   2, 0b10110,  "pop from stack and write to reg", {
-    CHECK_AND_THROW_ERR(IS_ARG_REG, "\"pop\" requires reg.");
+    CHECK_AND_THROW_ERR(IS_ARG_REG || IS_ARG_IMM_INT || IS_ARG_IMM_DOUBLE,
+                        "\"pop\" requires reg.");
+
+    if (IS_ARG_RAM) {
+        IMM_INT_T a = 0;
+
+        if (IS_ARG_REG)
+            a += (IMM_INT_T)REG(ARG_REG);
+
+        if (IS_ARG_IMM_INT)
+            a += ARG_IMM_INT;
+
+        POP(&RAM(a));
+    } else {
+
+    }
 
     POP(&REG(ARG_REG));
 })
 
-DEF_CMD(jmp,   3, 0b00001, "jump", {
-    CHECK_AND_THROW_ERR(IS_ARG_IMM, "\"jump\" commands require byte address.");
+DEF_CMD(jmp,   3, 0b10001, "jump", {
+    JUMP_CHECK_ARGS();
 
-    JUMP(ARG_IMM_INT);
+    JUMP(JUMP_DESTINATION());
 })
 
-DEF_CMD(ja,    4, 0b00001, "jump >", {
-    CHECK_AND_THROW_ERR(IS_ARG_IMM, "\"jump\" commands require byte address.");
+DEF_CMD(ja,    4, 0b10001, "jump >", {
+    JUMP_CHECK_ARGS();
 
-    JUMP_CLAUSE_FUNC(IS_GREATER_IMM_DOUBLE, ARG_IMM_INT);
+    JUMP_CLAUSE_FUNC(IS_GREATER_IMM_DOUBLE, JUMP_DESTINATION());
 })
 
-DEF_CMD(jae,   5, 0b00001, "jump >=", {
-    CHECK_AND_THROW_ERR(IS_ARG_IMM, "\"jump\" commands require byte address.");
+DEF_CMD(jae,   5, 0b10001, "jump >=", {
+    JUMP_CHECK_ARGS();
 
-    JUMP_CLAUSE_FUNC(IS_GREATER_EQUAL_IMM_DOUBLE, ARG_IMM_INT);
+    JUMP_CLAUSE_FUNC(IS_GREATER_EQUAL_IMM_DOUBLE, JUMP_DESTINATION());
 })
 
-DEF_CMD(jb,    6, 0b00001, "jump <", {
-    CHECK_AND_THROW_ERR(IS_ARG_IMM, "\"jump\" commands require byte address.");
+DEF_CMD(jb,    6, 0b10001, "jump <", {
+    JUMP_CHECK_ARGS();
 
-    JUMP_CLAUSE_FUNC(IS_LOWER_IMM_DOUBLE, ARG_IMM_INT);
+    JUMP_CLAUSE_FUNC(IS_LOWER_IMM_DOUBLE, JUMP_DESTINATION());
 })
 
-DEF_CMD(jbe,   7, 0b00001, "jump <=", {
-    CHECK_AND_THROW_ERR(IS_ARG_IMM, "\"jump\" commands require byte address.");
+DEF_CMD(jbe,   7, 0b10001, "jump <=", {
+    JUMP_CHECK_ARGS();
 
-    JUMP_CLAUSE_FUNC(IS_LOWER_EQUAL_IMM_DOUBLE, ARG_IMM_INT);
+    JUMP_CLAUSE_FUNC(IS_LOWER_EQUAL_IMM_DOUBLE, JUMP_DESTINATION());
 })
 
-DEF_CMD(je,    8, 0b00001, "jump ==", {
-    CHECK_AND_THROW_ERR(IS_ARG_IMM, "\"jump\" commands require byte address.");
+DEF_CMD(je,    8, 0b10001, "jump ==", {
+    JUMP_CHECK_ARGS();
 
-    JUMP_CLAUSE_FUNC(IS_EQUAL_IMM_DOUBLE, ARG_IMM_INT);
+    JUMP_CLAUSE_FUNC(IS_EQUAL_IMM_DOUBLE, JUMP_DESTINATION());
 })
 
-DEF_CMD(jne,   9, 0b00001, "jump !=", {
-    CHECK_AND_THROW_ERR(IS_ARG_IMM, "\"jump\" commands require byte address.");
+DEF_CMD(jne,   9, 0b10001, "jump !=", {
+    JUMP_CHECK_ARGS();
 
-    JUMP_CLAUSE_FUNC(!IS_EQUAL_IMM_DOUBLE, ARG_IMM_INT);
+    JUMP_CLAUSE_FUNC(!IS_EQUAL_IMM_DOUBLE, JUMP_DESTINATION());
 })
 
-DEF_CMD(jf,   10, 0b00001, "jump on Fridays", {
-    CHECK_AND_THROW_ERR(IS_ARG_IMM, "\"jump\" commands require byte address.");
+DEF_CMD(jf,   10, 0b10001, "jump on Fridays", {
+    JUMP_CHECK_ARGS();
 
     if (WEEKDAY() == 5)
-        JUMP(ARG_IMM_INT);
+        JUMP(JUMP_DESTINATION());
 })
+
+DEF_CMD(call, 11, 0b10001, "call - go to procedure", {
+    JUMP_CHECK_ARGS();
+
+    PUSH((IMM_DOUBLE_T)GET_NEXT_INSTRUCTION_PTR());
+
+    JUMP(JUMP_DESTINATION());
+})
+
+DEF_CMD(ret,  12, 0b00000, "ret - end of procedure", {
+    IMM_DOUBLE_T a = 0;
+
+    POP(&a);
+
+    IMM_INT_T b = (IMM_INT_T)a;
+
+    JUMP(b);
+})
+
+
 
 DEF_CMD(in ,  16, 0b00000, "push one element to stack from user input", {
     IMM_DOUBLE_T a = 0;

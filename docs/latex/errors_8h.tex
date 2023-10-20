@@ -7,24 +7,108 @@
 {\ttfamily \#include \"{}lib/utils/statuses.\+h\"{}}\newline
 {\ttfamily \#include \"{}lib/text/text\+\_\+lib.\+h\"{}}\newline
 {\ttfamily \#include \"{}lib/utils/console.\+h\"{}}\newline
+{\ttfamily \#include \"{}cmd.\+h\"{}}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{struct_input_file_info}{Input\+File\+Info}}
-\begin{DoxyCompactList}\small\item\em Debug info about input file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+struct \mbox{\hyperlink{struct_asm_info}{Asm\+Info}}
+\begin{DoxyCompactList}\small\item\em Info about assembling. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{errors_8h_a6c7dd2b5c489314491e98e778335aafb}{asm\+\_\+throw\+\_\+syntax\+\_\+error}} (const \mbox{\hyperlink{struct_string}{String}} token, const \mbox{\hyperlink{struct_input_file_info}{Input\+File\+Info}} \texorpdfstring{$\ast$}{*}file\+\_\+info, const char \texorpdfstring{$\ast$}{*}err\+\_\+msg,...)
-\begin{DoxyCompactList}\small\item\em Throws syntax error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{errors_8h_a00da7f949b97b55e9f01f701e69912c2}{asm\+\_\+throw\+\_\+syntax\+\_\+error}} (const \mbox{\hyperlink{struct_string}{String}} token, const \mbox{\hyperlink{struct_asm_info}{Asm\+Info}} \texorpdfstring{$\ast$}{*}file\+\_\+info, const char \texorpdfstring{$\ast$}{*}err\+\_\+msg,...)
+\begin{DoxyCompactList}\small\item\em Throws syntax error. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{errors_8h_a5849736d04a0cbad92c3d7563746ce83}{asm\+\_\+is\+\_\+arg\+\_\+required}} (const \mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}cmd)
+\begin{DoxyCompactList}\small\item\em Checks if cmd requires at least one argument. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{errors_8h_aec9124143ff4b8a607ff8207b54a164e}{asm\+\_\+is\+\_\+any\+\_\+arg\+\_\+given}} (const \mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}cmd)
+\begin{DoxyCompactList}\small\item\em Checks if at least one argument was given to a function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{errors_8h_a6c7dd2b5c489314491e98e778335aafb}\label{errors_8h_a6c7dd2b5c489314491e98e778335aafb} 
+\Hypertarget{errors_8h_aec9124143ff4b8a607ff8207b54a164e}\label{errors_8h_aec9124143ff4b8a607ff8207b54a164e} 
+\index{errors.h@{errors.h}!asm\_is\_any\_arg\_given@{asm\_is\_any\_arg\_given}}
+\index{asm\_is\_any\_arg\_given@{asm\_is\_any\_arg\_given}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{asm\_is\_any\_arg\_given()}{asm\_is\_any\_arg\_given()}}
+{\footnotesize\ttfamily bool asm\+\_\+is\+\_\+any\+\_\+arg\+\_\+given (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if at least one argument was given to a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{errors_8h_source_l00056}{56}} of file \mbox{\hyperlink{errors_8h_source}{errors.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{return}\ cmd-\/>\mbox{\hyperlink{struct_cmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{struct_cmd_keys_a2520ae7bb6f891ca6ff62dd0f882a1f4}{imm\_int}}\ ||\ cmd-\/>\mbox{\hyperlink{struct_cmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{struct_cmd_keys_a5b1fdf0614537d3c515c99ce945906fa}{imm\_double}}\ ||\ cmd-\/>\mbox{\hyperlink{struct_cmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{struct_cmd_keys_a76f64f02295d9a30abdaf138ea275f6a}{reg}};\ \textcolor{comment}{//<\ ram\ check\ is\ not\ needed}}
+\DoxyCodeLine{00058\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{cmd_8h_source_l00029}{Cmd\+Keys\+::imm\+\_\+double}}, \mbox{\hyperlink{cmd_8h_source_l00030}{Cmd\+Keys\+::imm\+\_\+int}}, \mbox{\hyperlink{cmd_8h_source_l00166}{Cmd\+::keys}}, and \mbox{\hyperlink{cmd_8h_source_l00028}{Cmd\+Keys\+::reg}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00081}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}, and \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}.
+
+\Hypertarget{errors_8h_a5849736d04a0cbad92c3d7563746ce83}\label{errors_8h_a5849736d04a0cbad92c3d7563746ce83} 
+\index{errors.h@{errors.h}!asm\_is\_arg\_required@{asm\_is\_arg\_required}}
+\index{asm\_is\_arg\_required@{asm\_is\_arg\_required}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{asm\_is\_arg\_required()}{asm\_is\_arg\_required()}}
+{\footnotesize\ttfamily bool asm\+\_\+is\+\_\+arg\+\_\+required (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if cmd requires at least one argument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} ram check is not needed
+
+Definition at line \mbox{\hyperlink{errors_8h_source_l00044}{44}} of file \mbox{\hyperlink{errors_8h_source}{errors.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{return}\ cmd-\/>\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}-\/>\mbox{\hyperlink{struct_cmd_info_a533a901273935ace5b3b91cd67ae69d5}{args}}.\mbox{\hyperlink{struct_args_en_a2602d15845006ade8d73d8bbad851c61}{label}}\ ||\ cmd-\/>\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}-\/>\mbox{\hyperlink{struct_cmd_info_a533a901273935ace5b3b91cd67ae69d5}{args}}.\mbox{\hyperlink{struct_args_en_a0750bd83c2ac938393537562ffe3f000}{imm\_int}}\ ||\ cmd-\/>\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}-\/>\mbox{\hyperlink{struct_cmd_info_a533a901273935ace5b3b91cd67ae69d5}{args}}.\mbox{\hyperlink{struct_args_en_a32436d51611eb10f8c0a003acf02d876}{imm\_double}}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ ||\ cmd-\/>\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}-\/>\mbox{\hyperlink{struct_cmd_info_a533a901273935ace5b3b91cd67ae69d5}{args}}.\mbox{\hyperlink{struct_args_en_a63d5185473c449ea08983c877e083122}{reg}};\ }
+\DoxyCodeLine{00047\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{cmd_8h_source_l00121}{Cmd\+Info\+::args}}, \mbox{\hyperlink{cmd_8h_source_l00096}{Args\+En\+::imm\+\_\+double}}, \mbox{\hyperlink{cmd_8h_source_l00097}{Args\+En\+::imm\+\_\+int}}, \mbox{\hyperlink{cmd_8h_source_l00164}{Cmd\+::info}}, \mbox{\hyperlink{cmd_8h_source_l00099}{Args\+En\+::label}}, and \mbox{\hyperlink{cmd_8h_source_l00095}{Args\+En\+::reg}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00081}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}.
+
+\Hypertarget{errors_8h_a00da7f949b97b55e9f01f701e69912c2}\label{errors_8h_a00da7f949b97b55e9f01f701e69912c2} 
 \index{errors.h@{errors.h}!asm\_throw\_syntax\_error@{asm\_throw\_syntax\_error}}
 \index{asm\_throw\_syntax\_error@{asm\_throw\_syntax\_error}!errors.h@{errors.h}}
 \doxysubsubsection{\texorpdfstring{asm\_throw\_syntax\_error()}{asm\_throw\_syntax\_error()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+throw\+\_\+syntax\+\_\+error (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_string}{String}}}]{token,  }\item[{const \mbox{\hyperlink{struct_input_file_info}{Input\+File\+Info}} \texorpdfstring{$\ast$}{*}}]{file\+\_\+info,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{err\+\_\+msg,  }\item[{}]{... }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+throw\+\_\+syntax\+\_\+error (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_string}{String}}}]{token,  }\item[{const \mbox{\hyperlink{struct_asm_info}{Asm\+Info}} \texorpdfstring{$\ast$}{*}}]{file\+\_\+info,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{err\+\_\+msg,  }\item[{}]{... }\end{DoxyParamCaption})}
 
 
 
@@ -52,18 +136,18 @@ Definition at line \mbox{\hyperlink{errors_8cpp_source_l00003}{3}} of file \mbox
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00005\ \ \ \ \ assert(err\_msg);}
-\DoxyCodeLine{00006\ \ \ \ \ assert(file\_info-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ ==\ 0\ ||\ file\_info-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
-\DoxyCodeLine{00007\ \ \ \ \ assert(\ \ \ \ \ \ \ \ \ \ token.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ ==\ 0\ ||\ \ \ \ \ \ \ \ \ \ \ token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
-\DoxyCodeLine{00008\ \ \ \ \ assert(file\_info-\/>\mbox{\hyperlink{struct_input_file_info_ade8c5dc519ae52c36d351cbaf07a458b}{filename}});}
+\DoxyCodeLine{00006\ \ \ \ \ assert(asm\_info-\/>line.len\ ==\ 0\ ||\ asm\_info-\/>line.str);}
+\DoxyCodeLine{00007\ \ \ \ \ assert(\ \ \ \ \ \ \ \ \ token.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ ==\ 0\ ||\ \ \ \ \ \ \ \ \ \ token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{00008\ \ \ \ \ assert(asm\_info-\/>filename);}
 \DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ token\_begin\ =\ (token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ ==\ \textcolor{keyword}{nullptr})\ ?\ (\textcolor{keywordtype}{int})file\_info-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (int)(token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ -\/\ file\_info-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ token\_end\ \ \ =\ (token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ ==\ \textcolor{keyword}{nullptr})\ ?\ (\textcolor{keywordtype}{int})file\_info-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ token\_begin\ =\ (token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ ==\ \textcolor{keyword}{nullptr})\ ?\ (\textcolor{keywordtype}{int})asm\_info-\/>line.len}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (int)(token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ -\/\ asm\_info-\/>line.str);}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ token\_end\ \ \ =\ (token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ ==\ \textcolor{keyword}{nullptr})\ ?\ (\textcolor{keywordtype}{int})asm\_info-\/>line.len}
 \DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (int)(token\_begin\ +\ token.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}});}
 \DoxyCodeLine{00014\ }
 \DoxyCodeLine{00015\ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_a038ef7e954c5cdc42f96cabd07c56dec}{CONSOLE\_STYLE}}(\mbox{\hyperlink{console_8h_a7ce3d6fee94f21c9e3d0ffdd90aadc2e}{STYLE\_BOLD}},\ \textcolor{stringliteral}{"{}\%s:\%zu:\%d\ "{}}}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{console_8h_ad86358bf19927183dd7b4ae215a29731}{COLOR\_RED}}\ \textcolor{stringliteral}{"{}syntax\ error:\ "{}}),\ file\_info-\/>\mbox{\hyperlink{struct_input_file_info_ade8c5dc519ae52c36d351cbaf07a458b}{filename}},}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ file\_info-\/>\mbox{\hyperlink{struct_input_file_info_abcfe72db9b1599647de9a7457eeb193c}{line\_num}},\ token\_begin\ +\ 1);}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{console_8h_ad86358bf19927183dd7b4ae215a29731}{COLOR\_RED}}\ \textcolor{stringliteral}{"{}syntax\ error:\ "{}}),\ asm\_info-\/>filename,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ asm\_info-\/>line\_num,\ token\_begin\ +\ 1);}
 \DoxyCodeLine{00018\ }
 \DoxyCodeLine{00019\ \ \ \ \ va\_list\ arg\_list\ =\ \{\};}
 \DoxyCodeLine{00020\ \ \ \ \ va\_start(arg\_list,\ err\_msg);}
@@ -71,12 +155,12 @@ Definition at line \mbox{\hyperlink{errors_8cpp_source_l00003}{3}} of file \mbox
 \DoxyCodeLine{00022\ \ \ \ \ va\_end(arg\_list);}
 \DoxyCodeLine{00023\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
 \DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%5zu\ |\ "{}},\ file\_info-\/>\mbox{\hyperlink{struct_input_file_info_abcfe72db9b1599647de9a7457eeb193c}{line\_num}});}
+\DoxyCodeLine{00025\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%5zu\ |\ "{}},\ asm\_info-\/>line\_num);}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%.*s"{}},\ token\_begin,\ file\_info-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{00027\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%.*s"{}},\ token\_begin,\ asm\_info-\/>line.str);}
 \DoxyCodeLine{00028\ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_a038ef7e954c5cdc42f96cabd07c56dec}{CONSOLE\_STYLE}}(\mbox{\hyperlink{console_8h_a7ce3d6fee94f21c9e3d0ffdd90aadc2e}{STYLE\_BOLD}}\ \mbox{\hyperlink{console_8h_ad86358bf19927183dd7b4ae215a29731}{COLOR\_RED}},\ \textcolor{stringliteral}{"{}\%.*s"{}}),\ \mbox{\hyperlink{text__lib_8h_a8bda955a9d6dede91b9f9319eb437476}{String\_PRINTF}}(token));}
-\DoxyCodeLine{00029\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%.*s\(\backslash\)n"{}},\ (\textcolor{keywordtype}{int})(file\_info-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ -\/\ token\_end),}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\_info-\/>\mbox{\hyperlink{struct_input_file_info_af447b2b398bdb400e1fce35be96bb942}{line}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ +\ token\_end);}
+\DoxyCodeLine{00029\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%.*s\(\backslash\)n"{}},\ (\textcolor{keywordtype}{int})(asm\_info-\/>line.len\ -\/\ token\_end),}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ asm\_info-\/>line.str\ +\ token\_end);}
 \DoxyCodeLine{00031\ }
 \DoxyCodeLine{00032\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%5s\ |\ "{}},\ \textcolor{stringliteral}{"{}"{}});}
 \DoxyCodeLine{00033\ }
@@ -92,5 +176,5 @@ Definition at line \mbox{\hyperlink{errors_8cpp_source_l00003}{3}} of file \mbox
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{console_8h_source_l00018}{COLOR\+\_\+\+RED}}, \mbox{\hyperlink{console_8h_source_l00036}{CONSOLE\+\_\+\+STYLE}}, \mbox{\hyperlink{errors_8h_source_l00020}{Input\+File\+Info\+::filename}}, \mbox{\hyperlink{text__lib_8h_source_l00024}{String\+::len}}, \mbox{\hyperlink{errors_8h_source_l00017}{Input\+File\+Info\+::line}}, \mbox{\hyperlink{errors_8h_source_l00018}{Input\+File\+Info\+::line\+\_\+num}}, \mbox{\hyperlink{text__lib_8h_source_l00023}{String\+::str}}, \mbox{\hyperlink{text__lib_8h_source_l00043}{String\+\_\+\+PRINTF}}, \mbox{\hyperlink{console_8h_source_l00008}{STYLE\+\_\+\+BOLD}}, \mbox{\hyperlink{console_8h_source_l00005}{STYLE\+\_\+\+RESET}}, and \mbox{\hyperlink{statuses_8h_source_l00019}{Status\+::\+SYNTAX\+\_\+\+ERROR}}.
+References \mbox{\hyperlink{console_8h_source_l00018}{COLOR\+\_\+\+RED}}, \mbox{\hyperlink{console_8h_source_l00036}{CONSOLE\+\_\+\+STYLE}}, \mbox{\hyperlink{errors_8h_source_l00021}{Asm\+Info\+::filename}}, \mbox{\hyperlink{text__lib_8h_source_l00024}{String\+::len}}, \mbox{\hyperlink{errors_8h_source_l00018}{Asm\+Info\+::line}}, \mbox{\hyperlink{errors_8h_source_l00019}{Asm\+Info\+::line\+\_\+num}}, \mbox{\hyperlink{text__lib_8h_source_l00023}{String\+::str}}, \mbox{\hyperlink{text__lib_8h_source_l00043}{String\+\_\+\+PRINTF}}, \mbox{\hyperlink{console_8h_source_l00008}{STYLE\+\_\+\+BOLD}}, \mbox{\hyperlink{console_8h_source_l00005}{STYLE\+\_\+\+RESET}}, and \mbox{\hyperlink{statuses_8h_source_l00019}{Status\+::\+SYNTAX\+\_\+\+ERROR}}.
 

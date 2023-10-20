@@ -4,6 +4,8 @@ DOCS_DIR = docs
 
 .PHONY: assemble execute disassemble run
 
+build: build_asm build_disasm build_spu
+
 run: assemble execute
 
 assemble:
@@ -17,8 +19,6 @@ execute:
 disassemble:
 	@echo // Make: Disassembling
 	@cd disassembler && ./main -i ../Programs/$(prog)/main.exec -o ../Programs/$(prog)/main.disasm -d
-
-build: build_asm build_disasm build_spu
 
 build_asm:
 	@cd ./assembler && make

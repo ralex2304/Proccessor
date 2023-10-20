@@ -161,6 +161,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a91c9a7523f46e88b8e65f97fae3aa07a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__lib_8h.html#a91c9a7523f46e88b8e65f97fae3aa07a">String_sscanf</a> (<a class="el" href="struct_string.html">String</a> token, const char *format,...)</td></tr>
 <tr class="memdesc:a91c9a7523f46e88b8e65f97fae3aa07a"><td class="mdescLeft">&#160;</td><td class="mdescRight">sscanf for <a class="el" href="struct_string.html" title="Struct to keep string and len together.">String</a> (not null-terminated strings)  <br /></td></tr>
 <tr class="separator:a91c9a7523f46e88b8e65f97fae3aa07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d13a9a960fe19f6ab34e6cbbcb8d10d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__lib_8h.html#a1d13a9a960fe19f6ab34e6cbbcb8d10d">maybedigit</a> (int c)</td></tr>
+<tr class="memdesc:a1d13a9a960fe19f6ab34e6cbbcb8d10d"><td class="mdescLeft">&#160;</td><td class="mdescRight">isdigit() with + and -  <br /></td></tr>
+<tr class="separator:a1d13a9a960fe19f6ab34e6cbbcb8d10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a62644cba8542352b76b0e4bf9eb25c73" name="a62644cba8542352b76b0e4bf9eb25c73"></a>
@@ -295,6 +298,50 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a1d13a9a960fe19f6ab34e6cbbcb8d10d" name="a1d13a9a960fe19f6ab34e6cbbcb8d10d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d13a9a960fe19f6ab34e6cbbcb8d10d">&#9670;&#160;</a></span>maybedigit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool maybedigit </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>isdigit() with + and - </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="text__lib_8h_source.html#l00237">237</a> of file <a class="el" href="text__lib_8h_source.html">text_lib.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  237</span>                              {</div>
+<div class="line"><span class="lineno">  238</span>    <span class="keywordflow">return</span> isdigit(c) || c == <span class="charliteral">&#39;-&#39;</span> || c == <span class="charliteral">&#39;+&#39;</span>;</div>
+<div class="line"><span class="lineno">  239</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="read_8cpp_source.html#l00111">asm_read_arg_imm_double()</a>, and <a class="el" href="read_8cpp_source.html#l00087">asm_read_arg_imm_int()</a>.</p>
+
+</div>
+</div>
 <a id="aeeb6f730688f5cd5f8a1262398f2387d" name="aeeb6f730688f5cd5f8a1262398f2387d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeeb6f730688f5cd5f8a1262398f2387d">&#9670;&#160;</a></span>split_line_with_special_delims()</h2>
 
@@ -376,7 +423,7 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="text__lib_8h_source.html#l00023">String::str</a>, and <a class="el" href="text__lib_8cpp_source.html#l00041">String_strtok_special()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00080">asm_parse_and_write_line()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00081">asm_parse_and_write_line()</a>.</p>
 
 </div>
 </div>
@@ -476,7 +523,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  132</span>    <span class="keywordflow">return</span> str;</div>
 <div class="line"><span class="lineno">  133</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00080">asm_parse_and_write_line()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00081">asm_parse_and_write_line()</a>.</p>
 
 </div>
 </div>
@@ -596,7 +643,7 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="text__lib_8h_source.html#l00024">String::len</a>, and <a class="el" href="text__lib_8h_source.html#l00023">String::str</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="read_8cpp_source.html#l00119">asm_read_arg_imm_double()</a>, and <a class="el" href="read_8cpp_source.html#l00096">asm_read_arg_imm_int()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="read_8cpp_source.html#l00111">asm_read_arg_imm_double()</a>, and <a class="el" href="read_8cpp_source.html#l00087">asm_read_arg_imm_int()</a>.</p>
 
 </div>
 </div>
@@ -670,7 +717,7 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="text__lib_8h_source.html#l00016">c_String::len</a>, and <a class="el" href="text__lib_8h_source.html#l00015">c_String::str</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="cmd_8cpp_source.html#l00035">find_command_by_name()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="cmd_8cpp_source.html#l00036">find_command_by_name()</a>.</p>
 
 </div>
 </div>
@@ -742,7 +789,7 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="text__lib_8h_source.html#l00016">c_String::len</a>, and <a class="el" href="text__lib_8h_source.html#l00015">c_String::str</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="jump_8cpp_source.html#l00029">asm_get_label_byte()</a>, <a class="el" href="jump_8cpp_source.html#l00007">asm_new_label()</a>, and <a class="el" href="cmd_8cpp_source.html#l00053">find_reg_by_name()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="jump_8cpp_source.html#l00029">asm_get_label_byte()</a>, <a class="el" href="jump_8cpp_source.html#l00007">asm_new_label()</a>, and <a class="el" href="cmd_8cpp_source.html#l00054">find_reg_by_name()</a>.</p>
 
 </div>
 </div>

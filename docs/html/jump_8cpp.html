@@ -106,12 +106,12 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abfa9520cd188b0949a9333504e23cbc7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jump_8cpp.html#abfa9520cd188b0949a9333504e23cbc7">asm_new_label</a> (<a class="el" href="struct_jump_label.html">JumpLabel</a> *labels, const <a class="el" href="struct_string.html">String</a> name, const <a class="el" href="struct_input_file_info.html">InputFileInfo</a> *inp_file, const size_t byte)</td></tr>
-<tr class="memdesc:abfa9520cd188b0949a9333504e23cbc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds new label to labels.  <br /></td></tr>
-<tr class="separator:abfa9520cd188b0949a9333504e23cbc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c7ee72f9b735d877734567f77227bfb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jump_8cpp.html#a9c7ee72f9b735d877734567f77227bfb">asm_get_label_byte</a> (<a class="el" href="struct_jump_label.html">JumpLabel</a> *labels, const <a class="el" href="struct_string.html">String</a> name, const <a class="el" href="struct_input_file_info.html">InputFileInfo</a> *inp_file, <a class="el" href="cmd_8h.html#a226f97678592b90d02bed2f62edf55c6">Imm_int_t</a> *byte, const bool final_pass)</td></tr>
-<tr class="memdesc:a9c7ee72f9b735d877734567f77227bfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets label byte by name.  <br /></td></tr>
-<tr class="separator:a9c7ee72f9b735d877734567f77227bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5a484eed9fd4e18cc675fbadd20338b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jump_8cpp.html#ac5a484eed9fd4e18cc675fbadd20338b">asm_new_label</a> (<a class="el" href="struct_jump_label.html">JumpLabel</a> *labels, const <a class="el" href="struct_string.html">String</a> name, const <a class="el" href="struct_asm_info.html">AsmInfo</a> *inp_file, const size_t byte)</td></tr>
+<tr class="memdesc:ac5a484eed9fd4e18cc675fbadd20338b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds new label to labels.  <br /></td></tr>
+<tr class="separator:ac5a484eed9fd4e18cc675fbadd20338b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd04072d6902280ce0b325593daa440e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jump_8cpp.html#afd04072d6902280ce0b325593daa440e">asm_get_label_byte</a> (<a class="el" href="struct_jump_label.html">JumpLabel</a> *labels, const <a class="el" href="struct_string.html">String</a> name, const <a class="el" href="struct_asm_info.html">AsmInfo</a> *inp_file, <a class="el" href="cmd_8h.html#a226f97678592b90d02bed2f62edf55c6">Imm_int_t</a> *byte, const bool final_pass)</td></tr>
+<tr class="memdesc:afd04072d6902280ce0b325593daa440e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets label byte by name.  <br /></td></tr>
+<tr class="separator:afd04072d6902280ce0b325593daa440e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f236543c60a67fb27ba9fae09eb32e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structc___string.html">c_String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jump_8cpp.html#a9f236543c60a67fb27ba9fae09eb32e8">asm_get_label_name</a> (const <a class="el" href="struct_jump_label.html">JumpLabel</a> *labels, const <a class="el" href="cmd_8h.html#a226f97678592b90d02bed2f62edf55c6">Imm_int_t</a> byte)</td></tr>
 <tr class="memdesc:a9f236543c60a67fb27ba9fae09eb32e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns label name by byte.  <br /></td></tr>
 <tr class="separator:a9f236543c60a67fb27ba9fae09eb32e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,18 +132,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">                                                                <span class="keywordflow">return</span> <a class="code hl_function" href="errors_8cpp.html#a6c7dd2b5c489314491e98e778335aafb">asm_throw_syntax_error</a>(name,       \</div>
+<b>Value:</b><div class="fragment"><div class="line">                                                                <span class="keywordflow">return</span> <a class="code hl_function" href="errors_8cpp.html#ac2b36b9c7abb118a75666f4a3a511553">asm_throw_syntax_error</a>(name,       \</div>
 <div class="line">                                                                inp_file,   \</div>
 <div class="line">                                                                __VA_ARGS__)</div>
-<div class="ttc" id="aerrors_8cpp_html_a6c7dd2b5c489314491e98e778335aafb"><div class="ttname"><a href="errors_8cpp.html#a6c7dd2b5c489314491e98e778335aafb">asm_throw_syntax_error</a></div><div class="ttdeci">Status::Statuses asm_throw_syntax_error(const String token, const InputFileInfo *file_info, const char *err_msg,...)</div><div class="ttdoc">Throws syntax error.</div><div class="ttdef"><b>Definition</b> <a href="errors_8cpp_source.html#l00003">errors.cpp:3</a></div></div>
+<div class="ttc" id="aerrors_8cpp_html_ac2b36b9c7abb118a75666f4a3a511553"><div class="ttname"><a href="errors_8cpp.html#ac2b36b9c7abb118a75666f4a3a511553">asm_throw_syntax_error</a></div><div class="ttdeci">Status::Statuses asm_throw_syntax_error(const String token, const AsmInfo *asm_info, const char *err_msg,...)</div><div class="ttdoc">Throws syntax error.</div><div class="ttdef"><b>Definition</b> <a href="errors_8cpp_source.html#l00003">errors.cpp:3</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="jump_8cpp_source.html#l00003">3</a> of file <a class="el" href="jump_8cpp_source.html">jump.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a9c7ee72f9b735d877734567f77227bfb" name="a9c7ee72f9b735d877734567f77227bfb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c7ee72f9b735d877734567f77227bfb">&#9670;&#160;</a></span>asm_get_label_byte()</h2>
+<a id="afd04072d6902280ce0b325593daa440e" name="afd04072d6902280ce0b325593daa440e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd04072d6902280ce0b325593daa440e">&#9670;&#160;</a></span>asm_get_label_byte()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,7 +163,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="struct_input_file_info.html">InputFileInfo</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="struct_asm_info.html">AsmInfo</a> *&#160;</td>
           <td class="paramname"><em>inp_file</em>, </td>
         </tr>
         <tr>
@@ -229,7 +229,7 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="jump_8h_source.html#l00018">JumpLabel::byte</a>, <a class="el" href="cmd_8h_source.html#l00017">MAX_LABEL_NUM</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, <a class="el" href="text__lib_8h_source.html#l00023">String::str</a>, <a class="el" href="text__lib_8h_source.html#l00043">String_PRINTF</a>, <a class="el" href="text__lib_8h_source.html#l00156">String_strcmp()</a>, <a class="el" href="text__lib_8h_source.html#l00038">String_TO_c</a>, and <a class="el" href="jump_8cpp_source.html#l00003">THROW_SYNTAX_ERROR_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="read_8cpp_source.html#l00033">asm_read_args()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="read_8cpp_source.html#l00135">asm_read_arg_label()</a>.</p>
 
 </div>
 </div>
@@ -288,8 +288,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="abfa9520cd188b0949a9333504e23cbc7" name="abfa9520cd188b0949a9333504e23cbc7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfa9520cd188b0949a9333504e23cbc7">&#9670;&#160;</a></span>asm_new_label()</h2>
+<a id="ac5a484eed9fd4e18cc675fbadd20338b" name="ac5a484eed9fd4e18cc675fbadd20338b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5a484eed9fd4e18cc675fbadd20338b">&#9670;&#160;</a></span>asm_new_label()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -309,7 +309,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="struct_input_file_info.html">InputFileInfo</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="struct_asm_info.html">AsmInfo</a> *&#160;</td>
           <td class="paramname"><em>inp_file</em>, </td>
         </tr>
         <tr>
@@ -339,7 +339,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="jump_8cpp_source.html#l00007">7</a> of file <a class="el" href="jump_8cpp_source.html">jump.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    8</span>                                                                                 {</div>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>                                                                           {</div>
 <div class="line"><span class="lineno">    9</span>    assert(labels);</div>
 <div class="line"><span class="lineno">   10</span>    assert(name.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>);</div>
 <div class="line"><span class="lineno">   11</span>    assert(inp_file);</div>
@@ -362,7 +362,7 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="jump_8h_source.html#l00018">JumpLabel::byte</a>, <a class="el" href="text__lib_8h_source.html#l00024">String::len</a>, <a class="el" href="cmd_8h_source.html#l00017">MAX_LABEL_NUM</a>, <a class="el" href="jump_8h_source.html#l00017">JumpLabel::name</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, <a class="el" href="text__lib_8h_source.html#l00023">String::str</a>, <a class="el" href="text__lib_8h_source.html#l00043">String_PRINTF</a>, <a class="el" href="text__lib_8h_source.html#l00156">String_strcmp()</a>, <a class="el" href="text__lib_8h_source.html#l00038">String_TO_c</a>, and <a class="el" href="jump_8cpp_source.html#l00003">THROW_SYNTAX_ERROR_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00080">asm_parse_and_write_line()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00081">asm_parse_and_write_line()</a>.</p>
 
 </div>
 </div>

@@ -1,15 +1,14 @@
 #include "write.h"
 
 Status::Statuses asm_write_cmd(Buffer* buf, const Cmd* cmd, JumpLabel* labels,
-                               const InputFileInfo* inp_file,
-                               FILE* listing_file, const bool final_pass) {
+                               const AsmInfo* asm_info, FILE* listing_file) {
     assert(buf);
     assert(labels);
-    assert(inp_file);
+    assert(asm_info);
     // cmd assertion is not needed
 
-    if (final_pass && listing_file != nullptr)
-        STATUS_CHECK(asm_write_cmd_listing(listing_file, cmd, labels, inp_file, buf->size));
+    if (asm_info->final_pass && listing_file != nullptr)
+        STATUS_CHECK(asm_write_cmd_listing(listing_file, cmd, labels, asm_info, buf->size));
 
     STATUS_CHECK(asm_write_cmd_bin(buf, cmd));
 
@@ -26,18 +25,16 @@ Status::Statuses asm_write_cmd_bin(Buffer* buf, const Cmd* cmd) {
     if (cmd == nullptr)
         return Status::NORMAL_WORK;
 
-    BUF_CAT_(cmd->byte);
+    BUF_CAT_(cmd->keys);
 
-    if (cmd->byte.reg)
+    if (cmd->keys.reg)
         BUF_CAT_(cmd->args.reg);
 
-    if (cmd->byte.imm) {
-        if (cmd->info->args.label || cmd->byte.ram) {
-            BUF_CAT_(cmd->args.imm_int);
-        } else {
-            BUF_CAT_(cmd->args.imm_double);
-        }
-    }
+    if (cmd->keys.imm_double)
+        BUF_CAT_(cmd->args.imm_double);
+
+    if (cmd->keys.imm_int)
+        BUF_CAT_(cmd->args.imm_int);
 
     return Status::NORMAL_WORK;
 }
@@ -46,10 +43,10 @@ Status::Statuses asm_write_cmd_bin(Buffer* buf, const Cmd* cmd) {
 #define F_PRINTF_CHECK_(printf)  if (printf == EOF) return Status::OUT_FILE_ERROR
 #define F_WRITE_CHECK_(write)    if (!write)        return Status::OUT_FILE_ERROR
 
-Status::Statuses asm_write_header(Buffer* buf, FILE* listing_file, const bool first_pass) {
+Status::Statuses asm_write_header(Buffer* buf, FILE* listing_file, const bool final_pass) {
     assert(buf);
 
-    if (!first_pass && listing_file != nullptr) {
+    if (final_pass && listing_file != nullptr) {
         STATUS_CHECK(asm_write_header_listing(listing_file));
     }
 

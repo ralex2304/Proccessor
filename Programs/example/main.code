@@ -1,7 +1,7 @@
 ; 123
 
 dmp
-push 1 ;push from address 1 to stack
+push 2 ;push from address 1 to stack
 pop rcx
 push rcx+1
 in
@@ -12,7 +12,7 @@ dmp
 out
 ;print
 out
-
+jmp rcx+label
 exit:
 HLT
 

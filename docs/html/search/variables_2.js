@@ -7,5 +7,5 @@ var searchData=
   ['cmd_5fversion_4',['CMD_VERSION',['../cmd_8h.html#ac6fd8a0b61158e50a7d52538ba0e5be9',1,'cmd.h']]],
   ['cmds_5fdict_5',['CMDS_DICT',['../cmd_8h.html#a4fe71afcf45e14656ccefffff4cae444',1,'cmd.h']]],
   ['cmds_5fdict_5fsize_6',['CMDS_DICT_SIZE',['../cmd_8h.html#aeb56c6b7cc2375d32bf528f71e8d34a0',1,'cmd.h']]],
-  ['comment_7',['comment',['../struct_input_file_info.html#a24788948955238f67472fb4fbcc1126e',1,'InputFileInfo']]]
+  ['comment_7',['comment',['../struct_asm_info.html#a4f02a785af249b84e47ba69d9fbcb851',1,'AsmInfo']]]
 ];

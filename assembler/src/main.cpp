@@ -32,7 +32,7 @@ int main(int argc, char* argv[]) {
 
     /// Reading and parsing input file
     InputData input_data = {};
-    input_data.ctor(args_vars.input_filename);
+    STATUS_CHECK_RAISE(input_data.ctor(args_vars.input_filename));
     /// Reading and parsing input file end
 
     /// Assembling and writing

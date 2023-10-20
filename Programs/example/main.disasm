@@ -1,13 +1,14 @@
 ;Signature: KU
-;Version: 0
-dmp
-push 1.000000
-pop rcx
-push rcx+1.000000
-in
-dmp
-sqrt
-dmp
-out
-out
-hlt
+;Version: 1
+dmp                                               ;byte=4
+push 2.000000                                     ;byte=6
+pop rcx                                           ;byte=16
+push rcx+1.000000                                 ;byte=19
+in                                                ;byte=30
+dmp                                               ;byte=32
+sqrt                                              ;byte=34
+dmp                                               ;byte=36
+out                                               ;byte=38
+out                                               ;byte=40
+jmp rcx+32                                        ;byte=42
+hlt                                               ;byte=53

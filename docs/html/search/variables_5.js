@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['imm_0',['imm',['../struct_cmd_byte.html#ae86855d817fa5c60367ce99d1c826287',1,'CmdByte']]],
-  ['imm_5fdouble_1',['imm_double',['../struct_cmd_args.html#af4f115f325b0b1e91f03bea48354fa82',1,'CmdArgs::imm_double'],['../struct_args_en.html#a32436d51611eb10f8c0a003acf02d876',1,'ArgsEn::imm_double']]],
-  ['imm_5fint_2',['imm_int',['../struct_cmd_args.html#a7280dbc4d3d9bee564f6815e969bdd07',1,'CmdArgs::imm_int'],['../struct_args_en.html#a0750bd83c2ac938393537562ffe3f000',1,'ArgsEn::imm_int']]],
-  ['info_3',['info',['../struct_cmd.html#a8df32ebe09e03d38de8c20f6266611b4',1,'Cmd']]],
-  ['init_5fcapacity_4',['INIT_CAPACITY',['../struct_buffer.html#afd5cd659ecca36f2c4c0ea31169f0d16',1,'Buffer']]],
-  ['input_5ffilename_5',['input_filename',['../struct_args_vars.html#afee9f78a6ba610ff6a2ee809ebbdb56b',1,'ArgsVars']]]
+  ['file_0',['file',['../struct_input_data.html#a2d95eba2156ae23b31ccf1a8d4cd7dec',1,'InputData::file'],['../struct_log_file_data.html#a6cee51f74b20002956d076717f2a416c',1,'LogFileData::file'],['../struct_var_code_data.html#a25347ec3ab07e84f5ac1b2e1220ef388',1,'VarCodeData::file']]],
+  ['file_5fheader_1',['FILE_HEADER',['../cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be',1,'cmd.h']]],
+  ['filename_2',['filename',['../struct_asm_info.html#a992bd3cb1344c8d847864164f4d74dbd',1,'AsmInfo::filename'],['../struct_log_file_data.html#aa2532f60b605d24a48ce4e86236e8d2b',1,'LogFileData::filename']]],
+  ['final_5fpass_3',['final_pass',['../struct_asm_info.html#ab6b001c45337d8e9a377baa0ea7d1b08',1,'AsmInfo']]],
+  ['func_4',['func',['../struct_argument.html#af376abfd30466976b0e45eb83908a33c',1,'Argument::func'],['../struct_var_code_data.html#a6da889b7111ab8c530acba167462bb95',1,'VarCodeData::func']]]
 ];

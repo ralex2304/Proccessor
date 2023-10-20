@@ -9,15 +9,17 @@
 #include "lib/utils/statuses.h"
 #include "lib/text/text_lib.h"
 #include "lib/utils/console.h"
+#include "cmd.h"
 
 /**
- * @brief Debug info about input file
+ * @brief Info about assembling
  */
-struct InputFileInfo {
+struct AsmInfo {
     String line = {};               //< current line text
     size_t line_num = 0;            //< current line number
     const char* comment = nullptr;  //< current line comment
     const char* filename = nullptr; //< input filename
+    bool final_pass = false;        //< enables some final checkups for final asm pass
 };
 
 /**
@@ -29,7 +31,30 @@ struct InputFileInfo {
  * @param ...
  * @return Status::Statuses always SYNTAX_ERROR
  */
-Status::Statuses asm_throw_syntax_error(const String token, const InputFileInfo* file_info,
+Status::Statuses asm_throw_syntax_error(const String token, const AsmInfo* file_info,
                                         const char* err_msg, ...);
+
+/**
+ * @brief Checks if cmd requires at least one argument
+ *
+ * @param cmd
+ * @return true
+ * @return false
+ */
+inline bool asm_is_arg_required(const Cmd* cmd) {
+    return cmd->info->args.label || cmd->info->args.imm_int || cmd->info->args.imm_double
+        || cmd->info->args.reg; ///< ram check is not needed
+}
+
+/**
+ * @brief Checks if at least one argument was given to a function
+ *
+ * @param cmd
+ * @return true
+ * @return false
+ */
+inline bool asm_is_any_arg_given(const Cmd* cmd) {
+    return cmd->keys.imm_int || cmd->keys.imm_double || cmd->keys.reg; //< ram check is not needed
+}
 
 #endif // #ifndef ASM_ERRORS_

@@ -22,7 +22,7 @@
  * @return Status::Statuses
  */
 Status::Statuses asm_write_cmd_listing(FILE* file, const Cmd* cmd, JumpLabel* labels,
-                                       const InputFileInfo* inp_file, const size_t binary_pos);
+                                       const AsmInfo* inp_file, const size_t binary_pos);
 
 /**
  * @brief Writes comment to listing file
@@ -52,20 +52,16 @@ inline size_t asm_listing_calc_tab(const Cmd* cmd) {
     size_t res = 0;
 
     if (cmd == nullptr)
-        res += sizeof(cmd->byte) * 3;
+        res += sizeof(cmd->keys) * 3;
 
-    if (cmd == nullptr || !cmd->byte.reg)
+    if (cmd == nullptr || !cmd->keys.reg)
         res += sizeof(cmd->args.reg) * 3;
 
-    if (cmd == nullptr || !cmd->byte.imm)
-        res += MAX(sizeof(cmd->args.imm_double), sizeof(cmd->args.imm_int)) * 3;
+    if (cmd == nullptr || !cmd->keys.imm_int)
+        res += sizeof(cmd->args.imm_int) * 3;
 
-    if (cmd != nullptr && cmd->byte.imm) {
-        if (cmd->info->args.label || cmd->byte.ram)
-            res += MAX(0, (ssize_t)sizeof(cmd->args.imm_double) - (ssize_t)sizeof(cmd->args.imm_int));
-        else
-            res += MAX(0, (ssize_t)sizeof(cmd->args.imm_int) - (ssize_t)sizeof(cmd->args.imm_double));
-    }
+    if (cmd == nullptr || !cmd->keys.imm_double)
+        res += sizeof(cmd->args.imm_double) * 3;
 
     return res;
 }

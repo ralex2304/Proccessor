@@ -28,7 +28,7 @@ struct JumpLabel {
  * @return Status::Statuses
  */
 Status::Statuses asm_new_label(JumpLabel* labels, const String name,
-                               const InputFileInfo* inp_file, const size_t byte);
+                               const AsmInfo* inp_file, const size_t byte);
 
 /**
  * @brief Gets label byte by name
@@ -41,7 +41,7 @@ Status::Statuses asm_new_label(JumpLabel* labels, const String name,
  * @return Status::Statuses
  */
 Status::Statuses asm_get_label_byte(JumpLabel* labels, const String name,
-                                    const InputFileInfo* inp_file, Imm_int_t* byte,
+                                    const AsmInfo* inp_file, Imm_int_t* byte,
                                     const bool final_pass);
 
 /**

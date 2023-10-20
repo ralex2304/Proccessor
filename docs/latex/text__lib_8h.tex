@@ -46,7 +46,9 @@ int \mbox{\hyperlink{text__lib_8h_accfdbf6001411f4d546036819f3d00bd}{String\+\_\
 int \mbox{\hyperlink{text__lib_8h_a6420b100c6752639f1e1f2378b89820d}{String\+\_\+strcasecmp}} (\mbox{\hyperlink{structc___string}{c\+\_\+\+String}} s1, \mbox{\hyperlink{structc___string}{c\+\_\+\+String}} s2)
 \begin{DoxyCompactList}\small\item\em strcasecmp for \doxylink{structc___string}{c\+\_\+\+String} (not null-\/terminated strings) \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{text__lib_8h_a91c9a7523f46e88b8e65f97fae3aa07a}{String\+\_\+sscanf}} (\mbox{\hyperlink{struct_string}{String}} token, const char \texorpdfstring{$\ast$}{*}format,...)
-\begin{DoxyCompactList}\small\item\em sscanf for \doxylink{struct_string}{String} (not null-\/terminated strings) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em sscanf for \doxylink{struct_string}{String} (not null-\/terminated strings) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{text__lib_8h_a1d13a9a960fe19f6ab34e6cbbcb8d10d}{maybedigit}} (int c)
+\begin{DoxyCompactList}\small\item\em isdigit() with + and -\/ \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -141,6 +143,41 @@ Definition at line \mbox{\hyperlink{text__lib_8h_source_l00094}{94}} of file \mb
 
 Referenced by \mbox{\hyperlink{text__proccessor_8cpp_source_l00003}{Input\+Data\+::ctor()}}.
 
+\Hypertarget{text__lib_8h_a1d13a9a960fe19f6ab34e6cbbcb8d10d}\label{text__lib_8h_a1d13a9a960fe19f6ab34e6cbbcb8d10d} 
+\index{text\_lib.h@{text\_lib.h}!maybedigit@{maybedigit}}
+\index{maybedigit@{maybedigit}!text\_lib.h@{text\_lib.h}}
+\doxysubsubsection{\texorpdfstring{maybedigit()}{maybedigit()}}
+{\footnotesize\ttfamily bool maybedigit (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+isdigit() with + and -\/ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{text__lib_8h_source_l00237}{237}} of file \mbox{\hyperlink{text__lib_8h_source}{text\+\_\+lib.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordflow}{return}\ isdigit(c)\ ||\ c\ ==\ \textcolor{charliteral}{'-\/'}\ ||\ c\ ==\ \textcolor{charliteral}{'+'};}
+\DoxyCodeLine{00239\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{read_8cpp_source_l00111}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, and \mbox{\hyperlink{read_8cpp_source_l00087}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}.
+
 \Hypertarget{text__lib_8h_aeeb6f730688f5cd5f8a1262398f2387d}\label{text__lib_8h_aeeb6f730688f5cd5f8a1262398f2387d} 
 \index{text\_lib.h@{text\_lib.h}!split\_line\_with\_special\_delims@{split\_line\_with\_special\_delims}}
 \index{split\_line\_with\_special\_delims@{split\_line\_with\_special\_delims}!text\_lib.h@{text\_lib.h}}
@@ -192,7 +229,7 @@ References \mbox{\hyperlink{text__lib_8h_source_l00023}{String\+::str}}, and \mb
 
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00080}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}.
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00081}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}.
 
 \Hypertarget{text__lib_8h_a9fad299f3c741aa15b6aae9efa743daf}\label{text__lib_8h_a9fad299f3c741aa15b6aae9efa743daf} 
 \index{text\_lib.h@{text\_lib.h}!split\_text\_to\_lines@{split\_text\_to\_lines}}
@@ -272,7 +309,7 @@ Definition at line \mbox{\hyperlink{text__lib_8h_source_l00127}{127}} of file \m
 \end{DoxyCode}
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00080}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}.
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00081}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}.
 
 \Hypertarget{text__lib_8h_a7dd8b8931c3f93aebb70ec632e3a98b8}\label{text__lib_8h_a7dd8b8931c3f93aebb70ec632e3a98b8} 
 \index{text\_lib.h@{text\_lib.h}!str\_skip\_spaces@{str\_skip\_spaces}}
@@ -359,7 +396,7 @@ References \mbox{\hyperlink{text__lib_8h_source_l00024}{String\+::len}}, and \mb
 
 
 
-Referenced by \mbox{\hyperlink{read_8cpp_source_l00119}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, and \mbox{\hyperlink{read_8cpp_source_l00096}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}.
+Referenced by \mbox{\hyperlink{read_8cpp_source_l00111}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, and \mbox{\hyperlink{read_8cpp_source_l00087}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}.
 
 \Hypertarget{text__lib_8h_a6420b100c6752639f1e1f2378b89820d}\label{text__lib_8h_a6420b100c6752639f1e1f2378b89820d} 
 \index{text\_lib.h@{text\_lib.h}!String\_strcasecmp@{String\_strcasecmp}}
@@ -415,7 +452,7 @@ References \mbox{\hyperlink{text__lib_8h_source_l00016}{c\+\_\+\+String\+::len}}
 
 
 
-Referenced by \mbox{\hyperlink{cmd_8cpp_source_l00035}{find\+\_\+command\+\_\+by\+\_\+name()}}.
+Referenced by \mbox{\hyperlink{cmd_8cpp_source_l00036}{find\+\_\+command\+\_\+by\+\_\+name()}}.
 
 \Hypertarget{text__lib_8h_accfdbf6001411f4d546036819f3d00bd}\label{text__lib_8h_accfdbf6001411f4d546036819f3d00bd} 
 \index{text\_lib.h@{text\_lib.h}!String\_strcmp@{String\_strcmp}}
@@ -471,7 +508,7 @@ References \mbox{\hyperlink{text__lib_8h_source_l00016}{c\+\_\+\+String\+::len}}
 
 
 
-Referenced by \mbox{\hyperlink{jump_8cpp_source_l00029}{asm\+\_\+get\+\_\+label\+\_\+byte()}}, \mbox{\hyperlink{jump_8cpp_source_l00007}{asm\+\_\+new\+\_\+label()}}, and \mbox{\hyperlink{cmd_8cpp_source_l00053}{find\+\_\+reg\+\_\+by\+\_\+name()}}.
+Referenced by \mbox{\hyperlink{jump_8cpp_source_l00029}{asm\+\_\+get\+\_\+label\+\_\+byte()}}, \mbox{\hyperlink{jump_8cpp_source_l00007}{asm\+\_\+new\+\_\+label()}}, and \mbox{\hyperlink{cmd_8cpp_source_l00054}{find\+\_\+reg\+\_\+by\+\_\+name()}}.
 
 \Hypertarget{text__lib_8h_a2972af496d63d22bf0b6e507c14997af}\label{text__lib_8h_a2972af496d63d22bf0b6e507c14997af} 
 \index{text\_lib.h@{text\_lib.h}!String\_strtok\_line@{String\_strtok\_line}}

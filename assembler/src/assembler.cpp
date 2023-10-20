@@ -20,7 +20,7 @@ Status::Statuses assemeble_and_write(const InputData* input_data, const char* bi
 
     FILE* listing_file = nullptr;
 
-    InputFileInfo inp_file = {{}, 0, nullptr, inp_filename};
+    AsmInfo asm_info = {{}, 0, nullptr, inp_filename, false};
 
     Buffer buf = {};
     if (!buf.ctor())
@@ -28,34 +28,35 @@ Status::Statuses assemeble_and_write(const InputData* input_data, const char* bi
 
     JumpLabel labels[MAX_LABEL_NUM] = {};
 
-    STATUS_CHECK(asm_write_header(&buf, listing_file, true), LOCAL_DTOR_());
+    STATUS_CHECK(asm_write_header(&buf, listing_file, false), LOCAL_DTOR_());
 
     for (size_t i = 0; i < input_data->lines_cnt; i++) {
-        inp_file.line_num = i + 1;
-        inp_file.line = input_data->lines[i];
+        asm_info.line_num = i + 1;
+        asm_info.line = input_data->lines[i];
 
-        STATUS_CHECK(asm_parse_and_write_line(&buf, labels, &inp_file, false, listing_file),
+        STATUS_CHECK(asm_parse_and_write_line(&buf, labels, &asm_info, listing_file),
                      LOCAL_DTOR_());
     }
 
     // Second pass
+    asm_info.final_pass = true;
 
     if (listing_filename != nullptr)
         FILE_CHECK_(file_open(&listing_file, listing_filename, "wb"), LOCAL_DTOR_());
 
     buf.size = 0;
 
-    STATUS_CHECK(asm_write_header(&buf, listing_file, false), LOCAL_DTOR_());
+    STATUS_CHECK(asm_write_header(&buf, listing_file, asm_info.final_pass), LOCAL_DTOR_());
 
     if (listing_filename != nullptr)
         if (file_printf(listing_file, ";line - byte - command\n") == EOF)
             return Status::OUT_FILE_ERROR;
 
     for (size_t i = 0; i < input_data->lines_cnt; i++) {
-        inp_file.line_num = i + 1;
-        inp_file.line = input_data->lines[i];
+        asm_info.line_num = i + 1;
+        asm_info.line = input_data->lines[i];
 
-        STATUS_CHECK(asm_parse_and_write_line(&buf, labels, &inp_file, true, listing_file),
+        STATUS_CHECK(asm_parse_and_write_line(&buf, labels, &asm_info, listing_file),
                      LOCAL_DTOR_());
     }
 
@@ -74,34 +75,34 @@ Status::Statuses assemeble_and_write(const InputData* input_data, const char* bi
 
 
 #define THROW_SYNTAX_ERROR_(...)  return asm_throw_syntax_error(tokens[cur_token],  \
-                                                                inp_file,           \
+                                                                asm_info,           \
                                                                 __VA_ARGS__)
 
-Status::Statuses asm_parse_and_write_line(Buffer* buf, JumpLabel* labels, InputFileInfo* inp_file,
-                                          const bool final_pass, FILE* listing_file) {
+Status::Statuses asm_parse_and_write_line(Buffer* buf, JumpLabel* labels, AsmInfo* asm_info,
+                                          FILE* listing_file) {
     assert(buf);
-    assert(inp_file);
-    assert(inp_file->filename);
-    assert(inp_file->line.str);
+    assert(asm_info);
+    assert(asm_info->filename);
+    assert(asm_info->line.str);
     assert(labels);
 
     Cmd cmd = {};
 
-    inp_file->comment = strchr(inp_file->line.str, ';');
+    asm_info->comment = strchr(asm_info->line.str, ';');
 
     const char* special_delims = "[]:";
 
     String tokens[MAX_LINE_LEN + 1] = {};
 
-    split_line_with_special_delims(inp_file->line.str, " +\t", special_delims, ";",
+    split_line_with_special_delims(asm_info->line.str, " +\t", special_delims, ";",
                                    tokens, MAX_LINE_LEN /*tokens array size*/);
 
     size_t cur_token = 0;
 
     // Empty line check
     if (tokens[cur_token].len == 0) {
-        STATUS_CHECK(asm_write_cmd(buf, nullptr, labels, inp_file,
-                                   listing_file, final_pass));
+        STATUS_CHECK(asm_write_cmd(buf, nullptr, labels, asm_info,
+                                   listing_file));
 
         return Status::NORMAL_WORK;
     }
@@ -113,45 +114,38 @@ Status::Statuses asm_parse_and_write_line(Buffer* buf, JumpLabel* labels, InputF
 
     cmd.info = find_command_by_name(tokens[cur_token]);
     if (cmd.info == nullptr) {
-        if (tokens[cur_token + 1].len >= 1 && tokens[cur_token + 1].str[0] == ':') {
-            if (!final_pass)
-                STATUS_CHECK(asm_new_label(labels, tokens[cur_token], inp_file, buf->size));
+        // Label parsing
+        if (tokens[cur_token + 1].len == 1 && tokens[cur_token + 1].str[0] == ':') {
+            if (!asm_info->final_pass)
+                STATUS_CHECK(asm_new_label(labels, tokens[cur_token], asm_info, buf->size));
             cur_token += 2;
 
-            inp_file->comment = str_skip_spaces(inp_file->line.str);
-            STATUS_CHECK(asm_write_cmd(buf, nullptr, labels, inp_file,
-                                       listing_file, final_pass));
+            asm_info->comment = str_skip_spaces(asm_info->line.str);
+            STATUS_CHECK(asm_write_cmd(buf, nullptr, labels, asm_info, listing_file));
 
             if (tokens[cur_token].str != nullptr)
                 THROW_SYNTAX_ERROR_("Unexpected arg given.");
+
             return Status::NORMAL_WORK;
         } else
             THROW_SYNTAX_ERROR_("Command \"%.*s\" not found.", String_PRINTF(tokens[cur_token]));
     }
 
-    cmd.byte.num = cmd.info->num & CMD_BYTE_NUM_BIT_MASK;
+    cmd.keys.num = cmd.info->num & CMD_BYTE_NUM_BIT_MASK;
 
     cur_token += 1;
 
     if (tokens[cur_token].str != nullptr && tokens[cur_token].len != 0) {
-        if (strchr(special_delims, tokens[cur_token].str[0]) != nullptr) {
-            if (tokens[cur_token].str[0] == '[') {
-                cur_token++;
-                STATUS_CHECK(asm_read_args_ram(tokens, &cur_token, &cmd, inp_file));
-            } else
-                THROW_SYNTAX_ERROR_("Unexpected '%c' found.", tokens[cur_token].str[0]);
-        } else {
-            STATUS_CHECK(asm_read_args(tokens, &cur_token, &cmd, inp_file, labels, final_pass));
-        }
+        STATUS_CHECK(asm_read_args(tokens, &cur_token, &cmd, asm_info, labels));
 
         if (tokens[cur_token].str != nullptr) //< read_args increments cur_token
             THROW_SYNTAX_ERROR_("Unexpected arg given.");
     }
 
-    if (asm_is_arg_required(&cmd) && !(cmd.byte.imm || cmd.byte.ram || cmd.byte.reg))
+    if (asm_is_arg_required(&cmd) && !asm_is_any_arg_given(&cmd))
         THROW_SYNTAX_ERROR_("At least one argument required.");
 
-    STATUS_CHECK(asm_write_cmd(buf, &cmd, labels, inp_file, listing_file, final_pass));
+    STATUS_CHECK(asm_write_cmd(buf, &cmd, labels, asm_info, listing_file));
 
     return Status::NORMAL_WORK;
 }

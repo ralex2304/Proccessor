@@ -43,46 +43,49 @@ Status::Statuses disasm_parse(const char* data, const size_t size, const char* o
 
     Cmd cmd = {};
 
-    while (cur_byte + sizeof(cmd.byte) <= size) {
-        DATA_GET_VAL_(cmd.byte, CmdByte);
+    while (cur_byte + sizeof(cmd.keys) <= size) {
+        DATA_GET_VAL_(cmd.keys, CmdKeys);
 
-        cmd.info = find_command_by_num(cmd.byte.num);
+        cmd.info = find_command_by_num(cmd.keys.num);
 
         if (cmd.info == nullptr)
             THROW_SYNTAX_ERROR_("Unknown command number.");
 
-        if (cur_byte + cmd.size() > size)
+        if (cur_byte + cmd.size() - sizeof(cmd.keys) > size)
             THROW_SYNTAX_ERROR_("Arguments not found.");
 
         size_t printed_cnt = 0;
 
         F_PRINTF_("%s", cmd.info->name);
 
-        if (cmd.byte.ram)
+        if (cmd.keys.ram)
             F_PRINTF_(" [");
-        else if (cmd.byte.imm || cmd.byte.reg)
+        else if (cmd.keys.reg || cmd.keys.imm_int ||cmd.keys.imm_double)
             F_PRINTF_(" ");
 
-        if (cmd.byte.reg) {
+        if (cmd.keys.reg) {
             DATA_GET_VAL_(cmd.args.reg, RegNum_t);
 
             F_PRINTF_("%s", find_reg_by_num(cmd.args.reg)->name);
-        }
 
-        if (cmd.byte.imm) {
-            if (cmd.byte.reg)
+            if (cmd.keys.imm_int || cmd.keys.imm_double)
                 F_PRINTF_("+");
-
-            if (cmd.info->args.label || cmd.byte.ram) {
-                DATA_GET_VAL_(cmd.args.imm_int, Imm_int_t);
-                F_PRINTF_(IMM_INT_T_PRINTF, cmd.args.imm_int);
-            } else {
-                DATA_GET_VAL_(cmd.args.imm_double, Imm_double_t);
-                F_PRINTF_(IMM_DOUBLE_T_PRINTF, cmd.args.imm_double);
-            }
         }
 
-        if (cmd.byte.ram)
+        if (cmd.keys.imm_double) {
+            DATA_GET_VAL_(cmd.args.imm_double, Imm_double_t);
+            F_PRINTF_(IMM_DOUBLE_T_PRINTF, cmd.args.imm_double);
+
+            if (cmd.keys.imm_int)
+                F_PRINTF_("+");
+        }
+
+        if (cmd.keys.imm_int) {
+            DATA_GET_VAL_(cmd.args.imm_int, Imm_int_t);
+            F_PRINTF_(IMM_INT_T_PRINTF, cmd.args.imm_int);
+        }
+
+        if (cmd.keys.ram)
             F_PRINTF_("]");
 
         if (debug_mode) {
