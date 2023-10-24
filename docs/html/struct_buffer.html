@@ -98,6 +98,9 @@ $(document).ready(function(){initNavTree('struct_buffer.html',''); initResizable
 </div><!--header-->
 <div class="contents">
 
+<p>Rising buffer struct.  
+ <a href="struct_buffer.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="buf__lib_8h_source.html">buf_lib.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -107,8 +110,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:accef32f248ec05ad669b1de0dc3ae6a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_buffer.html#accef32f248ec05ad669b1de0dc3ae6a5">dtor</a> ()</td></tr>
 <tr class="separator:accef32f248ec05ad669b1de0dc3ae6a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6446660135f46c6a88fd863ec0a57a88"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_buffer.html#a6446660135f46c6a88fd863ec0a57a88">resize</a> (ssize_t new_capacity)</td></tr>
+<tr class="memdesc:a6446660135f46c6a88fd863ec0a57a88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes buffer.  <br /></td></tr>
 <tr class="separator:a6446660135f46c6a88fd863ec0a57a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73dfd504fe4d4f6dffa9e5949b1fdcae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_buffer.html#a73dfd504fe4d4f6dffa9e5949b1fdcae">cat</a> (const char *cat, const size_t cat_size)</td></tr>
+<tr class="memdesc:a73dfd504fe4d4f6dffa9e5949b1fdcae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenetes data to buffer.  <br /></td></tr>
 <tr class="separator:a73dfd504fe4d4f6dffa9e5949b1fdcae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -126,8 +131,9 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:afd5cd659ecca36f2c4c0ea31169f0d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="buf__lib_8h_source.html#l00009">9</a> of file <a class="el" href="buf__lib_8h_source.html">buf_lib.h</a>.</p>
+<div class="textblock"><p>Rising buffer struct. </p>
+
+<p class="definition">Definition at line <a class="el" href="buf__lib_8h_source.html#l00012">12</a> of file <a class="el" href="buf__lib_8h_source.html">buf_lib.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a73dfd504fe4d4f6dffa9e5949b1fdcae" name="a73dfd504fe4d4f6dffa9e5949b1fdcae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a73dfd504fe4d4f6dffa9e5949b1fdcae">&#9670;&#160;</a></span>cat()</h2>
@@ -155,23 +161,37 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Concatenetes data to buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cat</td><td></td></tr>
+    <tr><td class="paramname">cat_size</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="buf__lib_8cpp_source.html#l00034">34</a> of file <a class="el" href="buf__lib_8cpp_source.html">buf_lib.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   34</span>                                                       {</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">while</span> (<a class="code hl_variable" href="struct_buffer.html#a0a7fe9496e5e642f14f1975abb95824c">capacity</a> &lt; <a class="code hl_variable" href="struct_buffer.html#aea1b7416d53cd6e281718e607d81ae51">size</a> + (ssize_t)cat_size)</div>
-<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="struct_buffer.html#a6446660135f46c6a88fd863ec0a57a88">resize</a>(<a class="code hl_variable" href="struct_buffer.html#a0a7fe9496e5e642f14f1975abb95824c">capacity</a> * 2))</div>
-<div class="line"><span class="lineno">   37</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>    memcpy(<a class="code hl_variable" href="struct_buffer.html#aeec1fd4af0ddf6765b0187466d4361b8">data</a> + <a class="code hl_variable" href="struct_buffer.html#aea1b7416d53cd6e281718e607d81ae51">size</a>, <a class="code hl_function" href="struct_buffer.html#a73dfd504fe4d4f6dffa9e5949b1fdcae">cat</a>, cat_size);</div>
-<div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="struct_buffer.html#aea1b7416d53cd6e281718e607d81ae51">size</a> += cat_size;</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   42</span>}</div>
-<div class="ttc" id="astruct_buffer_html_a0a7fe9496e5e642f14f1975abb95824c"><div class="ttname"><a href="struct_buffer.html#a0a7fe9496e5e642f14f1975abb95824c">Buffer::capacity</a></div><div class="ttdeci">ssize_t capacity</div><div class="ttdef"><b>Definition</b> <a href="buf__lib_8h_source.html#l00014">buf_lib.h:14</a></div></div>
-<div class="ttc" id="astruct_buffer_html_a6446660135f46c6a88fd863ec0a57a88"><div class="ttname"><a href="struct_buffer.html#a6446660135f46c6a88fd863ec0a57a88">Buffer::resize</a></div><div class="ttdeci">bool resize(ssize_t new_capacity)</div><div class="ttdef"><b>Definition</b> <a href="buf__lib_8cpp_source.html#l00020">buf_lib.cpp:20</a></div></div>
-<div class="ttc" id="astruct_buffer_html_a73dfd504fe4d4f6dffa9e5949b1fdcae"><div class="ttname"><a href="struct_buffer.html#a73dfd504fe4d4f6dffa9e5949b1fdcae">Buffer::cat</a></div><div class="ttdeci">bool cat(const char *cat, const size_t cat_size)</div><div class="ttdef"><b>Definition</b> <a href="buf__lib_8cpp_source.html#l00034">buf_lib.cpp:34</a></div></div>
-<div class="ttc" id="astruct_buffer_html_aea1b7416d53cd6e281718e607d81ae51"><div class="ttname"><a href="struct_buffer.html#aea1b7416d53cd6e281718e607d81ae51">Buffer::size</a></div><div class="ttdeci">ssize_t size</div><div class="ttdef"><b>Definition</b> <a href="buf__lib_8h_source.html#l00015">buf_lib.h:15</a></div></div>
-<div class="ttc" id="astruct_buffer_html_aeec1fd4af0ddf6765b0187466d4361b8"><div class="ttname"><a href="struct_buffer.html#aeec1fd4af0ddf6765b0187466d4361b8">Buffer::data</a></div><div class="ttdeci">char * data</div><div class="ttdef"><b>Definition</b> <a href="buf__lib_8h_source.html#l00012">buf_lib.h:12</a></div></div>
+<div class="line"><span class="lineno">   35</span>    assert(<a class="code hl_function" href="struct_buffer.html#a73dfd504fe4d4f6dffa9e5949b1fdcae">cat</a>);</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">while</span> (<a class="code hl_variable" href="struct_buffer.html#a0a7fe9496e5e642f14f1975abb95824c">capacity</a> &lt; <a class="code hl_variable" href="struct_buffer.html#aea1b7416d53cd6e281718e607d81ae51">size</a> + (ssize_t)cat_size)</div>
+<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="struct_buffer.html#a6446660135f46c6a88fd863ec0a57a88">resize</a>(<a class="code hl_variable" href="struct_buffer.html#a0a7fe9496e5e642f14f1975abb95824c">capacity</a> * 2))</div>
+<div class="line"><span class="lineno">   39</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    memcpy(<a class="code hl_variable" href="struct_buffer.html#aeec1fd4af0ddf6765b0187466d4361b8">data</a> + <a class="code hl_variable" href="struct_buffer.html#aea1b7416d53cd6e281718e607d81ae51">size</a>, <a class="code hl_function" href="struct_buffer.html#a73dfd504fe4d4f6dffa9e5949b1fdcae">cat</a>, cat_size);</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="struct_buffer.html#aea1b7416d53cd6e281718e607d81ae51">size</a> += cat_size;</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   44</span>}</div>
+<div class="ttc" id="astruct_buffer_html_a0a7fe9496e5e642f14f1975abb95824c"><div class="ttname"><a href="struct_buffer.html#a0a7fe9496e5e642f14f1975abb95824c">Buffer::capacity</a></div><div class="ttdeci">ssize_t capacity</div><div class="ttdef"><b>Definition</b> <a href="buf__lib_8h_source.html#l00017">buf_lib.h:17</a></div></div>
+<div class="ttc" id="astruct_buffer_html_a6446660135f46c6a88fd863ec0a57a88"><div class="ttname"><a href="struct_buffer.html#a6446660135f46c6a88fd863ec0a57a88">Buffer::resize</a></div><div class="ttdeci">bool resize(ssize_t new_capacity)</div><div class="ttdoc">Resizes buffer.</div><div class="ttdef"><b>Definition</b> <a href="buf__lib_8cpp_source.html#l00020">buf_lib.cpp:20</a></div></div>
+<div class="ttc" id="astruct_buffer_html_a73dfd504fe4d4f6dffa9e5949b1fdcae"><div class="ttname"><a href="struct_buffer.html#a73dfd504fe4d4f6dffa9e5949b1fdcae">Buffer::cat</a></div><div class="ttdeci">bool cat(const char *cat, const size_t cat_size)</div><div class="ttdoc">Concatenetes data to buffer.</div><div class="ttdef"><b>Definition</b> <a href="buf__lib_8cpp_source.html#l00034">buf_lib.cpp:34</a></div></div>
+<div class="ttc" id="astruct_buffer_html_aea1b7416d53cd6e281718e607d81ae51"><div class="ttname"><a href="struct_buffer.html#aea1b7416d53cd6e281718e607d81ae51">Buffer::size</a></div><div class="ttdeci">ssize_t size</div><div class="ttdef"><b>Definition</b> <a href="buf__lib_8h_source.html#l00018">buf_lib.h:18</a></div></div>
+<div class="ttc" id="astruct_buffer_html_aeec1fd4af0ddf6765b0187466d4361b8"><div class="ttname"><a href="struct_buffer.html#aeec1fd4af0ddf6765b0187466d4361b8">Buffer::data</a></div><div class="ttdeci">char * data</div><div class="ttdef"><b>Definition</b> <a href="buf__lib_8h_source.html#l00015">buf_lib.h:15</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="buf__lib_8h_source.html#l00014">capacity</a>, <a class="el" href="buf__lib_8cpp_source.html#l00034">cat()</a>, <a class="el" href="buf__lib_8h_source.html#l00012">data</a>, <a class="el" href="buf__lib_8cpp_source.html#l00020">resize()</a>, and <a class="el" href="buf__lib_8h_source.html#l00015">size</a>.</p>
+<p class="reference">References <a class="el" href="buf__lib_8h_source.html#l00017">capacity</a>, <a class="el" href="buf__lib_8cpp_source.html#l00034">cat()</a>, <a class="el" href="buf__lib_8h_source.html#l00015">data</a>, <a class="el" href="buf__lib_8cpp_source.html#l00020">resize()</a>, and <a class="el" href="buf__lib_8h_source.html#l00018">size</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="buf__lib_8cpp_source.html#l00034">cat()</a>.</p>
 
@@ -207,9 +227,9 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   13</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">   14</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="buf__lib_8h_source.html#l00014">capacity</a>, and <a class="el" href="buf__lib_8h_source.html#l00012">data</a>.</p>
+<p class="reference">References <a class="el" href="buf__lib_8h_source.html#l00017">capacity</a>, and <a class="el" href="buf__lib_8h_source.html#l00015">data</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00015">assemeble_and_write()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00015">assemeble_and_write()</a>, and <a class="el" href="asm_8cpp_source.html#l00003">Asm::ctor()</a>.</p>
 
 </div>
 </div>
@@ -234,7 +254,9 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   18</span>}</div>
 <div class="ttc" id="amacros_8h_html_a105949c59c998e38aad80266afac92bf"><div class="ttname"><a href="macros_8h.html#a105949c59c998e38aad80266afac92bf">FREE</a></div><div class="ttdeci">#define FREE(ptr)</div><div class="ttdef"><b>Definition</b> <a href="macros_8h_source.html#l00009">macros.h:9</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="buf__lib_8h_source.html#l00012">data</a>, and <a class="el" href="macros_8h_source.html#l00009">FREE</a>.</p>
+<p class="reference">References <a class="el" href="buf__lib_8h_source.html#l00015">data</a>, and <a class="el" href="macros_8h_source.html#l00009">FREE</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="asm_8cpp_source.html#l00011">Asm::dtor()</a>.</p>
 
 </div>
 </div>
@@ -254,6 +276,17 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Resizes buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_capacity</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="buf__lib_8cpp_source.html#l00020">20</a> of file <a class="el" href="buf__lib_8cpp_source.html">buf_lib.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   20</span>                                        {</div>
 <div class="line"><span class="lineno">   21</span>    assert(new_capacity &gt; 0);</div>
@@ -270,7 +303,7 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   32</span>}</div>
 <div class="ttc" id="amacros_8h_html_a3e542cb9c488f76f1d0cb4b6ef234203"><div class="ttname"><a href="macros_8h.html#a3e542cb9c488f76f1d0cb4b6ef234203">recalloc</a></div><div class="ttdeci">void * recalloc(void *ptr, size_t old_size, size_t new_size)</div><div class="ttdef"><b>Definition</b> <a href="macros_8h_source.html#l00014">macros.h:14</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="buf__lib_8h_source.html#l00014">capacity</a>, <a class="el" href="buf__lib_8h_source.html#l00012">data</a>, and <a class="el" href="macros_8h_source.html#l00014">recalloc()</a>.</p>
+<p class="reference">References <a class="el" href="buf__lib_8h_source.html#l00017">capacity</a>, <a class="el" href="buf__lib_8h_source.html#l00015">data</a>, and <a class="el" href="macros_8h_source.html#l00014">recalloc()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="buf__lib_8cpp_source.html#l00034">cat()</a>.</p>
 
@@ -289,9 +322,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buf__lib_8h_source.html#l00014">14</a> of file <a class="el" href="buf__lib_8h_source.html">buf_lib.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buf__lib_8h_source.html#l00017">17</a> of file <a class="el" href="buf__lib_8h_source.html">buf_lib.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="buf__lib_8cpp_source.html#l00034">cat()</a>, <a class="el" href="buf__lib_8cpp_source.html#l00003">ctor()</a>, and <a class="el" href="buf__lib_8cpp_source.html#l00020">resize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="read_8cpp_source.html#l00005">asm_read_cmd()</a>, <a class="el" href="assembler_8cpp_source.html#l00015">assemeble_and_write()</a>, <a class="el" href="buf__lib_8cpp_source.html#l00034">cat()</a>, <a class="el" href="buf__lib_8cpp_source.html#l00003">ctor()</a>, and <a class="el" href="buf__lib_8cpp_source.html#l00020">resize()</a>.</p>
 
 </div>
 </div>
@@ -307,7 +340,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buf__lib_8h_source.html#l00012">12</a> of file <a class="el" href="buf__lib_8h_source.html">buf_lib.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buf__lib_8h_source.html#l00015">15</a> of file <a class="el" href="buf__lib_8h_source.html">buf_lib.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00015">assemeble_and_write()</a>, <a class="el" href="buf__lib_8cpp_source.html#l00034">cat()</a>, <a class="el" href="buf__lib_8cpp_source.html#l00003">ctor()</a>, <a class="el" href="buf__lib_8cpp_source.html#l00016">dtor()</a>, and <a class="el" href="buf__lib_8cpp_source.html#l00020">resize()</a>.</p>
 
@@ -333,7 +366,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buf__lib_8h_source.html#l00010">10</a> of file <a class="el" href="buf__lib_8h_source.html">buf_lib.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buf__lib_8h_source.html#l00013">13</a> of file <a class="el" href="buf__lib_8h_source.html">buf_lib.h</a>.</p>
 
 </div>
 </div>
@@ -349,9 +382,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="buf__lib_8h_source.html#l00015">15</a> of file <a class="el" href="buf__lib_8h_source.html">buf_lib.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="buf__lib_8h_source.html#l00018">18</a> of file <a class="el" href="buf__lib_8h_source.html">buf_lib.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00081">asm_parse_and_write_line()</a>, <a class="el" href="write_8cpp_source.html#l00003">asm_write_cmd()</a>, <a class="el" href="assembler_8cpp_source.html#l00015">assemeble_and_write()</a>, and <a class="el" href="buf__lib_8cpp_source.html#l00034">cat()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="listing_8cpp_source.html#l00006">asm_write_cmd_listing()</a>, <a class="el" href="assembler_8cpp_source.html#l00015">assemeble_and_write()</a>, and <a class="el" href="buf__lib_8cpp_source.html#l00034">cat()</a>.</p>
 
 </div>
 </div>

@@ -81,6 +81,17 @@ bool file_write_line(FILE* file, const char* line);
  */
 bool file_write_bytes(FILE* file, const void* data, size_t len);
 
+#ifdef __GNUG__ // because of __attribute__
+/**
+ * @brief Error handler for fprintf
+ *
+ * @param file
+ * @param format
+ * @param ...
+ * @return int number of printed symbols or EOF
+ */
+int file_printf(FILE* file, const char* format, ...) __attribute__ ((format(printf, 2, 3)));
+#else // #ifndef __GNUG__
 /**
  * @brief Error handler for fprintf
  *
@@ -90,6 +101,7 @@ bool file_write_bytes(FILE* file, const void* data, size_t len);
  * @return int number of printed symbols or EOF
  */
 int file_printf(FILE* file, const char* format, ...);
+#endif // #ifdef __GNUG__
 
 /**
  * @brief Closes file

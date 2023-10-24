@@ -32,6 +32,8 @@ bool Buffer::resize(ssize_t new_capacity) {
 }
 
 bool Buffer::cat(const char* cat, const size_t cat_size) {
+    assert(cat);
+
     while (capacity < size + (ssize_t)cat_size)
         if (!resize(capacity * 2))
             return false;

@@ -9,48 +9,39 @@
 #include "lib/utils/statuses.h"
 #include "cmd.h"
 #include "errors.h"
-
-/**
- * @brief Specifies jump cmd label data
- */
-struct JumpLabel {
-    String name = {nullptr, 0};
-    ssize_t byte = -1;
-};
+#include "asm.h"
 
 /**
  * @brief Adds new label to labels
  *
- * @param labels
  * @param name
- * @param inp_file
- * @param byte
+ * @param addr
+ * @param asm_data
+ * @param line
  * @return Status::Statuses
  */
-Status::Statuses asm_new_label(JumpLabel* labels, const String name,
-                               const AsmInfo* inp_file, const size_t byte);
+Status::Statuses asm_new_label(const String name, const size_t addr,
+                               Asm* asm_data, const AsmLine* line);
 
 /**
- * @brief Gets label byte by name
+ * @brief Gets label addr by name
  *
- * @param labels
  * @param name
- * @param inp_file
- * @param byte
- * @param final_pass
+ * @param asm_data
+ * @param line
+ * @param addr
  * @return Status::Statuses
  */
-Status::Statuses asm_get_label_byte(JumpLabel* labels, const String name,
-                                    const AsmInfo* inp_file, Imm_int_t* byte,
-                                    const bool final_pass);
+Status::Statuses asm_get_label_addr(const String name, const Asm* asm_data,
+                                    const AsmLine* line, Imm_int_t* addr);
 
 /**
- * @brief Returns label name by byte
+ * @brief Returns label name by addr
  *
  * @param lables
- * @param byte
- * @return c_String
+ * @param addr
+ * @return const_String
  */
-c_String asm_get_label_name(const JumpLabel* lables, const Imm_int_t byte);
+const_String asm_get_label_name(const JumpLabel* lables, const Imm_int_t addr);
 
 #endif //< #ifndef ASM_JUM_H_

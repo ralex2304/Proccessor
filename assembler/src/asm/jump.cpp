@@ -1,24 +1,22 @@
 #include "jump.h"
 
-#define THROW_SYNTAX_ERROR_(...)  return asm_throw_syntax_error(name,       \
-                                                                inp_file,   \
-                                                                __VA_ARGS__)
+#define THROW_SYNTAX_ERROR_(...)  return asm_throw_syntax_error(asm_data, line, __VA_ARGS__)
 
-Status::Statuses asm_new_label(JumpLabel* labels, const String name,
-                               const AsmInfo* inp_file, const size_t byte) {
-    assert(labels);
+Status::Statuses asm_new_label(const String name, const size_t addr,
+                               Asm* asm_data, const AsmLine* line) {
     assert(name.str);
-    assert(inp_file);
+    assert(asm_data);
 
     for (size_t i = 0; i < MAX_LABEL_NUM; i++) {
-        if (String_strcmp(String_TO_c(labels[i].name), String_TO_c(name)) == 0)
+        if (String_strcmp(String_TO_const(asm_data->labels[i].name), String_TO_const(name)) == 0)
             THROW_SYNTAX_ERROR_("Label name \"%.*s\" used twice.", String_PRINTF(name));
     }
 
     for (size_t i = 0; i < MAX_LABEL_NUM; i++) {
-        if (labels[i].name.str == nullptr && labels[i].name.len == 0 && labels[i].byte == -1) {
-            labels[i].name = name;
-            labels[i].byte = byte;
+        if (asm_data->labels[i].name.len == 0 && asm_data->labels[i].addr == -1) {
+
+            asm_data->labels[i].name = name;
+            asm_data->labels[i].addr = addr;
             return Status::NORMAL_WORK;
         }
     }
@@ -26,31 +24,30 @@ Status::Statuses asm_new_label(JumpLabel* labels, const String name,
     THROW_SYNTAX_ERROR_("Too many labels specified. Max %zu.", MAX_LABEL_NUM);
 }
 
-Status::Statuses asm_get_label_byte(JumpLabel* labels, const String name,
-                                    const AsmInfo* inp_file, Imm_int_t* byte,
-                                    const bool final_pass) {
-    assert(labels);
+Status::Statuses asm_get_label_addr(const String name, const Asm* asm_data,
+                                    const AsmLine* line, Imm_int_t* addr) {
     assert(name.str);
-    assert(inp_file);
-    assert(byte);
+    assert(asm_data);
+    assert(line);
+    assert(addr);
 
     for (size_t i = 0; i < MAX_LABEL_NUM; i++) {
-        if (String_strcmp(String_TO_c(labels[i].name), String_TO_c(name)) == 0) {
-            *byte = labels[i].byte;
+        if (String_strcmp(String_TO_const(asm_data->labels[i].name), String_TO_const(name)) == 0) {
+            *addr = asm_data->labels[i].addr;
             return Status::NORMAL_WORK;
         }
     }
 
-    if (final_pass)
+    if (asm_data->pass_num == asm_data->LAST_PASS_NUM)
         THROW_SYNTAX_ERROR_("Unknown label \"%.*s\"", String_PRINTF(name));
 
     return Status::NORMAL_WORK;
 }
 #undef THROW_SYNTAX_ERROR_
 
-c_String asm_get_label_name(const JumpLabel* labels, const Imm_int_t byte) {
+const_String asm_get_label_name(const JumpLabel* labels, const Imm_int_t addr) {
     for (size_t i = 0; i < MAX_LABEL_NUM; i++) {
-        if (labels[i].byte == byte)
+        if (labels[i].addr == addr)
             return {labels[i].name.str, labels[i].name.len};
     }
 

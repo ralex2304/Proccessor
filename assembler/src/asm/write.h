@@ -12,24 +12,22 @@
 /**
  * @brief Writes one cmd to buf
  *
- * @param buf
- * @param cmd
- * @param labels
- * @param asm_info
+ * @param asm_data
+ * @param line
  * @param listing_file
  * @return Status::Statuses
  */
-Status::Statuses asm_write_cmd(Buffer* buf, const Cmd* cmd, JumpLabel* labels,
-                               const AsmInfo* asm_info, FILE* listing_file);
+Status::Statuses asm_write_cmd(Asm* asm_data, const AsmLine* line, FILE* listing_file);
 
 /**
  * @brief Writes one cmd to bin file
  *
  * @param buf
  * @param cmd
+ * @param final_pass
  * @return Status::Statuses
  */
-Status::Statuses asm_write_cmd_bin(Buffer* buf, const Cmd* cmd);
+Status::Statuses asm_write_cmd_bin(Buffer* buf, const Cmd* cmd, const bool final_pass);
 
 /**
  * @brief Writes header
@@ -45,9 +43,10 @@ Status::Statuses asm_write_header(Buffer* buf, FILE* listing_file, const bool fi
  * @brief Writes header to bin buffer
  *
  * @param buf
+ * @param final_pass
  * @return Status::Statuses
  */
-Status::Statuses asm_write_header_bin(Buffer* buf);
+Status::Statuses asm_write_header_bin(Buffer* buf, const bool final_pass);
 
 /**
  * @brief Calculates command size in bytes

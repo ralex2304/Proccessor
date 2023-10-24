@@ -54,9 +54,9 @@ Status::Statuses disasm_parse(const char* data, const size_t size, const char* o
         if (cur_byte + cmd.size() - sizeof(cmd.keys) > size)
             THROW_SYNTAX_ERROR_("Arguments not found.");
 
-        size_t printed_cnt = 0;
+        int printed_cnt = 0;
 
-        F_PRINTF_("%s", cmd.info->name);
+        F_PRINTF_("%.*s", String_PRINTF(cmd.info->name));
 
         if (cmd.keys.ram)
             F_PRINTF_(" [");
@@ -66,7 +66,7 @@ Status::Statuses disasm_parse(const char* data, const size_t size, const char* o
         if (cmd.keys.reg) {
             DATA_GET_VAL_(cmd.args.reg, RegNum_t);
 
-            F_PRINTF_("%s", find_reg_by_num(cmd.args.reg)->name);
+            F_PRINTF_("%.*s", String_PRINTF(find_reg_by_num(cmd.args.reg)->name));
 
             if (cmd.keys.imm_int || cmd.keys.imm_double)
                 F_PRINTF_("+");
@@ -89,12 +89,12 @@ Status::Statuses disasm_parse(const char* data, const size_t size, const char* o
             F_PRINTF_("]");
 
         if (debug_mode) {
-            static const size_t DISASM_COMMENTS_OFFSET = 50;
+            static const int DISASM_COMMENTS_OFFSET = 50;
 
             if (printed_cnt < DISASM_COMMENTS_OFFSET)
                 F_PRINTF_("%*s", DISASM_COMMENTS_OFFSET - printed_cnt, "");
 
-            F_PRINTF_(";byte=%zu", ip);
+            F_PRINTF_(";addr = %04zu", ip);
         }
 
         F_PRINTF_("\n");
@@ -123,7 +123,7 @@ int disasm_write_header(FILE* file, const FileHeader header) {
 
     F_PRINTF_CHECK_(file_printf(file, ";Signature: %c%c\n"
                                       ";Version: %d\n",
-                                      header.sign[0], header.sign[1], header.version));
+                                      header.sign, header.sign >> 8, header.version));
 
     return 1;
 }

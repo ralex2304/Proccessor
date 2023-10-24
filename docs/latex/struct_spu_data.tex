@@ -68,7 +68,7 @@ References \mbox{\hyperlink{console_8h_source_l00033}{CONSOLE\+\_\+\+RED}}, \mbo
 
 
 
-Referenced by \mbox{\hyperlink{spu_8cpp_source_l00058}{spu\+\_\+parse()}}.
+Referenced by \mbox{\hyperlink{spu_8cpp_source_l00053}{spu\+\_\+parse\+\_\+and\+\_\+execute()}}.
 
 \Hypertarget{struct_spu_data_ab8279902c19cd3fd61a692f2781b0668}\label{struct_spu_data_ab8279902c19cd3fd61a692f2781b0668} 
 \index{SpuData@{SpuData}!dtor@{dtor}}
@@ -101,7 +101,7 @@ References \mbox{\hyperlink{console_8h_source_l00033}{CONSOLE\+\_\+\+RED}}, \mbo
 
 
 
-Referenced by \mbox{\hyperlink{spu_8cpp_source_l00058}{spu\+\_\+parse()}}.
+Referenced by \mbox{\hyperlink{spu_8cpp_source_l00053}{spu\+\_\+parse\+\_\+and\+\_\+execute()}}.
 
 \Hypertarget{struct_spu_data_ae2f8ad06bd42639ff18b4c1b2ee6e5ef}\label{struct_spu_data_ae2f8ad06bd42639ff18b4c1b2ee6e5ef} 
 \index{SpuData@{SpuData}!dump@{dump}}
@@ -124,7 +124,7 @@ Definition at line \mbox{\hyperlink{spu_8cpp_source_l00029}{29}} of file \mbox{\
 \DoxyCodeLine{00035\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\#\ \(\backslash\)n"{}}}
 \DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\#\ Registers\ dump:\(\backslash\)n"{}});}
 \DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a55559e71614b4b4ba24d073b1b813120}{REGS\_NUM}};\ i++)}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}\ <\ \mbox{\hyperlink{cmd_8h_a55559e71614b4b4ba24d073b1b813120}{REGS\_NUM}};\ \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}++)}
 \DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\#\ \%.*s\ =\ "{}}\ \mbox{\hyperlink{cmd_8h_a8851999375ab12991d66ed751e1e2fdb}{IMM\_DOUBLE\_T\_PRINTF}}\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}},\ \mbox{\hyperlink{text__lib_8h_a8bda955a9d6dede91b9f9319eb437476}{String\_PRINTF}}(\mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}[i].name),}
 \DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_spu_data_a0c082f4479ce66efb50b95259f98e457}{reg}}[\mbox{\hyperlink{cmd_8h_a4ea04ae05ebfffb0e476551db61b7724}{REGS\_DICT}}[i].num]);}
 \DoxyCodeLine{00041\ }
@@ -137,7 +137,7 @@ Definition at line \mbox{\hyperlink{spu_8cpp_source_l00029}{29}} of file \mbox{\
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{cmd_8h_source_l00072}{IMM\+\_\+\+DOUBLE\+\_\+\+T\+\_\+\+PRINTF}}, \mbox{\hyperlink{spu_8h_source_l00021}{reg}}, \mbox{\hyperlink{cmd_8h_source_l00059}{REGS\+\_\+\+DICT}}, \mbox{\hyperlink{cmd_8h_source_l00066}{REGS\+\_\+\+NUM}}, \mbox{\hyperlink{spu_8h_source_l00019}{stk}}, \mbox{\hyperlink{stack_8cpp_source_l00194}{stk\+\_\+data\+\_\+dump()}}, and \mbox{\hyperlink{text__lib_8h_source_l00043}{String\+\_\+\+PRINTF}}.
+References \mbox{\hyperlink{cmd_8h_source_l00074}{IMM\+\_\+\+DOUBLE\+\_\+\+T\+\_\+\+PRINTF}}, \mbox{\hyperlink{spu_8h_source_l00021}{reg}}, \mbox{\hyperlink{cmd_8h_source_l00061}{REGS\+\_\+\+DICT}}, \mbox{\hyperlink{cmd_8h_source_l00068}{REGS\+\_\+\+NUM}}, \mbox{\hyperlink{spu_8h_source_l00019}{stk}}, \mbox{\hyperlink{stack_8cpp_source_l00194}{stk\+\_\+data\+\_\+dump()}}, and \mbox{\hyperlink{text__lib_8h_source_l00046}{String\+\_\+\+PRINTF}}.
 
 
 
@@ -178,7 +178,7 @@ Definition at line \mbox{\hyperlink{spu_8h_source_l00019}{19}} of file \mbox{\hy
 
 
 
-Referenced by \mbox{\hyperlink{spu_8cpp_source_l00005}{ctor()}}, \mbox{\hyperlink{spu_8cpp_source_l00017}{dtor()}}, \mbox{\hyperlink{spu_8cpp_source_l00029}{dump()}}, and \mbox{\hyperlink{spu_8cpp_source_l00058}{spu\+\_\+parse()}}.
+Referenced by \mbox{\hyperlink{spu_8cpp_source_l00005}{ctor()}}, \mbox{\hyperlink{spu_8cpp_source_l00017}{dtor()}}, and \mbox{\hyperlink{spu_8cpp_source_l00029}{dump()}}.
 
 
 

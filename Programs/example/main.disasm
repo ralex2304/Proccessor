@@ -1,14 +1,13 @@
 ;Signature: KU
 ;Version: 1
-dmp                                               ;byte=4
-push 2.000000                                     ;byte=6
-pop rcx                                           ;byte=16
-push rcx+1.000000                                 ;byte=19
-in                                                ;byte=30
-dmp                                               ;byte=32
-sqrt                                              ;byte=34
-dmp                                               ;byte=36
-out                                               ;byte=38
-out                                               ;byte=40
-jmp rcx+32                                        ;byte=42
-hlt                                               ;byte=53
+dmp                                               ;addr = 0004
+push 2.000000                                     ;addr = 0006
+pop rcx                                           ;addr = 0016
+push rcx+1.000000                                 ;addr = 0019
+in                                                ;addr = 0030
+dmp                                               ;addr = 0032
+sqrt                                              ;addr = 0034
+dmp                                               ;addr = 0036
+out                                               ;addr = 0038
+out                                               ;addr = 0040
+hlt                                               ;addr = 0042

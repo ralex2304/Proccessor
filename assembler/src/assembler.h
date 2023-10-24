@@ -14,30 +14,35 @@
 #include "asm/write.h"
 #include "asm/listing.h"
 #include "asm/errors.h"
+#include "asm/asm.h"
 
 /**
  * @brief Assembles code and writes it to binary file. Listing file is optional
  *
  * @param input_data
- * @param bin_filename
- * @param inp_filename
- * @param listing_filename
+ * @param files
  * @return Status::Statuses
  */
-Status::Statuses assemeble_and_write(const InputData* input_data, const char* bin_filename,
-                                     const char* inp_filename,
-                                     const char* listing_filename = nullptr);
+Status::Statuses assemeble_and_write(const InputData* input_data, AsmFilesInfo files);
+
+/**
+ * @brief Does one assembly pass
+ *
+ * @param asm_data
+ * @param input_data
+ * @param lst_file
+ * @return Status::Statuses
+ */
+Status::Statuses asm_do_pass(Asm* asm_data, const InputData* input_data, FILE* lst_file);
 
 /**
  * @brief Parses one line and writes to buf
  *
- * @param buf
- * @param labels
- * @param inp_file
- * @param listing_file
+ * @param asm_data
+ * @param line
+ * @param lst_file
  * @return Status::Statuses
  */
-Status::Statuses asm_parse_and_write_line(Buffer* buf, JumpLabel* labels, AsmInfo* inp_file,
-                                          FILE* listing_file = nullptr);
+Status::Statuses asm_parse_and_write_line(Asm* asm_data, AsmLine* line, FILE* lst_file = nullptr);
 
 #endif // #ifndef ASSEMBLER_H_

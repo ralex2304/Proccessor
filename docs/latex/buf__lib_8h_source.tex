@@ -10,23 +10,23 @@
 \DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00006}00006\ }
 \DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{macros_8h}{macros.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00008}00008\ }
-\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00009}\mbox{\hyperlink{struct_buffer}{00009}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_buffer}{Buffer}}\ \{}
-\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00010}\mbox{\hyperlink{struct_buffer_afd5cd659ecca36f2c4c0ea31169f0d16}{00010}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_buffer_afd5cd659ecca36f2c4c0ea31169f0d16}{INIT\_CAPACITY}}\ =\ 256;}
-\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00012}\mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{00012}}\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{data}}\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00013}00013\ }
-\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00014}\mbox{\hyperlink{struct_buffer_a0a7fe9496e5e642f14f1975abb95824c}{00014}}\ \ \ \ \ ssize\_t\ \mbox{\hyperlink{struct_buffer_a0a7fe9496e5e642f14f1975abb95824c}{capacity}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00015}\mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{00015}}\ \ \ \ \ ssize\_t\ \mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{size}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00012}\mbox{\hyperlink{struct_buffer}{00012}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_buffer}{Buffer}}\ \{}
+\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00013}\mbox{\hyperlink{struct_buffer_afd5cd659ecca36f2c4c0ea31169f0d16}{00013}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_buffer_afd5cd659ecca36f2c4c0ea31169f0d16}{INIT\_CAPACITY}}\ =\ 256;}
+\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00015}\mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{00015}}\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{data}}\ =\ \textcolor{keyword}{nullptr};\ \ \ \textcolor{comment}{//<\ buffer\ data}}
 \DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00016}00016\ }
-\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_buffer_ad1535950a41eefad8fb8c7706af8f5a7}{ctor}}(ssize\_t\ init\_capacity\ =\ \mbox{\hyperlink{struct_buffer_afd5cd659ecca36f2c4c0ea31169f0d16}{INIT\_CAPACITY}});}
-\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_buffer_accef32f248ec05ad669b1de0dc3ae6a5}{dtor}}();}
+\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00017}\mbox{\hyperlink{struct_buffer_a0a7fe9496e5e642f14f1975abb95824c}{00017}}\ \ \ \ \ ssize\_t\ \mbox{\hyperlink{struct_buffer_a0a7fe9496e5e642f14f1975abb95824c}{capacity}}\ =\ 0;\ \ \ \textcolor{comment}{//<\ current\ buf\ capacity}}
+\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00018}\mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{00018}}\ \ \ \ \ ssize\_t\ \mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{size}}\ =\ 0;\ \ \ \ \ \ \ \textcolor{comment}{//<\ current\ data\ in\ buf\ size}}
 \DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_buffer_a6446660135f46c6a88fd863ec0a57a88}{resize}}(ssize\_t\ new\_capacity);}
-\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_buffer_a73dfd504fe4d4f6dffa9e5949b1fdcae}{cat}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_buffer_a73dfd504fe4d4f6dffa9e5949b1fdcae}{cat}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ cat\_size);}
-\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00023}00023\ \};}
-\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00026}00026\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//<\ \#ifndef\ BUF\_LIB\_H\_}}
+\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_buffer_ad1535950a41eefad8fb8c7706af8f5a7}{ctor}}(ssize\_t\ init\_capacity\ =\ \mbox{\hyperlink{struct_buffer_afd5cd659ecca36f2c4c0ea31169f0d16}{INIT\_CAPACITY}});}
+\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_buffer_accef32f248ec05ad669b1de0dc3ae6a5}{dtor}}();}
+\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_buffer_a6446660135f46c6a88fd863ec0a57a88}{resize}}(ssize\_t\ new\_capacity);}
+\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_buffer_a73dfd504fe4d4f6dffa9e5949b1fdcae}{cat}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_buffer_a73dfd504fe4d4f6dffa9e5949b1fdcae}{cat}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ cat\_size);}
+\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00041}00041\ \};}
+\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{buf__lib_8h_source_l00044}00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//<\ \#ifndef\ BUF\_LIB\_H\_}}
 
 \end{DoxyCode}

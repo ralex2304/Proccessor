@@ -36,8 +36,9 @@ int main(int argc, char* argv[]) {
     /// Reading and parsing input file end
 
     /// Assembling and writing
-    STATUS_CHECK_RAISE(assemeble_and_write(&input_data, args_vars.output_filename,
-                                           args_vars.input_filename, args_vars.listing_filename),
+
+    STATUS_CHECK_RAISE(assemeble_and_write(&input_data, {args_vars.input_filename,
+                                           args_vars.output_filename, args_vars.listing_filename}),
                        input_data.detor(););
     /// Assembling and writing end
 

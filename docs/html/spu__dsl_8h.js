@@ -8,7 +8,9 @@ var spu__dsl_8h =
     [ "DUMP", "spu__dsl_8h.html#a68e4a10cfd30e33ab1e506f696729336", null ],
     [ "GET_FROM_INPUT", "spu__dsl_8h.html#a1f92e847fc8c4ba1353b03992c5eeb5a", null ],
     [ "GET_INSTRUCTION_PTR", "spu__dsl_8h.html#aeb6d3ba3cc029fcb8ac45f2e3853ef2d", null ],
+    [ "GET_LVALUE_PTR", "spu__dsl_8h.html#a4e676f0644b91fc997514d32a5f41f59", null ],
     [ "GET_NEXT_INSTRUCTION_PTR", "spu__dsl_8h.html#acde6104e0bb6e23b24a2fe8d1404e387", null ],
+    [ "GET_RVALUE", "spu__dsl_8h.html#a52cb809ee1e57e683b950d9ed1842552", null ],
     [ "HALT", "spu__dsl_8h.html#a597f2881b60f9b4f9ae6451abaaa1b7c", null ],
     [ "IMM_DOUBLE_EPS", "spu__dsl_8h.html#a0aef18805c12a685c2b65d6756bc0fa7", null ],
     [ "IMM_DOUBLE_T", "spu__dsl_8h.html#a303b93cbec67fcc7b8c811304b46fd9a", null ],
@@ -33,5 +35,7 @@ var spu__dsl_8h =
     [ "RAM", "spu__dsl_8h.html#a40869d06535af1c441272596a593f764", null ],
     [ "REG", "spu__dsl_8h.html#ad6ade6409c5ca69f90efdfd1acce35fa", null ],
     [ "UNARY_OPERATOR", "spu__dsl_8h.html#a0e78009ab0c6fe5165541468db781072", null ],
+    [ "get_lvalue_ptr_", "spu__dsl_8h.html#a11501ee59a7a70b380249c79d9b24f74", null ],
+    [ "get_rvalue_", "spu__dsl_8h.html#ae1fccf3dc3b51475a1ffefacd0d2bddc", null ],
     [ "WEEKDAY", "spu__dsl_8h.html#a8caccf4e8da6d5009b7b4a8f0bb48098", null ]
 ];

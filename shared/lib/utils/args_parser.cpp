@@ -139,24 +139,24 @@ void print_commands_list() {
         printf("#    %3d) %-5s --- %s\n", cmd_info->num, cmd_info->name.str,
                                           cmd_info->description);
 
-        if (cmd_info->args.reg || cmd_info->args.imm_double || cmd_info->args.imm_int
-            || cmd_info->args.ram || cmd_info->args.label) {
+        if (cmd_info->is_args.reg || cmd_info->is_args.imm_double || cmd_info->is_args.imm_int
+            || cmd_info->is_args.ram || cmd_info->is_args.label) {
             printf("#    %3s%5s ", "", "");
 
-            if (cmd_info->args.reg)
+            if (cmd_info->is_args.reg)
                 printf(" <reg>");
 
-            if (cmd_info->args.imm_double)
+            if (cmd_info->is_args.imm_double)
                 printf(" <imm_double>");
 
-            if (cmd_info->args.imm_int)
+            if (cmd_info->is_args.imm_int)
                 printf(" <imm_int>");
 
-            if (cmd_info->args.ram)
+            if (cmd_info->is_args.ram)
                 printf(" <[]>");
 
-            if (cmd_info->args.label)
-                printf(" !label!");
+            if (cmd_info->is_args.label)
+                printf(" <label>");
 
             printf("\n");
         }

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['jump_5fclause_5ffunc_0',['JUMP_CLAUSE_FUNC',['../cmd__dict_8h.html#ab887764c76e555b4b8440ced35d9397e',1,'cmd_dict.h']]]
+  ['is_5fpoison_0',['is_poison',['../config_8h.html#ab77683e8a25070f813aa006636770700',1,'config.h']]],
+  ['is_5fptr_5fvalid_1',['is_ptr_valid',['../ptr__valid_8h.html#a9118aa9878b41057b6d2067e5d5dff2b',1,'ptr_valid.h']]]
 ];

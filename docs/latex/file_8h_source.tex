@@ -27,10 +27,14 @@
 \DoxyCodeLine{\Hypertarget{file_8h_source_l00072}00072\ }
 \DoxyCodeLine{\Hypertarget{file_8h_source_l00082}00082\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{file_8h_a68a322f778a4f850372b482bcc35c0d5}{file\_write\_bytes}}(FILE*\ file,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ \textcolor{keywordtype}{size\_t}\ len);}
 \DoxyCodeLine{\Hypertarget{file_8h_source_l00083}00083\ }
-\DoxyCodeLine{\Hypertarget{file_8h_source_l00092}00092\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{file_8h_acecf8d97922690834a1cd9ba8915a82b}{file\_printf}}(FILE*\ file,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ format,\ ...);}
-\DoxyCodeLine{\Hypertarget{file_8h_source_l00093}00093\ }
-\DoxyCodeLine{\Hypertarget{file_8h_source_l00101}00101\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{file_8h_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(FILE*\ file);}
-\DoxyCodeLine{\Hypertarget{file_8h_source_l00102}00102\ }
-\DoxyCodeLine{\Hypertarget{file_8h_source_l00103}00103\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ FILE\_H\_}}
+\DoxyCodeLine{\Hypertarget{file_8h_source_l00084}00084\ \textcolor{preprocessor}{\#ifdef\ \_\_GNUG\_\_\ }\textcolor{comment}{//\ because\ of\ \_\_attribute\_\_}}
+\DoxyCodeLine{\Hypertarget{file_8h_source_l00093}00093\ \textcolor{comment}{}int\ file\_printf(FILE*\ file,\ const\ char*\ format,\ ...)\ \_\_attribute\_\_\ ((format(printf,\ 2,\ 3)));}
+\DoxyCodeLine{\Hypertarget{file_8h_source_l00094}00094\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ \#ifndef\ \_\_GNUG\_\_}}
+\DoxyCodeLine{\Hypertarget{file_8h_source_l00103}00103\ \textcolor{comment}{}int\ file\_printf(FILE*\ file,\ const\ char*\ format,\ ...);}
+\DoxyCodeLine{\Hypertarget{file_8h_source_l00104}00104\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifdef\ \_\_GNUG\_\_}}
+\DoxyCodeLine{\Hypertarget{file_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{file_8h_source_l00113}00113\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{file_8h_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(FILE*\ file);}
+\DoxyCodeLine{\Hypertarget{file_8h_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{file_8h_source_l00115}00115\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ FILE\_H\_}}
 
 \end{DoxyCode}

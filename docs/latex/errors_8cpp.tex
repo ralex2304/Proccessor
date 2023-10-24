@@ -4,16 +4,16 @@
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{errors_8cpp_ac2b36b9c7abb118a75666f4a3a511553}{asm\+\_\+throw\+\_\+syntax\+\_\+error}} (const \mbox{\hyperlink{struct_string}{String}} token, const \mbox{\hyperlink{struct_asm_info}{Asm\+Info}} \texorpdfstring{$\ast$}{*}asm\+\_\+info, const char \texorpdfstring{$\ast$}{*}err\+\_\+msg,...)
+\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{errors_8cpp_a9d85c05bc94b5a80c7d982e23eb1f788}{asm\+\_\+throw\+\_\+syntax\+\_\+error}} (const \mbox{\hyperlink{struct_asm}{Asm}} \texorpdfstring{$\ast$}{*}asm\+\_\+data, const \mbox{\hyperlink{struct_asm_line}{Asm\+Line}} \texorpdfstring{$\ast$}{*}line, const char \texorpdfstring{$\ast$}{*}err\+\_\+msg,...)
 \begin{DoxyCompactList}\small\item\em Throws syntax error. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{errors_8cpp_ac2b36b9c7abb118a75666f4a3a511553}\label{errors_8cpp_ac2b36b9c7abb118a75666f4a3a511553} 
+\Hypertarget{errors_8cpp_a9d85c05bc94b5a80c7d982e23eb1f788}\label{errors_8cpp_a9d85c05bc94b5a80c7d982e23eb1f788} 
 \index{errors.cpp@{errors.cpp}!asm\_throw\_syntax\_error@{asm\_throw\_syntax\_error}}
 \index{asm\_throw\_syntax\_error@{asm\_throw\_syntax\_error}!errors.cpp@{errors.cpp}}
 \doxysubsubsection{\texorpdfstring{asm\_throw\_syntax\_error()}{asm\_throw\_syntax\_error()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+throw\+\_\+syntax\+\_\+error (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_string}{String}}}]{token,  }\item[{const \mbox{\hyperlink{struct_asm_info}{Asm\+Info}} \texorpdfstring{$\ast$}{*}}]{file\+\_\+info,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{err\+\_\+msg,  }\item[{}]{... }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+throw\+\_\+syntax\+\_\+error (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_asm}{Asm}} \texorpdfstring{$\ast$}{*}}]{asm\+\_\+data,  }\item[{const \mbox{\hyperlink{struct_asm_line}{Asm\+Line}} \texorpdfstring{$\ast$}{*}}]{line,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{err\+\_\+msg,  }\item[{}]{... }\end{DoxyParamCaption})}
 
 
 
@@ -21,9 +21,9 @@ Throws syntax error.
 
 
 \begin{DoxyParams}{Parameters}
-{\em token} & current command token \\
+{\em asm\+\_\+data} & \\
 \hline
-{\em file\+\_\+info} & \\
+{\em line} & \\
 \hline
 {\em err\+\_\+msg} & \\
 \hline
@@ -40,46 +40,47 @@ Definition at line \mbox{\hyperlink{errors_8cpp_source_l00003}{3}} of file \mbox
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00005\ \ \ \ \ assert(err\_msg);}
-\DoxyCodeLine{00006\ \ \ \ \ assert(asm\_info-\/>\mbox{\hyperlink{struct_asm_info_a98b4886465b9b2e448866e92b623db7d}{line}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ ==\ 0\ ||\ asm\_info-\/>\mbox{\hyperlink{struct_asm_info_a98b4886465b9b2e448866e92b623db7d}{line}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
-\DoxyCodeLine{00007\ \ \ \ \ assert(\ \ \ \ \ \ \ \ \ token.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ ==\ 0\ ||\ \ \ \ \ \ \ \ \ \ token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
-\DoxyCodeLine{00008\ \ \ \ \ assert(asm\_info-\/>\mbox{\hyperlink{struct_asm_info_a992bd3cb1344c8d847864164f4d74dbd}{filename}});}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ token\_begin\ =\ (token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ ==\ \textcolor{keyword}{nullptr})\ ?\ (\textcolor{keywordtype}{int})asm\_info-\/>\mbox{\hyperlink{struct_asm_info_a98b4886465b9b2e448866e92b623db7d}{line}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (int)(token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ -\/\ asm\_info-\/>\mbox{\hyperlink{struct_asm_info_a98b4886465b9b2e448866e92b623db7d}{line}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ token\_end\ \ \ =\ (token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ ==\ \textcolor{keyword}{nullptr})\ ?\ (\textcolor{keywordtype}{int})asm\_info-\/>\mbox{\hyperlink{struct_asm_info_a98b4886465b9b2e448866e92b623db7d}{line}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (int)(token\_begin\ +\ token.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}});}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_a038ef7e954c5cdc42f96cabd07c56dec}{CONSOLE\_STYLE}}(\mbox{\hyperlink{console_8h_a7ce3d6fee94f21c9e3d0ffdd90aadc2e}{STYLE\_BOLD}},\ \textcolor{stringliteral}{"{}\%s:\%zu:\%d\ "{}}}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{console_8h_ad86358bf19927183dd7b4ae215a29731}{COLOR\_RED}}\ \textcolor{stringliteral}{"{}syntax\ error:\ "{}}),\ asm\_info-\/>\mbox{\hyperlink{struct_asm_info_a992bd3cb1344c8d847864164f4d74dbd}{filename}},}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ asm\_info-\/>\mbox{\hyperlink{struct_asm_info_af00fb7ef5f5a5776bc2eb38e4248142b}{line\_num}},\ token\_begin\ +\ 1);}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ va\_list\ arg\_list\ =\ \{\};}
-\DoxyCodeLine{00020\ \ \ \ \ va\_start(arg\_list,\ err\_msg);}
-\DoxyCodeLine{00021\ \ \ \ \ vfprintf(stderr,\ err\_msg,\ arg\_list);}
-\DoxyCodeLine{00022\ \ \ \ \ va\_end(arg\_list);}
-\DoxyCodeLine{00023\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%5zu\ |\ "{}},\ asm\_info-\/>\mbox{\hyperlink{struct_asm_info_af00fb7ef5f5a5776bc2eb38e4248142b}{line\_num}});}
+\DoxyCodeLine{00005\ \ \ \ \ assert(asm\_data);}
+\DoxyCodeLine{00006\ \ \ \ \ assert(line);}
+\DoxyCodeLine{00007\ \ \ \ \ assert(err\_msg);}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}\ err\_token\ =\ line-\/>\mbox{\hyperlink{struct_asm_line_a67847c1e073155eeea8d2b07137dc4c9}{tokens}}[line-\/>\mbox{\hyperlink{struct_asm_line_a67aa735131bb2889b9e1f384ec74b1a0}{cur\_token}}];}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ token\_begin\ =\ (err\_token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ ==\ \textcolor{keyword}{nullptr})\ ?\ (\textcolor{keywordtype}{int})line-\/>\mbox{\hyperlink{struct_asm_line_ad34cdcc2f2a00dfc673533ce096385cd}{text}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (int)(err\_token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ -\/\ line-\/>\mbox{\hyperlink{struct_asm_line_ad34cdcc2f2a00dfc673533ce096385cd}{text}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ token\_end\ \ \ =\ (err\_token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ ==\ \textcolor{keyword}{nullptr})\ ?\ (\textcolor{keywordtype}{int})line-\/>\mbox{\hyperlink{struct_asm_line_ad34cdcc2f2a00dfc673533ce096385cd}{text}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (int)(token\_begin\ +\ err\_token.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}});}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_a038ef7e954c5cdc42f96cabd07c56dec}{CONSOLE\_STYLE}}(\mbox{\hyperlink{console_8h_a7ce3d6fee94f21c9e3d0ffdd90aadc2e}{STYLE\_BOLD}},\ \textcolor{stringliteral}{"{}\%s:\%zu:\%d\ "{}}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{console_8h_ad86358bf19927183dd7b4ae215a29731}{COLOR\_RED}}\ \textcolor{stringliteral}{"{}syntax\ error:\ "{}}),}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ asm\_data-\/>\mbox{\hyperlink{struct_asm_af299118b6670c1973e6f6562483e17aa}{files}}.\mbox{\hyperlink{struct_asm_files_info_a31e912db41e261f265e38f53d787f7a9}{inp\_name}},\ line-\/>\mbox{\hyperlink{struct_asm_line_a1efe4fc5f49367a3222c7f2de35bdf85}{num}},\ token\_begin\ +\ 1);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ va\_list\ arg\_list\ =\ \{\};}
+\DoxyCodeLine{00022\ \ \ \ \ va\_start(arg\_list,\ err\_msg);}
+\DoxyCodeLine{00023\ \ \ \ \ vfprintf(stderr,\ err\_msg,\ arg\_list);}
+\DoxyCodeLine{00024\ \ \ \ \ va\_end(arg\_list);}
+\DoxyCodeLine{00025\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%.*s"{}},\ token\_begin,\ asm\_info-\/>\mbox{\hyperlink{struct_asm_info_a98b4886465b9b2e448866e92b623db7d}{line}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
-\DoxyCodeLine{00028\ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_a038ef7e954c5cdc42f96cabd07c56dec}{CONSOLE\_STYLE}}(\mbox{\hyperlink{console_8h_a7ce3d6fee94f21c9e3d0ffdd90aadc2e}{STYLE\_BOLD}}\ \mbox{\hyperlink{console_8h_ad86358bf19927183dd7b4ae215a29731}{COLOR\_RED}},\ \textcolor{stringliteral}{"{}\%.*s"{}}),\ \mbox{\hyperlink{text__lib_8h_a8bda955a9d6dede91b9f9319eb437476}{String\_PRINTF}}(token));}
-\DoxyCodeLine{00029\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%.*s\(\backslash\)n"{}},\ (\textcolor{keywordtype}{int})(asm\_info-\/>\mbox{\hyperlink{struct_asm_info_a98b4886465b9b2e448866e92b623db7d}{line}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ -\/\ token\_end),}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ asm\_info-\/>\mbox{\hyperlink{struct_asm_info_a98b4886465b9b2e448866e92b623db7d}{line}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ +\ token\_end);}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%5s\ |\ "{}},\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%*s"{}},\ token\_begin,\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00035\ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_ad86358bf19927183dd7b4ae215a29731}{COLOR\_RED}}\ \mbox{\hyperlink{console_8h_a7ce3d6fee94f21c9e3d0ffdd90aadc2e}{STYLE\_BOLD}}\ \textcolor{stringliteral}{"{}\string^"{}});}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{for}\ (ssize\_t\ i\ =\ 0;\ i\ <\ token\_end\ -\/\ token\_begin\ -\/\ 1;\ i++)}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\string~"{}});}
-\DoxyCodeLine{00038\ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_a0afe503629a0074b6d24bbce318f85f2}{STYLE\_RESET}}\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabb9ae17ad4d7d55ccce75d9d38d7926e}{Status::SYNTAX\_ERROR}};}
-\DoxyCodeLine{00041\ \}}
+\DoxyCodeLine{00027\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%5zu\ |\ "{}},\ line-\/>\mbox{\hyperlink{struct_asm_line_a1efe4fc5f49367a3222c7f2de35bdf85}{num}});}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%.*s"{}},\ token\_begin,\ line-\/>\mbox{\hyperlink{struct_asm_line_ad34cdcc2f2a00dfc673533ce096385cd}{text}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{00030\ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_a038ef7e954c5cdc42f96cabd07c56dec}{CONSOLE\_STYLE}}(\mbox{\hyperlink{console_8h_a7ce3d6fee94f21c9e3d0ffdd90aadc2e}{STYLE\_BOLD}}\ \mbox{\hyperlink{console_8h_ad86358bf19927183dd7b4ae215a29731}{COLOR\_RED}},\ \textcolor{stringliteral}{"{}\%.*s"{}}),\ \mbox{\hyperlink{text__lib_8h_a8bda955a9d6dede91b9f9319eb437476}{String\_PRINTF}}(err\_token));}
+\DoxyCodeLine{00031\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%.*s\(\backslash\)n"{}},\ (\textcolor{keywordtype}{int})(line-\/>\mbox{\hyperlink{struct_asm_line_ad34cdcc2f2a00dfc673533ce096385cd}{text}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ -\/\ token\_end),\ line-\/>\mbox{\hyperlink{struct_asm_line_ad34cdcc2f2a00dfc673533ce096385cd}{text}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ +\ token\_end);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%5s\ |\ "{}},\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\%*s"{}},\ token\_begin,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00036\ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_ad86358bf19927183dd7b4ae215a29731}{COLOR\_RED}}\ \mbox{\hyperlink{console_8h_a7ce3d6fee94f21c9e3d0ffdd90aadc2e}{STYLE\_BOLD}}\ \textcolor{stringliteral}{"{}\string^"{}});}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{for}\ (ssize\_t\ i\ =\ 0;\ \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}\ <\ token\_end\ -\/\ token\_begin\ -\/\ 1;\ \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}++)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\string~"{}});}
+\DoxyCodeLine{00039\ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_a0afe503629a0074b6d24bbce318f85f2}{STYLE\_RESET}}\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabb9ae17ad4d7d55ccce75d9d38d7926e}{Status::SYNTAX\_ERROR}};}
+\DoxyCodeLine{00042\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{console_8h_source_l00018}{COLOR\+\_\+\+RED}}, \mbox{\hyperlink{console_8h_source_l00036}{CONSOLE\+\_\+\+STYLE}}, \mbox{\hyperlink{errors_8h_source_l00021}{Asm\+Info\+::filename}}, \mbox{\hyperlink{text__lib_8h_source_l00024}{String\+::len}}, \mbox{\hyperlink{errors_8h_source_l00018}{Asm\+Info\+::line}}, \mbox{\hyperlink{errors_8h_source_l00019}{Asm\+Info\+::line\+\_\+num}}, \mbox{\hyperlink{text__lib_8h_source_l00023}{String\+::str}}, \mbox{\hyperlink{text__lib_8h_source_l00043}{String\+\_\+\+PRINTF}}, \mbox{\hyperlink{console_8h_source_l00008}{STYLE\+\_\+\+BOLD}}, \mbox{\hyperlink{console_8h_source_l00005}{STYLE\+\_\+\+RESET}}, and \mbox{\hyperlink{statuses_8h_source_l00019}{Status\+::\+SYNTAX\+\_\+\+ERROR}}.
+References \mbox{\hyperlink{console_8h_source_l00018}{COLOR\+\_\+\+RED}}, \mbox{\hyperlink{console_8h_source_l00036}{CONSOLE\+\_\+\+STYLE}}, \mbox{\hyperlink{asm_8h_source_l00028}{Asm\+Line\+::cur\+\_\+token}}, \mbox{\hyperlink{asm_8h_source_l00056}{Asm\+::files}}, \mbox{\hyperlink{asm_8h_source_l00036}{Asm\+Files\+Info\+::inp\+\_\+name}}, \mbox{\hyperlink{text__lib_8h_source_l00024}{String\+::len}}, \mbox{\hyperlink{asm_8h_source_l00023}{Asm\+Line\+::num}}, \mbox{\hyperlink{text__lib_8h_source_l00023}{String\+::str}}, \mbox{\hyperlink{text__lib_8h_source_l00046}{String\+\_\+\+PRINTF}}, \mbox{\hyperlink{console_8h_source_l00008}{STYLE\+\_\+\+BOLD}}, \mbox{\hyperlink{console_8h_source_l00005}{STYLE\+\_\+\+RESET}}, \mbox{\hyperlink{statuses_8h_source_l00019}{Status\+::\+SYNTAX\+\_\+\+ERROR}}, \mbox{\hyperlink{asm_8h_source_l00022}{Asm\+Line\+::text}}, and \mbox{\hyperlink{asm_8h_source_l00027}{Asm\+Line\+::tokens}}.
 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['weekday_0',['WEEKDAY',['../spu__dsl_8h.html#a8caccf4e8da6d5009b7b4a8f0bb48098',1,'spu_dsl.h']]]
+  ['text_5fthrow_5fout_5fcomment_0',['text_throw_out_comment',['../text__lib_8h.html#a398d656d25ab5e1fd3a6b701b037e399',1,'text_lib.h']]]
 ];

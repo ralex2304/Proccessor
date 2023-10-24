@@ -109,15 +109,15 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ad489a5342f5135b1ea05167420897484"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_file_header.html#ad489a5342f5135b1ea05167420897484">sign</a> [2] = {'K','U'}</td></tr>
-<tr class="separator:ad489a5342f5135b1ea05167420897484"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a539d90ab0f7c0d4e57b7b36764132216"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_file_header.html#a539d90ab0f7c0d4e57b7b36764132216">sign</a> = 0x554B</td></tr>
+<tr class="separator:a539d90ab0f7c0d4e57b7b36764132216"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c0fb698efe175bbe23b23f8e4d614e5"><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_file_header.html#a3c0fb698efe175bbe23b23f8e4d614e5">version</a> = <a class="el" href="cmd_8h.html#ac6fd8a0b61158e50a7d52538ba0e5be9">CMD_VERSION</a></td></tr>
 <tr class="separator:a3c0fb698efe175bbe23b23f8e4d614e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Binary file header. </p>
 
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00149">149</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00160">160</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a161aa6703e01462d26a20668a5fd4bf5" name="a161aa6703e01462d26a20668a5fd4bf5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a161aa6703e01462d26a20668a5fd4bf5">&#9670;&#160;</a></span>check()</h2>
@@ -136,11 +136,11 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="cmd_8cpp_source.html#l00003">3</a> of file <a class="el" href="cmd_8cpp_source.html">cmd.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    3</span>                             {</div>
-<div class="line"><span class="lineno">    4</span>    <span class="keywordflow">if</span> (memcmp(<a class="code hl_variable" href="struct_file_header.html#ad489a5342f5135b1ea05167420897484">sign</a>, <a class="code hl_variable" href="cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be">FILE_HEADER</a>.<a class="code hl_variable" href="struct_file_header.html#ad489a5342f5135b1ea05167420897484">sign</a>, <span class="keyword">sizeof</span>(<a class="code hl_variable" href="struct_file_header.html#ad489a5342f5135b1ea05167420897484">sign</a>)) != 0) {</div>
-<div class="line"><span class="lineno">    5</span>        <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(<a class="code hl_variable" href="struct_file_header.html#ad489a5342f5135b1ea05167420897484">sign</a>) == 2);</div>
+<div class="line"><span class="lineno">    4</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="struct_file_header.html#a539d90ab0f7c0d4e57b7b36764132216">sign</a> != <a class="code hl_variable" href="cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be">FILE_HEADER</a>.<a class="code hl_variable" href="struct_file_header.html#a539d90ab0f7c0d4e57b7b36764132216">sign</a>) {</div>
+<div class="line"><span class="lineno">    5</span>        <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(<a class="code hl_variable" href="struct_file_header.html#a539d90ab0f7c0d4e57b7b36764132216">sign</a>) == 2);</div>
 <div class="line"><span class="lineno">    6</span> </div>
 <div class="line"><span class="lineno">    7</span>        printf(<a class="code hl_define" href="console_8h.html#ad220b7c98ce4bd06bf25860ca62d7aba">CONSOLE_RED</a>(<span class="stringliteral">&quot;Error. Wrong signature.&quot;</span>) <span class="stringliteral">&quot; \&quot;%c%c\&quot; instead of \&quot;%c%c\&quot;\n&quot;</span>,</div>
-<div class="line"><span class="lineno">    8</span>               <a class="code hl_variable" href="struct_file_header.html#ad489a5342f5135b1ea05167420897484">sign</a>[0], <a class="code hl_variable" href="struct_file_header.html#ad489a5342f5135b1ea05167420897484">sign</a>[1], <a class="code hl_variable" href="cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be">FILE_HEADER</a>.<a class="code hl_variable" href="struct_file_header.html#ad489a5342f5135b1ea05167420897484">sign</a>[0], <a class="code hl_variable" href="cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be">FILE_HEADER</a>.<a class="code hl_variable" href="struct_file_header.html#ad489a5342f5135b1ea05167420897484">sign</a>[1]);</div>
+<div class="line"><span class="lineno">    8</span>               <a class="code hl_variable" href="struct_file_header.html#a539d90ab0f7c0d4e57b7b36764132216">sign</a>, <a class="code hl_variable" href="struct_file_header.html#a539d90ab0f7c0d4e57b7b36764132216">sign</a> &gt;&gt; 8, <a class="code hl_variable" href="cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be">FILE_HEADER</a>.<a class="code hl_variable" href="struct_file_header.html#a539d90ab0f7c0d4e57b7b36764132216">sign</a>, <a class="code hl_variable" href="cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be">FILE_HEADER</a>.<a class="code hl_variable" href="struct_file_header.html#a539d90ab0f7c0d4e57b7b36764132216">sign</a> &gt;&gt; 8);</div>
 <div class="line"><span class="lineno">    9</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   10</span>    }</div>
 <div class="line"><span class="lineno">   11</span> </div>
@@ -152,31 +152,31 @@ Public Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   17</span> </div>
 <div class="line"><span class="lineno">   18</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">   19</span>}</div>
-<div class="ttc" id="acmd_8h_html_a1ae26eb7c82ff33e2bc446801638e3be"><div class="ttname"><a href="cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be">FILE_HEADER</a></div><div class="ttdeci">const FileHeader FILE_HEADER</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00158">cmd.h:158</a></div></div>
+<div class="ttc" id="acmd_8h_html_a1ae26eb7c82ff33e2bc446801638e3be"><div class="ttname"><a href="cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be">FILE_HEADER</a></div><div class="ttdeci">const FileHeader FILE_HEADER</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00169">cmd.h:169</a></div></div>
 <div class="ttc" id="aconsole_8h_html_ad220b7c98ce4bd06bf25860ca62d7aba"><div class="ttname"><a href="console_8h.html#ad220b7c98ce4bd06bf25860ca62d7aba">CONSOLE_RED</a></div><div class="ttdeci">#define CONSOLE_RED(str)</div><div class="ttdef"><b>Definition</b> <a href="console_8h_source.html#l00033">console.h:33</a></div></div>
-<div class="ttc" id="astruct_file_header_html_a3c0fb698efe175bbe23b23f8e4d614e5"><div class="ttname"><a href="struct_file_header.html#a3c0fb698efe175bbe23b23f8e4d614e5">FileHeader::version</a></div><div class="ttdeci">short version</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00151">cmd.h:151</a></div></div>
-<div class="ttc" id="astruct_file_header_html_ad489a5342f5135b1ea05167420897484"><div class="ttname"><a href="struct_file_header.html#ad489a5342f5135b1ea05167420897484">FileHeader::sign</a></div><div class="ttdeci">char sign[2]</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00150">cmd.h:150</a></div></div>
+<div class="ttc" id="astruct_file_header_html_a3c0fb698efe175bbe23b23f8e4d614e5"><div class="ttname"><a href="struct_file_header.html#a3c0fb698efe175bbe23b23f8e4d614e5">FileHeader::version</a></div><div class="ttdeci">short version</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00162">cmd.h:162</a></div></div>
+<div class="ttc" id="astruct_file_header_html_a539d90ab0f7c0d4e57b7b36764132216"><div class="ttname"><a href="struct_file_header.html#a539d90ab0f7c0d4e57b7b36764132216">FileHeader::sign</a></div><div class="ttdeci">uint16_t sign</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00161">cmd.h:161</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="console_8h_source.html#l00033">CONSOLE_RED</a>, <a class="el" href="cmd_8h_source.html#l00158">FILE_HEADER</a>, <a class="el" href="cmd_8h_source.html#l00150">sign</a>, and <a class="el" href="cmd_8h_source.html#l00151">version</a>.</p>
+<p class="reference">References <a class="el" href="console_8h_source.html#l00033">CONSOLE_RED</a>, <a class="el" href="cmd_8h_source.html#l00169">FILE_HEADER</a>, <a class="el" href="cmd_8h_source.html#l00161">sign</a>, and <a class="el" href="cmd_8h_source.html#l00162">version</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ad489a5342f5135b1ea05167420897484" name="ad489a5342f5135b1ea05167420897484"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad489a5342f5135b1ea05167420897484">&#9670;&#160;</a></span>sign</h2>
+<a id="a539d90ab0f7c0d4e57b7b36764132216" name="a539d90ab0f7c0d4e57b7b36764132216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a539d90ab0f7c0d4e57b7b36764132216">&#9670;&#160;</a></span>sign</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char FileHeader::sign[2] = {'K','U'}</td>
+          <td class="memname">uint16_t FileHeader::sign = 0x554B</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00150">150</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00161">161</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="listing_8cpp_source.html#l00086">asm_write_header_listing()</a>, <a class="el" href="cmd_8cpp_source.html#l00003">check()</a>, and <a class="el" href="disassembler_8cpp_source.html#l00119">disasm_write_header()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="listing_8cpp_source.html#l00090">asm_write_header_listing()</a>, <a class="el" href="cmd_8cpp_source.html#l00003">check()</a>, and <a class="el" href="disassembler_8cpp_source.html#l00119">disasm_write_header()</a>.</p>
 
 </div>
 </div>
@@ -192,9 +192,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00151">151</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00162">162</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="listing_8cpp_source.html#l00086">asm_write_header_listing()</a>, <a class="el" href="cmd_8cpp_source.html#l00003">check()</a>, and <a class="el" href="disassembler_8cpp_source.html#l00119">disasm_write_header()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="listing_8cpp_source.html#l00090">asm_write_header_listing()</a>, <a class="el" href="cmd_8cpp_source.html#l00003">check()</a>, and <a class="el" href="disassembler_8cpp_source.html#l00119">disasm_write_header()</a>.</p>
 
 </div>
 </div>

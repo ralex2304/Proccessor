@@ -4,61 +4,58 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{jump_8h}{jump.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00002}00002\ }
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00003}\mbox{\hyperlink{jump_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{00003}}\ \textcolor{preprocessor}{\#define\ THROW\_SYNTAX\_ERROR\_(...)\ \ return\ asm\_throw\_syntax\_error(name,\ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inp\_file,\ \ \ \(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_VA\_ARGS\_\_)}}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00006}00006\ }
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00007}\mbox{\hyperlink{jump_8cpp_ac5a484eed9fd4e18cc675fbadd20338b}{00007}}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{jump_8cpp_ac5a484eed9fd4e18cc675fbadd20338b}{asm\_new\_label}}(\mbox{\hyperlink{struct_jump_label}{JumpLabel}}*\ labels,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}\ name,}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_asm_info}{AsmInfo}}*\ inp\_file,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \textcolor{keywordtype}{byte})\ \{}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00009}00009\ \ \ \ \ assert(labels);}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00010}00010\ \ \ \ \ assert(name.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00011}00011\ \ \ \ \ assert(inp\_file);}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00012}00012\ }
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}};\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{text__lib_8h_accfdbf6001411f4d546036819f3d00bd}{String\_strcmp}}(\mbox{\hyperlink{text__lib_8h_a0227c409258b64a76f4fc5299c0ae42e}{String\_TO\_c}}(labels[i].name),\ \mbox{\hyperlink{text__lib_8h_a0227c409258b64a76f4fc5299c0ae42e}{String\_TO\_c}}(name))\ ==\ 0)}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{jump_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Label\ name\ \(\backslash\)"{}\%.*s\(\backslash\)"{}\ used\ twice."{}},\ \mbox{\hyperlink{text__lib_8h_a8bda955a9d6dede91b9f9319eb437476}{String\_PRINTF}}(name));}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00016}00016\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00003}\mbox{\hyperlink{jump_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{00003}}\ \textcolor{preprocessor}{\#define\ THROW\_SYNTAX\_ERROR\_(...)\ \ return\ asm\_throw\_syntax\_error(asm\_data,\ line,\ \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00005}\mbox{\hyperlink{jump_8cpp_a885700d3d24bdc32ccfd56b8fc83920b}{00005}}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{jump_8cpp_a885700d3d24bdc32ccfd56b8fc83920b}{asm\_new\_label}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}\ name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ addr,}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00006}00006\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_asm}{Asm}}*\ asm\_data,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_asm_line}{AsmLine}}*\ line)\ \{}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00007}00007\ \ \ \ \ assert(name.str);}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00008}00008\ \ \ \ \ assert(asm\_data);}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}};\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{text__lib_8h_a4ee93239b997bad6f5a6b6345f14d0c1}{String\_strcmp}}(\mbox{\hyperlink{text__lib_8h_a59a33ce1c7a0b31f7b0284850e355051}{String\_TO\_const}}(asm\_data-\/>\mbox{\hyperlink{struct_asm_a11625fdda4ef63eee3ad1f44b21d9539}{labels}}[i].\mbox{\hyperlink{struct_jump_label_a0840f89616d10aeb07e92667452e0a58}{name}}),\ \mbox{\hyperlink{text__lib_8h_a59a33ce1c7a0b31f7b0284850e355051}{String\_TO\_const}}(name))\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{jump_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Label\ name\ \(\backslash\)"{}\%.*s\(\backslash\)"{}\ used\ twice."{}},\ \mbox{\hyperlink{text__lib_8h_a8bda955a9d6dede91b9f9319eb437476}{String\_PRINTF}}(name));}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00013}00013\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}};\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asm\_data-\/>\mbox{\hyperlink{struct_asm_a11625fdda4ef63eee3ad1f44b21d9539}{labels}}[i].\mbox{\hyperlink{struct_jump_label_a0840f89616d10aeb07e92667452e0a58}{name}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ ==\ 0\ \&\&\ asm\_data-\/>\mbox{\hyperlink{struct_asm_a11625fdda4ef63eee3ad1f44b21d9539}{labels}}[i].\mbox{\hyperlink{struct_jump_label_aa6389d5fb528422106f28c77d0904477}{addr}}\ ==\ -\/1)\ \{}
 \DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00017}00017\ }
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}};\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (labels[i].name.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}\ ==\ \textcolor{keyword}{nullptr}\ \&\&\ labels[i].\mbox{\hyperlink{struct_jump_label_a0840f89616d10aeb07e92667452e0a58}{name}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\ ==\ 0\ \&\&\ labels[i].\mbox{\hyperlink{struct_jump_label_a47eb97b0f19afde28f027698882d8550}{byte}}\ ==\ -\/1)\ \{}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ labels[i].\mbox{\hyperlink{struct_jump_label_a0840f89616d10aeb07e92667452e0a58}{name}}\ =\ name;}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ labels[i].\mbox{\hyperlink{struct_jump_label_a47eb97b0f19afde28f027698882d8550}{byte}}\ =\ byte;}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00024}00024\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{jump_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Too\ many\ labels\ specified.\ Max\ \%zu."{}},\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}});}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00027}00027\ \}}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00028}00028\ }
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00029}\mbox{\hyperlink{jump_8cpp_afd04072d6902280ce0b325593daa440e}{00029}}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{jump_8cpp_afd04072d6902280ce0b325593daa440e}{asm\_get\_label\_byte}}(\mbox{\hyperlink{struct_jump_label}{JumpLabel}}*\ labels,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}\ name,}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_asm_info}{AsmInfo}}*\ inp\_file,\ \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\_int\_t}}*\ \textcolor{keywordtype}{byte},}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ final\_pass)\ \{}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00032}00032\ \ \ \ \ assert(labels);}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00033}00033\ \ \ \ \ assert(name.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00034}00034\ \ \ \ \ assert(inp\_file);}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00035}00035\ \ \ \ \ assert(\textcolor{keywordtype}{byte});}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}};\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{text__lib_8h_accfdbf6001411f4d546036819f3d00bd}{String\_strcmp}}(\mbox{\hyperlink{text__lib_8h_a0227c409258b64a76f4fc5299c0ae42e}{String\_TO\_c}}(labels[i].name),\ \mbox{\hyperlink{text__lib_8h_a0227c409258b64a76f4fc5299c0ae42e}{String\_TO\_c}}(name))\ ==\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ *\textcolor{keywordtype}{byte}\ =\ labels[i].\mbox{\hyperlink{struct_jump_label_a47eb97b0f19afde28f027698882d8550}{byte}};}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ asm\_data-\/>\mbox{\hyperlink{struct_asm_a11625fdda4ef63eee3ad1f44b21d9539}{labels}}[i].\mbox{\hyperlink{struct_jump_label_a0840f89616d10aeb07e92667452e0a58}{name}}\ =\ name;}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ asm\_data-\/>\mbox{\hyperlink{struct_asm_a11625fdda4ef63eee3ad1f44b21d9539}{labels}}[i].\mbox{\hyperlink{struct_jump_label_aa6389d5fb528422106f28c77d0904477}{addr}}\ =\ addr;}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{jump_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Too\ many\ labels\ specified.\ Max\ \%zu."{}},\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}});}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00027}\mbox{\hyperlink{jump_8cpp_a6cc8acb715c697fe2aa2c8319fed264a}{00027}}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{jump_8cpp_a6cc8acb715c697fe2aa2c8319fed264a}{asm\_get\_label\_addr}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_string}{String}}\ name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_asm}{Asm}}*\ asm\_data,}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_asm_line}{AsmLine}}*\ line,\ \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\_int\_t}}*\ addr)\ \{}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00029}00029\ \ \ \ \ assert(name.str);}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00030}00030\ \ \ \ \ assert(asm\_data);}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00031}00031\ \ \ \ \ assert(line);}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00032}00032\ \ \ \ \ assert(addr);}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}};\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{text__lib_8h_a4ee93239b997bad6f5a6b6345f14d0c1}{String\_strcmp}}(\mbox{\hyperlink{text__lib_8h_a59a33ce1c7a0b31f7b0284850e355051}{String\_TO\_const}}(asm\_data-\/>\mbox{\hyperlink{struct_asm_a11625fdda4ef63eee3ad1f44b21d9539}{labels}}[i].\mbox{\hyperlink{struct_jump_label_a0840f89616d10aeb07e92667452e0a58}{name}}),\ \mbox{\hyperlink{text__lib_8h_a59a33ce1c7a0b31f7b0284850e355051}{String\_TO\_const}}(name))\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ *addr\ =\ asm\_data-\/>\mbox{\hyperlink{struct_asm_a11625fdda4ef63eee3ad1f44b21d9539}{labels}}[i].\mbox{\hyperlink{struct_jump_label_aa6389d5fb528422106f28c77d0904477}{addr}};}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (asm\_data-\/>\mbox{\hyperlink{struct_asm_a2ac405dde59fcf5ece63bdecd499c335}{pass\_num}}\ ==\ asm\_data-\/>\mbox{\hyperlink{struct_asm_ab544e702fdec142cb2efd0688d8bc80a}{LAST\_PASS\_NUM}})}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{jump_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Unknown\ label\ \(\backslash\)"{}\%.*s\(\backslash\)"{}"{}},\ \mbox{\hyperlink{text__lib_8h_a8bda955a9d6dede91b9f9319eb437476}{String\_PRINTF}}(name));}
 \DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (final\_pass)}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{jump_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}{THROW\_SYNTAX\_ERROR\_}}(\textcolor{stringliteral}{"{}Unknown\ label\ \(\backslash\)"{}\%.*s\(\backslash\)"{}"{}},\ \mbox{\hyperlink{text__lib_8h_a8bda955a9d6dede91b9f9319eb437476}{String\_PRINTF}}(name));}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00046}00046\ }
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00048}00048\ \}}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00049}00049\ \textcolor{preprocessor}{\#undef\ THROW\_SYNTAX\_ERROR\_}}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00051}\mbox{\hyperlink{jump_8cpp_a9f236543c60a67fb27ba9fae09eb32e8}{00051}}\ \mbox{\hyperlink{structc___string}{c\_String}}\ \mbox{\hyperlink{jump_8cpp_a9f236543c60a67fb27ba9fae09eb32e8}{asm\_get\_label\_name}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_jump_label}{JumpLabel}}*\ labels,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\_int\_t}}\ \textcolor{keywordtype}{byte})\ \{}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}};\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (labels[i].\textcolor{keywordtype}{byte}\ ==\ \textcolor{keywordtype}{byte})}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{labels[i].\mbox{\hyperlink{struct_jump_label_a0840f89616d10aeb07e92667452e0a58}{name}}.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}},\ labels[i].\mbox{\hyperlink{struct_jump_label_a0840f89616d10aeb07e92667452e0a58}{name}}.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}\};}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00055}00055\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{text__lib_8h_a62644cba8542352b76b0e4bf9eb25c73}{String\_CONST}}(\textcolor{stringliteral}{"{}!Label\ name\ not\ found!"{}});}
-\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00058}00058\ \}}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00046}00046\ \textcolor{preprocessor}{\#undef\ THROW\_SYNTAX\_ERROR\_}}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00048}\mbox{\hyperlink{jump_8cpp_a17c6b3d45b1a425226bb23c235f09917}{00048}}\ \mbox{\hyperlink{structconst___string}{const\_String}}\ \mbox{\hyperlink{jump_8cpp_a17c6b3d45b1a425226bb23c235f09917}{asm\_get\_label\_name}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_jump_label}{JumpLabel}}*\ labels,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{cmd_8h_a226f97678592b90d02bed2f62edf55c6}{Imm\_int\_t}}\ addr)\ \{}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\_LABEL\_NUM}};\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (labels[i].addr\ ==\ addr)}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{labels[i].name.str,\ labels[i].name.len\};}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{text__lib_8h_a62644cba8542352b76b0e4bf9eb25c73}{String\_CONST}}(\textcolor{stringliteral}{"{}!Label\ name\ not\ found!"{}});}
+\DoxyCodeLine{\Hypertarget{jump_8cpp_source_l00055}00055\ \}}
 
 \end{DoxyCode}

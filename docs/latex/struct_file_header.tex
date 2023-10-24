@@ -17,7 +17,7 @@ bool \mbox{\hyperlink{struct_file_header_a161aa6703e01462d26a20668a5fd4bf5}{chec
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-char \mbox{\hyperlink{struct_file_header_ad489a5342f5135b1ea05167420897484}{sign}} \mbox{[}2\mbox{]} = \{\textquotesingle{}K\textquotesingle{},\textquotesingle{}U\textquotesingle{}\}
+uint16\+\_\+t \mbox{\hyperlink{struct_file_header_a539d90ab0f7c0d4e57b7b36764132216}{sign}} = 0x554B
 \item 
 short \mbox{\hyperlink{struct_file_header_a3c0fb698efe175bbe23b23f8e4d614e5}{version}} = \mbox{\hyperlink{cmd_8h_ac6fd8a0b61158e50a7d52538ba0e5be9}{CMD\+\_\+\+VERSION}}
 \end{DoxyCompactItemize}
@@ -26,9 +26,7 @@ short \mbox{\hyperlink{struct_file_header_a3c0fb698efe175bbe23b23f8e4d614e5}{ver
 \doxysubsection{Detailed Description}
 Binary file header. 
 
-
-
-Definition at line \mbox{\hyperlink{cmd_8h_source_l00149}{149}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00160}{160}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
 
 
 
@@ -46,11 +44,11 @@ Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00003}{3}} of file \mbox{\h
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keywordflow}{if}\ (memcmp(\mbox{\hyperlink{struct_file_header_ad489a5342f5135b1ea05167420897484}{sign}},\ \mbox{\hyperlink{cmd_8h_a1ae26eb7c82ff33e2bc446801638e3be}{FILE\_HEADER}}.\mbox{\hyperlink{struct_file_header_ad489a5342f5135b1ea05167420897484}{sign}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_file_header_ad489a5342f5135b1ea05167420897484}{sign}}))\ !=\ 0)\ \{}
-\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_file_header_ad489a5342f5135b1ea05167420897484}{sign}})\ ==\ 2);}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{struct_file_header_a539d90ab0f7c0d4e57b7b36764132216}{sign}}\ !=\ \mbox{\hyperlink{cmd_8h_a1ae26eb7c82ff33e2bc446801638e3be}{FILE\_HEADER}}.\mbox{\hyperlink{struct_file_header_a539d90ab0f7c0d4e57b7b36764132216}{sign}})\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_file_header_a539d90ab0f7c0d4e57b7b36764132216}{sign}})\ ==\ 2);}
 \DoxyCodeLine{00006\ }
 \DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ printf(\mbox{\hyperlink{console_8h_ad220b7c98ce4bd06bf25860ca62d7aba}{CONSOLE\_RED}}(\textcolor{stringliteral}{"{}Error.\ Wrong\ signature."{}})\ \textcolor{stringliteral}{"{}\ \(\backslash\)"{}\%c\%c\(\backslash\)"{}\ instead\ of\ \(\backslash\)"{}\%c\%c\(\backslash\)"{}\(\backslash\)n"{}},}
-\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_file_header_ad489a5342f5135b1ea05167420897484}{sign}}[0],\ \mbox{\hyperlink{struct_file_header_ad489a5342f5135b1ea05167420897484}{sign}}[1],\ \mbox{\hyperlink{cmd_8h_a1ae26eb7c82ff33e2bc446801638e3be}{FILE\_HEADER}}.\mbox{\hyperlink{struct_file_header_ad489a5342f5135b1ea05167420897484}{sign}}[0],\ \mbox{\hyperlink{cmd_8h_a1ae26eb7c82ff33e2bc446801638e3be}{FILE\_HEADER}}.\mbox{\hyperlink{struct_file_header_ad489a5342f5135b1ea05167420897484}{sign}}[1]);}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_file_header_a539d90ab0f7c0d4e57b7b36764132216}{sign}},\ \mbox{\hyperlink{struct_file_header_a539d90ab0f7c0d4e57b7b36764132216}{sign}}\ >>\ 8,\ \mbox{\hyperlink{cmd_8h_a1ae26eb7c82ff33e2bc446801638e3be}{FILE\_HEADER}}.\mbox{\hyperlink{struct_file_header_a539d90ab0f7c0d4e57b7b36764132216}{sign}},\ \mbox{\hyperlink{cmd_8h_a1ae26eb7c82ff33e2bc446801638e3be}{FILE\_HEADER}}.\mbox{\hyperlink{struct_file_header_a539d90ab0f7c0d4e57b7b36764132216}{sign}}\ >>\ 8);}
 \DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
 \DoxyCodeLine{00010\ \ \ \ \ \}}
 \DoxyCodeLine{00011\ }
@@ -66,24 +64,24 @@ Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00003}{3}} of file \mbox{\h
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{console_8h_source_l00033}{CONSOLE\+\_\+\+RED}}, \mbox{\hyperlink{cmd_8h_source_l00158}{FILE\+\_\+\+HEADER}}, \mbox{\hyperlink{cmd_8h_source_l00150}{sign}}, and \mbox{\hyperlink{cmd_8h_source_l00151}{version}}.
+References \mbox{\hyperlink{console_8h_source_l00033}{CONSOLE\+\_\+\+RED}}, \mbox{\hyperlink{cmd_8h_source_l00169}{FILE\+\_\+\+HEADER}}, \mbox{\hyperlink{cmd_8h_source_l00161}{sign}}, and \mbox{\hyperlink{cmd_8h_source_l00162}{version}}.
 
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{struct_file_header_ad489a5342f5135b1ea05167420897484}\label{struct_file_header_ad489a5342f5135b1ea05167420897484} 
+\Hypertarget{struct_file_header_a539d90ab0f7c0d4e57b7b36764132216}\label{struct_file_header_a539d90ab0f7c0d4e57b7b36764132216} 
 \index{FileHeader@{FileHeader}!sign@{sign}}
 \index{sign@{sign}!FileHeader@{FileHeader}}
 \doxysubsubsection{\texorpdfstring{sign}{sign}}
-{\footnotesize\ttfamily char File\+Header\+::sign\mbox{[}2\mbox{]} = \{\textquotesingle{}K\textquotesingle{},\textquotesingle{}U\textquotesingle{}\}}
+{\footnotesize\ttfamily uint16\+\_\+t File\+Header\+::sign = 0x554B}
 
 
 
-Definition at line \mbox{\hyperlink{cmd_8h_source_l00150}{150}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00161}{161}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
 
 
 
-Referenced by \mbox{\hyperlink{listing_8cpp_source_l00086}{asm\+\_\+write\+\_\+header\+\_\+listing()}}, \mbox{\hyperlink{cmd_8cpp_source_l00003}{check()}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00119}{disasm\+\_\+write\+\_\+header()}}.
+Referenced by \mbox{\hyperlink{listing_8cpp_source_l00090}{asm\+\_\+write\+\_\+header\+\_\+listing()}}, \mbox{\hyperlink{cmd_8cpp_source_l00003}{check()}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00119}{disasm\+\_\+write\+\_\+header()}}.
 
 \Hypertarget{struct_file_header_a3c0fb698efe175bbe23b23f8e4d614e5}\label{struct_file_header_a3c0fb698efe175bbe23b23f8e4d614e5} 
 \index{FileHeader@{FileHeader}!version@{version}}
@@ -93,11 +91,11 @@ Referenced by \mbox{\hyperlink{listing_8cpp_source_l00086}{asm\+\_\+write\+\_\+h
 
 
 
-Definition at line \mbox{\hyperlink{cmd_8h_source_l00151}{151}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00162}{162}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
 
 
 
-Referenced by \mbox{\hyperlink{listing_8cpp_source_l00086}{asm\+\_\+write\+\_\+header\+\_\+listing()}}, \mbox{\hyperlink{cmd_8cpp_source_l00003}{check()}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00119}{disasm\+\_\+write\+\_\+header()}}.
+Referenced by \mbox{\hyperlink{listing_8cpp_source_l00090}{asm\+\_\+write\+\_\+header\+\_\+listing()}}, \mbox{\hyperlink{cmd_8cpp_source_l00003}{check()}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00119}{disasm\+\_\+write\+\_\+header()}}.
 
 
 

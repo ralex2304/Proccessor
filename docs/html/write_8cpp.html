@@ -103,25 +103,25 @@ $(document).ready(function(){initNavTree('write_8cpp.html',''); initResizable();
 Macros</h2></td></tr>
 <tr class="memitem:a134bece8ae487f74d82ee230bdb39393"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="write_8cpp.html#a134bece8ae487f74d82ee230bdb39393">BUF_CAT_</a>(data_)</td></tr>
 <tr class="separator:a134bece8ae487f74d82ee230bdb39393"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82ac9ef1e62798eb8e30c7723d8929d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="write_8cpp.html#a82ac9ef1e62798eb8e30c7723d8929d2">F_PRINTF_CHECK_</a>(printf)&#160;&#160;&#160;<a class="el" href="cmd__dict_8h.html#ac05082af4072239dcffdd3bd72a8d510">if</a> (printf == EOF) return <a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003">Status::OUT_FILE_ERROR</a></td></tr>
+<tr class="memitem:a82ac9ef1e62798eb8e30c7723d8929d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="write_8cpp.html#a82ac9ef1e62798eb8e30c7723d8929d2">F_PRINTF_CHECK_</a>(printf)&#160;&#160;&#160;if (printf == EOF) return <a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003">Status::OUT_FILE_ERROR</a></td></tr>
 <tr class="separator:a82ac9ef1e62798eb8e30c7723d8929d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a887220b6e73f53cc8831dc9be061f938"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="write_8cpp.html#a887220b6e73f53cc8831dc9be061f938">F_WRITE_CHECK_</a>(write)&#160;&#160;&#160;<a class="el" href="cmd__dict_8h.html#ac05082af4072239dcffdd3bd72a8d510">if</a> (!write)        return <a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003">Status::OUT_FILE_ERROR</a></td></tr>
+<tr class="memitem:a887220b6e73f53cc8831dc9be061f938"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="write_8cpp.html#a887220b6e73f53cc8831dc9be061f938">F_WRITE_CHECK_</a>(write)&#160;&#160;&#160;if (!write)        return <a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003">Status::OUT_FILE_ERROR</a></td></tr>
 <tr class="separator:a887220b6e73f53cc8831dc9be061f938"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abb63239c91f01d836a6757fde245ddb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="write_8cpp.html#abb63239c91f01d836a6757fde245ddb8">asm_write_cmd</a> (<a class="el" href="struct_buffer.html">Buffer</a> *buf, const <a class="el" href="struct_cmd.html">Cmd</a> *cmd, <a class="el" href="struct_jump_label.html">JumpLabel</a> *labels, const <a class="el" href="struct_asm_info.html">AsmInfo</a> *asm_info, FILE *listing_file)</td></tr>
-<tr class="memdesc:abb63239c91f01d836a6757fde245ddb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes one cmd to buf.  <br /></td></tr>
-<tr class="separator:abb63239c91f01d836a6757fde245ddb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21ec049cc137e2f9435ebf3a74cc092c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="write_8cpp.html#a21ec049cc137e2f9435ebf3a74cc092c">asm_write_cmd_bin</a> (<a class="el" href="struct_buffer.html">Buffer</a> *buf, const <a class="el" href="struct_cmd.html">Cmd</a> *cmd)</td></tr>
-<tr class="memdesc:a21ec049cc137e2f9435ebf3a74cc092c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes one cmd to bin file.  <br /></td></tr>
-<tr class="separator:a21ec049cc137e2f9435ebf3a74cc092c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6edb4bdc99e1b4b4010457026a0f672f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="write_8cpp.html#a6edb4bdc99e1b4b4010457026a0f672f">asm_write_cmd</a> (<a class="el" href="struct_asm.html">Asm</a> *asm_data, const <a class="el" href="struct_asm_line.html">AsmLine</a> *line, FILE *listing_file)</td></tr>
+<tr class="memdesc:a6edb4bdc99e1b4b4010457026a0f672f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes one cmd to buf.  <br /></td></tr>
+<tr class="separator:a6edb4bdc99e1b4b4010457026a0f672f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b00993b985bffa67501e9453def75ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="write_8cpp.html#a4b00993b985bffa67501e9453def75ce">asm_write_cmd_bin</a> (<a class="el" href="struct_buffer.html">Buffer</a> *buf, const <a class="el" href="struct_cmd.html">Cmd</a> *cmd, const bool final_pass)</td></tr>
+<tr class="memdesc:a4b00993b985bffa67501e9453def75ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes one cmd to bin file.  <br /></td></tr>
+<tr class="separator:a4b00993b985bffa67501e9453def75ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd8a271bd3a0dffbae445526e8807a57"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="write_8cpp.html#abd8a271bd3a0dffbae445526e8807a57">asm_write_header</a> (<a class="el" href="struct_buffer.html">Buffer</a> *buf, FILE *listing_file, const bool final_pass)</td></tr>
 <tr class="memdesc:abd8a271bd3a0dffbae445526e8807a57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes header.  <br /></td></tr>
 <tr class="separator:abd8a271bd3a0dffbae445526e8807a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d489f47f156f1608da089972da15662"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="write_8cpp.html#a3d489f47f156f1608da089972da15662">asm_write_header_bin</a> (<a class="el" href="struct_buffer.html">Buffer</a> *buf)</td></tr>
-<tr class="memdesc:a3d489f47f156f1608da089972da15662"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes header to bin buffer.  <br /></td></tr>
-<tr class="separator:a3d489f47f156f1608da089972da15662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec51583b5b075e87e54a1c6989920d95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="write_8cpp.html#aec51583b5b075e87e54a1c6989920d95">asm_write_header_bin</a> (<a class="el" href="struct_buffer.html">Buffer</a> *buf, const bool final_pass)</td></tr>
+<tr class="memdesc:aec51583b5b075e87e54a1c6989920d95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes header to bin buffer.  <br /></td></tr>
+<tr class="separator:aec51583b5b075e87e54a1c6989920d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a134bece8ae487f74d82ee230bdb39393" name="a134bece8ae487f74d82ee230bdb39393"></a>
@@ -139,11 +139,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">                            <span class="keywordflow">if</span> (!buf-&gt;cat((<span class="keyword">const</span> <span class="keywordtype">char</span>*)&amp;data_, <span class="keyword">sizeof</span>(data_))) \</div>
-<div class="line">                            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7">Status::MEMORY_EXCEED</a></div>
+<b>Value:</b><div class="fragment"><div class="line">                            <span class="keywordflow">do</span> {                                                        \</div>
+<div class="line">                            if (final_pass) {                                       \</div>
+<div class="line">                                if (!buf-&gt;cat((<span class="keyword">const</span> <span class="keywordtype">char</span>*)&amp;data_, <span class="keyword">sizeof</span>(data_)))  \</div>
+<div class="line">                                    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7">Status::MEMORY_EXCEED</a>;                   \</div>
+<div class="line">                            } else                                                  \</div>
+<div class="line">                                buf-&gt;capacity += <span class="keyword">sizeof</span>(data_);                     \</div>
+<div class="line">                            } <span class="keywordflow">while</span> (0)</div>
 <div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7">Status::MEMORY_EXCEED</a></div><div class="ttdeci">@ MEMORY_EXCEED</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00018">statuses.h:18</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="write_8cpp_source.html#l00019">19</a> of file <a class="el" href="write_8cpp_source.html">write.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="write_8cpp_source.html#l00017">17</a> of file <a class="el" href="write_8cpp_source.html">write.cpp</a>.</p>
 
 </div>
 </div>
@@ -158,12 +163,12 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">printf</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="cmd__dict_8h.html#ac05082af4072239dcffdd3bd72a8d510">if</a> (printf == EOF) return <a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003">Status::OUT_FILE_ERROR</a></td>
+          <td>&#160;&#160;&#160;if (printf == EOF) return <a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003">Status::OUT_FILE_ERROR</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="write_8cpp_source.html#l00043">43</a> of file <a class="el" href="write_8cpp_source.html">write.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="write_8cpp_source.html#l00046">46</a> of file <a class="el" href="write_8cpp_source.html">write.cpp</a>.</p>
 
 </div>
 </div>
@@ -178,18 +183,18 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">write</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="cmd__dict_8h.html#ac05082af4072239dcffdd3bd72a8d510">if</a> (!write)        return <a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003">Status::OUT_FILE_ERROR</a></td>
+          <td>&#160;&#160;&#160;if (!write)        return <a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003">Status::OUT_FILE_ERROR</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="write_8cpp_source.html#l00044">44</a> of file <a class="el" href="write_8cpp_source.html">write.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="write_8cpp_source.html#l00047">47</a> of file <a class="el" href="write_8cpp_source.html">write.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="abb63239c91f01d836a6757fde245ddb8" name="abb63239c91f01d836a6757fde245ddb8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb63239c91f01d836a6757fde245ddb8">&#9670;&#160;</a></span>asm_write_cmd()</h2>
+<a id="a6edb4bdc99e1b4b4010457026a0f672f" name="a6edb4bdc99e1b4b4010457026a0f672f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6edb4bdc99e1b4b4010457026a0f672f">&#9670;&#160;</a></span>asm_write_cmd()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -197,26 +202,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> asm_write_cmd </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_buffer.html">Buffer</a> *&#160;</td>
-          <td class="paramname"><em>buf</em>, </td>
+          <td class="paramtype"><a class="el" href="struct_asm.html">Asm</a> *&#160;</td>
+          <td class="paramname"><em>asm_data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="struct_cmd.html">Cmd</a> *&#160;</td>
-          <td class="paramname"><em>cmd</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct_jump_label.html">JumpLabel</a> *&#160;</td>
-          <td class="paramname"><em>labels</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="struct_asm_info.html">AsmInfo</a> *&#160;</td>
-          <td class="paramname"><em>asm_info</em>, </td>
+          <td class="paramtype">const <a class="el" href="struct_asm_line.html">AsmLine</a> *&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -235,10 +228,8 @@ Functions</h2></td></tr>
 <p>Writes one cmd to buf. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td></td></tr>
-    <tr><td class="paramname">cmd</td><td></td></tr>
-    <tr><td class="paramname">labels</td><td></td></tr>
-    <tr><td class="paramname">asm_info</td><td></td></tr>
+    <tr><td class="paramname">asm_data</td><td></td></tr>
+    <tr><td class="paramname">line</td><td></td></tr>
     <tr><td class="paramname">listing_file</td><td></td></tr>
   </table>
   </dd>
@@ -246,34 +237,35 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="write_8cpp_source.html#l00003">3</a> of file <a class="el" href="write_8cpp_source.html">write.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    4</span>                                                                            {</div>
-<div class="line"><span class="lineno">    5</span>    assert(buf);</div>
-<div class="line"><span class="lineno">    6</span>    assert(labels);</div>
-<div class="line"><span class="lineno">    7</span>    assert(asm_info);</div>
-<div class="line"><span class="lineno">    8</span>    <span class="comment">// cmd assertion is not needed</span></div>
+<div class="fragment"><div class="line"><span class="lineno">    3</span>                                                                                     {</div>
+<div class="line"><span class="lineno">    4</span>    assert(asm_data);</div>
+<div class="line"><span class="lineno">    5</span>    assert(line);</div>
+<div class="line"><span class="lineno">    6</span> </div>
+<div class="line"><span class="lineno">    7</span>    <span class="keywordflow">if</span> (asm_data-&gt;<a class="code hl_variable" href="struct_asm.html#a2ac405dde59fcf5ece63bdecd499c335">pass_num</a> == asm_data-&gt;<a class="code hl_variable" href="struct_asm.html#ab544e702fdec142cb2efd0688d8bc80a">LAST_PASS_NUM</a> &amp;&amp; listing_file != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">    8</span>        <a class="code hl_define" href="statuses_8h.html#ae36d4e76cc7c3a31a1cd124e848597e6">STATUS_CHECK</a>(<a class="code hl_function" href="listing_8cpp.html#a1302ad2ce9935ef5f4f18f93ce8feabf">asm_write_cmd_listing</a>(listing_file, asm_data, line));</div>
 <div class="line"><span class="lineno">    9</span> </div>
-<div class="line"><span class="lineno">   10</span>    <span class="keywordflow">if</span> (asm_info-&gt;<a class="code hl_variable" href="struct_asm_info.html#ab6b001c45337d8e9a377baa0ea7d1b08">final_pass</a> &amp;&amp; listing_file != <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   11</span>        <a class="code hl_define" href="statuses_8h.html#ae36d4e76cc7c3a31a1cd124e848597e6">STATUS_CHECK</a>(<a class="code hl_function" href="listing_8cpp.html#ae0feb43b073ab858e4c54703d8c0faeb">asm_write_cmd_listing</a>(listing_file, cmd, labels, asm_info, buf-&gt;<a class="code hl_variable" href="struct_buffer.html#aea1b7416d53cd6e281718e607d81ae51">size</a>));</div>
+<div class="line"><span class="lineno">   10</span>    <a class="code hl_define" href="statuses_8h.html#ae36d4e76cc7c3a31a1cd124e848597e6">STATUS_CHECK</a>(<a class="code hl_function" href="write_8cpp.html#a4b00993b985bffa67501e9453def75ce">asm_write_cmd_bin</a>(&amp;asm_data-&gt;<a class="code hl_variable" href="struct_asm.html#ac48610455ccf97057b1790399147f482">buf</a>, &amp;line-&gt;<a class="code hl_variable" href="struct_asm_line.html#a950aaae2050d4a998629a5570ce6b864">cmd</a>,</div>
+<div class="line"><span class="lineno">   11</span>                                    asm_data-&gt;<a class="code hl_variable" href="struct_asm.html#a2ac405dde59fcf5ece63bdecd499c335">pass_num</a> == asm_data-&gt;<a class="code hl_variable" href="struct_asm.html#ab544e702fdec142cb2efd0688d8bc80a">LAST_PASS_NUM</a>));</div>
 <div class="line"><span class="lineno">   12</span> </div>
-<div class="line"><span class="lineno">   13</span>    <a class="code hl_define" href="statuses_8h.html#ae36d4e76cc7c3a31a1cd124e848597e6">STATUS_CHECK</a>(<a class="code hl_function" href="write_8cpp.html#a21ec049cc137e2f9435ebf3a74cc092c">asm_write_cmd_bin</a>(buf, cmd));</div>
-<div class="line"><span class="lineno">   14</span> </div>
-<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
-<div class="line"><span class="lineno">   16</span>}</div>
-<div class="ttc" id="alisting_8cpp_html_ae0feb43b073ab858e4c54703d8c0faeb"><div class="ttname"><a href="listing_8cpp.html#ae0feb43b073ab858e4c54703d8c0faeb">asm_write_cmd_listing</a></div><div class="ttdeci">Status::Statuses asm_write_cmd_listing(FILE *file, const Cmd *cmd, JumpLabel *labels, const AsmInfo *inp_file, const size_t binary_pos)</div><div class="ttdoc">Writes command to listing.</div><div class="ttdef"><b>Definition</b> <a href="listing_8cpp_source.html#l00006">listing.cpp:6</a></div></div>
+<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
+<div class="line"><span class="lineno">   14</span>}</div>
+<div class="ttc" id="alisting_8cpp_html_a1302ad2ce9935ef5f4f18f93ce8feabf"><div class="ttname"><a href="listing_8cpp.html#a1302ad2ce9935ef5f4f18f93ce8feabf">asm_write_cmd_listing</a></div><div class="ttdeci">Status::Statuses asm_write_cmd_listing(FILE *file, const Asm *asm_data, const AsmLine *line)</div><div class="ttdoc">Writes command to listing.</div><div class="ttdef"><b>Definition</b> <a href="listing_8cpp_source.html#l00006">listing.cpp:6</a></div></div>
 <div class="ttc" id="astatuses_8h_html_ae36d4e76cc7c3a31a1cd124e848597e6"><div class="ttname"><a href="statuses_8h.html#ae36d4e76cc7c3a31a1cd124e848597e6">STATUS_CHECK</a></div><div class="ttdeci">#define STATUS_CHECK(func,...)</div><div class="ttdoc">Macros for validating function return.</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00055">statuses.h:55</a></div></div>
-<div class="ttc" id="astruct_asm_info_html_ab6b001c45337d8e9a377baa0ea7d1b08"><div class="ttname"><a href="struct_asm_info.html#ab6b001c45337d8e9a377baa0ea7d1b08">AsmInfo::final_pass</a></div><div class="ttdeci">bool final_pass</div><div class="ttdef"><b>Definition</b> <a href="errors_8h_source.html#l00022">errors.h:22</a></div></div>
-<div class="ttc" id="astruct_buffer_html_aea1b7416d53cd6e281718e607d81ae51"><div class="ttname"><a href="struct_buffer.html#aea1b7416d53cd6e281718e607d81ae51">Buffer::size</a></div><div class="ttdeci">ssize_t size</div><div class="ttdef"><b>Definition</b> <a href="buf__lib_8h_source.html#l00015">buf_lib.h:15</a></div></div>
+<div class="ttc" id="astruct_asm_html_a2ac405dde59fcf5ece63bdecd499c335"><div class="ttname"><a href="struct_asm.html#a2ac405dde59fcf5ece63bdecd499c335">Asm::pass_num</a></div><div class="ttdeci">size_t pass_num</div><div class="ttdef"><b>Definition</b> <a href="asm_8h_source.html#l00052">asm.h:52</a></div></div>
+<div class="ttc" id="astruct_asm_html_ab544e702fdec142cb2efd0688d8bc80a"><div class="ttname"><a href="struct_asm.html#ab544e702fdec142cb2efd0688d8bc80a">Asm::LAST_PASS_NUM</a></div><div class="ttdeci">static const size_t LAST_PASS_NUM</div><div class="ttdef"><b>Definition</b> <a href="asm_8h_source.html#l00045">asm.h:45</a></div></div>
+<div class="ttc" id="astruct_asm_html_ac48610455ccf97057b1790399147f482"><div class="ttname"><a href="struct_asm.html#ac48610455ccf97057b1790399147f482">Asm::buf</a></div><div class="ttdeci">Buffer buf</div><div class="ttdef"><b>Definition</b> <a href="asm_8h_source.html#l00050">asm.h:50</a></div></div>
+<div class="ttc" id="astruct_asm_line_html_a950aaae2050d4a998629a5570ce6b864"><div class="ttname"><a href="struct_asm_line.html#a950aaae2050d4a998629a5570ce6b864">AsmLine::cmd</a></div><div class="ttdeci">Cmd cmd</div><div class="ttdef"><b>Definition</b> <a href="asm_8h_source.html#l00025">asm.h:25</a></div></div>
 <div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a></div><div class="ttdeci">@ NORMAL_WORK</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00013">statuses.h:13</a></div></div>
-<div class="ttc" id="awrite_8cpp_html_a21ec049cc137e2f9435ebf3a74cc092c"><div class="ttname"><a href="write_8cpp.html#a21ec049cc137e2f9435ebf3a74cc092c">asm_write_cmd_bin</a></div><div class="ttdeci">Status::Statuses asm_write_cmd_bin(Buffer *buf, const Cmd *cmd)</div><div class="ttdoc">Writes one cmd to bin file.</div><div class="ttdef"><b>Definition</b> <a href="write_8cpp_source.html#l00022">write.cpp:22</a></div></div>
+<div class="ttc" id="awrite_8cpp_html_a4b00993b985bffa67501e9453def75ce"><div class="ttname"><a href="write_8cpp.html#a4b00993b985bffa67501e9453def75ce">asm_write_cmd_bin</a></div><div class="ttdeci">Status::Statuses asm_write_cmd_bin(Buffer *buf, const Cmd *cmd, const bool final_pass)</div><div class="ttdoc">Writes one cmd to bin file.</div><div class="ttdef"><b>Definition</b> <a href="write_8cpp_source.html#l00025">write.cpp:25</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="write_8cpp_source.html#l00022">asm_write_cmd_bin()</a>, <a class="el" href="listing_8cpp_source.html#l00006">asm_write_cmd_listing()</a>, <a class="el" href="errors_8h_source.html#l00022">AsmInfo::final_pass</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, <a class="el" href="buf__lib_8h_source.html#l00015">Buffer::size</a>, and <a class="el" href="statuses_8h_source.html#l00055">STATUS_CHECK</a>.</p>
+<p class="reference">References <a class="el" href="write_8cpp_source.html#l00025">asm_write_cmd_bin()</a>, <a class="el" href="listing_8cpp_source.html#l00006">asm_write_cmd_listing()</a>, <a class="el" href="asm_8h_source.html#l00050">Asm::buf</a>, <a class="el" href="asm_8h_source.html#l00025">AsmLine::cmd</a>, <a class="el" href="asm_8h_source.html#l00045">Asm::LAST_PASS_NUM</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, <a class="el" href="asm_8h_source.html#l00052">Asm::pass_num</a>, and <a class="el" href="statuses_8h_source.html#l00055">STATUS_CHECK</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00081">asm_parse_and_write_line()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00056">asm_parse_and_write_line()</a>.</p>
 
 </div>
 </div>
-<a id="a21ec049cc137e2f9435ebf3a74cc092c" name="a21ec049cc137e2f9435ebf3a74cc092c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21ec049cc137e2f9435ebf3a74cc092c">&#9670;&#160;</a></span>asm_write_cmd_bin()</h2>
+<a id="a4b00993b985bffa67501e9453def75ce" name="a4b00993b985bffa67501e9453def75ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b00993b985bffa67501e9453def75ce">&#9670;&#160;</a></span>asm_write_cmd_bin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -288,7 +280,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="struct_cmd.html">Cmd</a> *&#160;</td>
-          <td class="paramname"><em>cmd</em>&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>final_pass</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -303,42 +301,44 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">buf</td><td></td></tr>
     <tr><td class="paramname">cmd</td><td></td></tr>
+    <tr><td class="paramname">final_pass</td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="write_8cpp_source.html#l00022">22</a> of file <a class="el" href="write_8cpp_source.html">write.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>                                                              {</div>
-<div class="line"><span class="lineno">   23</span>    assert(buf);</div>
-<div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">if</span> (cmd == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
+<p class="definition">Definition at line <a class="el" href="write_8cpp_source.html#l00025">25</a> of file <a class="el" href="write_8cpp_source.html">write.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>                                                                                     {</div>
+<div class="line"><span class="lineno">   26</span>    assert(buf);</div>
 <div class="line"><span class="lineno">   27</span> </div>
-<div class="line"><span class="lineno">   28</span>    <a class="code hl_define" href="write_8cpp.html#a134bece8ae487f74d82ee230bdb39393">BUF_CAT_</a>(cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>);</div>
-<div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">if</span> (cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#a76f64f02295d9a30abdaf138ea275f6a">reg</a>)</div>
-<div class="line"><span class="lineno">   31</span>        <a class="code hl_define" href="write_8cpp.html#a134bece8ae487f74d82ee230bdb39393">BUF_CAT_</a>(cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">args</a>.<a class="code hl_variable" href="struct_cmd_args.html#a49949ad6edf5cb3523025913f2c0adc5">reg</a>);</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">if</span> (cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a8df32ebe09e03d38de8c20f6266611b4">info</a> == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   29</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_define" href="write_8cpp.html#a134bece8ae487f74d82ee230bdb39393">BUF_CAT_</a>(cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>);</div>
 <div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#a5b1fdf0614537d3c515c99ce945906fa">imm_double</a>)</div>
-<div class="line"><span class="lineno">   34</span>        <a class="code hl_define" href="write_8cpp.html#a134bece8ae487f74d82ee230bdb39393">BUF_CAT_</a>(cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">args</a>.<a class="code hl_variable" href="struct_cmd_args.html#af4f115f325b0b1e91f03bea48354fa82">imm_double</a>);</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#a76f64f02295d9a30abdaf138ea275f6a">reg</a>)</div>
+<div class="line"><span class="lineno">   34</span>        <a class="code hl_define" href="write_8cpp.html#a134bece8ae487f74d82ee230bdb39393">BUF_CAT_</a>(cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">args</a>.<a class="code hl_variable" href="struct_cmd_args.html#a49949ad6edf5cb3523025913f2c0adc5">reg</a>);</div>
 <div class="line"><span class="lineno">   35</span> </div>
-<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">if</span> (cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#a2520ae7bb6f891ca6ff62dd0f882a1f4">imm_int</a>)</div>
-<div class="line"><span class="lineno">   37</span>        <a class="code hl_define" href="write_8cpp.html#a134bece8ae487f74d82ee230bdb39393">BUF_CAT_</a>(cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">args</a>.<a class="code hl_variable" href="struct_cmd_args.html#a7280dbc4d3d9bee564f6815e969bdd07">imm_int</a>);</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">if</span> (cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#a5b1fdf0614537d3c515c99ce945906fa">imm_double</a>)</div>
+<div class="line"><span class="lineno">   37</span>        <a class="code hl_define" href="write_8cpp.html#a134bece8ae487f74d82ee230bdb39393">BUF_CAT_</a>(cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">args</a>.<a class="code hl_variable" href="struct_cmd_args.html#af4f115f325b0b1e91f03bea48354fa82">imm_double</a>);</div>
 <div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
-<div class="line"><span class="lineno">   40</span>}</div>
-<div class="ttc" id="astruct_cmd_args_html_a49949ad6edf5cb3523025913f2c0adc5"><div class="ttname"><a href="struct_cmd_args.html#a49949ad6edf5cb3523025913f2c0adc5">CmdArgs::reg</a></div><div class="ttdeci">unsigned char reg</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00086">cmd.h:86</a></div></div>
-<div class="ttc" id="astruct_cmd_args_html_a7280dbc4d3d9bee564f6815e969bdd07"><div class="ttname"><a href="struct_cmd_args.html#a7280dbc4d3d9bee564f6815e969bdd07">CmdArgs::imm_int</a></div><div class="ttdeci">Imm_int_t imm_int</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00087">cmd.h:87</a></div></div>
-<div class="ttc" id="astruct_cmd_args_html_af4f115f325b0b1e91f03bea48354fa82"><div class="ttname"><a href="struct_cmd_args.html#af4f115f325b0b1e91f03bea48354fa82">CmdArgs::imm_double</a></div><div class="ttdeci">Imm_double_t imm_double</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00085">cmd.h:85</a></div></div>
-<div class="ttc" id="astruct_cmd_html_a0a38a0e6be202854d97c4637280f5914"><div class="ttname"><a href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">Cmd::keys</a></div><div class="ttdeci">CmdKeys keys</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00166">cmd.h:166</a></div></div>
-<div class="ttc" id="astruct_cmd_html_ad3fa66964fc662181ab833aef4a72db0"><div class="ttname"><a href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">Cmd::args</a></div><div class="ttdeci">CmdArgs args</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00167">cmd.h:167</a></div></div>
-<div class="ttc" id="astruct_cmd_keys_html_a2520ae7bb6f891ca6ff62dd0f882a1f4"><div class="ttname"><a href="struct_cmd_keys.html#a2520ae7bb6f891ca6ff62dd0f882a1f4">CmdKeys::imm_int</a></div><div class="ttdeci">bool imm_int</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00030">cmd.h:30</a></div></div>
-<div class="ttc" id="astruct_cmd_keys_html_a5b1fdf0614537d3c515c99ce945906fa"><div class="ttname"><a href="struct_cmd_keys.html#a5b1fdf0614537d3c515c99ce945906fa">CmdKeys::imm_double</a></div><div class="ttdeci">bool imm_double</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00029">cmd.h:29</a></div></div>
-<div class="ttc" id="astruct_cmd_keys_html_a76f64f02295d9a30abdaf138ea275f6a"><div class="ttname"><a href="struct_cmd_keys.html#a76f64f02295d9a30abdaf138ea275f6a">CmdKeys::reg</a></div><div class="ttdeci">bool reg</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00028">cmd.h:28</a></div></div>
-<div class="ttc" id="awrite_8cpp_html_a134bece8ae487f74d82ee230bdb39393"><div class="ttname"><a href="write_8cpp.html#a134bece8ae487f74d82ee230bdb39393">BUF_CAT_</a></div><div class="ttdeci">#define BUF_CAT_(data_)</div><div class="ttdef"><b>Definition</b> <a href="write_8cpp_source.html#l00019">write.cpp:19</a></div></div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">if</span> (cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#a2520ae7bb6f891ca6ff62dd0f882a1f4">imm_int</a>)</div>
+<div class="line"><span class="lineno">   40</span>        <a class="code hl_define" href="write_8cpp.html#a134bece8ae487f74d82ee230bdb39393">BUF_CAT_</a>(cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">args</a>.<a class="code hl_variable" href="struct_cmd_args.html#a7280dbc4d3d9bee564f6815e969bdd07">imm_int</a>);</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
+<div class="line"><span class="lineno">   43</span>}</div>
+<div class="ttc" id="astruct_cmd_args_html_a49949ad6edf5cb3523025913f2c0adc5"><div class="ttname"><a href="struct_cmd_args.html#a49949ad6edf5cb3523025913f2c0adc5">CmdArgs::reg</a></div><div class="ttdeci">unsigned char reg</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00088">cmd.h:88</a></div></div>
+<div class="ttc" id="astruct_cmd_args_html_a7280dbc4d3d9bee564f6815e969bdd07"><div class="ttname"><a href="struct_cmd_args.html#a7280dbc4d3d9bee564f6815e969bdd07">CmdArgs::imm_int</a></div><div class="ttdeci">Imm_int_t imm_int</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00089">cmd.h:89</a></div></div>
+<div class="ttc" id="astruct_cmd_args_html_af4f115f325b0b1e91f03bea48354fa82"><div class="ttname"><a href="struct_cmd_args.html#af4f115f325b0b1e91f03bea48354fa82">CmdArgs::imm_double</a></div><div class="ttdeci">Imm_double_t imm_double</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00087">cmd.h:87</a></div></div>
+<div class="ttc" id="astruct_cmd_html_a0a38a0e6be202854d97c4637280f5914"><div class="ttname"><a href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">Cmd::keys</a></div><div class="ttdeci">CmdKeys keys</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00177">cmd.h:177</a></div></div>
+<div class="ttc" id="astruct_cmd_html_a8df32ebe09e03d38de8c20f6266611b4"><div class="ttname"><a href="struct_cmd.html#a8df32ebe09e03d38de8c20f6266611b4">Cmd::info</a></div><div class="ttdeci">const CmdInfo * info</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00175">cmd.h:175</a></div></div>
+<div class="ttc" id="astruct_cmd_html_ad3fa66964fc662181ab833aef4a72db0"><div class="ttname"><a href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">Cmd::args</a></div><div class="ttdeci">CmdArgs args</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00178">cmd.h:178</a></div></div>
+<div class="ttc" id="astruct_cmd_keys_html_a2520ae7bb6f891ca6ff62dd0f882a1f4"><div class="ttname"><a href="struct_cmd_keys.html#a2520ae7bb6f891ca6ff62dd0f882a1f4">CmdKeys::imm_int</a></div><div class="ttdeci">bool imm_int</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00032">cmd.h:32</a></div></div>
+<div class="ttc" id="astruct_cmd_keys_html_a5b1fdf0614537d3c515c99ce945906fa"><div class="ttname"><a href="struct_cmd_keys.html#a5b1fdf0614537d3c515c99ce945906fa">CmdKeys::imm_double</a></div><div class="ttdeci">bool imm_double</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00031">cmd.h:31</a></div></div>
+<div class="ttc" id="astruct_cmd_keys_html_a76f64f02295d9a30abdaf138ea275f6a"><div class="ttname"><a href="struct_cmd_keys.html#a76f64f02295d9a30abdaf138ea275f6a">CmdKeys::reg</a></div><div class="ttdeci">bool reg</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00030">cmd.h:30</a></div></div>
+<div class="ttc" id="awrite_8cpp_html_a134bece8ae487f74d82ee230bdb39393"><div class="ttname"><a href="write_8cpp.html#a134bece8ae487f74d82ee230bdb39393">BUF_CAT_</a></div><div class="ttdeci">#define BUF_CAT_(data_)</div><div class="ttdef"><b>Definition</b> <a href="write_8cpp_source.html#l00017">write.cpp:17</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="cmd_8h_source.html#l00167">Cmd::args</a>, <a class="el" href="write_8cpp_source.html#l00019">BUF_CAT_</a>, <a class="el" href="cmd_8h_source.html#l00029">CmdKeys::imm_double</a>, <a class="el" href="cmd_8h_source.html#l00085">CmdArgs::imm_double</a>, <a class="el" href="cmd_8h_source.html#l00030">CmdKeys::imm_int</a>, <a class="el" href="cmd_8h_source.html#l00087">CmdArgs::imm_int</a>, <a class="el" href="cmd_8h_source.html#l00166">Cmd::keys</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, <a class="el" href="cmd_8h_source.html#l00028">CmdKeys::reg</a>, and <a class="el" href="cmd_8h_source.html#l00086">CmdArgs::reg</a>.</p>
+<p class="reference">References <a class="el" href="cmd_8h_source.html#l00178">Cmd::args</a>, <a class="el" href="write_8cpp_source.html#l00017">BUF_CAT_</a>, <a class="el" href="cmd_8h_source.html#l00031">CmdKeys::imm_double</a>, <a class="el" href="cmd_8h_source.html#l00087">CmdArgs::imm_double</a>, <a class="el" href="cmd_8h_source.html#l00032">CmdKeys::imm_int</a>, <a class="el" href="cmd_8h_source.html#l00089">CmdArgs::imm_int</a>, <a class="el" href="cmd_8h_source.html#l00175">Cmd::info</a>, <a class="el" href="cmd_8h_source.html#l00177">Cmd::keys</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, <a class="el" href="cmd_8h_source.html#l00030">CmdKeys::reg</a>, and <a class="el" href="cmd_8h_source.html#l00088">CmdArgs::reg</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="write_8cpp_source.html#l00003">asm_write_cmd()</a>.</p>
 
@@ -387,29 +387,29 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="write_8cpp_source.html#l00046">46</a> of file <a class="el" href="write_8cpp_source.html">write.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>                                                                                        {</div>
-<div class="line"><span class="lineno">   47</span>    assert(buf);</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (final_pass &amp;&amp; listing_file != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><span class="lineno">   50</span>        <a class="code hl_define" href="statuses_8h.html#ae36d4e76cc7c3a31a1cd124e848597e6">STATUS_CHECK</a>(<a class="code hl_function" href="listing_8cpp.html#aff66ea6ac9d55076487c12f9e91ee396">asm_write_header_listing</a>(listing_file));</div>
-<div class="line"><span class="lineno">   51</span>    }</div>
-<div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>    <a class="code hl_define" href="statuses_8h.html#ae36d4e76cc7c3a31a1cd124e848597e6">STATUS_CHECK</a>(<a class="code hl_function" href="write_8cpp.html#a3d489f47f156f1608da089972da15662">asm_write_header_bin</a>(buf)); <span class="comment">//&lt; Bin write after listing!!! (changes cur_byte)</span></div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
-<div class="line"><span class="lineno">   56</span>}</div>
-<div class="ttc" id="alisting_8cpp_html_aff66ea6ac9d55076487c12f9e91ee396"><div class="ttname"><a href="listing_8cpp.html#aff66ea6ac9d55076487c12f9e91ee396">asm_write_header_listing</a></div><div class="ttdeci">Status::Statuses asm_write_header_listing(FILE *listing_file)</div><div class="ttdoc">Writes header to listing.</div><div class="ttdef"><b>Definition</b> <a href="listing_8cpp_source.html#l00086">listing.cpp:86</a></div></div>
-<div class="ttc" id="awrite_8cpp_html_a3d489f47f156f1608da089972da15662"><div class="ttname"><a href="write_8cpp.html#a3d489f47f156f1608da089972da15662">asm_write_header_bin</a></div><div class="ttdeci">Status::Statuses asm_write_header_bin(Buffer *buf)</div><div class="ttdoc">Writes header to bin buffer.</div><div class="ttdef"><b>Definition</b> <a href="write_8cpp_source.html#l00058">write.cpp:58</a></div></div>
+<p class="definition">Definition at line <a class="el" href="write_8cpp_source.html#l00049">49</a> of file <a class="el" href="write_8cpp_source.html">write.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>                                                                                        {</div>
+<div class="line"><span class="lineno">   50</span>    assert(buf);</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (final_pass &amp;&amp; listing_file != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">   53</span>        <a class="code hl_define" href="statuses_8h.html#ae36d4e76cc7c3a31a1cd124e848597e6">STATUS_CHECK</a>(<a class="code hl_function" href="listing_8cpp.html#aff66ea6ac9d55076487c12f9e91ee396">asm_write_header_listing</a>(listing_file));</div>
+<div class="line"><span class="lineno">   54</span>    }</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <a class="code hl_define" href="statuses_8h.html#ae36d4e76cc7c3a31a1cd124e848597e6">STATUS_CHECK</a>(<a class="code hl_function" href="write_8cpp.html#aec51583b5b075e87e54a1c6989920d95">asm_write_header_bin</a>(buf, final_pass)); <span class="comment">//&lt; Bin write after listing!!! (changes cur_byte)</span></div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
+<div class="line"><span class="lineno">   59</span>}</div>
+<div class="ttc" id="alisting_8cpp_html_aff66ea6ac9d55076487c12f9e91ee396"><div class="ttname"><a href="listing_8cpp.html#aff66ea6ac9d55076487c12f9e91ee396">asm_write_header_listing</a></div><div class="ttdeci">Status::Statuses asm_write_header_listing(FILE *listing_file)</div><div class="ttdoc">Writes header to listing.</div><div class="ttdef"><b>Definition</b> <a href="listing_8cpp_source.html#l00090">listing.cpp:90</a></div></div>
+<div class="ttc" id="awrite_8cpp_html_aec51583b5b075e87e54a1c6989920d95"><div class="ttname"><a href="write_8cpp.html#aec51583b5b075e87e54a1c6989920d95">asm_write_header_bin</a></div><div class="ttdeci">Status::Statuses asm_write_header_bin(Buffer *buf, const bool final_pass)</div><div class="ttdoc">Writes header to bin buffer.</div><div class="ttdef"><b>Definition</b> <a href="write_8cpp_source.html#l00061">write.cpp:61</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="write_8cpp_source.html#l00058">asm_write_header_bin()</a>, <a class="el" href="listing_8cpp_source.html#l00086">asm_write_header_listing()</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, and <a class="el" href="statuses_8h_source.html#l00055">STATUS_CHECK</a>.</p>
+<p class="reference">References <a class="el" href="write_8cpp_source.html#l00061">asm_write_header_bin()</a>, <a class="el" href="listing_8cpp_source.html#l00090">asm_write_header_listing()</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, and <a class="el" href="statuses_8h_source.html#l00055">STATUS_CHECK</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00015">assemeble_and_write()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00083">asm_do_pass()</a>.</p>
 
 </div>
 </div>
-<a id="a3d489f47f156f1608da089972da15662" name="a3d489f47f156f1608da089972da15662"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d489f47f156f1608da089972da15662">&#9670;&#160;</a></span>asm_write_header_bin()</h2>
+<a id="aec51583b5b075e87e54a1c6989920d95" name="aec51583b5b075e87e54a1c6989920d95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec51583b5b075e87e54a1c6989920d95">&#9670;&#160;</a></span>asm_write_header_bin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -418,8 +418,18 @@ Functions</h2></td></tr>
           <td class="memname"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> asm_write_header_bin </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_buffer.html">Buffer</a> *&#160;</td>
-          <td class="paramname"><em>buf</em></td><td>)</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>final_pass</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -428,24 +438,25 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">buf</td><td></td></tr>
+    <tr><td class="paramname">final_pass</td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="write_8cpp_source.html#l00058">58</a> of file <a class="el" href="write_8cpp_source.html">write.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   58</span>                                                 {</div>
-<div class="line"><span class="lineno">   59</span>    assert(buf);</div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>    <a class="code hl_define" href="write_8cpp.html#a134bece8ae487f74d82ee230bdb39393">BUF_CAT_</a>(<a class="code hl_variable" href="cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be">FILE_HEADER</a>);</div>
-<div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
-<div class="line"><span class="lineno">   64</span>}</div>
-<div class="ttc" id="acmd_8h_html_a1ae26eb7c82ff33e2bc446801638e3be"><div class="ttname"><a href="cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be">FILE_HEADER</a></div><div class="ttdeci">const FileHeader FILE_HEADER</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00158">cmd.h:158</a></div></div>
+<p class="definition">Definition at line <a class="el" href="write_8cpp_source.html#l00061">61</a> of file <a class="el" href="write_8cpp_source.html">write.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>                                                                        {</div>
+<div class="line"><span class="lineno">   62</span>    assert(buf);</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_define" href="write_8cpp.html#a134bece8ae487f74d82ee230bdb39393">BUF_CAT_</a>(<a class="code hl_variable" href="cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be">FILE_HEADER</a>);</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
+<div class="line"><span class="lineno">   67</span>}</div>
+<div class="ttc" id="acmd_8h_html_a1ae26eb7c82ff33e2bc446801638e3be"><div class="ttname"><a href="cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be">FILE_HEADER</a></div><div class="ttdeci">const FileHeader FILE_HEADER</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00169">cmd.h:169</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="write_8cpp_source.html#l00019">BUF_CAT_</a>, <a class="el" href="cmd_8h_source.html#l00158">FILE_HEADER</a>, and <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>.</p>
+<p class="reference">References <a class="el" href="write_8cpp_source.html#l00017">BUF_CAT_</a>, <a class="el" href="cmd_8h_source.html#l00169">FILE_HEADER</a>, and <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="write_8cpp_source.html#l00046">asm_write_header()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="write_8cpp_source.html#l00049">asm_write_header()</a>.</p>
 
 </div>
 </div>

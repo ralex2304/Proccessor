@@ -11,7 +11,7 @@ var searchData=
   ['stk_5fverify_8',['STK_VERIFY',['../stack_8h.html#a013fc56c5d16255530c4b0134dfeb8a6',1,'stack.h']]],
   ['string_5fconst_9',['String_CONST',['../text__lib_8h.html#a62644cba8542352b76b0e4bf9eb25c73',1,'text_lib.h']]],
   ['string_5fprintf_10',['String_PRINTF',['../text__lib_8h.html#a8bda955a9d6dede91b9f9319eb437476',1,'text_lib.h']]],
-  ['string_5fto_5fc_11',['String_TO_c',['../text__lib_8h.html#a0227c409258b64a76f4fc5299c0ae42e',1,'text_lib.h']]],
+  ['string_5fto_5fconst_11',['String_TO_const',['../text__lib_8h.html#a59a33ce1c7a0b31f7b0284850e355051',1,'text_lib.h']]],
   ['style_5fblink_5foff_12',['STYLE_BLINK_OFF',['../console_8h.html#a90d5198d0e1fdba8fc116dcafc4a3f55',1,'console.h']]],
   ['style_5fbold_13',['STYLE_BOLD',['../console_8h.html#a7ce3d6fee94f21c9e3d0ffdd90aadc2e',1,'console.h']]],
   ['style_5ffaint_14',['STYLE_FAINT',['../console_8h.html#a52bc634953ffb7fb8a57e58aa51f88cd',1,'console.h']]],

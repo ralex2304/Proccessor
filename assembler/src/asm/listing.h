@@ -15,14 +15,11 @@
  * @brief Writes command to listing
  *
  * @param file
- * @param cmd
- * @param labels
- * @param inp_file
- * @param binary_pos
+ * @param asm_data
+ * @param line
  * @return Status::Statuses
  */
-Status::Statuses asm_write_cmd_listing(FILE* file, const Cmd* cmd, JumpLabel* labels,
-                                       const AsmInfo* inp_file, const size_t binary_pos);
+Status::Statuses asm_write_cmd_listing(FILE* file, const Asm* asm_data, const AsmLine* line);
 
 /**
  * @brief Writes comment to listing file
@@ -46,21 +43,21 @@ Status::Statuses asm_write_header_listing(FILE* listing_file);
  * @brief Calculates tab for listing
  *
  * @param cmd
- * @return size_t
+ * @return int
  */
-inline size_t asm_listing_calc_tab(const Cmd* cmd) {
-    size_t res = 0;
+inline int cmd_listing_calc_tab(const Cmd* cmd) {
+    int res = 0;
 
-    if (cmd == nullptr)
+    if (cmd->info == nullptr)
         res += sizeof(cmd->keys) * 3;
 
-    if (cmd == nullptr || !cmd->keys.reg)
+    if (cmd->info == nullptr || !cmd->keys.reg)
         res += sizeof(cmd->args.reg) * 3;
 
-    if (cmd == nullptr || !cmd->keys.imm_int)
+    if (cmd->info == nullptr || !cmd->keys.imm_int)
         res += sizeof(cmd->args.imm_int) * 3;
 
-    if (cmd == nullptr || !cmd->keys.imm_double)
+    if (cmd->info == nullptr || !cmd->keys.imm_double)
         res += sizeof(cmd->args.imm_double) * 3;
 
     return res;

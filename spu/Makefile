@@ -17,6 +17,11 @@ CFLAGS_SANITIZER = -fsanitize=address,alignment,bool,bounds,enum,float-cast-over
 EXTERNAL_DIR = ../shared
 IFLAGS = -I$(EXTERNAL_DIR)/
 
+CODEGEN_INP_FILE = ../shared/cmd_dict.h
+CODEGEN_OUT_FILE = src/cmd_dispatch_table/table.h
+CODEGEN_SCRIPT   = python3 src/cmd_dispatch_table/gen.py
+
+
 SRC_DIR = src
 BUILD_DIR = build/own
 NON_CODE_DIRS = $(BUILD_DIR) .vscode .git
@@ -54,11 +59,15 @@ $(MAKE_DIRS): | $(BUILD_DIR)
 
 -include $(DEPENDS)
 
-$(BUILD_DIR)/%.o: %.cpp | $(BUILD_DIR) $(MAKE_DIRS)
+$(BUILD_DIR)/%.o: %.cpp | $(BUILD_DIR) $(MAKE_DIRS) $(CODEGEN_OUT_FILE)
 	@$(CC) $(IFLAGS) $(CFLAGS) $(if $(sanitizer), $(CFLAGS_SANITIZER)) -MMD -MP -c $< -o $@
+
+$(CODEGEN_OUT_FILE): $(CODEGEN_INP_FILE)
+	@$(CODEGEN_SCRIPT) $(CODEGEN_INP_FILE) $(CODEGEN_OUT_FILE)
 
 clean:
 	@rm -rf ./$(BUILD_DIR)/*
 	@rm -rf ./$(BUILD_DIR)/$(EXTERNAL_DIR)/*
-	@rm -rf ./$(TARGET)
+	@rm ./$(TARGET)
+	@rm ./$(CODEGEN_OUT_FILE)
 

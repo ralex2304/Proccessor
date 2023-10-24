@@ -125,5 +125,21 @@
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00121}00121\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00122}00122\ \}}
 \DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00124}\mbox{\hyperlink{text__lib_8cpp_a91c9a7523f46e88b8e65f97fae3aa07a}{00124}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{text__lib_8cpp_a91c9a7523f46e88b8e65f97fae3aa07a}{String\_sscanf}}(\mbox{\hyperlink{struct_string}{String}}\ token,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ format,\ ...)\ \{}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00125}00125\ \ \ \ \ assert(format);}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00126}00126\ \ \ \ \ assert(token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}});}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ tmp\ =\ token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}[token.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}];}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00129}00129\ \ \ \ \ token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}[token.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00131}00131\ \ \ \ \ va\_list\ arg\_list\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00132}00132\ \ \ \ \ va\_start(arg\_list,\ format);}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{keywordtype}{int}\ ret\ =\ vsscanf(token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}},\ format,\ arg\_list);}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00134}00134\ \ \ \ \ va\_end(arg\_list);}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00136}00136\ \ \ \ \ token.\mbox{\hyperlink{struct_string_a7028cb0053f3138200b398a23ad2f2b8}{str}}[token.\mbox{\hyperlink{struct_string_a7fe1a0ef5b6253becac99444295dab0e}{len}}]\ =\ tmp;}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00138}00138\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\Hypertarget{text__lib_8cpp_source_l00139}00139\ \}}
 
 \end{DoxyCode}

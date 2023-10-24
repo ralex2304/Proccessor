@@ -2,6 +2,11 @@
 \hypertarget{struct_buffer}{}\label{struct_buffer}\index{Buffer@{Buffer}}
 
 
+Rising buffer struct.  
+
+
+
+
 {\ttfamily \#include $<$buf\+\_\+lib.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
@@ -12,9 +17,9 @@ bool \mbox{\hyperlink{struct_buffer_ad1535950a41eefad8fb8c7706af8f5a7}{ctor}} (s
 void \mbox{\hyperlink{struct_buffer_accef32f248ec05ad669b1de0dc3ae6a5}{dtor}} ()
 \item 
 bool \mbox{\hyperlink{struct_buffer_a6446660135f46c6a88fd863ec0a57a88}{resize}} (ssize\+\_\+t new\+\_\+capacity)
-\item 
+\begin{DoxyCompactList}\small\item\em Resizes buffer. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{struct_buffer_a73dfd504fe4d4f6dffa9e5949b1fdcae}{cat}} (const char \texorpdfstring{$\ast$}{*}cat, const size\+\_\+t cat\+\_\+size)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Concatenetes data to buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,9 +37,9 @@ static const size\+\_\+t \mbox{\hyperlink{struct_buffer_afd5cd659ecca36f2c4c0ea3
 
 
 \doxysubsection{Detailed Description}
+Rising buffer struct. 
 
-
-Definition at line \mbox{\hyperlink{buf__lib_8h_source_l00009}{9}} of file \mbox{\hyperlink{buf__lib_8h_source}{buf\+\_\+lib.\+h}}.
+Definition at line \mbox{\hyperlink{buf__lib_8h_source_l00012}{12}} of file \mbox{\hyperlink{buf__lib_8h_source}{buf\+\_\+lib.\+h}}.
 
 
 
@@ -47,24 +52,42 @@ Definition at line \mbox{\hyperlink{buf__lib_8h_source_l00009}{9}} of file \mbox
 
 
 
+Concatenetes data to buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cat} & \\
+\hline
+{\em cat\+\_\+size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
 Definition at line \mbox{\hyperlink{buf__lib_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{buf__lib_8cpp_source}{buf\+\_\+lib.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{struct_buffer_a0a7fe9496e5e642f14f1975abb95824c}{capacity}}\ <\ \mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{size}}\ +\ (ssize\_t)cat\_size)}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{struct_buffer_a6446660135f46c6a88fd863ec0a57a88}{resize}}(\mbox{\hyperlink{struct_buffer_a0a7fe9496e5e642f14f1975abb95824c}{capacity}}\ *\ 2))}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ memcpy(\mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{data}}\ +\ \mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{size}},\ \mbox{\hyperlink{struct_buffer_a73dfd504fe4d4f6dffa9e5949b1fdcae}{cat}},\ cat\_size);}
-\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{size}}\ +=\ cat\_size;}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00042\ \}}
+\DoxyCodeLine{00035\ \ \ \ \ assert(\mbox{\hyperlink{struct_buffer_a73dfd504fe4d4f6dffa9e5949b1fdcae}{cat}});}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{struct_buffer_a0a7fe9496e5e642f14f1975abb95824c}{capacity}}\ <\ \mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{size}}\ +\ (ssize\_t)cat\_size)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{struct_buffer_a6446660135f46c6a88fd863ec0a57a88}{resize}}(\mbox{\hyperlink{struct_buffer_a0a7fe9496e5e642f14f1975abb95824c}{capacity}}\ *\ 2))}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ memcpy(\mbox{\hyperlink{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}{data}}\ +\ \mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{size}},\ \mbox{\hyperlink{struct_buffer_a73dfd504fe4d4f6dffa9e5949b1fdcae}{cat}},\ cat\_size);}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}{size}}\ +=\ cat\_size;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00044\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{buf__lib_8h_source_l00014}{capacity}}, \mbox{\hyperlink{buf__lib_8cpp_source_l00034}{cat()}}, \mbox{\hyperlink{buf__lib_8h_source_l00012}{data}}, \mbox{\hyperlink{buf__lib_8cpp_source_l00020}{resize()}}, and \mbox{\hyperlink{buf__lib_8h_source_l00015}{size}}.
+References \mbox{\hyperlink{buf__lib_8h_source_l00017}{capacity}}, \mbox{\hyperlink{buf__lib_8cpp_source_l00034}{cat()}}, \mbox{\hyperlink{buf__lib_8h_source_l00015}{data}}, \mbox{\hyperlink{buf__lib_8cpp_source_l00020}{resize()}}, and \mbox{\hyperlink{buf__lib_8h_source_l00018}{size}}.
 
 
 
@@ -98,11 +121,11 @@ Definition at line \mbox{\hyperlink{buf__lib_8cpp_source_l00003}{3}} of file \mb
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{buf__lib_8h_source_l00014}{capacity}}, and \mbox{\hyperlink{buf__lib_8h_source_l00012}{data}}.
+References \mbox{\hyperlink{buf__lib_8h_source_l00017}{capacity}}, and \mbox{\hyperlink{buf__lib_8h_source_l00015}{data}}.
 
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\+\_\+write()}}.
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\+\_\+write()}}, and \mbox{\hyperlink{asm_8cpp_source_l00003}{Asm\+::ctor()}}.
 
 \Hypertarget{struct_buffer_accef32f248ec05ad669b1de0dc3ae6a5}\label{struct_buffer_accef32f248ec05ad669b1de0dc3ae6a5} 
 \index{Buffer@{Buffer}!dtor@{dtor}}
@@ -123,7 +146,11 @@ Definition at line \mbox{\hyperlink{buf__lib_8cpp_source_l00016}{16}} of file \m
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{buf__lib_8h_source_l00012}{data}}, and \mbox{\hyperlink{macros_8h_source_l00009}{FREE}}.
+References \mbox{\hyperlink{buf__lib_8h_source_l00015}{data}}, and \mbox{\hyperlink{macros_8h_source_l00009}{FREE}}.
+
+
+
+Referenced by \mbox{\hyperlink{asm_8cpp_source_l00011}{Asm\+::dtor()}}.
 
 \Hypertarget{struct_buffer_a6446660135f46c6a88fd863ec0a57a88}\label{struct_buffer_a6446660135f46c6a88fd863ec0a57a88} 
 \index{Buffer@{Buffer}!resize@{resize}}
@@ -131,6 +158,20 @@ References \mbox{\hyperlink{buf__lib_8h_source_l00012}{data}}, and \mbox{\hyperl
 \doxysubsubsection{\texorpdfstring{resize()}{resize()}}
 {\footnotesize\ttfamily bool Buffer\+::resize (\begin{DoxyParamCaption}\item[{ssize\+\_\+t}]{new\+\_\+capacity }\end{DoxyParamCaption})}
 
+
+
+Resizes buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+capacity} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
 
 
 Definition at line \mbox{\hyperlink{buf__lib_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{buf__lib_8cpp_source}{buf\+\_\+lib.\+cpp}}.
@@ -154,7 +195,7 @@ Definition at line \mbox{\hyperlink{buf__lib_8cpp_source_l00020}{20}} of file \m
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{buf__lib_8h_source_l00014}{capacity}}, \mbox{\hyperlink{buf__lib_8h_source_l00012}{data}}, and \mbox{\hyperlink{macros_8h_source_l00014}{recalloc()}}.
+References \mbox{\hyperlink{buf__lib_8h_source_l00017}{capacity}}, \mbox{\hyperlink{buf__lib_8h_source_l00015}{data}}, and \mbox{\hyperlink{macros_8h_source_l00014}{recalloc()}}.
 
 
 
@@ -171,11 +212,11 @@ Referenced by \mbox{\hyperlink{buf__lib_8cpp_source_l00034}{cat()}}.
 
 
 
-Definition at line \mbox{\hyperlink{buf__lib_8h_source_l00014}{14}} of file \mbox{\hyperlink{buf__lib_8h_source}{buf\+\_\+lib.\+h}}.
+Definition at line \mbox{\hyperlink{buf__lib_8h_source_l00017}{17}} of file \mbox{\hyperlink{buf__lib_8h_source}{buf\+\_\+lib.\+h}}.
 
 
 
-Referenced by \mbox{\hyperlink{buf__lib_8cpp_source_l00034}{cat()}}, \mbox{\hyperlink{buf__lib_8cpp_source_l00003}{ctor()}}, and \mbox{\hyperlink{buf__lib_8cpp_source_l00020}{resize()}}.
+Referenced by \mbox{\hyperlink{read_8cpp_source_l00005}{asm\+\_\+read\+\_\+cmd()}}, \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\+\_\+write()}}, \mbox{\hyperlink{buf__lib_8cpp_source_l00034}{cat()}}, \mbox{\hyperlink{buf__lib_8cpp_source_l00003}{ctor()}}, and \mbox{\hyperlink{buf__lib_8cpp_source_l00020}{resize()}}.
 
 \Hypertarget{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8}\label{struct_buffer_aeec1fd4af0ddf6765b0187466d4361b8} 
 \index{Buffer@{Buffer}!data@{data}}
@@ -185,7 +226,7 @@ Referenced by \mbox{\hyperlink{buf__lib_8cpp_source_l00034}{cat()}}, \mbox{\hype
 
 
 
-Definition at line \mbox{\hyperlink{buf__lib_8h_source_l00012}{12}} of file \mbox{\hyperlink{buf__lib_8h_source}{buf\+\_\+lib.\+h}}.
+Definition at line \mbox{\hyperlink{buf__lib_8h_source_l00015}{15}} of file \mbox{\hyperlink{buf__lib_8h_source}{buf\+\_\+lib.\+h}}.
 
 
 
@@ -199,7 +240,7 @@ Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\
 
 
 
-Definition at line \mbox{\hyperlink{buf__lib_8h_source_l00010}{10}} of file \mbox{\hyperlink{buf__lib_8h_source}{buf\+\_\+lib.\+h}}.
+Definition at line \mbox{\hyperlink{buf__lib_8h_source_l00013}{13}} of file \mbox{\hyperlink{buf__lib_8h_source}{buf\+\_\+lib.\+h}}.
 
 \Hypertarget{struct_buffer_aea1b7416d53cd6e281718e607d81ae51}\label{struct_buffer_aea1b7416d53cd6e281718e607d81ae51} 
 \index{Buffer@{Buffer}!size@{size}}
@@ -209,11 +250,11 @@ Definition at line \mbox{\hyperlink{buf__lib_8h_source_l00010}{10}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{buf__lib_8h_source_l00015}{15}} of file \mbox{\hyperlink{buf__lib_8h_source}{buf\+\_\+lib.\+h}}.
+Definition at line \mbox{\hyperlink{buf__lib_8h_source_l00018}{18}} of file \mbox{\hyperlink{buf__lib_8h_source}{buf\+\_\+lib.\+h}}.
 
 
 
-Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00081}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}, \mbox{\hyperlink{write_8cpp_source_l00003}{asm\+\_\+write\+\_\+cmd()}}, \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\+\_\+write()}}, and \mbox{\hyperlink{buf__lib_8cpp_source_l00034}{cat()}}.
+Referenced by \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\+\_\+write()}}, and \mbox{\hyperlink{buf__lib_8cpp_source_l00034}{cat()}}.
 
 
 

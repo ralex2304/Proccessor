@@ -1,8 +1,8 @@
 #include "assembler.h"
 
 
-#define LOCAL_DTOR_()   do {            \
-                            buf.dtor(); \
+#define LOCAL_DTOR_()   do {                \
+                            asm_data.dtor();\
                         } while(0)
 
 #define FILE_CHECK_(func_, ...)  do {                                   \
@@ -12,60 +12,37 @@
                                     }                                   \
                                 } while(0)
 
-Status::Statuses assemeble_and_write(const InputData* input_data, const char* bin_filename,
-                                     const char* inp_filename, const char* listing_filename) {
+Status::Statuses assemeble_and_write(const InputData* input_data, const AsmFilesInfo files) {
     assert(input_data);
-    assert(bin_filename);
-    assert(inp_filename);
+    assert(files.inp_name);
+    assert(files.bin_name);
+    // listing filename may be nullptr
 
-    FILE* listing_file = nullptr;
+    FILE* lst_file = nullptr;
 
-    AsmInfo asm_info = {{}, 0, nullptr, inp_filename, false};
+    Asm asm_data = {};
+    asm_data.files = files;
 
-    Buffer buf = {};
-    if (!buf.ctor())
+    if (!asm_data.ctor(-1)) // buf ctor is not needed. Will be initialised after first pass
         return Status::MEMORY_EXCEED;
 
-    JumpLabel labels[MAX_LABEL_NUM] = {};
 
-    STATUS_CHECK(asm_write_header(&buf, listing_file, false), LOCAL_DTOR_());
+    // First pass
+    asm_data.pass_num = 0;
+    STATUS_CHECK(asm_do_pass(&asm_data, input_data, lst_file), LOCAL_DTOR_());
 
-    for (size_t i = 0; i < input_data->lines_cnt; i++) {
-        asm_info.line_num = i + 1;
-        asm_info.line = input_data->lines[i];
+    if (!asm_data.buf.ctor(asm_data.buf.capacity))
+        return Status::MEMORY_EXCEED;
 
-        STATUS_CHECK(asm_parse_and_write_line(&buf, labels, &asm_info, listing_file),
-                     LOCAL_DTOR_());
-    }
 
     // Second pass
-    asm_info.final_pass = true;
+    asm_data.pass_num = 1;
+    STATUS_CHECK(asm_do_pass(&asm_data, input_data, lst_file), LOCAL_DTOR_());
 
-    if (listing_filename != nullptr)
-        FILE_CHECK_(file_open(&listing_file, listing_filename, "wb"), LOCAL_DTOR_());
-
-    buf.size = 0;
-
-    STATUS_CHECK(asm_write_header(&buf, listing_file, asm_info.final_pass), LOCAL_DTOR_());
-
-    if (listing_filename != nullptr)
-        if (file_printf(listing_file, ";line - byte - command\n") == EOF)
-            return Status::OUT_FILE_ERROR;
-
-    for (size_t i = 0; i < input_data->lines_cnt; i++) {
-        asm_info.line_num = i + 1;
-        asm_info.line = input_data->lines[i];
-
-        STATUS_CHECK(asm_parse_and_write_line(&buf, labels, &asm_info, listing_file),
-                     LOCAL_DTOR_());
-    }
-
-    if (listing_filename != nullptr)
-        FILE_CHECK_(file_close(listing_file), LOCAL_DTOR_());
 
     // Binary file write
-
-    STATUS_CHECK(file_open_write_bytes_close(bin_filename, buf.data, buf.size), LOCAL_DTOR_());
+    STATUS_CHECK(file_open_write_bytes_close(asm_data.files.bin_name,
+                                             asm_data.buf.data, asm_data.buf.size), LOCAL_DTOR_());
 
     LOCAL_DTOR_();
 
@@ -74,79 +51,60 @@ Status::Statuses assemeble_and_write(const InputData* input_data, const char* bi
 #undef LOCAL_DTOR_
 
 
-#define THROW_SYNTAX_ERROR_(...)  return asm_throw_syntax_error(tokens[cur_token],  \
-                                                                asm_info,           \
-                                                                __VA_ARGS__)
+#define THROW_SYNTAX_ERROR_(...)  return asm_throw_syntax_error(asm_data, line, __VA_ARGS__)
 
-Status::Statuses asm_parse_and_write_line(Buffer* buf, JumpLabel* labels, AsmInfo* asm_info,
-                                          FILE* listing_file) {
-    assert(buf);
-    assert(asm_info);
-    assert(asm_info->filename);
-    assert(asm_info->line.str);
-    assert(labels);
+Status::Statuses asm_parse_and_write_line(Asm* asm_data, AsmLine* line, FILE* lst_file) {
+    assert(asm_data);
+    assert(line);
 
-    Cmd cmd = {};
-
-    asm_info->comment = strchr(asm_info->line.str, ';');
+    line->comment = strchr(line->text.str, ';');
 
     const char* special_delims = "[]:";
 
-    String tokens[MAX_LINE_LEN + 1] = {};
+    split_line_with_special_delims(line->text.str, " +\t", special_delims, ";",
+                                   line->tokens, MAX_LINE_LEN /*tokens array size*/);
 
-    split_line_with_special_delims(asm_info->line.str, " +\t", special_delims, ";",
-                                   tokens, MAX_LINE_LEN /*tokens array size*/);
+    STATUS_CHECK(asm_read_cmd(asm_data, line));
 
-    size_t cur_token = 0;
+    STATUS_CHECK(asm_read_args(asm_data, line));
 
-    // Empty line check
-    if (tokens[cur_token].len == 0) {
-        STATUS_CHECK(asm_write_cmd(buf, nullptr, labels, asm_info,
-                                   listing_file));
+    if (line->tokens[line->cur_token].len != 0) //< read_args increments cur_token
+        THROW_SYNTAX_ERROR_("Unexpected arg given.");
 
-        return Status::NORMAL_WORK;
-    }
-
-    // Parsing start
-
-    if (strchr(special_delims, tokens[cur_token].str[0]) != nullptr)
-        THROW_SYNTAX_ERROR_("Unexpected '%c' found.", tokens[cur_token].str[0]);
-
-    cmd.info = find_command_by_name(tokens[cur_token]);
-    if (cmd.info == nullptr) {
-        // Label parsing
-        if (tokens[cur_token + 1].len == 1 && tokens[cur_token + 1].str[0] == ':') {
-            if (!asm_info->final_pass)
-                STATUS_CHECK(asm_new_label(labels, tokens[cur_token], asm_info, buf->size));
-            cur_token += 2;
-
-            asm_info->comment = str_skip_spaces(asm_info->line.str);
-            STATUS_CHECK(asm_write_cmd(buf, nullptr, labels, asm_info, listing_file));
-
-            if (tokens[cur_token].str != nullptr)
-                THROW_SYNTAX_ERROR_("Unexpected arg given.");
-
-            return Status::NORMAL_WORK;
-        } else
-            THROW_SYNTAX_ERROR_("Command \"%.*s\" not found.", String_PRINTF(tokens[cur_token]));
-    }
-
-    cmd.keys.num = cmd.info->num & CMD_BYTE_NUM_BIT_MASK;
-
-    cur_token += 1;
-
-    if (tokens[cur_token].str != nullptr && tokens[cur_token].len != 0) {
-        STATUS_CHECK(asm_read_args(tokens, &cur_token, &cmd, asm_info, labels));
-
-        if (tokens[cur_token].str != nullptr) //< read_args increments cur_token
-            THROW_SYNTAX_ERROR_("Unexpected arg given.");
-    }
-
-    if (asm_is_arg_required(&cmd) && !asm_is_any_arg_given(&cmd))
+    if (cmd_is_arg_required(&line->cmd) && !cmd_is_any_arg_given(&line->cmd))
         THROW_SYNTAX_ERROR_("At least one argument required.");
 
-    STATUS_CHECK(asm_write_cmd(buf, &cmd, labels, asm_info, listing_file));
+    STATUS_CHECK(asm_write_cmd(asm_data, line, lst_file));
 
     return Status::NORMAL_WORK;
 }
 #undef THROW_SYNTAX_ERROR_
+
+Status::Statuses asm_do_pass(Asm* asm_data, const InputData* input_data, FILE* lst_file) {
+    assert(asm_data);
+    assert(input_data);
+    // lst_file may be nullptr
+
+    if (asm_data->pass_num == asm_data->LAST_PASS_NUM && asm_data->files.lst_name != nullptr)
+        FILE_CHECK_(file_open(&lst_file, asm_data->files.lst_name, "wb"));
+
+    STATUS_CHECK(asm_write_header(&asm_data->buf, lst_file,
+                                   asm_data->pass_num == asm_data->LAST_PASS_NUM));
+
+    if (asm_data->pass_num == asm_data->LAST_PASS_NUM && asm_data->files.lst_name != nullptr)
+        if (file_printf(lst_file, ";line | addr | command\n") == EOF)
+            return Status::OUT_FILE_ERROR;
+
+    for (size_t i = 0; i < input_data->lines_cnt; i++) {
+        AsmLine line = {};
+        line.num = i + 1;
+        line.text = input_data->lines[i];
+
+        STATUS_CHECK(asm_parse_and_write_line(asm_data, &line, lst_file));
+    }
+
+    if (asm_data->pass_num == asm_data->LAST_PASS_NUM && asm_data->files.lst_name != nullptr)
+        FILE_CHECK_(file_close(lst_file));
+
+    return Status::NORMAL_WORK;
+}

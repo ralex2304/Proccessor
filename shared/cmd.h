@@ -18,7 +18,9 @@ const size_t MAX_LABEL_NUM = 128;   //< maximum number of labels in program (arr
 
 const size_t MAX_LINE_LEN = 64;     //< max command text line len
 
-const size_t RAM_SIZE = 256;        //< spu ram size
+const size_t RAM_SIZE = 100;        //< spu ram size
+
+const size_t CMD_MAX_NUM = 255;
 
 /**
  * @brief Specifies command bit field
@@ -50,7 +52,7 @@ enum RegNums: RegNum_t {
  */
 struct RegInfo {
     const RegNums num = {};     //< reg number
-    const c_String name = {};   //< reg name
+    const const_String name = {};   //< reg name
 };
 
 /**
@@ -67,9 +69,9 @@ const RegNum_t REGS_NUM = sizeof(REGS_DICT) / sizeof(RegInfo); //< SPU registers
 
 typedef double Imm_double_t;    //< double immutable arguments type
 
-#define IMM_DOUBLE_T_EPSILON    0.000001
+#define IMM_DOUBLE_T_EPSILON    1e-6
 
-#define IMM_DOUBLE_T_PRINTF      "%lf"
+#define IMM_DOUBLE_T_PRINTF     "%lf"
 
 #define CHECK_IMM_DOUBLE(var) !isnan(var)
 
@@ -89,14 +91,25 @@ struct CmdArgs {
 
 /**
  * @brief Specifies arguments types, that command is able to recieve
- *
  */
-struct ArgsEn {
+struct ArgsEnabled {
     bool reg:           1;  //< register arg
     bool imm_double:    1;  //< double immutable arg
     bool imm_int:       1;  //< int immutable arg
     bool ram:           1;  //< ram argument
     bool label:         1;  //< label
+};
+
+/**
+ * @brief Available options enabling bits
+ */
+enum ArgsEnabledOptions: size_t {
+    ARG_NONE        = 0,
+    ARG_REG         = 1 << 0,
+    ARG_IMM_DOUBLE  = 1 << 1,
+    ARG_IMM_INT     = 1 << 2,
+    ARG_RAM         = 1 << 3,
+    ARG_LABEL       = 1 << 4,
 };
 
 typedef unsigned char Cmd_num_t;    //< command number type
@@ -117,8 +130,8 @@ enum CmdNum: Cmd_num_t {
  */
 struct CmdInfo {
     const CmdNum num;           //< command number
-    const c_String name = {};   //< command name
-    ArgsEn args = {};           //< possible arguments
+    const const_String name = {};   //< command name
+    ArgsEnabled is_args = {};   //< possible arguments
 
     const char* description = nullptr;  //< command description (for help)
 };
@@ -128,13 +141,12 @@ struct CmdInfo {
  */
 const CmdInfo CMDS_DICT[] {
     #define DEF_CMD(name, num, args, description, ...) {CMD_##name, {#name, sizeof(#name) - 1}, \
-                                                            {(bool) (args & 0b10000),           \
-                                                             (bool) (args & 0b01000),           \
-                                                             (bool) (args & 0b00100),           \
-                                                             (bool) (args & 0b00010),           \
-                                                             (bool) (args & 0b00001)},          \
+                                                            {(bool) ((args) & 0b00001),         \
+                                                             (bool) ((args) & 0b00010),         \
+                                                             (bool) ((args) & 0b00100),         \
+                                                             (bool) ((args) & 0b01000),         \
+                                                             (bool) ((args) & 0b10000)},        \
                                                              description},
-
     #include "cmd_dict.h"
 
     #undef DEF_CMD
@@ -144,10 +156,9 @@ const size_t CMDS_DICT_SIZE = sizeof(CMDS_DICT) / sizeof(CmdInfo); //< Number of
 
 /**
  * @brief Binary file header
- *
  */
 struct FileHeader {
-    char sign[2] = {'K','U'};       //< signature
+    uint16_t sign =  0x554B;        //< signature ("KU")
     short version = CMD_VERSION;    //< commands version
 
     bool check() const;

@@ -1,0 +1,172 @@
+\doxysection{gen Namespace Reference}
+\hypertarget{namespacegen}{}\label{namespacegen}\index{gen@{gen}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacegen_ae35931fad3c243f8fc08f8f9c61270b6}{CMD\+\_\+\+MAX\+\_\+\+NUM}} = 255
+\item 
+str \mbox{\hyperlink{namespacegen_a7e432f09810e89fb366989ac67118cd1}{DEFINE}} = \"{}DEF\+\_\+\+CMD\"{}
+\item 
+str \mbox{\hyperlink{namespacegen_a149a0ce56f0a1889d549362a127b28b1}{LABEL\+\_\+\+PREFIX}} = \"{}cmd\+\_\+dispatch\+\_\+do\+\_\+\"{}
+\item 
+str \mbox{\hyperlink{namespacegen_a61902b450a289636d278dba221ad5a36}{ERROR\+\_\+\+LABEL}} = \"{}cmd\+\_\+dispatch\+\_\+do\+\_\+error\"{}
+\item 
+list \mbox{\hyperlink{namespacegen_a812c7fb48e048ef8686fa06b7b0a8ae6}{labels}} = \mbox{[}0\mbox{]} \texorpdfstring{$\ast$}{*} (\mbox{\hyperlink{namespacegen_ae35931fad3c243f8fc08f8f9c61270b6}{CMD\+\_\+\+MAX\+\_\+\+NUM}} + 1)
+\item 
+\mbox{\hyperlink{namespacegen_a0888e5b6efbf895435a8f8c55a81e9b7}{inp}} = open(sys.\+argv\mbox{[}1\mbox{]}, \"{}r\"{})
+\item 
+\mbox{\hyperlink{namespacegen_ab0b20f63d1d01c3c1503fc37316a85a7}{text}} = inp.\+read().replace(\"{} \"{},\"{}\"{}).replace(\"{}\textbackslash{}n\"{},\"{}\"{})
+\item 
+int \mbox{\hyperlink{namespacegen_a71c5d9836ba6e01d7de40297ae21b74d}{scope}} = 0
+\item 
+int \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}} = -\/1
+\item 
+\mbox{\hyperlink{namespacegen_a00604f2b0fb55ffa53d321935db4e0cb}{j}} = text.\+find(\"{},\"{}, \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}})
+\item 
+\mbox{\hyperlink{namespacegen_adb0a36eb046ef1eaf9d7cffcc504f0ba}{name}} = \mbox{\hyperlink{namespacegen_ab0b20f63d1d01c3c1503fc37316a85a7}{text}}\mbox{[}i\+:j\mbox{]}
+\item 
+\mbox{\hyperlink{namespacegen_a49b46a6ad6280ee1d2f07c194d73f019}{num}} = int(\mbox{\hyperlink{namespacegen_ab0b20f63d1d01c3c1503fc37316a85a7}{text}}\mbox{[}i\+:j\mbox{]})
+\item 
+\mbox{\hyperlink{namespacegen_ac78900674237d3f960b7bfc0605e8718}{out}} = open(sys.\+argv\mbox{[}2\mbox{]}, \"{}w\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}dispatch table generator for spu
+requires cmd_dict file
+
+specified format: DEF_CMD(name, num, ...)
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacegen_ae35931fad3c243f8fc08f8f9c61270b6}\label{namespacegen_ae35931fad3c243f8fc08f8f9c61270b6} 
+\index{gen@{gen}!CMD\_MAX\_NUM@{CMD\_MAX\_NUM}}
+\index{CMD\_MAX\_NUM@{CMD\_MAX\_NUM}!gen@{gen}}
+\doxysubsubsection{\texorpdfstring{CMD\_MAX\_NUM}{CMD\_MAX\_NUM}}
+{\footnotesize\ttfamily int gen.\+CMD\+\_\+\+MAX\+\_\+\+NUM = 255}
+
+
+
+Definition at line \mbox{\hyperlink{gen_8py_source_l00010}{10}} of file \mbox{\hyperlink{gen_8py_source}{gen.\+py}}.
+
+\Hypertarget{namespacegen_a7e432f09810e89fb366989ac67118cd1}\label{namespacegen_a7e432f09810e89fb366989ac67118cd1} 
+\index{gen@{gen}!DEFINE@{DEFINE}}
+\index{DEFINE@{DEFINE}!gen@{gen}}
+\doxysubsubsection{\texorpdfstring{DEFINE}{DEFINE}}
+{\footnotesize\ttfamily str gen.\+DEFINE = \"{}DEF\+\_\+\+CMD\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{gen_8py_source_l00011}{11}} of file \mbox{\hyperlink{gen_8py_source}{gen.\+py}}.
+
+\Hypertarget{namespacegen_a61902b450a289636d278dba221ad5a36}\label{namespacegen_a61902b450a289636d278dba221ad5a36} 
+\index{gen@{gen}!ERROR\_LABEL@{ERROR\_LABEL}}
+\index{ERROR\_LABEL@{ERROR\_LABEL}!gen@{gen}}
+\doxysubsubsection{\texorpdfstring{ERROR\_LABEL}{ERROR\_LABEL}}
+{\footnotesize\ttfamily str gen.\+ERROR\+\_\+\+LABEL = \"{}cmd\+\_\+dispatch\+\_\+do\+\_\+error\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{gen_8py_source_l00013}{13}} of file \mbox{\hyperlink{gen_8py_source}{gen.\+py}}.
+
+\Hypertarget{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}\label{namespacegen_ad6f9a21fef823e19e8e49589645c58ba} 
+\index{gen@{gen}!i@{i}}
+\index{i@{i}!gen@{gen}}
+\doxysubsubsection{\texorpdfstring{i}{i}}
+{\footnotesize\ttfamily int gen.\+i = -\/1}
+
+
+
+Definition at line \mbox{\hyperlink{gen_8py_source_l00027}{27}} of file \mbox{\hyperlink{gen_8py_source}{gen.\+py}}.
+
+\Hypertarget{namespacegen_a0888e5b6efbf895435a8f8c55a81e9b7}\label{namespacegen_a0888e5b6efbf895435a8f8c55a81e9b7} 
+\index{gen@{gen}!inp@{inp}}
+\index{inp@{inp}!gen@{gen}}
+\doxysubsubsection{\texorpdfstring{inp}{inp}}
+{\footnotesize\ttfamily gen.\+inp = open(sys.\+argv\mbox{[}1\mbox{]}, \"{}r\"{})}
+
+
+
+Definition at line \mbox{\hyperlink{gen_8py_source_l00022}{22}} of file \mbox{\hyperlink{gen_8py_source}{gen.\+py}}.
+
+\Hypertarget{namespacegen_a00604f2b0fb55ffa53d321935db4e0cb}\label{namespacegen_a00604f2b0fb55ffa53d321935db4e0cb} 
+\index{gen@{gen}!j@{j}}
+\index{j@{j}!gen@{gen}}
+\doxysubsubsection{\texorpdfstring{j}{j}}
+{\footnotesize\ttfamily gen.\+j = text.\+find(\"{},\"{}, \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}})}
+
+
+
+Definition at line \mbox{\hyperlink{gen_8py_source_l00041}{41}} of file \mbox{\hyperlink{gen_8py_source}{gen.\+py}}.
+
+\Hypertarget{namespacegen_a149a0ce56f0a1889d549362a127b28b1}\label{namespacegen_a149a0ce56f0a1889d549362a127b28b1} 
+\index{gen@{gen}!LABEL\_PREFIX@{LABEL\_PREFIX}}
+\index{LABEL\_PREFIX@{LABEL\_PREFIX}!gen@{gen}}
+\doxysubsubsection{\texorpdfstring{LABEL\_PREFIX}{LABEL\_PREFIX}}
+{\footnotesize\ttfamily str gen.\+LABEL\+\_\+\+PREFIX = \"{}cmd\+\_\+dispatch\+\_\+do\+\_\+\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{gen_8py_source_l00012}{12}} of file \mbox{\hyperlink{gen_8py_source}{gen.\+py}}.
+
+\Hypertarget{namespacegen_a812c7fb48e048ef8686fa06b7b0a8ae6}\label{namespacegen_a812c7fb48e048ef8686fa06b7b0a8ae6} 
+\index{gen@{gen}!labels@{labels}}
+\index{labels@{labels}!gen@{gen}}
+\doxysubsubsection{\texorpdfstring{labels}{labels}}
+{\footnotesize\ttfamily list gen.\+labels = \mbox{[}0\mbox{]} \texorpdfstring{$\ast$}{*} (\mbox{\hyperlink{namespacegen_ae35931fad3c243f8fc08f8f9c61270b6}{CMD\+\_\+\+MAX\+\_\+\+NUM}} + 1)}
+
+
+
+Definition at line \mbox{\hyperlink{gen_8py_source_l00016}{16}} of file \mbox{\hyperlink{gen_8py_source}{gen.\+py}}.
+
+\Hypertarget{namespacegen_adb0a36eb046ef1eaf9d7cffcc504f0ba}\label{namespacegen_adb0a36eb046ef1eaf9d7cffcc504f0ba} 
+\index{gen@{gen}!name@{name}}
+\index{name@{name}!gen@{gen}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily gen.\+name = \mbox{\hyperlink{namespacegen_ab0b20f63d1d01c3c1503fc37316a85a7}{text}}\mbox{[}i\+:j\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{gen_8py_source_l00042}{42}} of file \mbox{\hyperlink{gen_8py_source}{gen.\+py}}.
+
+\Hypertarget{namespacegen_a49b46a6ad6280ee1d2f07c194d73f019}\label{namespacegen_a49b46a6ad6280ee1d2f07c194d73f019} 
+\index{gen@{gen}!num@{num}}
+\index{num@{num}!gen@{gen}}
+\doxysubsubsection{\texorpdfstring{num}{num}}
+{\footnotesize\ttfamily gen.\+num = int(\mbox{\hyperlink{namespacegen_ab0b20f63d1d01c3c1503fc37316a85a7}{text}}\mbox{[}i\+:j\mbox{]})}
+
+
+
+Definition at line \mbox{\hyperlink{gen_8py_source_l00046}{46}} of file \mbox{\hyperlink{gen_8py_source}{gen.\+py}}.
+
+\Hypertarget{namespacegen_ac78900674237d3f960b7bfc0605e8718}\label{namespacegen_ac78900674237d3f960b7bfc0605e8718} 
+\index{gen@{gen}!out@{out}}
+\index{out@{out}!gen@{gen}}
+\doxysubsubsection{\texorpdfstring{out}{out}}
+{\footnotesize\ttfamily gen.\+out = open(sys.\+argv\mbox{[}2\mbox{]}, \"{}w\"{})}
+
+
+
+Definition at line \mbox{\hyperlink{gen_8py_source_l00053}{53}} of file \mbox{\hyperlink{gen_8py_source}{gen.\+py}}.
+
+\Hypertarget{namespacegen_a71c5d9836ba6e01d7de40297ae21b74d}\label{namespacegen_a71c5d9836ba6e01d7de40297ae21b74d} 
+\index{gen@{gen}!scope@{scope}}
+\index{scope@{scope}!gen@{gen}}
+\doxysubsubsection{\texorpdfstring{scope}{scope}}
+{\footnotesize\ttfamily int gen.\+scope = 0}
+
+
+
+Definition at line \mbox{\hyperlink{gen_8py_source_l00026}{26}} of file \mbox{\hyperlink{gen_8py_source}{gen.\+py}}.
+
+\Hypertarget{namespacegen_ab0b20f63d1d01c3c1503fc37316a85a7}\label{namespacegen_ab0b20f63d1d01c3c1503fc37316a85a7} 
+\index{gen@{gen}!text@{text}}
+\index{text@{text}!gen@{gen}}
+\doxysubsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily gen.\+text = inp.\+read().replace(\"{} \"{},\"{}\"{}).replace(\"{}\textbackslash{}n\"{},\"{}\"{})}
+
+
+
+Definition at line \mbox{\hyperlink{gen_8py_source_l00024}{24}} of file \mbox{\hyperlink{gen_8py_source}{gen.\+py}}.
+

@@ -1,0 +1,33 @@
+;Signature: KU
+;Version: 1
+;line | addr | command
+;   1 | 0004 |                                                          | ; Calculates factorial of number from input
+;   2 | 0004 |                                                          | 
+;   3 | 0004 | 01 02 00 00 00 00 00 00 F0 3F                            | push 1.000000
+;   4 | 0014 | 02 01 00                                                 | pop rax ;iterator
+;   5 | 0017 |                                                          | 
+;   6 | 0017 | 01 02 00 00 00 00 00 00 F0 3F                            | push 1.000000 ;result is always in stack as first element
+;   7 | 0027 |                                                          | 
+;   8 | 0027 | 10 00                                                    | in
+;   9 | 0029 | 02 01 02                                                 | pop rcx ;target
+;  10 | 0032 |                                                          | 
+;  11 | 0032 |                                                          | for:
+;  12 | 0032 |                                                          | ;loop clause
+;  13 | 0032 | 01 01 00                                                 | push rax
+;  14 | 0035 | 01 01 02                                                 | push rcx
+;  15 | 0038 | 04 04 4D 00 00 00 00 00 00 00                            | ja exit (77) ;break if rax > rcx (iterator > target)
+;  16 | 0048 |                                                          | 
+;  17 | 0048 |                                                          | ;multiple iterator and result
+;  18 | 0048 | 01 01 00                                                 | push rax
+;  19 | 0051 | 14 00                                                    | mul
+;  20 | 0053 |                                                          | 
+;  21 | 0053 |                                                          | ;increment iterator
+;  22 | 0053 | 01 03 00 00 00 00 00 00 00 F0 3F                         | push rax+1.000000
+;  23 | 0064 | 02 01 00                                                 | pop rax
+;  24 | 0067 |                                                          | 
+;  25 | 0067 | 03 04 20 00 00 00 00 00 00 00                            | jmp for (32) ;continue loop
+;  26 | 0077 |                                                          | 
+;  27 | 0077 |                                                          | 
+;  28 | 0077 |                                                          | exit:
+;  29 | 0077 | 11 00                                                    | out
+;  30 | 0079 | 00 00                                                    | hlt

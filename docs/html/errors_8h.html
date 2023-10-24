@@ -90,7 +90,6 @@ $(document).ready(function(){initNavTree('errors_8h.html',''); initResizable(); 
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">errors.h File Reference</div></div>
 </div><!--header-->
@@ -103,134 +102,25 @@ $(document).ready(function(){initNavTree('errors_8h.html',''); initResizable(); 
 <code>#include &quot;<a class="el" href="text__lib_8h_source.html">lib/text/text_lib.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="console_8h_source.html">lib/utils/console.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="cmd_8h_source.html">cmd.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="asm_8h_source.html">asm.h</a>&quot;</code><br />
 </div>
 <p><a href="errors_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_asm_info.html">AsmInfo</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Info about assembling.  <a href="struct_asm_info.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a00da7f949b97b55e9f01f701e69912c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="errors_8h.html#a00da7f949b97b55e9f01f701e69912c2">asm_throw_syntax_error</a> (const <a class="el" href="struct_string.html">String</a> token, const <a class="el" href="struct_asm_info.html">AsmInfo</a> *file_info, const char *err_msg,...)</td></tr>
-<tr class="memdesc:a00da7f949b97b55e9f01f701e69912c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throws syntax error.  <br /></td></tr>
-<tr class="separator:a00da7f949b97b55e9f01f701e69912c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5849736d04a0cbad92c3d7563746ce83"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="errors_8h.html#a5849736d04a0cbad92c3d7563746ce83">asm_is_arg_required</a> (const <a class="el" href="struct_cmd.html">Cmd</a> *cmd)</td></tr>
-<tr class="memdesc:a5849736d04a0cbad92c3d7563746ce83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if cmd requires at least one argument.  <br /></td></tr>
-<tr class="separator:a5849736d04a0cbad92c3d7563746ce83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec9124143ff4b8a607ff8207b54a164e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="errors_8h.html#aec9124143ff4b8a607ff8207b54a164e">asm_is_any_arg_given</a> (const <a class="el" href="struct_cmd.html">Cmd</a> *cmd)</td></tr>
-<tr class="memdesc:aec9124143ff4b8a607ff8207b54a164e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if at least one argument was given to a function.  <br /></td></tr>
-<tr class="separator:aec9124143ff4b8a607ff8207b54a164e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d85c05bc94b5a80c7d982e23eb1f788"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="errors_8h.html#a9d85c05bc94b5a80c7d982e23eb1f788">asm_throw_syntax_error</a> (const <a class="el" href="struct_asm.html">Asm</a> *asm_data, const <a class="el" href="struct_asm_line.html">AsmLine</a> *line, const char *err_msg,...)</td></tr>
+<tr class="memdesc:a9d85c05bc94b5a80c7d982e23eb1f788"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throws syntax error.  <br /></td></tr>
+<tr class="separator:a9d85c05bc94b5a80c7d982e23eb1f788"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1517a2d0c4941ea85b0041c8773c1206"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="errors_8h.html#a1517a2d0c4941ea85b0041c8773c1206">cmd_is_arg_required</a> (const <a class="el" href="struct_cmd.html">Cmd</a> *cmd)</td></tr>
+<tr class="memdesc:a1517a2d0c4941ea85b0041c8773c1206"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if cmd requires at least one argument.  <br /></td></tr>
+<tr class="separator:a1517a2d0c4941ea85b0041c8773c1206"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b53cc878ef6fb13e2c43e75cb209e15"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="errors_8h.html#a7b53cc878ef6fb13e2c43e75cb209e15">cmd_is_any_arg_given</a> (const <a class="el" href="struct_cmd.html">Cmd</a> *cmd)</td></tr>
+<tr class="memdesc:a7b53cc878ef6fb13e2c43e75cb209e15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if at least one argument was given to a function.  <br /></td></tr>
+<tr class="separator:a7b53cc878ef6fb13e2c43e75cb209e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aec9124143ff4b8a607ff8207b54a164e" name="aec9124143ff4b8a607ff8207b54a164e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec9124143ff4b8a607ff8207b54a164e">&#9670;&#160;</a></span>asm_is_any_arg_given()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool asm_is_any_arg_given </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="struct_cmd.html">Cmd</a> *&#160;</td>
-          <td class="paramname"><em>cmd</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Checks if at least one argument was given to a function. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cmd</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true </dd>
-<dd>
-false </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="errors_8h_source.html#l00056">56</a> of file <a class="el" href="errors_8h_source.html">errors.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   56</span>                                                 {</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span> cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#a2520ae7bb6f891ca6ff62dd0f882a1f4">imm_int</a> || cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#a5b1fdf0614537d3c515c99ce945906fa">imm_double</a> || cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#a76f64f02295d9a30abdaf138ea275f6a">reg</a>; <span class="comment">//&lt; ram check is not needed</span></div>
-<div class="line"><span class="lineno">   58</span>}</div>
-<div class="ttc" id="astruct_cmd_html_a0a38a0e6be202854d97c4637280f5914"><div class="ttname"><a href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">Cmd::keys</a></div><div class="ttdeci">CmdKeys keys</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00166">cmd.h:166</a></div></div>
-<div class="ttc" id="astruct_cmd_keys_html_a2520ae7bb6f891ca6ff62dd0f882a1f4"><div class="ttname"><a href="struct_cmd_keys.html#a2520ae7bb6f891ca6ff62dd0f882a1f4">CmdKeys::imm_int</a></div><div class="ttdeci">bool imm_int</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00030">cmd.h:30</a></div></div>
-<div class="ttc" id="astruct_cmd_keys_html_a5b1fdf0614537d3c515c99ce945906fa"><div class="ttname"><a href="struct_cmd_keys.html#a5b1fdf0614537d3c515c99ce945906fa">CmdKeys::imm_double</a></div><div class="ttdeci">bool imm_double</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00029">cmd.h:29</a></div></div>
-<div class="ttc" id="astruct_cmd_keys_html_a76f64f02295d9a30abdaf138ea275f6a"><div class="ttname"><a href="struct_cmd_keys.html#a76f64f02295d9a30abdaf138ea275f6a">CmdKeys::reg</a></div><div class="ttdeci">bool reg</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00028">cmd.h:28</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="cmd_8h_source.html#l00029">CmdKeys::imm_double</a>, <a class="el" href="cmd_8h_source.html#l00030">CmdKeys::imm_int</a>, <a class="el" href="cmd_8h_source.html#l00166">Cmd::keys</a>, and <a class="el" href="cmd_8h_source.html#l00028">CmdKeys::reg</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00081">asm_parse_and_write_line()</a>, and <a class="el" href="listing_8cpp_source.html#l00006">asm_write_cmd_listing()</a>.</p>
-
-</div>
-</div>
-<a id="a5849736d04a0cbad92c3d7563746ce83" name="a5849736d04a0cbad92c3d7563746ce83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5849736d04a0cbad92c3d7563746ce83">&#9670;&#160;</a></span>asm_is_arg_required()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool asm_is_arg_required </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="struct_cmd.html">Cmd</a> *&#160;</td>
-          <td class="paramname"><em>cmd</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Checks if cmd requires at least one argument. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cmd</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true </dd>
-<dd>
-false </dd></dl>
-<p>&lt; ram check is not needed</p>
-
-<p class="definition">Definition at line <a class="el" href="errors_8h_source.html#l00044">44</a> of file <a class="el" href="errors_8h_source.html">errors.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>                                                {</div>
-<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">return</span> cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a8df32ebe09e03d38de8c20f6266611b4">info</a>-&gt;<a class="code hl_variable" href="struct_cmd_info.html#a533a901273935ace5b3b91cd67ae69d5">args</a>.<a class="code hl_variable" href="struct_args_en.html#a2602d15845006ade8d73d8bbad851c61">label</a> || cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a8df32ebe09e03d38de8c20f6266611b4">info</a>-&gt;<a class="code hl_variable" href="struct_cmd_info.html#a533a901273935ace5b3b91cd67ae69d5">args</a>.<a class="code hl_variable" href="struct_args_en.html#a0750bd83c2ac938393537562ffe3f000">imm_int</a> || cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a8df32ebe09e03d38de8c20f6266611b4">info</a>-&gt;<a class="code hl_variable" href="struct_cmd_info.html#a533a901273935ace5b3b91cd67ae69d5">args</a>.<a class="code hl_variable" href="struct_args_en.html#a32436d51611eb10f8c0a003acf02d876">imm_double</a></div>
-<div class="line"><span class="lineno">   46</span>        || cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a8df32ebe09e03d38de8c20f6266611b4">info</a>-&gt;<a class="code hl_variable" href="struct_cmd_info.html#a533a901273935ace5b3b91cd67ae69d5">args</a>.<a class="code hl_variable" href="struct_args_en.html#a63d5185473c449ea08983c877e083122">reg</a>; </div>
-<div class="line"><span class="lineno">   47</span>}</div>
-<div class="ttc" id="astruct_args_en_html_a0750bd83c2ac938393537562ffe3f000"><div class="ttname"><a href="struct_args_en.html#a0750bd83c2ac938393537562ffe3f000">ArgsEn::imm_int</a></div><div class="ttdeci">bool imm_int</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00097">cmd.h:97</a></div></div>
-<div class="ttc" id="astruct_args_en_html_a2602d15845006ade8d73d8bbad851c61"><div class="ttname"><a href="struct_args_en.html#a2602d15845006ade8d73d8bbad851c61">ArgsEn::label</a></div><div class="ttdeci">bool label</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00099">cmd.h:99</a></div></div>
-<div class="ttc" id="astruct_args_en_html_a32436d51611eb10f8c0a003acf02d876"><div class="ttname"><a href="struct_args_en.html#a32436d51611eb10f8c0a003acf02d876">ArgsEn::imm_double</a></div><div class="ttdeci">bool imm_double</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00096">cmd.h:96</a></div></div>
-<div class="ttc" id="astruct_args_en_html_a63d5185473c449ea08983c877e083122"><div class="ttname"><a href="struct_args_en.html#a63d5185473c449ea08983c877e083122">ArgsEn::reg</a></div><div class="ttdeci">bool reg</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00095">cmd.h:95</a></div></div>
-<div class="ttc" id="astruct_cmd_html_a8df32ebe09e03d38de8c20f6266611b4"><div class="ttname"><a href="struct_cmd.html#a8df32ebe09e03d38de8c20f6266611b4">Cmd::info</a></div><div class="ttdeci">const CmdInfo * info</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00164">cmd.h:164</a></div></div>
-<div class="ttc" id="astruct_cmd_info_html_a533a901273935ace5b3b91cd67ae69d5"><div class="ttname"><a href="struct_cmd_info.html#a533a901273935ace5b3b91cd67ae69d5">CmdInfo::args</a></div><div class="ttdeci">ArgsEn args</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00121">cmd.h:121</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="cmd_8h_source.html#l00121">CmdInfo::args</a>, <a class="el" href="cmd_8h_source.html#l00096">ArgsEn::imm_double</a>, <a class="el" href="cmd_8h_source.html#l00097">ArgsEn::imm_int</a>, <a class="el" href="cmd_8h_source.html#l00164">Cmd::info</a>, <a class="el" href="cmd_8h_source.html#l00099">ArgsEn::label</a>, and <a class="el" href="cmd_8h_source.html#l00095">ArgsEn::reg</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00081">asm_parse_and_write_line()</a>.</p>
-
-</div>
-</div>
-<a id="a00da7f949b97b55e9f01f701e69912c2" name="a00da7f949b97b55e9f01f701e69912c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00da7f949b97b55e9f01f701e69912c2">&#9670;&#160;</a></span>asm_throw_syntax_error()</h2>
+<a id="a9d85c05bc94b5a80c7d982e23eb1f788" name="a9d85c05bc94b5a80c7d982e23eb1f788"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d85c05bc94b5a80c7d982e23eb1f788">&#9670;&#160;</a></span>asm_throw_syntax_error()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -238,14 +128,14 @@ false </dd></dl>
         <tr>
           <td class="memname"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> asm_throw_syntax_error </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="struct_string.html">String</a>&#160;</td>
-          <td class="paramname"><em>token</em>, </td>
+          <td class="paramtype">const <a class="el" href="struct_asm.html">Asm</a> *&#160;</td>
+          <td class="paramname"><em>asm_data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="struct_asm_info.html">AsmInfo</a> *&#160;</td>
-          <td class="paramname"><em>file_info</em>, </td>
+          <td class="paramtype">const <a class="el" href="struct_asm_line.html">AsmLine</a> *&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -270,8 +160,8 @@ false </dd></dl>
 <p>Throws syntax error. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">token</td><td>current command token </td></tr>
-    <tr><td class="paramname">file_info</td><td></td></tr>
+    <tr><td class="paramname">asm_data</td><td></td></tr>
+    <tr><td class="paramname">line</td><td></td></tr>
     <tr><td class="paramname">err_msg</td><td></td></tr>
     <tr><td class="paramname">...</td><td></td></tr>
   </table>
@@ -281,53 +171,170 @@ false </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="errors_8cpp_source.html#l00003">3</a> of file <a class="el" href="errors_8cpp_source.html">errors.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    4</span>                                                                  {</div>
-<div class="line"><span class="lineno">    5</span>    assert(err_msg);</div>
-<div class="line"><span class="lineno">    6</span>    assert(asm_info-&gt;line.len == 0 || asm_info-&gt;line.str);</div>
-<div class="line"><span class="lineno">    7</span>    assert(         token.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a> == 0 ||          token.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>);</div>
-<div class="line"><span class="lineno">    8</span>    assert(asm_info-&gt;filename);</div>
-<div class="line"><span class="lineno">    9</span> </div>
-<div class="line"><span class="lineno">   10</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> token_begin = (token.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> == <span class="keyword">nullptr</span>) ? (<span class="keywordtype">int</span>)asm_info-&gt;line.len</div>
-<div class="line"><span class="lineno">   11</span>                                                   : (int)(token.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> - asm_info-&gt;line.str);</div>
-<div class="line"><span class="lineno">   12</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> token_end   = (token.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> == <span class="keyword">nullptr</span>) ? (<span class="keywordtype">int</span>)asm_info-&gt;line.len</div>
-<div class="line"><span class="lineno">   13</span>                                                   : (int)(token_begin + token.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a>);</div>
-<div class="line"><span class="lineno">   14</span> </div>
-<div class="line"><span class="lineno">   15</span>    fprintf(stderr, <a class="code hl_define" href="console_8h.html#a038ef7e954c5cdc42f96cabd07c56dec">CONSOLE_STYLE</a>(<a class="code hl_define" href="console_8h.html#a7ce3d6fee94f21c9e3d0ffdd90aadc2e">STYLE_BOLD</a>, <span class="stringliteral">&quot;%s:%zu:%d &quot;</span></div>
-<div class="line"><span class="lineno">   16</span>                                  <a class="code hl_define" href="console_8h.html#ad86358bf19927183dd7b4ae215a29731">COLOR_RED</a> <span class="stringliteral">&quot;syntax error: &quot;</span>), asm_info-&gt;filename,</div>
-<div class="line"><span class="lineno">   17</span>            asm_info-&gt;line_num, token_begin + 1);</div>
-<div class="line"><span class="lineno">   18</span> </div>
-<div class="line"><span class="lineno">   19</span>    va_list arg_list = {};</div>
-<div class="line"><span class="lineno">   20</span>    va_start(arg_list, err_msg);</div>
-<div class="line"><span class="lineno">   21</span>    vfprintf(stderr, err_msg, arg_list);</div>
-<div class="line"><span class="lineno">   22</span>    va_end(arg_list);</div>
-<div class="line"><span class="lineno">   23</span>    fprintf(stderr, <span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>    fprintf(stderr, <span class="stringliteral">&quot;%5zu | &quot;</span>, asm_info-&gt;line_num);</div>
+<div class="line"><span class="lineno">    5</span>    assert(asm_data);</div>
+<div class="line"><span class="lineno">    6</span>    assert(line);</div>
+<div class="line"><span class="lineno">    7</span>    assert(err_msg);</div>
+<div class="line"><span class="lineno">    8</span> </div>
+<div class="line"><span class="lineno">    9</span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_string.html">String</a> err_token = line-&gt;<a class="code hl_variable" href="struct_asm_line.html#a67847c1e073155eeea8d2b07137dc4c9">tokens</a>[line-&gt;<a class="code hl_variable" href="struct_asm_line.html#a67aa735131bb2889b9e1f384ec74b1a0">cur_token</a>];</div>
+<div class="line"><span class="lineno">   10</span> </div>
+<div class="line"><span class="lineno">   11</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> token_begin = (err_token.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> == <span class="keyword">nullptr</span>) ? (<span class="keywordtype">int</span>)line-&gt;<a class="code hl_variable" href="struct_asm_line.html#ad34cdcc2f2a00dfc673533ce096385cd">text</a>.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a></div>
+<div class="line"><span class="lineno">   12</span>                                                       : (int)(err_token.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> - line-&gt;<a class="code hl_variable" href="struct_asm_line.html#ad34cdcc2f2a00dfc673533ce096385cd">text</a>.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>);</div>
+<div class="line"><span class="lineno">   13</span> </div>
+<div class="line"><span class="lineno">   14</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> token_end   = (err_token.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> == <span class="keyword">nullptr</span>) ? (<span class="keywordtype">int</span>)line-&gt;<a class="code hl_variable" href="struct_asm_line.html#ad34cdcc2f2a00dfc673533ce096385cd">text</a>.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a></div>
+<div class="line"><span class="lineno">   15</span>                                                       : (int)(token_begin + err_token.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a>);</div>
+<div class="line"><span class="lineno">   16</span> </div>
+<div class="line"><span class="lineno">   17</span>    fprintf(stderr, <a class="code hl_define" href="console_8h.html#a038ef7e954c5cdc42f96cabd07c56dec">CONSOLE_STYLE</a>(<a class="code hl_define" href="console_8h.html#a7ce3d6fee94f21c9e3d0ffdd90aadc2e">STYLE_BOLD</a>, <span class="stringliteral">&quot;%s:%zu:%d &quot;</span></div>
+<div class="line"><span class="lineno">   18</span>                                  <a class="code hl_define" href="console_8h.html#ad86358bf19927183dd7b4ae215a29731">COLOR_RED</a> <span class="stringliteral">&quot;syntax error: &quot;</span>),</div>
+<div class="line"><span class="lineno">   19</span>                    asm_data-&gt;<a class="code hl_variable" href="struct_asm.html#af299118b6670c1973e6f6562483e17aa">files</a>.<a class="code hl_variable" href="struct_asm_files_info.html#a31e912db41e261f265e38f53d787f7a9">inp_name</a>, line-&gt;<a class="code hl_variable" href="struct_asm_line.html#a1efe4fc5f49367a3222c7f2de35bdf85">num</a>, token_begin + 1);</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    va_list arg_list = {};</div>
+<div class="line"><span class="lineno">   22</span>    va_start(arg_list, err_msg);</div>
+<div class="line"><span class="lineno">   23</span>    vfprintf(stderr, err_msg, arg_list);</div>
+<div class="line"><span class="lineno">   24</span>    va_end(arg_list);</div>
+<div class="line"><span class="lineno">   25</span>    fprintf(stderr, <span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>    fprintf(stderr, <span class="stringliteral">&quot;%.*s&quot;</span>, token_begin, asm_info-&gt;line.str);</div>
-<div class="line"><span class="lineno">   28</span>    fprintf(stderr, <a class="code hl_define" href="console_8h.html#a038ef7e954c5cdc42f96cabd07c56dec">CONSOLE_STYLE</a>(<a class="code hl_define" href="console_8h.html#a7ce3d6fee94f21c9e3d0ffdd90aadc2e">STYLE_BOLD</a> <a class="code hl_define" href="console_8h.html#ad86358bf19927183dd7b4ae215a29731">COLOR_RED</a>, <span class="stringliteral">&quot;%.*s&quot;</span>), <a class="code hl_define" href="text__lib_8h.html#a8bda955a9d6dede91b9f9319eb437476">String_PRINTF</a>(token));</div>
-<div class="line"><span class="lineno">   29</span>    fprintf(stderr, <span class="stringliteral">&quot;%.*s\n&quot;</span>, (<span class="keywordtype">int</span>)(asm_info-&gt;line.len - token_end),</div>
-<div class="line"><span class="lineno">   30</span>                                    asm_info-&gt;line.str + token_end);</div>
-<div class="line"><span class="lineno">   31</span> </div>
-<div class="line"><span class="lineno">   32</span>    fprintf(stderr, <span class="stringliteral">&quot;%5s | &quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><span class="lineno">   33</span> </div>
-<div class="line"><span class="lineno">   34</span>    fprintf(stderr, <span class="stringliteral">&quot;%*s&quot;</span>, token_begin, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><span class="lineno">   35</span>    fprintf(stderr, <a class="code hl_define" href="console_8h.html#ad86358bf19927183dd7b4ae215a29731">COLOR_RED</a> <a class="code hl_define" href="console_8h.html#a7ce3d6fee94f21c9e3d0ffdd90aadc2e">STYLE_BOLD</a> <span class="stringliteral">&quot;^&quot;</span>);</div>
-<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">for</span> (ssize_t i = 0; i &lt; token_end - token_begin - 1; i++)</div>
-<div class="line"><span class="lineno">   37</span>        fprintf(stderr, <span class="stringliteral">&quot;~&quot;</span>);</div>
-<div class="line"><span class="lineno">   38</span>    fprintf(stderr, <a class="code hl_define" href="console_8h.html#a0afe503629a0074b6d24bbce318f85f2">STYLE_RESET</a> <span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   39</span> </div>
-<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604cabb9ae17ad4d7d55ccce75d9d38d7926e">Status::SYNTAX_ERROR</a>;</div>
-<div class="line"><span class="lineno">   41</span>}</div>
+<div class="line"><span class="lineno">   27</span>    fprintf(stderr, <span class="stringliteral">&quot;%5zu | &quot;</span>, line-&gt;<a class="code hl_variable" href="struct_asm_line.html#a1efe4fc5f49367a3222c7f2de35bdf85">num</a>);</div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    fprintf(stderr, <span class="stringliteral">&quot;%.*s&quot;</span>, token_begin, line-&gt;<a class="code hl_variable" href="struct_asm_line.html#ad34cdcc2f2a00dfc673533ce096385cd">text</a>.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>);</div>
+<div class="line"><span class="lineno">   30</span>    fprintf(stderr, <a class="code hl_define" href="console_8h.html#a038ef7e954c5cdc42f96cabd07c56dec">CONSOLE_STYLE</a>(<a class="code hl_define" href="console_8h.html#a7ce3d6fee94f21c9e3d0ffdd90aadc2e">STYLE_BOLD</a> <a class="code hl_define" href="console_8h.html#ad86358bf19927183dd7b4ae215a29731">COLOR_RED</a>, <span class="stringliteral">&quot;%.*s&quot;</span>), <a class="code hl_define" href="text__lib_8h.html#a8bda955a9d6dede91b9f9319eb437476">String_PRINTF</a>(err_token));</div>
+<div class="line"><span class="lineno">   31</span>    fprintf(stderr, <span class="stringliteral">&quot;%.*s\n&quot;</span>, (<span class="keywordtype">int</span>)(line-&gt;<a class="code hl_variable" href="struct_asm_line.html#ad34cdcc2f2a00dfc673533ce096385cd">text</a>.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a> - token_end), line-&gt;<a class="code hl_variable" href="struct_asm_line.html#ad34cdcc2f2a00dfc673533ce096385cd">text</a>.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> + token_end);</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    fprintf(stderr, <span class="stringliteral">&quot;%5s | &quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    fprintf(stderr, <span class="stringliteral">&quot;%*s&quot;</span>, token_begin, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><span class="lineno">   36</span>    fprintf(stderr, <a class="code hl_define" href="console_8h.html#ad86358bf19927183dd7b4ae215a29731">COLOR_RED</a> <a class="code hl_define" href="console_8h.html#a7ce3d6fee94f21c9e3d0ffdd90aadc2e">STYLE_BOLD</a> <span class="stringliteral">&quot;^&quot;</span>);</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">for</span> (ssize_t i = 0; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> &lt; token_end - token_begin - 1; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>++)</div>
+<div class="line"><span class="lineno">   38</span>        fprintf(stderr, <span class="stringliteral">&quot;~&quot;</span>);</div>
+<div class="line"><span class="lineno">   39</span>    fprintf(stderr, <a class="code hl_define" href="console_8h.html#a0afe503629a0074b6d24bbce318f85f2">STYLE_RESET</a> <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604cabb9ae17ad4d7d55ccce75d9d38d7926e">Status::SYNTAX_ERROR</a>;</div>
+<div class="line"><span class="lineno">   42</span>}</div>
 <div class="ttc" id="aconsole_8h_html_a038ef7e954c5cdc42f96cabd07c56dec"><div class="ttname"><a href="console_8h.html#a038ef7e954c5cdc42f96cabd07c56dec">CONSOLE_STYLE</a></div><div class="ttdeci">#define CONSOLE_STYLE(style, str)</div><div class="ttdef"><b>Definition</b> <a href="console_8h_source.html#l00036">console.h:36</a></div></div>
 <div class="ttc" id="aconsole_8h_html_a0afe503629a0074b6d24bbce318f85f2"><div class="ttname"><a href="console_8h.html#a0afe503629a0074b6d24bbce318f85f2">STYLE_RESET</a></div><div class="ttdeci">#define STYLE_RESET</div><div class="ttdef"><b>Definition</b> <a href="console_8h_source.html#l00005">console.h:5</a></div></div>
 <div class="ttc" id="aconsole_8h_html_a7ce3d6fee94f21c9e3d0ffdd90aadc2e"><div class="ttname"><a href="console_8h.html#a7ce3d6fee94f21c9e3d0ffdd90aadc2e">STYLE_BOLD</a></div><div class="ttdeci">#define STYLE_BOLD</div><div class="ttdef"><b>Definition</b> <a href="console_8h_source.html#l00008">console.h:8</a></div></div>
 <div class="ttc" id="aconsole_8h_html_ad86358bf19927183dd7b4ae215a29731"><div class="ttname"><a href="console_8h.html#ad86358bf19927183dd7b4ae215a29731">COLOR_RED</a></div><div class="ttdeci">#define COLOR_RED</div><div class="ttdef"><b>Definition</b> <a href="console_8h_source.html#l00018">console.h:18</a></div></div>
+<div class="ttc" id="anamespacegen_html_ad6f9a21fef823e19e8e49589645c58ba"><div class="ttname"><a href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">gen.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition</b> <a href="gen_8py_source.html#l00027">gen.py:27</a></div></div>
+<div class="ttc" id="astruct_asm_files_info_html_a31e912db41e261f265e38f53d787f7a9"><div class="ttname"><a href="struct_asm_files_info.html#a31e912db41e261f265e38f53d787f7a9">AsmFilesInfo::inp_name</a></div><div class="ttdeci">const char * inp_name</div><div class="ttdef"><b>Definition</b> <a href="asm_8h_source.html#l00036">asm.h:36</a></div></div>
+<div class="ttc" id="astruct_asm_html_af299118b6670c1973e6f6562483e17aa"><div class="ttname"><a href="struct_asm.html#af299118b6670c1973e6f6562483e17aa">Asm::files</a></div><div class="ttdeci">AsmFilesInfo files</div><div class="ttdef"><b>Definition</b> <a href="asm_8h_source.html#l00056">asm.h:56</a></div></div>
+<div class="ttc" id="astruct_asm_line_html_a1efe4fc5f49367a3222c7f2de35bdf85"><div class="ttname"><a href="struct_asm_line.html#a1efe4fc5f49367a3222c7f2de35bdf85">AsmLine::num</a></div><div class="ttdeci">size_t num</div><div class="ttdef"><b>Definition</b> <a href="asm_8h_source.html#l00023">asm.h:23</a></div></div>
+<div class="ttc" id="astruct_asm_line_html_a67847c1e073155eeea8d2b07137dc4c9"><div class="ttname"><a href="struct_asm_line.html#a67847c1e073155eeea8d2b07137dc4c9">AsmLine::tokens</a></div><div class="ttdeci">String tokens[MAX_LINE_LEN+1]</div><div class="ttdef"><b>Definition</b> <a href="asm_8h_source.html#l00027">asm.h:27</a></div></div>
+<div class="ttc" id="astruct_asm_line_html_a67aa735131bb2889b9e1f384ec74b1a0"><div class="ttname"><a href="struct_asm_line.html#a67aa735131bb2889b9e1f384ec74b1a0">AsmLine::cur_token</a></div><div class="ttdeci">size_t cur_token</div><div class="ttdef"><b>Definition</b> <a href="asm_8h_source.html#l00028">asm.h:28</a></div></div>
+<div class="ttc" id="astruct_asm_line_html_ad34cdcc2f2a00dfc673533ce096385cd"><div class="ttname"><a href="struct_asm_line.html#ad34cdcc2f2a00dfc673533ce096385cd">AsmLine::text</a></div><div class="ttdeci">String text</div><div class="ttdef"><b>Definition</b> <a href="asm_8h_source.html#l00022">asm.h:22</a></div></div>
 <div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604cabb9ae17ad4d7d55ccce75d9d38d7926e"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604cabb9ae17ad4d7d55ccce75d9d38d7926e">Status::SYNTAX_ERROR</a></div><div class="ttdeci">@ SYNTAX_ERROR</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00019">statuses.h:19</a></div></div>
+<div class="ttc" id="astruct_string_html"><div class="ttname"><a href="struct_string.html">String</a></div><div class="ttdoc">Struct to keep string and len together.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00022">text_lib.h:22</a></div></div>
 <div class="ttc" id="astruct_string_html_a7028cb0053f3138200b398a23ad2f2b8"><div class="ttname"><a href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">String::str</a></div><div class="ttdeci">char * str</div><div class="ttdoc">string</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00023">text_lib.h:23</a></div></div>
 <div class="ttc" id="astruct_string_html_a7fe1a0ef5b6253becac99444295dab0e"><div class="ttname"><a href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">String::len</a></div><div class="ttdeci">ssize_t len</div><div class="ttdoc">string len</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00024">text_lib.h:24</a></div></div>
-<div class="ttc" id="atext__lib_8h_html_a8bda955a9d6dede91b9f9319eb437476"><div class="ttname"><a href="text__lib_8h.html#a8bda955a9d6dede91b9f9319eb437476">String_PRINTF</a></div><div class="ttdeci">#define String_PRINTF(str_)</div><div class="ttdoc">Macros for printing String (specifier &quot;%.*s&quot;)</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00043">text_lib.h:43</a></div></div>
+<div class="ttc" id="atext__lib_8h_html_a8bda955a9d6dede91b9f9319eb437476"><div class="ttname"><a href="text__lib_8h.html#a8bda955a9d6dede91b9f9319eb437476">String_PRINTF</a></div><div class="ttdeci">#define String_PRINTF(str_)</div><div class="ttdoc">Macros for printing String (specifier &quot;%.*s&quot;)</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00046">text_lib.h:46</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="console_8h_source.html#l00018">COLOR_RED</a>, <a class="el" href="console_8h_source.html#l00036">CONSOLE_STYLE</a>, <a class="el" href="errors_8h_source.html#l00021">AsmInfo::filename</a>, <a class="el" href="text__lib_8h_source.html#l00024">String::len</a>, <a class="el" href="errors_8h_source.html#l00018">AsmInfo::line</a>, <a class="el" href="errors_8h_source.html#l00019">AsmInfo::line_num</a>, <a class="el" href="text__lib_8h_source.html#l00023">String::str</a>, <a class="el" href="text__lib_8h_source.html#l00043">String_PRINTF</a>, <a class="el" href="console_8h_source.html#l00008">STYLE_BOLD</a>, <a class="el" href="console_8h_source.html#l00005">STYLE_RESET</a>, and <a class="el" href="statuses_8h_source.html#l00019">Status::SYNTAX_ERROR</a>.</p>
+<p class="reference">References <a class="el" href="console_8h_source.html#l00018">COLOR_RED</a>, <a class="el" href="console_8h_source.html#l00036">CONSOLE_STYLE</a>, <a class="el" href="asm_8h_source.html#l00028">AsmLine::cur_token</a>, <a class="el" href="asm_8h_source.html#l00056">Asm::files</a>, <a class="el" href="asm_8h_source.html#l00036">AsmFilesInfo::inp_name</a>, <a class="el" href="text__lib_8h_source.html#l00024">String::len</a>, <a class="el" href="asm_8h_source.html#l00023">AsmLine::num</a>, <a class="el" href="text__lib_8h_source.html#l00023">String::str</a>, <a class="el" href="text__lib_8h_source.html#l00046">String_PRINTF</a>, <a class="el" href="console_8h_source.html#l00008">STYLE_BOLD</a>, <a class="el" href="console_8h_source.html#l00005">STYLE_RESET</a>, <a class="el" href="statuses_8h_source.html#l00019">Status::SYNTAX_ERROR</a>, <a class="el" href="asm_8h_source.html#l00022">AsmLine::text</a>, and <a class="el" href="asm_8h_source.html#l00027">AsmLine::tokens</a>.</p>
+
+</div>
+</div>
+<a id="a7b53cc878ef6fb13e2c43e75cb209e15" name="a7b53cc878ef6fb13e2c43e75cb209e15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b53cc878ef6fb13e2c43e75cb209e15">&#9670;&#160;</a></span>cmd_is_any_arg_given()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cmd_is_any_arg_given </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_cmd.html">Cmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if at least one argument was given to a function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cmd</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="errors_8h_source.html#l00066">66</a> of file <a class="el" href="errors_8h_source.html">errors.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>                                                 {</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">return</span> cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#a2520ae7bb6f891ca6ff62dd0f882a1f4">imm_int</a> || cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#a5b1fdf0614537d3c515c99ce945906fa">imm_double</a> || cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#a76f64f02295d9a30abdaf138ea275f6a">reg</a>; <span class="comment">//&lt; ram check is not needed</span></div>
+<div class="line"><span class="lineno">   68</span>}</div>
+<div class="ttc" id="astruct_cmd_html_a0a38a0e6be202854d97c4637280f5914"><div class="ttname"><a href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">Cmd::keys</a></div><div class="ttdeci">CmdKeys keys</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00177">cmd.h:177</a></div></div>
+<div class="ttc" id="astruct_cmd_keys_html_a2520ae7bb6f891ca6ff62dd0f882a1f4"><div class="ttname"><a href="struct_cmd_keys.html#a2520ae7bb6f891ca6ff62dd0f882a1f4">CmdKeys::imm_int</a></div><div class="ttdeci">bool imm_int</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00032">cmd.h:32</a></div></div>
+<div class="ttc" id="astruct_cmd_keys_html_a5b1fdf0614537d3c515c99ce945906fa"><div class="ttname"><a href="struct_cmd_keys.html#a5b1fdf0614537d3c515c99ce945906fa">CmdKeys::imm_double</a></div><div class="ttdeci">bool imm_double</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00031">cmd.h:31</a></div></div>
+<div class="ttc" id="astruct_cmd_keys_html_a76f64f02295d9a30abdaf138ea275f6a"><div class="ttname"><a href="struct_cmd_keys.html#a76f64f02295d9a30abdaf138ea275f6a">CmdKeys::reg</a></div><div class="ttdeci">bool reg</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00030">cmd.h:30</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="cmd_8h_source.html#l00031">CmdKeys::imm_double</a>, <a class="el" href="cmd_8h_source.html#l00032">CmdKeys::imm_int</a>, <a class="el" href="cmd_8h_source.html#l00177">Cmd::keys</a>, and <a class="el" href="cmd_8h_source.html#l00030">CmdKeys::reg</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00056">asm_parse_and_write_line()</a>, and <a class="el" href="listing_8cpp_source.html#l00006">asm_write_cmd_listing()</a>.</p>
+
+</div>
+</div>
+<a id="a1517a2d0c4941ea85b0041c8773c1206" name="a1517a2d0c4941ea85b0041c8773c1206"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1517a2d0c4941ea85b0041c8773c1206">&#9670;&#160;</a></span>cmd_is_arg_required()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cmd_is_arg_required </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_cmd.html">Cmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if cmd requires at least one argument. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cmd</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="errors_8h_source.html#l00049">49</a> of file <a class="el" href="errors_8h_source.html">errors.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>                                                {</div>
+<div class="line"><span class="lineno">   50</span>    assert(cmd);</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a8df32ebe09e03d38de8c20f6266611b4">info</a> == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">return</span> cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a8df32ebe09e03d38de8c20f6266611b4">info</a>-&gt;<a class="code hl_variable" href="struct_cmd_info.html#a9e4e9b8b68b1772fa4d9ee80fbb5099f">is_args</a>.<a class="code hl_variable" href="struct_args_enabled.html#a96027f965c55af247b8313e6f098307c">label</a> || cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a8df32ebe09e03d38de8c20f6266611b4">info</a>-&gt;<a class="code hl_variable" href="struct_cmd_info.html#a9e4e9b8b68b1772fa4d9ee80fbb5099f">is_args</a>.<a class="code hl_variable" href="struct_args_enabled.html#ae373f292dd5feae2be1e0be4e67c2caf">imm_int</a> || cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a8df32ebe09e03d38de8c20f6266611b4">info</a>-&gt;<a class="code hl_variable" href="struct_cmd_info.html#a9e4e9b8b68b1772fa4d9ee80fbb5099f">is_args</a>.<a class="code hl_variable" href="struct_args_enabled.html#a266e550727b46a1e3e73e87e400b0e62">imm_double</a></div>
+<div class="line"><span class="lineno">   56</span>        || cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a8df32ebe09e03d38de8c20f6266611b4">info</a>-&gt;<a class="code hl_variable" href="struct_cmd_info.html#a9e4e9b8b68b1772fa4d9ee80fbb5099f">is_args</a>.<a class="code hl_variable" href="struct_args_enabled.html#acb0f1764ed613b7d6c32f90e5173f0ac">reg</a>; <span class="comment">//&lt; ram check is not needed</span></div>
+<div class="line"><span class="lineno">   57</span>}</div>
+<div class="ttc" id="astruct_args_enabled_html_a266e550727b46a1e3e73e87e400b0e62"><div class="ttname"><a href="struct_args_enabled.html#a266e550727b46a1e3e73e87e400b0e62">ArgsEnabled::imm_double</a></div><div class="ttdeci">bool imm_double</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00097">cmd.h:97</a></div></div>
+<div class="ttc" id="astruct_args_enabled_html_a96027f965c55af247b8313e6f098307c"><div class="ttname"><a href="struct_args_enabled.html#a96027f965c55af247b8313e6f098307c">ArgsEnabled::label</a></div><div class="ttdeci">bool label</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00100">cmd.h:100</a></div></div>
+<div class="ttc" id="astruct_args_enabled_html_acb0f1764ed613b7d6c32f90e5173f0ac"><div class="ttname"><a href="struct_args_enabled.html#acb0f1764ed613b7d6c32f90e5173f0ac">ArgsEnabled::reg</a></div><div class="ttdeci">bool reg</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00096">cmd.h:96</a></div></div>
+<div class="ttc" id="astruct_args_enabled_html_ae373f292dd5feae2be1e0be4e67c2caf"><div class="ttname"><a href="struct_args_enabled.html#ae373f292dd5feae2be1e0be4e67c2caf">ArgsEnabled::imm_int</a></div><div class="ttdeci">bool imm_int</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00098">cmd.h:98</a></div></div>
+<div class="ttc" id="astruct_cmd_html_a8df32ebe09e03d38de8c20f6266611b4"><div class="ttname"><a href="struct_cmd.html#a8df32ebe09e03d38de8c20f6266611b4">Cmd::info</a></div><div class="ttdeci">const CmdInfo * info</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00175">cmd.h:175</a></div></div>
+<div class="ttc" id="astruct_cmd_info_html_a9e4e9b8b68b1772fa4d9ee80fbb5099f"><div class="ttname"><a href="struct_cmd_info.html#a9e4e9b8b68b1772fa4d9ee80fbb5099f">CmdInfo::is_args</a></div><div class="ttdeci">ArgsEnabled is_args</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00134">cmd.h:134</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="cmd_8h_source.html#l00097">ArgsEnabled::imm_double</a>, <a class="el" href="cmd_8h_source.html#l00098">ArgsEnabled::imm_int</a>, <a class="el" href="cmd_8h_source.html#l00175">Cmd::info</a>, <a class="el" href="cmd_8h_source.html#l00134">CmdInfo::is_args</a>, <a class="el" href="cmd_8h_source.html#l00100">ArgsEnabled::label</a>, and <a class="el" href="cmd_8h_source.html#l00096">ArgsEnabled::reg</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00056">asm_parse_and_write_line()</a>.</p>
 
 </div>
 </div>

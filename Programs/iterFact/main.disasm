@@ -1,0 +1,17 @@
+;Signature: KU
+;Version: 1
+push 1.000000                                     ;addr = 0004
+pop rax                                           ;addr = 0014
+push 1.000000                                     ;addr = 0017
+in                                                ;addr = 0027
+pop rcx                                           ;addr = 0029
+push rax                                          ;addr = 0032
+push rcx                                          ;addr = 0035
+ja 77                                             ;addr = 0038
+push rax                                          ;addr = 0048
+mul                                               ;addr = 0051
+push rax+1.000000                                 ;addr = 0053
+pop rax                                           ;addr = 0064
+jmp 32                                            ;addr = 0067
+out                                               ;addr = 0077
+hlt                                               ;addr = 0079

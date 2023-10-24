@@ -45,23 +45,17 @@ void SpuData::dump() {
     fflush(stdout);
 }
 
-#define THROW_RUNTIME_ERROR_(text)  do {                                                    \
-            fprintf(stderr, CONSOLE_RED("Runtime error occured. " text) " Byte %zu\n", ip); \
-            return Status::RUNTIME_ERROR;                                                   \
+#define THROW_RUNTIME_ERROR_(text)  do {                                  \
+            fprintf(stderr, CONSOLE_RED("Runtime error occured. " text)); \
+            return Status::RUNTIME_ERROR;                                 \
         } while(0)
 
-#define DATA_GET_VAL_(dest, val_t)  do {                                                \
-                                        memcpy(&dest, data + cur_byte, sizeof(val_t));  \
-                                        cur_byte += sizeof(val_t);                      \
-                                    } while(0)
-
-Status::Statuses spu_parse(const char* data, const size_t size) {
+Status::Statuses spu_parse_and_execute(const char* data) {
     assert(data);
 
     size_t cur_byte = sizeof(FILE_HEADER);
-    size_t ip = cur_byte;                   //< instruction pointer
 
-    if (size < sizeof(FILE_HEADER) || !((const FileHeader*) data)->check()) {
+    if (!((const FileHeader*) data)->check()) {
         THROW_RUNTIME_ERROR_("Invalid or corrupted file.");
         return Status::SIGNATURE_ERROR;
     }
@@ -69,89 +63,92 @@ Status::Statuses spu_parse(const char* data, const size_t size) {
     SpuData spu = {};
     STATUS_CHECK(spu.ctor());
 
-    Cmd cmd = {};
+    STATUS_CHECK(spu_execute(&spu, data, &cur_byte), spu.dtor());
 
-    while (cur_byte + sizeof(cmd.keys) <= size) {
-        DATA_GET_VAL_(cmd.keys, CmdKeys);
-
-        cmd.info = find_command_by_num(cmd.keys.num);
-
-        if (cmd.info == nullptr)
-            THROW_RUNTIME_ERROR_("Invalid command.");
-
-        if (cur_byte + cmd.size() - sizeof(cmd.keys) > size) {
-            stk_dtor(&spu.stk);
-
-            THROW_RUNTIME_ERROR_("Arguments not found.");
-        }
-
-        if (cmd.keys.reg)
-            DATA_GET_VAL_(cmd.args.reg, RegNum_t);
-
-        if (cmd.keys.imm_double)
-            DATA_GET_VAL_(cmd.args.imm_double, Imm_double_t);
-
-        if (cmd.keys.imm_int)
-            DATA_GET_VAL_(cmd.args.imm_int, Imm_int_t);
-
-        Status::Statuses res = spu_execute_command(&spu, &cmd, &cur_byte, ip);
-        if (res != Status::NORMAL_WORK) {
-            stk_dtor(&spu.stk);
-            return res;
-        }
-
-        cmd = {};
-        ip = cur_byte;
-    }
-
-    spu.dtor();
-
-    THROW_RUNTIME_ERROR_("Program has no halt!");
+    STATUS_CHECK(spu.dtor());
 
     return Status::NORMAL_WORK;
 }
-#undef DATA_GET_VAL_
+
 #undef THROW_RUNTIME_ERROR_
+
+#define DATA_GET_VAL_(dest, val_t)  do {                                                \
+                                        memcpy(&dest, data + *cur_byte, sizeof(val_t)); \
+                                        *cur_byte += sizeof(val_t);                     \
+                                    } while(0)
+
+Cmd spu_read_cmd(const char* data, size_t *cur_byte) {
+    assert(data);
+    assert(cur_byte);
+
+    Cmd cmd = {};
+
+    DATA_GET_VAL_(cmd.keys, CmdKeys);
+
+    if (cmd.keys.reg)
+        DATA_GET_VAL_(cmd.args.reg, RegNum_t);
+
+    if (cmd.keys.imm_double)
+        DATA_GET_VAL_(cmd.args.imm_double, Imm_double_t);
+
+    if (cmd.keys.imm_int)
+        DATA_GET_VAL_(cmd.args.imm_int, Imm_int_t);
+
+    return cmd;
+}
+
+#undef DATA_GET_VAL_
 
 
 
 #include "spu_dsl.h"
 
-#define THROW_RUNTIME_ERROR_(text)  do {                                                    \
-            fprintf(stderr, CONSOLE_RED("Runtime error occured. " text) " Byte %zu\n", ip); \
-            return Status::RUNTIME_ERROR;                                                   \
+#define THROW_RUNTIME_ERROR_(...)  do {                                                        \
+            fprintf(stderr, CONSOLE_RED("Runtime error occured. ") __VA_ARGS__);    \
+            fprintf(stderr, " Byte %zu\n", *cur_byte - cmd.size());\
+            return Status::RUNTIME_ERROR;                                                       \
         } while(0)
 
-Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, size_t* cur_byte,
-                                     const size_t ip) {
+Status::Statuses spu_execute(SpuData* spu, const char* data, size_t* cur_byte) {
     assert(spu);
-    assert(cmd);
     assert(cur_byte);
 
     int stk_res = Stack::OK;
 
-    switch (cmd->info->num) {
-        #define DEF_CMD(name, num, args, descr, ...)    \
-            case CMD_##name:                            \
-                __VA_ARGS__                             \
-                break;
+    Cmd cmd = {};
 
-        #include "cmd_dict.h"
+    static void* dispatch_table[] = {
+                                     #include "cmd_dispatch_table/table.h"
+                                                                          };
 
-        #undef DEF_CMD
+    #define DISPATCH()                      \
+        cmd = spu_read_cmd(data, cur_byte); \
+        goto *dispatch_table[cmd.keys.num]
 
-        default:
-            assert(0 && "Wrong command num given");
-            break;
-    }
 
-    if (stk_res != Stack::OK) {
-        fprintf(stderr, CONSOLE_RED("Runtime error occured!") " Stack error. Byte %zu\n", ip);
-        stk_print_error_to_user(stk_res);
-        return Status::RUNTIME_ERROR;
-    }
+    DISPATCH();
 
-    return Status::NORMAL_WORK;
+    // Dispatch table labels:
+    #define DEF_CMD(name, num, args, descr, ...)    \
+        cmd_dispatch_do_##name:                     \
+            __VA_ARGS__                             \
+            DISPATCH();
+
+    #include "cmd_dict.h"
+
+    #undef DEF_CMD
+    #undef DISPATCH
+    // Dispatch table end
+
+
+    cmd_dispatch_do_stk_error:
+    fprintf(stderr, CONSOLE_RED("Runtime error occured!") " Stack error. Byte %zu\n",
+                                                                        *cur_byte - cmd.size());
+    stk_print_error_to_user(stk_res);
+    return Status::RUNTIME_ERROR;
+
+    cmd_dispatch_do_error:
+    THROW_RUNTIME_ERROR_("Invalid command number %d.", cmd.keys.num);
 }
 #undef THROW_RUNTIME_ERROR_
 

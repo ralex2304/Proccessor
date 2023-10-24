@@ -3,7 +3,7 @@ var cmd_8h =
     [ "CmdKeys", "struct_cmd_keys.html", "struct_cmd_keys" ],
     [ "RegInfo", "struct_reg_info.html", "struct_reg_info" ],
     [ "CmdArgs", "struct_cmd_args.html", "struct_cmd_args" ],
-    [ "ArgsEn", "struct_args_en.html", "struct_args_en" ],
+    [ "ArgsEnabled", "struct_args_enabled.html", "struct_args_enabled" ],
     [ "CmdInfo", "struct_cmd_info.html", "struct_cmd_info" ],
     [ "FileHeader", "struct_file_header.html", "struct_file_header" ],
     [ "Cmd", "struct_cmd.html", "struct_cmd" ],
@@ -17,6 +17,14 @@ var cmd_8h =
     [ "Imm_double_t", "cmd_8h.html#addb7662d7e0f3483a216a3d4c2203811", null ],
     [ "Imm_int_t", "cmd_8h.html#a226f97678592b90d02bed2f62edf55c6", null ],
     [ "RegNum_t", "cmd_8h.html#a428ff6e9ffc07d578a8a207c72dc3366", null ],
+    [ "ArgsEnabledOptions", "cmd_8h.html#aa1f1249e7a2b85ca4b20b9dd072a562e", [
+      [ "ARG_NONE", "cmd_8h.html#aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9", null ],
+      [ "ARG_REG", "cmd_8h.html#aa1f1249e7a2b85ca4b20b9dd072a562eaa83fa4e7446075f16d1e219b5584cef4", null ],
+      [ "ARG_IMM_DOUBLE", "cmd_8h.html#aa1f1249e7a2b85ca4b20b9dd072a562ea715f2c64adb5198339a7050ae7849b39", null ],
+      [ "ARG_IMM_INT", "cmd_8h.html#aa1f1249e7a2b85ca4b20b9dd072a562ea4e6a17812a71c8757e0adb5b9d664c94", null ],
+      [ "ARG_RAM", "cmd_8h.html#aa1f1249e7a2b85ca4b20b9dd072a562ea9c7e521f91058471f6ff30e0f755d2bd", null ],
+      [ "ARG_LABEL", "cmd_8h.html#aa1f1249e7a2b85ca4b20b9dd072a562eafaec295d1133fe7eb6d88fc828fa4d86", null ]
+    ] ],
     [ "CmdNum", "cmd_8h.html#a797039060eebcda99793fb7f223a0b14", null ],
     [ "RegNums", "cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64", [
       [ "RAX", "cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64ad8a2b3cfd37dc1215cf782d326e5186c", null ],
@@ -29,6 +37,7 @@ var cmd_8h =
     [ "find_reg_by_name", "cmd_8h.html#abd1dd6c1800194955343388311c50e9e", null ],
     [ "find_reg_by_num", "cmd_8h.html#a1f8806cd553fbea836faef7a35f6cb97", null ],
     [ "CMD_BYTE_NUM_BIT_MASK", "cmd_8h.html#a2199b74094b7063794c4ce9e639726d6", null ],
+    [ "CMD_MAX_NUM", "cmd_8h.html#a7ee2fb12d944c9a77c0867c2628dd893", null ],
     [ "CMD_VERSION", "cmd_8h.html#ac6fd8a0b61158e50a7d52538ba0e5be9", null ],
     [ "CMDS_DICT", "cmd_8h.html#a4fe71afcf45e14656ccefffff4cae444", null ],
     [ "CMDS_DICT_SIZE", "cmd_8h.html#aeb56c6b7cc2375d32bf528f71e8d34a0", null ],

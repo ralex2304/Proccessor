@@ -12,7 +12,7 @@ dmp
 out
 ;print
 out
-jmp rcx+label
+
 exit:
 HLT
 

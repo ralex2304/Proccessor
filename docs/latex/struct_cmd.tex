@@ -28,7 +28,7 @@ const \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} \
 \doxysubsection{Detailed Description}
 Command data structure. 
 
-Definition at line \mbox{\hyperlink{cmd_8h_source_l00163}{163}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00174}{174}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
 
 
 
@@ -47,19 +47,19 @@ Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00021}{21}} of file \mbox{\
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_cmd_a0a38a0e6be202854d97c4637280f5914}{keys}})}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{struct_cmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{struct_cmd_keys_a76f64f02295d9a30abdaf138ea275f6a}{reg}}\ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a49949ad6edf5cb3523025913f2c0adc5}{reg}})}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{struct_cmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{struct_cmd_keys_a2520ae7bb6f891ca6ff62dd0f882a1f4}{imm\_int}}\ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a7280dbc4d3d9bee564f6815e969bdd07}{imm\_int}})}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{struct_cmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{struct_cmd_keys_a76f64f02295d9a30abdaf138ea275f6a}{reg}}\ \ \ \ \ \ \ \ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a49949ad6edf5cb3523025913f2c0adc5}{reg}})}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{struct_cmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{struct_cmd_keys_a2520ae7bb6f891ca6ff62dd0f882a1f4}{imm\_int}}\ \ \ \ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a7280dbc4d3d9bee564f6815e969bdd07}{imm\_int}})}
 \DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{struct_cmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{struct_cmd_keys_a5b1fdf0614537d3c515c99ce945906fa}{imm\_double}}\ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_af4f115f325b0b1e91f03bea48354fa82}{imm\_double}});}
 \DoxyCodeLine{00026\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{cmd_8h_source_l00167}{args}}, \mbox{\hyperlink{cmd_8h_source_l00029}{Cmd\+Keys\+::imm\+\_\+double}}, \mbox{\hyperlink{cmd_8h_source_l00085}{Cmd\+Args\+::imm\+\_\+double}}, \mbox{\hyperlink{cmd_8h_source_l00030}{Cmd\+Keys\+::imm\+\_\+int}}, \mbox{\hyperlink{cmd_8h_source_l00087}{Cmd\+Args\+::imm\+\_\+int}}, \mbox{\hyperlink{cmd_8h_source_l00166}{keys}}, \mbox{\hyperlink{cmd_8h_source_l00028}{Cmd\+Keys\+::reg}}, and \mbox{\hyperlink{cmd_8h_source_l00086}{Cmd\+Args\+::reg}}.
+References \mbox{\hyperlink{cmd_8h_source_l00178}{args}}, \mbox{\hyperlink{cmd_8h_source_l00031}{Cmd\+Keys\+::imm\+\_\+double}}, \mbox{\hyperlink{cmd_8h_source_l00087}{Cmd\+Args\+::imm\+\_\+double}}, \mbox{\hyperlink{cmd_8h_source_l00032}{Cmd\+Keys\+::imm\+\_\+int}}, \mbox{\hyperlink{cmd_8h_source_l00089}{Cmd\+Args\+::imm\+\_\+int}}, \mbox{\hyperlink{cmd_8h_source_l00177}{keys}}, \mbox{\hyperlink{cmd_8h_source_l00030}{Cmd\+Keys\+::reg}}, and \mbox{\hyperlink{cmd_8h_source_l00088}{Cmd\+Args\+::reg}}.
 
 
 
-Referenced by \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, and \mbox{\hyperlink{spu_8cpp_source_l00058}{spu\+\_\+parse()}}.
+Referenced by \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, and \mbox{\hyperlink{spu_8cpp_source_l00112}{spu\+\_\+execute()}}.
 
 
 
@@ -72,11 +72,11 @@ Referenced by \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+pars
 
 
 
-Definition at line \mbox{\hyperlink{cmd_8h_source_l00167}{167}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00178}{178}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
 
 
 
-Referenced by \mbox{\hyperlink{write_8h_source_l00058}{asm\+\_\+calc\+\_\+cmd\+\_\+size()}}, \mbox{\hyperlink{listing_8h_source_l00051}{asm\+\_\+listing\+\_\+calc\+\_\+tab()}}, \mbox{\hyperlink{read_8cpp_source_l00111}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, \mbox{\hyperlink{read_8cpp_source_l00087}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}, \mbox{\hyperlink{read_8cpp_source_l00135}{asm\+\_\+read\+\_\+arg\+\_\+label()}}, \mbox{\hyperlink{read_8cpp_source_l00059}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}, \mbox{\hyperlink{write_8cpp_source_l00022}{asm\+\_\+write\+\_\+cmd\+\_\+bin()}}, \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, \mbox{\hyperlink{cmd_8cpp_source_l00021}{size()}}, and \mbox{\hyperlink{spu_8cpp_source_l00058}{spu\+\_\+parse()}}.
+Referenced by \mbox{\hyperlink{write_8h_source_l00057}{asm\+\_\+calc\+\_\+cmd\+\_\+size()}}, \mbox{\hyperlink{read_8cpp_source_l00143}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, \mbox{\hyperlink{read_8cpp_source_l00118}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}, \mbox{\hyperlink{read_8cpp_source_l00168}{asm\+\_\+read\+\_\+arg\+\_\+label()}}, \mbox{\hyperlink{read_8cpp_source_l00087}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}, \mbox{\hyperlink{write_8cpp_source_l00025}{asm\+\_\+write\+\_\+cmd\+\_\+bin()}}, \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{listing_8h_source_l00048}{cmd\+\_\+listing\+\_\+calc\+\_\+tab()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, \mbox{\hyperlink{cmd_8cpp_source_l00021}{size()}}, and \mbox{\hyperlink{spu_8cpp_source_l00080}{spu\+\_\+read\+\_\+cmd()}}.
 
 \Hypertarget{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}\label{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4} 
 \index{Cmd@{Cmd}!info@{info}}
@@ -86,11 +86,11 @@ Referenced by \mbox{\hyperlink{write_8h_source_l00058}{asm\+\_\+calc\+\_\+cmd\+\
 
 
 
-Definition at line \mbox{\hyperlink{cmd_8h_source_l00164}{164}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00175}{175}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
 
 
 
-Referenced by \mbox{\hyperlink{errors_8h_source_l00044}{asm\+\_\+is\+\_\+arg\+\_\+required()}}, \mbox{\hyperlink{assembler_8cpp_source_l00081}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}, \mbox{\hyperlink{read_8cpp_source_l00111}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, \mbox{\hyperlink{read_8cpp_source_l00087}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}, \mbox{\hyperlink{read_8cpp_source_l00135}{asm\+\_\+read\+\_\+arg\+\_\+label()}}, \mbox{\hyperlink{read_8cpp_source_l00059}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}, \mbox{\hyperlink{read_8cpp_source_l00024}{asm\+\_\+read\+\_\+args\+\_\+ram()}}, \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, \mbox{\hyperlink{spu_8cpp_source_l00125}{spu\+\_\+execute\+\_\+command()}}, and \mbox{\hyperlink{spu_8cpp_source_l00058}{spu\+\_\+parse()}}.
+Referenced by \mbox{\hyperlink{read_8cpp_source_l00143}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, \mbox{\hyperlink{read_8cpp_source_l00118}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}, \mbox{\hyperlink{read_8cpp_source_l00168}{asm\+\_\+read\+\_\+arg\+\_\+label()}}, \mbox{\hyperlink{read_8cpp_source_l00087}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}, \mbox{\hyperlink{read_8cpp_source_l00053}{asm\+\_\+read\+\_\+args\+\_\+ram()}}, \mbox{\hyperlink{read_8cpp_source_l00005}{asm\+\_\+read\+\_\+cmd()}}, \mbox{\hyperlink{write_8cpp_source_l00025}{asm\+\_\+write\+\_\+cmd\+\_\+bin()}}, \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{errors_8h_source_l00049}{cmd\+\_\+is\+\_\+arg\+\_\+required()}}, \mbox{\hyperlink{listing_8h_source_l00048}{cmd\+\_\+listing\+\_\+calc\+\_\+tab()}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}.
 
 \Hypertarget{struct_cmd_a0a38a0e6be202854d97c4637280f5914}\label{struct_cmd_a0a38a0e6be202854d97c4637280f5914} 
 \index{Cmd@{Cmd}!keys@{keys}}
@@ -100,11 +100,11 @@ Referenced by \mbox{\hyperlink{errors_8h_source_l00044}{asm\+\_\+is\+\_\+arg\+\_
 
 
 
-Definition at line \mbox{\hyperlink{cmd_8h_source_l00166}{166}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00177}{177}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
 
 
 
-Referenced by \mbox{\hyperlink{write_8h_source_l00058}{asm\+\_\+calc\+\_\+cmd\+\_\+size()}}, \mbox{\hyperlink{errors_8h_source_l00056}{asm\+\_\+is\+\_\+any\+\_\+arg\+\_\+given()}}, \mbox{\hyperlink{listing_8h_source_l00051}{asm\+\_\+listing\+\_\+calc\+\_\+tab()}}, \mbox{\hyperlink{assembler_8cpp_source_l00081}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}, \mbox{\hyperlink{read_8cpp_source_l00111}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, \mbox{\hyperlink{read_8cpp_source_l00087}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}, \mbox{\hyperlink{read_8cpp_source_l00135}{asm\+\_\+read\+\_\+arg\+\_\+label()}}, \mbox{\hyperlink{read_8cpp_source_l00059}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}, \mbox{\hyperlink{read_8cpp_source_l00024}{asm\+\_\+read\+\_\+args\+\_\+ram()}}, \mbox{\hyperlink{write_8cpp_source_l00022}{asm\+\_\+write\+\_\+cmd\+\_\+bin()}}, \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, \mbox{\hyperlink{cmd_8cpp_source_l00021}{size()}}, and \mbox{\hyperlink{spu_8cpp_source_l00058}{spu\+\_\+parse()}}.
+Referenced by \mbox{\hyperlink{write_8h_source_l00057}{asm\+\_\+calc\+\_\+cmd\+\_\+size()}}, \mbox{\hyperlink{read_8cpp_source_l00143}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, \mbox{\hyperlink{read_8cpp_source_l00118}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}, \mbox{\hyperlink{read_8cpp_source_l00168}{asm\+\_\+read\+\_\+arg\+\_\+label()}}, \mbox{\hyperlink{read_8cpp_source_l00087}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}, \mbox{\hyperlink{read_8cpp_source_l00053}{asm\+\_\+read\+\_\+args\+\_\+ram()}}, \mbox{\hyperlink{read_8cpp_source_l00005}{asm\+\_\+read\+\_\+cmd()}}, \mbox{\hyperlink{write_8cpp_source_l00025}{asm\+\_\+write\+\_\+cmd\+\_\+bin()}}, \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{errors_8h_source_l00066}{cmd\+\_\+is\+\_\+any\+\_\+arg\+\_\+given()}}, \mbox{\hyperlink{listing_8h_source_l00048}{cmd\+\_\+listing\+\_\+calc\+\_\+tab()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, \mbox{\hyperlink{cmd_8cpp_source_l00021}{size()}}, \mbox{\hyperlink{spu_8cpp_source_l00112}{spu\+\_\+execute()}}, and \mbox{\hyperlink{spu_8cpp_source_l00080}{spu\+\_\+read\+\_\+cmd()}}.
 
 
 

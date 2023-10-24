@@ -1,0 +1,221 @@
+;Quad equations solver
+
+in
+in
+in
+
+;rax = 0 | rbx = 0 | rcx = 0 | rdx = 0 | stk: a, b, c
+
+pop rdx
+pop rcx
+pop rbx
+
+;rax = 0 | rbx = a | rcx = b | rdx = c | stk:
+
+push rbx ;a
+push 0
+jne main_not_lin
+
+    push rcx
+    push rdx
+
+    ;rax = 0 | rbx = a | rcx = b | rdx = c | stk: b, c
+
+    call solve_lin
+
+    jmp exit ;----------------------------------------------------------------------
+
+main_not_lin:
+
+push rbx
+push rcx
+push rdx
+
+;rax = 0 | rbx = a | rcx = b | rdx = c | stk: a, b, c
+
+call solve_quad
+
+jmp exit ;----------------------------------------------------------------------
+
+
+
+exit:
+hlt
+
+;================================= methods =====================================
+
+; uses rax, rbx, rcx
+; (stk: b, c)
+solve_lin: ; x = -c / b
+    pop rax ;address
+
+    pop rbx
+    pop rcx
+
+    ; rax = addr | rbx = b | rcx = c | rdx = ? | stk: ...,
+
+    push rbx
+    push 0
+    jne solve_lin_continue
+
+        push -1 ;infinite number of solutions
+        out
+
+        push rax
+        ret
+
+    solve_lin_continue:
+
+    push rcx
+    push -1
+    mul
+
+    push rbx
+    div
+
+    push 1
+    out ; 1 solution
+
+    call check_minus_zero
+    out ; x
+
+    push rax
+    ret
+
+;-------------------------------------------------------------------------------
+
+; uses rax, rbx, rcx, rdx!!!
+; (stk: a, b, c)
+solve_quad:
+    pop rdx
+
+    pop rcx
+    pop rbx
+    pop rax
+
+    push rdx
+
+    ; rax = a | rbx = b | rcx = c | rdx = addr | stk: ..., addr
+
+    push rbx
+    push rbx
+    mul
+
+    push -4
+    push rax
+    push rcx
+    mul
+    mul
+
+    add
+
+    ; rax = a | rbx = b | rcx = c | rdx = addr | stk: ..., addr, b*b - 4*a*c
+
+    pop rdx
+
+    ; rax = a | rbx = b | rcx = c | rdx = D | stk: ..., addr,
+
+    push rdx
+    push 0
+    jb solve_quad_no_sols
+
+    push rdx
+    push 0
+    je solve_quad_one_sol
+
+    ; two solutions:
+
+    ; rax = a | rbx = b | rcx = c | rdx = D | stk: ..., addr,
+
+    push rdx
+    sqrt
+    pop rdx
+
+    push rbx
+    push -1
+    mul
+    pop rbx
+
+    ; rax = a | rbx = -b | rcx = c | rdx = sqrt(D) | stk: ..., addr,
+
+    push rbx
+    push rdx
+    add
+
+    push 2
+    push rax
+    mul
+
+    div
+
+    ; rax = a | rbx = -b | rcx = c | rdx = sqrt(D) | stk: ..., addr, x1
+
+    push rbx
+    push rdx
+    sub
+
+    push 2
+    push rax
+    mul
+
+    div
+
+    ; rax = a | rbx = -b | rcx = c | rdx = sqrt(D) | stk: ..., addr, x1, x2
+
+    push 2
+    out ; 2 solutions
+
+    call check_minus_zero
+    out ; x2
+
+    call check_minus_zero
+    out ; x1
+
+    ret
+
+    solve_quad_no_sols:
+        push 0
+        out
+
+        ret
+
+    solve_quad_one_sol:
+        push rbx
+        push rax
+        push -2
+        mul
+        div
+
+        push 1
+        out ; 1 solution
+
+        call check_minus_zero
+
+        out ; x
+
+        ret
+
+
+; uses rbx, rcx!!!
+; (stk: x)
+check_minus_zero:
+    pop rbx
+
+    pop rcx
+
+    ; rax = * | rbx = addr | rcx = x | rdx = ? | stk: ...,
+
+    push 0
+    push rcx
+    jne ret_non_zero
+        ; ret zero
+        push 0
+
+        push rbx
+        ret
+
+    ret_non_zero:
+        push rcx
+
+        push rbx
+        ret

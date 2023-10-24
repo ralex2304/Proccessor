@@ -562,7 +562,7 @@ Definition at line \mbox{\hyperlink{stack_8cpp_source_l00194}{194}} of file \mbo
 \DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordflow}{while}\ ((index\ /=\ 10)\ >\ 0)}
 \DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ index\_len++;}
 \DoxyCodeLine{00208\ }
-\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordflow}{for}\ (ssize\_t\ i\ =\ 0;\ i\ <\ stk-\/>\mbox{\hyperlink{struct_stack_a3b6cb0b4ff732c7bbbaaa5d3860bcd1a}{size}};\ i++)}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordflow}{for}\ (ssize\_t\ i\ =\ 0;\ \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}\ <\ stk-\/>\mbox{\hyperlink{struct_stack_a3b6cb0b4ff732c7bbbaaa5d3860bcd1a}{size}};\ \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}++)}
 \DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\#\ \ \ \ \ [\%*zu]\ "{}}\ \mbox{\hyperlink{config_8h_a0e86e404fb41df2a06346b0fd53ccb83}{ELEM\_T\_PRINTF}}\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}},\ index\_len,\ i,\ stk-\/>\mbox{\hyperlink{struct_stack_a02ed96691b2e6636bd9155758e8ee8cd}{data}}[i]);}
 \DoxyCodeLine{00211\ }
 \DoxyCodeLine{00212\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\#\ \}\(\backslash\)n"{}});}
@@ -718,7 +718,7 @@ References \mbox{\hyperlink{stack_8h_source_l00062}{Stack\+::capacity}}, \mbox{\
 
 
 
-Referenced by \mbox{\hyperlink{spu_8cpp_source_l00017}{Spu\+Data\+::dtor()}}, and \mbox{\hyperlink{spu_8cpp_source_l00058}{spu\+\_\+parse()}}.
+Referenced by \mbox{\hyperlink{spu_8cpp_source_l00017}{Spu\+Data\+::dtor()}}.
 
 \Hypertarget{stack_8h_a512d9a3195de2d401bec9a3c64a29fd0}\label{stack_8h_a512d9a3195de2d401bec9a3c64a29fd0} 
 \index{stack.h@{stack.h}!stk\_dump@{stk\_dump}}
@@ -791,7 +791,7 @@ Definition at line \mbox{\hyperlink{stack_8cpp_source_l00279}{279}} of file \mbo
 \DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordflow}{while}\ ((index\ /=\ 10)\ >\ 0)}
 \DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ index\_len++;}
 \DoxyCodeLine{00326\ }
-\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keywordflow}{for}\ (ssize\_t\ i\ =\ 0;\ i\ <\ stk-\/>\mbox{\hyperlink{struct_stack_a2f2b41ebbf7c8adce40da902814e1c7b}{capacity}};\ i++)\ \{}
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keywordflow}{for}\ (ssize\_t\ i\ =\ 0;\ \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}\ <\ stk-\/>\mbox{\hyperlink{struct_stack_a2f2b41ebbf7c8adce40da902814e1c7b}{capacity}};\ \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}++)\ \{}
 \DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ stk-\/>size)}
 \DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{log_8cpp_adab5e89ed01fa9fb9c55544d3a21629b}{log\_printf}}(\&\mbox{\hyperlink{stack_8cpp_a06336a68ce7f0258cc88d5a2bb94e4d3}{log\_file}},\ \textcolor{stringliteral}{"{}\ \ \ \ \ \ \ \ \ \ \ \ *"{}});}
 \DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
@@ -1019,7 +1019,7 @@ References \mbox{\hyperlink{stack_8h_source_l00036}{Stack\+::\+OK}}, and \mbox{\
 
 
 
-Referenced by \mbox{\hyperlink{spu_8cpp_source_l00005}{Spu\+Data\+::ctor()}}, \mbox{\hyperlink{spu_8cpp_source_l00017}{Spu\+Data\+::dtor()}}, and \mbox{\hyperlink{spu_8cpp_source_l00125}{spu\+\_\+execute\+\_\+command()}}.
+Referenced by \mbox{\hyperlink{spu_8cpp_source_l00005}{Spu\+Data\+::ctor()}}, \mbox{\hyperlink{spu_8cpp_source_l00017}{Spu\+Data\+::dtor()}}, and \mbox{\hyperlink{spu_8cpp_source_l00112}{spu\+\_\+execute()}}.
 
 \Hypertarget{stack_8h_aa30787d931ba7ff16b8aa1ddfa7337d3}\label{stack_8h_aa30787d931ba7ff16b8aa1ddfa7337d3} 
 \index{stack.h@{stack.h}!stk\_push@{stk\_push}}
@@ -1320,13 +1320,13 @@ Definition at line \mbox{\hyperlink{stack_8cpp_source_l00353}{353}} of file \mbo
 \DoxyCodeLine{00368\ \ \ \ \ \}}
 \DoxyCodeLine{00369\ }
 \DoxyCodeLine{00370\ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_data\_valid)\ \{}
-\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (ssize\_t\ i\ =\ 0;\ i\ <\ stk-\/>\mbox{\hyperlink{struct_stack_a3b6cb0b4ff732c7bbbaaa5d3860bcd1a}{size}};\ i++)}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (ssize\_t\ i\ =\ 0;\ \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}\ <\ stk-\/>\mbox{\hyperlink{struct_stack_a3b6cb0b4ff732c7bbbaaa5d3860bcd1a}{size}};\ \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}++)}
 \DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{config_8h_ab77683e8a25070f813aa006636770700}{is\_poison}}(stk-\/>\mbox{\hyperlink{struct_stack_a02ed96691b2e6636bd9155758e8ee8cd}{data}}[i]))\ \{}
 \DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res\ |=\ stk-\/>\mbox{\hyperlink{struct_stack_ae8242b5f1b2c3d98a6dbafc302e509d5aa17ea00c21ef8ada8344e88a5d63a0de}{POISON\_VAL\_FOUND}};}
 \DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00376\ }
-\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (ssize\_t\ i\ =\ stk-\/>\mbox{\hyperlink{struct_stack_a3b6cb0b4ff732c7bbbaaa5d3860bcd1a}{size}};\ i\ <\ stk-\/>\mbox{\hyperlink{struct_stack_a2f2b41ebbf7c8adce40da902814e1c7b}{capacity}};\ i++)}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (ssize\_t\ i\ =\ stk-\/>\mbox{\hyperlink{struct_stack_a3b6cb0b4ff732c7bbbaaa5d3860bcd1a}{size}};\ \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}\ <\ stk-\/>\mbox{\hyperlink{struct_stack_a2f2b41ebbf7c8adce40da902814e1c7b}{capacity}};\ \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}++)}
 \DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{config_8h_ab77683e8a25070f813aa006636770700}{is\_poison}}(stk-\/>\mbox{\hyperlink{struct_stack_a02ed96691b2e6636bd9155758e8ee8cd}{data}}[i]))\ \{}
 \DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res\ |=\ stk-\/>\mbox{\hyperlink{struct_stack_ae8242b5f1b2c3d98a6dbafc302e509d5a9e1e940df37869517f75f4d2198aebad}{NON\_POISON\_EMPTY}};}
 \DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}

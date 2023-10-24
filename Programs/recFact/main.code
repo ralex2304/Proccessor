@@ -1,0 +1,79 @@
+; Recursive factorial calculation
+
+call regs_clean
+
+in
+pop rax
+
+call calc ;(rax = target) return rcx
+
+push rcx
+out
+
+exit:
+hlt
+
+;===========================================================
+
+; recursive calc function
+; calc(rax - target, rbx = 0 - iterator, rcx - result = 1)
+calc: ;iterator and result init
+
+push 0
+pop rbx
+push 1
+pop rcx
+
+calc_loop: ;func body
+
+push rax ;target
+push rbx ;iterator
+jbe calc_ret ; if (target <= iterator) return;
+
+;iterator increment
+push rbx+1
+pop rbx
+
+push rcx
+push rbx
+mul      ;result * iterator
+pop rcx  ;write result
+
+call calc_loop ;recursive call
+
+calc_ret:
+ret
+
+;===========================================================
+
+; Registers cleaning function
+regs_clean:
+
+call rax_clean
+call rbx_clean
+call rcx_clean
+call rdx_clean
+
+ret
+
+;===========================================================
+
+rax_clean:
+push 0
+pop rax
+ret
+
+rbx_clean:
+push 0
+pop rbx
+ret
+
+rcx_clean:
+push 0
+pop rcx
+ret
+
+rdx_clean:
+push 0
+pop rdx
+ret

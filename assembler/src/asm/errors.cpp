@@ -1,20 +1,22 @@
 #include "errors.h"
 
-Status::Statuses asm_throw_syntax_error(const String token, const AsmInfo* asm_info,
+Status::Statuses asm_throw_syntax_error(const Asm* asm_data, const AsmLine* line,
                                         const char* err_msg, ...) {
+    assert(asm_data);
+    assert(line);
     assert(err_msg);
-    assert(asm_info->line.len == 0 || asm_info->line.str);
-    assert(         token.len == 0 ||          token.str);
-    assert(asm_info->filename);
 
-    const int token_begin = (token.str == nullptr) ? (int)asm_info->line.len
-                                                   : (int)(token.str - asm_info->line.str);
-    const int token_end   = (token.str == nullptr) ? (int)asm_info->line.len
-                                                   : (int)(token_begin + token.len);
+    const String err_token = line->tokens[line->cur_token];
+
+    const int token_begin = (err_token.str == nullptr) ? (int)line->text.len
+                                                       : (int)(err_token.str - line->text.str);
+
+    const int token_end   = (err_token.str == nullptr) ? (int)line->text.len
+                                                       : (int)(token_begin + err_token.len);
 
     fprintf(stderr, CONSOLE_STYLE(STYLE_BOLD, "%s:%zu:%d "
-                                  COLOR_RED "syntax error: "), asm_info->filename,
-            asm_info->line_num, token_begin + 1);
+                                  COLOR_RED "syntax error: "),
+                    asm_data->files.inp_name, line->num, token_begin + 1);
 
     va_list arg_list = {};
     va_start(arg_list, err_msg);
@@ -22,12 +24,11 @@ Status::Statuses asm_throw_syntax_error(const String token, const AsmInfo* asm_i
     va_end(arg_list);
     fprintf(stderr, "\n");
 
-    fprintf(stderr, "%5zu | ", asm_info->line_num);
+    fprintf(stderr, "%5zu | ", line->num);
 
-    fprintf(stderr, "%.*s", token_begin, asm_info->line.str);
-    fprintf(stderr, CONSOLE_STYLE(STYLE_BOLD COLOR_RED, "%.*s"), String_PRINTF(token));
-    fprintf(stderr, "%.*s\n", (int)(asm_info->line.len - token_end),
-                                    asm_info->line.str + token_end);
+    fprintf(stderr, "%.*s", token_begin, line->text.str);
+    fprintf(stderr, CONSOLE_STYLE(STYLE_BOLD COLOR_RED, "%.*s"), String_PRINTF(err_token));
+    fprintf(stderr, "%.*s\n", (int)(line->text.len - token_end), line->text.str + token_end);
 
     fprintf(stderr, "%5s | ", "");
 

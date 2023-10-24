@@ -32,22 +32,28 @@ struct SpuData {
  * @brief Parses data and executes it
  *
  * @param data
- * @param size
  * @return Status::Statuses
  */
-Status::Statuses spu_parse(const char* data, const size_t size);
+Status::Statuses spu_parse_and_execute(const char* data);
 
 /**
- * @brief Executes one command
+ * @brief Reads cmd and it's args
+ *
+ * @param data
+ * @param cur_byte
+ * @return Cmd
+ */
+Cmd spu_read_cmd(const char* data, size_t *cur_byte);
+
+/**
+ * @brief Executes commands
  *
  * @param spu
- * @param cmd
+ * @param data
  * @param cur_byte
- * @param op operation pointer
  * @return Status::Statuses
  */
-Status::Statuses spu_execute_command(SpuData* spu, const Cmd* cmd, size_t* cur_byte,
-                                     const size_t op);
+Status::Statuses spu_execute(SpuData* spu, const char* data, size_t* cur_byte);
 
 /**
  * @brief Prints double to stdout

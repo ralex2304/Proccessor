@@ -32,8 +32,7 @@ int main(int argc, char* argv[]) {
     /// Reading input data end
 
     /// Parsing and executing input file
-    STATUS_CHECK_RAISE(spu_parse(inp_data, size),
-                       FREE(inp_data));
+    STATUS_CHECK_RAISE(spu_parse_and_execute(inp_data), FREE(inp_data));
     /// Parsing and executing input file end
 
     FREE(inp_data);

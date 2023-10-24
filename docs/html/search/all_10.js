@@ -1,7 +1,7 @@
 var searchData=
 [
   ['raise_0',['raise',['../struct_status.html#a30c8084592b2ff90cfc22c1860e58dab',1,'Status']]],
-  ['ram_1',['ram',['../struct_cmd_keys.html#aba6b64f73e21ca67bb9062cc69669350',1,'CmdKeys::ram'],['../struct_args_en.html#a242a2ff489e2e3db94724f185858b649',1,'ArgsEn::ram'],['../struct_spu_data.html#a20debdca8f0a04c0b528f3ff9b7b3065',1,'SpuData::ram']]],
+  ['ram_1',['ram',['../struct_cmd_keys.html#aba6b64f73e21ca67bb9062cc69669350',1,'CmdKeys::ram'],['../struct_args_enabled.html#a46aeef6ea384961f7680286192d0b599',1,'ArgsEnabled::ram'],['../struct_spu_data.html#a20debdca8f0a04c0b528f3ff9b7b3065',1,'SpuData::ram']]],
   ['ram_2',['RAM',['../spu__dsl_8h.html#a40869d06535af1c441272596a593f764',1,'spu_dsl.h']]],
   ['ram_5fsize_3',['RAM_SIZE',['../cmd_8h.html#abe1e1b2bfd2932377e15b323ee0fb530',1,'cmd.h']]],
   ['rax_4',['RAX',['../cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64ad8a2b3cfd37dc1215cf782d326e5186c',1,'cmd.h']]],
@@ -16,7 +16,7 @@ var searchData=
   ['read_5foutput_5ffilename_13',['read_output_filename',['../args__parser_8cpp.html#a87a6361c68c0184ccf8a9a1a04329ff7',1,'read_output_filename(const Argument args_dict[], const int args_dict_len, int *arg_i, int argc, char *argv[], ArgsVars *args_vars):&#160;args_parser.cpp'],['../args__parser_8h.html#a87a6361c68c0184ccf8a9a1a04329ff7',1,'read_output_filename(const Argument args_dict[], const int args_dict_len, int *arg_i, int argc, char *argv[], ArgsVars *args_vars):&#160;args_parser.cpp']]],
   ['readme_2emd_14',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
   ['recalloc_15',['recalloc',['../macros_8h.html#a3e542cb9c488f76f1d0cb4b6ef234203',1,'macros.h']]],
-  ['reg_16',['reg',['../struct_cmd_keys.html#a76f64f02295d9a30abdaf138ea275f6a',1,'CmdKeys::reg'],['../struct_cmd_args.html#a49949ad6edf5cb3523025913f2c0adc5',1,'CmdArgs::reg'],['../struct_args_en.html#a63d5185473c449ea08983c877e083122',1,'ArgsEn::reg'],['../struct_spu_data.html#a0c082f4479ce66efb50b95259f98e457',1,'SpuData::reg'],['../cmd__dict_8h.html#ade7b1c34e02557e0d03d7632f471016e',1,'reg:&#160;cmd_dict.h']]],
+  ['reg_16',['reg',['../struct_cmd_keys.html#a76f64f02295d9a30abdaf138ea275f6a',1,'CmdKeys::reg'],['../struct_cmd_args.html#a49949ad6edf5cb3523025913f2c0adc5',1,'CmdArgs::reg'],['../struct_args_enabled.html#acb0f1764ed613b7d6c32f90e5173f0ac',1,'ArgsEnabled::reg'],['../struct_spu_data.html#a0c082f4479ce66efb50b95259f98e457',1,'SpuData::reg']]],
   ['reg_17',['REG',['../spu__dsl_8h.html#ad6ade6409c5ca69f90efdfd1acce35fa',1,'spu_dsl.h']]],
   ['reginfo_18',['RegInfo',['../struct_reg_info.html',1,'']]],
   ['regnum_5ft_19',['RegNum_t',['../cmd_8h.html#a428ff6e9ffc07d578a8a207c72dc3366',1,'cmd.h']]],

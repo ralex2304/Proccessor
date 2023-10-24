@@ -101,20 +101,20 @@ $(document).ready(function(){initNavTree('jump_8cpp.html',''); initResizable(); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aaaf08e4360cf604f52f9a4595a34d28a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jump_8cpp.html#aaaf08e4360cf604f52f9a4595a34d28a">THROW_SYNTAX_ERROR_</a>(...)</td></tr>
+<tr class="memitem:aaaf08e4360cf604f52f9a4595a34d28a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jump_8cpp.html#aaaf08e4360cf604f52f9a4595a34d28a">THROW_SYNTAX_ERROR_</a>(...)&#160;&#160;&#160;return <a class="el" href="errors_8cpp.html#a9d85c05bc94b5a80c7d982e23eb1f788">asm_throw_syntax_error</a>(asm_data, line, __VA_ARGS__)</td></tr>
 <tr class="separator:aaaf08e4360cf604f52f9a4595a34d28a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac5a484eed9fd4e18cc675fbadd20338b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jump_8cpp.html#ac5a484eed9fd4e18cc675fbadd20338b">asm_new_label</a> (<a class="el" href="struct_jump_label.html">JumpLabel</a> *labels, const <a class="el" href="struct_string.html">String</a> name, const <a class="el" href="struct_asm_info.html">AsmInfo</a> *inp_file, const size_t byte)</td></tr>
-<tr class="memdesc:ac5a484eed9fd4e18cc675fbadd20338b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds new label to labels.  <br /></td></tr>
-<tr class="separator:ac5a484eed9fd4e18cc675fbadd20338b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd04072d6902280ce0b325593daa440e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jump_8cpp.html#afd04072d6902280ce0b325593daa440e">asm_get_label_byte</a> (<a class="el" href="struct_jump_label.html">JumpLabel</a> *labels, const <a class="el" href="struct_string.html">String</a> name, const <a class="el" href="struct_asm_info.html">AsmInfo</a> *inp_file, <a class="el" href="cmd_8h.html#a226f97678592b90d02bed2f62edf55c6">Imm_int_t</a> *byte, const bool final_pass)</td></tr>
-<tr class="memdesc:afd04072d6902280ce0b325593daa440e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets label byte by name.  <br /></td></tr>
-<tr class="separator:afd04072d6902280ce0b325593daa440e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f236543c60a67fb27ba9fae09eb32e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structc___string.html">c_String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jump_8cpp.html#a9f236543c60a67fb27ba9fae09eb32e8">asm_get_label_name</a> (const <a class="el" href="struct_jump_label.html">JumpLabel</a> *labels, const <a class="el" href="cmd_8h.html#a226f97678592b90d02bed2f62edf55c6">Imm_int_t</a> byte)</td></tr>
-<tr class="memdesc:a9f236543c60a67fb27ba9fae09eb32e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns label name by byte.  <br /></td></tr>
-<tr class="separator:a9f236543c60a67fb27ba9fae09eb32e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a885700d3d24bdc32ccfd56b8fc83920b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jump_8cpp.html#a885700d3d24bdc32ccfd56b8fc83920b">asm_new_label</a> (const <a class="el" href="struct_string.html">String</a> name, const size_t addr, <a class="el" href="struct_asm.html">Asm</a> *asm_data, const <a class="el" href="struct_asm_line.html">AsmLine</a> *line)</td></tr>
+<tr class="memdesc:a885700d3d24bdc32ccfd56b8fc83920b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds new label to labels.  <br /></td></tr>
+<tr class="separator:a885700d3d24bdc32ccfd56b8fc83920b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cc8acb715c697fe2aa2c8319fed264a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jump_8cpp.html#a6cc8acb715c697fe2aa2c8319fed264a">asm_get_label_addr</a> (const <a class="el" href="struct_string.html">String</a> name, const <a class="el" href="struct_asm.html">Asm</a> *asm_data, const <a class="el" href="struct_asm_line.html">AsmLine</a> *line, <a class="el" href="cmd_8h.html#a226f97678592b90d02bed2f62edf55c6">Imm_int_t</a> *addr)</td></tr>
+<tr class="memdesc:a6cc8acb715c697fe2aa2c8319fed264a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets label addr by name.  <br /></td></tr>
+<tr class="separator:a6cc8acb715c697fe2aa2c8319fed264a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17c6b3d45b1a425226bb23c235f09917"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structconst___string.html">const_String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jump_8cpp.html#a17c6b3d45b1a425226bb23c235f09917">asm_get_label_name</a> (const <a class="el" href="struct_jump_label.html">JumpLabel</a> *labels, const <a class="el" href="cmd_8h.html#a226f97678592b90d02bed2f62edf55c6">Imm_int_t</a> addr)</td></tr>
+<tr class="memdesc:a17c6b3d45b1a425226bb23c235f09917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns label name by addr.  <br /></td></tr>
+<tr class="separator:a17c6b3d45b1a425226bb23c235f09917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="aaaf08e4360cf604f52f9a4595a34d28a" name="aaaf08e4360cf604f52f9a4595a34d28a"></a>
@@ -128,55 +128,45 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>...</em></td><td>)</td>
-          <td></td>
+          <td>&#160;&#160;&#160;return <a class="el" href="errors_8cpp.html#a9d85c05bc94b5a80c7d982e23eb1f788">asm_throw_syntax_error</a>(asm_data, line, __VA_ARGS__)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">                                                                <span class="keywordflow">return</span> <a class="code hl_function" href="errors_8cpp.html#ac2b36b9c7abb118a75666f4a3a511553">asm_throw_syntax_error</a>(name,       \</div>
-<div class="line">                                                                inp_file,   \</div>
-<div class="line">                                                                __VA_ARGS__)</div>
-<div class="ttc" id="aerrors_8cpp_html_ac2b36b9c7abb118a75666f4a3a511553"><div class="ttname"><a href="errors_8cpp.html#ac2b36b9c7abb118a75666f4a3a511553">asm_throw_syntax_error</a></div><div class="ttdeci">Status::Statuses asm_throw_syntax_error(const String token, const AsmInfo *asm_info, const char *err_msg,...)</div><div class="ttdoc">Throws syntax error.</div><div class="ttdef"><b>Definition</b> <a href="errors_8cpp_source.html#l00003">errors.cpp:3</a></div></div>
-</div><!-- fragment -->
+
 <p class="definition">Definition at line <a class="el" href="jump_8cpp_source.html#l00003">3</a> of file <a class="el" href="jump_8cpp_source.html">jump.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="afd04072d6902280ce0b325593daa440e" name="afd04072d6902280ce0b325593daa440e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd04072d6902280ce0b325593daa440e">&#9670;&#160;</a></span>asm_get_label_byte()</h2>
+<a id="a6cc8acb715c697fe2aa2c8319fed264a" name="a6cc8acb715c697fe2aa2c8319fed264a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cc8acb715c697fe2aa2c8319fed264a">&#9670;&#160;</a></span>asm_get_label_addr()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> asm_get_label_byte </td>
+          <td class="memname"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> asm_get_label_addr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_jump_label.html">JumpLabel</a> *&#160;</td>
-          <td class="paramname"><em>labels</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const <a class="el" href="struct_string.html">String</a>&#160;</td>
           <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="struct_asm_info.html">AsmInfo</a> *&#160;</td>
-          <td class="paramname"><em>inp_file</em>, </td>
+          <td class="paramtype">const <a class="el" href="struct_asm.html">Asm</a> *&#160;</td>
+          <td class="paramname"><em>asm_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_asm_line.html">AsmLine</a> *&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="cmd_8h.html#a226f97678592b90d02bed2f62edf55c6">Imm_int_t</a> *&#160;</td>
-          <td class="paramname"><em>byte</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>final_pass</em>&#160;</td>
+          <td class="paramname"><em>addr</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -186,61 +176,65 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gets label byte by name. </p>
+<p>Gets label addr by name. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">labels</td><td></td></tr>
     <tr><td class="paramname">name</td><td></td></tr>
-    <tr><td class="paramname">inp_file</td><td></td></tr>
-    <tr><td class="paramname">byte</td><td></td></tr>
-    <tr><td class="paramname">final_pass</td><td></td></tr>
+    <tr><td class="paramname">asm_data</td><td></td></tr>
+    <tr><td class="paramname">line</td><td></td></tr>
+    <tr><td class="paramname">addr</td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="jump_8cpp_source.html#l00029">29</a> of file <a class="el" href="jump_8cpp_source.html">jump.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>                                                           {</div>
-<div class="line"><span class="lineno">   32</span>    assert(labels);</div>
-<div class="line"><span class="lineno">   33</span>    assert(name.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>);</div>
-<div class="line"><span class="lineno">   34</span>    assert(inp_file);</div>
-<div class="line"><span class="lineno">   35</span>    assert(<span class="keywordtype">byte</span>);</div>
-<div class="line"><span class="lineno">   36</span> </div>
-<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code hl_variable" href="cmd_8h.html#a32f204b97db01e62c58e0158ee40b1cf">MAX_LABEL_NUM</a>; i++) {</div>
-<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="text__lib_8h.html#accfdbf6001411f4d546036819f3d00bd">String_strcmp</a>(<a class="code hl_define" href="text__lib_8h.html#a0227c409258b64a76f4fc5299c0ae42e">String_TO_c</a>(labels[i].name), <a class="code hl_define" href="text__lib_8h.html#a0227c409258b64a76f4fc5299c0ae42e">String_TO_c</a>(name)) == 0) {</div>
-<div class="line"><span class="lineno">   39</span>            *<span class="keywordtype">byte</span> = labels[i].<a class="code hl_variable" href="struct_jump_label.html#a47eb97b0f19afde28f027698882d8550">byte</a>;</div>
-<div class="line"><span class="lineno">   40</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
-<div class="line"><span class="lineno">   41</span>        }</div>
-<div class="line"><span class="lineno">   42</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="jump_8cpp_source.html#l00027">27</a> of file <a class="el" href="jump_8cpp_source.html">jump.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   28</span>                                                                          {</div>
+<div class="line"><span class="lineno">   29</span>    assert(<a class="code hl_variable" href="namespacegen.html#adb0a36eb046ef1eaf9d7cffcc504f0ba">name</a>.str);</div>
+<div class="line"><span class="lineno">   30</span>    assert(asm_data);</div>
+<div class="line"><span class="lineno">   31</span>    assert(line);</div>
+<div class="line"><span class="lineno">   32</span>    assert(addr);</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> &lt; <a class="code hl_variable" href="cmd_8h.html#a32f204b97db01e62c58e0158ee40b1cf">MAX_LABEL_NUM</a>; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>++) {</div>
+<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="text__lib_8h.html#a4ee93239b997bad6f5a6b6345f14d0c1">String_strcmp</a>(<a class="code hl_define" href="text__lib_8h.html#a59a33ce1c7a0b31f7b0284850e355051">String_TO_const</a>(asm_data-&gt;<a class="code hl_variable" href="struct_asm.html#a11625fdda4ef63eee3ad1f44b21d9539">labels</a>[i].<a class="code hl_variable" href="struct_jump_label.html#a0840f89616d10aeb07e92667452e0a58">name</a>), <a class="code hl_define" href="text__lib_8h.html#a59a33ce1c7a0b31f7b0284850e355051">String_TO_const</a>(name)) == 0) {</div>
+<div class="line"><span class="lineno">   36</span>            *addr = asm_data-&gt;<a class="code hl_variable" href="struct_asm.html#a11625fdda4ef63eee3ad1f44b21d9539">labels</a>[<a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>].<a class="code hl_variable" href="struct_jump_label.html#aa6389d5fb528422106f28c77d0904477">addr</a>;</div>
+<div class="line"><span class="lineno">   37</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
+<div class="line"><span class="lineno">   38</span>        }</div>
+<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">if</span> (asm_data-&gt;<a class="code hl_variable" href="struct_asm.html#a2ac405dde59fcf5ece63bdecd499c335">pass_num</a> == asm_data-&gt;<a class="code hl_variable" href="struct_asm.html#ab544e702fdec142cb2efd0688d8bc80a">LAST_PASS_NUM</a>)</div>
+<div class="line"><span class="lineno">   42</span>        <a class="code hl_define" href="jump_8cpp.html#aaaf08e4360cf604f52f9a4595a34d28a">THROW_SYNTAX_ERROR_</a>(<span class="stringliteral">&quot;Unknown label \&quot;%.*s\&quot;&quot;</span>, <a class="code hl_define" href="text__lib_8h.html#a8bda955a9d6dede91b9f9319eb437476">String_PRINTF</a>(name));</div>
 <div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span> (final_pass)</div>
-<div class="line"><span class="lineno">   45</span>        <a class="code hl_define" href="jump_8cpp.html#aaaf08e4360cf604f52f9a4595a34d28a">THROW_SYNTAX_ERROR_</a>(<span class="stringliteral">&quot;Unknown label \&quot;%.*s\&quot;&quot;</span>, <a class="code hl_define" href="text__lib_8h.html#a8bda955a9d6dede91b9f9319eb437476">String_PRINTF</a>(name));</div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
-<div class="line"><span class="lineno">   48</span>}</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
+<div class="line"><span class="lineno">   45</span>}</div>
 <div class="ttc" id="acmd_8h_html_a32f204b97db01e62c58e0158ee40b1cf"><div class="ttname"><a href="cmd_8h.html#a32f204b97db01e62c58e0158ee40b1cf">MAX_LABEL_NUM</a></div><div class="ttdeci">const size_t MAX_LABEL_NUM</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00017">cmd.h:17</a></div></div>
 <div class="ttc" id="ajump_8cpp_html_aaaf08e4360cf604f52f9a4595a34d28a"><div class="ttname"><a href="jump_8cpp.html#aaaf08e4360cf604f52f9a4595a34d28a">THROW_SYNTAX_ERROR_</a></div><div class="ttdeci">#define THROW_SYNTAX_ERROR_(...)</div><div class="ttdef"><b>Definition</b> <a href="jump_8cpp_source.html#l00003">jump.cpp:3</a></div></div>
-<div class="ttc" id="astruct_jump_label_html_a47eb97b0f19afde28f027698882d8550"><div class="ttname"><a href="struct_jump_label.html#a47eb97b0f19afde28f027698882d8550">JumpLabel::byte</a></div><div class="ttdeci">ssize_t byte</div><div class="ttdef"><b>Definition</b> <a href="jump_8h_source.html#l00018">jump.h:18</a></div></div>
+<div class="ttc" id="anamespacegen_html_ad6f9a21fef823e19e8e49589645c58ba"><div class="ttname"><a href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">gen.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition</b> <a href="gen_8py_source.html#l00027">gen.py:27</a></div></div>
+<div class="ttc" id="anamespacegen_html_adb0a36eb046ef1eaf9d7cffcc504f0ba"><div class="ttname"><a href="namespacegen.html#adb0a36eb046ef1eaf9d7cffcc504f0ba">gen.name</a></div><div class="ttdeci">name</div><div class="ttdef"><b>Definition</b> <a href="gen_8py_source.html#l00042">gen.py:42</a></div></div>
+<div class="ttc" id="astruct_asm_html_a11625fdda4ef63eee3ad1f44b21d9539"><div class="ttname"><a href="struct_asm.html#a11625fdda4ef63eee3ad1f44b21d9539">Asm::labels</a></div><div class="ttdeci">JumpLabel labels[MAX_LABEL_NUM]</div><div class="ttdef"><b>Definition</b> <a href="asm_8h_source.html#l00054">asm.h:54</a></div></div>
+<div class="ttc" id="astruct_asm_html_a2ac405dde59fcf5ece63bdecd499c335"><div class="ttname"><a href="struct_asm.html#a2ac405dde59fcf5ece63bdecd499c335">Asm::pass_num</a></div><div class="ttdeci">size_t pass_num</div><div class="ttdef"><b>Definition</b> <a href="asm_8h_source.html#l00052">asm.h:52</a></div></div>
+<div class="ttc" id="astruct_asm_html_ab544e702fdec142cb2efd0688d8bc80a"><div class="ttname"><a href="struct_asm.html#ab544e702fdec142cb2efd0688d8bc80a">Asm::LAST_PASS_NUM</a></div><div class="ttdeci">static const size_t LAST_PASS_NUM</div><div class="ttdef"><b>Definition</b> <a href="asm_8h_source.html#l00045">asm.h:45</a></div></div>
+<div class="ttc" id="astruct_jump_label_html_a0840f89616d10aeb07e92667452e0a58"><div class="ttname"><a href="struct_jump_label.html#a0840f89616d10aeb07e92667452e0a58">JumpLabel::name</a></div><div class="ttdeci">String name</div><div class="ttdef"><b>Definition</b> <a href="asm_8h_source.html#l00014">asm.h:14</a></div></div>
+<div class="ttc" id="astruct_jump_label_html_aa6389d5fb528422106f28c77d0904477"><div class="ttname"><a href="struct_jump_label.html#aa6389d5fb528422106f28c77d0904477">JumpLabel::addr</a></div><div class="ttdeci">ssize_t addr</div><div class="ttdef"><b>Definition</b> <a href="asm_8h_source.html#l00015">asm.h:15</a></div></div>
 <div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a></div><div class="ttdeci">@ NORMAL_WORK</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00013">statuses.h:13</a></div></div>
-<div class="ttc" id="astruct_string_html_a7028cb0053f3138200b398a23ad2f2b8"><div class="ttname"><a href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">String::str</a></div><div class="ttdeci">char * str</div><div class="ttdoc">string</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00023">text_lib.h:23</a></div></div>
-<div class="ttc" id="atext__lib_8h_html_a0227c409258b64a76f4fc5299c0ae42e"><div class="ttname"><a href="text__lib_8h.html#a0227c409258b64a76f4fc5299c0ae42e">String_TO_c</a></div><div class="ttdeci">#define String_TO_c(str_)</div><div class="ttdoc">String to c_String.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00038">text_lib.h:38</a></div></div>
-<div class="ttc" id="atext__lib_8h_html_a8bda955a9d6dede91b9f9319eb437476"><div class="ttname"><a href="text__lib_8h.html#a8bda955a9d6dede91b9f9319eb437476">String_PRINTF</a></div><div class="ttdeci">#define String_PRINTF(str_)</div><div class="ttdoc">Macros for printing String (specifier &quot;%.*s&quot;)</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00043">text_lib.h:43</a></div></div>
-<div class="ttc" id="atext__lib_8h_html_accfdbf6001411f4d546036819f3d00bd"><div class="ttname"><a href="text__lib_8h.html#accfdbf6001411f4d546036819f3d00bd">String_strcmp</a></div><div class="ttdeci">int String_strcmp(c_String s1, c_String s2)</div><div class="ttdoc">strcmp for c_String (not null-terminated strings)</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00156">text_lib.h:156</a></div></div>
+<div class="ttc" id="atext__lib_8h_html_a4ee93239b997bad6f5a6b6345f14d0c1"><div class="ttname"><a href="text__lib_8h.html#a4ee93239b997bad6f5a6b6345f14d0c1">String_strcmp</a></div><div class="ttdeci">int String_strcmp(const_String s1, const_String s2)</div><div class="ttdoc">strcmp for const_String (not null-terminated strings)</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00161">text_lib.h:161</a></div></div>
+<div class="ttc" id="atext__lib_8h_html_a59a33ce1c7a0b31f7b0284850e355051"><div class="ttname"><a href="text__lib_8h.html#a59a33ce1c7a0b31f7b0284850e355051">String_TO_const</a></div><div class="ttdeci">#define String_TO_const(str_)</div><div class="ttdoc">String to const_String.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00039">text_lib.h:39</a></div></div>
+<div class="ttc" id="atext__lib_8h_html_a8bda955a9d6dede91b9f9319eb437476"><div class="ttname"><a href="text__lib_8h.html#a8bda955a9d6dede91b9f9319eb437476">String_PRINTF</a></div><div class="ttdeci">#define String_PRINTF(str_)</div><div class="ttdoc">Macros for printing String (specifier &quot;%.*s&quot;)</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00046">text_lib.h:46</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="jump_8h_source.html#l00018">JumpLabel::byte</a>, <a class="el" href="cmd_8h_source.html#l00017">MAX_LABEL_NUM</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, <a class="el" href="text__lib_8h_source.html#l00023">String::str</a>, <a class="el" href="text__lib_8h_source.html#l00043">String_PRINTF</a>, <a class="el" href="text__lib_8h_source.html#l00156">String_strcmp()</a>, <a class="el" href="text__lib_8h_source.html#l00038">String_TO_c</a>, and <a class="el" href="jump_8cpp_source.html#l00003">THROW_SYNTAX_ERROR_</a>.</p>
+<p class="reference">References <a class="el" href="asm_8h_source.html#l00015">JumpLabel::addr</a>, <a class="el" href="asm_8h_source.html#l00054">Asm::labels</a>, <a class="el" href="asm_8h_source.html#l00045">Asm::LAST_PASS_NUM</a>, <a class="el" href="cmd_8h_source.html#l00017">MAX_LABEL_NUM</a>, <a class="el" href="asm_8h_source.html#l00014">JumpLabel::name</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, <a class="el" href="asm_8h_source.html#l00052">Asm::pass_num</a>, <a class="el" href="text__lib_8h_source.html#l00046">String_PRINTF</a>, <a class="el" href="text__lib_8h_source.html#l00161">String_strcmp()</a>, <a class="el" href="text__lib_8h_source.html#l00039">String_TO_const</a>, and <a class="el" href="jump_8cpp_source.html#l00003">THROW_SYNTAX_ERROR_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="read_8cpp_source.html#l00135">asm_read_arg_label()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="read_8cpp_source.html#l00168">asm_read_arg_label()</a>.</p>
 
 </div>
 </div>
-<a id="a9f236543c60a67fb27ba9fae09eb32e8" name="a9f236543c60a67fb27ba9fae09eb32e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f236543c60a67fb27ba9fae09eb32e8">&#9670;&#160;</a></span>asm_get_label_name()</h2>
+<a id="a17c6b3d45b1a425226bb23c235f09917" name="a17c6b3d45b1a425226bb23c235f09917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17c6b3d45b1a425226bb23c235f09917">&#9670;&#160;</a></span>asm_get_label_name()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structc___string.html">c_String</a> asm_get_label_name </td>
+          <td class="memname"><a class="el" href="structconst___string.html">const_String</a> asm_get_label_name </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="struct_jump_label.html">JumpLabel</a> *&#160;</td>
           <td class="paramname"><em>lables</em>, </td>
@@ -249,7 +243,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="cmd_8h.html#a226f97678592b90d02bed2f62edf55c6">Imm_int_t</a>&#160;</td>
-          <td class="paramname"><em>byte</em>&#160;</td>
+          <td class="paramname"><em>addr</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -259,37 +253,36 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns label name by byte. </p>
+<p>Returns label name by addr. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lables</td><td></td></tr>
-    <tr><td class="paramname">byte</td><td></td></tr>
+    <tr><td class="paramname">addr</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structc___string.html" title="Struct to keep const string and len together.">c_String</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structconst___string.html" title="Struct to keep const string and len together.">const_String</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="jump_8cpp_source.html#l00051">51</a> of file <a class="el" href="jump_8cpp_source.html">jump.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>                                                                           {</div>
-<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code hl_variable" href="cmd_8h.html#a32f204b97db01e62c58e0158ee40b1cf">MAX_LABEL_NUM</a>; i++) {</div>
-<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">if</span> (labels[i].<span class="keywordtype">byte</span> == <span class="keywordtype">byte</span>)</div>
-<div class="line"><span class="lineno">   54</span>            <span class="keywordflow">return</span> {labels[i].<a class="code hl_variable" href="struct_jump_label.html#a0840f89616d10aeb07e92667452e0a58">name</a>.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>, labels[i].<a class="code hl_variable" href="struct_jump_label.html#a0840f89616d10aeb07e92667452e0a58">name</a>.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a>};</div>
-<div class="line"><span class="lineno">   55</span>    }</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="text__lib_8h.html#a62644cba8542352b76b0e4bf9eb25c73">String_CONST</a>(<span class="stringliteral">&quot;!Label name not found!&quot;</span>);</div>
-<div class="line"><span class="lineno">   58</span>}</div>
-<div class="ttc" id="astruct_jump_label_html_a0840f89616d10aeb07e92667452e0a58"><div class="ttname"><a href="struct_jump_label.html#a0840f89616d10aeb07e92667452e0a58">JumpLabel::name</a></div><div class="ttdeci">String name</div><div class="ttdef"><b>Definition</b> <a href="jump_8h_source.html#l00017">jump.h:17</a></div></div>
-<div class="ttc" id="astruct_string_html_a7fe1a0ef5b6253becac99444295dab0e"><div class="ttname"><a href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">String::len</a></div><div class="ttdeci">ssize_t len</div><div class="ttdoc">string len</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00024">text_lib.h:24</a></div></div>
+<p class="definition">Definition at line <a class="el" href="jump_8cpp_source.html#l00048">48</a> of file <a class="el" href="jump_8cpp_source.html">jump.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>                                                                               {</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> &lt; <a class="code hl_variable" href="cmd_8h.html#a32f204b97db01e62c58e0158ee40b1cf">MAX_LABEL_NUM</a>; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>++) {</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">if</span> (labels[i].addr == addr)</div>
+<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">return</span> {<a class="code hl_variable" href="namespacegen.html#a812c7fb48e048ef8686fa06b7b0a8ae6">labels</a>[<a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>].name.str, <a class="code hl_variable" href="namespacegen.html#a812c7fb48e048ef8686fa06b7b0a8ae6">labels</a>[<a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>].name.len};</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="text__lib_8h.html#a62644cba8542352b76b0e4bf9eb25c73">String_CONST</a>(<span class="stringliteral">&quot;!Label name not found!&quot;</span>);</div>
+<div class="line"><span class="lineno">   55</span>}</div>
+<div class="ttc" id="anamespacegen_html_a812c7fb48e048ef8686fa06b7b0a8ae6"><div class="ttname"><a href="namespacegen.html#a812c7fb48e048ef8686fa06b7b0a8ae6">gen.labels</a></div><div class="ttdeci">list labels</div><div class="ttdef"><b>Definition</b> <a href="gen_8py_source.html#l00016">gen.py:16</a></div></div>
 <div class="ttc" id="atext__lib_8h_html_a62644cba8542352b76b0e4bf9eb25c73"><div class="ttname"><a href="text__lib_8h.html#a62644cba8542352b76b0e4bf9eb25c73">String_CONST</a></div><div class="ttdeci">#define String_CONST(str_)</div><div class="ttdoc">Macros for defining const strings.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00032">text_lib.h:32</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="text__lib_8h_source.html#l00024">String::len</a>, <a class="el" href="cmd_8h_source.html#l00017">MAX_LABEL_NUM</a>, <a class="el" href="jump_8h_source.html#l00017">JumpLabel::name</a>, <a class="el" href="text__lib_8h_source.html#l00023">String::str</a>, and <a class="el" href="text__lib_8h_source.html#l00032">String_CONST</a>.</p>
+<p class="reference">References <a class="el" href="cmd_8h_source.html#l00017">MAX_LABEL_NUM</a>, and <a class="el" href="text__lib_8h_source.html#l00032">String_CONST</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="listing_8cpp_source.html#l00006">asm_write_cmd_listing()</a>.</p>
 
 </div>
 </div>
-<a id="ac5a484eed9fd4e18cc675fbadd20338b" name="ac5a484eed9fd4e18cc675fbadd20338b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5a484eed9fd4e18cc675fbadd20338b">&#9670;&#160;</a></span>asm_new_label()</h2>
+<a id="a885700d3d24bdc32ccfd56b8fc83920b" name="a885700d3d24bdc32ccfd56b8fc83920b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a885700d3d24bdc32ccfd56b8fc83920b">&#9670;&#160;</a></span>asm_new_label()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -297,26 +290,26 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> asm_new_label </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_jump_label.html">JumpLabel</a> *&#160;</td>
-          <td class="paramname"><em>labels</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const <a class="el" href="struct_string.html">String</a>&#160;</td>
           <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="struct_asm_info.html">AsmInfo</a> *&#160;</td>
-          <td class="paramname"><em>inp_file</em>, </td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t&#160;</td>
-          <td class="paramname"><em>byte</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_asm.html">Asm</a> *&#160;</td>
+          <td class="paramname"><em>asm_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_asm_line.html">AsmLine</a> *&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -329,40 +322,41 @@ Functions</h2></td></tr>
 <p>Adds new label to labels. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">labels</td><td></td></tr>
     <tr><td class="paramname">name</td><td></td></tr>
-    <tr><td class="paramname">inp_file</td><td></td></tr>
-    <tr><td class="paramname">byte</td><td></td></tr>
+    <tr><td class="paramname">addr</td><td></td></tr>
+    <tr><td class="paramname">asm_data</td><td></td></tr>
+    <tr><td class="paramname">line</td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="jump_8cpp_source.html#l00007">7</a> of file <a class="el" href="jump_8cpp_source.html">jump.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    8</span>                                                                           {</div>
-<div class="line"><span class="lineno">    9</span>    assert(labels);</div>
-<div class="line"><span class="lineno">   10</span>    assert(name.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>);</div>
-<div class="line"><span class="lineno">   11</span>    assert(inp_file);</div>
-<div class="line"><span class="lineno">   12</span> </div>
-<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code hl_variable" href="cmd_8h.html#a32f204b97db01e62c58e0158ee40b1cf">MAX_LABEL_NUM</a>; i++) {</div>
-<div class="line"><span class="lineno">   14</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="text__lib_8h.html#accfdbf6001411f4d546036819f3d00bd">String_strcmp</a>(<a class="code hl_define" href="text__lib_8h.html#a0227c409258b64a76f4fc5299c0ae42e">String_TO_c</a>(labels[i].name), <a class="code hl_define" href="text__lib_8h.html#a0227c409258b64a76f4fc5299c0ae42e">String_TO_c</a>(name)) == 0)</div>
-<div class="line"><span class="lineno">   15</span>            <a class="code hl_define" href="jump_8cpp.html#aaaf08e4360cf604f52f9a4595a34d28a">THROW_SYNTAX_ERROR_</a>(<span class="stringliteral">&quot;Label name \&quot;%.*s\&quot; used twice.&quot;</span>, <a class="code hl_define" href="text__lib_8h.html#a8bda955a9d6dede91b9f9319eb437476">String_PRINTF</a>(name));</div>
-<div class="line"><span class="lineno">   16</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="jump_8cpp_source.html#l00005">5</a> of file <a class="el" href="jump_8cpp_source.html">jump.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>                                                                   {</div>
+<div class="line"><span class="lineno">    7</span>    assert(<a class="code hl_variable" href="namespacegen.html#adb0a36eb046ef1eaf9d7cffcc504f0ba">name</a>.str);</div>
+<div class="line"><span class="lineno">    8</span>    assert(asm_data);</div>
+<div class="line"><span class="lineno">    9</span> </div>
+<div class="line"><span class="lineno">   10</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> &lt; <a class="code hl_variable" href="cmd_8h.html#a32f204b97db01e62c58e0158ee40b1cf">MAX_LABEL_NUM</a>; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>++) {</div>
+<div class="line"><span class="lineno">   11</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="text__lib_8h.html#a4ee93239b997bad6f5a6b6345f14d0c1">String_strcmp</a>(<a class="code hl_define" href="text__lib_8h.html#a59a33ce1c7a0b31f7b0284850e355051">String_TO_const</a>(asm_data-&gt;<a class="code hl_variable" href="struct_asm.html#a11625fdda4ef63eee3ad1f44b21d9539">labels</a>[i].<a class="code hl_variable" href="struct_jump_label.html#a0840f89616d10aeb07e92667452e0a58">name</a>), <a class="code hl_define" href="text__lib_8h.html#a59a33ce1c7a0b31f7b0284850e355051">String_TO_const</a>(name)) == 0)</div>
+<div class="line"><span class="lineno">   12</span>            <a class="code hl_define" href="jump_8cpp.html#aaaf08e4360cf604f52f9a4595a34d28a">THROW_SYNTAX_ERROR_</a>(<span class="stringliteral">&quot;Label name \&quot;%.*s\&quot; used twice.&quot;</span>, <a class="code hl_define" href="text__lib_8h.html#a8bda955a9d6dede91b9f9319eb437476">String_PRINTF</a>(name));</div>
+<div class="line"><span class="lineno">   13</span>    }</div>
+<div class="line"><span class="lineno">   14</span> </div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> &lt; <a class="code hl_variable" href="cmd_8h.html#a32f204b97db01e62c58e0158ee40b1cf">MAX_LABEL_NUM</a>; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>++) {</div>
+<div class="line"><span class="lineno">   16</span>        <span class="keywordflow">if</span> (asm_data-&gt;<a class="code hl_variable" href="struct_asm.html#a11625fdda4ef63eee3ad1f44b21d9539">labels</a>[i].<a class="code hl_variable" href="struct_jump_label.html#a0840f89616d10aeb07e92667452e0a58">name</a>.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a> == 0 &amp;&amp; asm_data-&gt;<a class="code hl_variable" href="struct_asm.html#a11625fdda4ef63eee3ad1f44b21d9539">labels</a>[i].<a class="code hl_variable" href="struct_jump_label.html#aa6389d5fb528422106f28c77d0904477">addr</a> == -1) {</div>
 <div class="line"><span class="lineno">   17</span> </div>
-<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code hl_variable" href="cmd_8h.html#a32f204b97db01e62c58e0158ee40b1cf">MAX_LABEL_NUM</a>; i++) {</div>
-<div class="line"><span class="lineno">   19</span>        <span class="keywordflow">if</span> (labels[i].name.str == <span class="keyword">nullptr</span> &amp;&amp; labels[i].name.len == 0 &amp;&amp; labels[i].byte == -1) {</div>
-<div class="line"><span class="lineno">   20</span>            labels[i].<a class="code hl_variable" href="struct_jump_label.html#a0840f89616d10aeb07e92667452e0a58">name</a> = name;</div>
-<div class="line"><span class="lineno">   21</span>            labels[i].<a class="code hl_variable" href="struct_jump_label.html#a47eb97b0f19afde28f027698882d8550">byte</a> = byte;</div>
-<div class="line"><span class="lineno">   22</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
-<div class="line"><span class="lineno">   23</span>        }</div>
-<div class="line"><span class="lineno">   24</span>    }</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>    <a class="code hl_define" href="jump_8cpp.html#aaaf08e4360cf604f52f9a4595a34d28a">THROW_SYNTAX_ERROR_</a>(<span class="stringliteral">&quot;Too many labels specified. Max %zu.&quot;</span>, <a class="code hl_variable" href="cmd_8h.html#a32f204b97db01e62c58e0158ee40b1cf">MAX_LABEL_NUM</a>);</div>
-<div class="line"><span class="lineno">   27</span>}</div>
+<div class="line"><span class="lineno">   18</span>            asm_data-&gt;<a class="code hl_variable" href="struct_asm.html#a11625fdda4ef63eee3ad1f44b21d9539">labels</a>[<a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>].<a class="code hl_variable" href="struct_jump_label.html#a0840f89616d10aeb07e92667452e0a58">name</a> = <a class="code hl_variable" href="namespacegen.html#adb0a36eb046ef1eaf9d7cffcc504f0ba">name</a>;</div>
+<div class="line"><span class="lineno">   19</span>            asm_data-&gt;<a class="code hl_variable" href="struct_asm.html#a11625fdda4ef63eee3ad1f44b21d9539">labels</a>[<a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>].<a class="code hl_variable" href="struct_jump_label.html#aa6389d5fb528422106f28c77d0904477">addr</a> = addr;</div>
+<div class="line"><span class="lineno">   20</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
+<div class="line"><span class="lineno">   21</span>        }</div>
+<div class="line"><span class="lineno">   22</span>    }</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_define" href="jump_8cpp.html#aaaf08e4360cf604f52f9a4595a34d28a">THROW_SYNTAX_ERROR_</a>(<span class="stringliteral">&quot;Too many labels specified. Max %zu.&quot;</span>, <a class="code hl_variable" href="cmd_8h.html#a32f204b97db01e62c58e0158ee40b1cf">MAX_LABEL_NUM</a>);</div>
+<div class="line"><span class="lineno">   25</span>}</div>
+<div class="ttc" id="astruct_string_html_a7fe1a0ef5b6253becac99444295dab0e"><div class="ttname"><a href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">String::len</a></div><div class="ttdeci">ssize_t len</div><div class="ttdoc">string len</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00024">text_lib.h:24</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="jump_8h_source.html#l00018">JumpLabel::byte</a>, <a class="el" href="text__lib_8h_source.html#l00024">String::len</a>, <a class="el" href="cmd_8h_source.html#l00017">MAX_LABEL_NUM</a>, <a class="el" href="jump_8h_source.html#l00017">JumpLabel::name</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, <a class="el" href="text__lib_8h_source.html#l00023">String::str</a>, <a class="el" href="text__lib_8h_source.html#l00043">String_PRINTF</a>, <a class="el" href="text__lib_8h_source.html#l00156">String_strcmp()</a>, <a class="el" href="text__lib_8h_source.html#l00038">String_TO_c</a>, and <a class="el" href="jump_8cpp_source.html#l00003">THROW_SYNTAX_ERROR_</a>.</p>
+<p class="reference">References <a class="el" href="asm_8h_source.html#l00015">JumpLabel::addr</a>, <a class="el" href="asm_8h_source.html#l00054">Asm::labels</a>, <a class="el" href="text__lib_8h_source.html#l00024">String::len</a>, <a class="el" href="cmd_8h_source.html#l00017">MAX_LABEL_NUM</a>, <a class="el" href="asm_8h_source.html#l00014">JumpLabel::name</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, <a class="el" href="text__lib_8h_source.html#l00046">String_PRINTF</a>, <a class="el" href="text__lib_8h_source.html#l00161">String_strcmp()</a>, <a class="el" href="text__lib_8h_source.html#l00039">String_TO_const</a>, and <a class="el" href="jump_8cpp_source.html#l00003">THROW_SYNTAX_ERROR_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00081">asm_parse_and_write_line()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="read_8cpp_source.html#l00005">asm_read_cmd()</a>.</p>
 
 </div>
 </div>

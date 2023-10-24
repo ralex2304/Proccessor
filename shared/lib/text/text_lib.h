@@ -11,7 +11,7 @@
 /**
  * @brief Struct to keep const string and len together
  */
-struct c_String {
+struct const_String {
     const char* str = nullptr; ///< const string
     ssize_t len = 0;     ///< string len
 };
@@ -32,15 +32,18 @@ struct String {
 #define String_CONST(str_) {str_, sizeof(str_) - 1}
 
 /**
- * @brief String to c_String
+ * @brief String to const_String
  *
+ * @param str_
  */
-#define String_TO_c(str_) {str_.str, str_.len}
+#define String_TO_const(str_) {(str_).str, (str_).len}
 
 /**
  * @brief Macros for printing String (specifier "%.*s")
+ *
+ * @param str_
  */
-#define String_PRINTF(str_) (int)str_.len, str_.str
+#define String_PRINTF(str_) (int)(str_).len, (str_).str
 
 /**
  * @brief Tokenizator for lines
@@ -124,20 +127,6 @@ inline const char* text_throw_out_comment(char* str, const char symb = ';') {
  * @param str
  * @return const char*
  */
-inline char* str_skip_spaces(char* str) {
-    if (str == nullptr)
-        return nullptr;
-
-    while (*str != '\0' && isspace(*str)) str++;
-    return str;
-}
-
-/**
- * @brief Returns pointer to first non space symbol or '\0'
- *
- * @param str
- * @return const char*
- */
 inline const char* str_skip_spaces(const char* str) {
     if (str == nullptr)
         return nullptr;
@@ -147,13 +136,29 @@ inline const char* str_skip_spaces(const char* str) {
 }
 
 /**
- * @brief strcmp for c_String (not null-terminated strings)
+ * @brief Returns substring without spaces at the beginning
+ *
+ * @param s
+ * @return const_String
+ */
+inline const_String String_skip_spaces(const_String s) {
+    assert(s.len == 0 || s.str != nullptr);
+
+    while (s.len > 0 && isspace(*s.str)) {
+        s.str++;
+        s.len--;
+    }
+    return s;
+}
+
+/**
+ * @brief strcmp for const_String (not null-terminated strings)
  *
  * @param s1
  * @param s2
  * @return int
  */
-inline int String_strcmp(c_String s1, c_String s2) {
+inline int String_strcmp(const_String s1, const_String s2) {
     assert(s1.len == 0 || s1.str);
     assert(s2.len == 0 || s2.str);
 
@@ -175,13 +180,13 @@ inline int String_strcmp(c_String s1, c_String s2) {
 }
 
 /**
- * @brief strcasecmp for c_String (not null-terminated strings)
+ * @brief strcasecmp for const_String (not null-terminated strings)
  *
  * @param s1
  * @param s2
  * @return int
  */
-inline int String_strcasecmp(c_String s1, c_String s2) {
+inline int String_strcasecmp(const_String s1, const_String s2) {
     assert(s1.len == 0 || s1.str);
     assert(s2.len == 0 || s2.str);
 
@@ -210,22 +215,7 @@ inline int String_strcasecmp(c_String s1, c_String s2) {
  * @param ...
  * @return int
  */
-inline int String_sscanf(String token, const char* format, ...) {
-    assert(format);
-    assert(token.str);
-
-    const char tmp = token.str[token.len];
-    token.str[token.len] = '\0';
-
-    va_list arg_list = {};
-    va_start(arg_list, format);
-    int ret = vsscanf(token.str, format, arg_list);
-    va_end(arg_list);
-
-    token.str[token.len] = tmp;
-
-    return ret;
-}
+int String_sscanf(String token, const char* format, ...) __attribute__ ((format(scanf, 2, 3)));
 
 /**
  * @brief isdigit() with + and -

@@ -121,3 +121,19 @@ void split_line_with_special_delims(char* str, const char* delims, const char* s
     }
 }
 
+int String_sscanf(String token, const char* format, ...) {
+    assert(format);
+    assert(token.str);
+
+    const char tmp = token.str[token.len];
+    token.str[token.len] = '\0';
+
+    va_list arg_list = {};
+    va_start(arg_list, format);
+    int ret = vsscanf(token.str, format, arg_list);
+    va_end(arg_list);
+
+    token.str[token.len] = tmp;
+
+    return ret;
+}

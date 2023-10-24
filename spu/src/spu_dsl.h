@@ -1,3 +1,4 @@
+
 /**
  * @brief Immutable var types
  */
@@ -6,14 +7,14 @@
 
 #define IMM_DOUBLE_EPS  IMM_DOUBLE_T_EPSILON
 
-#define IS_ARG_REG          cmd->keys.reg           //< is reg given
-#define IS_ARG_IMM_INT      cmd->keys.imm_int       //< is int imm given
-#define IS_ARG_IMM_DOUBLE   cmd->keys.imm_double    //< is double imm given
-#define IS_ARG_RAM          cmd->keys.ram           //< is cmd type is ram
+#define IS_ARG_REG          cmd.keys.reg           //< is reg given
+#define IS_ARG_IMM_INT      cmd.keys.imm_int       //< is int imm given
+#define IS_ARG_IMM_DOUBLE   cmd.keys.imm_double    //< is double imm given
+#define IS_ARG_RAM          cmd.keys.ram           //< is cmd type is ram
 
-#define ARG_REG         cmd->args.reg           //< reg num
-#define ARG_IMM_DOUBLE  cmd->args.imm_double    //< double imm var
-#define ARG_IMM_INT     cmd->args.imm_int       //< int imm var
+#define ARG_REG         cmd.args.reg           //< reg num
+#define ARG_IMM_DOUBLE  cmd.args.imm_double    //< double imm var
+#define ARG_IMM_INT     cmd.args.imm_int       //< int imm var
 
 #define REG(num) spu->reg[num]  //< reg var by num
 
@@ -44,10 +45,57 @@ inline int WEEKDAY() {
     return now->tm_wday;
 }
 
+inline IMM_DOUBLE_T get_rvalue_(SpuData* spu, const Cmd cmd) {
+    IMM_DOUBLE_T ret = 0;
+
+    if (IS_ARG_RAM) {
+        IMM_INT_T imm_int = 0;
+
+        if (IS_ARG_REG)
+            imm_int += (IMM_INT_T)REG(ARG_REG);
+
+        if (IS_ARG_IMM_INT)
+            imm_int += ARG_IMM_INT;
+
+        ret = RAM(imm_int);
+    } else {
+        if (IS_ARG_REG)
+            ret += REG(ARG_REG);
+
+        if (IS_ARG_IMM_DOUBLE)
+            ret += ARG_IMM_DOUBLE;
+
+        if (IS_ARG_IMM_INT)
+            ret += (IMM_DOUBLE_T)ARG_IMM_INT;
+    }
+
+    return ret;
+}
+
+#define GET_RVALUE() get_rvalue_(spu, cmd)
+
+inline IMM_DOUBLE_T* get_lvalue_ptr_(SpuData* spu, const Cmd cmd) {
+    if (IS_ARG_RAM) {
+        IMM_INT_T imm_int = 0;
+
+        if (IS_ARG_REG)
+            imm_int += (IMM_INT_T)REG(ARG_REG);
+
+        if (IS_ARG_IMM_INT)
+            imm_int += ARG_IMM_INT;
+
+        return &RAM(imm_int);
+    } else {
+        return &REG(ARG_REG);
+    }
+}
+
+#define GET_LVALUE_PTR() get_lvalue_ptr_(spu, cmd)
+
 /**
  * @brief Halt function
  */
-#define HALT() return Status::OK_EXIT
+#define HALT() return Status::NORMAL_WORK
 
 /**
  * @brief Spu data dump
@@ -57,12 +105,12 @@ inline int WEEKDAY() {
 /**
  * @brief Returns current instruction pointer in bytes
  */
-#define GET_INSTRUCTION_PTR() (*cur_byte)
+#define GET_INSTRUCTION_PTR() (*cur_byte - cmd.size())
 
 /**
  * @brief Returns next command instruction pointer in bytes
  */
-#define GET_NEXT_INSTRUCTION_PTR() (*cur_byte + cmd->size())
+#define GET_NEXT_INSTRUCTION_PTR() (*cur_byte)
 
 /**
  * @brief Moves instruction pointer to specified address
@@ -88,7 +136,7 @@ inline int WEEKDAY() {
  */
 #define PUSH(var)                           \
     stk_res |= stk_push(&spu->stk, var);    \
-    if (stk_res != Stack::OK) break
+    if (stk_res != Stack::OK) goto cmd_dispatch_do_stk_error;
 
 /**
  * @brief Pops from stack
@@ -97,7 +145,7 @@ inline int WEEKDAY() {
  */
 #define POP(var)                        \
     stk_res |= stk_pop(&spu->stk, var); \
-    if (stk_res != Stack::OK) break
+    if (stk_res != Stack::OK) goto cmd_dispatch_do_stk_error;
 
 /**
  * @brief Gets imm to var from stdin
@@ -114,7 +162,7 @@ inline int WEEKDAY() {
  * @param var
  */
 #define PRINT(var)                  \
-    if (!spu_print_imm(a))          \
+    if (!spu_print_imm(var))        \
         return Status::OUTPUT_ERROR
 
 /**

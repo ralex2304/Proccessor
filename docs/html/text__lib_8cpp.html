@@ -118,6 +118,8 @@ Functions</h2></td></tr>
 <tr class="memitem:aeeb6f730688f5cd5f8a1262398f2387d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__lib_8cpp.html#aeeb6f730688f5cd5f8a1262398f2387d">split_line_with_special_delims</a> (char *str, const char *delims, const char *special_delims, const char *terminators, <a class="el" href="struct_string.html">String</a> *array, const size_t array_max_size)</td></tr>
 <tr class="memdesc:aeeb6f730688f5cd5f8a1262398f2387d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits text to array of tokens. If founds special delim, treats it as single token.  <br /></td></tr>
 <tr class="separator:aeeb6f730688f5cd5f8a1262398f2387d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91c9a7523f46e88b8e65f97fae3aa07a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__lib_8cpp.html#a91c9a7523f46e88b8e65f97fae3aa07a">String_sscanf</a> (<a class="el" href="struct_string.html">String</a> token, const char *format,...)</td></tr>
+<tr class="separator:a91c9a7523f46e88b8e65f97fae3aa07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a09c5ba5616bd20bd391f84cfd80abce4" name="a09c5ba5616bd20bd391f84cfd80abce4"></a>
@@ -213,16 +215,17 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  116</span>    assert(array_max_size &gt; 0);</div>
 <div class="line"><span class="lineno">  117</span> </div>
 <div class="line"><span class="lineno">  118</span>    array[0] = <a class="code hl_function" href="text__lib_8cpp.html#a7e58f9f938c66ca67535112121b4e2f1">String_strtok_special</a>(str, delims, special_delims, terminators);</div>
-<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; array_max_size &amp;&amp; array[i - 1].<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> != <span class="keyword">nullptr</span>; i++) {</div>
-<div class="line"><span class="lineno">  120</span>        array[i] = <a class="code hl_function" href="text__lib_8cpp.html#a7e58f9f938c66ca67535112121b4e2f1">String_strtok_special</a>(<span class="keyword">nullptr</span>, delims, special_delims, terminators);</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> &lt; array_max_size &amp;&amp; array[<a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> - 1].<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> != <span class="keyword">nullptr</span>; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>++) {</div>
+<div class="line"><span class="lineno">  120</span>        array[<a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>] = <a class="code hl_function" href="text__lib_8cpp.html#a7e58f9f938c66ca67535112121b4e2f1">String_strtok_special</a>(<span class="keyword">nullptr</span>, delims, special_delims, terminators);</div>
 <div class="line"><span class="lineno">  121</span>    }</div>
 <div class="line"><span class="lineno">  122</span>}</div>
+<div class="ttc" id="anamespacegen_html_ad6f9a21fef823e19e8e49589645c58ba"><div class="ttname"><a href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">gen.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition</b> <a href="gen_8py_source.html#l00027">gen.py:27</a></div></div>
 <div class="ttc" id="astruct_string_html_a7028cb0053f3138200b398a23ad2f2b8"><div class="ttname"><a href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">String::str</a></div><div class="ttdeci">char * str</div><div class="ttdoc">string</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00023">text_lib.h:23</a></div></div>
 <div class="ttc" id="atext__lib_8cpp_html_a7e58f9f938c66ca67535112121b4e2f1"><div class="ttname"><a href="text__lib_8cpp.html#a7e58f9f938c66ca67535112121b4e2f1">String_strtok_special</a></div><div class="ttdeci">String String_strtok_special(char *input, const char *delim, const char *special_delim, const char *terminators)</div><div class="ttdoc">Works as strtok, but also finds special_delim. If found, puts it in found_special and quits.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00041">text_lib.cpp:41</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="text__lib_8h_source.html#l00023">String::str</a>, and <a class="el" href="text__lib_8cpp_source.html#l00041">String_strtok_special()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00081">asm_parse_and_write_line()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="assembler_8cpp_source.html#l00056">asm_parse_and_write_line()</a>.</p>
 
 </div>
 </div>
@@ -268,8 +271,8 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  101</span> </div>
 <div class="line"><span class="lineno">  102</span>    lines_array[0] = <a class="code hl_function" href="text__lib_8cpp.html#a36e4ff383d0e3c91fd0ac0c99c94d597">String_strtok_line</a>(text);</div>
 <div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; lines_array[i - 1].<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> != <span class="keyword">nullptr</span>; i++) {</div>
-<div class="line"><span class="lineno">  105</span>        lines_array[i] = <a class="code hl_function" href="text__lib_8cpp.html#a36e4ff383d0e3c91fd0ac0c99c94d597">String_strtok_line</a>(<span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; lines_array[<a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> - 1].<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a> != <span class="keyword">nullptr</span>; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>++) {</div>
+<div class="line"><span class="lineno">  105</span>        lines_array[<a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>] = <a class="code hl_function" href="text__lib_8cpp.html#a36e4ff383d0e3c91fd0ac0c99c94d597">String_strtok_line</a>(<span class="keyword">nullptr</span>);</div>
 <div class="line"><span class="lineno">  106</span>    }</div>
 <div class="line"><span class="lineno">  107</span>}</div>
 <div class="ttc" id="atext__lib_8cpp_html_a36e4ff383d0e3c91fd0ac0c99c94d597"><div class="ttname"><a href="text__lib_8cpp.html#a36e4ff383d0e3c91fd0ac0c99c94d597">String_strtok_line</a></div><div class="ttdeci">String String_strtok_line(char *input)</div><div class="ttdoc">Tokenizator for lines.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8cpp_source.html#l00003">text_lib.cpp:3</a></div></div>
@@ -277,6 +280,63 @@ Functions</h2></td></tr>
 <p class="reference">References <a class="el" href="text__lib_8h_source.html#l00023">String::str</a>, and <a class="el" href="text__lib_8cpp_source.html#l00003">String_strtok_line()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="text__proccessor_8cpp_source.html#l00003">InputData::ctor()</a>.</p>
+
+</div>
+</div>
+<a id="a91c9a7523f46e88b8e65f97fae3aa07a" name="a91c9a7523f46e88b8e65f97fae3aa07a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91c9a7523f46e88b8e65f97fae3aa07a">&#9670;&#160;</a></span>String_sscanf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int String_sscanf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_string.html">String</a>&#160;</td>
+          <td class="paramname"><em>token</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="text__lib_8cpp_source.html#l00124">124</a> of file <a class="el" href="text__lib_8cpp_source.html">text_lib.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  124</span>                                                         {</div>
+<div class="line"><span class="lineno">  125</span>    assert(format);</div>
+<div class="line"><span class="lineno">  126</span>    assert(token.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>);</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> tmp = token.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>[token.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a>];</div>
+<div class="line"><span class="lineno">  129</span>    token.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>[token.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a>] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>    va_list arg_list = {};</div>
+<div class="line"><span class="lineno">  132</span>    va_start(arg_list, format);</div>
+<div class="line"><span class="lineno">  133</span>    <span class="keywordtype">int</span> ret = vsscanf(token.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>, format, arg_list);</div>
+<div class="line"><span class="lineno">  134</span>    va_end(arg_list);</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>    token.<a class="code hl_variable" href="struct_string.html#a7028cb0053f3138200b398a23ad2f2b8">str</a>[token.<a class="code hl_variable" href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">len</a>] = tmp;</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">  139</span>}</div>
+<div class="ttc" id="astruct_string_html_a7fe1a0ef5b6253becac99444295dab0e"><div class="ttname"><a href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">String::len</a></div><div class="ttdeci">ssize_t len</div><div class="ttdoc">string len</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00024">text_lib.h:24</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="text__lib_8h_source.html#l00024">String::len</a>, and <a class="el" href="text__lib_8h_source.html#l00023">String::str</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="read_8cpp_source.html#l00143">asm_read_arg_imm_double()</a>, and <a class="el" href="read_8cpp_source.html#l00118">asm_read_arg_imm_int()</a>.</p>
 
 </div>
 </div>
@@ -342,7 +402,6 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   36</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><span class="lineno">   37</span>}</div>
 <div class="ttc" id="astruct_string_html"><div class="ttname"><a href="struct_string.html">String</a></div><div class="ttdoc">Struct to keep string and len together.</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00022">text_lib.h:22</a></div></div>
-<div class="ttc" id="astruct_string_html_a7fe1a0ef5b6253becac99444295dab0e"><div class="ttname"><a href="struct_string.html#a7fe1a0ef5b6253becac99444295dab0e">String::len</a></div><div class="ttdeci">ssize_t len</div><div class="ttdoc">string len</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00024">text_lib.h:24</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="text__lib_8h_source.html#l00024">String::len</a>, and <a class="el" href="text__lib_8h_source.html#l00023">String::str</a>.</p>
 
