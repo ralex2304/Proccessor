@@ -20,12 +20,7 @@ var struct_stack =
       [ "DATA_L_CANARY_ERR", "struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5a972d0ae4ce1c7527212f6e29d78df8fe", null ],
       [ "DATA_R_CANARY_ERR", "struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5a31325202b6e6bfa0cb1b1e0c0601bea5", null ]
     ] ],
-    [ "canary_left", "struct_stack.html#a93649663411b07293ec66851c09c99c9", null ],
-    [ "canary_right", "struct_stack.html#a26e3a891c804d0a2deef354cb6d7f13b", null ],
     [ "capacity", "struct_stack.html#a2f2b41ebbf7c8adce40da902814e1c7b", null ],
     [ "data", "struct_stack.html#a02ed96691b2e6636bd9155758e8ee8cd", null ],
-    [ "data_hash", "struct_stack.html#a0313f9fb25ba1f5ce41bcaf465777ead", null ],
-    [ "size", "struct_stack.html#a3b6cb0b4ff732c7bbbaaa5d3860bcd1a", null ],
-    [ "struct_hash", "struct_stack.html#a5d85c28620cf7c22e622df2d8a58f35b", null ],
-    [ "var_data", "struct_stack.html#ada9ac9dd578c2f702547fbf23447dfc5", null ]
+    [ "size", "struct_stack.html#a3b6cb0b4ff732c7bbbaaa5d3860bcd1a", null ]
 ];

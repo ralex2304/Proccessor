@@ -18,8 +18,6 @@ const size_t MAX_LABEL_NUM = 128;   //< maximum number of labels in program (arr
 
 const size_t MAX_LINE_LEN = 64;     //< max command text line len
 
-const size_t RAM_SIZE = 100;        //< spu ram size
-
 const size_t CMD_MAX_NUM = 255;
 
 /**

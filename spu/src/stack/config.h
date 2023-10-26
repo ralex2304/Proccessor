@@ -6,11 +6,11 @@
 #include "cmd.h"
 #include "stack.h"
 
-#define DEBUG           //< Enables debug mode
+//#define DEBUG           //< Enables debug mode
 
 /// Stack debug options
-#define CANARY_PROTECT  //< Enables canary protection
-#define HASH_PROTECT    //< Enables hash protection
+//#define CANARY_PROTECT  //< Enables canary protection
+//#define HASH_PROTECT    //< Enables hash protection
 
 const char* const STACK_LOG_FILENAME = "stack.log";
 

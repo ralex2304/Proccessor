@@ -3,7 +3,7 @@ var searchData=
   ['raise_0',['raise',['../struct_status.html#a30c8084592b2ff90cfc22c1860e58dab',1,'Status']]],
   ['ram_1',['ram',['../struct_cmd_keys.html#aba6b64f73e21ca67bb9062cc69669350',1,'CmdKeys::ram'],['../struct_args_enabled.html#a46aeef6ea384961f7680286192d0b599',1,'ArgsEnabled::ram'],['../struct_spu_data.html#a20debdca8f0a04c0b528f3ff9b7b3065',1,'SpuData::ram']]],
   ['ram_2',['RAM',['../spu__dsl_8h.html#a40869d06535af1c441272596a593f764',1,'spu_dsl.h']]],
-  ['ram_5fsize_3',['RAM_SIZE',['../cmd_8h.html#abe1e1b2bfd2932377e15b323ee0fb530',1,'cmd.h']]],
+  ['ram_5fsize_3',['RAM_SIZE',['../spu_8h.html#abe1e1b2bfd2932377e15b323ee0fb530',1,'spu.h']]],
   ['rax_4',['RAX',['../cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64ad8a2b3cfd37dc1215cf782d326e5186c',1,'cmd.h']]],
   ['rbx_5',['RBX',['../cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a3fca113e3a8a54281655d842075690be',1,'cmd.h']]],
   ['rcx_6',['RCX',['../cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a9319e76c0baaa9e53113184ab7d25944',1,'cmd.h']]],
@@ -23,8 +23,9 @@ var searchData=
   ['regnums_20',['RegNums',['../cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64',1,'cmd.h']]],
   ['regs_5fdict_21',['REGS_DICT',['../cmd_8h.html#a4ea04ae05ebfffb0e476551db61b7724',1,'cmd.h']]],
   ['regs_5fnum_22',['REGS_NUM',['../cmd_8h.html#a55559e71614b4b4ba24d073b1b813120',1,'cmd.h']]],
-  ['resize_23',['resize',['../struct_buffer.html#a6446660135f46c6a88fd863ec0a57a88',1,'Buffer']]],
-  ['results_24',['Results',['../struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5',1,'Stack']]],
-  ['right_5fdata_5fcanary_5fptr_25',['right_data_canary_ptr',['../stack_8h.html#a8141a491532e1b89ad3bc94fc410d523',1,'stack.h']]],
-  ['runtime_5ferror_26',['RUNTIME_ERROR',['../struct_status.html#ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306',1,'Status']]]
+  ['renew_23',['renew',['../structsfml_window.html#a482c9f147d3c9e5aec416182a226cbd4',1,'sfmlWindow']]],
+  ['res_24',['res',['../namespaceencoder.html#adb91fe8a3fa212c5ab9dc9e4b7be75e0',1,'encoder']]],
+  ['resize_25',['resize',['../struct_buffer.html#a6446660135f46c6a88fd863ec0a57a88',1,'Buffer']]],
+  ['results_26',['Results',['../struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5',1,'Stack']]],
+  ['runtime_5ferror_27',['RUNTIME_ERROR',['../struct_status.html#ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306',1,'Status']]]
 ];

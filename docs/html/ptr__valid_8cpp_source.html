@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('ptr__valid_8cpp_source.html',''); init
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">char</span> executable = <span class="charliteral">&#39;\0&#39;</span>;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">char</span> mapped     = <span class="charliteral">&#39;\0&#39;</span>;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    FILE* file = fopen(<span class="stringliteral">&quot;/proc/self/maps&quot;</span>, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    FILE* <a class="code hl_variable" href="namespaceencoder.html#a7fdb946781a2d1ff8b72b6fbdd0d7b45">file</a> = fopen(<span class="stringliteral">&quot;/proc/self/maps&quot;</span>, <span class="stringliteral">&quot;r&quot;</span>);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">if</span> (!file)</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -155,7 +155,7 @@ $(document).ready(function(){initNavTree('ptr__valid_8cpp_source.html',''); init
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keywordtype">bool</span> <a class="code hl_function" href="ptr__valid_8h.html#a9118aa9878b41057b6d2067e5d5dff2b">is_ptr_valid</a>(<span class="keywordtype">void</span>* p) {</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">char</span> filename[] = <span class="stringliteral">&quot;/tmp/kurwa_ptr.XXXXXX&quot;</span>;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">int</span> file = mkstemp(filename);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceencoder.html#a7fdb946781a2d1ff8b72b6fbdd0d7b45">file</a> = mkstemp(filename);</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">if</span> (file == -1) {</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        perror(<span class="stringliteral">&quot;&quot;</span>);</div>
@@ -165,7 +165,7 @@ $(document).ready(function(){initNavTree('ptr__valid_8cpp_source.html',''); init
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    ssize_t res = write(file, p, 1);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    ssize_t <a class="code hl_variable" href="namespaceencoder.html#adb91fe8a3fa212c5ab9dc9e4b7be75e0">res</a> = write(file, p, 1);</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">if</span> (res == 1) {</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        ret = <span class="keyword">true</span>;</div>
@@ -190,6 +190,8 @@ $(document).ready(function(){initNavTree('ptr__valid_8cpp_source.html',''); init
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#endif </span><span class="comment">// #ifdef LINUX_MANUAL_PTR_VALIDATION</span></div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="ttc" id="anamespaceencoder_html_a7fdb946781a2d1ff8b72b6fbdd0d7b45"><div class="ttname"><a href="namespaceencoder.html#a7fdb946781a2d1ff8b72b6fbdd0d7b45">encoder.file</a></div><div class="ttdeci">file</div><div class="ttdef"><b>Definition</b> <a href="encoder_8py_source.html#l00042">encoder.py:42</a></div></div>
+<div class="ttc" id="anamespaceencoder_html_adb91fe8a3fa212c5ab9dc9e4b7be75e0"><div class="ttname"><a href="namespaceencoder.html#adb91fe8a3fa212c5ab9dc9e4b7be75e0">encoder.res</a></div><div class="ttdeci">res</div><div class="ttdef"><b>Definition</b> <a href="encoder_8py_source.html#l00024">encoder.py:24</a></div></div>
 <div class="ttc" id="aptr__valid_8h_html"><div class="ttname"><a href="ptr__valid_8h.html">ptr_valid.h</a></div></div>
 <div class="ttc" id="aptr__valid_8h_html_a9118aa9878b41057b6d2067e5d5dff2b"><div class="ttname"><a href="ptr__valid_8h.html#a9118aa9878b41057b6d2067e5d5dff2b">is_ptr_valid</a></div><div class="ttdeci">bool is_ptr_valid(void *p)</div><div class="ttdoc">Checks if pointer is valid for access in mode.</div></div>
 </div><!-- fragment --></div><!-- contents -->

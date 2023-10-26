@@ -179,61 +179,72 @@ $(document).ready(function(){initNavTree('spu__dsl_8h_source.html',''); initResi
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a68e4a10cfd30e33ab1e506f696729336">  103</a></span><span class="preprocessor">#define DUMP() spu-&gt;dump()</span></div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#aeb6d3ba3cc029fcb8ac45f2e3853ef2d">  108</a></span><span class="preprocessor">#define GET_INSTRUCTION_PTR() (*cur_byte - cmd.size())</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#acde6104e0bb6e23b24a2fe8d1404e387">  113</a></span><span class="preprocessor">#define GET_NEXT_INSTRUCTION_PTR() (*cur_byte)</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">#ifdef GRAPHICS</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">#define SHOW() spu_sfml_show(spu)</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#else </span><span class="comment">//&lt; #ifndef GRAPHICS</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a3cc39a683dd5b4be4a7cabb4d3af5635">  113</a></span><span class="preprocessor">#define SHOW() THROW_RUNTIME_ERROR_(&quot;SHOW() command called, but graphics is disabled.&quot;</span>);</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#aaf30322f59aa465eb1161227f8986838">  120</a></span><span class="preprocessor">#define JUMP(addr) *cur_byte = addr</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a226e577a36ed0a410a8affc1cd05ce25">  128</a></span><span class="preprocessor">#define CHECK_AND_THROW_ERR(condition, error_msg)   \</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">    if (!(condition))                               \</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">        THROW_RUNTIME_ERROR_(error_msg)</span></div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#ae12240a3f4de46ee0616d67825971f44">  137</a></span><span class="preprocessor">#define PUSH(var)                           \</span></div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="preprocessor">    stk_res |= stk_push(&amp;spu-&gt;stk, var);    \</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="preprocessor">    if (stk_res != Stack::OK) goto cmd_dispatch_do_stk_error;</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#endif </span><span class="comment">//&lt; #ifdef GRAPHICS</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a9e6bec950d7a024a342074a90caac424">  122</a></span><span class="preprocessor">#define SLEEP(time) usleep((unsigned int)time * 1000)</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#aeb6d3ba3cc029fcb8ac45f2e3853ef2d">  127</a></span><span class="preprocessor">#define GET_INSTRUCTION_PTR() (*cur_byte - cmd.size())</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#acde6104e0bb6e23b24a2fe8d1404e387">  132</a></span><span class="preprocessor">#define GET_NEXT_INSTRUCTION_PTR() (*cur_byte)</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#aaf30322f59aa465eb1161227f8986838">  139</a></span><span class="preprocessor">#define JUMP(addr) *cur_byte = addr</span></div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a8e6708d01dec9fd978f58748eda35132">  146</a></span><span class="preprocessor">#define POP(var)                        \</span></div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="preprocessor">    stk_res |= stk_pop(&amp;spu-&gt;stk, var); \</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="preprocessor">    if (stk_res != Stack::OK) goto cmd_dispatch_do_stk_error;</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a1f92e847fc8c4ba1353b03992c5eeb5a">  155</a></span><span class="preprocessor">#define GET_FROM_INPUT(var)                                 \</span></div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="preprocessor">    *var = spu_get_imm_from_input();                        \</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">    if (!CHECK_IMM_DOUBLE(*var)) return Status::WRONG_USER_INPUT</span></div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a14f23f2619c0fefec5f6852ed0c2ba6a">  164</a></span><span class="preprocessor">#define PRINT(var)                  \</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="preprocessor">    if (!spu_print_imm(var))        \</span></div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="preprocessor">        return Status::OUTPUT_ERROR</span></div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a0e78009ab0c6fe5165541468db781072">  173</a></span><span class="preprocessor">#define UNARY_OPERATOR(operator)    \</span></div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">    IMM_DOUBLE_T a = 0;             \</span></div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="preprocessor">    POP(&amp;a);                        \</span></div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">    PUSH(operator(a))</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a226e577a36ed0a410a8affc1cd05ce25">  147</a></span><span class="preprocessor">#define CHECK_AND_THROW_ERR(condition, error_msg)   \</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="preprocessor">    if (!(condition))                               \</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="preprocessor">        THROW_RUNTIME_ERROR_(error_msg)</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#ae12240a3f4de46ee0616d67825971f44">  156</a></span><span class="preprocessor">#define PUSH(var)                           \</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">    stk_res |= stk_push(&amp;spu-&gt;stk, var);    \</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="preprocessor">    if (stk_res != Stack::OK) goto cmd_dispatch_do_stk_error;</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a8e6708d01dec9fd978f58748eda35132">  165</a></span><span class="preprocessor">#define POP(var)                        \</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="preprocessor">    stk_res |= stk_pop(&amp;spu-&gt;stk, var); \</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="preprocessor">    if (stk_res != Stack::OK) goto cmd_dispatch_do_stk_error;</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a1f92e847fc8c4ba1353b03992c5eeb5a">  174</a></span><span class="preprocessor">#define GET_FROM_INPUT(var)                                 \</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="preprocessor">    *var = spu_get_imm_from_input();                        \</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">    if (!CHECK_IMM_DOUBLE(*var)) return Status::WRONG_USER_INPUT</span></div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a81c98de12ee60ca088f9addf8e178cb2">  183</a></span><span class="preprocessor">#define BINARY_OPERATOR(operator)   \</span></div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="preprocessor">    IMM_DOUBLE_T a = 0, b = 0;      \</span></div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="preprocessor">    POP(&amp;b);                        \</span></div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="preprocessor">    POP(&amp;a);                        \</span></div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="preprocessor">    PUSH((a) operator (b))</span></div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a1cf72c3e92ee96c0deff85926ec6199a">  195</a></span><span class="preprocessor">#define JUMP_CLAUSE(operator, addr) \</span></div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="preprocessor">    IMM_DOUBLE_T a = 0, b = 0;      \</span></div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="preprocessor">    POP(&amp;b);                        \</span></div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="preprocessor">    POP(&amp;a);                        \</span></div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="preprocessor">    if ((a) operator (b))           \</span></div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="preprocessor">        JUMP(addr);</span></div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a8da47d72071c71c053638fde446eb8cf">  208</a></span><span class="preprocessor">#define JUMP_CLAUSE_FUNC(func, addr)    \</span></div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="preprocessor">    IMM_DOUBLE_T a = 0, b = 0;          \</span></div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="preprocessor">    POP(&amp;b);                            \</span></div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="preprocessor">    POP(&amp;a);                            \</span></div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="preprocessor">    if (func(a, b))                     \</span></div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="preprocessor">        JUMP(addr);</span></div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a9df1b497775c087bfb7f8c39e4a0f3d0">  218</a></span><span class="preprocessor">#define JUMP_CHECK_ARGS() \</span></div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="preprocessor">    CHECK_AND_THROW_ERR(IS_ARG_IMM_INT || IS_ARG_REG, &quot;\&quot;jump\&quot; commands require byte address.&quot;</span>)</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a14f23f2619c0fefec5f6852ed0c2ba6a">  183</a></span><span class="preprocessor">#define PRINT(var)                  \</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="preprocessor">    if (!spu_print_imm(var))        \</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="preprocessor">        return Status::OUTPUT_ERROR</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a0e78009ab0c6fe5165541468db781072">  192</a></span><span class="preprocessor">#define UNARY_OPERATOR(operator)    \</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="preprocessor">    IMM_DOUBLE_T a = 0;             \</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="preprocessor">    POP(&amp;a);                        \</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="preprocessor">    PUSH(operator(a))</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a81c98de12ee60ca088f9addf8e178cb2">  202</a></span><span class="preprocessor">#define BINARY_OPERATOR(operator)   \</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="preprocessor">    IMM_DOUBLE_T a = 0, b = 0;      \</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="preprocessor">    POP(&amp;b);                        \</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="preprocessor">    POP(&amp;a);                        \</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="preprocessor">    PUSH((a) operator (b))</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a1cf72c3e92ee96c0deff85926ec6199a">  214</a></span><span class="preprocessor">#define JUMP_CLAUSE(operator, addr) \</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="preprocessor">    IMM_DOUBLE_T a = 0, b = 0;      \</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="preprocessor">    POP(&amp;b);                        \</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="preprocessor">    POP(&amp;a);                        \</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="preprocessor">    if ((a) operator (b))           \</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="preprocessor">        JUMP(addr);</span></div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#af83302c0334071493354c0c3ecc9c0ec">  224</a></span><span class="preprocessor">#define JUMP_DESTINATION() (ARG_IMM_INT + (IS_ARG_REG ? (IMM_INT_T)REG(ARG_REG) : 0))</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a8da47d72071c71c053638fde446eb8cf">  227</a></span><span class="preprocessor">#define JUMP_CLAUSE_FUNC(func, addr)    \</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="preprocessor">    IMM_DOUBLE_T a = 0, b = 0;          \</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="preprocessor">    POP(&amp;b);                            \</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="preprocessor">    POP(&amp;a);                            \</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="preprocessor">    if (func(a, b))                     \</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="preprocessor">        JUMP(addr);</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#a9df1b497775c087bfb7f8c39e4a0f3d0">  237</a></span><span class="preprocessor">#define JUMP_CHECK_ARGS() \</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="preprocessor">    CHECK_AND_THROW_ERR(IS_ARG_IMM_INT || IS_ARG_REG, &quot;\&quot;jump\&quot; commands require byte address.&quot;</span>)</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="spu__dsl_8h.html#af83302c0334071493354c0c3ecc9c0ec">  243</a></span><span class="preprocessor">#define JUMP_DESTINATION() (ARG_IMM_INT + (IS_ARG_REG ? (IMM_INT_T)REG(ARG_REG) : 0))</span></div>
 <div class="ttc" id="aspu__dsl_8h_html_a11501ee59a7a70b380249c79d9b24f74"><div class="ttname"><a href="spu__dsl_8h.html#a11501ee59a7a70b380249c79d9b24f74">get_lvalue_ptr_</a></div><div class="ttdeci">IMM_DOUBLE_T * get_lvalue_ptr_(SpuData *spu, const Cmd cmd)</div><div class="ttdef"><b>Definition</b> <a href="spu__dsl_8h_source.html#l00077">spu_dsl.h:77</a></div></div>
 <div class="ttc" id="aspu__dsl_8h_html_a2f622510378832f7dd7e9abdebaafac3"><div class="ttname"><a href="spu__dsl_8h.html#a2f622510378832f7dd7e9abdebaafac3">ARG_IMM_INT</a></div><div class="ttdeci">#define ARG_IMM_INT</div><div class="ttdef"><b>Definition</b> <a href="spu__dsl_8h_source.html#l00017">spu_dsl.h:17</a></div></div>
 <div class="ttc" id="aspu__dsl_8h_html_a303b93cbec67fcc7b8c811304b46fd9a"><div class="ttname"><a href="spu__dsl_8h.html#a303b93cbec67fcc7b8c811304b46fd9a">IMM_DOUBLE_T</a></div><div class="ttdeci">#define IMM_DOUBLE_T</div><div class="ttdoc">Immutable var types.</div><div class="ttdef"><b>Definition</b> <a href="spu__dsl_8h_source.html#l00005">spu_dsl.h:5</a></div></div>
@@ -248,8 +259,8 @@ $(document).ready(function(){initNavTree('spu__dsl_8h_source.html',''); initResi
 <div class="ttc" id="aspu__dsl_8h_html_ae1fccf3dc3b51475a1ffefacd0d2bddc"><div class="ttname"><a href="spu__dsl_8h.html#ae1fccf3dc3b51475a1ffefacd0d2bddc">get_rvalue_</a></div><div class="ttdeci">IMM_DOUBLE_T get_rvalue_(SpuData *spu, const Cmd cmd)</div><div class="ttdef"><b>Definition</b> <a href="spu__dsl_8h_source.html#l00048">spu_dsl.h:48</a></div></div>
 <div class="ttc" id="aspu__dsl_8h_html_ae99b8cd524bcb719d3d5657bc927f24b"><div class="ttname"><a href="spu__dsl_8h.html#ae99b8cd524bcb719d3d5657bc927f24b">IS_ARG_IMM_DOUBLE</a></div><div class="ttdeci">#define IS_ARG_IMM_DOUBLE</div><div class="ttdef"><b>Definition</b> <a href="spu__dsl_8h_source.html#l00012">spu_dsl.h:12</a></div></div>
 <div class="ttc" id="aspu__dsl_8h_html_affc73a1d6edef707baa2c67176322169"><div class="ttname"><a href="spu__dsl_8h.html#affc73a1d6edef707baa2c67176322169">ARG_REG</a></div><div class="ttdeci">#define ARG_REG</div><div class="ttdef"><b>Definition</b> <a href="spu__dsl_8h_source.html#l00015">spu_dsl.h:15</a></div></div>
-<div class="ttc" id="astruct_cmd_html"><div class="ttname"><a href="struct_cmd.html">Cmd</a></div><div class="ttdoc">Command data structure.</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00174">cmd.h:174</a></div></div>
-<div class="ttc" id="astruct_spu_data_html"><div class="ttname"><a href="struct_spu_data.html">SpuData</a></div><div class="ttdoc">Keeps spu structs and variables.</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00018">spu.h:18</a></div></div>
+<div class="ttc" id="astruct_cmd_html"><div class="ttname"><a href="struct_cmd.html">Cmd</a></div><div class="ttdoc">Command data structure.</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00172">cmd.h:172</a></div></div>
+<div class="ttc" id="astruct_spu_data_html"><div class="ttname"><a href="struct_spu_data.html">SpuData</a></div><div class="ttdoc">Keeps spu structs and variables.</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00035">spu.h:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

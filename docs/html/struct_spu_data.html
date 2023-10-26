@@ -117,13 +117,17 @@ Public Attributes</h2></td></tr>
 <tr class="separator:abc84b16c7ed76fea5ed82082897443c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c082f4479ce66efb50b95259f98e457"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmd_8h.html#addb7662d7e0f3483a216a3d4c2203811">Imm_double_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_spu_data.html#a0c082f4479ce66efb50b95259f98e457">reg</a> [<a class="el" href="cmd_8h.html#a55559e71614b4b4ba24d073b1b813120">REGS_NUM</a>] = {}</td></tr>
 <tr class="separator:a0c082f4479ce66efb50b95259f98e457"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20debdca8f0a04c0b528f3ff9b7b3065"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmd_8h.html#addb7662d7e0f3483a216a3d4c2203811">Imm_double_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_spu_data.html#a20debdca8f0a04c0b528f3ff9b7b3065">ram</a> [<a class="el" href="cmd_8h.html#abe1e1b2bfd2932377e15b323ee0fb530">RAM_SIZE</a>] = {}</td></tr>
+<tr class="memitem:a20debdca8f0a04c0b528f3ff9b7b3065"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmd_8h.html#addb7662d7e0f3483a216a3d4c2203811">Imm_double_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_spu_data.html#a20debdca8f0a04c0b528f3ff9b7b3065">ram</a> [<a class="el" href="spu_8h.html#abe1e1b2bfd2932377e15b323ee0fb530">RAM_SIZE</a>] = {}</td></tr>
 <tr class="separator:a20debdca8f0a04c0b528f3ff9b7b3065"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85b2c31c25d74a7a5e4e4458f2ded233"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_spu_data.html#a85b2c31c25d74a7a5e4e4458f2ded233">header</a> = &quot;Processor&quot;</td></tr>
+<tr class="separator:a85b2c31c25d74a7a5e4e4458f2ded233"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c3c00b677d22d92d8a10ccef67f3bc5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsfml_window.html">sfmlWindow</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_spu_data.html#a9c3c00b677d22d92d8a10ccef67f3bc5">sfml</a> = {}</td></tr>
+<tr class="separator:a9c3c00b677d22d92d8a10ccef67f3bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Keeps spu structs and variables. </p>
 
-<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00018">18</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00035">35</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a455f6fed24f70e695c87ecfc7cb2fde1" name="a455f6fed24f70e695c87ecfc7cb2fde1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a455f6fed24f70e695c87ecfc7cb2fde1">&#9670;&#160;</a></span>ctor()</h2>
@@ -150,19 +154,33 @@ Public Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   11</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306">Status::RUNTIME_ERROR</a>;</div>
 <div class="line"><span class="lineno">   12</span>    }</div>
 <div class="line"><span class="lineno">   13</span> </div>
-<div class="line"><span class="lineno">   14</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
-<div class="line"><span class="lineno">   15</span>}</div>
+<div class="line"><span class="lineno">   14</span><span class="preprocessor">#ifdef GRAPHICS</span></div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="struct_spu_data.html#a9c3c00b677d22d92d8a10ccef67f3bc5">sfml</a>.<a class="code hl_function" href="structsfml_window.html#a1f9623411fba2961483ca599641017e2">ctor</a>(<a class="code hl_variable" href="spu_8h.html#a5edc31e43090198dc2358a73cddedc81">PIXEL_SIZE</a>, <a class="code hl_variable" href="spu_8h.html#a5edc31e43090198dc2358a73cddedc81">PIXEL_SIZE</a>, <a class="code hl_variable" href="spu_8h.html#afcc4d5f47bf49727824adede4093c3eb">VIDEO_WIDTH</a>, <a class="code hl_variable" href="spu_8h.html#a793a380e3ceb4728abb70e4b34368a65">VIDEO_HEIGHT</a>, <a class="code hl_variable" href="struct_spu_data.html#a85b2c31c25d74a7a5e4e4458f2ded233">header</a>)) {</div>
+<div class="line"><span class="lineno">   16</span>        fprintf(stderr, <a class="code hl_define" href="console_8h.html#ad220b7c98ce4bd06bf25860ca62d7aba">CONSOLE_RED</a>(<span class="stringliteral">&quot;sfml memory allocation error\n&quot;</span>));</div>
+<div class="line"><span class="lineno">   17</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7">Status::MEMORY_EXCEED</a>;</div>
+<div class="line"><span class="lineno">   18</span>    }</div>
+<div class="line"><span class="lineno">   19</span><span class="preprocessor">#endif </span><span class="comment">//&lt; #ifdef GRAPHICS</span></div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
+<div class="line"><span class="lineno">   22</span>}</div>
 <div class="ttc" id="aconsole_8h_html_ad220b7c98ce4bd06bf25860ca62d7aba"><div class="ttname"><a href="console_8h.html#ad220b7c98ce4bd06bf25860ca62d7aba">CONSOLE_RED</a></div><div class="ttdeci">#define CONSOLE_RED(str)</div><div class="ttdef"><b>Definition</b> <a href="console_8h_source.html#l00033">console.h:33</a></div></div>
+<div class="ttc" id="aspu_8h_html_a5edc31e43090198dc2358a73cddedc81"><div class="ttname"><a href="spu_8h.html#a5edc31e43090198dc2358a73cddedc81">PIXEL_SIZE</a></div><div class="ttdeci">const size_t PIXEL_SIZE</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00023">spu.h:23</a></div></div>
+<div class="ttc" id="aspu_8h_html_a793a380e3ceb4728abb70e4b34368a65"><div class="ttname"><a href="spu_8h.html#a793a380e3ceb4728abb70e4b34368a65">VIDEO_HEIGHT</a></div><div class="ttdeci">const size_t VIDEO_HEIGHT</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00025">spu.h:25</a></div></div>
+<div class="ttc" id="aspu_8h_html_afcc4d5f47bf49727824adede4093c3eb"><div class="ttname"><a href="spu_8h.html#afcc4d5f47bf49727824adede4093c3eb">VIDEO_WIDTH</a></div><div class="ttdeci">const size_t VIDEO_WIDTH</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00026">spu.h:26</a></div></div>
 <div class="ttc" id="astack_8cpp_html_a16351279f5d0c48665e03ccbfe77aad3"><div class="ttname"><a href="stack_8cpp.html#a16351279f5d0c48665e03ccbfe77aad3">stk_print_error_to_user</a></div><div class="ttdeci">void stk_print_error_to_user(const int err_code)</div><div class="ttdoc">Prints errors to console.</div><div class="ttdef"><b>Definition</b> <a href="stack_8cpp_source.html#l00253">stack.cpp:253</a></div></div>
-<div class="ttc" id="astack_8h_html_a77d5f30dcde5dbd333d45dc0958348d7"><div class="ttname"><a href="stack_8h.html#a77d5f30dcde5dbd333d45dc0958348d7">STK_CTOR</a></div><div class="ttdeci">#define STK_CTOR(stk)</div><div class="ttdoc">stk_ctor macros</div><div class="ttdef"><b>Definition</b> <a href="stack_8h_source.html#l00106">stack.h:106</a></div></div>
-<div class="ttc" id="astruct_spu_data_html_abc84b16c7ed76fea5ed82082897443c2"><div class="ttname"><a href="struct_spu_data.html#abc84b16c7ed76fea5ed82082897443c2">SpuData::stk</a></div><div class="ttdeci">Stack stk</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00019">spu.h:19</a></div></div>
+<div class="ttc" id="astack_8h_html_a77d5f30dcde5dbd333d45dc0958348d7"><div class="ttname"><a href="stack_8h.html#a77d5f30dcde5dbd333d45dc0958348d7">STK_CTOR</a></div><div class="ttdeci">#define STK_CTOR(stk)</div><div class="ttdoc">stk_ctor macros</div><div class="ttdef"><b>Definition</b> <a href="stack_8h_source.html#l00118">stack.h:118</a></div></div>
+<div class="ttc" id="astruct_spu_data_html_a85b2c31c25d74a7a5e4e4458f2ded233"><div class="ttname"><a href="struct_spu_data.html#a85b2c31c25d74a7a5e4e4458f2ded233">SpuData::header</a></div><div class="ttdeci">const char * header</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00043">spu.h:43</a></div></div>
+<div class="ttc" id="astruct_spu_data_html_a9c3c00b677d22d92d8a10ccef67f3bc5"><div class="ttname"><a href="struct_spu_data.html#a9c3c00b677d22d92d8a10ccef67f3bc5">SpuData::sfml</a></div><div class="ttdeci">sfmlWindow sfml</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00045">spu.h:45</a></div></div>
+<div class="ttc" id="astruct_spu_data_html_abc84b16c7ed76fea5ed82082897443c2"><div class="ttname"><a href="struct_spu_data.html#abc84b16c7ed76fea5ed82082897443c2">SpuData::stk</a></div><div class="ttdeci">Stack stk</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00036">spu.h:36</a></div></div>
 <div class="ttc" id="astruct_stack_html_ae8242b5f1b2c3d98a6dbafc302e509d5a146633a2ef2a9bbb1c05ec4cd31ba019"><div class="ttname"><a href="struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5a146633a2ef2a9bbb1c05ec4cd31ba019">Stack::OK</a></div><div class="ttdeci">@ OK</div><div class="ttdef"><b>Definition</b> <a href="stack_8h_source.html#l00036">stack.h:36</a></div></div>
 <div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a></div><div class="ttdeci">@ NORMAL_WORK</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00013">statuses.h:13</a></div></div>
+<div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7">Status::MEMORY_EXCEED</a></div><div class="ttdeci">@ MEMORY_EXCEED</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00018">statuses.h:18</a></div></div>
 <div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306">Status::RUNTIME_ERROR</a></div><div class="ttdeci">@ RUNTIME_ERROR</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00020">statuses.h:20</a></div></div>
+<div class="ttc" id="astructsfml_window_html_a1f9623411fba2961483ca599641017e2"><div class="ttname"><a href="structsfml_window.html#a1f9623411fba2961483ca599641017e2">sfmlWindow::ctor</a></div><div class="ttdeci">bool ctor(const unsigned int pixel_width, const unsigned int pixel_height, const unsigned int hor_num, const unsigned int ver_num, const char *header)</div><div class="ttdoc">sfmlWindow constructor</div><div class="ttdef"><b>Definition</b> <a href="lib__sfml_8cpp_source.html#l00005">lib_sfml.cpp:5</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="console_8h_source.html#l00033">CONSOLE_RED</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, <a class="el" href="stack_8h_source.html#l00036">Stack::OK</a>, <a class="el" href="statuses_8h_source.html#l00020">Status::RUNTIME_ERROR</a>, <a class="el" href="spu_8h_source.html#l00019">stk</a>, <a class="el" href="stack_8h_source.html#l00106">STK_CTOR</a>, and <a class="el" href="stack_8cpp_source.html#l00253">stk_print_error_to_user()</a>.</p>
+<p class="reference">References <a class="el" href="console_8h_source.html#l00033">CONSOLE_RED</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00005">sfmlWindow::ctor()</a>, <a class="el" href="spu_8h_source.html#l00043">header</a>, <a class="el" href="statuses_8h_source.html#l00018">Status::MEMORY_EXCEED</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, <a class="el" href="stack_8h_source.html#l00036">Stack::OK</a>, <a class="el" href="spu_8h_source.html#l00023">PIXEL_SIZE</a>, <a class="el" href="statuses_8h_source.html#l00020">Status::RUNTIME_ERROR</a>, <a class="el" href="spu_8h_source.html#l00045">sfml</a>, <a class="el" href="spu_8h_source.html#l00036">stk</a>, <a class="el" href="stack_8h_source.html#l00118">STK_CTOR</a>, <a class="el" href="stack_8cpp_source.html#l00253">stk_print_error_to_user()</a>, <a class="el" href="spu_8h_source.html#l00025">VIDEO_HEIGHT</a>, and <a class="el" href="spu_8h_source.html#l00026">VIDEO_WIDTH</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00053">spu_parse_and_execute()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00064">spu_parse_and_execute()</a>.</p>
 
 </div>
 </div>
@@ -181,23 +199,28 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="spu_8cpp_source.html#l00017">17</a> of file <a class="el" href="spu_8cpp_source.html">spu.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   17</span>                             {</div>
-<div class="line"><span class="lineno">   18</span>    <span class="keywordtype">int</span> stk_res = <a class="code hl_function" href="stack_8cpp.html#a60863cc39088870cab1ccd33d1e8d2f6">stk_dtor</a>(&amp;<a class="code hl_variable" href="struct_spu_data.html#abc84b16c7ed76fea5ed82082897443c2">stk</a>);</div>
-<div class="line"><span class="lineno">   19</span> </div>
-<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">if</span> (stk_res != <a class="code hl_enumvalue" href="struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5a146633a2ef2a9bbb1c05ec4cd31ba019">Stack::OK</a>) {</div>
-<div class="line"><span class="lineno">   21</span>        fprintf(stderr, <a class="code hl_define" href="console_8h.html#ad220b7c98ce4bd06bf25860ca62d7aba">CONSOLE_RED</a>(<span class="stringliteral">&quot;Stack error\n&quot;</span>));</div>
-<div class="line"><span class="lineno">   22</span>        <a class="code hl_function" href="stack_8cpp.html#a16351279f5d0c48665e03ccbfe77aad3">stk_print_error_to_user</a>(stk_res);</div>
-<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306">Status::RUNTIME_ERROR</a>;</div>
-<div class="line"><span class="lineno">   24</span>    }</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
-<div class="line"><span class="lineno">   27</span>}</div>
+<p class="definition">Definition at line <a class="el" href="spu_8cpp_source.html#l00024">24</a> of file <a class="el" href="spu_8cpp_source.html">spu.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>                             {</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordtype">int</span> stk_res = <a class="code hl_function" href="stack_8cpp.html#a60863cc39088870cab1ccd33d1e8d2f6">stk_dtor</a>(&amp;<a class="code hl_variable" href="struct_spu_data.html#abc84b16c7ed76fea5ed82082897443c2">stk</a>);</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">if</span> (stk_res != <a class="code hl_enumvalue" href="struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5a146633a2ef2a9bbb1c05ec4cd31ba019">Stack::OK</a>) {</div>
+<div class="line"><span class="lineno">   28</span>        fprintf(stderr, <a class="code hl_define" href="console_8h.html#ad220b7c98ce4bd06bf25860ca62d7aba">CONSOLE_RED</a>(<span class="stringliteral">&quot;Stack error\n&quot;</span>));</div>
+<div class="line"><span class="lineno">   29</span>        <a class="code hl_function" href="stack_8cpp.html#a16351279f5d0c48665e03ccbfe77aad3">stk_print_error_to_user</a>(stk_res);</div>
+<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306">Status::RUNTIME_ERROR</a>;</div>
+<div class="line"><span class="lineno">   31</span>    }</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span><span class="preprocessor">#ifdef GRAPHICS</span></div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="struct_spu_data.html#a9c3c00b677d22d92d8a10ccef67f3bc5">sfml</a>.<a class="code hl_function" href="structsfml_window.html#a0d0b5803d8975fe0480d694c1780c690">dtor</a>();</div>
+<div class="line"><span class="lineno">   35</span><span class="preprocessor">#endif </span><span class="comment">//&lt; #ifdef GRAPHICS</span></div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
+<div class="line"><span class="lineno">   38</span>}</div>
 <div class="ttc" id="astack_8cpp_html_a60863cc39088870cab1ccd33d1e8d2f6"><div class="ttname"><a href="stack_8cpp.html#a60863cc39088870cab1ccd33d1e8d2f6">stk_dtor</a></div><div class="ttdeci">int stk_dtor(Stack *stk)</div><div class="ttdoc">Stack destructor.</div><div class="ttdef"><b>Definition</b> <a href="stack_8cpp_source.html#l00069">stack.cpp:69</a></div></div>
+<div class="ttc" id="astructsfml_window_html_a0d0b5803d8975fe0480d694c1780c690"><div class="ttname"><a href="structsfml_window.html#a0d0b5803d8975fe0480d694c1780c690">sfmlWindow::dtor</a></div><div class="ttdeci">void dtor()</div><div class="ttdef"><b>Definition</b> <a href="lib__sfml_8cpp_source.html#l00065">lib_sfml.cpp:65</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="console_8h_source.html#l00033">CONSOLE_RED</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, <a class="el" href="stack_8h_source.html#l00036">Stack::OK</a>, <a class="el" href="statuses_8h_source.html#l00020">Status::RUNTIME_ERROR</a>, <a class="el" href="spu_8h_source.html#l00019">stk</a>, <a class="el" href="stack_8cpp_source.html#l00069">stk_dtor()</a>, and <a class="el" href="stack_8cpp_source.html#l00253">stk_print_error_to_user()</a>.</p>
+<p class="reference">References <a class="el" href="console_8h_source.html#l00033">CONSOLE_RED</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00065">sfmlWindow::dtor()</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, <a class="el" href="stack_8h_source.html#l00036">Stack::OK</a>, <a class="el" href="statuses_8h_source.html#l00020">Status::RUNTIME_ERROR</a>, <a class="el" href="spu_8h_source.html#l00045">sfml</a>, <a class="el" href="spu_8h_source.html#l00036">stk</a>, <a class="el" href="stack_8cpp_source.html#l00069">stk_dtor()</a>, and <a class="el" href="stack_8cpp_source.html#l00253">stk_print_error_to_user()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00053">spu_parse_and_execute()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00064">spu_parse_and_execute()</a>.</p>
 
 </div>
 </div>
@@ -216,38 +239,56 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="spu_8cpp_source.html#l00029">29</a> of file <a class="el" href="spu_8cpp_source.html">spu.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>                   {</div>
-<div class="line"><span class="lineno">   30</span>    printf(<span class="stringliteral">&quot;# spu dump():\n&quot;</span></div>
-<div class="line"><span class="lineno">   31</span>           <span class="stringliteral">&quot;# \n&quot;</span>);</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>    <a class="code hl_function" href="stack_8cpp.html#ad2c6e9edab1f89bad251ff76dc3579a7">stk_data_dump</a>(&amp;<a class="code hl_variable" href="struct_spu_data.html#abc84b16c7ed76fea5ed82082897443c2">stk</a>);</div>
-<div class="line"><span class="lineno">   34</span> </div>
-<div class="line"><span class="lineno">   35</span>    printf(<span class="stringliteral">&quot;# \n&quot;</span></div>
-<div class="line"><span class="lineno">   36</span>           <span class="stringliteral">&quot;# Registers dump:\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   37</span> </div>
-<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> &lt; <a class="code hl_variable" href="cmd_8h.html#a55559e71614b4b4ba24d073b1b813120">REGS_NUM</a>; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>++)</div>
-<div class="line"><span class="lineno">   39</span>        printf(<span class="stringliteral">&quot;# %.*s = &quot;</span> <a class="code hl_define" href="cmd_8h.html#a8851999375ab12991d66ed751e1e2fdb">IMM_DOUBLE_T_PRINTF</a> <span class="stringliteral">&quot;\n&quot;</span>, <a class="code hl_define" href="text__lib_8h.html#a8bda955a9d6dede91b9f9319eb437476">String_PRINTF</a>(<a class="code hl_variable" href="cmd_8h.html#a4ea04ae05ebfffb0e476551db61b7724">REGS_DICT</a>[i].name),</div>
-<div class="line"><span class="lineno">   40</span>                                                     <a class="code hl_variable" href="struct_spu_data.html#a0c082f4479ce66efb50b95259f98e457">reg</a>[<a class="code hl_variable" href="cmd_8h.html#a4ea04ae05ebfffb0e476551db61b7724">REGS_DICT</a>[i].num]);</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>    printf(<span class="stringliteral">&quot;# \n&quot;</span></div>
-<div class="line"><span class="lineno">   43</span>           <span class="stringliteral">&quot;# dump end\n\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   44</span> </div>
-<div class="line"><span class="lineno">   45</span>    fflush(stdout);</div>
-<div class="line"><span class="lineno">   46</span>}</div>
-<div class="ttc" id="acmd_8h_html_a4ea04ae05ebfffb0e476551db61b7724"><div class="ttname"><a href="cmd_8h.html#a4ea04ae05ebfffb0e476551db61b7724">REGS_DICT</a></div><div class="ttdeci">const RegInfo REGS_DICT[]</div><div class="ttdoc">regs dictionary</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00061">cmd.h:61</a></div></div>
-<div class="ttc" id="acmd_8h_html_a55559e71614b4b4ba24d073b1b813120"><div class="ttname"><a href="cmd_8h.html#a55559e71614b4b4ba24d073b1b813120">REGS_NUM</a></div><div class="ttdeci">const RegNum_t REGS_NUM</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00068">cmd.h:68</a></div></div>
-<div class="ttc" id="acmd_8h_html_a8851999375ab12991d66ed751e1e2fdb"><div class="ttname"><a href="cmd_8h.html#a8851999375ab12991d66ed751e1e2fdb">IMM_DOUBLE_T_PRINTF</a></div><div class="ttdeci">#define IMM_DOUBLE_T_PRINTF</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00074">cmd.h:74</a></div></div>
+<p class="definition">Definition at line <a class="el" href="spu_8cpp_source.html#l00040">40</a> of file <a class="el" href="spu_8cpp_source.html">spu.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                   {</div>
+<div class="line"><span class="lineno">   41</span>    printf(<span class="stringliteral">&quot;# spu dump():\n&quot;</span></div>
+<div class="line"><span class="lineno">   42</span>           <span class="stringliteral">&quot;# \n&quot;</span>);</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_function" href="stack_8cpp.html#ad2c6e9edab1f89bad251ff76dc3579a7">stk_data_dump</a>(&amp;<a class="code hl_variable" href="struct_spu_data.html#abc84b16c7ed76fea5ed82082897443c2">stk</a>);</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    printf(<span class="stringliteral">&quot;# \n&quot;</span></div>
+<div class="line"><span class="lineno">   47</span>           <span class="stringliteral">&quot;# Registers dump:\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> &lt; <a class="code hl_variable" href="cmd_8h.html#a55559e71614b4b4ba24d073b1b813120">REGS_NUM</a>; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>++)</div>
+<div class="line"><span class="lineno">   50</span>        printf(<span class="stringliteral">&quot;# %.*s = &quot;</span> <a class="code hl_define" href="cmd_8h.html#a8851999375ab12991d66ed751e1e2fdb">IMM_DOUBLE_T_PRINTF</a> <span class="stringliteral">&quot;\n&quot;</span>, <a class="code hl_define" href="text__lib_8h.html#a8bda955a9d6dede91b9f9319eb437476">String_PRINTF</a>(<a class="code hl_variable" href="cmd_8h.html#a4ea04ae05ebfffb0e476551db61b7724">REGS_DICT</a>[i].name),</div>
+<div class="line"><span class="lineno">   51</span>                                                     <a class="code hl_variable" href="struct_spu_data.html#a0c082f4479ce66efb50b95259f98e457">reg</a>[<a class="code hl_variable" href="cmd_8h.html#a4ea04ae05ebfffb0e476551db61b7724">REGS_DICT</a>[i].num]);</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    printf(<span class="stringliteral">&quot;# \n&quot;</span></div>
+<div class="line"><span class="lineno">   54</span>           <span class="stringliteral">&quot;# dump end\n\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    fflush(stdout);</div>
+<div class="line"><span class="lineno">   57</span>}</div>
+<div class="ttc" id="acmd_8h_html_a4ea04ae05ebfffb0e476551db61b7724"><div class="ttname"><a href="cmd_8h.html#a4ea04ae05ebfffb0e476551db61b7724">REGS_DICT</a></div><div class="ttdeci">const RegInfo REGS_DICT[]</div><div class="ttdoc">regs dictionary</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00059">cmd.h:59</a></div></div>
+<div class="ttc" id="acmd_8h_html_a55559e71614b4b4ba24d073b1b813120"><div class="ttname"><a href="cmd_8h.html#a55559e71614b4b4ba24d073b1b813120">REGS_NUM</a></div><div class="ttdeci">const RegNum_t REGS_NUM</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00066">cmd.h:66</a></div></div>
+<div class="ttc" id="acmd_8h_html_a8851999375ab12991d66ed751e1e2fdb"><div class="ttname"><a href="cmd_8h.html#a8851999375ab12991d66ed751e1e2fdb">IMM_DOUBLE_T_PRINTF</a></div><div class="ttdeci">#define IMM_DOUBLE_T_PRINTF</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00072">cmd.h:72</a></div></div>
 <div class="ttc" id="anamespacegen_html_ad6f9a21fef823e19e8e49589645c58ba"><div class="ttname"><a href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">gen.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition</b> <a href="gen_8py_source.html#l00027">gen.py:27</a></div></div>
 <div class="ttc" id="astack_8cpp_html_ad2c6e9edab1f89bad251ff76dc3579a7"><div class="ttname"><a href="stack_8cpp.html#ad2c6e9edab1f89bad251ff76dc3579a7">stk_data_dump</a></div><div class="ttdeci">void stk_data_dump(const Stack *stk)</div><div class="ttdoc">Dumps stk.data and some information about it.</div><div class="ttdef"><b>Definition</b> <a href="stack_8cpp_source.html#l00194">stack.cpp:194</a></div></div>
-<div class="ttc" id="astruct_spu_data_html_a0c082f4479ce66efb50b95259f98e457"><div class="ttname"><a href="struct_spu_data.html#a0c082f4479ce66efb50b95259f98e457">SpuData::reg</a></div><div class="ttdeci">Imm_double_t reg[REGS_NUM]</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00021">spu.h:21</a></div></div>
+<div class="ttc" id="astruct_spu_data_html_a0c082f4479ce66efb50b95259f98e457"><div class="ttname"><a href="struct_spu_data.html#a0c082f4479ce66efb50b95259f98e457">SpuData::reg</a></div><div class="ttdeci">Imm_double_t reg[REGS_NUM]</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00038">spu.h:38</a></div></div>
 <div class="ttc" id="atext__lib_8h_html_a8bda955a9d6dede91b9f9319eb437476"><div class="ttname"><a href="text__lib_8h.html#a8bda955a9d6dede91b9f9319eb437476">String_PRINTF</a></div><div class="ttdeci">#define String_PRINTF(str_)</div><div class="ttdoc">Macros for printing String (specifier &quot;%.*s&quot;)</div><div class="ttdef"><b>Definition</b> <a href="text__lib_8h_source.html#l00046">text_lib.h:46</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="cmd_8h_source.html#l00074">IMM_DOUBLE_T_PRINTF</a>, <a class="el" href="spu_8h_source.html#l00021">reg</a>, <a class="el" href="cmd_8h_source.html#l00061">REGS_DICT</a>, <a class="el" href="cmd_8h_source.html#l00068">REGS_NUM</a>, <a class="el" href="spu_8h_source.html#l00019">stk</a>, <a class="el" href="stack_8cpp_source.html#l00194">stk_data_dump()</a>, and <a class="el" href="text__lib_8h_source.html#l00046">String_PRINTF</a>.</p>
+<p class="reference">References <a class="el" href="cmd_8h_source.html#l00072">IMM_DOUBLE_T_PRINTF</a>, <a class="el" href="spu_8h_source.html#l00038">reg</a>, <a class="el" href="cmd_8h_source.html#l00059">REGS_DICT</a>, <a class="el" href="cmd_8h_source.html#l00066">REGS_NUM</a>, <a class="el" href="spu_8h_source.html#l00036">stk</a>, <a class="el" href="stack_8cpp_source.html#l00194">stk_data_dump()</a>, and <a class="el" href="text__lib_8h_source.html#l00046">String_PRINTF</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a85b2c31c25d74a7a5e4e4458f2ded233" name="a85b2c31c25d74a7a5e4e4458f2ded233"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85b2c31c25d74a7a5e4e4458f2ded233">&#9670;&#160;</a></span>header</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* SpuData::header = &quot;Processor&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00043">43</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00005">ctor()</a>.</p>
+
+</div>
+</div>
 <a id="a20debdca8f0a04c0b528f3ff9b7b3065" name="a20debdca8f0a04c0b528f3ff9b7b3065"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a20debdca8f0a04c0b528f3ff9b7b3065">&#9670;&#160;</a></span>ram</h2>
 
@@ -255,12 +296,14 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="cmd_8h.html#addb7662d7e0f3483a216a3d4c2203811">Imm_double_t</a> SpuData::ram[<a class="el" href="cmd_8h.html#abe1e1b2bfd2932377e15b323ee0fb530">RAM_SIZE</a>] = {}</td>
+          <td class="memname"><a class="el" href="cmd_8h.html#addb7662d7e0f3483a216a3d4c2203811">Imm_double_t</a> SpuData::ram[<a class="el" href="spu_8h.html#abe1e1b2bfd2932377e15b323ee0fb530">RAM_SIZE</a>] = {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00023">23</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00040">40</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00164">spu_sfml_show()</a>.</p>
 
 </div>
 </div>
@@ -276,9 +319,27 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00021">21</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00038">38</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00029">dump()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00040">dump()</a>.</p>
+
+</div>
+</div>
+<a id="a9c3c00b677d22d92d8a10ccef67f3bc5" name="a9c3c00b677d22d92d8a10ccef67f3bc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c3c00b677d22d92d8a10ccef67f3bc5">&#9670;&#160;</a></span>sfml</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsfml_window.html">sfmlWindow</a> SpuData::sfml = {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00045">45</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00005">ctor()</a>, <a class="el" href="spu_8cpp_source.html#l00024">dtor()</a>, and <a class="el" href="spu_8cpp_source.html#l00164">spu_sfml_show()</a>.</p>
 
 </div>
 </div>
@@ -294,9 +355,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00019">19</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00036">36</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00005">ctor()</a>, <a class="el" href="spu_8cpp_source.html#l00017">dtor()</a>, and <a class="el" href="spu_8cpp_source.html#l00029">dump()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00005">ctor()</a>, <a class="el" href="spu_8cpp_source.html#l00024">dtor()</a>, and <a class="el" href="spu_8cpp_source.html#l00040">dump()</a>.</p>
 
 </div>
 </div>

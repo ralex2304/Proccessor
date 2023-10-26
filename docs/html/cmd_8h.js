@@ -44,7 +44,6 @@ var cmd_8h =
     [ "FILE_HEADER", "cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be", null ],
     [ "MAX_LABEL_NUM", "cmd_8h.html#a32f204b97db01e62c58e0158ee40b1cf", null ],
     [ "MAX_LINE_LEN", "cmd_8h.html#a150c0fc704c3322a038de77fa5ff4e7b", null ],
-    [ "RAM_SIZE", "cmd_8h.html#abe1e1b2bfd2932377e15b323ee0fb530", null ],
     [ "REGS_DICT", "cmd_8h.html#a4ea04ae05ebfffb0e476551db61b7724", null ],
     [ "REGS_NUM", "cmd_8h.html#a55559e71614b4b4ba24d073b1b813120", null ]
 ];

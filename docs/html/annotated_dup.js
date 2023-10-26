@@ -17,6 +17,7 @@ var annotated_dup =
     [ "JumpLabel", "struct_jump_label.html", "struct_jump_label" ],
     [ "LogFileData", "struct_log_file_data.html", "struct_log_file_data" ],
     [ "RegInfo", "struct_reg_info.html", "struct_reg_info" ],
+    [ "sfmlWindow", "structsfml_window.html", "structsfml_window" ],
     [ "SpuData", "struct_spu_data.html", "struct_spu_data" ],
     [ "Stack", "struct_stack.html", "struct_stack" ],
     [ "Status", "struct_status.html", "struct_status" ],

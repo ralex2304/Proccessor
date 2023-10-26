@@ -16,57 +16,94 @@
 \DoxyCodeLine{\Hypertarget{spu_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stack_8h}{stack/stack.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{spu_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{console_8h}{lib/utils/console.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{spu_8h_source_l00014}00014\ }
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00018}\mbox{\hyperlink{struct_spu_data}{00018}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_spu_data}{SpuData}}\ \{}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00019}\mbox{\hyperlink{struct_spu_data_abc84b16c7ed76fea5ed82082897443c2}{00019}}\ \ \ \ \ \mbox{\hyperlink{struct_stack}{Stack}}\ \mbox{\hyperlink{struct_spu_data_abc84b16c7ed76fea5ed82082897443c2}{stk}}\ =\ \{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ Stack}}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00020}00020\ }
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00021}\mbox{\hyperlink{struct_spu_data_a0c082f4479ce66efb50b95259f98e457}{00021}}\ \ \ \ \ \mbox{\hyperlink{cmd_8h_addb7662d7e0f3483a216a3d4c2203811}{Imm\_double\_t}}\ \mbox{\hyperlink{struct_spu_data_a0c082f4479ce66efb50b95259f98e457}{reg}}[\mbox{\hyperlink{cmd_8h_a55559e71614b4b4ba24d073b1b813120}{REGS\_NUM}}]\ =\ \{\};\ \ \ \ \textcolor{comment}{//<\ registers}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00016}\mbox{\hyperlink{spu_8h_a36c5995036907afe534f70b04cb1d360}{00016}}\ \textcolor{preprocessor}{\#define\ GRAPHICS\ }\textcolor{comment}{//<\ enables\ graphics\ mode}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00019}00019\ \textcolor{preprocessor}{\#ifdef\ GRAPHICS}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lib__sfml_8h}{sfml/lib\_sfml.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00021}00021\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//<\ \#ifdef\ GRAPHICS}}
 \DoxyCodeLine{\Hypertarget{spu_8h_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00023}\mbox{\hyperlink{struct_spu_data_a20debdca8f0a04c0b528f3ff9b7b3065}{00023}}\ \ \ \ \ \mbox{\hyperlink{cmd_8h_addb7662d7e0f3483a216a3d4c2203811}{Imm\_double\_t}}\ \mbox{\hyperlink{struct_spu_data_a20debdca8f0a04c0b528f3ff9b7b3065}{ram}}[\mbox{\hyperlink{cmd_8h_abe1e1b2bfd2932377e15b323ee0fb530}{RAM\_SIZE}}]\ =\ \{\};\ \ \ \ \textcolor{comment}{//<\ ram}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00023}\mbox{\hyperlink{spu_8h_a5edc31e43090198dc2358a73cddedc81}{00023}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{spu_8h_a5edc31e43090198dc2358a73cddedc81}{PIXEL\_SIZE}}\ =\ 7;\ \ \ \ \ \ \ \ \textcolor{comment}{//<\ one\ pixel\ size\ in\ graphics\ mode}}
 \DoxyCodeLine{\Hypertarget{spu_8h_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{struct_spu_data_a455f6fed24f70e695c87ecfc7cb2fde1}{ctor}}();}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{struct_spu_data_ab8279902c19cd3fd61a692f2781b0668}{dtor}}();}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00025}\mbox{\hyperlink{spu_8h_a793a380e3ceb4728abb70e4b34368a65}{00025}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{spu_8h_a793a380e3ceb4728abb70e4b34368a65}{VIDEO\_HEIGHT}}\ =\ 100;\ \ \ \ \textcolor{comment}{//<\ video\ window\ height\ in\ "{}pixels"{}}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00026}\mbox{\hyperlink{spu_8h_afcc4d5f47bf49727824adede4093c3eb}{00026}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{spu_8h_afcc4d5f47bf49727824adede4093c3eb}{VIDEO\_WIDTH}}\ \ =\ 100;\ \ \ \ \textcolor{comment}{//<\ video\ window\ width\ in\ "{}pixels"{}}}
 \DoxyCodeLine{\Hypertarget{spu_8h_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_spu_data_ae2f8ad06bd42639ff18b4c1b2ee6e5ef}{dump}}();}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00029}00029\ \};}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00030}00030\ }
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00037}00037\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{spu_8h_a2cce1007b123063fe7af282bcbff14ec}{spu\_parse\_and\_execute}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ data);}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00046}00046\ \mbox{\hyperlink{struct_cmd}{Cmd}}\ \mbox{\hyperlink{spu_8h_ad0f4e4336cdb467fae9b8155a10428b8}{spu\_read\_cmd}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ data,\ \textcolor{keywordtype}{size\_t}\ *cur\_byte);}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00028}\mbox{\hyperlink{spu_8h_abe1e1b2bfd2932377e15b323ee0fb530}{00028}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{spu_8h_abe1e1b2bfd2932377e15b323ee0fb530}{RAM\_SIZE}}\ =\ 10000;\ \ \ \ \ \ \ \ \textcolor{comment}{//<\ spu\ ram\ size}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00030}00030\ \textcolor{keyword}{static\_assert}(\mbox{\hyperlink{spu_8h_abe1e1b2bfd2932377e15b323ee0fb530}{RAM\_SIZE}}\ >=\ \mbox{\hyperlink{spu_8h_a793a380e3ceb4728abb70e4b34368a65}{VIDEO\_HEIGHT}}\ *\ \mbox{\hyperlink{spu_8h_afcc4d5f47bf49727824adede4093c3eb}{VIDEO\_WIDTH}});}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00035}\mbox{\hyperlink{struct_spu_data}{00035}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_spu_data}{SpuData}}\ \{}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00036}\mbox{\hyperlink{struct_spu_data_abc84b16c7ed76fea5ed82082897443c2}{00036}}\ \ \ \ \ \mbox{\hyperlink{struct_stack}{Stack}}\ \mbox{\hyperlink{struct_spu_data_abc84b16c7ed76fea5ed82082897443c2}{stk}}\ =\ \{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ Stack}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00038}\mbox{\hyperlink{struct_spu_data_a0c082f4479ce66efb50b95259f98e457}{00038}}\ \ \ \ \ \mbox{\hyperlink{cmd_8h_addb7662d7e0f3483a216a3d4c2203811}{Imm\_double\_t}}\ \mbox{\hyperlink{struct_spu_data_a0c082f4479ce66efb50b95259f98e457}{reg}}[\mbox{\hyperlink{cmd_8h_a55559e71614b4b4ba24d073b1b813120}{REGS\_NUM}}]\ =\ \{\};\ \ \ \ \textcolor{comment}{//<\ registers}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00040}\mbox{\hyperlink{struct_spu_data_a20debdca8f0a04c0b528f3ff9b7b3065}{00040}}\ \ \ \ \ \mbox{\hyperlink{cmd_8h_addb7662d7e0f3483a216a3d4c2203811}{Imm\_double\_t}}\ \mbox{\hyperlink{struct_spu_data_a20debdca8f0a04c0b528f3ff9b7b3065}{ram}}[\mbox{\hyperlink{spu_8h_abe1e1b2bfd2932377e15b323ee0fb530}{RAM\_SIZE}}]\ =\ \{\};\textcolor{comment}{//\ REVIEW\ //<\ ram}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00042}00042\ \textcolor{preprocessor}{\#ifdef\ GRAPHICS}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00043}\mbox{\hyperlink{struct_spu_data_a85b2c31c25d74a7a5e4e4458f2ded233}{00043}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_spu_data_a85b2c31c25d74a7a5e4e4458f2ded233}{header}}\ =\ \textcolor{stringliteral}{"{}Processor"{}};\ \ \ \textcolor{comment}{//<\ graphics\ window\ header}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00045}\mbox{\hyperlink{struct_spu_data_a9c3c00b677d22d92d8a10ccef67f3bc5}{00045}}\ \ \ \ \ \mbox{\hyperlink{structsfml_window}{sfmlWindow}}\ \mbox{\hyperlink{struct_spu_data_a9c3c00b677d22d92d8a10ccef67f3bc5}{sfml}}\ =\ \{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ sfml\ wrapper\ struct}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00046}00046\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//<\ GRAPHICS}}
 \DoxyCodeLine{\Hypertarget{spu_8h_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00056}00056\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{spu_8h_ae69f5635302dd8e92897310d34adebb3}{spu\_execute}}(\mbox{\hyperlink{struct_spu_data}{SpuData}}*\ spu,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ data,\ \textcolor{keywordtype}{size\_t}*\ cur\_byte);}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00057}00057\ }
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00065}\mbox{\hyperlink{spu_8h_af24cbd75a5c4f7d10d6de521fbdd2bb8}{00065}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{spu_8h_af24cbd75a5c4f7d10d6de521fbdd2bb8}{spu\_print\_imm}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ x)\ \{}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{return}\ printf(\textcolor{stringliteral}{"{}\%lf\(\backslash\)n"{}},\ x)\ >\ 0;}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00067}00067\ \}}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00068}00068\ }
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00074}\mbox{\hyperlink{spu_8h_a20990021c554572a00ad8d4c5663fc81}{00074}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{spu_8h_a20990021c554572a00ad8d4c5663fc81}{spu\_flush\_input}}()\ \{}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{while}\ ((c\ =\ getchar())\ !=\ \textcolor{charliteral}{'\(\backslash\)n'}\ \&\&\ c\ !=\ EOF)\ \{\}}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{return}\ c;}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00078}00078\ \}}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00079}00079\ }
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00085}\mbox{\hyperlink{spu_8h_a6ef819013e0bae6f935eba0644d137e8}{00085}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{spu_8h_a6ef819013e0bae6f935eba0644d137e8}{spu\_get\_imm\_from\_input}}()\ \{}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00086}00086\ \ \ \ \ \textcolor{keywordtype}{double}\ x\ =\ NAN;}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00087}00087\ }
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00088}00088\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ ssize\_t\ MAX\_INPUT\_ATTEMPTS\ =\ 5;}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00089}00089\ \ \ \ \ ssize\_t\ attempts\ =\ MAX\_INPUT\_ATTEMPTS;}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{while}\ (attempts-\/-\/)\ \{}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Enter\ double\ number:\ "{}});}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00092}00092\ }
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scanf(\textcolor{stringliteral}{"{}\%lf"{}},\ \&x)\ ==\ 1)}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00095}00095\ }
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{spu_8h_a20990021c554572a00ad8d4c5663fc81}{spu\_flush\_input}}()\ ==\ EOF)}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{struct_spu_data_a455f6fed24f70e695c87ecfc7cb2fde1}{ctor}}();}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{struct_spu_data_ab8279902c19cd3fd61a692f2781b0668}{dtor}}();}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_spu_data_ae2f8ad06bd42639ff18b4c1b2ee6e5ef}{dump}}();}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00052}00052\ \};}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00060}00060\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{spu_8h_a2cce1007b123063fe7af282bcbff14ec}{spu\_parse\_and\_execute}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ data);}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00069}00069\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{spu_8h_a4e32f43a28b99ed6077985a0b5c1cfc7}{spu\_read\_cmd}}(\mbox{\hyperlink{struct_cmd}{Cmd}}*\ cmd,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ data,\ \textcolor{keywordtype}{size\_t}\ *cur\_byte);}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00079}00079\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{spu_8h_ae69f5635302dd8e92897310d34adebb3}{spu\_execute}}(\mbox{\hyperlink{struct_spu_data}{SpuData}}*\ spu,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ data,\ \textcolor{keywordtype}{size\_t}*\ cur\_byte);}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00082}00082\ \textcolor{preprocessor}{\#ifdef\ GRAPHICS}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00084}\mbox{\hyperlink{spu_8h_aa9ce630a8b2b4f4dd40ead2a8db00cd1}{00084}}\ \textcolor{preprocessor}{\#define\ ON\_GRAPHICS(...)\ \_\_VA\_ARGS\_\_}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00093}00093\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{spu_8h_a940590e7df7427f8ecc839f38be015e4}{spu\_sfml\_show}}(\mbox{\hyperlink{struct_spu_data}{SpuData}}*\ spu);}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00095}00095\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//<\ \#ifndef\ GRAPHICS}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00097}00097\ \textcolor{preprocessor}{\#define\ ON\_GRAPHICS(...)}}
 \DoxyCodeLine{\Hypertarget{spu_8h_source_l00098}00098\ }
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Wrong\ input.\ Try\ again\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00099}00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//<\ \#ifdef\ GRAPHICS}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00100}00100\ }
 \DoxyCodeLine{\Hypertarget{spu_8h_source_l00101}00101\ }
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00102}00102\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Too\ many\ wrong\ attempts\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00103}00103\ }
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00104}00104\ \ \ \ \ \textcolor{keywordflow}{return}\ NAN;}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00105}00105\ \}}
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00106}00106\ }
-\DoxyCodeLine{\Hypertarget{spu_8h_source_l00107}00107\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ SPU\_H\_}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00109}\mbox{\hyperlink{spu_8h_af24cbd75a5c4f7d10d6de521fbdd2bb8}{00109}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{spu_8h_af24cbd75a5c4f7d10d6de521fbdd2bb8}{spu\_print\_imm}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ x)\ \{}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{return}\ printf(\textcolor{stringliteral}{"{}\%lf\(\backslash\)n"{}},\ x)\ >\ 0;}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00111}00111\ \}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00118}\mbox{\hyperlink{spu_8h_a20990021c554572a00ad8d4c5663fc81}{00118}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{spu_8h_a20990021c554572a00ad8d4c5663fc81}{spu\_flush\_input}}()\ \{}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00119}00119\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00120}00120\ \ \ \ \ \textcolor{keywordflow}{while}\ ((c\ =\ getchar())\ !=\ \textcolor{charliteral}{'\(\backslash\)n'}\ \&\&\ c\ !=\ EOF)\ \{\}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00121}00121\ \ \ \ \ \textcolor{keywordflow}{return}\ c;}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00122}00122\ \}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00129}\mbox{\hyperlink{spu_8h_a6ef819013e0bae6f935eba0644d137e8}{00129}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{spu_8h_a6ef819013e0bae6f935eba0644d137e8}{spu\_get\_imm\_from\_input}}()\ \{}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00130}00130\ \ \ \ \ \textcolor{keywordtype}{double}\ x\ =\ NAN;}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00132}00132\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ ssize\_t\ MAX\_INPUT\_ATTEMPTS\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00133}00133\ \ \ \ \ ssize\_t\ attempts\ =\ MAX\_INPUT\_ATTEMPTS;}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00134}00134\ \ \ \ \ \textcolor{keywordflow}{while}\ (attempts-\/-\/)\ \{}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00135}00135\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Enter\ double\ number:\ "{}});}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scanf(\textcolor{stringliteral}{"{}\%lf"{}},\ \&x)\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{spu_8h_a20990021c554572a00ad8d4c5663fc81}{spu\_flush\_input}}()\ ==\ EOF)}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00143}00143\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Wrong\ input.\ Try\ again\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00144}00144\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00146}00146\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Too\ many\ wrong\ attempts\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00148}00148\ \ \ \ \ \textcolor{keywordflow}{return}\ NAN;}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00149}00149\ \}}
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{spu_8h_source_l00151}00151\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifndef\ SPU\_H\_}}
 
 \end{DoxyCode}

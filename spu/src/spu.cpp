@@ -11,6 +11,13 @@ Status::Statuses SpuData::ctor() {
         return Status::RUNTIME_ERROR;
     }
 
+#ifdef GRAPHICS
+    if (!sfml.ctor(PIXEL_SIZE, PIXEL_SIZE, VIDEO_WIDTH, VIDEO_HEIGHT, header)) {
+        fprintf(stderr, CONSOLE_RED("sfml memory allocation error\n"));
+        return Status::MEMORY_EXCEED;
+    }
+#endif //< #ifdef GRAPHICS
+
     return Status::NORMAL_WORK;
 }
 
@@ -22,6 +29,10 @@ Status::Statuses SpuData::dtor() {
         stk_print_error_to_user(stk_res);
         return Status::RUNTIME_ERROR;
     }
+
+#ifdef GRAPHICS
+    sfml.dtor();
+#endif //< #ifdef GRAPHICS
 
     return Status::NORMAL_WORK;
 }
@@ -77,24 +88,20 @@ Status::Statuses spu_parse_and_execute(const char* data) {
                                         *cur_byte += sizeof(val_t);                     \
                                     } while(0)
 
-Cmd spu_read_cmd(const char* data, size_t *cur_byte) {
+void spu_read_cmd(Cmd* cmd, const char* data, size_t *cur_byte) {
     assert(data);
     assert(cur_byte);
 
-    Cmd cmd = {};
+    DATA_GET_VAL_(cmd->keys, CmdKeys);
 
-    DATA_GET_VAL_(cmd.keys, CmdKeys);
+    if (cmd->keys.reg)
+        DATA_GET_VAL_(cmd->args.reg, RegNum_t);
 
-    if (cmd.keys.reg)
-        DATA_GET_VAL_(cmd.args.reg, RegNum_t);
+    if (cmd->keys.imm_double)
+        DATA_GET_VAL_(cmd->args.imm_double, Imm_double_t);
 
-    if (cmd.keys.imm_double)
-        DATA_GET_VAL_(cmd.args.imm_double, Imm_double_t);
-
-    if (cmd.keys.imm_int)
-        DATA_GET_VAL_(cmd.args.imm_int, Imm_int_t);
-
-    return cmd;
+    if (cmd->keys.imm_int)
+        DATA_GET_VAL_(cmd->args.imm_int, Imm_int_t);
 }
 
 #undef DATA_GET_VAL_
@@ -103,10 +110,10 @@ Cmd spu_read_cmd(const char* data, size_t *cur_byte) {
 
 #include "spu_dsl.h"
 
-#define THROW_RUNTIME_ERROR_(...)  do {                                                        \
+#define THROW_RUNTIME_ERROR_(...)  do {                                             \
             fprintf(stderr, CONSOLE_RED("Runtime error occured. ") __VA_ARGS__);    \
-            fprintf(stderr, " Byte %zu\n", *cur_byte - cmd.size());\
-            return Status::RUNTIME_ERROR;                                                       \
+            fprintf(stderr, " Byte %zu\n", *cur_byte - cmd.size());                 \
+            return Status::RUNTIME_ERROR;                                           \
         } while(0)
 
 Status::Statuses spu_execute(SpuData* spu, const char* data, size_t* cur_byte) {
@@ -122,9 +129,8 @@ Status::Statuses spu_execute(SpuData* spu, const char* data, size_t* cur_byte) {
                                                                           };
 
     #define DISPATCH()                      \
-        cmd = spu_read_cmd(data, cur_byte); \
-        goto *dispatch_table[cmd.keys.num]
-
+        spu_read_cmd(&cmd, data, cur_byte); \
+        goto *dispatch_table[cmd.keys.num];
 
     DISPATCH();
 
@@ -152,3 +158,16 @@ Status::Statuses spu_execute(SpuData* spu, const char* data, size_t* cur_byte) {
 }
 #undef THROW_RUNTIME_ERROR_
 
+
+#ifdef GRAPHICS
+
+bool spu_sfml_show(SpuData* spu) {
+    for (size_t i = 0; i < VIDEO_HEIGHT * VIDEO_WIDTH; i++)
+        spu->sfml.set_pixel_color(i, (uint32_t)spu->ram[i]);
+
+    spu->sfml.renew();
+
+    return !spu->sfml.is_closed();
+}
+
+#endif //< #ifdef GRAPHICS

@@ -1,8 +1,8 @@
 var searchData=
 [
   ['j_0',['j',['../namespacegen.html#a00604f2b0fb55ffa53d321935db4e0cb',1,'gen']]],
-  ['jump_1',['jump',['../cmd__dict_8h.html#a8ed2820b857286ffbd7159f40798d978',1,'cmd_dict.h']]],
-  ['jump_2',['JUMP',['../spu__dsl_8h.html#aaf30322f59aa465eb1161227f8986838',1,'spu_dsl.h']]],
+  ['jump_1',['JUMP',['../spu__dsl_8h.html#aaf30322f59aa465eb1161227f8986838',1,'spu_dsl.h']]],
+  ['jump_2',['jump',['../cmd__dict_8h.html#a8ed2820b857286ffbd7159f40798d978',1,'cmd_dict.h']]],
   ['jump_2ecpp_3',['jump.cpp',['../jump_8cpp.html',1,'']]],
   ['jump_2ed_4',['jump.d',['../jump_8d.html',1,'']]],
   ['jump_2eh_5',['jump.h',['../jump_8h.html',1,'']]],

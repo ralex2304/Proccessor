@@ -117,3 +117,8 @@ DEF_CMD(cos,  24, ARG_NONE, "cosinus",     {UNARY_OPERATOR(cos);})
 DEF_CMD(dmp,  31, ARG_NONE, "spu data dump", {
     DUMP();
 })
+
+DEF_CMD(shw,  32, ARG_IMM_DOUBLE,  "Graphics update", {
+    SHOW();
+    SLEEP((IMM_INT_T)GET_RVALUE());
+})

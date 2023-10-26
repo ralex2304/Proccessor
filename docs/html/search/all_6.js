@@ -8,5 +8,6 @@ var searchData=
   ['get_5flvalue_5fptr_5f_5',['get_lvalue_ptr_',['../spu__dsl_8h.html#a11501ee59a7a70b380249c79d9b24f74',1,'spu_dsl.h']]],
   ['get_5fnext_5finstruction_5fptr_6',['GET_NEXT_INSTRUCTION_PTR',['../spu__dsl_8h.html#acde6104e0bb6e23b24a2fe8d1404e387',1,'spu_dsl.h']]],
   ['get_5frvalue_7',['GET_RVALUE',['../spu__dsl_8h.html#a52cb809ee1e57e683b950d9ed1842552',1,'spu_dsl.h']]],
-  ['get_5frvalue_5f_8',['get_rvalue_',['../spu__dsl_8h.html#ae1fccf3dc3b51475a1ffefacd0d2bddc',1,'spu_dsl.h']]]
+  ['get_5frvalue_5f_8',['get_rvalue_',['../spu__dsl_8h.html#ae1fccf3dc3b51475a1ffefacd0d2bddc',1,'spu_dsl.h']]],
+  ['graphics_9',['GRAPHICS',['../spu_8h.html#a36c5995036907afe534f70b04cb1d360',1,'spu.h']]]
 ];

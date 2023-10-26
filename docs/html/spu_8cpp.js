@@ -7,6 +7,7 @@ var spu_8cpp =
     [ "THROW_RUNTIME_ERROR_", "spu_8cpp.html#a52ea00555388d76aef5567107cee7132", null ],
     [ "spu_execute", "spu_8cpp.html#ae69f5635302dd8e92897310d34adebb3", null ],
     [ "spu_parse_and_execute", "spu_8cpp.html#a2cce1007b123063fe7af282bcbff14ec", null ],
-    [ "spu_read_cmd", "spu_8cpp.html#ad0f4e4336cdb467fae9b8155a10428b8", null ],
+    [ "spu_read_cmd", "spu_8cpp.html#a4e32f43a28b99ed6077985a0b5c1cfc7", null ],
+    [ "spu_sfml_show", "spu_8cpp.html#a940590e7df7427f8ecc839f38be015e4", null ],
     [ "log_file", "spu_8cpp.html#a06336a68ce7f0258cc88d5a2bb94e4d3", null ]
 ];

@@ -12,6 +12,23 @@
 #include "stack/stack.h"
 #include "lib/utils/console.h"
 
+
+#define GRAPHICS //< enables graphics mode
+
+
+#ifdef GRAPHICS
+#include "sfml/lib_sfml.h"
+#endif //< #ifdef GRAPHICS
+
+const size_t PIXEL_SIZE = 7;        //< one pixel size in graphics mode
+
+const size_t VIDEO_HEIGHT = 100;    //< video window height in "pixels"
+const size_t VIDEO_WIDTH  = 100;    //< video window width in "pixels"
+
+const size_t RAM_SIZE = 10000;        //< spu ram size
+
+static_assert(RAM_SIZE >= VIDEO_HEIGHT * VIDEO_WIDTH);
+
 /**
  * @brief Keeps spu structs and variables
  */
@@ -20,7 +37,13 @@ struct SpuData {
 
     Imm_double_t reg[REGS_NUM] = {};    //< registers
 
-    Imm_double_t ram[RAM_SIZE] = {};    //< ram
+    Imm_double_t ram[RAM_SIZE] = {};// REVIEW //< ram
+
+#ifdef GRAPHICS
+    const char* header = "Processor";   //< graphics window header
+
+    sfmlWindow sfml = {};               //< sfml wrapper struct
+#endif //< GRAPHICS
 
     Status::Statuses ctor();
     Status::Statuses dtor();
@@ -37,13 +60,13 @@ struct SpuData {
 Status::Statuses spu_parse_and_execute(const char* data);
 
 /**
- * @brief Reads cmd and it's args
+ * @brief Reads command and args from data. Moves cur_byte
  *
+ * @param cmd
  * @param data
  * @param cur_byte
- * @return Cmd
  */
-Cmd spu_read_cmd(const char* data, size_t *cur_byte);
+void spu_read_cmd(Cmd* cmd, const char* data, size_t *cur_byte);
 
 /**
  * @brief Executes commands
@@ -54,6 +77,27 @@ Cmd spu_read_cmd(const char* data, size_t *cur_byte);
  * @return Status::Statuses
  */
 Status::Statuses spu_execute(SpuData* spu, const char* data, size_t* cur_byte);
+
+
+#ifdef GRAPHICS
+
+#define ON_GRAPHICS(...) __VA_ARGS__
+
+/**
+ * @brief Renews all pixels in graphics window
+ *
+ * @param spu
+ * @return true
+ * @return false
+ */
+bool spu_sfml_show(SpuData* spu);
+
+#else //< #ifndef GRAPHICS
+
+#define ON_GRAPHICS(...)
+
+#endif //< #ifdef GRAPHICS
+
 
 /**
  * @brief Prints double to stdout

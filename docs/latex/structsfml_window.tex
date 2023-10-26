@@ -1,0 +1,367 @@
+\doxysection{sfml\+Window Struct Reference}
+\hypertarget{structsfml_window}{}\label{structsfml_window}\index{sfmlWindow@{sfmlWindow}}
+
+
+sfml library wrapper  
+
+
+
+
+{\ttfamily \#include $<$lib\+\_\+sfml.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structsfml_window_a1f9623411fba2961483ca599641017e2}{ctor}} (const unsigned int pixel\+\_\+width, const unsigned int pixel\+\_\+height, const unsigned int hor\+\_\+num, const unsigned int ver\+\_\+num, const char \texorpdfstring{$\ast$}{*}header)
+\begin{DoxyCompactList}\small\item\em \doxylink{structsfml_window}{sfml\+Window} constructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structsfml_window_a0d0b5803d8975fe0480d694c1780c690}{dtor}} ()
+\item 
+void \mbox{\hyperlink{structsfml_window_a63f3ec11cd7211c38790ed76283cdf6a}{set\+\_\+pixel\+\_\+color}} (const size\+\_\+t x, const size\+\_\+t y, const uint32\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Sets the \"{}pixel\"{} color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structsfml_window_a16a89229447d91323d081578f231996d}{set\+\_\+pixel\+\_\+color}} (const size\+\_\+t i, const uint32\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Sets the \"{}pixel\"{} color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structsfml_window_a482c9f147d3c9e5aec416182a226cbd4}{renew}} ()
+\begin{DoxyCompactList}\small\item\em Renew window (update all pixels) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structsfml_window_a8c79ff59578a0ff69561d20e1216a445}{is\+\_\+closed}} ()
+\begin{DoxyCompactList}\small\item\em Tells if window close button was pushed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structsfml_window_a94ee5de300a36b64aea58840ef7d4d18}{window}} = nullptr
+\item 
+sf\+::\+Rectangle\+Shape \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structsfml_window_aa24e97af67c6577c1a23738cc2c36be2}{pixels}} = nullptr
+\item 
+unsigned int \mbox{\hyperlink{structsfml_window_a53b2044e82d389e756d8d7624c30db4d}{width}} = 0
+\item 
+unsigned int \mbox{\hyperlink{structsfml_window_a112401deaf89ed04aca072cff0d93359}{height}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+sfml library wrapper 
+
+Definition at line \mbox{\hyperlink{lib__sfml_8h_source_l00011}{11}} of file \mbox{\hyperlink{lib__sfml_8h_source}{lib\+\_\+sfml.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structsfml_window_a1f9623411fba2961483ca599641017e2}\label{structsfml_window_a1f9623411fba2961483ca599641017e2} 
+\index{sfmlWindow@{sfmlWindow}!ctor@{ctor}}
+\index{ctor@{ctor}!sfmlWindow@{sfmlWindow}}
+\doxysubsubsection{\texorpdfstring{ctor()}{ctor()}}
+{\footnotesize\ttfamily bool sfml\+Window\+::ctor (\begin{DoxyParamCaption}\item[{const unsigned int}]{pixel\+\_\+width,  }\item[{const unsigned int}]{pixel\+\_\+height,  }\item[{const unsigned int}]{hor\+\_\+num,  }\item[{const unsigned int}]{ver\+\_\+num,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{header }\end{DoxyParamCaption})}
+
+
+
+\doxylink{structsfml_window}{sfml\+Window} constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixel\+\_\+width} & width of one \"{}pixel\"{} (rectangle) \\
+\hline
+{\em pixel\+\_\+height} & height of one \"{}pixel\"{} (rectangle) \\
+\hline
+{\em hor\+\_\+num} & number of \"{}pixels\"{} in horizontal orientation \\
+\hline
+{\em ver\+\_\+num} & number of \"{}pixels\"{} in vertical orientation \\
+\hline
+{\em header} & window header \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lib__sfml_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{lib__sfml_8cpp_source}{lib\+\_\+sfml.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00008\ \ \ \ \ assert(pixel\_width\ >\ 0);}
+\DoxyCodeLine{00009\ \ \ \ \ assert(pixel\_height\ >\ 0);}
+\DoxyCodeLine{00010\ \ \ \ \ assert(hor\_num\ >\ 0);}
+\DoxyCodeLine{00011\ \ \ \ \ assert(ver\_num\ >\ 0);}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{structsfml_window_a53b2044e82d389e756d8d7624c30db4d}{width}}\ =\ hor\_num;}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{structsfml_window_a112401deaf89ed04aca072cff0d93359}{height}}\ =\ ver\_num;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{structsfml_window_a94ee5de300a36b64aea58840ef7d4d18}{window}}\ =\ \textcolor{keyword}{new}(std::nothrow)\ sf::RenderWindow(sf::VideoMode(pixel\_width\ *\ hor\_num,\ pixel\_height\ *\ ver\_num),\ header);}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{structsfml_window_a94ee5de300a36b64aea58840ef7d4d18}{window}}-\/>setPosition(sf::Vector2i(25,\ 25));}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{structsfml_window_aa24e97af67c6577c1a23738cc2c36be2}{pixels}}\ =\ \textcolor{keyword}{new}(std::nothrow)\ sf::RectangleShape[hor\_num\ *\ ver\_num];}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structsfml_window_a94ee5de300a36b64aea58840ef7d4d18}{window}}\ ==\ \textcolor{keyword}{nullptr}\ ||\ \mbox{\hyperlink{structsfml_window_aa24e97af67c6577c1a23738cc2c36be2}{pixels}}\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}\ <\ \mbox{\hyperlink{structsfml_window_a112401deaf89ed04aca072cff0d93359}{height}};\ \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}++)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ \mbox{\hyperlink{namespacegen_a00604f2b0fb55ffa53d321935db4e0cb}{j}}\ <\ \mbox{\hyperlink{structsfml_window_a53b2044e82d389e756d8d7624c30db4d}{width}};\ \mbox{\hyperlink{namespacegen_a00604f2b0fb55ffa53d321935db4e0cb}{j}}++)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structsfml_window_aa24e97af67c6577c1a23738cc2c36be2}{pixels}}[\mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}\ *\ \mbox{\hyperlink{structsfml_window_a53b2044e82d389e756d8d7624c30db4d}{width}}\ +\ \mbox{\hyperlink{namespacegen_a00604f2b0fb55ffa53d321935db4e0cb}{j}}]\ =\ sf::RectangleShape(sf::Vector2f((\textcolor{keywordtype}{float})pixel\_width,\ (\textcolor{keywordtype}{float})pixel\_height));}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structsfml_window_aa24e97af67c6577c1a23738cc2c36be2}{pixels}}[\mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}\ *\ \mbox{\hyperlink{structsfml_window_a53b2044e82d389e756d8d7624c30db4d}{width}}\ +\ \mbox{\hyperlink{namespacegen_a00604f2b0fb55ffa53d321935db4e0cb}{j}}].setPosition((\textcolor{keywordtype}{float})(j\ *\ pixel\_width),\ (\textcolor{keywordtype}{float})(i\ *\ pixel\_height));}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structsfml_window_aa24e97af67c6577c1a23738cc2c36be2}{pixels}}[\mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}\ *\ \mbox{\hyperlink{structsfml_window_a53b2044e82d389e756d8d7624c30db4d}{width}}\ +\ \mbox{\hyperlink{namespacegen_a00604f2b0fb55ffa53d321935db4e0cb}{j}}].setFillColor(sf::Color(0,\ 0,\ 0));}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{structsfml_window_a482c9f147d3c9e5aec416182a226cbd4}{renew}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00036\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{lib__sfml_8h_source_l00016}{height}}, \mbox{\hyperlink{lib__sfml_8h_source_l00014}{pixels}}, \mbox{\hyperlink{lib__sfml_8cpp_source_l00055}{renew()}}, \mbox{\hyperlink{lib__sfml_8h_source_l00015}{width}}, and \mbox{\hyperlink{lib__sfml_8h_source_l00012}{window}}.
+
+
+
+Referenced by \mbox{\hyperlink{spu_8cpp_source_l00005}{Spu\+Data\+::ctor()}}.
+
+\Hypertarget{structsfml_window_a0d0b5803d8975fe0480d694c1780c690}\label{structsfml_window_a0d0b5803d8975fe0480d694c1780c690} 
+\index{sfmlWindow@{sfmlWindow}!dtor@{dtor}}
+\index{dtor@{dtor}!sfmlWindow@{sfmlWindow}}
+\doxysubsubsection{\texorpdfstring{dtor()}{dtor()}}
+{\footnotesize\ttfamily void sfml\+Window\+::dtor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{lib__sfml_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{lib__sfml_8cpp_source}{lib\+\_\+sfml.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{delete}\ []\ \mbox{\hyperlink{structsfml_window_aa24e97af67c6577c1a23738cc2c36be2}{pixels}};}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{structsfml_window_a94ee5de300a36b64aea58840ef7d4d18}{window}};}
+\DoxyCodeLine{00068\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{lib__sfml_8h_source_l00014}{pixels}}, and \mbox{\hyperlink{lib__sfml_8h_source_l00012}{window}}.
+
+
+
+Referenced by \mbox{\hyperlink{spu_8cpp_source_l00024}{Spu\+Data\+::dtor()}}.
+
+\Hypertarget{structsfml_window_a8c79ff59578a0ff69561d20e1216a445}\label{structsfml_window_a8c79ff59578a0ff69561d20e1216a445} 
+\index{sfmlWindow@{sfmlWindow}!is\_closed@{is\_closed}}
+\index{is\_closed@{is\_closed}!sfmlWindow@{sfmlWindow}}
+\doxysubsubsection{\texorpdfstring{is\_closed()}{is\_closed()}}
+{\footnotesize\ttfamily bool sfml\+Window\+::is\+\_\+closed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Tells if window close button was pushed. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lib__sfml_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{lib__sfml_8cpp_source}{lib\+\_\+sfml.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ sf::Event\ event;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structsfml_window_a94ee5de300a36b64aea58840ef7d4d18}{window}}-\/>pollEvent(event))\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (event.type\ ==\ sf::Event::Closed)\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structsfml_window_a94ee5de300a36b64aea58840ef7d4d18}{window}}-\/>close();}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00079\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{lib__sfml_8h_source_l00012}{window}}.
+
+
+
+Referenced by \mbox{\hyperlink{spu_8cpp_source_l00164}{spu\+\_\+sfml\+\_\+show()}}.
+
+\Hypertarget{structsfml_window_a482c9f147d3c9e5aec416182a226cbd4}\label{structsfml_window_a482c9f147d3c9e5aec416182a226cbd4} 
+\index{sfmlWindow@{sfmlWindow}!renew@{renew}}
+\index{renew@{renew}!sfmlWindow@{sfmlWindow}}
+\doxysubsubsection{\texorpdfstring{renew()}{renew()}}
+{\footnotesize\ttfamily void sfml\+Window\+::renew (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renew window (update all pixels) 
+
+
+
+Definition at line \mbox{\hyperlink{lib__sfml_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{lib__sfml_8cpp_source}{lib\+\_\+sfml.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{structsfml_window_a94ee5de300a36b64aea58840ef7d4d18}{window}}-\/>clear();}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}\ <\ \mbox{\hyperlink{structsfml_window_a112401deaf89ed04aca072cff0d93359}{height}};\ \mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}++)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ \mbox{\hyperlink{namespacegen_a00604f2b0fb55ffa53d321935db4e0cb}{j}}\ <\ \mbox{\hyperlink{structsfml_window_a53b2044e82d389e756d8d7624c30db4d}{width}};\ \mbox{\hyperlink{namespacegen_a00604f2b0fb55ffa53d321935db4e0cb}{j}}++)\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structsfml_window_a94ee5de300a36b64aea58840ef7d4d18}{window}}-\/>draw(\mbox{\hyperlink{structsfml_window_aa24e97af67c6577c1a23738cc2c36be2}{pixels}}[i\ *\ \mbox{\hyperlink{structsfml_window_a53b2044e82d389e756d8d7624c30db4d}{width}}\ +\ j]);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{structsfml_window_a94ee5de300a36b64aea58840ef7d4d18}{window}}-\/>display();}
+\DoxyCodeLine{00063\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{lib__sfml_8h_source_l00016}{height}}, \mbox{\hyperlink{lib__sfml_8h_source_l00014}{pixels}}, \mbox{\hyperlink{lib__sfml_8h_source_l00015}{width}}, and \mbox{\hyperlink{lib__sfml_8h_source_l00012}{window}}.
+
+
+
+Referenced by \mbox{\hyperlink{lib__sfml_8cpp_source_l00005}{ctor()}}, and \mbox{\hyperlink{spu_8cpp_source_l00164}{spu\+\_\+sfml\+\_\+show()}}.
+
+\Hypertarget{structsfml_window_a16a89229447d91323d081578f231996d}\label{structsfml_window_a16a89229447d91323d081578f231996d} 
+\index{sfmlWindow@{sfmlWindow}!set\_pixel\_color@{set\_pixel\_color}}
+\index{set\_pixel\_color@{set\_pixel\_color}!sfmlWindow@{sfmlWindow}}
+\doxysubsubsection{\texorpdfstring{set\_pixel\_color()}{set\_pixel\_color()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sfml\+Window\+::set\+\_\+pixel\+\_\+color (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{i,  }\item[{const uint32\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+
+Sets the \"{}pixel\"{} color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & number of \"{}pixel\"{} in array \\
+\hline
+{\em color} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{lib__sfml_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{lib__sfml_8cpp_source}{lib\+\_\+sfml.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ assert(i\ <\ \mbox{\hyperlink{structsfml_window_a112401deaf89ed04aca072cff0d93359}{height}}\ *\ \mbox{\hyperlink{structsfml_window_a53b2044e82d389e756d8d7624c30db4d}{width}});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{structsfml_window_aa24e97af67c6577c1a23738cc2c36be2}{pixels}}[\mbox{\hyperlink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{i}}].setFillColor(sf::Color((\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char})(color\ >>\ 16),}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char})(color\ >>\ 8),}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char})(color\ >>\ 0)));}
+\DoxyCodeLine{00053\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{lib__sfml_8h_source_l00016}{height}}, \mbox{\hyperlink{lib__sfml_8h_source_l00014}{pixels}}, and \mbox{\hyperlink{lib__sfml_8h_source_l00015}{width}}.
+
+\Hypertarget{structsfml_window_a63f3ec11cd7211c38790ed76283cdf6a}\label{structsfml_window_a63f3ec11cd7211c38790ed76283cdf6a} 
+\index{sfmlWindow@{sfmlWindow}!set\_pixel\_color@{set\_pixel\_color}}
+\index{set\_pixel\_color@{set\_pixel\_color}!sfmlWindow@{sfmlWindow}}
+\doxysubsubsection{\texorpdfstring{set\_pixel\_color()}{set\_pixel\_color()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sfml\+Window\+::set\+\_\+pixel\+\_\+color (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{x,  }\item[{const size\+\_\+t}]{y,  }\item[{const uint32\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+
+Sets the \"{}pixel\"{} color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & coordinate \\
+\hline
+{\em y} & coordinate \\
+\hline
+{\em color} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{lib__sfml_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{lib__sfml_8cpp_source}{lib\+\_\+sfml.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ assert(x\ <\ \mbox{\hyperlink{structsfml_window_a53b2044e82d389e756d8d7624c30db4d}{width}});}
+\DoxyCodeLine{00040\ \ \ \ \ assert(y\ <\ \mbox{\hyperlink{structsfml_window_a112401deaf89ed04aca072cff0d93359}{height}});}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{structsfml_window_aa24e97af67c6577c1a23738cc2c36be2}{pixels}}[x\ *\ \mbox{\hyperlink{structsfml_window_a53b2044e82d389e756d8d7624c30db4d}{width}}\ +\ y].setFillColor(sf::Color(((\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char})\ color\ >>\ 16),}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char})\ color\ >>\ 8),}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char})\ color\ >>\ 0)));}
+\DoxyCodeLine{00045\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{lib__sfml_8h_source_l00016}{height}}, \mbox{\hyperlink{lib__sfml_8h_source_l00014}{pixels}}, and \mbox{\hyperlink{lib__sfml_8h_source_l00015}{width}}.
+
+
+
+Referenced by \mbox{\hyperlink{spu_8cpp_source_l00164}{spu\+\_\+sfml\+\_\+show()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structsfml_window_a112401deaf89ed04aca072cff0d93359}\label{structsfml_window_a112401deaf89ed04aca072cff0d93359} 
+\index{sfmlWindow@{sfmlWindow}!height@{height}}
+\index{height@{height}!sfmlWindow@{sfmlWindow}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily unsigned int sfml\+Window\+::height = 0}
+
+
+
+Definition at line \mbox{\hyperlink{lib__sfml_8h_source_l00016}{16}} of file \mbox{\hyperlink{lib__sfml_8h_source}{lib\+\_\+sfml.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{lib__sfml_8cpp_source_l00005}{ctor()}}, \mbox{\hyperlink{lib__sfml_8cpp_source_l00055}{renew()}}, \mbox{\hyperlink{lib__sfml_8cpp_source_l00047}{set\+\_\+pixel\+\_\+color()}}, and \mbox{\hyperlink{lib__sfml_8cpp_source_l00038}{set\+\_\+pixel\+\_\+color()}}.
+
+\Hypertarget{structsfml_window_aa24e97af67c6577c1a23738cc2c36be2}\label{structsfml_window_aa24e97af67c6577c1a23738cc2c36be2} 
+\index{sfmlWindow@{sfmlWindow}!pixels@{pixels}}
+\index{pixels@{pixels}!sfmlWindow@{sfmlWindow}}
+\doxysubsubsection{\texorpdfstring{pixels}{pixels}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape\texorpdfstring{$\ast$}{*} sfml\+Window\+::pixels = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{lib__sfml_8h_source_l00014}{14}} of file \mbox{\hyperlink{lib__sfml_8h_source}{lib\+\_\+sfml.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{lib__sfml_8cpp_source_l00005}{ctor()}}, \mbox{\hyperlink{lib__sfml_8cpp_source_l00065}{dtor()}}, \mbox{\hyperlink{lib__sfml_8cpp_source_l00055}{renew()}}, \mbox{\hyperlink{lib__sfml_8cpp_source_l00047}{set\+\_\+pixel\+\_\+color()}}, and \mbox{\hyperlink{lib__sfml_8cpp_source_l00038}{set\+\_\+pixel\+\_\+color()}}.
+
+\Hypertarget{structsfml_window_a53b2044e82d389e756d8d7624c30db4d}\label{structsfml_window_a53b2044e82d389e756d8d7624c30db4d} 
+\index{sfmlWindow@{sfmlWindow}!width@{width}}
+\index{width@{width}!sfmlWindow@{sfmlWindow}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily unsigned int sfml\+Window\+::width = 0}
+
+
+
+Definition at line \mbox{\hyperlink{lib__sfml_8h_source_l00015}{15}} of file \mbox{\hyperlink{lib__sfml_8h_source}{lib\+\_\+sfml.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{lib__sfml_8cpp_source_l00005}{ctor()}}, \mbox{\hyperlink{lib__sfml_8cpp_source_l00055}{renew()}}, \mbox{\hyperlink{lib__sfml_8cpp_source_l00047}{set\+\_\+pixel\+\_\+color()}}, and \mbox{\hyperlink{lib__sfml_8cpp_source_l00038}{set\+\_\+pixel\+\_\+color()}}.
+
+\Hypertarget{structsfml_window_a94ee5de300a36b64aea58840ef7d4d18}\label{structsfml_window_a94ee5de300a36b64aea58840ef7d4d18} 
+\index{sfmlWindow@{sfmlWindow}!window@{window}}
+\index{window@{window}!sfmlWindow@{sfmlWindow}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window\texorpdfstring{$\ast$}{*} sfml\+Window\+::window = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{lib__sfml_8h_source_l00012}{12}} of file \mbox{\hyperlink{lib__sfml_8h_source}{lib\+\_\+sfml.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{lib__sfml_8cpp_source_l00005}{ctor()}}, \mbox{\hyperlink{lib__sfml_8cpp_source_l00065}{dtor()}}, \mbox{\hyperlink{lib__sfml_8cpp_source_l00070}{is\+\_\+closed()}}, and \mbox{\hyperlink{lib__sfml_8cpp_source_l00055}{renew()}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+spu/src/sfml/\mbox{\hyperlink{lib__sfml_8h}{lib\+\_\+sfml.\+h}}\item 
+spu/src/sfml/\mbox{\hyperlink{lib__sfml_8cpp}{lib\+\_\+sfml.\+cpp}}\end{DoxyCompactItemize}

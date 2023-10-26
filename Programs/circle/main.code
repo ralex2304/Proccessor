@@ -1,0 +1,61 @@
+push 0
+pop rax ;x
+
+push 0
+pop rbx ;y
+
+; width = 100
+; height = 100
+; center = (49.5, 49.5)
+; R = 45
+
+for_y:
+
+    for_x:
+        push rax+-49.5
+        push rax+-49.5
+        mul
+
+        push rbx+-49.5
+        push rbx+-49.5
+        mul
+
+        add
+
+        sqrt
+
+        push 45
+        ja not_circle
+            push rbx
+            push 100
+            mul
+            push rax
+            add
+            pop rcx
+
+            push 255
+            pop [rcx]
+        not_circle:
+
+
+        push rax+1
+        pop rax
+
+        push rax
+        push 100
+        jb for_x
+        push 0
+        pop rax
+
+    push rbx+1
+    pop rbx
+
+    push rbx
+    push 100
+    jb for_y
+
+shw 0
+in
+hlt
+
+

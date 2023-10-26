@@ -102,6 +102,25 @@ inline IMM_DOUBLE_T* get_lvalue_ptr_(SpuData* spu, const Cmd cmd) {
  */
 #define DUMP() spu->dump()
 
+#ifdef GRAPHICS
+/**
+ * Updates graphics window
+ */
+#define SHOW() spu_sfml_show(spu)
+
+#else //< #ifndef GRAPHICS
+
+#define SHOW() THROW_RUNTIME_ERROR_("SHOW() command called, but graphics is disabled.");
+
+#endif //< #ifdef GRAPHICS
+
+/**
+ * @brief Sleeps time milliseconds
+ *
+ * @param time in milliseconds
+ */
+#define SLEEP(time) usleep((unsigned int)time * 1000)
+
 /**
  * @brief Returns current instruction pointer in bytes
  */

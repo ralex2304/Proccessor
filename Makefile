@@ -10,7 +10,7 @@ run: assemble execute
 
 assemble:
 	@echo // Make: Assembling
-	@cd assembler && ./main -i ../Programs/$(prog)/main.code -o ../Programs/$(prog)/main.exec -l ../Programs/$(prog)/main.list
+	@cd assembler && ./main -i ../Programs/$(prog)/main.code -o ../Programs/$(prog)/main.exec $(if $(lst), -l ../Programs/$(prog)/main.list)
 
 execute:
 	@echo // Make: Running

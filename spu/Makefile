@@ -16,6 +16,7 @@ CFLAGS_SANITIZER = -fsanitize=address,alignment,bool,bounds,enum,float-cast-over
 
 EXTERNAL_DIR = ../shared
 IFLAGS = -I$(EXTERNAL_DIR)/
+LIBRARIES = -lsfml-graphics -lsfml-window -lsfml-system
 
 CODEGEN_INP_FILE = ../shared/cmd_dict.h
 CODEGEN_OUT_FILE = src/cmd_dispatch_table/table.h
@@ -49,7 +50,7 @@ OBJECTS = $(OBJ:%.cpp=%.o)
 all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
-	@$(CC) $(IFLAGS) $(CFLAGS) $(if $(sanitizer), $(CFLAGS_SANITIZER)) $^ -o $@
+	@$(CC) $(IFLAGS) $(CFLAGS) $(if $(sanitizer), $(CFLAGS_SANITIZER)) $^ -o $@ $(LIBRARIES)
 
 $(BUILD_DIR):
 	@mkdir ./$@

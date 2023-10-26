@@ -1,5 +1,8 @@
 ; 123
 
+push 16777215
+pop [16]
+
 dmp
 push 2 ;push from address 1 to stack
 pop rcx

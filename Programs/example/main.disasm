@@ -1,13 +1,15 @@
 ;Signature: KU
 ;Version: 1
-dmp                                               ;addr = 0004
-push 2.000000                                     ;addr = 0006
-pop rcx                                           ;addr = 0016
-push rcx+1.000000                                 ;addr = 0019
-in                                                ;addr = 0030
-dmp                                               ;addr = 0032
-sqrt                                              ;addr = 0034
-dmp                                               ;addr = 0036
-out                                               ;addr = 0038
-out                                               ;addr = 0040
-hlt                                               ;addr = 0042
+push 16777215.000000                              ;addr = 0004
+pop [16]                                          ;addr = 0014
+dmp                                               ;addr = 0024
+push 2.000000                                     ;addr = 0026
+pop rcx                                           ;addr = 0036
+push rcx+1.000000                                 ;addr = 0039
+in                                                ;addr = 0050
+dmp                                               ;addr = 0052
+sqrt                                              ;addr = 0054
+dmp                                               ;addr = 0056
+out                                               ;addr = 0058
+out                                               ;addr = 0060
+hlt                                               ;addr = 0062

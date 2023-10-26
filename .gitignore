@@ -5,3 +5,7 @@ main.out*
 main
 build
 *.code-workspace
+Programs/badApple/main.code
+Programs/badApple/main.exec
+Programs/doom/main.code
+Programs/doom/main.exec

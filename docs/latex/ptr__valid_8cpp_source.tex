@@ -15,7 +15,7 @@
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordtype}{char}\ executable\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordtype}{char}\ mapped\ \ \ \ \ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00013}00013\ }
-\DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00014}00014\ \ \ \ \ FILE*\ file\ =\ fopen(\textcolor{stringliteral}{"{}/proc/self/maps"{}},\ \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00014}00014\ \ \ \ \ FILE*\ \mbox{\hyperlink{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45}{file}}\ =\ fopen(\textcolor{stringliteral}{"{}/proc/self/maps"{}},\ \textcolor{stringliteral}{"{}r"{}});}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00015}00015\ }
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
@@ -65,7 +65,7 @@
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00061}00061\ }
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00062}00062\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{ptr__valid_8h_a9118aa9878b41057b6d2067e5d5dff2b}{is\_ptr\_valid}}(\textcolor{keywordtype}{void}*\ p)\ \{}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{char}\ filename[]\ =\ \textcolor{stringliteral}{"{}/tmp/kurwa\_ptr.XXXXXX"{}};}
-\DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{int}\ file\ =\ mkstemp(filename);}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45}{file}}\ =\ mkstemp(filename);}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00065}00065\ }
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{if}\ (file\ ==\ -\/1)\ \{}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}"{}});}
@@ -75,7 +75,7 @@
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00071}00071\ }
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ ret\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00073}00073\ }
-\DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00074}00074\ \ \ \ \ ssize\_t\ res\ =\ write(file,\ p,\ 1);}
+\DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00074}00074\ \ \ \ \ ssize\_t\ \mbox{\hyperlink{namespaceencoder_adb91fe8a3fa212c5ab9dc9e4b7be75e0}{res}}\ =\ write(file,\ p,\ 1);}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00075}00075\ }
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{if}\ (res\ ==\ 1)\ \{}
 \DoxyCodeLine{\Hypertarget{ptr__valid_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ ret\ =\ \textcolor{keyword}{true};}

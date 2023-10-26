@@ -91,7 +91,9 @@ $(document).ready(function(){initNavTree('spu_8h.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">spu.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -104,6 +106,7 @@ $(document).ready(function(){initNavTree('spu_8h.html',''); initResizable(); });
 <code>#include &quot;<a class="el" href="log_8h_source.html">stack/log/log.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="stack_8h_source.html">stack/stack.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="console_8h_source.html">lib/utils/console.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lib__sfml_8h_source.html">sfml/lib_sfml.h</a>&quot;</code><br />
 </div>
 <p><a href="spu_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -113,17 +116,27 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps spu structs and variables.  <a href="struct_spu_data.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a36c5995036907afe534f70b04cb1d360"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu_8h.html#a36c5995036907afe534f70b04cb1d360">GRAPHICS</a></td></tr>
+<tr class="separator:a36c5995036907afe534f70b04cb1d360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9ce630a8b2b4f4dd40ead2a8db00cd1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu_8h.html#aa9ce630a8b2b4f4dd40ead2a8db00cd1">ON_GRAPHICS</a>(...)&#160;&#160;&#160;__VA_ARGS__</td></tr>
+<tr class="separator:aa9ce630a8b2b4f4dd40ead2a8db00cd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a2cce1007b123063fe7af282bcbff14ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu_8h.html#a2cce1007b123063fe7af282bcbff14ec">spu_parse_and_execute</a> (const char *data)</td></tr>
 <tr class="memdesc:a2cce1007b123063fe7af282bcbff14ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses data and executes it.  <br /></td></tr>
 <tr class="separator:a2cce1007b123063fe7af282bcbff14ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0f4e4336cdb467fae9b8155a10428b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_cmd.html">Cmd</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu_8h.html#ad0f4e4336cdb467fae9b8155a10428b8">spu_read_cmd</a> (const char *data, size_t *cur_byte)</td></tr>
-<tr class="memdesc:ad0f4e4336cdb467fae9b8155a10428b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads cmd and it's args.  <br /></td></tr>
-<tr class="separator:ad0f4e4336cdb467fae9b8155a10428b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e32f43a28b99ed6077985a0b5c1cfc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu_8h.html#a4e32f43a28b99ed6077985a0b5c1cfc7">spu_read_cmd</a> (<a class="el" href="struct_cmd.html">Cmd</a> *cmd, const char *data, size_t *cur_byte)</td></tr>
+<tr class="memdesc:a4e32f43a28b99ed6077985a0b5c1cfc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads command and args from data. Moves cur_byte.  <br /></td></tr>
+<tr class="separator:a4e32f43a28b99ed6077985a0b5c1cfc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae69f5635302dd8e92897310d34adebb3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu_8h.html#ae69f5635302dd8e92897310d34adebb3">spu_execute</a> (<a class="el" href="struct_spu_data.html">SpuData</a> *spu, const char *data, size_t *cur_byte)</td></tr>
 <tr class="memdesc:ae69f5635302dd8e92897310d34adebb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes commands.  <br /></td></tr>
 <tr class="separator:ae69f5635302dd8e92897310d34adebb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a940590e7df7427f8ecc839f38be015e4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu_8h.html#a940590e7df7427f8ecc839f38be015e4">spu_sfml_show</a> (<a class="el" href="struct_spu_data.html">SpuData</a> *spu)</td></tr>
+<tr class="memdesc:a940590e7df7427f8ecc839f38be015e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renews all pixels in graphics window.  <br /></td></tr>
+<tr class="separator:a940590e7df7427f8ecc839f38be015e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af24cbd75a5c4f7d10d6de521fbdd2bb8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu_8h.html#af24cbd75a5c4f7d10d6de521fbdd2bb8">spu_print_imm</a> (const double x)</td></tr>
 <tr class="memdesc:af24cbd75a5c4f7d10d6de521fbdd2bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints double to stdout.  <br /></td></tr>
 <tr class="separator:af24cbd75a5c4f7d10d6de521fbdd2bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,7 +146,55 @@ Functions</h2></td></tr>
 <tr class="memitem:a6ef819013e0bae6f935eba0644d137e8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu_8h.html#a6ef819013e0bae6f935eba0644d137e8">spu_get_imm_from_input</a> ()</td></tr>
 <tr class="memdesc:a6ef819013e0bae6f935eba0644d137e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets double from stdin.  <br /></td></tr>
 <tr class="separator:a6ef819013e0bae6f935eba0644d137e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a5edc31e43090198dc2358a73cddedc81"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu_8h.html#a5edc31e43090198dc2358a73cddedc81">PIXEL_SIZE</a> = 7</td></tr>
+<tr class="separator:a5edc31e43090198dc2358a73cddedc81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a793a380e3ceb4728abb70e4b34368a65"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu_8h.html#a793a380e3ceb4728abb70e4b34368a65">VIDEO_HEIGHT</a> = 100</td></tr>
+<tr class="separator:a793a380e3ceb4728abb70e4b34368a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcc4d5f47bf49727824adede4093c3eb"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu_8h.html#afcc4d5f47bf49727824adede4093c3eb">VIDEO_WIDTH</a> = 100</td></tr>
+<tr class="separator:afcc4d5f47bf49727824adede4093c3eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe1e1b2bfd2932377e15b323ee0fb530"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu_8h.html#abe1e1b2bfd2932377e15b323ee0fb530">RAM_SIZE</a> = 10000</td></tr>
+<tr class="separator:abe1e1b2bfd2932377e15b323ee0fb530"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a36c5995036907afe534f70b04cb1d360" name="a36c5995036907afe534f70b04cb1d360"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36c5995036907afe534f70b04cb1d360">&#9670;&#160;</a></span>GRAPHICS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GRAPHICS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00016">16</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
+
+</div>
+</div>
+<a id="aa9ce630a8b2b4f4dd40ead2a8db00cd1" name="aa9ce630a8b2b4f4dd40ead2a8db00cd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9ce630a8b2b4f4dd40ead2a8db00cd1">&#9670;&#160;</a></span>ON_GRAPHICS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ON_GRAPHICS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;__VA_ARGS__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00084">84</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ae69f5635302dd8e92897310d34adebb3" name="ae69f5635302dd8e92897310d34adebb3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae69f5635302dd8e92897310d34adebb3">&#9670;&#160;</a></span>spu_execute()</h2>
@@ -178,65 +239,64 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="spu_8cpp_source.html#l00112">112</a> of file <a class="el" href="spu_8cpp_source.html">spu.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  112</span>                                                                             {</div>
-<div class="line"><span class="lineno">  113</span>    assert(spu);</div>
-<div class="line"><span class="lineno">  114</span>    assert(cur_byte);</div>
-<div class="line"><span class="lineno">  115</span> </div>
-<div class="line"><span class="lineno">  116</span>    <span class="keywordtype">int</span> stk_res = <a class="code hl_enumvalue" href="struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5a146633a2ef2a9bbb1c05ec4cd31ba019">Stack::OK</a>;</div>
-<div class="line"><span class="lineno">  117</span> </div>
-<div class="line"><span class="lineno">  118</span>    <a class="code hl_struct" href="struct_cmd.html">Cmd</a> cmd = {};</div>
-<div class="line"><span class="lineno">  119</span> </div>
-<div class="line"><span class="lineno">  120</span>    <span class="keyword">static</span> <span class="keywordtype">void</span>* dispatch_table[] = {</div>
-<div class="line"><span class="lineno">  121</span><span class="preprocessor">                                     #include &quot;<a class="code" href="table_8h.html">cmd_dispatch_table/table.h</a>&quot;</span></div>
-<div class="line"><span class="lineno">  122</span>                                                                          };</div>
-<div class="line"><span class="lineno">  123</span> </div>
-<div class="line"><span class="lineno">  124</span><span class="preprocessor">    #define DISPATCH()                      \</span></div>
-<div class="line"><span class="lineno">  125</span><span class="preprocessor">        cmd = spu_read_cmd(data, cur_byte); \</span></div>
-<div class="line"><span class="lineno">  126</span><span class="preprocessor">        goto *dispatch_table[cmd.keys.num]</span></div>
-<div class="line"><span class="lineno">  127</span> </div>
-<div class="line"><span class="lineno">  128</span> </div>
-<div class="line"><span class="lineno">  129</span>    <a class="code hl_define" href="spu_8cpp.html#a8297cddbebf50a1736914db65c5724ae">DISPATCH</a>();</div>
+<p class="definition">Definition at line <a class="el" href="spu_8cpp_source.html#l00119">119</a> of file <a class="el" href="spu_8cpp_source.html">spu.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>                                                                             {</div>
+<div class="line"><span class="lineno">  120</span>    assert(spu);</div>
+<div class="line"><span class="lineno">  121</span>    assert(cur_byte);</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>    <span class="keywordtype">int</span> stk_res = <a class="code hl_enumvalue" href="struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5a146633a2ef2a9bbb1c05ec4cd31ba019">Stack::OK</a>;</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>    <a class="code hl_struct" href="struct_cmd.html">Cmd</a> cmd = {};</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>    <span class="keyword">static</span> <span class="keywordtype">void</span>* dispatch_table[] = {</div>
+<div class="line"><span class="lineno">  128</span><span class="preprocessor">                                     #include &quot;<a class="code" href="table_8h.html">cmd_dispatch_table/table.h</a>&quot;</span></div>
+<div class="line"><span class="lineno">  129</span>                                                                          };</div>
 <div class="line"><span class="lineno">  130</span> </div>
-<div class="line"><span class="lineno">  131</span>    <span class="comment">// Dispatch table labels:</span></div>
-<div class="line"><span class="lineno">  132</span><span class="preprocessor">    #define DEF_CMD(name, num, args, descr, ...)    \</span></div>
-<div class="line"><span class="lineno">  133</span><span class="preprocessor">        cmd_dispatch_do_##name:                     \</span></div>
-<div class="line"><span class="lineno">  134</span><span class="preprocessor">            __VA_ARGS__                             \</span></div>
-<div class="line"><span class="lineno">  135</span><span class="preprocessor">            DISPATCH();</span></div>
+<div class="line"><span class="lineno">  131</span><span class="preprocessor">    #define DISPATCH()                      \</span></div>
+<div class="line"><span class="lineno">  132</span><span class="preprocessor">        spu_read_cmd(&amp;cmd, data, cur_byte); \</span></div>
+<div class="line"><span class="lineno">  133</span><span class="preprocessor">        goto *dispatch_table[cmd.keys.num];</span></div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>    <a class="code hl_define" href="spu_8cpp.html#a8297cddbebf50a1736914db65c5724ae">DISPATCH</a>();</div>
 <div class="line"><span class="lineno">  136</span> </div>
-<div class="line"><span class="lineno">  137</span><span class="preprocessor">    #include &quot;<a class="code" href="cmd__dict_8h.html">cmd_dict.h</a>&quot;</span></div>
-<div class="line"><span class="lineno">  138</span> </div>
-<div class="line"><span class="lineno">  139</span><span class="preprocessor">    #undef DEF_CMD</span></div>
-<div class="line"><span class="lineno">  140</span><span class="preprocessor">    #undef DISPATCH</span></div>
-<div class="line"><span class="lineno">  141</span>    <span class="comment">// Dispatch table end</span></div>
+<div class="line"><span class="lineno">  137</span>    <span class="comment">// Dispatch table labels:</span></div>
+<div class="line"><span class="lineno">  138</span><span class="preprocessor">    #define DEF_CMD(name, num, args, descr, ...)    \</span></div>
+<div class="line"><span class="lineno">  139</span><span class="preprocessor">        cmd_dispatch_do_##name:                     \</span></div>
+<div class="line"><span class="lineno">  140</span><span class="preprocessor">            __VA_ARGS__                             \</span></div>
+<div class="line"><span class="lineno">  141</span><span class="preprocessor">            DISPATCH();</span></div>
 <div class="line"><span class="lineno">  142</span> </div>
-<div class="line"><span class="lineno">  143</span> </div>
-<div class="line"><span class="lineno">  144</span>    cmd_dispatch_do_stk_error:</div>
-<div class="line"><span class="lineno">  145</span>    fprintf(stderr, <a class="code hl_define" href="console_8h.html#ad220b7c98ce4bd06bf25860ca62d7aba">CONSOLE_RED</a>(<span class="stringliteral">&quot;Runtime error occured!&quot;</span>) <span class="stringliteral">&quot; Stack error. Byte %zu\n&quot;</span>,</div>
-<div class="line"><span class="lineno">  146</span>                                                                        *cur_byte - cmd.<a class="code hl_function" href="struct_cmd.html#abfc0c3cf11132a789381d22376978555">size</a>());</div>
-<div class="line"><span class="lineno">  147</span>    <a class="code hl_function" href="stack_8cpp.html#a16351279f5d0c48665e03ccbfe77aad3">stk_print_error_to_user</a>(stk_res);</div>
-<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306">Status::RUNTIME_ERROR</a>;</div>
+<div class="line"><span class="lineno">  143</span><span class="preprocessor">    #include &quot;<a class="code" href="cmd__dict_8h.html">cmd_dict.h</a>&quot;</span></div>
+<div class="line"><span class="lineno">  144</span> </div>
+<div class="line"><span class="lineno">  145</span><span class="preprocessor">    #undef DEF_CMD</span></div>
+<div class="line"><span class="lineno">  146</span><span class="preprocessor">    #undef DISPATCH</span></div>
+<div class="line"><span class="lineno">  147</span>    <span class="comment">// Dispatch table end</span></div>
+<div class="line"><span class="lineno">  148</span> </div>
 <div class="line"><span class="lineno">  149</span> </div>
-<div class="line"><span class="lineno">  150</span>    <a class="code hl_variable" href="table_8h.html#a5aeb9730b065ce85496b0ba6a2b5ae18">cmd_dispatch_do_error</a>:</div>
-<div class="line"><span class="lineno">  151</span>    <a class="code hl_define" href="spu_8cpp.html#a52ea00555388d76aef5567107cee7132">THROW_RUNTIME_ERROR_</a>(<span class="stringliteral">&quot;Invalid command number %d.&quot;</span>, cmd.<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#ad0033340339feb06377aab854e951440">num</a>);</div>
-<div class="line"><span class="lineno">  152</span>}</div>
+<div class="line"><span class="lineno">  150</span>    cmd_dispatch_do_stk_error:</div>
+<div class="line"><span class="lineno">  151</span>    fprintf(stderr, <a class="code hl_define" href="console_8h.html#ad220b7c98ce4bd06bf25860ca62d7aba">CONSOLE_RED</a>(<span class="stringliteral">&quot;Runtime error occured!&quot;</span>) <span class="stringliteral">&quot; Stack error. Byte %zu\n&quot;</span>,</div>
+<div class="line"><span class="lineno">  152</span>                                                                        *cur_byte - cmd.<a class="code hl_function" href="struct_cmd.html#abfc0c3cf11132a789381d22376978555">size</a>());</div>
+<div class="line"><span class="lineno">  153</span>    <a class="code hl_function" href="stack_8cpp.html#a16351279f5d0c48665e03ccbfe77aad3">stk_print_error_to_user</a>(stk_res);</div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306">Status::RUNTIME_ERROR</a>;</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>    <a class="code hl_variable" href="table_8h.html#a5aeb9730b065ce85496b0ba6a2b5ae18">cmd_dispatch_do_error</a>:</div>
+<div class="line"><span class="lineno">  157</span>    <a class="code hl_define" href="spu_8cpp.html#a52ea00555388d76aef5567107cee7132">THROW_RUNTIME_ERROR_</a>(<span class="stringliteral">&quot;Invalid command number %d.&quot;</span>, cmd.<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#ad0033340339feb06377aab854e951440">num</a>);</div>
+<div class="line"><span class="lineno">  158</span>}</div>
 <div class="ttc" id="acmd__dict_8h_html"><div class="ttname"><a href="cmd__dict_8h.html">cmd_dict.h</a></div></div>
 <div class="ttc" id="aconsole_8h_html_ad220b7c98ce4bd06bf25860ca62d7aba"><div class="ttname"><a href="console_8h.html#ad220b7c98ce4bd06bf25860ca62d7aba">CONSOLE_RED</a></div><div class="ttdeci">#define CONSOLE_RED(str)</div><div class="ttdef"><b>Definition</b> <a href="console_8h_source.html#l00033">console.h:33</a></div></div>
-<div class="ttc" id="aspu_8cpp_html_a52ea00555388d76aef5567107cee7132"><div class="ttname"><a href="spu_8cpp.html#a52ea00555388d76aef5567107cee7132">THROW_RUNTIME_ERROR_</a></div><div class="ttdeci">#define THROW_RUNTIME_ERROR_(text)</div><div class="ttdef"><b>Definition</b> <a href="spu_8cpp_source.html#l00048">spu.cpp:48</a></div></div>
+<div class="ttc" id="aspu_8cpp_html_a52ea00555388d76aef5567107cee7132"><div class="ttname"><a href="spu_8cpp.html#a52ea00555388d76aef5567107cee7132">THROW_RUNTIME_ERROR_</a></div><div class="ttdeci">#define THROW_RUNTIME_ERROR_(text)</div><div class="ttdef"><b>Definition</b> <a href="spu_8cpp_source.html#l00059">spu.cpp:59</a></div></div>
 <div class="ttc" id="aspu_8cpp_html_a8297cddbebf50a1736914db65c5724ae"><div class="ttname"><a href="spu_8cpp.html#a8297cddbebf50a1736914db65c5724ae">DISPATCH</a></div><div class="ttdeci">#define DISPATCH()</div></div>
 <div class="ttc" id="astack_8cpp_html_a16351279f5d0c48665e03ccbfe77aad3"><div class="ttname"><a href="stack_8cpp.html#a16351279f5d0c48665e03ccbfe77aad3">stk_print_error_to_user</a></div><div class="ttdeci">void stk_print_error_to_user(const int err_code)</div><div class="ttdoc">Prints errors to console.</div><div class="ttdef"><b>Definition</b> <a href="stack_8cpp_source.html#l00253">stack.cpp:253</a></div></div>
-<div class="ttc" id="astruct_cmd_html"><div class="ttname"><a href="struct_cmd.html">Cmd</a></div><div class="ttdoc">Command data structure.</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00174">cmd.h:174</a></div></div>
-<div class="ttc" id="astruct_cmd_html_a0a38a0e6be202854d97c4637280f5914"><div class="ttname"><a href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">Cmd::keys</a></div><div class="ttdeci">CmdKeys keys</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00177">cmd.h:177</a></div></div>
+<div class="ttc" id="astruct_cmd_html"><div class="ttname"><a href="struct_cmd.html">Cmd</a></div><div class="ttdoc">Command data structure.</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00172">cmd.h:172</a></div></div>
+<div class="ttc" id="astruct_cmd_html_a0a38a0e6be202854d97c4637280f5914"><div class="ttname"><a href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">Cmd::keys</a></div><div class="ttdeci">CmdKeys keys</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00175">cmd.h:175</a></div></div>
 <div class="ttc" id="astruct_cmd_html_abfc0c3cf11132a789381d22376978555"><div class="ttname"><a href="struct_cmd.html#abfc0c3cf11132a789381d22376978555">Cmd::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdef"><b>Definition</b> <a href="cmd_8cpp_source.html#l00021">cmd.cpp:21</a></div></div>
-<div class="ttc" id="astruct_cmd_keys_html_ad0033340339feb06377aab854e951440"><div class="ttname"><a href="struct_cmd_keys.html#ad0033340339feb06377aab854e951440">CmdKeys::num</a></div><div class="ttdeci">unsigned char num</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00029">cmd.h:29</a></div></div>
+<div class="ttc" id="astruct_cmd_keys_html_ad0033340339feb06377aab854e951440"><div class="ttname"><a href="struct_cmd_keys.html#ad0033340339feb06377aab854e951440">CmdKeys::num</a></div><div class="ttdeci">unsigned char num</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00027">cmd.h:27</a></div></div>
 <div class="ttc" id="astruct_stack_html_ae8242b5f1b2c3d98a6dbafc302e509d5a146633a2ef2a9bbb1c05ec4cd31ba019"><div class="ttname"><a href="struct_stack.html#ae8242b5f1b2c3d98a6dbafc302e509d5a146633a2ef2a9bbb1c05ec4cd31ba019">Stack::OK</a></div><div class="ttdeci">@ OK</div><div class="ttdef"><b>Definition</b> <a href="stack_8h_source.html#l00036">stack.h:36</a></div></div>
 <div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306">Status::RUNTIME_ERROR</a></div><div class="ttdeci">@ RUNTIME_ERROR</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00020">statuses.h:20</a></div></div>
 <div class="ttc" id="atable_8h_html"><div class="ttname"><a href="table_8h.html">table.h</a></div></div>
 <div class="ttc" id="atable_8h_html_a5aeb9730b065ce85496b0ba6a2b5ae18"><div class="ttname"><a href="table_8h.html#a5aeb9730b065ce85496b0ba6a2b5ae18">cmd_dispatch_do_error</a></div><div class="ttdeci">&amp;&amp; cmd_dispatch_do_error</div><div class="ttdef"><b>Definition</b> <a href="table_8h_source.html#l00002">table.h:2</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="table_8h_source.html#l00002">cmd_dispatch_do_error</a>, <a class="el" href="console_8h_source.html#l00033">CONSOLE_RED</a>, <a class="el" href="spu_8cpp.html#a8297cddbebf50a1736914db65c5724ae">DISPATCH</a>, <a class="el" href="cmd_8h_source.html#l00177">Cmd::keys</a>, <a class="el" href="cmd_8h_source.html#l00029">CmdKeys::num</a>, <a class="el" href="stack_8h_source.html#l00036">Stack::OK</a>, <a class="el" href="statuses_8h_source.html#l00020">Status::RUNTIME_ERROR</a>, <a class="el" href="cmd_8cpp_source.html#l00021">Cmd::size()</a>, <a class="el" href="stack_8cpp_source.html#l00253">stk_print_error_to_user()</a>, and <a class="el" href="spu_8cpp_source.html#l00048">THROW_RUNTIME_ERROR_</a>.</p>
+<p class="reference">References <a class="el" href="table_8h_source.html#l00002">cmd_dispatch_do_error</a>, <a class="el" href="console_8h_source.html#l00033">CONSOLE_RED</a>, <a class="el" href="spu_8cpp.html#a8297cddbebf50a1736914db65c5724ae">DISPATCH</a>, <a class="el" href="cmd_8h_source.html#l00175">Cmd::keys</a>, <a class="el" href="cmd_8h_source.html#l00027">CmdKeys::num</a>, <a class="el" href="stack_8h_source.html#l00036">Stack::OK</a>, <a class="el" href="statuses_8h_source.html#l00020">Status::RUNTIME_ERROR</a>, <a class="el" href="cmd_8cpp_source.html#l00021">Cmd::size()</a>, <a class="el" href="stack_8cpp_source.html#l00253">stk_print_error_to_user()</a>, and <a class="el" href="spu_8cpp_source.html#l00059">THROW_RUNTIME_ERROR_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00053">spu_parse_and_execute()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00064">spu_parse_and_execute()</a>.</p>
 
 </div>
 </div>
@@ -266,14 +326,14 @@ Functions</h2></td></tr>
 <p>Flushes input. </p>
 <dl class="section return"><dt>Returns</dt><dd>int last read symbol (EOF if end of input reached) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00074">74</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>                             {</div>
-<div class="line"><span class="lineno">   75</span>    <span class="keywordtype">int</span> c = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">while</span> ((c = getchar()) != <span class="charliteral">&#39;\n&#39;</span> &amp;&amp; c != EOF) {}</div>
-<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">return</span> c;</div>
-<div class="line"><span class="lineno">   78</span>}</div>
+<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00118">118</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span>                             {</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordtype">int</span> c = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">while</span> ((c = getchar()) != <span class="charliteral">&#39;\n&#39;</span> &amp;&amp; c != EOF) {}</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">return</span> c;</div>
+<div class="line"><span class="lineno">  122</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="spu_8h_source.html#l00085">spu_get_imm_from_input()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="spu_8h_source.html#l00129">spu_get_imm_from_input()</a>.</p>
 
 </div>
 </div>
@@ -303,31 +363,31 @@ Functions</h2></td></tr>
 <p>Gets double from stdin. </p>
 <dl class="section return"><dt>Returns</dt><dd>double NAN if error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00085">85</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   85</span>                                       {</div>
-<div class="line"><span class="lineno">   86</span>    <span class="keywordtype">double</span> x = NAN;</div>
-<div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>    <span class="keyword">static</span> <span class="keyword">const</span> ssize_t MAX_INPUT_ATTEMPTS = 5;</div>
-<div class="line"><span class="lineno">   89</span>    ssize_t attempts = MAX_INPUT_ATTEMPTS;</div>
-<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">while</span> (attempts--) {</div>
-<div class="line"><span class="lineno">   91</span>        printf(<span class="stringliteral">&quot;Enter double number: &quot;</span>);</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">if</span> (scanf(<span class="stringliteral">&quot;%lf&quot;</span>, &amp;x) == 1)</div>
-<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">return</span> x;</div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="spu_8h.html#a20990021c554572a00ad8d4c5663fc81">spu_flush_input</a>() == EOF)</div>
-<div class="line"><span class="lineno">   97</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   98</span> </div>
-<div class="line"><span class="lineno">   99</span>        printf(<span class="stringliteral">&quot;Wrong input. Try again\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  100</span>    }</div>
-<div class="line"><span class="lineno">  101</span> </div>
-<div class="line"><span class="lineno">  102</span>    printf(<span class="stringliteral">&quot;Too many wrong attempts\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">return</span> NAN;</div>
-<div class="line"><span class="lineno">  105</span>}</div>
-<div class="ttc" id="aspu_8h_html_a20990021c554572a00ad8d4c5663fc81"><div class="ttname"><a href="spu_8h.html#a20990021c554572a00ad8d4c5663fc81">spu_flush_input</a></div><div class="ttdeci">int spu_flush_input()</div><div class="ttdoc">Flushes input.</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00074">spu.h:74</a></div></div>
+<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00129">129</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>                                       {</div>
+<div class="line"><span class="lineno">  130</span>    <span class="keywordtype">double</span> x = NAN;</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>    <span class="keyword">static</span> <span class="keyword">const</span> ssize_t MAX_INPUT_ATTEMPTS = 5;</div>
+<div class="line"><span class="lineno">  133</span>    ssize_t attempts = MAX_INPUT_ATTEMPTS;</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">while</span> (attempts--) {</div>
+<div class="line"><span class="lineno">  135</span>        printf(<span class="stringliteral">&quot;Enter double number: &quot;</span>);</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>        <span class="keywordflow">if</span> (scanf(<span class="stringliteral">&quot;%lf&quot;</span>, &amp;x) == 1)</div>
+<div class="line"><span class="lineno">  138</span>            <span class="keywordflow">return</span> x;</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="spu_8h.html#a20990021c554572a00ad8d4c5663fc81">spu_flush_input</a>() == EOF)</div>
+<div class="line"><span class="lineno">  141</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>        printf(<span class="stringliteral">&quot;Wrong input. Try again\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  144</span>    }</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>    printf(<span class="stringliteral">&quot;Too many wrong attempts\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">return</span> NAN;</div>
+<div class="line"><span class="lineno">  149</span>}</div>
+<div class="ttc" id="aspu_8h_html_a20990021c554572a00ad8d4c5663fc81"><div class="ttname"><a href="spu_8h.html#a20990021c554572a00ad8d4c5663fc81">spu_flush_input</a></div><div class="ttdeci">int spu_flush_input()</div><div class="ttdoc">Flushes input.</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00118">spu.h:118</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="spu_8h_source.html#l00074">spu_flush_input()</a>.</p>
+<p class="reference">References <a class="el" href="spu_8h_source.html#l00118">spu_flush_input()</a>.</p>
 
 </div>
 </div>
@@ -356,37 +416,37 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604c">Status::Statuses</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="spu_8cpp_source.html#l00053">53</a> of file <a class="el" href="spu_8cpp_source.html">spu.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>                                                       {</div>
-<div class="line"><span class="lineno">   54</span>    assert(data);</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>    <span class="keywordtype">size_t</span> cur_byte = <span class="keyword">sizeof</span>(<a class="code hl_variable" href="cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be">FILE_HEADER</a>);</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">if</span> (!((<span class="keyword">const</span> <a class="code hl_struct" href="struct_file_header.html">FileHeader</a>*) data)-&gt;check()) {</div>
-<div class="line"><span class="lineno">   59</span>        <a class="code hl_define" href="spu_8cpp.html#a52ea00555388d76aef5567107cee7132">THROW_RUNTIME_ERROR_</a>(<span class="stringliteral">&quot;Invalid or corrupted file.&quot;</span>);</div>
-<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca26565794e5f270e88acbed09b3d26e61">Status::SIGNATURE_ERROR</a>;</div>
-<div class="line"><span class="lineno">   61</span>    }</div>
-<div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span>    <a class="code hl_struct" href="struct_spu_data.html">SpuData</a> spu = {};</div>
-<div class="line"><span class="lineno">   64</span>    <a class="code hl_define" href="statuses_8h.html#ae36d4e76cc7c3a31a1cd124e848597e6">STATUS_CHECK</a>(spu.<a class="code hl_function" href="struct_spu_data.html#a455f6fed24f70e695c87ecfc7cb2fde1">ctor</a>());</div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>    <a class="code hl_define" href="statuses_8h.html#ae36d4e76cc7c3a31a1cd124e848597e6">STATUS_CHECK</a>(<a class="code hl_function" href="spu_8cpp.html#ae69f5635302dd8e92897310d34adebb3">spu_execute</a>(&amp;spu, data, &amp;cur_byte), spu.<a class="code hl_function" href="struct_spu_data.html#ab8279902c19cd3fd61a692f2781b0668">dtor</a>());</div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>    <a class="code hl_define" href="statuses_8h.html#ae36d4e76cc7c3a31a1cd124e848597e6">STATUS_CHECK</a>(spu.<a class="code hl_function" href="struct_spu_data.html#ab8279902c19cd3fd61a692f2781b0668">dtor</a>());</div>
-<div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
-<div class="line"><span class="lineno">   71</span>}</div>
-<div class="ttc" id="acmd_8h_html_a1ae26eb7c82ff33e2bc446801638e3be"><div class="ttname"><a href="cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be">FILE_HEADER</a></div><div class="ttdeci">const FileHeader FILE_HEADER</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00169">cmd.h:169</a></div></div>
-<div class="ttc" id="aspu_8cpp_html_ae69f5635302dd8e92897310d34adebb3"><div class="ttname"><a href="spu_8cpp.html#ae69f5635302dd8e92897310d34adebb3">spu_execute</a></div><div class="ttdeci">Status::Statuses spu_execute(SpuData *spu, const char *data, size_t *cur_byte)</div><div class="ttdoc">Executes commands.</div><div class="ttdef"><b>Definition</b> <a href="spu_8cpp_source.html#l00112">spu.cpp:112</a></div></div>
+<p class="definition">Definition at line <a class="el" href="spu_8cpp_source.html#l00064">64</a> of file <a class="el" href="spu_8cpp_source.html">spu.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>                                                       {</div>
+<div class="line"><span class="lineno">   65</span>    assert(data);</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordtype">size_t</span> cur_byte = <span class="keyword">sizeof</span>(<a class="code hl_variable" href="cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be">FILE_HEADER</a>);</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">if</span> (!((<span class="keyword">const</span> <a class="code hl_struct" href="struct_file_header.html">FileHeader</a>*) data)-&gt;check()) {</div>
+<div class="line"><span class="lineno">   70</span>        <a class="code hl_define" href="spu_8cpp.html#a52ea00555388d76aef5567107cee7132">THROW_RUNTIME_ERROR_</a>(<span class="stringliteral">&quot;Invalid or corrupted file.&quot;</span>);</div>
+<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca26565794e5f270e88acbed09b3d26e61">Status::SIGNATURE_ERROR</a>;</div>
+<div class="line"><span class="lineno">   72</span>    }</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_struct" href="struct_spu_data.html">SpuData</a> spu = {};</div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_define" href="statuses_8h.html#ae36d4e76cc7c3a31a1cd124e848597e6">STATUS_CHECK</a>(spu.<a class="code hl_function" href="struct_spu_data.html#a455f6fed24f70e695c87ecfc7cb2fde1">ctor</a>());</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_define" href="statuses_8h.html#ae36d4e76cc7c3a31a1cd124e848597e6">STATUS_CHECK</a>(<a class="code hl_function" href="spu_8cpp.html#ae69f5635302dd8e92897310d34adebb3">spu_execute</a>(&amp;spu, data, &amp;cur_byte), spu.<a class="code hl_function" href="struct_spu_data.html#ab8279902c19cd3fd61a692f2781b0668">dtor</a>());</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_define" href="statuses_8h.html#ae36d4e76cc7c3a31a1cd124e848597e6">STATUS_CHECK</a>(spu.<a class="code hl_function" href="struct_spu_data.html#ab8279902c19cd3fd61a692f2781b0668">dtor</a>());</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a>;</div>
+<div class="line"><span class="lineno">   82</span>}</div>
+<div class="ttc" id="acmd_8h_html_a1ae26eb7c82ff33e2bc446801638e3be"><div class="ttname"><a href="cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be">FILE_HEADER</a></div><div class="ttdeci">const FileHeader FILE_HEADER</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00167">cmd.h:167</a></div></div>
+<div class="ttc" id="aspu_8cpp_html_ae69f5635302dd8e92897310d34adebb3"><div class="ttname"><a href="spu_8cpp.html#ae69f5635302dd8e92897310d34adebb3">spu_execute</a></div><div class="ttdeci">Status::Statuses spu_execute(SpuData *spu, const char *data, size_t *cur_byte)</div><div class="ttdoc">Executes commands.</div><div class="ttdef"><b>Definition</b> <a href="spu_8cpp_source.html#l00119">spu.cpp:119</a></div></div>
 <div class="ttc" id="astatuses_8h_html_ae36d4e76cc7c3a31a1cd124e848597e6"><div class="ttname"><a href="statuses_8h.html#ae36d4e76cc7c3a31a1cd124e848597e6">STATUS_CHECK</a></div><div class="ttdeci">#define STATUS_CHECK(func,...)</div><div class="ttdoc">Macros for validating function return.</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00055">statuses.h:55</a></div></div>
-<div class="ttc" id="astruct_file_header_html"><div class="ttname"><a href="struct_file_header.html">FileHeader</a></div><div class="ttdoc">Binary file header.</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00160">cmd.h:160</a></div></div>
-<div class="ttc" id="astruct_spu_data_html"><div class="ttname"><a href="struct_spu_data.html">SpuData</a></div><div class="ttdoc">Keeps spu structs and variables.</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00018">spu.h:18</a></div></div>
+<div class="ttc" id="astruct_file_header_html"><div class="ttname"><a href="struct_file_header.html">FileHeader</a></div><div class="ttdoc">Binary file header.</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00158">cmd.h:158</a></div></div>
+<div class="ttc" id="astruct_spu_data_html"><div class="ttname"><a href="struct_spu_data.html">SpuData</a></div><div class="ttdoc">Keeps spu structs and variables.</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00035">spu.h:35</a></div></div>
 <div class="ttc" id="astruct_spu_data_html_a455f6fed24f70e695c87ecfc7cb2fde1"><div class="ttname"><a href="struct_spu_data.html#a455f6fed24f70e695c87ecfc7cb2fde1">SpuData::ctor</a></div><div class="ttdeci">Status::Statuses ctor()</div><div class="ttdef"><b>Definition</b> <a href="spu_8cpp_source.html#l00005">spu.cpp:5</a></div></div>
-<div class="ttc" id="astruct_spu_data_html_ab8279902c19cd3fd61a692f2781b0668"><div class="ttname"><a href="struct_spu_data.html#ab8279902c19cd3fd61a692f2781b0668">SpuData::dtor</a></div><div class="ttdeci">Status::Statuses dtor()</div><div class="ttdef"><b>Definition</b> <a href="spu_8cpp_source.html#l00017">spu.cpp:17</a></div></div>
+<div class="ttc" id="astruct_spu_data_html_ab8279902c19cd3fd61a692f2781b0668"><div class="ttname"><a href="struct_spu_data.html#ab8279902c19cd3fd61a692f2781b0668">SpuData::dtor</a></div><div class="ttdeci">Status::Statuses dtor()</div><div class="ttdef"><b>Definition</b> <a href="spu_8cpp_source.html#l00024">spu.cpp:24</a></div></div>
 <div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604ca26565794e5f270e88acbed09b3d26e61"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604ca26565794e5f270e88acbed09b3d26e61">Status::SIGNATURE_ERROR</a></div><div class="ttdeci">@ SIGNATURE_ERROR</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00023">statuses.h:23</a></div></div>
 <div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a></div><div class="ttdeci">@ NORMAL_WORK</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00013">statuses.h:13</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="spu_8cpp_source.html#l00005">SpuData::ctor()</a>, <a class="el" href="spu_8cpp_source.html#l00017">SpuData::dtor()</a>, <a class="el" href="cmd_8h_source.html#l00169">FILE_HEADER</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, <a class="el" href="statuses_8h_source.html#l00023">Status::SIGNATURE_ERROR</a>, <a class="el" href="spu_8cpp_source.html#l00112">spu_execute()</a>, <a class="el" href="statuses_8h_source.html#l00055">STATUS_CHECK</a>, and <a class="el" href="spu_8cpp_source.html#l00048">THROW_RUNTIME_ERROR_</a>.</p>
+<p class="reference">References <a class="el" href="spu_8cpp_source.html#l00005">SpuData::ctor()</a>, <a class="el" href="spu_8cpp_source.html#l00024">SpuData::dtor()</a>, <a class="el" href="cmd_8h_source.html#l00167">FILE_HEADER</a>, <a class="el" href="statuses_8h_source.html#l00013">Status::NORMAL_WORK</a>, <a class="el" href="statuses_8h_source.html#l00023">Status::SIGNATURE_ERROR</a>, <a class="el" href="spu_8cpp_source.html#l00119">spu_execute()</a>, <a class="el" href="statuses_8h_source.html#l00055">STATUS_CHECK</a>, and <a class="el" href="spu_8cpp_source.html#l00059">THROW_RUNTIME_ERROR_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="spu_2src_2main_8cpp_source.html#l00018">main()</a>.</p>
 
@@ -427,22 +487,28 @@ Functions</h2></td></tr>
 <dd>
 false </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00065">65</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   65</span>                                          {</div>
-<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">return</span> printf(<span class="stringliteral">&quot;%lf\n&quot;</span>, x) &gt; 0;</div>
-<div class="line"><span class="lineno">   67</span>}</div>
+<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00109">109</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span>                                          {</div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">return</span> printf(<span class="stringliteral">&quot;%lf\n&quot;</span>, x) &gt; 0;</div>
+<div class="line"><span class="lineno">  111</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ad0f4e4336cdb467fae9b8155a10428b8" name="ad0f4e4336cdb467fae9b8155a10428b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0f4e4336cdb467fae9b8155a10428b8">&#9670;&#160;</a></span>spu_read_cmd()</h2>
+<a id="a4e32f43a28b99ed6077985a0b5c1cfc7" name="a4e32f43a28b99ed6077985a0b5c1cfc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e32f43a28b99ed6077985a0b5c1cfc7">&#9670;&#160;</a></span>spu_read_cmd()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_cmd.html">Cmd</a> spu_read_cmd </td>
+          <td class="memname">void spu_read_cmd </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cmd.html">Cmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>data</em>, </td>
         </tr>
@@ -460,50 +526,166 @@ false </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Reads cmd and it's args. </p>
+<p>Reads command and args from data. Moves cur_byte. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">cmd</td><td></td></tr>
     <tr><td class="paramname">data</td><td></td></tr>
     <tr><td class="paramname">cur_byte</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_cmd.html" title="Command data structure.">Cmd</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="spu_8cpp_source.html#l00080">80</a> of file <a class="el" href="spu_8cpp_source.html">spu.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   80</span>                                                     {</div>
-<div class="line"><span class="lineno">   81</span>    assert(data);</div>
-<div class="line"><span class="lineno">   82</span>    assert(cur_byte);</div>
-<div class="line"><span class="lineno">   83</span> </div>
-<div class="line"><span class="lineno">   84</span>    <a class="code hl_struct" href="struct_cmd.html">Cmd</a> cmd = {};</div>
-<div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>    <a class="code hl_define" href="spu_8cpp.html#af0caa752175ed6935756d158d26848fd">DATA_GET_VAL_</a>(cmd.<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>, <a class="code hl_struct" href="struct_cmd_keys.html">CmdKeys</a>);</div>
-<div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">if</span> (cmd.<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#a76f64f02295d9a30abdaf138ea275f6a">reg</a>)</div>
-<div class="line"><span class="lineno">   89</span>        <a class="code hl_define" href="spu_8cpp.html#af0caa752175ed6935756d158d26848fd">DATA_GET_VAL_</a>(cmd.<a class="code hl_variable" href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">args</a>.<a class="code hl_variable" href="struct_cmd_args.html#a49949ad6edf5cb3523025913f2c0adc5">reg</a>, <a class="code hl_typedef" href="cmd_8h.html#a428ff6e9ffc07d578a8a207c72dc3366">RegNum_t</a>);</div>
-<div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">if</span> (cmd.<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#a5b1fdf0614537d3c515c99ce945906fa">imm_double</a>)</div>
-<div class="line"><span class="lineno">   92</span>        <a class="code hl_define" href="spu_8cpp.html#af0caa752175ed6935756d158d26848fd">DATA_GET_VAL_</a>(cmd.<a class="code hl_variable" href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">args</a>.<a class="code hl_variable" href="struct_cmd_args.html#af4f115f325b0b1e91f03bea48354fa82">imm_double</a>, <a class="code hl_typedef" href="cmd_8h.html#addb7662d7e0f3483a216a3d4c2203811">Imm_double_t</a>);</div>
-<div class="line"><span class="lineno">   93</span> </div>
-<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">if</span> (cmd.<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#a2520ae7bb6f891ca6ff62dd0f882a1f4">imm_int</a>)</div>
-<div class="line"><span class="lineno">   95</span>        <a class="code hl_define" href="spu_8cpp.html#af0caa752175ed6935756d158d26848fd">DATA_GET_VAL_</a>(cmd.<a class="code hl_variable" href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">args</a>.<a class="code hl_variable" href="struct_cmd_args.html#a7280dbc4d3d9bee564f6815e969bdd07">imm_int</a>, <a class="code hl_typedef" href="cmd_8h.html#a226f97678592b90d02bed2f62edf55c6">Imm_int_t</a>);</div>
+<p class="definition">Definition at line <a class="el" href="spu_8cpp_source.html#l00091">91</a> of file <a class="el" href="spu_8cpp_source.html">spu.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>                                                                {</div>
+<div class="line"><span class="lineno">   92</span>    assert(data);</div>
+<div class="line"><span class="lineno">   93</span>    assert(cur_byte);</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_define" href="spu_8cpp.html#af0caa752175ed6935756d158d26848fd">DATA_GET_VAL_</a>(cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>, <a class="code hl_struct" href="struct_cmd_keys.html">CmdKeys</a>);</div>
 <div class="line"><span class="lineno">   96</span> </div>
-<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">return</span> cmd;</div>
-<div class="line"><span class="lineno">   98</span>}</div>
-<div class="ttc" id="acmd_8h_html_a226f97678592b90d02bed2f62edf55c6"><div class="ttname"><a href="cmd_8h.html#a226f97678592b90d02bed2f62edf55c6">Imm_int_t</a></div><div class="ttdeci">long Imm_int_t</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00079">cmd.h:79</a></div></div>
-<div class="ttc" id="acmd_8h_html_a428ff6e9ffc07d578a8a207c72dc3366"><div class="ttname"><a href="cmd_8h.html#a428ff6e9ffc07d578a8a207c72dc3366">RegNum_t</a></div><div class="ttdeci">unsigned char RegNum_t</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00038">cmd.h:38</a></div></div>
-<div class="ttc" id="acmd_8h_html_addb7662d7e0f3483a216a3d4c2203811"><div class="ttname"><a href="cmd_8h.html#addb7662d7e0f3483a216a3d4c2203811">Imm_double_t</a></div><div class="ttdeci">double Imm_double_t</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00070">cmd.h:70</a></div></div>
-<div class="ttc" id="aspu_8cpp_html_af0caa752175ed6935756d158d26848fd"><div class="ttname"><a href="spu_8cpp.html#af0caa752175ed6935756d158d26848fd">DATA_GET_VAL_</a></div><div class="ttdeci">#define DATA_GET_VAL_(dest, val_t)</div><div class="ttdef"><b>Definition</b> <a href="spu_8cpp_source.html#l00075">spu.cpp:75</a></div></div>
-<div class="ttc" id="astruct_cmd_args_html_a49949ad6edf5cb3523025913f2c0adc5"><div class="ttname"><a href="struct_cmd_args.html#a49949ad6edf5cb3523025913f2c0adc5">CmdArgs::reg</a></div><div class="ttdeci">unsigned char reg</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00088">cmd.h:88</a></div></div>
-<div class="ttc" id="astruct_cmd_args_html_a7280dbc4d3d9bee564f6815e969bdd07"><div class="ttname"><a href="struct_cmd_args.html#a7280dbc4d3d9bee564f6815e969bdd07">CmdArgs::imm_int</a></div><div class="ttdeci">Imm_int_t imm_int</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00089">cmd.h:89</a></div></div>
-<div class="ttc" id="astruct_cmd_args_html_af4f115f325b0b1e91f03bea48354fa82"><div class="ttname"><a href="struct_cmd_args.html#af4f115f325b0b1e91f03bea48354fa82">CmdArgs::imm_double</a></div><div class="ttdeci">Imm_double_t imm_double</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00087">cmd.h:87</a></div></div>
-<div class="ttc" id="astruct_cmd_html_ad3fa66964fc662181ab833aef4a72db0"><div class="ttname"><a href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">Cmd::args</a></div><div class="ttdeci">CmdArgs args</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00178">cmd.h:178</a></div></div>
-<div class="ttc" id="astruct_cmd_keys_html"><div class="ttname"><a href="struct_cmd_keys.html">CmdKeys</a></div><div class="ttdoc">Specifies command bit field.</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00028">cmd.h:28</a></div></div>
-<div class="ttc" id="astruct_cmd_keys_html_a2520ae7bb6f891ca6ff62dd0f882a1f4"><div class="ttname"><a href="struct_cmd_keys.html#a2520ae7bb6f891ca6ff62dd0f882a1f4">CmdKeys::imm_int</a></div><div class="ttdeci">bool imm_int</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00032">cmd.h:32</a></div></div>
-<div class="ttc" id="astruct_cmd_keys_html_a5b1fdf0614537d3c515c99ce945906fa"><div class="ttname"><a href="struct_cmd_keys.html#a5b1fdf0614537d3c515c99ce945906fa">CmdKeys::imm_double</a></div><div class="ttdeci">bool imm_double</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00031">cmd.h:31</a></div></div>
-<div class="ttc" id="astruct_cmd_keys_html_a76f64f02295d9a30abdaf138ea275f6a"><div class="ttname"><a href="struct_cmd_keys.html#a76f64f02295d9a30abdaf138ea275f6a">CmdKeys::reg</a></div><div class="ttdeci">bool reg</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00030">cmd.h:30</a></div></div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">if</span> (cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#a76f64f02295d9a30abdaf138ea275f6a">reg</a>)</div>
+<div class="line"><span class="lineno">   98</span>        <a class="code hl_define" href="spu_8cpp.html#af0caa752175ed6935756d158d26848fd">DATA_GET_VAL_</a>(cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">args</a>.<a class="code hl_variable" href="struct_cmd_args.html#a49949ad6edf5cb3523025913f2c0adc5">reg</a>, <a class="code hl_typedef" href="cmd_8h.html#a428ff6e9ffc07d578a8a207c72dc3366">RegNum_t</a>);</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">if</span> (cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#a5b1fdf0614537d3c515c99ce945906fa">imm_double</a>)</div>
+<div class="line"><span class="lineno">  101</span>        <a class="code hl_define" href="spu_8cpp.html#af0caa752175ed6935756d158d26848fd">DATA_GET_VAL_</a>(cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">args</a>.<a class="code hl_variable" href="struct_cmd_args.html#af4f115f325b0b1e91f03bea48354fa82">imm_double</a>, <a class="code hl_typedef" href="cmd_8h.html#addb7662d7e0f3483a216a3d4c2203811">Imm_double_t</a>);</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">if</span> (cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#a0a38a0e6be202854d97c4637280f5914">keys</a>.<a class="code hl_variable" href="struct_cmd_keys.html#a2520ae7bb6f891ca6ff62dd0f882a1f4">imm_int</a>)</div>
+<div class="line"><span class="lineno">  104</span>        <a class="code hl_define" href="spu_8cpp.html#af0caa752175ed6935756d158d26848fd">DATA_GET_VAL_</a>(cmd-&gt;<a class="code hl_variable" href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">args</a>.<a class="code hl_variable" href="struct_cmd_args.html#a7280dbc4d3d9bee564f6815e969bdd07">imm_int</a>, <a class="code hl_typedef" href="cmd_8h.html#a226f97678592b90d02bed2f62edf55c6">Imm_int_t</a>);</div>
+<div class="line"><span class="lineno">  105</span>}</div>
+<div class="ttc" id="acmd_8h_html_a226f97678592b90d02bed2f62edf55c6"><div class="ttname"><a href="cmd_8h.html#a226f97678592b90d02bed2f62edf55c6">Imm_int_t</a></div><div class="ttdeci">long Imm_int_t</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00077">cmd.h:77</a></div></div>
+<div class="ttc" id="acmd_8h_html_a428ff6e9ffc07d578a8a207c72dc3366"><div class="ttname"><a href="cmd_8h.html#a428ff6e9ffc07d578a8a207c72dc3366">RegNum_t</a></div><div class="ttdeci">unsigned char RegNum_t</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00036">cmd.h:36</a></div></div>
+<div class="ttc" id="acmd_8h_html_addb7662d7e0f3483a216a3d4c2203811"><div class="ttname"><a href="cmd_8h.html#addb7662d7e0f3483a216a3d4c2203811">Imm_double_t</a></div><div class="ttdeci">double Imm_double_t</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00068">cmd.h:68</a></div></div>
+<div class="ttc" id="aspu_8cpp_html_af0caa752175ed6935756d158d26848fd"><div class="ttname"><a href="spu_8cpp.html#af0caa752175ed6935756d158d26848fd">DATA_GET_VAL_</a></div><div class="ttdeci">#define DATA_GET_VAL_(dest, val_t)</div><div class="ttdef"><b>Definition</b> <a href="spu_8cpp_source.html#l00086">spu.cpp:86</a></div></div>
+<div class="ttc" id="astruct_cmd_args_html_a49949ad6edf5cb3523025913f2c0adc5"><div class="ttname"><a href="struct_cmd_args.html#a49949ad6edf5cb3523025913f2c0adc5">CmdArgs::reg</a></div><div class="ttdeci">unsigned char reg</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00086">cmd.h:86</a></div></div>
+<div class="ttc" id="astruct_cmd_args_html_a7280dbc4d3d9bee564f6815e969bdd07"><div class="ttname"><a href="struct_cmd_args.html#a7280dbc4d3d9bee564f6815e969bdd07">CmdArgs::imm_int</a></div><div class="ttdeci">Imm_int_t imm_int</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00087">cmd.h:87</a></div></div>
+<div class="ttc" id="astruct_cmd_args_html_af4f115f325b0b1e91f03bea48354fa82"><div class="ttname"><a href="struct_cmd_args.html#af4f115f325b0b1e91f03bea48354fa82">CmdArgs::imm_double</a></div><div class="ttdeci">Imm_double_t imm_double</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00085">cmd.h:85</a></div></div>
+<div class="ttc" id="astruct_cmd_html_ad3fa66964fc662181ab833aef4a72db0"><div class="ttname"><a href="struct_cmd.html#ad3fa66964fc662181ab833aef4a72db0">Cmd::args</a></div><div class="ttdeci">CmdArgs args</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00176">cmd.h:176</a></div></div>
+<div class="ttc" id="astruct_cmd_keys_html"><div class="ttname"><a href="struct_cmd_keys.html">CmdKeys</a></div><div class="ttdoc">Specifies command bit field.</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00026">cmd.h:26</a></div></div>
+<div class="ttc" id="astruct_cmd_keys_html_a2520ae7bb6f891ca6ff62dd0f882a1f4"><div class="ttname"><a href="struct_cmd_keys.html#a2520ae7bb6f891ca6ff62dd0f882a1f4">CmdKeys::imm_int</a></div><div class="ttdeci">bool imm_int</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00030">cmd.h:30</a></div></div>
+<div class="ttc" id="astruct_cmd_keys_html_a5b1fdf0614537d3c515c99ce945906fa"><div class="ttname"><a href="struct_cmd_keys.html#a5b1fdf0614537d3c515c99ce945906fa">CmdKeys::imm_double</a></div><div class="ttdeci">bool imm_double</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00029">cmd.h:29</a></div></div>
+<div class="ttc" id="astruct_cmd_keys_html_a76f64f02295d9a30abdaf138ea275f6a"><div class="ttname"><a href="struct_cmd_keys.html#a76f64f02295d9a30abdaf138ea275f6a">CmdKeys::reg</a></div><div class="ttdeci">bool reg</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00028">cmd.h:28</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="cmd_8h_source.html#l00178">Cmd::args</a>, <a class="el" href="spu_8cpp_source.html#l00075">DATA_GET_VAL_</a>, <a class="el" href="cmd_8h_source.html#l00031">CmdKeys::imm_double</a>, <a class="el" href="cmd_8h_source.html#l00087">CmdArgs::imm_double</a>, <a class="el" href="cmd_8h_source.html#l00032">CmdKeys::imm_int</a>, <a class="el" href="cmd_8h_source.html#l00089">CmdArgs::imm_int</a>, <a class="el" href="cmd_8h_source.html#l00177">Cmd::keys</a>, <a class="el" href="cmd_8h_source.html#l00030">CmdKeys::reg</a>, and <a class="el" href="cmd_8h_source.html#l00088">CmdArgs::reg</a>.</p>
+<p class="reference">References <a class="el" href="cmd_8h_source.html#l00176">Cmd::args</a>, <a class="el" href="spu_8cpp_source.html#l00086">DATA_GET_VAL_</a>, <a class="el" href="cmd_8h_source.html#l00029">CmdKeys::imm_double</a>, <a class="el" href="cmd_8h_source.html#l00085">CmdArgs::imm_double</a>, <a class="el" href="cmd_8h_source.html#l00030">CmdKeys::imm_int</a>, <a class="el" href="cmd_8h_source.html#l00087">CmdArgs::imm_int</a>, <a class="el" href="cmd_8h_source.html#l00175">Cmd::keys</a>, <a class="el" href="cmd_8h_source.html#l00028">CmdKeys::reg</a>, and <a class="el" href="cmd_8h_source.html#l00086">CmdArgs::reg</a>.</p>
+
+</div>
+</div>
+<a id="a940590e7df7427f8ecc839f38be015e4" name="a940590e7df7427f8ecc839f38be015e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a940590e7df7427f8ecc839f38be015e4">&#9670;&#160;</a></span>spu_sfml_show()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool spu_sfml_show </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_spu_data.html">SpuData</a> *&#160;</td>
+          <td class="paramname"><em>spu</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renews all pixels in graphics window. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spu</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="spu_8cpp_source.html#l00164">164</a> of file <a class="el" href="spu_8cpp_source.html">spu.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  164</span>                                 {</div>
+<div class="line"><span class="lineno">  165</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> &lt; <a class="code hl_variable" href="spu_8h.html#a793a380e3ceb4728abb70e4b34368a65">VIDEO_HEIGHT</a> * <a class="code hl_variable" href="spu_8h.html#afcc4d5f47bf49727824adede4093c3eb">VIDEO_WIDTH</a>; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>++)</div>
+<div class="line"><span class="lineno">  166</span>        spu-&gt;<a class="code hl_variable" href="struct_spu_data.html#a9c3c00b677d22d92d8a10ccef67f3bc5">sfml</a>.<a class="code hl_function" href="structsfml_window.html#a63f3ec11cd7211c38790ed76283cdf6a">set_pixel_color</a>(i, (uint32_t)spu-&gt;<a class="code hl_variable" href="struct_spu_data.html#a20debdca8f0a04c0b528f3ff9b7b3065">ram</a>[i]);</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>    spu-&gt;<a class="code hl_variable" href="struct_spu_data.html#a9c3c00b677d22d92d8a10ccef67f3bc5">sfml</a>.<a class="code hl_function" href="structsfml_window.html#a482c9f147d3c9e5aec416182a226cbd4">renew</a>();</div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>    <span class="keywordflow">return</span> !spu-&gt;<a class="code hl_variable" href="struct_spu_data.html#a9c3c00b677d22d92d8a10ccef67f3bc5">sfml</a>.<a class="code hl_function" href="structsfml_window.html#a8c79ff59578a0ff69561d20e1216a445">is_closed</a>();</div>
+<div class="line"><span class="lineno">  171</span>}</div>
+<div class="ttc" id="anamespacegen_html_ad6f9a21fef823e19e8e49589645c58ba"><div class="ttname"><a href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">gen.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition</b> <a href="gen_8py_source.html#l00027">gen.py:27</a></div></div>
+<div class="ttc" id="aspu_8h_html_a793a380e3ceb4728abb70e4b34368a65"><div class="ttname"><a href="spu_8h.html#a793a380e3ceb4728abb70e4b34368a65">VIDEO_HEIGHT</a></div><div class="ttdeci">const size_t VIDEO_HEIGHT</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00025">spu.h:25</a></div></div>
+<div class="ttc" id="aspu_8h_html_afcc4d5f47bf49727824adede4093c3eb"><div class="ttname"><a href="spu_8h.html#afcc4d5f47bf49727824adede4093c3eb">VIDEO_WIDTH</a></div><div class="ttdeci">const size_t VIDEO_WIDTH</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00026">spu.h:26</a></div></div>
+<div class="ttc" id="astruct_spu_data_html_a20debdca8f0a04c0b528f3ff9b7b3065"><div class="ttname"><a href="struct_spu_data.html#a20debdca8f0a04c0b528f3ff9b7b3065">SpuData::ram</a></div><div class="ttdeci">Imm_double_t ram[RAM_SIZE]</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00040">spu.h:40</a></div></div>
+<div class="ttc" id="astruct_spu_data_html_a9c3c00b677d22d92d8a10ccef67f3bc5"><div class="ttname"><a href="struct_spu_data.html#a9c3c00b677d22d92d8a10ccef67f3bc5">SpuData::sfml</a></div><div class="ttdeci">sfmlWindow sfml</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00045">spu.h:45</a></div></div>
+<div class="ttc" id="astructsfml_window_html_a482c9f147d3c9e5aec416182a226cbd4"><div class="ttname"><a href="structsfml_window.html#a482c9f147d3c9e5aec416182a226cbd4">sfmlWindow::renew</a></div><div class="ttdeci">void renew()</div><div class="ttdoc">Renew window (update all pixels)</div><div class="ttdef"><b>Definition</b> <a href="lib__sfml_8cpp_source.html#l00055">lib_sfml.cpp:55</a></div></div>
+<div class="ttc" id="astructsfml_window_html_a63f3ec11cd7211c38790ed76283cdf6a"><div class="ttname"><a href="structsfml_window.html#a63f3ec11cd7211c38790ed76283cdf6a">sfmlWindow::set_pixel_color</a></div><div class="ttdeci">void set_pixel_color(const size_t x, const size_t y, const uint32_t color)</div><div class="ttdoc">Sets the &quot;pixel&quot; color.</div><div class="ttdef"><b>Definition</b> <a href="lib__sfml_8cpp_source.html#l00038">lib_sfml.cpp:38</a></div></div>
+<div class="ttc" id="astructsfml_window_html_a8c79ff59578a0ff69561d20e1216a445"><div class="ttname"><a href="structsfml_window.html#a8c79ff59578a0ff69561d20e1216a445">sfmlWindow::is_closed</a></div><div class="ttdeci">bool is_closed()</div><div class="ttdoc">Tells if window close button was pushed.</div><div class="ttdef"><b>Definition</b> <a href="lib__sfml_8cpp_source.html#l00070">lib_sfml.cpp:70</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="lib__sfml_8cpp_source.html#l00070">sfmlWindow::is_closed()</a>, <a class="el" href="spu_8h_source.html#l00040">SpuData::ram</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00055">sfmlWindow::renew()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00038">sfmlWindow::set_pixel_color()</a>, <a class="el" href="spu_8h_source.html#l00045">SpuData::sfml</a>, <a class="el" href="spu_8h_source.html#l00025">VIDEO_HEIGHT</a>, and <a class="el" href="spu_8h_source.html#l00026">VIDEO_WIDTH</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a5edc31e43090198dc2358a73cddedc81" name="a5edc31e43090198dc2358a73cddedc81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5edc31e43090198dc2358a73cddedc81">&#9670;&#160;</a></span>PIXEL_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t PIXEL_SIZE = 7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00023">23</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00005">SpuData::ctor()</a>.</p>
+
+</div>
+</div>
+<a id="abe1e1b2bfd2932377e15b323ee0fb530" name="abe1e1b2bfd2932377e15b323ee0fb530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe1e1b2bfd2932377e15b323ee0fb530">&#9670;&#160;</a></span>RAM_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t RAM_SIZE = 10000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00028">28</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
+
+</div>
+</div>
+<a id="a793a380e3ceb4728abb70e4b34368a65" name="a793a380e3ceb4728abb70e4b34368a65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a793a380e3ceb4728abb70e4b34368a65">&#9670;&#160;</a></span>VIDEO_HEIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t VIDEO_HEIGHT = 100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00025">25</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00005">SpuData::ctor()</a>, and <a class="el" href="spu_8cpp_source.html#l00164">spu_sfml_show()</a>.</p>
+
+</div>
+</div>
+<a id="afcc4d5f47bf49727824adede4093c3eb" name="afcc4d5f47bf49727824adede4093c3eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcc4d5f47bf49727824adede4093c3eb">&#9670;&#160;</a></span>VIDEO_WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t VIDEO_WIDTH = 100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="spu_8h_source.html#l00026">26</a> of file <a class="el" href="spu_8h_source.html">spu.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00005">SpuData::ctor()</a>, and <a class="el" href="spu_8cpp_source.html#l00164">spu_sfml_show()</a>.</p>
 
 </div>
 </div>

@@ -6,12 +6,6 @@
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{config_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}}
-\item 
-\#define \mbox{\hyperlink{config_8h_ab693b7f0431ff5fb4177290e6184fc6e}{CANARY\+\_\+\+PROTECT}}
-\begin{DoxyCompactList}\small\item\em \doxylink{struct_stack}{Stack} debug options. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{config_8h_a3d1311d889954a0ddf65567d3913eb29}{HASH\+\_\+\+PROTECT}}
-\item 
 \#define \mbox{\hyperlink{config_8h_a0e86e404fb41df2a06346b0fd53ccb83}{ELEM\+\_\+\+T\+\_\+\+PRINTF}}~\"{}\%lf\"{}
 \item 
 \#define \mbox{\hyperlink{config_8h_a2a23f87eee71a5bd4ac163e1bba1f479}{CANARY\+\_\+\+T\+\_\+\+PRINTF}}~\"{}\%ll\+X\"{}
@@ -32,24 +26,10 @@ bool \mbox{\hyperlink{config_8h_ab77683e8a25070f813aa006636770700}{is\+\_\+poiso
 \begin{DoxyCompactItemize}
 \item 
 const char \texorpdfstring{$\ast$}{*}const \mbox{\hyperlink{config_8h_adfb3bce38047e44f50c299a239a1756a}{STACK\+\_\+\+LOG\+\_\+\+FILENAME}} = \"{}stack.\+log\"{}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \doxylink{struct_stack}{Stack} debug options. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
-\Hypertarget{config_8h_ab693b7f0431ff5fb4177290e6184fc6e}\label{config_8h_ab693b7f0431ff5fb4177290e6184fc6e} 
-\index{config.h@{config.h}!CANARY\_PROTECT@{CANARY\_PROTECT}}
-\index{CANARY\_PROTECT@{CANARY\_PROTECT}!config.h@{config.h}}
-\doxysubsubsection{\texorpdfstring{CANARY\_PROTECT}{CANARY\_PROTECT}}
-{\footnotesize\ttfamily \#define CANARY\+\_\+\+PROTECT}
-
-
-
-\doxylink{struct_stack}{Stack} debug options. 
-
-
-
-Definition at line \mbox{\hyperlink{config_8h_source_l00012}{12}} of file \mbox{\hyperlink{config_8h_source}{config.\+h}}.
-
 \Hypertarget{config_8h_a2a23f87eee71a5bd4ac163e1bba1f479}\label{config_8h_a2a23f87eee71a5bd4ac163e1bba1f479} 
 \index{config.h@{config.h}!CANARY\_T\_PRINTF@{CANARY\_T\_PRINTF}}
 \index{CANARY\_T\_PRINTF@{CANARY\_T\_PRINTF}!config.h@{config.h}}
@@ -60,16 +40,6 @@ Definition at line \mbox{\hyperlink{config_8h_source_l00012}{12}} of file \mbox{
 
 Definition at line \mbox{\hyperlink{config_8h_source_l00027}{27}} of file \mbox{\hyperlink{config_8h_source}{config.\+h}}.
 
-\Hypertarget{config_8h_ad72dbcf6d0153db1b8d8a58001feed83}\label{config_8h_ad72dbcf6d0153db1b8d8a58001feed83} 
-\index{config.h@{config.h}!DEBUG@{DEBUG}}
-\index{DEBUG@{DEBUG}!config.h@{config.h}}
-\doxysubsubsection{\texorpdfstring{DEBUG}{DEBUG}}
-{\footnotesize\ttfamily \#define DEBUG}
-
-
-
-Definition at line \mbox{\hyperlink{config_8h_source_l00009}{9}} of file \mbox{\hyperlink{config_8h_source}{config.\+h}}.
-
 \Hypertarget{config_8h_a0e86e404fb41df2a06346b0fd53ccb83}\label{config_8h_a0e86e404fb41df2a06346b0fd53ccb83} 
 \index{config.h@{config.h}!ELEM\_T\_PRINTF@{ELEM\_T\_PRINTF}}
 \index{ELEM\_T\_PRINTF@{ELEM\_T\_PRINTF}!config.h@{config.h}}
@@ -79,16 +49,6 @@ Definition at line \mbox{\hyperlink{config_8h_source_l00009}{9}} of file \mbox{\
 
 
 Definition at line \mbox{\hyperlink{config_8h_source_l00019}{19}} of file \mbox{\hyperlink{config_8h_source}{config.\+h}}.
-
-\Hypertarget{config_8h_a3d1311d889954a0ddf65567d3913eb29}\label{config_8h_a3d1311d889954a0ddf65567d3913eb29} 
-\index{config.h@{config.h}!HASH\_PROTECT@{HASH\_PROTECT}}
-\index{HASH\_PROTECT@{HASH\_PROTECT}!config.h@{config.h}}
-\doxysubsubsection{\texorpdfstring{HASH\_PROTECT}{HASH\_PROTECT}}
-{\footnotesize\ttfamily \#define HASH\+\_\+\+PROTECT}
-
-
-
-Definition at line \mbox{\hyperlink{config_8h_source_l00013}{13}} of file \mbox{\hyperlink{config_8h_source}{config.\+h}}.
 
 
 
@@ -135,7 +95,7 @@ Definition at line \mbox{\hyperlink{config_8h_source_l00021}{21}} of file \mbox{
 \end{DoxyCode}
 
 
-Referenced by \mbox{\hyperlink{stack_8cpp_source_l00279}{stk\+\_\+dump()}}, \mbox{\hyperlink{stack_8cpp_source_l00138}{stk\+\_\+push()}}, and \mbox{\hyperlink{stack_8cpp_source_l00353}{stk\+\_\+verify()}}.
+Referenced by \mbox{\hyperlink{stack_8cpp_source_l00138}{stk\+\_\+push()}}.
 
 
 
@@ -145,6 +105,10 @@ Referenced by \mbox{\hyperlink{stack_8cpp_source_l00279}{stk\+\_\+dump()}}, \mbo
 \index{STACK\_LOG\_FILENAME@{STACK\_LOG\_FILENAME}!config.h@{config.h}}
 \doxysubsubsection{\texorpdfstring{STACK\_LOG\_FILENAME}{STACK\_LOG\_FILENAME}}
 {\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} const STACK\+\_\+\+LOG\+\_\+\+FILENAME = \"{}stack.\+log\"{}}
+
+
+
+\doxylink{struct_stack}{Stack} debug options. 
 
 
 

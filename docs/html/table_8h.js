@@ -21,6 +21,7 @@ var table_8h =
     [ "cmd_dispatch_do_pop", "table_8h.html#ad260387f73cfbf02ebc2225845411b0a", null ],
     [ "cmd_dispatch_do_push", "table_8h.html#a0dbcc6e19ec379cdb5cff12f8c2298e0", null ],
     [ "cmd_dispatch_do_ret", "table_8h.html#a185fa4931b941f5746c005dd900b2ba1", null ],
+    [ "cmd_dispatch_do_shw", "table_8h.html#acdac9b3cc51163ed59985a91b56279dd", null ],
     [ "cmd_dispatch_do_sin", "table_8h.html#a2ce606f6e7c897e2a4d09e83ba23c26d", null ],
     [ "cmd_dispatch_do_sqrt", "table_8h.html#af6d031999eaf1be5503e4bc14c1fa50a", null ],
     [ "cmd_dispatch_do_sub", "table_8h.html#a262dba8266e350dd2e0be99c92db9a2a", null ]

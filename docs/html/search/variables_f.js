@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['scope_0',['scope',['../namespacegen.html#a71c5d9836ba6e01d7de40297ae21b74d',1,'gen']]],
-  ['sign_1',['sign',['../struct_file_header.html#a539d90ab0f7c0d4e57b7b36764132216',1,'FileHeader']]],
-  ['size_2',['size',['../struct_buffer.html#aea1b7416d53cd6e281718e607d81ae51',1,'Buffer::size'],['../struct_stack.html#a3b6cb0b4ff732c7bbbaaa5d3860bcd1a',1,'Stack::size']]],
-  ['somewhere_3',['somewhere',['../cmd__dict_8h.html#a33ddbefe264d7a3d1e1cf824d0dcc3f2',1,'cmd_dict.h']]],
-  ['stack_5flog_5ffilename_4',['STACK_LOG_FILENAME',['../config_8h.html#adfb3bce38047e44f50c299a239a1756a',1,'config.h']]],
-  ['stk_5',['stk',['../struct_spu_data.html#abc84b16c7ed76fea5ed82082897443c2',1,'SpuData']]],
-  ['str_6',['str',['../structconst___string.html#aac8d326474f602cf87801be937efc469',1,'const_String::str'],['../struct_string.html#a7028cb0053f3138200b398a23ad2f2b8',1,'String::str']]],
-  ['struct_5fhash_7',['struct_hash',['../struct_stack.html#a5d85c28620cf7c22e622df2d8a58f35b',1,'Stack']]]
+  ['ram_0',['ram',['../struct_cmd_keys.html#aba6b64f73e21ca67bb9062cc69669350',1,'CmdKeys::ram'],['../struct_args_enabled.html#a46aeef6ea384961f7680286192d0b599',1,'ArgsEnabled::ram'],['../struct_spu_data.html#a20debdca8f0a04c0b528f3ff9b7b3065',1,'SpuData::ram']]],
+  ['ram_5fsize_1',['RAM_SIZE',['../spu_8h.html#abe1e1b2bfd2932377e15b323ee0fb530',1,'spu.h']]],
+  ['reg_2',['reg',['../struct_cmd_keys.html#a76f64f02295d9a30abdaf138ea275f6a',1,'CmdKeys::reg'],['../struct_cmd_args.html#a49949ad6edf5cb3523025913f2c0adc5',1,'CmdArgs::reg'],['../struct_args_enabled.html#acb0f1764ed613b7d6c32f90e5173f0ac',1,'ArgsEnabled::reg'],['../struct_spu_data.html#a0c082f4479ce66efb50b95259f98e457',1,'SpuData::reg']]],
+  ['regs_5fdict_3',['REGS_DICT',['../cmd_8h.html#a4ea04ae05ebfffb0e476551db61b7724',1,'cmd.h']]],
+  ['regs_5fnum_4',['REGS_NUM',['../cmd_8h.html#a55559e71614b4b4ba24d073b1b813120',1,'cmd.h']]],
+  ['res_5',['res',['../namespaceencoder.html#adb91fe8a3fa212c5ab9dc9e4b7be75e0',1,'encoder']]]
 ];
