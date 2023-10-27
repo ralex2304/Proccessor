@@ -25,7 +25,7 @@ size_t Cmd::size() const {
            + keys.imm_double * sizeof(args.imm_double);
 }
 
-const CmdInfo* find_command_by_num(const Cmd_num_t num) { // TODO switch. Dispatch table, && у метки
+const CmdInfo* find_command_by_num(const Cmd_num_t num) {
     for (size_t i = 0; i < CMDS_DICT_SIZE; i++)
         if (CMDS_DICT[i].num == num)
             return CMDS_DICT + i;

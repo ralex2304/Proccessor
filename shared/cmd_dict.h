@@ -118,7 +118,12 @@ DEF_CMD(dmp,  31, ARG_NONE, "spu data dump", {
     DUMP();
 })
 
-DEF_CMD(shw,  32, ARG_IMM_DOUBLE,  "Graphics update", {
+DEF_CMD(shw,  32, ARG_NONE,  "Graphics update", {
     SHOW();
-    SLEEP((IMM_INT_T)GET_RVALUE());
+})
+
+DEF_CMD(fps,  33, ARG_IMM_DOUBLE,  "Graphics update", {
+    CHECK_AND_THROW_ERR(IS_ARG_IMM_DOUBLE, "\"fps\" requires fps number.");
+
+    SET_FPS(ARG_IMM_DOUBLE);
 })

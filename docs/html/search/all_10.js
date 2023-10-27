@@ -1,7 +1,7 @@
 var searchData=
 [
   ['raise_0',['raise',['../struct_status.html#a30c8084592b2ff90cfc22c1860e58dab',1,'Status']]],
-  ['ram_1',['ram',['../struct_cmd_keys.html#aba6b64f73e21ca67bb9062cc69669350',1,'CmdKeys::ram'],['../struct_args_enabled.html#a46aeef6ea384961f7680286192d0b599',1,'ArgsEnabled::ram'],['../struct_spu_data.html#a20debdca8f0a04c0b528f3ff9b7b3065',1,'SpuData::ram']]],
+  ['ram_1',['ram',['../struct_cmd_keys.html#aba6b64f73e21ca67bb9062cc69669350',1,'CmdKeys::ram'],['../struct_args_enabled.html#a46aeef6ea384961f7680286192d0b599',1,'ArgsEnabled::ram'],['../struct_spu_data.html#a7a59a384842a9d74b96d7d4f033bd83a',1,'SpuData::ram']]],
   ['ram_2',['RAM',['../spu__dsl_8h.html#a40869d06535af1c441272596a593f764',1,'spu_dsl.h']]],
   ['ram_5fsize_3',['RAM_SIZE',['../spu_8h.html#abe1e1b2bfd2932377e15b323ee0fb530',1,'spu.h']]],
   ['rax_4',['RAX',['../cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64ad8a2b3cfd37dc1215cf782d326e5186c',1,'cmd.h']]],

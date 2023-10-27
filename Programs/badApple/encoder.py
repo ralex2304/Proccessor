@@ -1,4 +1,7 @@
 import cv2
+import math
+
+TARGET_FPS = 6
 
 def count_color(bgr):
     ret = 0
@@ -7,18 +10,20 @@ def count_color(bgr):
     ret += bgr[2] << 16
     return ret
 
-cap = cv2.VideoCapture("./Programs/doom/doom.mp4")
+cap = cv2.VideoCapture("./Programs/badApple/badApple.mp4")
 
 out = ""
+out += "fps " + str(TARGET_FPS) + "\n"
 
-FRAME_WAIT = 115
+FPS = int(cap.get(cv2.CAP_PROP_FPS))
 
-print(int(cap.get(cv2.CAP_PROP_FPS)))
+FRAME_COUNT = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)) - 10
 
-FRAME_COUNT = int(cap.get(cv2.CAP_PROP_FRAME_COUNT) - 100)
-
-for i in range(1, FRAME_COUNT, 5):
-    print(i, "/", FRAME_COUNT)
+bef_frame = 0
+for i in range(1, FRAME_COUNT, math.ceil(FPS / TARGET_FPS)):
+    if i - bef_frame >= 100:
+        print(i, "/", FRAME_COUNT)
+        bef_frame = i
 
     cap.set(1, i)
     res, frame = cap.read() #frame has your pixel values
@@ -33,13 +38,12 @@ for i in range(1, FRAME_COUNT, 5):
             out += "push " + str(count_color(frame[y][x])) + "\n"
             out += "pop [" + str(y * 100 + x) + "]\n"
 
-    out += "shw " + str(FRAME_WAIT) + "\n"
-    #out += "in\n\n"
+    out += "shw\n"
 
 
 out += "hlt\n"
 
-file = open("./Programs/doom/main.code", "w")
+file = open("./Programs/badApple/main.code", "w")
 
 file.write(out)
 

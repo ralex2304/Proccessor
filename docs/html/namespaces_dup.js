@@ -2,15 +2,17 @@ var namespaces_dup =
 [
     [ "encoder", "namespaceencoder.html", [
       [ "count_color", "namespaceencoder.html#a8c10245467eb1d3463c9ea64a41aa469", null ],
+      [ "bef_frame", "namespaceencoder.html#a31e20d6561df491611d8880f27128aad", null ],
       [ "cap", "namespaceencoder.html#a3dd159bc88dcc094a37514f045fbe7a5", null ],
       [ "channels", "namespaceencoder.html#a031f01761b07907dd80d635c4c31ab1b", null ],
       [ "file", "namespaceencoder.html#a7fdb946781a2d1ff8b72b6fbdd0d7b45", null ],
+      [ "FPS", "namespaceencoder.html#a0b1b8944725c379b890b977af9ddc564", null ],
       [ "frame", "namespaceencoder.html#ad13866f6af3dff53c3b46aeb0ff212e9", null ],
-      [ "FRAME_COUNT", "namespaceencoder.html#a35221ba220705143dfc72bdb616e15e8", null ],
-      [ "FRAME_WAIT", "namespaceencoder.html#ac957f3ca460e7be70759857dd0c144ea", null ],
+      [ "FRAME_COUNT", "namespaceencoder.html#a874cf2fc480d1e369f3850ba4bd0807c", null ],
       [ "height", "namespaceencoder.html#ae301ba5648708b7170fb72994f481a38", null ],
       [ "out", "namespaceencoder.html#ac1dba33bb6a79530e9e21cb58cb9f979", null ],
       [ "res", "namespaceencoder.html#adb91fe8a3fa212c5ab9dc9e4b7be75e0", null ],
+      [ "TARGET_FPS", "namespaceencoder.html#a7db2a7de5d88840c1c0a577166cb5068", null ],
       [ "width", "namespaceencoder.html#a065c7415b4a0b8ce1416ebcdc08e3d8e", null ]
     ] ],
     [ "gen", "namespacegen.html", [

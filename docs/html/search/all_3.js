@@ -20,6 +20,6 @@ var searchData=
   ['disassembler_2eh_17',['disassembler.h',['../disassembler_8h.html',1,'']]],
   ['dispatch_18',['DISPATCH',['../spu_8cpp.html#a8297cddbebf50a1736914db65c5724ae',1,'spu.cpp']]],
   ['dtor_19',['dtor',['../structsfml_window.html#a0d0b5803d8975fe0480d694c1780c690',1,'sfmlWindow::dtor()'],['../struct_spu_data.html#ab8279902c19cd3fd61a692f2781b0668',1,'SpuData::dtor()'],['../struct_asm.html#adb1635527a72975c1ec0a9cf2019a995',1,'Asm::dtor()'],['../struct_buffer.html#accef32f248ec05ad669b1de0dc3ae6a5',1,'Buffer::dtor()']]],
-  ['dump_20',['dump',['../struct_spu_data.html#ae2f8ad06bd42639ff18b4c1b2ee6e5ef',1,'SpuData']]],
+  ['dump_20',['dump',['../struct_spu_data.html#ab1bb7ccafa41032692a8c88295fa92ff',1,'SpuData']]],
   ['dump_21',['DUMP',['../spu__dsl_8h.html#a68e4a10cfd30e33ab1e506f696729336',1,'spu_dsl.h']]]
 ];

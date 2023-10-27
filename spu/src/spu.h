@@ -37,7 +37,7 @@ struct SpuData {
 
     Imm_double_t reg[REGS_NUM] = {};    //< registers
 
-    Imm_double_t ram[RAM_SIZE] = {};// REVIEW //< ram
+    Imm_double_t* ram = nullptr;        //< ram
 
 #ifdef GRAPHICS
     const char* header = "Processor";   //< graphics window header
@@ -48,7 +48,7 @@ struct SpuData {
     Status::Statuses ctor();
     Status::Statuses dtor();
 
-    void dump();
+    void dump(const char* data, const size_t* cur_byte);
 };
 
 /**
@@ -91,6 +91,16 @@ Status::Statuses spu_execute(SpuData* spu, const char* data, size_t* cur_byte);
  * @return false
  */
 bool spu_sfml_show(SpuData* spu);
+
+/**
+ * @brief Sets framerate limit
+ *
+ * @param spu
+ * @param fps
+ */
+inline void spu_sfml_set_fps(SpuData* spu, const unsigned int fps) {
+    spu->sfml.set_fps(fps);
+}
 
 #else //< #ifndef GRAPHICS
 

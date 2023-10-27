@@ -6,6 +6,7 @@ var table_8h =
     [ "cmd_dispatch_do_div", "table_8h.html#a655303f875abfd8c13e4d3a9f8192bee", null ],
     [ "cmd_dispatch_do_dmp", "table_8h.html#a84ed878e9d879dd929d78fb2a1687e30", null ],
     [ "cmd_dispatch_do_error", "table_8h.html#a5aeb9730b065ce85496b0ba6a2b5ae18", null ],
+    [ "cmd_dispatch_do_fps", "table_8h.html#a0f1f186034f64d0bfa6515ac4312243d", null ],
     [ "cmd_dispatch_do_hlt", "table_8h.html#a95e44e435e38efb7c3a95b627ae6b15b", null ],
     [ "cmd_dispatch_do_in", "table_8h.html#a09870d270fea1ff04c42a434dc87e4f6", null ],
     [ "cmd_dispatch_do_ja", "table_8h.html#a001935670f0e24e696e2c4a2765e35b1", null ],

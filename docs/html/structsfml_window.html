@@ -121,6 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8c79ff59578a0ff69561d20e1216a445"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsfml_window.html#a8c79ff59578a0ff69561d20e1216a445">is_closed</a> ()</td></tr>
 <tr class="memdesc:a8c79ff59578a0ff69561d20e1216a445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells if window close button was pushed.  <br /></td></tr>
 <tr class="separator:a8c79ff59578a0ff69561d20e1216a445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dc9bde350f87f7ac858be692b8c43dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsfml_window.html#a6dc9bde350f87f7ac858be692b8c43dd">set_fps</a> (const unsigned int fps)</td></tr>
+<tr class="memdesc:a6dc9bde350f87f7ac858be692b8c43dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets framerate limit.  <br /></td></tr>
+<tr class="separator:a6dc9bde350f87f7ac858be692b8c43dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -210,33 +213,32 @@ false </dd></dl>
 <div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="structsfml_window.html#a94ee5de300a36b64aea58840ef7d4d18">window</a> = <span class="keyword">new</span>(std::nothrow) sf::RenderWindow(sf::VideoMode(pixel_width * hor_num, pixel_height * ver_num), header);</div>
 <div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="structsfml_window.html#a94ee5de300a36b64aea58840ef7d4d18">window</a>-&gt;setPosition(sf::Vector2i(25, 25));</div>
 <div class="line"><span class="lineno">   18</span> </div>
-<div class="line"><span class="lineno">   19</span> </div>
-<div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">pixels</a> = <span class="keyword">new</span>(std::nothrow) sf::RectangleShape[hor_num * ver_num];</div>
-<div class="line"><span class="lineno">   21</span> </div>
-<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="structsfml_window.html#a94ee5de300a36b64aea58840ef7d4d18">window</a> == <span class="keyword">nullptr</span> || <a class="code hl_variable" href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">pixels</a> == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> &lt; <a class="code hl_variable" href="structsfml_window.html#a112401deaf89ed04aca072cff0d93359">height</a>; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>++) {</div>
-<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; <a class="code hl_variable" href="namespacegen.html#a00604f2b0fb55ffa53d321935db4e0cb">j</a> &lt; <a class="code hl_variable" href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">width</a>; <a class="code hl_variable" href="namespacegen.html#a00604f2b0fb55ffa53d321935db4e0cb">j</a>++) {</div>
-<div class="line"><span class="lineno">   27</span>            <a class="code hl_variable" href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">pixels</a>[<a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> * <a class="code hl_variable" href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">width</a> + <a class="code hl_variable" href="namespacegen.html#a00604f2b0fb55ffa53d321935db4e0cb">j</a>] = sf::RectangleShape(sf::Vector2f((<span class="keywordtype">float</span>)pixel_width, (<span class="keywordtype">float</span>)pixel_height));</div>
-<div class="line"><span class="lineno">   28</span>            <a class="code hl_variable" href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">pixels</a>[<a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> * <a class="code hl_variable" href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">width</a> + <a class="code hl_variable" href="namespacegen.html#a00604f2b0fb55ffa53d321935db4e0cb">j</a>].setPosition((<span class="keywordtype">float</span>)(j * pixel_width), (<span class="keywordtype">float</span>)(i * pixel_height));</div>
-<div class="line"><span class="lineno">   29</span>            <a class="code hl_variable" href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">pixels</a>[<a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> * <a class="code hl_variable" href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">width</a> + <a class="code hl_variable" href="namespacegen.html#a00604f2b0fb55ffa53d321935db4e0cb">j</a>].setFillColor(sf::Color(0, 0, 0));</div>
-<div class="line"><span class="lineno">   30</span>        }</div>
-<div class="line"><span class="lineno">   31</span>    }</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>    <a class="code hl_function" href="structsfml_window.html#a482c9f147d3c9e5aec416182a226cbd4">renew</a>();</div>
-<div class="line"><span class="lineno">   34</span> </div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   36</span>}</div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_variable" href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">pixels</a> = <span class="keyword">new</span>(std::nothrow) sf::RectangleShape[hor_num * ver_num];</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="structsfml_window.html#a94ee5de300a36b64aea58840ef7d4d18">window</a> == <span class="keyword">nullptr</span> || <a class="code hl_variable" href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">pixels</a> == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> &lt; <a class="code hl_variable" href="structsfml_window.html#a112401deaf89ed04aca072cff0d93359">height</a>; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>++) {</div>
+<div class="line"><span class="lineno">   25</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; <a class="code hl_variable" href="namespacegen.html#a00604f2b0fb55ffa53d321935db4e0cb">j</a> &lt; <a class="code hl_variable" href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">width</a>; <a class="code hl_variable" href="namespacegen.html#a00604f2b0fb55ffa53d321935db4e0cb">j</a>++) {</div>
+<div class="line"><span class="lineno">   26</span>            <a class="code hl_variable" href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">pixels</a>[<a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> * <a class="code hl_variable" href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">width</a> + <a class="code hl_variable" href="namespacegen.html#a00604f2b0fb55ffa53d321935db4e0cb">j</a>] = sf::RectangleShape(sf::Vector2f((<span class="keywordtype">float</span>)pixel_width, (<span class="keywordtype">float</span>)pixel_height));</div>
+<div class="line"><span class="lineno">   27</span>            <a class="code hl_variable" href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">pixels</a>[<a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> * <a class="code hl_variable" href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">width</a> + <a class="code hl_variable" href="namespacegen.html#a00604f2b0fb55ffa53d321935db4e0cb">j</a>].setPosition((<span class="keywordtype">float</span>)(j * pixel_width), (<span class="keywordtype">float</span>)(i * pixel_height));</div>
+<div class="line"><span class="lineno">   28</span>            <a class="code hl_variable" href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">pixels</a>[<a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> * <a class="code hl_variable" href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">width</a> + <a class="code hl_variable" href="namespacegen.html#a00604f2b0fb55ffa53d321935db4e0cb">j</a>].setFillColor(sf::Color(0, 0, 0));</div>
+<div class="line"><span class="lineno">   29</span>        }</div>
+<div class="line"><span class="lineno">   30</span>    }</div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_function" href="structsfml_window.html#a482c9f147d3c9e5aec416182a226cbd4">renew</a>();</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   35</span>}</div>
 <div class="ttc" id="anamespacegen_html_a00604f2b0fb55ffa53d321935db4e0cb"><div class="ttname"><a href="namespacegen.html#a00604f2b0fb55ffa53d321935db4e0cb">gen.j</a></div><div class="ttdeci">j</div><div class="ttdef"><b>Definition</b> <a href="gen_8py_source.html#l00041">gen.py:41</a></div></div>
 <div class="ttc" id="anamespacegen_html_ad6f9a21fef823e19e8e49589645c58ba"><div class="ttname"><a href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">gen.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition</b> <a href="gen_8py_source.html#l00027">gen.py:27</a></div></div>
 <div class="ttc" id="astructsfml_window_html_a112401deaf89ed04aca072cff0d93359"><div class="ttname"><a href="structsfml_window.html#a112401deaf89ed04aca072cff0d93359">sfmlWindow::height</a></div><div class="ttdeci">unsigned int height</div><div class="ttdef"><b>Definition</b> <a href="lib__sfml_8h_source.html#l00016">lib_sfml.h:16</a></div></div>
-<div class="ttc" id="astructsfml_window_html_a482c9f147d3c9e5aec416182a226cbd4"><div class="ttname"><a href="structsfml_window.html#a482c9f147d3c9e5aec416182a226cbd4">sfmlWindow::renew</a></div><div class="ttdeci">void renew()</div><div class="ttdoc">Renew window (update all pixels)</div><div class="ttdef"><b>Definition</b> <a href="lib__sfml_8cpp_source.html#l00055">lib_sfml.cpp:55</a></div></div>
+<div class="ttc" id="astructsfml_window_html_a482c9f147d3c9e5aec416182a226cbd4"><div class="ttname"><a href="structsfml_window.html#a482c9f147d3c9e5aec416182a226cbd4">sfmlWindow::renew</a></div><div class="ttdeci">void renew()</div><div class="ttdoc">Renew window (update all pixels)</div><div class="ttdef"><b>Definition</b> <a href="lib__sfml_8cpp_source.html#l00054">lib_sfml.cpp:54</a></div></div>
 <div class="ttc" id="astructsfml_window_html_a53b2044e82d389e756d8d7624c30db4d"><div class="ttname"><a href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">sfmlWindow::width</a></div><div class="ttdeci">unsigned int width</div><div class="ttdef"><b>Definition</b> <a href="lib__sfml_8h_source.html#l00015">lib_sfml.h:15</a></div></div>
 <div class="ttc" id="astructsfml_window_html_a94ee5de300a36b64aea58840ef7d4d18"><div class="ttname"><a href="structsfml_window.html#a94ee5de300a36b64aea58840ef7d4d18">sfmlWindow::window</a></div><div class="ttdeci">sf::RenderWindow * window</div><div class="ttdef"><b>Definition</b> <a href="lib__sfml_8h_source.html#l00012">lib_sfml.h:12</a></div></div>
 <div class="ttc" id="astructsfml_window_html_aa24e97af67c6577c1a23738cc2c36be2"><div class="ttname"><a href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">sfmlWindow::pixels</a></div><div class="ttdeci">sf::RectangleShape * pixels</div><div class="ttdef"><b>Definition</b> <a href="lib__sfml_8h_source.html#l00014">lib_sfml.h:14</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="lib__sfml_8h_source.html#l00016">height</a>, <a class="el" href="lib__sfml_8h_source.html#l00014">pixels</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00055">renew()</a>, <a class="el" href="lib__sfml_8h_source.html#l00015">width</a>, and <a class="el" href="lib__sfml_8h_source.html#l00012">window</a>.</p>
+<p class="reference">References <a class="el" href="lib__sfml_8h_source.html#l00016">height</a>, <a class="el" href="lib__sfml_8h_source.html#l00014">pixels</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00054">renew()</a>, <a class="el" href="lib__sfml_8h_source.html#l00015">width</a>, and <a class="el" href="lib__sfml_8h_source.html#l00012">window</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00005">SpuData::ctor()</a>.</p>
 
@@ -257,15 +259,15 @@ false </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lib__sfml_8cpp_source.html#l00065">65</a> of file <a class="el" href="lib__sfml_8cpp_source.html">lib_sfml.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   65</span>                      {</div>
-<div class="line"><span class="lineno">   66</span>    <span class="keyword">delete</span> [] <a class="code hl_variable" href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">pixels</a>;</div>
-<div class="line"><span class="lineno">   67</span>    <span class="keyword">delete</span> <a class="code hl_variable" href="structsfml_window.html#a94ee5de300a36b64aea58840ef7d4d18">window</a>;</div>
-<div class="line"><span class="lineno">   68</span>}</div>
+<p class="definition">Definition at line <a class="el" href="lib__sfml_8cpp_source.html#l00064">64</a> of file <a class="el" href="lib__sfml_8cpp_source.html">lib_sfml.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>                      {</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keyword">delete</span> [] <a class="code hl_variable" href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">pixels</a>;</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keyword">delete</span> <a class="code hl_variable" href="structsfml_window.html#a94ee5de300a36b64aea58840ef7d4d18">window</a>;</div>
+<div class="line"><span class="lineno">   67</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="lib__sfml_8h_source.html#l00014">pixels</a>, and <a class="el" href="lib__sfml_8h_source.html#l00012">window</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00024">SpuData::dtor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00030">SpuData::dtor()</a>.</p>
 
 </div>
 </div>
@@ -289,21 +291,21 @@ false </dd></dl>
 <dd>
 false </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="lib__sfml_8cpp_source.html#l00070">70</a> of file <a class="el" href="lib__sfml_8cpp_source.html">lib_sfml.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   70</span>                           {</div>
-<div class="line"><span class="lineno">   71</span>    sf::Event event;</div>
-<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="structsfml_window.html#a94ee5de300a36b64aea58840ef7d4d18">window</a>-&gt;pollEvent(event)) {</div>
-<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">if</span> (event.type == sf::Event::Closed) {</div>
-<div class="line"><span class="lineno">   74</span>            <a class="code hl_variable" href="structsfml_window.html#a94ee5de300a36b64aea58840ef7d4d18">window</a>-&gt;close();</div>
-<div class="line"><span class="lineno">   75</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   76</span>        }</div>
-<div class="line"><span class="lineno">   77</span>    }</div>
-<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   79</span>}</div>
+<p class="definition">Definition at line <a class="el" href="lib__sfml_8cpp_source.html#l00069">69</a> of file <a class="el" href="lib__sfml_8cpp_source.html">lib_sfml.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>                           {</div>
+<div class="line"><span class="lineno">   70</span>    sf::Event event;</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="structsfml_window.html#a94ee5de300a36b64aea58840ef7d4d18">window</a>-&gt;pollEvent(event)) {</div>
+<div class="line"><span class="lineno">   72</span>        <span class="keywordflow">if</span> (event.type == sf::Event::Closed) {</div>
+<div class="line"><span class="lineno">   73</span>            <a class="code hl_variable" href="structsfml_window.html#a94ee5de300a36b64aea58840ef7d4d18">window</a>-&gt;close();</div>
+<div class="line"><span class="lineno">   74</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   75</span>        }</div>
+<div class="line"><span class="lineno">   76</span>    }</div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   78</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="lib__sfml_8h_source.html#l00012">window</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00164">spu_sfml_show()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00182">spu_sfml_show()</a>.</p>
 
 </div>
 </div>
@@ -324,20 +326,55 @@ false </dd></dl>
 
 <p>Renew window (update all pixels) </p>
 
-<p class="definition">Definition at line <a class="el" href="lib__sfml_8cpp_source.html#l00055">55</a> of file <a class="el" href="lib__sfml_8cpp_source.html">lib_sfml.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   55</span>                       {</div>
-<div class="line"><span class="lineno">   56</span>    <a class="code hl_variable" href="structsfml_window.html#a94ee5de300a36b64aea58840ef7d4d18">window</a>-&gt;clear();</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> &lt; <a class="code hl_variable" href="structsfml_window.html#a112401deaf89ed04aca072cff0d93359">height</a>; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>++) {</div>
-<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; <a class="code hl_variable" href="namespacegen.html#a00604f2b0fb55ffa53d321935db4e0cb">j</a> &lt; <a class="code hl_variable" href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">width</a>; <a class="code hl_variable" href="namespacegen.html#a00604f2b0fb55ffa53d321935db4e0cb">j</a>++) {</div>
-<div class="line"><span class="lineno">   59</span>            <a class="code hl_variable" href="structsfml_window.html#a94ee5de300a36b64aea58840ef7d4d18">window</a>-&gt;draw(<a class="code hl_variable" href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">pixels</a>[i * <a class="code hl_variable" href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">width</a> + j]);</div>
-<div class="line"><span class="lineno">   60</span>        }</div>
-<div class="line"><span class="lineno">   61</span>    }</div>
-<div class="line"><span class="lineno">   62</span>    <a class="code hl_variable" href="structsfml_window.html#a94ee5de300a36b64aea58840ef7d4d18">window</a>-&gt;display();</div>
-<div class="line"><span class="lineno">   63</span>}</div>
+<p class="definition">Definition at line <a class="el" href="lib__sfml_8cpp_source.html#l00054">54</a> of file <a class="el" href="lib__sfml_8cpp_source.html">lib_sfml.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>                       {</div>
+<div class="line"><span class="lineno">   55</span>    <a class="code hl_variable" href="structsfml_window.html#a94ee5de300a36b64aea58840ef7d4d18">window</a>-&gt;clear();</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a> &lt; <a class="code hl_variable" href="structsfml_window.html#a112401deaf89ed04aca072cff0d93359">height</a>; <a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>++) {</div>
+<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; <a class="code hl_variable" href="namespacegen.html#a00604f2b0fb55ffa53d321935db4e0cb">j</a> &lt; <a class="code hl_variable" href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">width</a>; <a class="code hl_variable" href="namespacegen.html#a00604f2b0fb55ffa53d321935db4e0cb">j</a>++) {</div>
+<div class="line"><span class="lineno">   58</span>            <a class="code hl_variable" href="structsfml_window.html#a94ee5de300a36b64aea58840ef7d4d18">window</a>-&gt;draw(<a class="code hl_variable" href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">pixels</a>[i * <a class="code hl_variable" href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">width</a> + j]);</div>
+<div class="line"><span class="lineno">   59</span>        }</div>
+<div class="line"><span class="lineno">   60</span>    }</div>
+<div class="line"><span class="lineno">   61</span>    <a class="code hl_variable" href="structsfml_window.html#a94ee5de300a36b64aea58840ef7d4d18">window</a>-&gt;display();</div>
+<div class="line"><span class="lineno">   62</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="lib__sfml_8h_source.html#l00016">height</a>, <a class="el" href="lib__sfml_8h_source.html#l00014">pixels</a>, <a class="el" href="lib__sfml_8h_source.html#l00015">width</a>, and <a class="el" href="lib__sfml_8h_source.html#l00012">window</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lib__sfml_8cpp_source.html#l00005">ctor()</a>, and <a class="el" href="spu_8cpp_source.html#l00164">spu_sfml_show()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lib__sfml_8cpp_source.html#l00005">ctor()</a>, and <a class="el" href="spu_8cpp_source.html#l00182">spu_sfml_show()</a>.</p>
+
+</div>
+</div>
+<a id="a6dc9bde350f87f7ac858be692b8c43dd" name="a6dc9bde350f87f7ac858be692b8c43dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dc9bde350f87f7ac858be692b8c43dd">&#9670;&#160;</a></span>set_fps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sfmlWindow::set_fps </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>fps</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets framerate limit. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fps</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="lib__sfml_8cpp_source.html#l00080">80</a> of file <a class="el" href="lib__sfml_8cpp_source.html">lib_sfml.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>                                               {</div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_variable" href="structsfml_window.html#a94ee5de300a36b64aea58840ef7d4d18">window</a>-&gt;setFramerateLimit(fps);</div>
+<div class="line"><span class="lineno">   82</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="lib__sfml_8h_source.html#l00012">window</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="spu_8h_source.html#l00101">spu_sfml_set_fps()</a>.</p>
 
 </div>
 </div>
@@ -376,14 +413,14 @@ false </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="lib__sfml_8cpp_source.html#l00047">47</a> of file <a class="el" href="lib__sfml_8cpp_source.html">lib_sfml.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   47</span>                                                                     {</div>
-<div class="line"><span class="lineno">   48</span>    assert(i &lt; <a class="code hl_variable" href="structsfml_window.html#a112401deaf89ed04aca072cff0d93359">height</a> * <a class="code hl_variable" href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">width</a>);</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>    <a class="code hl_variable" href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">pixels</a>[<a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>].setFillColor(sf::Color((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)(color &gt;&gt; 16),</div>
-<div class="line"><span class="lineno">   51</span>                                     (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)(color &gt;&gt; 8),</div>
-<div class="line"><span class="lineno">   52</span>                                     (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)(color &gt;&gt; 0)));</div>
-<div class="line"><span class="lineno">   53</span>}</div>
+<p class="definition">Definition at line <a class="el" href="lib__sfml_8cpp_source.html#l00046">46</a> of file <a class="el" href="lib__sfml_8cpp_source.html">lib_sfml.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>                                                                     {</div>
+<div class="line"><span class="lineno">   47</span>    assert(i &lt; <a class="code hl_variable" href="structsfml_window.html#a112401deaf89ed04aca072cff0d93359">height</a> * <a class="code hl_variable" href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">width</a>);</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_variable" href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">pixels</a>[<a class="code hl_variable" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">i</a>].setFillColor(sf::Color((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)(color &gt;&gt; 16),</div>
+<div class="line"><span class="lineno">   50</span>                                     (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)(color &gt;&gt; 8),</div>
+<div class="line"><span class="lineno">   51</span>                                     (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)(color &gt;&gt; 0)));</div>
+<div class="line"><span class="lineno">   52</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="lib__sfml_8h_source.html#l00016">height</a>, <a class="el" href="lib__sfml_8h_source.html#l00014">pixels</a>, and <a class="el" href="lib__sfml_8h_source.html#l00015">width</a>.</p>
 
@@ -431,19 +468,19 @@ false </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="lib__sfml_8cpp_source.html#l00038">38</a> of file <a class="el" href="lib__sfml_8cpp_source.html">lib_sfml.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>                                                                                     {</div>
-<div class="line"><span class="lineno">   39</span>    assert(x &lt; <a class="code hl_variable" href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">width</a>);</div>
-<div class="line"><span class="lineno">   40</span>    assert(y &lt; <a class="code hl_variable" href="structsfml_window.html#a112401deaf89ed04aca072cff0d93359">height</a>);</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">pixels</a>[x * <a class="code hl_variable" href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">width</a> + y].setFillColor(sf::Color(((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>) color &gt;&gt; 16),</div>
-<div class="line"><span class="lineno">   43</span>                                                 ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>) color &gt;&gt; 8),</div>
-<div class="line"><span class="lineno">   44</span>                                                 ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>) color &gt;&gt; 0)));</div>
-<div class="line"><span class="lineno">   45</span>}</div>
+<p class="definition">Definition at line <a class="el" href="lib__sfml_8cpp_source.html#l00037">37</a> of file <a class="el" href="lib__sfml_8cpp_source.html">lib_sfml.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>                                                                                     {</div>
+<div class="line"><span class="lineno">   38</span>    assert(x &lt; <a class="code hl_variable" href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">width</a>);</div>
+<div class="line"><span class="lineno">   39</span>    assert(y &lt; <a class="code hl_variable" href="structsfml_window.html#a112401deaf89ed04aca072cff0d93359">height</a>);</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="structsfml_window.html#aa24e97af67c6577c1a23738cc2c36be2">pixels</a>[x * <a class="code hl_variable" href="structsfml_window.html#a53b2044e82d389e756d8d7624c30db4d">width</a> + y].setFillColor(sf::Color(((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>) color &gt;&gt; 16),</div>
+<div class="line"><span class="lineno">   42</span>                                                 ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>) color &gt;&gt; 8),</div>
+<div class="line"><span class="lineno">   43</span>                                                 ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>) color &gt;&gt; 0)));</div>
+<div class="line"><span class="lineno">   44</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="lib__sfml_8h_source.html#l00016">height</a>, <a class="el" href="lib__sfml_8h_source.html#l00014">pixels</a>, and <a class="el" href="lib__sfml_8h_source.html#l00015">width</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00164">spu_sfml_show()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="spu_8cpp_source.html#l00182">spu_sfml_show()</a>.</p>
 
 </div>
 </div>
@@ -462,7 +499,7 @@ false </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="lib__sfml_8h_source.html#l00016">16</a> of file <a class="el" href="lib__sfml_8h_source.html">lib_sfml.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lib__sfml_8cpp_source.html#l00005">ctor()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00055">renew()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00047">set_pixel_color()</a>, and <a class="el" href="lib__sfml_8cpp_source.html#l00038">set_pixel_color()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lib__sfml_8cpp_source.html#l00005">ctor()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00054">renew()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00046">set_pixel_color()</a>, and <a class="el" href="lib__sfml_8cpp_source.html#l00037">set_pixel_color()</a>.</p>
 
 </div>
 </div>
@@ -480,7 +517,7 @@ false </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="lib__sfml_8h_source.html#l00014">14</a> of file <a class="el" href="lib__sfml_8h_source.html">lib_sfml.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lib__sfml_8cpp_source.html#l00005">ctor()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00065">dtor()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00055">renew()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00047">set_pixel_color()</a>, and <a class="el" href="lib__sfml_8cpp_source.html#l00038">set_pixel_color()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lib__sfml_8cpp_source.html#l00005">ctor()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00064">dtor()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00054">renew()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00046">set_pixel_color()</a>, and <a class="el" href="lib__sfml_8cpp_source.html#l00037">set_pixel_color()</a>.</p>
 
 </div>
 </div>
@@ -498,7 +535,7 @@ false </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="lib__sfml_8h_source.html#l00015">15</a> of file <a class="el" href="lib__sfml_8h_source.html">lib_sfml.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lib__sfml_8cpp_source.html#l00005">ctor()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00055">renew()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00047">set_pixel_color()</a>, and <a class="el" href="lib__sfml_8cpp_source.html#l00038">set_pixel_color()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lib__sfml_8cpp_source.html#l00005">ctor()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00054">renew()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00046">set_pixel_color()</a>, and <a class="el" href="lib__sfml_8cpp_source.html#l00037">set_pixel_color()</a>.</p>
 
 </div>
 </div>
@@ -516,7 +553,7 @@ false </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="lib__sfml_8h_source.html#l00012">12</a> of file <a class="el" href="lib__sfml_8h_source.html">lib_sfml.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lib__sfml_8cpp_source.html#l00005">ctor()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00065">dtor()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00070">is_closed()</a>, and <a class="el" href="lib__sfml_8cpp_source.html#l00055">renew()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lib__sfml_8cpp_source.html#l00005">ctor()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00064">dtor()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00069">is_closed()</a>, <a class="el" href="lib__sfml_8cpp_source.html#l00054">renew()</a>, and <a class="el" href="lib__sfml_8cpp_source.html#l00080">set_fps()</a>.</p>
 
 </div>
 </div>

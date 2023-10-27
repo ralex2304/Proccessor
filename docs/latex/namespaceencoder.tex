@@ -8,13 +8,17 @@
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{namespaceencoder_a3dd159bc88dcc094a37514f045fbe7a5}{cap}} = cv2.\+Video\+Capture(\"{}./Programs/doom/doom.\+mp4\"{})
+int \mbox{\hyperlink{namespaceencoder_a7db2a7de5d88840c1c0a577166cb5068}{TARGET\+\_\+\+FPS}} = 6
+\item 
+\mbox{\hyperlink{namespaceencoder_a3dd159bc88dcc094a37514f045fbe7a5}{cap}} = cv2.\+Video\+Capture(\"{}./Programs/bad\+Apple/bad\+Apple.\+mp4\"{})
 \item 
 str \mbox{\hyperlink{namespaceencoder_ac1dba33bb6a79530e9e21cb58cb9f979}{out}} = \"{}\"{}
 \item 
-int \mbox{\hyperlink{namespaceencoder_ac957f3ca460e7be70759857dd0c144ea}{FRAME\+\_\+\+WAIT}} = 115
+\mbox{\hyperlink{namespaceencoder_a0b1b8944725c379b890b977af9ddc564}{FPS}} = int(cap.\+get(cv2.\+CAP\+\_\+\+PROP\+\_\+\+FPS))
 \item 
-\mbox{\hyperlink{namespaceencoder_a35221ba220705143dfc72bdb616e15e8}{FRAME\+\_\+\+COUNT}} = int(cap.\+get(cv2.\+CAP\+\_\+\+PROP\+\_\+\+FRAME\+\_\+\+COUNT) -\/ 100)
+int \mbox{\hyperlink{namespaceencoder_a874cf2fc480d1e369f3850ba4bd0807c}{FRAME\+\_\+\+COUNT}} = int(cap.\+get(cv2.\+CAP\+\_\+\+PROP\+\_\+\+FRAME\+\_\+\+COUNT)) -\/ 10
+\item 
+int \mbox{\hyperlink{namespaceencoder_a31e20d6561df491611d8880f27128aad}{bef\+\_\+frame}} = 0
 \item 
 \mbox{\hyperlink{namespaceencoder_adb91fe8a3fa212c5ab9dc9e4b7be75e0}{res}}
 \item 
@@ -26,7 +30,7 @@ int \mbox{\hyperlink{namespaceencoder_ac957f3ca460e7be70759857dd0c144ea}{FRAME\+
 \item 
 \mbox{\hyperlink{namespaceencoder_a031f01761b07907dd80d635c4c31ab1b}{channels}}
 \item 
-\mbox{\hyperlink{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45}{file}} = open(\"{}./Programs/doom/main.\+code\"{}, \"{}w\"{})
+\mbox{\hyperlink{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45}{file}} = open(\"{}./Programs/bad\+Apple/main.\+code\"{}, \"{}w\"{})
 \end{DoxyCompactItemize}
 
 
@@ -39,31 +43,41 @@ int \mbox{\hyperlink{namespaceencoder_ac957f3ca460e7be70759857dd0c144ea}{FRAME\+
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00003}{3}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00006}{6}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00003\ \textcolor{keyword}{def\ }count\_color(bgr):}
-\DoxyCodeLine{00004\ \ \ \ \ ret\ =\ 0}
-\DoxyCodeLine{00005\ \ \ \ \ ret\ +=\ bgr[0]\ <<\ 0}
-\DoxyCodeLine{00006\ \ \ \ \ ret\ +=\ bgr[1]\ <<\ 8}
-\DoxyCodeLine{00007\ \ \ \ \ ret\ +=\ bgr[2]\ <<\ 16}
-\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{return}\ ret}
-\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{def\ }count\_color(bgr):}
+\DoxyCodeLine{00007\ \ \ \ \ ret\ =\ 0}
+\DoxyCodeLine{00008\ \ \ \ \ ret\ +=\ bgr[0]\ <<\ 0}
+\DoxyCodeLine{00009\ \ \ \ \ ret\ +=\ bgr[1]\ <<\ 8}
+\DoxyCodeLine{00010\ \ \ \ \ ret\ +=\ bgr[2]\ <<\ 16}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{return}\ ret}
+\DoxyCodeLine{00012\ }
 
 \end{DoxyCode}
 
 
 \doxysubsection{Variable Documentation}
+\Hypertarget{namespaceencoder_a31e20d6561df491611d8880f27128aad}\label{namespaceencoder_a31e20d6561df491611d8880f27128aad} 
+\index{encoder@{encoder}!bef\_frame@{bef\_frame}}
+\index{bef\_frame@{bef\_frame}!encoder@{encoder}}
+\doxysubsubsection{\texorpdfstring{bef\_frame}{bef\_frame}}
+{\footnotesize\ttfamily encoder.\+bef\+\_\+frame = 0}
+
+
+
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00022}{22}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+
 \Hypertarget{namespaceencoder_a3dd159bc88dcc094a37514f045fbe7a5}\label{namespaceencoder_a3dd159bc88dcc094a37514f045fbe7a5} 
 \index{encoder@{encoder}!cap@{cap}}
 \index{cap@{cap}!encoder@{encoder}}
 \doxysubsubsection{\texorpdfstring{cap}{cap}}
-{\footnotesize\ttfamily encoder.\+cap = cv2.\+Video\+Capture(\"{}./Programs/doom/doom.\+mp4\"{})}
+{\footnotesize\ttfamily encoder.\+cap = cv2.\+Video\+Capture(\"{}./Programs/bad\+Apple/bad\+Apple.\+mp4\"{})}
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00010}{10}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00013}{13}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 \Hypertarget{namespaceencoder_a031f01761b07907dd80d635c4c31ab1b}\label{namespaceencoder_a031f01761b07907dd80d635c4c31ab1b} 
 \index{encoder@{encoder}!channels@{channels}}
@@ -73,17 +87,27 @@ Definition at line \mbox{\hyperlink{encoder_8py_source_l00010}{10}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00027}{27}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00032}{32}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 \Hypertarget{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45}\label{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45} 
 \index{encoder@{encoder}!file@{file}}
 \index{file@{file}!encoder@{encoder}}
 \doxysubsubsection{\texorpdfstring{file}{file}}
-{\footnotesize\ttfamily encoder.\+file = open(\"{}./Programs/doom/main.\+code\"{}, \"{}w\"{})}
+{\footnotesize\ttfamily encoder.\+file = open(\"{}./Programs/bad\+Apple/main.\+code\"{}, \"{}w\"{})}
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00042}{42}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00046}{46}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+
+\Hypertarget{namespaceencoder_a0b1b8944725c379b890b977af9ddc564}\label{namespaceencoder_a0b1b8944725c379b890b977af9ddc564} 
+\index{encoder@{encoder}!FPS@{FPS}}
+\index{FPS@{FPS}!encoder@{encoder}}
+\doxysubsubsection{\texorpdfstring{FPS}{FPS}}
+{\footnotesize\ttfamily encoder.\+FPS = int(cap.\+get(cv2.\+CAP\+\_\+\+PROP\+\_\+\+FPS))}
+
+
+
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00018}{18}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 \Hypertarget{namespaceencoder_ad13866f6af3dff53c3b46aeb0ff212e9}\label{namespaceencoder_ad13866f6af3dff53c3b46aeb0ff212e9} 
 \index{encoder@{encoder}!frame@{frame}}
@@ -93,27 +117,17 @@ Definition at line \mbox{\hyperlink{encoder_8py_source_l00042}{42}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00024}{24}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00029}{29}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
-\Hypertarget{namespaceencoder_a35221ba220705143dfc72bdb616e15e8}\label{namespaceencoder_a35221ba220705143dfc72bdb616e15e8} 
+\Hypertarget{namespaceencoder_a874cf2fc480d1e369f3850ba4bd0807c}\label{namespaceencoder_a874cf2fc480d1e369f3850ba4bd0807c} 
 \index{encoder@{encoder}!FRAME\_COUNT@{FRAME\_COUNT}}
 \index{FRAME\_COUNT@{FRAME\_COUNT}!encoder@{encoder}}
 \doxysubsubsection{\texorpdfstring{FRAME\_COUNT}{FRAME\_COUNT}}
-{\footnotesize\ttfamily encoder.\+FRAME\+\_\+\+COUNT = int(cap.\+get(cv2.\+CAP\+\_\+\+PROP\+\_\+\+FRAME\+\_\+\+COUNT) -\/ 100)}
+{\footnotesize\ttfamily int encoder.\+FRAME\+\_\+\+COUNT = int(cap.\+get(cv2.\+CAP\+\_\+\+PROP\+\_\+\+FRAME\+\_\+\+COUNT)) -\/ 10}
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00018}{18}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
-
-\Hypertarget{namespaceencoder_ac957f3ca460e7be70759857dd0c144ea}\label{namespaceencoder_ac957f3ca460e7be70759857dd0c144ea} 
-\index{encoder@{encoder}!FRAME\_WAIT@{FRAME\_WAIT}}
-\index{FRAME\_WAIT@{FRAME\_WAIT}!encoder@{encoder}}
-\doxysubsubsection{\texorpdfstring{FRAME\_WAIT}{FRAME\_WAIT}}
-{\footnotesize\ttfamily int encoder.\+FRAME\+\_\+\+WAIT = 115}
-
-
-
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00014}{14}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00020}{20}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 \Hypertarget{namespaceencoder_ae301ba5648708b7170fb72994f481a38}\label{namespaceencoder_ae301ba5648708b7170fb72994f481a38} 
 \index{encoder@{encoder}!height@{height}}
@@ -123,7 +137,7 @@ Definition at line \mbox{\hyperlink{encoder_8py_source_l00014}{14}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00027}{27}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00032}{32}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 \Hypertarget{namespaceencoder_ac1dba33bb6a79530e9e21cb58cb9f979}\label{namespaceencoder_ac1dba33bb6a79530e9e21cb58cb9f979} 
 \index{encoder@{encoder}!out@{out}}
@@ -133,7 +147,7 @@ Definition at line \mbox{\hyperlink{encoder_8py_source_l00027}{27}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00012}{12}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00015}{15}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 \Hypertarget{namespaceencoder_adb91fe8a3fa212c5ab9dc9e4b7be75e0}\label{namespaceencoder_adb91fe8a3fa212c5ab9dc9e4b7be75e0} 
 \index{encoder@{encoder}!res@{res}}
@@ -143,7 +157,17 @@ Definition at line \mbox{\hyperlink{encoder_8py_source_l00012}{12}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00024}{24}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00029}{29}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+
+\Hypertarget{namespaceencoder_a7db2a7de5d88840c1c0a577166cb5068}\label{namespaceencoder_a7db2a7de5d88840c1c0a577166cb5068} 
+\index{encoder@{encoder}!TARGET\_FPS@{TARGET\_FPS}}
+\index{TARGET\_FPS@{TARGET\_FPS}!encoder@{encoder}}
+\doxysubsubsection{\texorpdfstring{TARGET\_FPS}{TARGET\_FPS}}
+{\footnotesize\ttfamily int encoder.\+TARGET\+\_\+\+FPS = 6}
+
+
+
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00004}{4}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 \Hypertarget{namespaceencoder_a065c7415b4a0b8ce1416ebcdc08e3d8e}\label{namespaceencoder_a065c7415b4a0b8ce1416ebcdc08e3d8e} 
 \index{encoder@{encoder}!width@{width}}
@@ -153,5 +177,5 @@ Definition at line \mbox{\hyperlink{encoder_8py_source_l00024}{24}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00027}{27}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00032}{32}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 

@@ -34,6 +34,7 @@ var spu__dsl_8h =
     [ "PUSH", "spu__dsl_8h.html#ae12240a3f4de46ee0616d67825971f44", null ],
     [ "RAM", "spu__dsl_8h.html#a40869d06535af1c441272596a593f764", null ],
     [ "REG", "spu__dsl_8h.html#ad6ade6409c5ca69f90efdfd1acce35fa", null ],
+    [ "SET_FPS", "spu__dsl_8h.html#aaaa1798b15a07625cd552c20346c2e6e", null ],
     [ "SHOW", "spu__dsl_8h.html#a3cc39a683dd5b4be4a7cabb4d3af5635", null ],
     [ "SLEEP", "spu__dsl_8h.html#a9e6bec950d7a024a342074a90caac424", null ],
     [ "UNARY_OPERATOR", "spu__dsl_8h.html#a0e78009ab0c6fe5165541468db781072", null ],

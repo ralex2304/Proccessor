@@ -4,8 +4,8 @@ var searchData=
   ['file_5fheader_1',['FILE_HEADER',['../cmd_8h.html#a1ae26eb7c82ff33e2bc446801638e3be',1,'cmd.h']]],
   ['filename_2',['filename',['../struct_log_file_data.html#aa2532f60b605d24a48ce4e86236e8d2b',1,'LogFileData']]],
   ['files_3',['files',['../struct_asm.html#af299118b6670c1973e6f6562483e17aa',1,'Asm']]],
-  ['frame_4',['frame',['../namespaceencoder.html#ad13866f6af3dff53c3b46aeb0ff212e9',1,'encoder']]],
-  ['frame_5fcount_5',['FRAME_COUNT',['../namespaceencoder.html#a35221ba220705143dfc72bdb616e15e8',1,'encoder']]],
-  ['frame_5fwait_6',['FRAME_WAIT',['../namespaceencoder.html#ac957f3ca460e7be70759857dd0c144ea',1,'encoder']]],
+  ['fps_4',['FPS',['../namespaceencoder.html#a0b1b8944725c379b890b977af9ddc564',1,'encoder']]],
+  ['frame_5',['frame',['../namespaceencoder.html#ad13866f6af3dff53c3b46aeb0ff212e9',1,'encoder']]],
+  ['frame_5fcount_6',['FRAME_COUNT',['../namespaceencoder.html#a874cf2fc480d1e369f3850ba4bd0807c',1,'encoder']]],
   ['func_7',['func',['../struct_argument.html#af376abfd30466976b0e45eb83908a33c',1,'Argument::func'],['../struct_var_code_data.html#a6da889b7111ab8c530acba167462bb95',1,'VarCodeData::func']]]
 ];

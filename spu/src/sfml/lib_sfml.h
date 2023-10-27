@@ -60,6 +60,13 @@ struct sfmlWindow {
      * @return false
      */
     bool is_closed();
+
+    /**
+     * @brief Sets framerate limit
+     *
+     * @param fps
+     */
+    void set_fps(const unsigned int fps);
 };
 
 #endif //< #ifndef LIB_SFML_H_

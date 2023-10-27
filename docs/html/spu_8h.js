@@ -9,6 +9,7 @@ var spu_8h =
     [ "spu_parse_and_execute", "spu_8h.html#a2cce1007b123063fe7af282bcbff14ec", null ],
     [ "spu_print_imm", "spu_8h.html#af24cbd75a5c4f7d10d6de521fbdd2bb8", null ],
     [ "spu_read_cmd", "spu_8h.html#a4e32f43a28b99ed6077985a0b5c1cfc7", null ],
+    [ "spu_sfml_set_fps", "spu_8h.html#aac302765e0432bcbcb8d339ba03d70f1", null ],
     [ "spu_sfml_show", "spu_8h.html#a940590e7df7427f8ecc839f38be015e4", null ],
     [ "PIXEL_SIZE", "spu_8h.html#a5edc31e43090198dc2358a73cddedc81", null ],
     [ "RAM_SIZE", "spu_8h.html#abe1e1b2bfd2932377e15b323ee0fb530", null ],

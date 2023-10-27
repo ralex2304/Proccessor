@@ -143,11 +143,13 @@ Macros</h2></td></tr>
 <tr class="memitem:a597f2881b60f9b4f9ae6451abaaa1b7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu__dsl_8h.html#a597f2881b60f9b4f9ae6451abaaa1b7c">HALT</a>()&#160;&#160;&#160;return <a class="el" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0">Status::NORMAL_WORK</a></td></tr>
 <tr class="memdesc:a597f2881b60f9b4f9ae6451abaaa1b7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Halt function.  <br /></td></tr>
 <tr class="separator:a597f2881b60f9b4f9ae6451abaaa1b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68e4a10cfd30e33ab1e506f696729336"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu__dsl_8h.html#a68e4a10cfd30e33ab1e506f696729336">DUMP</a>()&#160;&#160;&#160;spu-&gt;dump()</td></tr>
+<tr class="memitem:a68e4a10cfd30e33ab1e506f696729336"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu__dsl_8h.html#a68e4a10cfd30e33ab1e506f696729336">DUMP</a>()&#160;&#160;&#160;spu-&gt;dump(data, cur_byte)</td></tr>
 <tr class="memdesc:a68e4a10cfd30e33ab1e506f696729336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spu data dump.  <br /></td></tr>
 <tr class="separator:a68e4a10cfd30e33ab1e506f696729336"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3cc39a683dd5b4be4a7cabb4d3af5635"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu__dsl_8h.html#a3cc39a683dd5b4be4a7cabb4d3af5635">SHOW</a>()&#160;&#160;&#160;<a class="el" href="spu_8cpp.html#a52ea00555388d76aef5567107cee7132">THROW_RUNTIME_ERROR_</a>(&quot;SHOW() command called, but graphics is disabled.&quot;);</td></tr>
 <tr class="separator:a3cc39a683dd5b4be4a7cabb4d3af5635"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaa1798b15a07625cd552c20346c2e6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu__dsl_8h.html#aaaa1798b15a07625cd552c20346c2e6e">SET_FPS</a>()&#160;&#160;&#160;<a class="el" href="spu_8cpp.html#a52ea00555388d76aef5567107cee7132">THROW_RUNTIME_ERROR_</a>(&quot;SET_FPS() command called, but graphics is disabled.&quot;);</td></tr>
+<tr class="separator:aaaa1798b15a07625cd552c20346c2e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e6bec950d7a024a342074a90caac424"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spu__dsl_8h.html#a9e6bec950d7a024a342074a90caac424">SLEEP</a>(time)&#160;&#160;&#160;usleep((unsigned int)time * 1000)</td></tr>
 <tr class="memdesc:a9e6bec950d7a024a342074a90caac424"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sleeps time milliseconds.  <br /></td></tr>
 <tr class="separator:a9e6bec950d7a024a342074a90caac424"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -282,7 +284,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00202">202</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00211">211</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
 
 </div>
 </div>
@@ -323,7 +325,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00147">147</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00156">156</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
 
 </div>
 </div>
@@ -337,7 +339,7 @@ Functions</h2></td></tr>
           <td class="memname">#define DUMP</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;spu-&gt;dump()</td>
+          <td>&#160;&#160;&#160;spu-&gt;dump(data, cur_byte)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -366,7 +368,7 @@ Functions</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">    *var = <a class="code hl_function" href="spu_8h.html#a6ef819013e0bae6f935eba0644d137e8">spu_get_imm_from_input</a>();                        \</div>
 <div class="line">    if (!<a class="code hl_define" href="cmd_8h.html#a4284dd88a093e297d61b28a19f5f4c70">CHECK_IMM_DOUBLE</a>(*var)) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca74a1dcf53dd0430f856c203aa43e0364">Status::WRONG_USER_INPUT</a></div>
 <div class="ttc" id="acmd_8h_html_a4284dd88a093e297d61b28a19f5f4c70"><div class="ttname"><a href="cmd_8h.html#a4284dd88a093e297d61b28a19f5f4c70">CHECK_IMM_DOUBLE</a></div><div class="ttdeci">#define CHECK_IMM_DOUBLE(var)</div><div class="ttdef"><b>Definition</b> <a href="cmd_8h_source.html#l00074">cmd.h:74</a></div></div>
-<div class="ttc" id="aspu_8h_html_a6ef819013e0bae6f935eba0644d137e8"><div class="ttname"><a href="spu_8h.html#a6ef819013e0bae6f935eba0644d137e8">spu_get_imm_from_input</a></div><div class="ttdeci">double spu_get_imm_from_input()</div><div class="ttdoc">Gets double from stdin.</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00129">spu.h:129</a></div></div>
+<div class="ttc" id="aspu_8h_html_a6ef819013e0bae6f935eba0644d137e8"><div class="ttname"><a href="spu_8h.html#a6ef819013e0bae6f935eba0644d137e8">spu_get_imm_from_input</a></div><div class="ttdeci">double spu_get_imm_from_input()</div><div class="ttdoc">Gets double from stdin.</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00139">spu.h:139</a></div></div>
 <div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604ca74a1dcf53dd0430f856c203aa43e0364"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604ca74a1dcf53dd0430f856c203aa43e0364">Status::WRONG_USER_INPUT</a></div><div class="ttdeci">@ WRONG_USER_INPUT</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00021">statuses.h:21</a></div></div>
 </div><!-- fragment -->
 <p>Gets imm to var from stdin. </p>
@@ -377,7 +379,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00174">174</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00183">183</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
 
 </div>
 </div>
@@ -398,7 +400,7 @@ Functions</h2></td></tr>
 
 <p>Returns current instruction pointer in bytes. </p>
 
-<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00127">127</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00136">136</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
 
 </div>
 </div>
@@ -438,7 +440,7 @@ Functions</h2></td></tr>
 
 <p>Returns next command instruction pointer in bytes. </p>
 
-<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00132">132</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00141">141</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
 
 </div>
 </div>
@@ -772,7 +774,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00139">139</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00148">148</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
 
 </div>
 </div>
@@ -793,7 +795,7 @@ Functions</h2></td></tr>
 
 <p>Checks args, that are required for all jump commands. </p>
 
-<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00237">237</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00246">246</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
 
 </div>
 </div>
@@ -837,7 +839,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00214">214</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00223">223</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
 
 </div>
 </div>
@@ -881,7 +883,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00227">227</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00236">236</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
 
 </div>
 </div>
@@ -902,7 +904,7 @@ Functions</h2></td></tr>
 
 <p>Calculates jump destionation address. </p>
 
-<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00243">243</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00252">252</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
 
 </div>
 </div>
@@ -934,7 +936,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00165">165</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00174">174</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
 
 </div>
 </div>
@@ -955,7 +957,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> (!<a class="code hl_function" href="spu_8h.html#af24cbd75a5c4f7d10d6de521fbdd2bb8">spu_print_imm</a>(var))        \</div>
 <div class="line">        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="struct_status.html#ab31bb94cc29a302cab703638615b604ca6d1d6a5832bcd12949e74fc041ce5064">Status::OUTPUT_ERROR</a></div>
-<div class="ttc" id="aspu_8h_html_af24cbd75a5c4f7d10d6de521fbdd2bb8"><div class="ttname"><a href="spu_8h.html#af24cbd75a5c4f7d10d6de521fbdd2bb8">spu_print_imm</a></div><div class="ttdeci">bool spu_print_imm(const double x)</div><div class="ttdoc">Prints double to stdout.</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00109">spu.h:109</a></div></div>
+<div class="ttc" id="aspu_8h_html_af24cbd75a5c4f7d10d6de521fbdd2bb8"><div class="ttname"><a href="spu_8h.html#af24cbd75a5c4f7d10d6de521fbdd2bb8">spu_print_imm</a></div><div class="ttdeci">bool spu_print_imm(const double x)</div><div class="ttdoc">Prints double to stdout.</div><div class="ttdef"><b>Definition</b> <a href="spu_8h_source.html#l00119">spu.h:119</a></div></div>
 <div class="ttc" id="astruct_status_html_ab31bb94cc29a302cab703638615b604ca6d1d6a5832bcd12949e74fc041ce5064"><div class="ttname"><a href="struct_status.html#ab31bb94cc29a302cab703638615b604ca6d1d6a5832bcd12949e74fc041ce5064">Status::OUTPUT_ERROR</a></div><div class="ttdeci">@ OUTPUT_ERROR</div><div class="ttdef"><b>Definition</b> <a href="statuses_8h_source.html#l00022">statuses.h:22</a></div></div>
 </div><!-- fragment -->
 <p>Prints imm to stdout. </p>
@@ -966,7 +968,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00183">183</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00192">192</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
 
 </div>
 </div>
@@ -997,7 +999,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00156">156</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00165">165</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
 
 </div>
 </div>
@@ -1041,6 +1043,25 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aaaa1798b15a07625cd552c20346c2e6e" name="aaaa1798b15a07625cd552c20346c2e6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaa1798b15a07625cd552c20346c2e6e">&#9670;&#160;</a></span>SET_FPS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SET_FPS</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="spu_8cpp.html#a52ea00555388d76aef5567107cee7132">THROW_RUNTIME_ERROR_</a>(&quot;SET_FPS() command called, but graphics is disabled.&quot;);</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00122">122</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
+
+</div>
+</div>
 <a id="a3cc39a683dd5b4be4a7cabb4d3af5635" name="a3cc39a683dd5b4be4a7cabb4d3af5635"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3cc39a683dd5b4be4a7cabb4d3af5635">&#9670;&#160;</a></span>SHOW</h2>
 
@@ -1056,7 +1077,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00113">113</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00120">120</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
 
 </div>
 </div>
@@ -1084,7 +1105,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00122">122</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00131">131</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
 
 </div>
 </div>
@@ -1115,7 +1136,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00192">192</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spu__dsl_8h_source.html#l00201">201</a> of file <a class="el" href="spu__dsl_8h_source.html">spu_dsl.h</a>.</p>
 
 </div>
 </div>

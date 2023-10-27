@@ -26,9 +26,9 @@ var searchData=
   ['find_5fcommand_5fby_5fnum_23',['find_command_by_num',['../cmd_8cpp.html#ae4f1f8a5e27cc0597a1762987ca19f7f',1,'find_command_by_num(const Cmd_num_t num):&#160;cmd.cpp'],['../cmd_8h.html#ae4f1f8a5e27cc0597a1762987ca19f7f',1,'find_command_by_num(const Cmd_num_t num):&#160;cmd.cpp']]],
   ['find_5freg_5fby_5fname_24',['find_reg_by_name',['../cmd_8cpp.html#abd1dd6c1800194955343388311c50e9e',1,'find_reg_by_name(const String name):&#160;cmd.cpp'],['../cmd_8h.html#abd1dd6c1800194955343388311c50e9e',1,'find_reg_by_name(const String name):&#160;cmd.cpp']]],
   ['find_5freg_5fby_5fnum_25',['find_reg_by_num',['../cmd_8cpp.html#af63027691c37894de471b76a4e74b68c',1,'find_reg_by_num(const RegNum_t num):&#160;cmd.cpp'],['../cmd_8h.html#a1f8806cd553fbea836faef7a35f6cb97',1,'find_reg_by_num(const RegNum_t reg):&#160;cmd.cpp']]],
-  ['frame_26',['frame',['../namespaceencoder.html#ad13866f6af3dff53c3b46aeb0ff212e9',1,'encoder']]],
-  ['frame_5fcount_27',['FRAME_COUNT',['../namespaceencoder.html#a35221ba220705143dfc72bdb616e15e8',1,'encoder']]],
-  ['frame_5fwait_28',['FRAME_WAIT',['../namespaceencoder.html#ac957f3ca460e7be70759857dd0c144ea',1,'encoder']]],
+  ['fps_26',['FPS',['../namespaceencoder.html#a0b1b8944725c379b890b977af9ddc564',1,'encoder']]],
+  ['frame_27',['frame',['../namespaceencoder.html#ad13866f6af3dff53c3b46aeb0ff212e9',1,'encoder']]],
+  ['frame_5fcount_28',['FRAME_COUNT',['../namespaceencoder.html#a874cf2fc480d1e369f3850ba4bd0807c',1,'encoder']]],
   ['free_29',['FREE',['../macros_8h.html#a105949c59c998e38aad80266afac92bf',1,'macros.h']]],
   ['func_30',['func',['../struct_argument.html#af376abfd30466976b0e45eb83908a33c',1,'Argument::func'],['../struct_var_code_data.html#a6da889b7111ab8c530acba167462bb95',1,'VarCodeData::func']]]
 ];

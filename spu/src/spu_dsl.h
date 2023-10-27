@@ -100,17 +100,26 @@ inline IMM_DOUBLE_T* get_lvalue_ptr_(SpuData* spu, const Cmd cmd) {
 /**
  * @brief Spu data dump
  */
-#define DUMP() spu->dump()
+#define DUMP() spu->dump(data, cur_byte)
 
 #ifdef GRAPHICS
 /**
  * Updates graphics window
  */
-#define SHOW() spu_sfml_show(spu)
+#define SHOW() if (!spu_sfml_show(spu)) HALT()
+
+/**
+ * @brief Sets framerate limit
+ *
+ * @param fps
+ */
+#define SET_FPS(fps) spu_sfml_set_fps(spu, (unsigned int) fps);
 
 #else //< #ifndef GRAPHICS
 
 #define SHOW() THROW_RUNTIME_ERROR_("SHOW() command called, but graphics is disabled.");
+
+#define SET_FPS() THROW_RUNTIME_ERROR_("SET_FPS() command called, but graphics is disabled.");
 
 #endif //< #ifdef GRAPHICS
 

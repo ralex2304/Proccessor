@@ -64,8 +64,8 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "disassembler_8cpp.html#adb430e0b85e35f2bde65b055c94ed91a",
-"spu_8cpp.html",
-"struct_var_code_data.html#a25347ec3ab07e84f5ac1b2e1220ef388"
+"spu_2src_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",
+"struct_status.html#ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

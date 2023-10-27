@@ -16,7 +16,6 @@ bool sfmlWindow::ctor(const unsigned int pixel_width, const unsigned int pixel_h
     window = new(std::nothrow) sf::RenderWindow(sf::VideoMode(pixel_width * hor_num, pixel_height * ver_num), header);
     window->setPosition(sf::Vector2i(25, 25));
 
-
     pixels = new(std::nothrow) sf::RectangleShape[hor_num * ver_num];
 
     if (window == nullptr || pixels == nullptr)
@@ -76,4 +75,8 @@ bool sfmlWindow::is_closed() {
         }
     }
     return false;
+}
+
+void sfmlWindow::set_fps(const unsigned int fps) {
+    window->setFramerateLimit(fps);
 }

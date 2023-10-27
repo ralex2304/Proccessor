@@ -54,7 +54,7 @@ for_y:
     push 100
     jb for_y
 
-shw 0
+shw
 in
 hlt
 

@@ -11,6 +11,12 @@ Status::Statuses SpuData::ctor() {
         return Status::RUNTIME_ERROR;
     }
 
+    ram = (Imm_double_t*)calloc(RAM_SIZE, sizeof(Imm_double_t));
+    if (!ram) {
+        fprintf(stderr, CONSOLE_RED("RAM allocation error\n"));
+        return Status::MEMORY_EXCEED;
+    }
+
 #ifdef GRAPHICS
     if (!sfml.ctor(PIXEL_SIZE, PIXEL_SIZE, VIDEO_WIDTH, VIDEO_HEIGHT, header)) {
         fprintf(stderr, CONSOLE_RED("sfml memory allocation error\n"));
@@ -30,6 +36,8 @@ Status::Statuses SpuData::dtor() {
         return Status::RUNTIME_ERROR;
     }
 
+    FREE(ram);
+
 #ifdef GRAPHICS
     sfml.dtor();
 #endif //< #ifdef GRAPHICS
@@ -37,9 +45,19 @@ Status::Statuses SpuData::dtor() {
     return Status::NORMAL_WORK;
 }
 
-void SpuData::dump() {
+void SpuData::dump(const char* data, const size_t* cur_byte) {
     printf("# spu dump():\n"
            "# \n");
+
+    printf("# ");
+    for (size_t i = MAX(0, (ssize_t)(*cur_byte - sizeof(CmdKeys)) - 10); i < *cur_byte + 10; i++)
+        printf("%02hhX ", data[i]);
+
+    printf("\n");
+
+    printf("# %*s^\n", (int)MIN(10, *cur_byte - sizeof(CmdKeys)) * 3, "");
+    printf("# %*s%zu\n", (int)MIN(10, *cur_byte - sizeof(CmdKeys)) * 3, "", *cur_byte - sizeof(CmdKeys));
+
 
     stk_data_dump(&stk);
 
