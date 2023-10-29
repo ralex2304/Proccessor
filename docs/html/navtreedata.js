@@ -25,7 +25,38 @@
 var NAVTREE =
 [
   [ "Processor", "index.html", [
-    [ "Processor (assembler + spu + disassembler)", "index.html", null ],
+    [ "Main features", "index.html#autotoc_md1", null ],
+    [ "Commands", "index.html#autotoc_md2", [
+      [ "Features", "index.html#autotoc_md3", null ],
+      [ "Syntax example", "index.html#autotoc_md4", null ],
+      [ "Commands list", "index.html#autotoc_md5", [
+        [ "Common info", "index.html#autotoc_md6", null ],
+        [ "Basic", "index.html#autotoc_md7", null ],
+        [ "Jumps", "index.html#autotoc_md8", null ],
+        [ "Maths", "index.html#autotoc_md9", null ],
+        [ "Video mode", "index.html#autotoc_md10", null ]
+      ] ]
+    ] ],
+    [ "Assembler", "index.html#autotoc_md11", [
+      [ "Command line flags", "index.html#autotoc_md12", null ],
+      [ "Features", "index.html#autotoc_md13", null ]
+    ] ],
+    [ "Software processing unit", "index.html#autotoc_md14", [
+      [ "Command line flags", "index.html#autotoc_md15", null ],
+      [ "Features", "index.html#autotoc_md16", null ]
+    ] ],
+    [ "Disassembler", "index.html#autotoc_md17", [
+      [ "Command line flags", "index.html#autotoc_md18", null ],
+      [ "Features", "index.html#autotoc_md19", null ]
+    ] ],
+    [ "Examples", "index.html#autotoc_md20", null ],
+    [ "Program features", "index.html#autotoc_md21", null ],
+    [ "Usage", "index.html#autotoc_md22", [
+      [ "Build", "index.html#autotoc_md23", null ],
+      [ "Run", "index.html#autotoc_md24", null ],
+      [ "Docs", "index.html#autotoc_md25", null ]
+    ] ],
+    [ "Credits", "index.html#autotoc_md26", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -64,8 +95,8 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "disassembler_8cpp.html#adb430e0b85e35f2bde65b055c94ed91a",
-"spu_2src_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",
-"struct_status.html#ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c"
+"read_8h.html#a59a62100931ce75bca2e3f7d484d9875",
+"structStack.html#ae8242b5f1b2c3d98a6dbafc302e509d5a2dbe0f67c49b72aef7d6253cdc1f9d43"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,4 +1,3 @@
-
 /**
  * @brief Immutable var types
  */
@@ -16,9 +15,8 @@
 #define ARG_IMM_DOUBLE  cmd.args.imm_double    //< double imm var
 #define ARG_IMM_INT     cmd.args.imm_int       //< int imm var
 
-#define REG(num) spu->reg[num]  //< reg var by num
-
-#define RAM(addr) spu->ram[addr] //< ram value by address
+#define REG(num) spu->reg[num]      //< reg var by num
+#define RAM(addr) spu->ram[addr]    //< ram value by address
 
 /**
  * @brief Number comparison functions
@@ -33,6 +31,15 @@
 
 #define IS_LOWER_EQUAL_IMM_DOUBLE(a, b)     ((a) < (b) || IS_EQUAL_IMM_DOUBLE(a, b))
 
+/**
+ * @brief Checks condition and throws runtime error
+ *
+ * @param condition
+ * @param error_msg
+ */
+#define CHECK_AND_THROW_ERR(condition, error_msg)   \
+    if (!(condition))                               \
+        THROW_RUNTIME_ERROR_(error_msg)
 
 /**
  * @brief Returns current day of week
@@ -72,7 +79,19 @@ inline IMM_DOUBLE_T get_rvalue_(SpuData* spu, const Cmd cmd) {
     return ret;
 }
 
+/**
+ * @brief Gets rvalue
+ */
 #define GET_RVALUE() get_rvalue_(spu, cmd)
+
+/**
+ * @brief Checks args for GET_RVALUE()
+ */
+#define CHECK_GET_RVALUE_ARGS()                                                                         \
+    CHECK_AND_THROW_ERR(!IS_ARG_RAM || IS_ARG_REG || IS_ARG_IMM_INT, "At least one argument required"); \
+    CHECK_AND_THROW_ERR(!IS_ARG_RAM || !IS_ARG_IMM_DOUBLE, "Invalid set of arguments");                 \
+    CHECK_AND_THROW_ERR( IS_ARG_RAM || IS_ARG_REG || IS_ARG_IMM_INT || IS_ARG_IMM_DOUBLE,               \
+                                        "At least one arguments required")
 
 inline IMM_DOUBLE_T* get_lvalue_ptr_(SpuData* spu, const Cmd cmd) {
     if (IS_ARG_RAM) {
@@ -90,7 +109,19 @@ inline IMM_DOUBLE_T* get_lvalue_ptr_(SpuData* spu, const Cmd cmd) {
     }
 }
 
+/**
+ * @brief Gets lvalue pointer
+ */
 #define GET_LVALUE_PTR() get_lvalue_ptr_(spu, cmd)
+
+/**
+ * @brief Checks args for GET_LVALUE_PTR()
+ */
+#define CHECK_GET_LVALUE_PTR_ARGS()                                                                         \
+    CHECK_AND_THROW_ERR(!IS_ARG_RAM || IS_ARG_REG || IS_ARG_IMM_INT, "At least one arguments required.");   \
+    CHECK_AND_THROW_ERR(!IS_ARG_RAM || !IS_ARG_IMM_DOUBLE, "Invalid set of arguments.");                    \
+    CHECK_AND_THROW_ERR( IS_ARG_RAM || IS_ARG_REG, "Reg argument required");                                \
+    CHECK_AND_THROW_ERR( IS_ARG_RAM || (!IS_ARG_IMM_INT && !IS_ARG_IMM_DOUBLE), "Invalid set of arguments.")
 
 /**
  * @brief Halt function
@@ -146,16 +177,6 @@ inline IMM_DOUBLE_T* get_lvalue_ptr_(SpuData* spu, const Cmd cmd) {
  * @param addr
  */
 #define JUMP(addr) *cur_byte = addr
-
-/**
- * @brief Checks condition and throws runtime error
- *
- * @param condition
- * @param error_msg
- */
-#define CHECK_AND_THROW_ERR(condition, error_msg)   \
-    if (!(condition))                               \
-        THROW_RUNTIME_ERROR_(error_msg)
 
 /**
  * @brief Pushes to stack
@@ -240,13 +261,25 @@ inline IMM_DOUBLE_T* get_lvalue_ptr_(SpuData* spu, const Cmd cmd) {
     if (func(a, b))                     \
         JUMP(addr);
 
-/**
- * @brief Checks args, that are required for all jump commands
- */
-#define JUMP_CHECK_ARGS() \
-    CHECK_AND_THROW_ERR(IS_ARG_IMM_INT || IS_ARG_REG, "\"jump\" commands require byte address.")
+inline IMM_INT_T jump_destination_(const SpuData* spu, const Cmd cmd) {
+    IMM_INT_T imm_int = 0;
+    if (IS_ARG_IMM_INT)
+        imm_int += ARG_IMM_INT;
+
+    if (IS_ARG_REG)
+        imm_int += (IMM_INT_T)REG(ARG_REG);
+
+    return imm_int;
+}
 
 /**
  * @brief Calculates jump destionation address
  */
-#define JUMP_DESTINATION() (ARG_IMM_INT + (IS_ARG_REG ? (IMM_INT_T)REG(ARG_REG) : 0))
+#define JUMP_DESTINATION() jump_destination_(spu, cmd)
+
+/**
+ * @brief Checks args for JUMP_DESTINATION()
+ */
+#define CHECK_JUMP_DESTINATION_ARGS()                                                       \
+    CHECK_AND_THROW_ERR(IS_ARG_IMM_INT || IS_ARG_REG, "At least one argument required.");   \
+    CHECK_AND_THROW_ERR(!IS_ARG_RAM && !IS_ARG_IMM_DOUBLE, "Invalid set of arguments.")

@@ -1,9 +1,9 @@
 \doxysection{assembler/src/main.cpp File Reference}
 \hypertarget{assembler_2src_2main_8cpp}{}\label{assembler_2src_2main_8cpp}\index{assembler/src/main.cpp@{assembler/src/main.cpp}}
-{\ttfamily \#include \"{}lib/utils/statuses.\+h\"{}}\newline
-{\ttfamily \#include \"{}lib/utils/args\+\_\+parser.\+h\"{}}\newline
-{\ttfamily \#include \"{}lib/text/text\+\_\+proccessor.\+h\"{}}\newline
-{\ttfamily \#include \"{}assembler.\+h\"{}}\newline
+{\ttfamily \#include "{}lib/utils/statuses.\+h"{}}\newline
+{\ttfamily \#include "{}lib/utils/args\+\_\+parser.\+h"{}}\newline
+{\ttfamily \#include "{}lib/text/text\+\_\+proccessor.\+h"{}}\newline
+{\ttfamily \#include "{}assembler.\+h"{}}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -12,7 +12,7 @@ int \mbox{\hyperlink{assembler_2src_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-const \mbox{\hyperlink{struct_argument}{Argument}} \mbox{\hyperlink{assembler_2src_2main_8cpp_a70f364d39afe05aad72ad2bde345b945}{ARGS\+\_\+\+DICT}} \mbox{[}$\,$\mbox{]}
+const \mbox{\hyperlink{structArgument}{Argument}} \mbox{\hyperlink{assembler_2src_2main_8cpp_a70f364d39afe05aad72ad2bde345b945}{ARGS\+\_\+\+DICT}} \mbox{[}$\,$\mbox{]}
 \begin{DoxyCompactList}\small\item\em This array contains console options, their functions and descriptions. \end{DoxyCompactList}\item 
 const int \mbox{\hyperlink{assembler_2src_2main_8cpp_a77beb676f2043bf8630ee0c7ec23d7fe}{ARGS\+\_\+\+DICT\+\_\+\+LEN}} = sizeof(\mbox{\hyperlink{assembler_2src_2main_8cpp_a70f364d39afe05aad72ad2bde345b945}{ARGS\+\_\+\+DICT}}) / sizeof(\mbox{\hyperlink{assembler_2src_2main_8cpp_a70f364d39afe05aad72ad2bde345b945}{ARGS\+\_\+\+DICT}}\mbox{[}0\mbox{]})
 \end{DoxyCompactItemize}
@@ -43,24 +43,24 @@ Definition at line \mbox{\hyperlink{assembler_2src_2main_8cpp_source_l00022}{22}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00023\ }
-\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{struct_args_vars}{ArgsVars}}\ args\_vars\ =\ \{\};}
-\DoxyCodeLine{00026\ \ \ \ \ args\_vars.\mbox{\hyperlink{struct_args_vars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}}\ \ \ \ =\ \textcolor{stringliteral}{"{}../Programs/example/main.code"{}};\ \textcolor{comment}{//<\ default\ value}}
-\DoxyCodeLine{00027\ \ \ \ \ args\_vars.\mbox{\hyperlink{struct_args_vars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}}\ \ \ =\ \textcolor{stringliteral}{"{}../Programs/example/main.exec"{}};\ \textcolor{comment}{//<\ default\ value}}
-\DoxyCodeLine{00028\ \ \ \ \ args\_vars.\mbox{\hyperlink{struct_args_vars_a8653f2722b159469ef513b037496968e}{listing\_filename}}\ \ =\ \textcolor{keyword}{nullptr};\ \textcolor{comment}{//<\ default\ value}}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{structArgsVars}{ArgsVars}}\ args\_vars\ =\ \{\};}
+\DoxyCodeLine{00026\ \ \ \ \ args\_vars.\mbox{\hyperlink{structArgsVars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}}\ \ \ \ =\ \textcolor{stringliteral}{"{}../Programs/example/main.code"{}};\ \textcolor{comment}{//<\ default\ value}}
+\DoxyCodeLine{00027\ \ \ \ \ args\_vars.\mbox{\hyperlink{structArgsVars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}}\ \ \ =\ \textcolor{stringliteral}{"{}../Programs/example/main.exec"{}};\ \textcolor{comment}{//<\ default\ value}}
+\DoxyCodeLine{00028\ \ \ \ \ args\_vars.\mbox{\hyperlink{structArgsVars_a8653f2722b159469ef513b037496968e}{listing\_filename}}\ \ =\ \textcolor{keyword}{nullptr};\ \textcolor{comment}{//<\ default\ value}}
 \DoxyCodeLine{00029\ }
 \DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{statuses_8h_af4627700f3927986c7c7d2e526b77a0e}{STATUS\_CHECK\_RAISE}}(\mbox{\hyperlink{args__parser_8cpp_ac63644e05122cdb240ea43e7085f75ca}{args\_parse}}(argc,\ argv,\ \&args\_vars,\ \mbox{\hyperlink{assembler_2src_2main_8cpp_a70f364d39afe05aad72ad2bde345b945}{ARGS\_DICT}},\ \mbox{\hyperlink{assembler_2src_2main_8cpp_a77beb676f2043bf8630ee0c7ec23d7fe}{ARGS\_DICT\_LEN}}));}
 \DoxyCodeLine{00032\ }
-\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{struct_input_data}{InputData}}\ input\_data\ =\ \{\};}
-\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{statuses_8h_af4627700f3927986c7c7d2e526b77a0e}{STATUS\_CHECK\_RAISE}}(input\_data.\mbox{\hyperlink{struct_input_data_ac8aaf8175b920369abfcfba744af844a}{ctor}}(args\_vars.\mbox{\hyperlink{struct_args_vars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}}));}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{structInputData}{InputData}}\ input\_data\ =\ \{\};}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{statuses_8h_af4627700f3927986c7c7d2e526b77a0e}{STATUS\_CHECK\_RAISE}}(input\_data.\mbox{\hyperlink{structInputData_ac8aaf8175b920369abfcfba744af844a}{ctor}}(args\_vars.\mbox{\hyperlink{structArgsVars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}}));}
 \DoxyCodeLine{00037\ }
 \DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{statuses_8h_af4627700f3927986c7c7d2e526b77a0e}{STATUS\_CHECK\_RAISE}}(\mbox{\hyperlink{assembler_8cpp_aaaf632eadba4e621a27898e8881b5f3c}{assemeble\_and\_write}}(\&input\_data,\ \{args\_vars.\mbox{\hyperlink{struct_args_vars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}},}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ args\_vars.\mbox{\hyperlink{struct_args_vars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}},\ args\_vars.\mbox{\hyperlink{struct_args_vars_a8653f2722b159469ef513b037496968e}{listing\_filename}}\}),}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ input\_data.\mbox{\hyperlink{struct_input_data_a007abeabd2f7b29f15b38b52cf4f7010}{detor}}(););}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{statuses_8h_af4627700f3927986c7c7d2e526b77a0e}{STATUS\_CHECK\_RAISE}}(\mbox{\hyperlink{assembler_8cpp_aaaf632eadba4e621a27898e8881b5f3c}{assemeble\_and\_write}}(\&input\_data,\ \{args\_vars.\mbox{\hyperlink{structArgsVars_afee9f78a6ba610ff6a2ee809ebbdb56b}{input\_filename}},}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ args\_vars.\mbox{\hyperlink{structArgsVars_a4f2b7471e1b7080ecb00867fccf04fc9}{output\_filename}},\ args\_vars.\mbox{\hyperlink{structArgsVars_a8653f2722b159469ef513b037496968e}{listing\_filename}}\}),}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ input\_data.\mbox{\hyperlink{structInputData_a007abeabd2f7b29f15b38b52cf4f7010}{detor}}(););}
 \DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ input\_data.\mbox{\hyperlink{struct_input_data_a007abeabd2f7b29f15b38b52cf4f7010}{detor}}();}
+\DoxyCodeLine{00045\ \ \ \ \ input\_data.\mbox{\hyperlink{structInputData_a007abeabd2f7b29f15b38b52cf4f7010}{detor}}();}
 \DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a}{Status::OK\_EXIT}};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604cabd71500b14c23ba35ba380809d51f33a}{Status::OK\_EXIT}};}
 \DoxyCodeLine{00048\ \}}
 
 \end{DoxyCode}
@@ -75,7 +75,7 @@ References \mbox{\hyperlink{assembler_2src_2main_8cpp_source_l00009}{ARGS\+\_\+\
 \index{main.cpp@{main.cpp}!ARGS\_DICT@{ARGS\_DICT}}
 \index{ARGS\_DICT@{ARGS\_DICT}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{ARGS\_DICT}{ARGS\_DICT}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{struct_argument}{Argument}} ARGS\+\_\+\+DICT\mbox{[}$\,$\mbox{]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structArgument}{Argument}} ARGS\+\_\+\+DICT\mbox{[}$\,$\mbox{]}}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
@@ -98,6 +98,19 @@ This array contains console options, their functions and descriptions.
 
 Definition at line \mbox{\hyperlink{assembler_2src_2main_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{assembler_2src_2main_8cpp_source}{main.\+cpp}}.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \{\textcolor{stringliteral}{"{}-\/h"{}},\ \mbox{\hyperlink{args__parser_8cpp_a588357a358b0a2f4369558537ffcb259}{print\_help}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\#\ \ \ -\/h\ -\/\ prints\ help\ information\(\backslash\)n"{}}\},\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ Help\ option}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \{\textcolor{stringliteral}{"{}-\/i"{}},\ \mbox{\hyperlink{args__parser_8cpp_a7b761898455b1312fa4b52594ed10b7d}{read\_input\_filename}},\ \ \ \ \ \textcolor{stringliteral}{"{}\#\ \ \ -\/i\ -\/\ specify\ input\ file\ name\ after\ this\(\backslash\)n"{}}\},\ \ \textcolor{comment}{//<\ Input\ filename}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \{\textcolor{stringliteral}{"{}-\/o"{}},\ \mbox{\hyperlink{args__parser_8cpp_a87a6361c68c0184ccf8a9a1a04329ff7}{read\_output\_filename}},\ \ \ \ \textcolor{stringliteral}{"{}\#\ \ \ -\/o\ -\/\ specify\ output\ file\ name\ after\ this\(\backslash\)n"{}}\},\ \textcolor{comment}{//<\ Output\ filename}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \{\textcolor{stringliteral}{"{}-\/l"{}},\ \mbox{\hyperlink{args__parser_8cpp_ab0d272921fc02dad91323c5c176dc9a2}{read\_listing\_filename}},\ \ \ \textcolor{stringliteral}{"{}\#\ \ \ -\/l\ -\/\ enables\ and\ specifies\ listing\ file\(\backslash\)n"{}}\},\ \ \textcolor{comment}{//<\ Listing\ file}}
+\DoxyCodeLine{00017\ \};}
+
+\end{DoxyCode}
 
 
 Referenced by \mbox{\hyperlink{assembler_2src_2main_8cpp_source_l00022}{main()}}.

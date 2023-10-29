@@ -5,7 +5,7 @@ call regs_clean
 in
 pop rax
 
-call calc ;(rax = target) return rcx
+call fact ;(rax = target) return rcx
 
 push rcx
 out
@@ -15,34 +15,38 @@ hlt
 
 ;===========================================================
 
-; recursive calc function
-; calc(rax - target, rbx = 0 - iterator, rcx - result = 1)
-calc: ;iterator and result init
+; iterator and result init for fact_rec
+; fact (rax - target, rbx = 0 - iterator, rcx - result = 1)
+fact:
+    push 0
+    pop rbx
+    push 1
+    pop rcx
 
-push 0
-pop rbx
-push 1
-pop rcx
+    call fact_rec
 
-calc_loop: ;func body
+;===========================================================
 
-push rax ;target
-push rbx ;iterator
-jbe calc_ret ; if (target <= iterator) return;
+; recursive fact function
+; fact (rax - target, rbx = iterator, rcx = result)
+fact_rec:
+    push rax ;target
+    push rbx ;iterator
+    jbe fact_rec_ret ; if (target <= iterator) return;
 
-;iterator increment
-push rbx+1
-pop rbx
+    ;iterator increment
+    push rbx+1
+    pop rbx
 
-push rcx
-push rbx
-mul      ;result * iterator
-pop rcx  ;write result
+    push rcx
+    push rbx
+    mul      ;result * iterator
+    pop rcx  ;write result
 
-call calc_loop ;recursive call
+    call fact_rec ;recursive call
 
-calc_ret:
-ret
+    fact_rec_ret:
+    ret
 
 ;===========================================================
 

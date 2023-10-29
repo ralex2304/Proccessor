@@ -1,19 +1,19 @@
 \doxysection{shared/lib/file/file.cpp File Reference}
 \hypertarget{file_8cpp}{}\label{file_8cpp}\index{shared/lib/file/file.cpp@{shared/lib/file/file.cpp}}
-{\ttfamily \#include \"{}file.\+h\"{}}\newline
+{\ttfamily \#include "{}file.\+h"{}}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{file_8cpp_acda06f1ad7ecb836b8cf08abb873404a}{file\+\_\+open\+\_\+read\+\_\+close}} (const char \texorpdfstring{$\ast$}{*}filename, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}buf, const size\+\_\+t additional\+\_\+memory, long \texorpdfstring{$\ast$}{*}size)
+\mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{file_8cpp_acda06f1ad7ecb836b8cf08abb873404a}{file\+\_\+open\+\_\+read\+\_\+close}} (const char \texorpdfstring{$\ast$}{*}filename, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}buf, const size\+\_\+t additional\+\_\+memory, long \texorpdfstring{$\ast$}{*}size)
 \begin{DoxyCompactList}\small\item\em Opens, reads and closes file. Allocates memory. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{file_8cpp_a6ab5d9a2ccdbe22341b16fc8c101a484}{file\+\_\+open\+\_\+write\+\_\+bytes\+\_\+close}} (const char \texorpdfstring{$\ast$}{*}filename, char \texorpdfstring{$\ast$}{*}buf, const size\+\_\+t size)
+\mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{file_8cpp_a6ab5d9a2ccdbe22341b16fc8c101a484}{file\+\_\+open\+\_\+write\+\_\+bytes\+\_\+close}} (const char \texorpdfstring{$\ast$}{*}filename, char \texorpdfstring{$\ast$}{*}buf, const size\+\_\+t size)
 \begin{DoxyCompactList}\small\item\em Opens, writes bytes and closes file. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{file_8cpp_abb897c7e353e490dd5c92b5a13d14fa6}{file\+\_\+open}} (FILE \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}file, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}mode)
 \begin{DoxyCompactList}\small\item\em Opens file. \end{DoxyCompactList}\item 
 long \mbox{\hyperlink{file_8cpp_a16fe6f53850088221a60ac2eeeded1a3}{file\+\_\+get\+\_\+len}} (FILE \texorpdfstring{$\ast$}{*}file)
 \begin{DoxyCompactList}\small\item\em Gets file len. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{file_8cpp_ab8abec266bd97945de2b5124b50f26af}{file\+\_\+read}} (FILE \texorpdfstring{$\ast$}{*}file, char \texorpdfstring{$\ast$}{*}buf, long file\+\_\+len)
-\begin{DoxyCompactList}\small\item\em Reads data from char to buffer. \doxylink{struct_buffer}{Buffer} must be big enough. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Reads data from char to buffer. \doxylink{structBuffer}{Buffer} must be big enough. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{file_8cpp_ae7c38fbf3eca43ddec86ae4a00ed3ad6}{file\+\_\+write\+\_\+line}} (FILE \texorpdfstring{$\ast$}{*}file, const char \texorpdfstring{$\ast$}{*}line)
 \begin{DoxyCompactList}\small\item\em Writes line (string) to file. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{file_8cpp_a68a322f778a4f850372b482bcc35c0d5}{file\+\_\+write\+\_\+bytes}} (FILE \texorpdfstring{$\ast$}{*}file, const void \texorpdfstring{$\ast$}{*}data, size\+\_\+t len)
@@ -165,7 +165,7 @@ Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00083}{asm\+\_\+do\+\_\+pa
 \index{file.cpp@{file.cpp}!file\_open\_read\_close@{file\_open\_read\_close}}
 \index{file\_open\_read\_close@{file\_open\_read\_close}!file.cpp@{file.cpp}}
 \doxysubsubsection{\texorpdfstring{file\_open\_read\_close()}{file\_open\_read\_close()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} file\+\_\+open\+\_\+read\+\_\+close (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{buf,  }\item[{const size\+\_\+t}]{additional\+\_\+memory = {\ttfamily 0},  }\item[{long \texorpdfstring{$\ast$}{*}}]{size = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} file\+\_\+open\+\_\+read\+\_\+close (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{buf,  }\item[{const size\+\_\+t}]{additional\+\_\+memory = {\ttfamily 0},  }\item[{long \texorpdfstring{$\ast$}{*}}]{size = {\ttfamily nullptr} }\end{DoxyParamCaption})}
 
 
 
@@ -183,7 +183,7 @@ Opens, reads and closes file. Allocates memory.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\doxylink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
+\doxylink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
 \end{DoxyReturn}
 
 
@@ -200,11 +200,11 @@ Definition at line \mbox{\hyperlink{file_8cpp_source_l00003}{3}} of file \mbox{\
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00011\ \ \ \ \ FILE*\ \mbox{\hyperlink{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45}{file}}\ =\ \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_abb897c7e353e490dd5c92b5a13d14fa6}{file\_open}}(\&file,\ filename,\ \textcolor{stringliteral}{"{}rb"{}}))}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c}{Status::INP\_FILE\_ERROR}};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c}{Status::INP\_FILE\_ERROR}};}
 \DoxyCodeLine{00014\ }
 \DoxyCodeLine{00015\ \ \ \ \ file\_size\ =\ \mbox{\hyperlink{file_8cpp_a16fe6f53850088221a60ac2eeeded1a3}{file\_get\_len}}(file);}
 \DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (file\_size\ <\ 0)}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c}{Status::INP\_FILE\_ERROR}};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c}{Status::INP\_FILE\_ERROR}};}
 \DoxyCodeLine{00018\ }
 \DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (size\ !=\ \textcolor{keyword}{nullptr})}
 \DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ *size\ =\ file\_size;}
@@ -213,16 +213,16 @@ Definition at line \mbox{\hyperlink{file_8cpp_source_l00003}{3}} of file \mbox{\
 \DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (*buf\ ==\ \textcolor{keyword}{nullptr})\ \{}
 \DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Memory\ alloc\ error\(\backslash\)n"{}});}
 \DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(file);}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7}{Status::MEMORY\_EXCEED}};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7}{Status::MEMORY\_EXCEED}};}
 \DoxyCodeLine{00027\ \ \ \ \ \}}
 \DoxyCodeLine{00028\ }
 \DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_ab8abec266bd97945de2b5124b50f26af}{file\_read}}(file,\ *buf,\ file\_size))}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c}{Status::INP\_FILE\_ERROR}};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c}{Status::INP\_FILE\_ERROR}};}
 \DoxyCodeLine{00031\ }
 \DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(file))}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c}{Status::INP\_FILE\_ERROR}};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c}{Status::INP\_FILE\_ERROR}};}
 \DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
 \DoxyCodeLine{00036\ \}}
 
 \end{DoxyCode}
@@ -238,7 +238,7 @@ Referenced by \mbox{\hyperlink{text__proccessor_8cpp_source_l00003}{Input\+Data\
 \index{file.cpp@{file.cpp}!file\_open\_write\_bytes\_close@{file\_open\_write\_bytes\_close}}
 \index{file\_open\_write\_bytes\_close@{file\_open\_write\_bytes\_close}!file.cpp@{file.cpp}}
 \doxysubsubsection{\texorpdfstring{file\_open\_write\_bytes\_close()}{file\_open\_write\_bytes\_close()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} file\+\_\+open\+\_\+write\+\_\+bytes\+\_\+close (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{char \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{const size\+\_\+t}]{size }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} file\+\_\+open\+\_\+write\+\_\+bytes\+\_\+close (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{char \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{const size\+\_\+t}]{size }\end{DoxyParamCaption})}
 
 
 
@@ -254,7 +254,7 @@ Opens, writes bytes and closes file.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\doxylink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
+\doxylink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
 \end{DoxyReturn}
 
 
@@ -269,15 +269,15 @@ Definition at line \mbox{\hyperlink{file_8cpp_source_l00038}{38}} of file \mbox{
 \DoxyCodeLine{00042\ \ \ \ \ FILE*\ \mbox{\hyperlink{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45}{file}}\ =\ \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{00043\ }
 \DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_abb897c7e353e490dd5c92b5a13d14fa6}{file\_open}}(\&file,\ filename,\ \textcolor{stringliteral}{"{}wb"{}}))}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};}
 \DoxyCodeLine{00046\ }
 \DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_a68a322f778a4f850372b482bcc35c0d5}{file\_write\_bytes}}(file,\ buf,\ size))}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};}
 \DoxyCodeLine{00049\ }
 \DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(file))}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};}
 \DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
 \DoxyCodeLine{00054\ \}}
 
 \end{DoxyCode}
@@ -347,7 +347,7 @@ Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00083}{asm\+\_\+do\+\_\+pa
 
 
 
-Reads data from char to buffer. \doxylink{struct_buffer}{Buffer} must be big enough. 
+Reads data from char to buffer. \doxylink{structBuffer}{Buffer} must be big enough. 
 
 
 \begin{DoxyParams}{Parameters}

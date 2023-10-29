@@ -49,8 +49,8 @@ hlt
 solve_lin: ; x = -c / b
     pop rax ;address
 
-    pop rbx
     pop rcx
+    pop rbx
 
     ; rax = addr | rbx = b | rcx = c | rdx = ? | stk: ...,
 

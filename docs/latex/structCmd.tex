@@ -1,0 +1,124 @@
+\doxysection{Cmd Struct Reference}
+\hypertarget{structCmd}{}\label{structCmd}\index{Cmd@{Cmd}}
+
+
+Command data structure.  
+
+
+
+
+{\ttfamily \#include $<$cmd.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{structCmd_abfc0c3cf11132a789381d22376978555}{size}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{structCmdInfo}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structCmd_a8df32ebe09e03d38de8c20f6266611b4}{info}} = nullptr
+\item 
+\mbox{\hyperlink{structCmdKeys}{Cmd\+Keys}} \mbox{\hyperlink{structCmd_a0a38a0e6be202854d97c4637280f5914}{keys}} = \{\}
+\item 
+\mbox{\hyperlink{structCmdArgs}{Cmd\+Args}} \mbox{\hyperlink{structCmd_ad3fa66964fc662181ab833aef4a72db0}{args}} = \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command data structure. 
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00172}{172}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structCmd_abfc0c3cf11132a789381d22376978555}\label{structCmd_abfc0c3cf11132a789381d22376978555} 
+\index{Cmd@{Cmd}!size@{size}}
+\index{size@{size}!Cmd@{Cmd}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t Cmd\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{cmd_8cpp_source}{cmd.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structCmd_a0a38a0e6be202854d97c4637280f5914}{keys}})}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{structCmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{structCmdKeys_a76f64f02295d9a30abdaf138ea275f6a}{reg}}\ \ \ \ \ \ \ \ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structCmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{structCmdArgs_a49949ad6edf5cb3523025913f2c0adc5}{reg}})}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{structCmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{structCmdKeys_a2520ae7bb6f891ca6ff62dd0f882a1f4}{imm\_int}}\ \ \ \ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structCmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{structCmdArgs_a7280dbc4d3d9bee564f6815e969bdd07}{imm\_int}})}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ +\ \mbox{\hyperlink{structCmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{structCmdKeys_a5b1fdf0614537d3c515c99ce945906fa}{imm\_double}}\ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structCmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{structCmdArgs_af4f115f325b0b1e91f03bea48354fa82}{imm\_double}});}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{cmd_8h_source_l00176}{args}}, \mbox{\hyperlink{cmd_8h_source_l00029}{Cmd\+Keys\+::imm\+\_\+double}}, \mbox{\hyperlink{cmd_8h_source_l00085}{Cmd\+Args\+::imm\+\_\+double}}, \mbox{\hyperlink{cmd_8h_source_l00030}{Cmd\+Keys\+::imm\+\_\+int}}, \mbox{\hyperlink{cmd_8h_source_l00087}{Cmd\+Args\+::imm\+\_\+int}}, \mbox{\hyperlink{cmd_8h_source_l00175}{keys}}, \mbox{\hyperlink{cmd_8h_source_l00028}{Cmd\+Keys\+::reg}}, and \mbox{\hyperlink{cmd_8h_source_l00086}{Cmd\+Args\+::reg}}.
+
+
+
+Referenced by \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, and \mbox{\hyperlink{spu_8cpp_source_l00137}{spu\+\_\+execute()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structCmd_ad3fa66964fc662181ab833aef4a72db0}\label{structCmd_ad3fa66964fc662181ab833aef4a72db0} 
+\index{Cmd@{Cmd}!args@{args}}
+\index{args@{args}!Cmd@{Cmd}}
+\doxysubsubsection{\texorpdfstring{args}{args}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structCmdArgs}{Cmd\+Args}} Cmd\+::args = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00176}{176}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00176\ \{\};\ \ \ \ \textcolor{comment}{//<\ command\ args}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{write_8h_source_l00057}{asm\+\_\+calc\+\_\+cmd\+\_\+size()}}, \mbox{\hyperlink{read_8cpp_source_l00143}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, \mbox{\hyperlink{read_8cpp_source_l00118}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}, \mbox{\hyperlink{read_8cpp_source_l00168}{asm\+\_\+read\+\_\+arg\+\_\+label()}}, \mbox{\hyperlink{read_8cpp_source_l00087}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}, \mbox{\hyperlink{write_8cpp_source_l00025}{asm\+\_\+write\+\_\+cmd\+\_\+bin()}}, \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{listing_8h_source_l00048}{cmd\+\_\+listing\+\_\+calc\+\_\+tab()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, \mbox{\hyperlink{cmd_8cpp_source_l00021}{size()}}, and \mbox{\hyperlink{spu_8cpp_source_l00109}{spu\+\_\+read\+\_\+cmd()}}.
+
+\Hypertarget{structCmd_a8df32ebe09e03d38de8c20f6266611b4}\label{structCmd_a8df32ebe09e03d38de8c20f6266611b4} 
+\index{Cmd@{Cmd}!info@{info}}
+\index{info@{info}!Cmd@{Cmd}}
+\doxysubsubsection{\texorpdfstring{info}{info}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structCmdInfo}{Cmd\+Info}}\texorpdfstring{$\ast$}{*} Cmd\+::info = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00173}{173}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{read_8cpp_source_l00143}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, \mbox{\hyperlink{read_8cpp_source_l00118}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}, \mbox{\hyperlink{read_8cpp_source_l00168}{asm\+\_\+read\+\_\+arg\+\_\+label()}}, \mbox{\hyperlink{read_8cpp_source_l00087}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}, \mbox{\hyperlink{read_8cpp_source_l00053}{asm\+\_\+read\+\_\+args\+\_\+ram()}}, \mbox{\hyperlink{read_8cpp_source_l00005}{asm\+\_\+read\+\_\+cmd()}}, \mbox{\hyperlink{write_8cpp_source_l00025}{asm\+\_\+write\+\_\+cmd\+\_\+bin()}}, \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{errors_8h_source_l00049}{cmd\+\_\+is\+\_\+arg\+\_\+required()}}, \mbox{\hyperlink{listing_8h_source_l00048}{cmd\+\_\+listing\+\_\+calc\+\_\+tab()}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}.
+
+\Hypertarget{structCmd_a0a38a0e6be202854d97c4637280f5914}\label{structCmd_a0a38a0e6be202854d97c4637280f5914} 
+\index{Cmd@{Cmd}!keys@{keys}}
+\index{keys@{keys}!Cmd@{Cmd}}
+\doxysubsubsection{\texorpdfstring{keys}{keys}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structCmdKeys}{Cmd\+Keys}} Cmd\+::keys = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00175}{175}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00175\ \{\};\ \ \ \ \textcolor{comment}{//<\ command\ keys}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{write_8h_source_l00057}{asm\+\_\+calc\+\_\+cmd\+\_\+size()}}, \mbox{\hyperlink{read_8cpp_source_l00143}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, \mbox{\hyperlink{read_8cpp_source_l00118}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}, \mbox{\hyperlink{read_8cpp_source_l00168}{asm\+\_\+read\+\_\+arg\+\_\+label()}}, \mbox{\hyperlink{read_8cpp_source_l00087}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}, \mbox{\hyperlink{read_8cpp_source_l00053}{asm\+\_\+read\+\_\+args\+\_\+ram()}}, \mbox{\hyperlink{read_8cpp_source_l00005}{asm\+\_\+read\+\_\+cmd()}}, \mbox{\hyperlink{write_8cpp_source_l00025}{asm\+\_\+write\+\_\+cmd\+\_\+bin()}}, \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{errors_8h_source_l00066}{cmd\+\_\+is\+\_\+any\+\_\+arg\+\_\+given()}}, \mbox{\hyperlink{listing_8h_source_l00048}{cmd\+\_\+listing\+\_\+calc\+\_\+tab()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, \mbox{\hyperlink{cmd_8cpp_source_l00021}{size()}}, \mbox{\hyperlink{spu_8cpp_source_l00137}{spu\+\_\+execute()}}, and \mbox{\hyperlink{spu_8cpp_source_l00109}{spu\+\_\+read\+\_\+cmd()}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+shared/\mbox{\hyperlink{cmd_8h}{cmd.\+h}}\item 
+shared/\mbox{\hyperlink{cmd_8cpp}{cmd.\+cpp}}\end{DoxyCompactItemize}

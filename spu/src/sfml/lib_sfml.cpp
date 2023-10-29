@@ -10,10 +10,11 @@ bool sfmlWindow::ctor(const unsigned int pixel_width, const unsigned int pixel_h
     assert(hor_num > 0);
     assert(ver_num > 0);
 
-    width = hor_num;
+    width  = hor_num;
     height = ver_num;
 
-    window = new(std::nothrow) sf::RenderWindow(sf::VideoMode(pixel_width * hor_num, pixel_height * ver_num), header);
+    window = new(std::nothrow) sf::RenderWindow(sf::VideoMode(pixel_width  * hor_num,
+                                                              pixel_height * ver_num), header);
     window->setPosition(sf::Vector2i(25, 25));
 
     pixels = new(std::nothrow) sf::RectangleShape[hor_num * ver_num];

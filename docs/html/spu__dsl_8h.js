@@ -5,6 +5,9 @@ var spu__dsl_8h =
     [ "ARG_REG", "spu__dsl_8h.html#affc73a1d6edef707baa2c67176322169", null ],
     [ "BINARY_OPERATOR", "spu__dsl_8h.html#a81c98de12ee60ca088f9addf8e178cb2", null ],
     [ "CHECK_AND_THROW_ERR", "spu__dsl_8h.html#a226e577a36ed0a410a8affc1cd05ce25", null ],
+    [ "CHECK_GET_LVALUE_PTR_ARGS", "spu__dsl_8h.html#aeb4375fa852a1fdffdb3355c1907169e", null ],
+    [ "CHECK_GET_RVALUE_ARGS", "spu__dsl_8h.html#ad2091db5b73879d5df44357bb53d54a2", null ],
+    [ "CHECK_JUMP_DESTINATION_ARGS", "spu__dsl_8h.html#ac5b99e74858b18d3129fd7a4476dee1f", null ],
     [ "DUMP", "spu__dsl_8h.html#a68e4a10cfd30e33ab1e506f696729336", null ],
     [ "GET_FROM_INPUT", "spu__dsl_8h.html#a1f92e847fc8c4ba1353b03992c5eeb5a", null ],
     [ "GET_INSTRUCTION_PTR", "spu__dsl_8h.html#aeb6d3ba3cc029fcb8ac45f2e3853ef2d", null ],
@@ -25,7 +28,6 @@ var spu__dsl_8h =
     [ "IS_LOWER_EQUAL_IMM_DOUBLE", "spu__dsl_8h.html#a340ff9bde723761c762599f264168925", null ],
     [ "IS_LOWER_IMM_DOUBLE", "spu__dsl_8h.html#afd5d285cb1c8f414db8ebe957435d821", null ],
     [ "JUMP", "spu__dsl_8h.html#aaf30322f59aa465eb1161227f8986838", null ],
-    [ "JUMP_CHECK_ARGS", "spu__dsl_8h.html#a9df1b497775c087bfb7f8c39e4a0f3d0", null ],
     [ "JUMP_CLAUSE", "spu__dsl_8h.html#a1cf72c3e92ee96c0deff85926ec6199a", null ],
     [ "JUMP_CLAUSE_FUNC", "spu__dsl_8h.html#a8da47d72071c71c053638fde446eb8cf", null ],
     [ "JUMP_DESTINATION", "spu__dsl_8h.html#af83302c0334071493354c0c3ecc9c0ec", null ],
@@ -40,5 +42,6 @@ var spu__dsl_8h =
     [ "UNARY_OPERATOR", "spu__dsl_8h.html#a0e78009ab0c6fe5165541468db781072", null ],
     [ "get_lvalue_ptr_", "spu__dsl_8h.html#a11501ee59a7a70b380249c79d9b24f74", null ],
     [ "get_rvalue_", "spu__dsl_8h.html#ae1fccf3dc3b51475a1ffefacd0d2bddc", null ],
+    [ "jump_destination_", "spu__dsl_8h.html#ad1755ad4cbdc44e0cf839ad7d3556d0d", null ],
     [ "WEEKDAY", "spu__dsl_8h.html#a8caccf4e8da6d5009b7b4a8f0bb48098", null ]
 ];

@@ -6,72 +6,60 @@ static_assert(0 && "DEF_CMD is not defined");
 
 DEF_CMD(hlt,   0, ARG_NONE, "halt - end of program", {HALT();})
 
-DEF_CMD(push,  1, ARG_REG | ARG_IMM_DOUBLE | ARG_IMM_INT | ARG_RAM | ARG_LABEL,
-       "push to stack", {
-
-    CHECK_AND_THROW_ERR(IS_ARG_REG || IS_ARG_IMM_DOUBLE || IS_ARG_IMM_INT,
-                        "\"push\" requires at least one argument.");
-
+DEF_CMD(push,  1, ARG_REG | ARG_IMM_DOUBLE | ARG_IMM_INT | ARG_RAM | ARG_LABEL, "push to stack", {
+    CHECK_GET_RVALUE_ARGS();
     PUSH(GET_RVALUE());
 })
 
 DEF_CMD(pop,   2, ARG_REG | ARG_IMM_INT | ARG_RAM,  "pop from stack and write somewhere", {
-    CHECK_AND_THROW_ERR(IS_ARG_REG || IS_ARG_IMM_INT, "\"pop\" requires reg.");
-
+    CHECK_GET_LVALUE_PTR_ARGS();
     POP(GET_LVALUE_PTR());
 })
 
 DEF_CMD(jmp,   3, ARG_REG | ARG_LABEL, "jump", {
-    JUMP_CHECK_ARGS();
-
+    CHECK_JUMP_DESTINATION_ARGS();
     JUMP(JUMP_DESTINATION());
 })
 
 DEF_CMD(ja,    4, ARG_REG | ARG_LABEL, "jump >", {
-    JUMP_CHECK_ARGS();
-
+    CHECK_JUMP_DESTINATION_ARGS();
     JUMP_CLAUSE_FUNC(IS_GREATER_IMM_DOUBLE, JUMP_DESTINATION());
 })
 
 DEF_CMD(jae,   5, ARG_REG | ARG_LABEL, "jump >=", {
-    JUMP_CHECK_ARGS();
-
+    CHECK_JUMP_DESTINATION_ARGS();
     JUMP_CLAUSE_FUNC(IS_GREATER_EQUAL_IMM_DOUBLE, JUMP_DESTINATION());
 })
 
 DEF_CMD(jb,    6, ARG_REG | ARG_LABEL, "jump <", {
-    JUMP_CHECK_ARGS();
-
+    CHECK_JUMP_DESTINATION_ARGS();
     JUMP_CLAUSE_FUNC(IS_LOWER_IMM_DOUBLE, JUMP_DESTINATION());
 })
 
 DEF_CMD(jbe,   7, ARG_REG | ARG_LABEL, "jump <=", {
-    JUMP_CHECK_ARGS();
-
+    CHECK_JUMP_DESTINATION_ARGS();
     JUMP_CLAUSE_FUNC(IS_LOWER_EQUAL_IMM_DOUBLE, JUMP_DESTINATION());
 })
 
 DEF_CMD(je,    8, ARG_REG | ARG_LABEL, "jump ==", {
-    JUMP_CHECK_ARGS();
-
+    CHECK_JUMP_DESTINATION_ARGS();
     JUMP_CLAUSE_FUNC(IS_EQUAL_IMM_DOUBLE, JUMP_DESTINATION());
 })
 
 DEF_CMD(jne,   9, ARG_REG | ARG_LABEL, "jump !=", {
-    JUMP_CHECK_ARGS();
-
+    CHECK_JUMP_DESTINATION_ARGS();
     JUMP_CLAUSE_FUNC(!IS_EQUAL_IMM_DOUBLE, JUMP_DESTINATION());
 })
 
 DEF_CMD(jf,   10, ARG_REG | ARG_LABEL, "jump on Fridays", {
-    JUMP_CHECK_ARGS();
+    CHECK_JUMP_DESTINATION_ARGS();
 
     if (WEEKDAY() == 5)
         JUMP(JUMP_DESTINATION());
 })
 
 DEF_CMD(call, 11, ARG_REG | ARG_LABEL, "call - go to procedure", {
-    JUMP_CHECK_ARGS();
+    CHECK_JUMP_DESTINATION_ARGS();
 
     PUSH((IMM_DOUBLE_T)GET_NEXT_INSTRUCTION_PTR());
 
@@ -122,8 +110,7 @@ DEF_CMD(shw,  32, ARG_NONE,  "Graphics update", {
     SHOW();
 })
 
-DEF_CMD(fps,  33, ARG_IMM_DOUBLE,  "Graphics update", {
-    CHECK_AND_THROW_ERR(IS_ARG_IMM_DOUBLE, "\"fps\" requires fps number.");
-
-    SET_FPS(ARG_IMM_DOUBLE);
+DEF_CMD(fps,  33, ARG_REG | ARG_IMM_DOUBLE | ARG_IMM_INT | ARG_RAM | ARG_LABEL,  "Graphics update", {
+    CHECK_GET_RVALUE_ARGS();
+    SET_FPS(GET_RVALUE());
 })

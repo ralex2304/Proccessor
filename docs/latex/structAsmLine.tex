@@ -1,0 +1,140 @@
+\doxysection{Asm\+Line Struct Reference}
+\hypertarget{structAsmLine}{}\label{structAsmLine}\index{AsmLine@{AsmLine}}
+
+
+Keeps asm code line data.  
+
+
+
+
+{\ttfamily \#include $<$asm.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structString}{String}} \mbox{\hyperlink{structAsmLine_ad34cdcc2f2a00dfc673533ce096385cd}{text}} = \{\}
+\item 
+size\+\_\+t \mbox{\hyperlink{structAsmLine_a1efe4fc5f49367a3222c7f2de35bdf85}{num}} = 0
+\item 
+\mbox{\hyperlink{structCmd}{Cmd}} \mbox{\hyperlink{structAsmLine_a950aaae2050d4a998629a5570ce6b864}{cmd}} = \{\}
+\item 
+\mbox{\hyperlink{structString}{String}} \mbox{\hyperlink{structAsmLine_a67847c1e073155eeea8d2b07137dc4c9}{tokens}} \mbox{[}\mbox{\hyperlink{cmd_8h_a150c0fc704c3322a038de77fa5ff4e7b}{MAX\+\_\+\+LINE\+\_\+\+LEN}}+1\mbox{]} = \{\}
+\item 
+size\+\_\+t \mbox{\hyperlink{structAsmLine_a67aa735131bb2889b9e1f384ec74b1a0}{cur\+\_\+token}} = 0
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structAsmLine_acee75750dc864d13e25f72dc57888092}{comment}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Keeps asm code line data. 
+
+Definition at line \mbox{\hyperlink{asm_8h_source_l00021}{21}} of file \mbox{\hyperlink{asm_8h_source}{asm.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structAsmLine_a950aaae2050d4a998629a5570ce6b864}\label{structAsmLine_a950aaae2050d4a998629a5570ce6b864} 
+\index{AsmLine@{AsmLine}!cmd@{cmd}}
+\index{cmd@{cmd}!AsmLine@{AsmLine}}
+\doxysubsubsection{\texorpdfstring{cmd}{cmd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structCmd}{Cmd}} Asm\+Line\+::cmd = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{asm_8h_source_l00025}{25}} of file \mbox{\hyperlink{asm_8h_source}{asm.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ command}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00056}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}, \mbox{\hyperlink{read_8cpp_source_l00143}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, \mbox{\hyperlink{read_8cpp_source_l00118}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}, \mbox{\hyperlink{read_8cpp_source_l00168}{asm\+\_\+read\+\_\+arg\+\_\+label()}}, \mbox{\hyperlink{read_8cpp_source_l00087}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}, \mbox{\hyperlink{read_8cpp_source_l00053}{asm\+\_\+read\+\_\+args\+\_\+ram()}}, \mbox{\hyperlink{read_8cpp_source_l00005}{asm\+\_\+read\+\_\+cmd()}}, \mbox{\hyperlink{write_8cpp_source_l00003}{asm\+\_\+write\+\_\+cmd()}}, and \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}.
+
+\Hypertarget{structAsmLine_acee75750dc864d13e25f72dc57888092}\label{structAsmLine_acee75750dc864d13e25f72dc57888092} 
+\index{AsmLine@{AsmLine}!comment@{comment}}
+\index{comment@{comment}!AsmLine@{AsmLine}}
+\doxysubsubsection{\texorpdfstring{comment}{comment}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} Asm\+Line\+::comment = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{asm_8h_source_l00029}{29}} of file \mbox{\hyperlink{asm_8h_source}{asm.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00056}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}, and \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}.
+
+\Hypertarget{structAsmLine_a67aa735131bb2889b9e1f384ec74b1a0}\label{structAsmLine_a67aa735131bb2889b9e1f384ec74b1a0} 
+\index{AsmLine@{AsmLine}!cur\_token@{cur\_token}}
+\index{cur\_token@{cur\_token}!AsmLine@{AsmLine}}
+\doxysubsubsection{\texorpdfstring{cur\_token}{cur\_token}}
+{\footnotesize\ttfamily size\+\_\+t Asm\+Line\+::cur\+\_\+token = 0}
+
+
+
+Definition at line \mbox{\hyperlink{asm_8h_source_l00028}{28}} of file \mbox{\hyperlink{asm_8h_source}{asm.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00056}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}, \mbox{\hyperlink{read_8cpp_source_l00143}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, \mbox{\hyperlink{read_8cpp_source_l00118}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}, \mbox{\hyperlink{read_8cpp_source_l00168}{asm\+\_\+read\+\_\+arg\+\_\+label()}}, \mbox{\hyperlink{read_8cpp_source_l00087}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}, \mbox{\hyperlink{read_8cpp_source_l00053}{asm\+\_\+read\+\_\+args\+\_\+ram()}}, \mbox{\hyperlink{read_8cpp_source_l00005}{asm\+\_\+read\+\_\+cmd()}}, and \mbox{\hyperlink{errors_8cpp_source_l00003}{asm\+\_\+throw\+\_\+syntax\+\_\+error()}}.
+
+\Hypertarget{structAsmLine_a1efe4fc5f49367a3222c7f2de35bdf85}\label{structAsmLine_a1efe4fc5f49367a3222c7f2de35bdf85} 
+\index{AsmLine@{AsmLine}!num@{num}}
+\index{num@{num}!AsmLine@{AsmLine}}
+\doxysubsubsection{\texorpdfstring{num}{num}}
+{\footnotesize\ttfamily size\+\_\+t Asm\+Line\+::num = 0}
+
+
+
+Definition at line \mbox{\hyperlink{asm_8h_source_l00023}{23}} of file \mbox{\hyperlink{asm_8h_source}{asm.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{errors_8cpp_source_l00003}{asm\+\_\+throw\+\_\+syntax\+\_\+error()}}, and \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}.
+
+\Hypertarget{structAsmLine_ad34cdcc2f2a00dfc673533ce096385cd}\label{structAsmLine_ad34cdcc2f2a00dfc673533ce096385cd} 
+\index{AsmLine@{AsmLine}!text@{text}}
+\index{text@{text}!AsmLine@{AsmLine}}
+\doxysubsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structString}{String}} Asm\+Line\+::text = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{asm_8h_source_l00022}{22}} of file \mbox{\hyperlink{asm_8h_source}{asm.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ current\ line\ text}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00083}{asm\+\_\+do\+\_\+pass()}}, \mbox{\hyperlink{assembler_8cpp_source_l00056}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}, \mbox{\hyperlink{errors_8cpp_source_l00003}{asm\+\_\+throw\+\_\+syntax\+\_\+error()}}, and \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}.
+
+\Hypertarget{structAsmLine_a67847c1e073155eeea8d2b07137dc4c9}\label{structAsmLine_a67847c1e073155eeea8d2b07137dc4c9} 
+\index{AsmLine@{AsmLine}!tokens@{tokens}}
+\index{tokens@{tokens}!AsmLine@{AsmLine}}
+\doxysubsubsection{\texorpdfstring{tokens}{tokens}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structString}{String}} Asm\+Line\+::tokens\mbox{[}\mbox{\hyperlink{cmd_8h_a150c0fc704c3322a038de77fa5ff4e7b}{MAX\+\_\+\+LINE\+\_\+\+LEN}}+1\mbox{]} = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{asm_8h_source_l00027}{27}} of file \mbox{\hyperlink{asm_8h_source}{asm.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \{\};\ \ \ \textcolor{comment}{//<\ tokenised\ line}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00056}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}, \mbox{\hyperlink{read_8cpp_source_l00143}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, \mbox{\hyperlink{read_8cpp_source_l00118}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}, \mbox{\hyperlink{read_8cpp_source_l00168}{asm\+\_\+read\+\_\+arg\+\_\+label()}}, \mbox{\hyperlink{read_8cpp_source_l00087}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}, \mbox{\hyperlink{read_8cpp_source_l00053}{asm\+\_\+read\+\_\+args\+\_\+ram()}}, \mbox{\hyperlink{read_8cpp_source_l00005}{asm\+\_\+read\+\_\+cmd()}}, and \mbox{\hyperlink{errors_8cpp_source_l00003}{asm\+\_\+throw\+\_\+syntax\+\_\+error()}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+assembler/src/asm/\mbox{\hyperlink{asm_8h}{asm.\+h}}\end{DoxyCompactItemize}

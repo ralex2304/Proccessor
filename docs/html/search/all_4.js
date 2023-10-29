@@ -10,5 +10,7 @@ var searchData=
   ['errors_2ecpp_7',['errors.cpp',['../errors_8cpp.html',1,'']]],
   ['errors_2ed_8',['errors.d',['../errors_8d.html',1,'']]],
   ['errors_2eh_9',['errors.h',['../errors_8h.html',1,'']]],
-  ['exit_10',['EXIT',['../args__parser_8h.html#a1f9b651227837e4a1479f53662e38d2eaa42b2fb0e720a080e79a92f4ca97d927',1,'args_parser.h']]]
+  ['example_10',['Syntax example',['../index.html#autotoc_md4',1,'']]],
+  ['examples_11',['Examples',['../index.html#autotoc_md20',1,'']]],
+  ['exit_12',['EXIT',['../args__parser_8h.html#a1f9b651227837e4a1479f53662e38d2eaa42b2fb0e720a080e79a92f4ca97d927',1,'args_parser.h']]]
 ];

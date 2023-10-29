@@ -96,9 +96,8 @@ Status::Statuses asm_do_pass(Asm* asm_data, const InputData* input_data, FILE* l
             return Status::OUT_FILE_ERROR;
 
     for (size_t i = 0; i < input_data->lines_cnt; i++) {
-        AsmLine line = {};
-        line.num = i + 1;
-        line.text = input_data->lines[i];
+        AsmLine line = {.text = input_data->lines[i],
+                        .num = i + 1};
 
         STATUS_CHECK(asm_parse_and_write_line(asm_data, &line, lst_file));
     }

@@ -12,10 +12,10 @@
 \DoxyCodeLine{\Hypertarget{file_8h_source_l00008}00008\ }
 \DoxyCodeLine{\Hypertarget{file_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}../utils/statuses.h"{}}}
 \DoxyCodeLine{\Hypertarget{file_8h_source_l00010}00010\ }
-\DoxyCodeLine{\Hypertarget{file_8h_source_l00020}00020\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{file_8h_ae69e14c050f7ae38e4dc4711f1f6da00}{file\_open\_read\_close}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,\ \textcolor{keywordtype}{char}**\ buf,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ additional\_memory\ =\ 0,}
+\DoxyCodeLine{\Hypertarget{file_8h_source_l00020}00020\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{file_8h_ae69e14c050f7ae38e4dc4711f1f6da00}{file\_open\_read\_close}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,\ \textcolor{keywordtype}{char}**\ buf,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ additional\_memory\ =\ 0,}
 \DoxyCodeLine{\Hypertarget{file_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}*\ size\ =\ \textcolor{keyword}{nullptr});}
 \DoxyCodeLine{\Hypertarget{file_8h_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{file_8h_source_l00031}00031\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{file_8h_a6ab5d9a2ccdbe22341b16fc8c101a484}{file\_open\_write\_bytes\_close}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,\ \textcolor{keywordtype}{char}*\ buf,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{\Hypertarget{file_8h_source_l00031}00031\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{file_8h_a6ab5d9a2ccdbe22341b16fc8c101a484}{file\_open\_write\_bytes\_close}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,\ \textcolor{keywordtype}{char}*\ buf,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ size);}
 \DoxyCodeLine{\Hypertarget{file_8h_source_l00032}00032\ }
 \DoxyCodeLine{\Hypertarget{file_8h_source_l00042}00042\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{file_8h_abb897c7e353e490dd5c92b5a13d14fa6}{file\_open}}(FILE**\ file,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ mode);}
 \DoxyCodeLine{\Hypertarget{file_8h_source_l00043}00043\ }
@@ -28,9 +28,9 @@
 \DoxyCodeLine{\Hypertarget{file_8h_source_l00082}00082\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{file_8h_a68a322f778a4f850372b482bcc35c0d5}{file\_write\_bytes}}(FILE*\ file,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ \textcolor{keywordtype}{size\_t}\ len);}
 \DoxyCodeLine{\Hypertarget{file_8h_source_l00083}00083\ }
 \DoxyCodeLine{\Hypertarget{file_8h_source_l00084}00084\ \textcolor{preprocessor}{\#ifdef\ \_\_GNUG\_\_\ }\textcolor{comment}{//\ because\ of\ \_\_attribute\_\_}}
-\DoxyCodeLine{\Hypertarget{file_8h_source_l00093}00093\ \textcolor{comment}{}int\ file\_printf(FILE*\ file,\ const\ char*\ format,\ ...)\ \_\_attribute\_\_\ ((format(printf,\ 2,\ 3)));}
+\DoxyCodeLine{\Hypertarget{file_8h_source_l00093}00093\ int\ file\_printf(FILE*\ file,\ const\ char*\ format,\ ...)\ \_\_attribute\_\_\ ((format(printf,\ 2,\ 3)));}
 \DoxyCodeLine{\Hypertarget{file_8h_source_l00094}00094\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ \#ifndef\ \_\_GNUG\_\_}}
-\DoxyCodeLine{\Hypertarget{file_8h_source_l00103}00103\ \textcolor{comment}{}int\ file\_printf(FILE*\ file,\ const\ char*\ format,\ ...);}
+\DoxyCodeLine{\Hypertarget{file_8h_source_l00103}00103\ int\ file\_printf(FILE*\ file,\ const\ char*\ format,\ ...);}
 \DoxyCodeLine{\Hypertarget{file_8h_source_l00104}00104\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \#ifdef\ \_\_GNUG\_\_}}
 \DoxyCodeLine{\Hypertarget{file_8h_source_l00105}00105\ }
 \DoxyCodeLine{\Hypertarget{file_8h_source_l00113}00113\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{file_8h_a05e9d68396b2edded16e519d4de5605a}{file\_close}}(FILE*\ file);}

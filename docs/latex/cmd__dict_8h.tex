@@ -3,15 +3,15 @@
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{cmd__dict_8h_aef4901f07ef95f5a756bf191bff6be10}{DEF\+\_\+\+CMD}} (push, 1, \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\+\_\+\+REG}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{spu__dsl_8h_ab61b6344b067c61cf8a583577051c78e}{ARG\+\_\+\+IMM\+\_\+\+DOUBLE}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{spu__dsl_8h_a2f622510378832f7dd7e9abdebaafac3}{ARG\+\_\+\+IMM\+\_\+\+INT}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea9c7e521f91058471f6ff30e0f755d2bd}{ARG\+\_\+\+RAM}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562eafaec295d1133fe7eb6d88fc828fa4d86}{ARG\+\_\+\+LABEL}}, \"{}push to stack\"{}, \{ \mbox{\hyperlink{spu__dsl_8h_a226e577a36ed0a410a8affc1cd05ce25}{CHECK\+\_\+\+AND\+\_\+\+THROW\+\_\+\+ERR}}(\mbox{\hyperlink{spu__dsl_8h_a487a6897858a9db1907ebf1906b9db7e}{IS\+\_\+\+ARG\+\_\+\+REG}}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{spu__dsl_8h_ae99b8cd524bcb719d3d5657bc927f24b}{IS\+\_\+\+ARG\+\_\+\+IMM\+\_\+\+DOUBLE}}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{spu__dsl_8h_a5876f6b74a68e69785a3c35bb674f058}{IS\+\_\+\+ARG\+\_\+\+IMM\+\_\+\+INT}}, \"{}\textbackslash{}\"{}push\textbackslash{}\"{} requires at least one argument.\"{});\mbox{\hyperlink{spu__dsl_8h_ae12240a3f4de46ee0616d67825971f44}{PUSH}}(\mbox{\hyperlink{spu__dsl_8h_a52cb809ee1e57e683b950d9ed1842552}{GET\+\_\+\+RVALUE}}());\}) DEF\+\_\+\+CMD(pop
+\mbox{\hyperlink{cmd__dict_8h_a91f5099e373c218a99fd8a97012734a9}{DEF\+\_\+\+CMD}} (push, 1, \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\+\_\+\+REG}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{spu__dsl_8h_ab61b6344b067c61cf8a583577051c78e}{ARG\+\_\+\+IMM\+\_\+\+DOUBLE}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{spu__dsl_8h_a2f622510378832f7dd7e9abdebaafac3}{ARG\+\_\+\+IMM\+\_\+\+INT}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea9c7e521f91058471f6ff30e0f755d2bd}{ARG\+\_\+\+RAM}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562eafaec295d1133fe7eb6d88fc828fa4d86}{ARG\+\_\+\+LABEL}}, "{}push to stack"{}, \{ \mbox{\hyperlink{spu__dsl_8h_ad2091db5b73879d5df44357bb53d54a2}{CHECK\+\_\+\+GET\+\_\+\+RVALUE\+\_\+\+ARGS}}();\mbox{\hyperlink{spu__dsl_8h_ae12240a3f4de46ee0616d67825971f44}{PUSH}}(\mbox{\hyperlink{spu__dsl_8h_a52cb809ee1e57e683b950d9ed1842552}{GET\+\_\+\+RVALUE}}());\}) DEF\+\_\+\+CMD(pop
 \item 
 \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\+\_\+\+REG}} \mbox{\hyperlink{spu__dsl_8h_a2f622510378832f7dd7e9abdebaafac3}{ARG\+\_\+\+IMM\+\_\+\+INT}} pop from stack and write \mbox{\hyperlink{cmd__dict_8h_a60cb792d559a08ddff862dab65909e79}{POP}} (\mbox{\hyperlink{spu__dsl_8h_a4e676f0644b91fc997514d32a5f41f59}{GET\+\_\+\+LVALUE\+\_\+\+PTR}}())
 \item 
-\mbox{\hyperlink{cmd__dict_8h_a7eca6420068c47942493dd892032904a}{DEF\+\_\+\+CMD}} (jmp, 3, \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\+\_\+\+REG}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562eafaec295d1133fe7eb6d88fc828fa4d86}{ARG\+\_\+\+LABEL}}, \"{}jump\"{}, \{ \mbox{\hyperlink{spu__dsl_8h_a9df1b497775c087bfb7f8c39e4a0f3d0}{JUMP\+\_\+\+CHECK\+\_\+\+ARGS}}();\mbox{\hyperlink{spu__dsl_8h_aaf30322f59aa465eb1161227f8986838}{JUMP}}(\mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\+\_\+\+DESTINATION}}());\}) DEF\+\_\+\+CMD(ja
+\mbox{\hyperlink{cmd__dict_8h_ad6a6105c10655aa6efd38dde46085e90}{DEF\+\_\+\+CMD}} (jmp, 3, \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\+\_\+\+REG}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562eafaec295d1133fe7eb6d88fc828fa4d86}{ARG\+\_\+\+LABEL}}, "{}jump"{}, \{ \mbox{\hyperlink{spu__dsl_8h_ac5b99e74858b18d3129fd7a4476dee1f}{CHECK\+\_\+\+JUMP\+\_\+\+DESTINATION\+\_\+\+ARGS}}();\mbox{\hyperlink{spu__dsl_8h_aaf30322f59aa465eb1161227f8986838}{JUMP}}(\mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\+\_\+\+DESTINATION}}());\}) DEF\+\_\+\+CMD(ja
 \item 
 \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\+\_\+\+REG}} \mbox{\hyperlink{cmd__dict_8h_ace2ca7d464eb1e33055ce5915108ad15}{JUMP\+\_\+\+CLAUSE\+\_\+\+FUNC}} (\mbox{\hyperlink{spu__dsl_8h_af20bfd59843f7585f68991ebce472c8f}{IS\+\_\+\+GREATER\+\_\+\+IMM\+\_\+\+DOUBLE}}, \mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\+\_\+\+DESTINATION}}())
 \item 
-\mbox{\hyperlink{cmd__dict_8h_a5593e56b5987eeed0890eed1a52ccf6a}{DEF\+\_\+\+CMD}} (jae, 5, \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\+\_\+\+REG}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562eafaec295d1133fe7eb6d88fc828fa4d86}{ARG\+\_\+\+LABEL}}, \"{}jump $>$=\"{}, \{ JUMP\+\_\+\+CHECK\+\_\+\+ARGS();\mbox{\hyperlink{spu__dsl_8h_a8da47d72071c71c053638fde446eb8cf}{JUMP\+\_\+\+CLAUSE\+\_\+\+FUNC}}(\mbox{\hyperlink{spu__dsl_8h_ad04464cd2bebd34a53966d4f46865b24}{IS\+\_\+\+GREATER\+\_\+\+EQUAL\+\_\+\+IMM\+\_\+\+DOUBLE}}, \mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\+\_\+\+DESTINATION}}());\}) DEF\+\_\+\+CMD(jb
+\mbox{\hyperlink{cmd__dict_8h_a110c0605c7d18022cc27b568fd273514}{DEF\+\_\+\+CMD}} (jae, 5, \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\+\_\+\+REG}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562eafaec295d1133fe7eb6d88fc828fa4d86}{ARG\+\_\+\+LABEL}}, "{}jump $>$="{}, \{ CHECK\+\_\+\+JUMP\+\_\+\+DESTINATION\+\_\+\+ARGS();\mbox{\hyperlink{spu__dsl_8h_a8da47d72071c71c053638fde446eb8cf}{JUMP\+\_\+\+CLAUSE\+\_\+\+FUNC}}(\mbox{\hyperlink{spu__dsl_8h_ad04464cd2bebd34a53966d4f46865b24}{IS\+\_\+\+GREATER\+\_\+\+EQUAL\+\_\+\+IMM\+\_\+\+DOUBLE}}, \mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\+\_\+\+DESTINATION}}());\}) DEF\+\_\+\+CMD(jb
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -27,35 +27,35 @@
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{cmd__dict_8h_a5593e56b5987eeed0890eed1a52ccf6a}\label{cmd__dict_8h_a5593e56b5987eeed0890eed1a52ccf6a} 
+\Hypertarget{cmd__dict_8h_a110c0605c7d18022cc27b568fd273514}\label{cmd__dict_8h_a110c0605c7d18022cc27b568fd273514} 
 \index{cmd\_dict.h@{cmd\_dict.h}!DEF\_CMD@{DEF\_CMD}}
 \index{DEF\_CMD@{DEF\_CMD}!cmd\_dict.h@{cmd\_dict.h}}
 \doxysubsubsection{\texorpdfstring{DEF\_CMD()}{DEF\_CMD()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily DEF\+\_\+\+CMD (\begin{DoxyParamCaption}\item[{jae}]{,  }\item[{5}]{,  }\item[{\mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\+\_\+\+REG}}\texorpdfstring{$\vert$}{|}}]{ARG\+\_\+\+LABEL,  }\item[{\"{}jump $>$=\"{}}]{,  }\item[{\{ \mbox{\hyperlink{spu__dsl_8h_a9df1b497775c087bfb7f8c39e4a0f3d0}{JUMP\+\_\+\+CHECK\+\_\+\+ARGS}}();\mbox{\hyperlink{spu__dsl_8h_a8da47d72071c71c053638fde446eb8cf}{JUMP\+\_\+\+CLAUSE\+\_\+\+FUNC}}(\mbox{\hyperlink{spu__dsl_8h_ad04464cd2bebd34a53966d4f46865b24}{IS\+\_\+\+GREATER\+\_\+\+EQUAL\+\_\+\+IMM\+\_\+\+DOUBLE}}, \mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\+\_\+\+DESTINATION}}());\}}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily DEF\+\_\+\+CMD (\begin{DoxyParamCaption}\item[{jae}]{,  }\item[{5}]{,  }\item[{\mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\+\_\+\+REG}}\texorpdfstring{$\vert$}{|}}]{ARG\+\_\+\+LABEL,  }\item[{"{}jump $>$="{}}]{,  }\item[{\{ \mbox{\hyperlink{spu__dsl_8h_ac5b99e74858b18d3129fd7a4476dee1f}{CHECK\+\_\+\+JUMP\+\_\+\+DESTINATION\+\_\+\+ARGS}}();\mbox{\hyperlink{spu__dsl_8h_a8da47d72071c71c053638fde446eb8cf}{JUMP\+\_\+\+CLAUSE\+\_\+\+FUNC}}(\mbox{\hyperlink{spu__dsl_8h_ad04464cd2bebd34a53966d4f46865b24}{IS\+\_\+\+GREATER\+\_\+\+EQUAL\+\_\+\+IMM\+\_\+\+DOUBLE}}, \mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\+\_\+\+DESTINATION}}());\}}]{ }\end{DoxyParamCaption})}
 
 
 
-References \mbox{\hyperlink{spu__dsl_8h_source_l00032}{IS\+\_\+\+GREATER\+\_\+\+EQUAL\+\_\+\+IMM\+\_\+\+DOUBLE}}, \mbox{\hyperlink{spu__dsl_8h_source_l00246}{JUMP\+\_\+\+CHECK\+\_\+\+ARGS}}, \mbox{\hyperlink{spu__dsl_8h_source_l00236}{JUMP\+\_\+\+CLAUSE\+\_\+\+FUNC}}, and \mbox{\hyperlink{spu__dsl_8h_source_l00252}{JUMP\+\_\+\+DESTINATION}}.
+References \mbox{\hyperlink{spu__dsl_8h_source_l00283}{CHECK\+\_\+\+JUMP\+\_\+\+DESTINATION\+\_\+\+ARGS}}, \mbox{\hyperlink{spu__dsl_8h_source_l00030}{IS\+\_\+\+GREATER\+\_\+\+EQUAL\+\_\+\+IMM\+\_\+\+DOUBLE}}, \mbox{\hyperlink{spu__dsl_8h_source_l00257}{JUMP\+\_\+\+CLAUSE\+\_\+\+FUNC}}, and \mbox{\hyperlink{spu__dsl_8h_source_l00278}{JUMP\+\_\+\+DESTINATION}}.
 
-\Hypertarget{cmd__dict_8h_a7eca6420068c47942493dd892032904a}\label{cmd__dict_8h_a7eca6420068c47942493dd892032904a} 
+\Hypertarget{cmd__dict_8h_ad6a6105c10655aa6efd38dde46085e90}\label{cmd__dict_8h_ad6a6105c10655aa6efd38dde46085e90} 
 \index{cmd\_dict.h@{cmd\_dict.h}!DEF\_CMD@{DEF\_CMD}}
 \index{DEF\_CMD@{DEF\_CMD}!cmd\_dict.h@{cmd\_dict.h}}
 \doxysubsubsection{\texorpdfstring{DEF\_CMD()}{DEF\_CMD()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily DEF\+\_\+\+CMD (\begin{DoxyParamCaption}\item[{jmp}]{,  }\item[{3}]{,  }\item[{\mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\+\_\+\+REG}}\texorpdfstring{$\vert$}{|}}]{ARG\+\_\+\+LABEL,  }\item[{\"{}jump\"{}}]{,  }\item[{\{ \mbox{\hyperlink{spu__dsl_8h_a9df1b497775c087bfb7f8c39e4a0f3d0}{JUMP\+\_\+\+CHECK\+\_\+\+ARGS}}();\mbox{\hyperlink{spu__dsl_8h_aaf30322f59aa465eb1161227f8986838}{JUMP}}(\mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\+\_\+\+DESTINATION}}());\}}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily DEF\+\_\+\+CMD (\begin{DoxyParamCaption}\item[{jmp}]{,  }\item[{3}]{,  }\item[{\mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\+\_\+\+REG}}\texorpdfstring{$\vert$}{|}}]{ARG\+\_\+\+LABEL,  }\item[{"{}jump"{}}]{,  }\item[{\{ \mbox{\hyperlink{spu__dsl_8h_ac5b99e74858b18d3129fd7a4476dee1f}{CHECK\+\_\+\+JUMP\+\_\+\+DESTINATION\+\_\+\+ARGS}}();\mbox{\hyperlink{spu__dsl_8h_aaf30322f59aa465eb1161227f8986838}{JUMP}}(\mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\+\_\+\+DESTINATION}}());\}}]{ }\end{DoxyParamCaption})}
 
 
 
-References \mbox{\hyperlink{spu__dsl_8h_source_l00148}{JUMP}}, \mbox{\hyperlink{spu__dsl_8h_source_l00246}{JUMP\+\_\+\+CHECK\+\_\+\+ARGS}}, and \mbox{\hyperlink{spu__dsl_8h_source_l00252}{JUMP\+\_\+\+DESTINATION}}.
+References \mbox{\hyperlink{spu__dsl_8h_source_l00283}{CHECK\+\_\+\+JUMP\+\_\+\+DESTINATION\+\_\+\+ARGS}}, \mbox{\hyperlink{spu__dsl_8h_source_l00179}{JUMP}}, and \mbox{\hyperlink{spu__dsl_8h_source_l00278}{JUMP\+\_\+\+DESTINATION}}.
 
-\Hypertarget{cmd__dict_8h_aef4901f07ef95f5a756bf191bff6be10}\label{cmd__dict_8h_aef4901f07ef95f5a756bf191bff6be10} 
+\Hypertarget{cmd__dict_8h_a91f5099e373c218a99fd8a97012734a9}\label{cmd__dict_8h_a91f5099e373c218a99fd8a97012734a9} 
 \index{cmd\_dict.h@{cmd\_dict.h}!DEF\_CMD@{DEF\_CMD}}
 \index{DEF\_CMD@{DEF\_CMD}!cmd\_dict.h@{cmd\_dict.h}}
 \doxysubsubsection{\texorpdfstring{DEF\_CMD()}{DEF\_CMD()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily DEF\+\_\+\+CMD (\begin{DoxyParamCaption}\item[{push}]{,  }\item[{1}]{,  }\item[{\mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\+\_\+\+REG}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{spu__dsl_8h_ab61b6344b067c61cf8a583577051c78e}{ARG\+\_\+\+IMM\+\_\+\+DOUBLE}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{spu__dsl_8h_a2f622510378832f7dd7e9abdebaafac3}{ARG\+\_\+\+IMM\+\_\+\+INT}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea9c7e521f91058471f6ff30e0f755d2bd}{ARG\+\_\+\+RAM}}\texorpdfstring{$\vert$}{|}}]{ARG\+\_\+\+LABEL,  }\item[{\"{}push to stack\"{}}]{,  }\item[{\{ \mbox{\hyperlink{spu__dsl_8h_a226e577a36ed0a410a8affc1cd05ce25}{CHECK\+\_\+\+AND\+\_\+\+THROW\+\_\+\+ERR}}(\mbox{\hyperlink{spu__dsl_8h_a487a6897858a9db1907ebf1906b9db7e}{IS\+\_\+\+ARG\+\_\+\+REG}}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{spu__dsl_8h_ae99b8cd524bcb719d3d5657bc927f24b}{IS\+\_\+\+ARG\+\_\+\+IMM\+\_\+\+DOUBLE}}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{spu__dsl_8h_a5876f6b74a68e69785a3c35bb674f058}{IS\+\_\+\+ARG\+\_\+\+IMM\+\_\+\+INT}}, \"{}\textbackslash{}\"{}push\textbackslash{}\"{} requires at least one argument.\"{});\mbox{\hyperlink{spu__dsl_8h_ae12240a3f4de46ee0616d67825971f44}{PUSH}}(\mbox{\hyperlink{spu__dsl_8h_a52cb809ee1e57e683b950d9ed1842552}{GET\+\_\+\+RVALUE}}());\}}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily DEF\+\_\+\+CMD (\begin{DoxyParamCaption}\item[{push}]{,  }\item[{1}]{,  }\item[{\mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\+\_\+\+REG}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{spu__dsl_8h_ab61b6344b067c61cf8a583577051c78e}{ARG\+\_\+\+IMM\+\_\+\+DOUBLE}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{spu__dsl_8h_a2f622510378832f7dd7e9abdebaafac3}{ARG\+\_\+\+IMM\+\_\+\+INT}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea9c7e521f91058471f6ff30e0f755d2bd}{ARG\+\_\+\+RAM}}\texorpdfstring{$\vert$}{|}}]{ARG\+\_\+\+LABEL,  }\item[{"{}push to stack"{}}]{,  }\item[{\{ \mbox{\hyperlink{spu__dsl_8h_ad2091db5b73879d5df44357bb53d54a2}{CHECK\+\_\+\+GET\+\_\+\+RVALUE\+\_\+\+ARGS}}();\mbox{\hyperlink{spu__dsl_8h_ae12240a3f4de46ee0616d67825971f44}{PUSH}}(\mbox{\hyperlink{spu__dsl_8h_a52cb809ee1e57e683b950d9ed1842552}{GET\+\_\+\+RVALUE}}());\}}]{ }\end{DoxyParamCaption})}
 
 
 
-References \mbox{\hyperlink{spu__dsl_8h_source_l00156}{CHECK\+\_\+\+AND\+\_\+\+THROW\+\_\+\+ERR}}, \mbox{\hyperlink{spu__dsl_8h_source_l00075}{GET\+\_\+\+RVALUE}}, \mbox{\hyperlink{spu__dsl_8h_source_l00012}{IS\+\_\+\+ARG\+\_\+\+IMM\+\_\+\+DOUBLE}}, \mbox{\hyperlink{spu__dsl_8h_source_l00011}{IS\+\_\+\+ARG\+\_\+\+IMM\+\_\+\+INT}}, \mbox{\hyperlink{spu__dsl_8h_source_l00010}{IS\+\_\+\+ARG\+\_\+\+REG}}, and \mbox{\hyperlink{spu__dsl_8h_source_l00165}{PUSH}}.
+References \mbox{\hyperlink{spu__dsl_8h_source_l00090}{CHECK\+\_\+\+GET\+\_\+\+RVALUE\+\_\+\+ARGS}}, \mbox{\hyperlink{spu__dsl_8h_source_l00085}{GET\+\_\+\+RVALUE}}, and \mbox{\hyperlink{spu__dsl_8h_source_l00186}{PUSH}}.
 
 \Hypertarget{cmd__dict_8h_ace2ca7d464eb1e33055ce5915108ad15}\label{cmd__dict_8h_ace2ca7d464eb1e33055ce5915108ad15} 
 \index{cmd\_dict.h@{cmd\_dict.h}!JUMP\_CLAUSE\_FUNC@{JUMP\_CLAUSE\_FUNC}}
@@ -80,7 +80,7 @@ References \mbox{\hyperlink{spu__dsl_8h_source_l00156}{CHECK\+\_\+\+AND\+\_\+\+T
 
 
 
-Definition at line \mbox{\hyperlink{cmd__dict_8h_source_l00030}{30}} of file \mbox{\hyperlink{cmd__dict_8h_source}{cmd\+\_\+dict.\+h}}.
+Definition at line \mbox{\hyperlink{cmd__dict_8h_source_l00024}{24}} of file \mbox{\hyperlink{cmd__dict_8h_source}{cmd\+\_\+dict.\+h}}.
 
 \Hypertarget{cmd__dict_8h_ae9eae0fca40f4dd404a8671abdbcd0eb}\label{cmd__dict_8h_ae9eae0fca40f4dd404a8671abdbcd0eb} 
 \index{cmd\_dict.h@{cmd\_dict.h}!ARG\_RAM@{ARG\_RAM}}
@@ -90,7 +90,7 @@ Definition at line \mbox{\hyperlink{cmd__dict_8h_source_l00030}{30}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{cmd__dict_8h_source_l00018}{18}} of file \mbox{\hyperlink{cmd__dict_8h_source}{cmd\+\_\+dict.\+h}}.
+Definition at line \mbox{\hyperlink{cmd__dict_8h_source_l00014}{14}} of file \mbox{\hyperlink{cmd__dict_8h_source}{cmd\+\_\+dict.\+h}}.
 
 \Hypertarget{cmd__dict_8h_a8ed2820b857286ffbd7159f40798d978}\label{cmd__dict_8h_a8ed2820b857286ffbd7159f40798d978} 
 \index{cmd\_dict.h@{cmd\_dict.h}!jump@{jump}}
@@ -100,7 +100,7 @@ Definition at line \mbox{\hyperlink{cmd__dict_8h_source_l00018}{18}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{cmd__dict_8h_source_l00030}{30}} of file \mbox{\hyperlink{cmd__dict_8h_source}{cmd\+\_\+dict.\+h}}.
+Definition at line \mbox{\hyperlink{cmd__dict_8h_source_l00024}{24}} of file \mbox{\hyperlink{cmd__dict_8h_source}{cmd\+\_\+dict.\+h}}.
 
 \Hypertarget{cmd__dict_8h_a33ddbefe264d7a3d1e1cf824d0dcc3f2}\label{cmd__dict_8h_a33ddbefe264d7a3d1e1cf824d0dcc3f2} 
 \index{cmd\_dict.h@{cmd\_dict.h}!somewhere@{somewhere}}
@@ -110,5 +110,5 @@ Definition at line \mbox{\hyperlink{cmd__dict_8h_source_l00030}{30}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{cmd__dict_8h_source_l00018}{18}} of file \mbox{\hyperlink{cmd__dict_8h_source}{cmd\+\_\+dict.\+h}}.
+Definition at line \mbox{\hyperlink{cmd__dict_8h_source_l00014}{14}} of file \mbox{\hyperlink{cmd__dict_8h_source}{cmd\+\_\+dict.\+h}}.
 

@@ -1,8 +1,8 @@
 var searchData=
 [
   ['halt_0',['HALT',['../spu__dsl_8h.html#a597f2881b60f9b4f9ae6451abaaa1b7c',1,'spu_dsl.h']]],
-  ['header_1',['header',['../struct_spu_data.html#a85b2c31c25d74a7a5e4e4458f2ded233',1,'SpuData']]],
-  ['height_2',['height',['../structsfml_window.html#a112401deaf89ed04aca072cff0d93359',1,'sfmlWindow::height'],['../namespaceencoder.html#ae301ba5648708b7170fb72994f481a38',1,'encoder.height']]],
+  ['header_1',['header',['../structSpuData.html#a85b2c31c25d74a7a5e4e4458f2ded233',1,'SpuData']]],
+  ['height_2',['height',['../structsfmlWindow.html#a112401deaf89ed04aca072cff0d93359',1,'sfmlWindow::height'],['../namespaceencoder.html#ae301ba5648708b7170fb72994f481a38',1,'encoder.height']]],
   ['html_2eh_3',['html.h',['../html_8h.html',1,'']]],
   ['html_5fbegin_4',['HTML_BEGIN',['../html_8h.html#a010fbac8fc4096415b18c664d84b12da',1,'html.h']]],
   ['html_5fend_5',['HTML_END',['../html_8h.html#a2df8677bea55f26352fc8982b34337f2',1,'html.h']]],

@@ -1,0 +1,188 @@
+\doxysection{Asm Struct Reference}
+\hypertarget{structAsm}{}\label{structAsm}\index{Asm@{Asm}}
+
+
+Assembling data.  
+
+
+
+
+{\ttfamily \#include $<$asm.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structAsm_a8e51995419e8d0145fbf0259e65e1605}{ctor}} (const ssize\+\_\+t buf\+\_\+capacity)
+\item 
+void \mbox{\hyperlink{structAsm_adb1635527a72975c1ec0a9cf2019a995}{dtor}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structBuffer}{Buffer}} \mbox{\hyperlink{structAsm_ac48610455ccf97057b1790399147f482}{buf}} = \{\}
+\item 
+size\+\_\+t \mbox{\hyperlink{structAsm_a2ac405dde59fcf5ece63bdecd499c335}{pass\+\_\+num}} = 0
+\item 
+\mbox{\hyperlink{structJumpLabel}{Jump\+Label}} \mbox{\hyperlink{structAsm_a11625fdda4ef63eee3ad1f44b21d9539}{labels}} \mbox{[}\mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\+\_\+\+LABEL\+\_\+\+NUM}}\mbox{]} = \{\}
+\item 
+\mbox{\hyperlink{structAsmFilesInfo}{Asm\+Files\+Info}} \mbox{\hyperlink{structAsm_af299118b6670c1973e6f6562483e17aa}{files}} = \{\}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const size\+\_\+t \mbox{\hyperlink{structAsm_ab544e702fdec142cb2efd0688d8bc80a}{LAST\+\_\+\+PASS\+\_\+\+NUM}} = \mbox{\hyperlink{asm_8h_a35464841c39315074d4090b95bb6525e}{ASM\+\_\+\+PASSES\+\_\+\+NUM}} -\/ 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Assembling data. 
+
+Definition at line \mbox{\hyperlink{asm_8h_source_l00044}{44}} of file \mbox{\hyperlink{asm_8h_source}{asm.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structAsm_a8e51995419e8d0145fbf0259e65e1605}\label{structAsm_a8e51995419e8d0145fbf0259e65e1605} 
+\index{Asm@{Asm}!ctor@{ctor}}
+\index{ctor@{ctor}!Asm@{Asm}}
+\doxysubsubsection{\texorpdfstring{ctor()}{ctor()}}
+{\footnotesize\ttfamily bool Asm\+::ctor (\begin{DoxyParamCaption}\item[{const ssize\+\_\+t}]{buf\+\_\+capacity }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{asm_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{asm_8cpp_source}{asm.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keywordflow}{if}\ (buf\_capacity\ >\ 0)\ \textcolor{comment}{//\ if\ buf\ constructor\ is\ not\ needed}}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{structAsm_ac48610455ccf97057b1790399147f482}{buf}}.\mbox{\hyperlink{structBuffer_ad1535950a41eefad8fb8c7706af8f5a7}{ctor}}(buf\_capacity))}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00009\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{asm_8h_source_l00050}{buf}}, and \mbox{\hyperlink{buf__lib_8cpp_source_l00003}{Buffer\+::ctor()}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\+\_\+write()}}.
+
+\Hypertarget{structAsm_adb1635527a72975c1ec0a9cf2019a995}\label{structAsm_adb1635527a72975c1ec0a9cf2019a995} 
+\index{Asm@{Asm}!dtor@{dtor}}
+\index{dtor@{dtor}!Asm@{Asm}}
+\doxysubsubsection{\texorpdfstring{dtor()}{dtor()}}
+{\footnotesize\ttfamily void Asm\+::dtor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{asm_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{asm_8cpp_source}{asm.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{structAsm_ac48610455ccf97057b1790399147f482}{buf}}.\mbox{\hyperlink{structBuffer_accef32f248ec05ad669b1de0dc3ae6a5}{dtor}}();}
+\DoxyCodeLine{00013\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{asm_8h_source_l00050}{buf}}, and \mbox{\hyperlink{buf__lib_8cpp_source_l00016}{Buffer\+::dtor()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structAsm_ac48610455ccf97057b1790399147f482}\label{structAsm_ac48610455ccf97057b1790399147f482} 
+\index{Asm@{Asm}!buf@{buf}}
+\index{buf@{buf}!Asm@{Asm}}
+\doxysubsubsection{\texorpdfstring{buf}{buf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structBuffer}{Buffer}} Asm\+::buf = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{asm_8h_source_l00050}{50}} of file \mbox{\hyperlink{asm_8h_source}{asm.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ output\ buffer}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00083}{asm\+\_\+do\+\_\+pass()}}, \mbox{\hyperlink{read_8cpp_source_l00005}{asm\+\_\+read\+\_\+cmd()}}, \mbox{\hyperlink{write_8cpp_source_l00003}{asm\+\_\+write\+\_\+cmd()}}, \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\+\_\+write()}}, \mbox{\hyperlink{asm_8cpp_source_l00003}{ctor()}}, and \mbox{\hyperlink{asm_8cpp_source_l00011}{dtor()}}.
+
+\Hypertarget{structAsm_af299118b6670c1973e6f6562483e17aa}\label{structAsm_af299118b6670c1973e6f6562483e17aa} 
+\index{Asm@{Asm}!files@{files}}
+\index{files@{files}!Asm@{Asm}}
+\doxysubsubsection{\texorpdfstring{files}{files}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structAsmFilesInfo}{Asm\+Files\+Info}} Asm\+::files = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{asm_8h_source_l00056}{56}} of file \mbox{\hyperlink{asm_8h_source}{asm.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ input\ and\ output\ files\ info}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00083}{asm\+\_\+do\+\_\+pass()}}, \mbox{\hyperlink{errors_8cpp_source_l00003}{asm\+\_\+throw\+\_\+syntax\+\_\+error()}}, and \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\+\_\+write()}}.
+
+\Hypertarget{structAsm_a11625fdda4ef63eee3ad1f44b21d9539}\label{structAsm_a11625fdda4ef63eee3ad1f44b21d9539} 
+\index{Asm@{Asm}!labels@{labels}}
+\index{labels@{labels}!Asm@{Asm}}
+\doxysubsubsection{\texorpdfstring{labels}{labels}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structJumpLabel}{Jump\+Label}} Asm\+::labels\mbox{[}\mbox{\hyperlink{cmd_8h_a32f204b97db01e62c58e0158ee40b1cf}{MAX\+\_\+\+LABEL\+\_\+\+NUM}}\mbox{]} = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{asm_8h_source_l00054}{54}} of file \mbox{\hyperlink{asm_8h_source}{asm.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \{\};\ \ \ \textcolor{comment}{//<\ labels\ dictionary}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{jump_8cpp_source_l00027}{asm\+\_\+get\+\_\+label\+\_\+addr()}}, \mbox{\hyperlink{jump_8cpp_source_l00005}{asm\+\_\+new\+\_\+label()}}, and \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}.
+
+\Hypertarget{structAsm_ab544e702fdec142cb2efd0688d8bc80a}\label{structAsm_ab544e702fdec142cb2efd0688d8bc80a} 
+\index{Asm@{Asm}!LAST\_PASS\_NUM@{LAST\_PASS\_NUM}}
+\index{LAST\_PASS\_NUM@{LAST\_PASS\_NUM}!Asm@{Asm}}
+\doxysubsubsection{\texorpdfstring{LAST\_PASS\_NUM}{LAST\_PASS\_NUM}}
+{\footnotesize\ttfamily const size\+\_\+t Asm\+::\+LAST\+\_\+\+PASS\+\_\+\+NUM = \mbox{\hyperlink{asm_8h_a35464841c39315074d4090b95bb6525e}{ASM\+\_\+\+PASSES\+\_\+\+NUM}} -\/ 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{asm_8h_source_l00045}{45}} of file \mbox{\hyperlink{asm_8h_source}{asm.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00083}{asm\+\_\+do\+\_\+pass()}}, \mbox{\hyperlink{jump_8cpp_source_l00027}{asm\+\_\+get\+\_\+label\+\_\+addr()}}, and \mbox{\hyperlink{write_8cpp_source_l00003}{asm\+\_\+write\+\_\+cmd()}}.
+
+\Hypertarget{structAsm_a2ac405dde59fcf5ece63bdecd499c335}\label{structAsm_a2ac405dde59fcf5ece63bdecd499c335} 
+\index{Asm@{Asm}!pass\_num@{pass\_num}}
+\index{pass\_num@{pass\_num}!Asm@{Asm}}
+\doxysubsubsection{\texorpdfstring{pass\_num}{pass\_num}}
+{\footnotesize\ttfamily size\+\_\+t Asm\+::pass\+\_\+num = 0}
+
+
+
+Definition at line \mbox{\hyperlink{asm_8h_source_l00052}{52}} of file \mbox{\hyperlink{asm_8h_source}{asm.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00083}{asm\+\_\+do\+\_\+pass()}}, \mbox{\hyperlink{jump_8cpp_source_l00027}{asm\+\_\+get\+\_\+label\+\_\+addr()}}, \mbox{\hyperlink{read_8cpp_source_l00005}{asm\+\_\+read\+\_\+cmd()}}, \mbox{\hyperlink{write_8cpp_source_l00003}{asm\+\_\+write\+\_\+cmd()}}, and \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\+\_\+write()}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+assembler/src/asm/\mbox{\hyperlink{asm_8h}{asm.\+h}}\item 
+assembler/src/asm/\mbox{\hyperlink{asm_8cpp}{asm.\+cpp}}\end{DoxyCompactItemize}

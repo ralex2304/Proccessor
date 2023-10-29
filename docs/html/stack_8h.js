@@ -1,7 +1,7 @@
 var stack_8h =
 [
-    [ "VarCodeData", "struct_var_code_data.html", "struct_var_code_data" ],
-    [ "Stack", "struct_stack.html", "struct_stack" ],
+    [ "VarCodeData", "structVarCodeData.html", "structVarCodeData" ],
+    [ "Stack", "structStack.html", "structStack" ],
     [ "ON_CANARY_PROTECT", "stack_8h.html#ae09c894ab7c3c3daa2c838cde400b7fc", null ],
     [ "ON_DEBUG", "stack_8h.html#a1bdd7c1369b250215a080e8421d4ecf3", null ],
     [ "ON_HASH_PROTECT", "stack_8h.html#a1dc689bb2898fa51bd45a9e016fc2777", null ],

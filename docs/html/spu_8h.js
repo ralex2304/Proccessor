@@ -1,6 +1,6 @@
 var spu_8h =
 [
-    [ "SpuData", "struct_spu_data.html", "struct_spu_data" ],
+    [ "SpuData", "structSpuData.html", "structSpuData" ],
     [ "GRAPHICS", "spu_8h.html#a36c5995036907afe534f70b04cb1d360", null ],
     [ "ON_GRAPHICS", "spu_8h.html#aa9ce630a8b2b4f4dd40ead2a8db00cd1", null ],
     [ "spu_execute", "spu_8h.html#ae69f5635302dd8e92897310d34adebb3", null ],

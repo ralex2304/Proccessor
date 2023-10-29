@@ -1,0 +1,109 @@
+\doxysection{Cmd\+Keys Struct Reference}
+\hypertarget{structCmdKeys}{}\label{structCmdKeys}\index{CmdKeys@{CmdKeys}}
+
+
+Specifies command bit field.  
+
+
+
+
+{\ttfamily \#include $<$cmd.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \mbox{\hyperlink{structCmdKeys_ad0033340339feb06377aab854e951440}{num}}\+: 8
+\item 
+bool \mbox{\hyperlink{structCmdKeys_a76f64f02295d9a30abdaf138ea275f6a}{reg}}\+: 1
+\item 
+bool \mbox{\hyperlink{structCmdKeys_a5b1fdf0614537d3c515c99ce945906fa}{imm\+\_\+double}}\+: 1
+\item 
+bool \mbox{\hyperlink{structCmdKeys_a2520ae7bb6f891ca6ff62dd0f882a1f4}{imm\+\_\+int}}\+: 1
+\item 
+bool \mbox{\hyperlink{structCmdKeys_aba6b64f73e21ca67bb9062cc69669350}{ram}}\+: 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Specifies command bit field. 
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00026}{26}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structCmdKeys_a5b1fdf0614537d3c515c99ce945906fa}\label{structCmdKeys_a5b1fdf0614537d3c515c99ce945906fa} 
+\index{CmdKeys@{CmdKeys}!imm\_double@{imm\_double}}
+\index{imm\_double@{imm\_double}!CmdKeys@{CmdKeys}}
+\doxysubsubsection{\texorpdfstring{imm\_double}{imm\_double}}
+{\footnotesize\ttfamily bool Cmd\+Keys\+::imm\+\_\+double}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00029}{29}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{write_8h_source_l00057}{asm\+\_\+calc\+\_\+cmd\+\_\+size()}}, \mbox{\hyperlink{read_8cpp_source_l00143}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, \mbox{\hyperlink{write_8cpp_source_l00025}{asm\+\_\+write\+\_\+cmd\+\_\+bin()}}, \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{errors_8h_source_l00066}{cmd\+\_\+is\+\_\+any\+\_\+arg\+\_\+given()}}, \mbox{\hyperlink{listing_8h_source_l00048}{cmd\+\_\+listing\+\_\+calc\+\_\+tab()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, \mbox{\hyperlink{cmd_8cpp_source_l00021}{Cmd\+::size()}}, and \mbox{\hyperlink{spu_8cpp_source_l00109}{spu\+\_\+read\+\_\+cmd()}}.
+
+\Hypertarget{structCmdKeys_a2520ae7bb6f891ca6ff62dd0f882a1f4}\label{structCmdKeys_a2520ae7bb6f891ca6ff62dd0f882a1f4} 
+\index{CmdKeys@{CmdKeys}!imm\_int@{imm\_int}}
+\index{imm\_int@{imm\_int}!CmdKeys@{CmdKeys}}
+\doxysubsubsection{\texorpdfstring{imm\_int}{imm\_int}}
+{\footnotesize\ttfamily bool Cmd\+Keys\+::imm\+\_\+int}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00030}{30}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{write_8h_source_l00057}{asm\+\_\+calc\+\_\+cmd\+\_\+size()}}, \mbox{\hyperlink{read_8cpp_source_l00118}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}, \mbox{\hyperlink{read_8cpp_source_l00168}{asm\+\_\+read\+\_\+arg\+\_\+label()}}, \mbox{\hyperlink{write_8cpp_source_l00025}{asm\+\_\+write\+\_\+cmd\+\_\+bin()}}, \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{errors_8h_source_l00066}{cmd\+\_\+is\+\_\+any\+\_\+arg\+\_\+given()}}, \mbox{\hyperlink{listing_8h_source_l00048}{cmd\+\_\+listing\+\_\+calc\+\_\+tab()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, \mbox{\hyperlink{cmd_8cpp_source_l00021}{Cmd\+::size()}}, and \mbox{\hyperlink{spu_8cpp_source_l00109}{spu\+\_\+read\+\_\+cmd()}}.
+
+\Hypertarget{structCmdKeys_ad0033340339feb06377aab854e951440}\label{structCmdKeys_ad0033340339feb06377aab854e951440} 
+\index{CmdKeys@{CmdKeys}!num@{num}}
+\index{num@{num}!CmdKeys@{CmdKeys}}
+\doxysubsubsection{\texorpdfstring{num}{num}}
+{\footnotesize\ttfamily unsigned char Cmd\+Keys\+::num}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00027}{27}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{read_8cpp_source_l00005}{asm\+\_\+read\+\_\+cmd()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, and \mbox{\hyperlink{spu_8cpp_source_l00137}{spu\+\_\+execute()}}.
+
+\Hypertarget{structCmdKeys_aba6b64f73e21ca67bb9062cc69669350}\label{structCmdKeys_aba6b64f73e21ca67bb9062cc69669350} 
+\index{CmdKeys@{CmdKeys}!ram@{ram}}
+\index{ram@{ram}!CmdKeys@{CmdKeys}}
+\doxysubsubsection{\texorpdfstring{ram}{ram}}
+{\footnotesize\ttfamily bool Cmd\+Keys\+::ram}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00031}{31}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{read_8cpp_source_l00053}{asm\+\_\+read\+\_\+args\+\_\+ram()}}, \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}.
+
+\Hypertarget{structCmdKeys_a76f64f02295d9a30abdaf138ea275f6a}\label{structCmdKeys_a76f64f02295d9a30abdaf138ea275f6a} 
+\index{CmdKeys@{CmdKeys}!reg@{reg}}
+\index{reg@{reg}!CmdKeys@{CmdKeys}}
+\doxysubsubsection{\texorpdfstring{reg}{reg}}
+{\footnotesize\ttfamily bool Cmd\+Keys\+::reg}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00028}{28}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{write_8h_source_l00057}{asm\+\_\+calc\+\_\+cmd\+\_\+size()}}, \mbox{\hyperlink{read_8cpp_source_l00087}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}, \mbox{\hyperlink{write_8cpp_source_l00025}{asm\+\_\+write\+\_\+cmd\+\_\+bin()}}, \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{errors_8h_source_l00066}{cmd\+\_\+is\+\_\+any\+\_\+arg\+\_\+given()}}, \mbox{\hyperlink{listing_8h_source_l00048}{cmd\+\_\+listing\+\_\+calc\+\_\+tab()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, \mbox{\hyperlink{cmd_8cpp_source_l00021}{Cmd\+::size()}}, and \mbox{\hyperlink{spu_8cpp_source_l00109}{spu\+\_\+read\+\_\+cmd()}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+shared/\mbox{\hyperlink{cmd_8h}{cmd.\+h}}\end{DoxyCompactItemize}

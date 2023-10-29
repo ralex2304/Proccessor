@@ -1,16 +1,16 @@
 \doxysection{shared/cmd.cpp File Reference}
 \hypertarget{cmd_8cpp}{}\label{cmd_8cpp}\index{shared/cmd.cpp@{shared/cmd.cpp}}
-{\ttfamily \#include \"{}cmd.\+h\"{}}\newline
+{\ttfamily \#include "{}cmd.\+h"{}}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-const \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8cpp_ae4f1f8a5e27cc0597a1762987ca19f7f}{find\+\_\+command\+\_\+by\+\_\+num}} (const \mbox{\hyperlink{cmd_8h_ab1d5b54818808a2c92c5632aaf961cd0}{Cmd\+\_\+num\+\_\+t}} num)
+const \mbox{\hyperlink{structCmdInfo}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8cpp_ae4f1f8a5e27cc0597a1762987ca19f7f}{find\+\_\+command\+\_\+by\+\_\+num}} (const \mbox{\hyperlink{cmd_8h_ab1d5b54818808a2c92c5632aaf961cd0}{Cmd\+\_\+num\+\_\+t}} num)
 \begin{DoxyCompactList}\small\item\em Finds command in CMDS\+\_\+\+DICT by num. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8cpp_a354e23dddbbfc5534320a6c3ba894a5b}{find\+\_\+command\+\_\+by\+\_\+name}} (const \mbox{\hyperlink{struct_string}{String}} name)
+const \mbox{\hyperlink{structCmdInfo}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8cpp_a354e23dddbbfc5534320a6c3ba894a5b}{find\+\_\+command\+\_\+by\+\_\+name}} (const \mbox{\hyperlink{structString}{String}} name)
 \begin{DoxyCompactList}\small\item\em Finds command in CMDS\+\_\+\+DICT\mbox{[}\mbox{]} by name. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8cpp_af63027691c37894de471b76a4e74b68c}{find\+\_\+reg\+\_\+by\+\_\+num}} (const \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{Reg\+Num\+\_\+t}} num)
+const \mbox{\hyperlink{structRegInfo}{Reg\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8cpp_af63027691c37894de471b76a4e74b68c}{find\+\_\+reg\+\_\+by\+\_\+num}} (const \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{Reg\+Num\+\_\+t}} num)
 \begin{DoxyCompactList}\small\item\em Finds reg in REGS\+\_\+\+DICT\mbox{[}\mbox{]} by num. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8cpp_abd1dd6c1800194955343388311c50e9e}{find\+\_\+reg\+\_\+by\+\_\+name}} (const \mbox{\hyperlink{struct_string}{String}} name)
+const \mbox{\hyperlink{structRegInfo}{Reg\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{cmd_8cpp_abd1dd6c1800194955343388311c50e9e}{find\+\_\+reg\+\_\+by\+\_\+name}} (const \mbox{\hyperlink{structString}{String}} name)
 \begin{DoxyCompactList}\small\item\em Finds reg in REGS\+\_\+\+DICT\mbox{[}\mbox{]} by name. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -19,7 +19,7 @@ const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} \texorpdfstring{$\ast$}{*} \
 \index{cmd.cpp@{cmd.cpp}!find\_command\_by\_name@{find\_command\_by\_name}}
 \index{find\_command\_by\_name@{find\_command\_by\_name}!cmd.cpp@{cmd.cpp}}
 \doxysubsubsection{\texorpdfstring{find\_command\_by\_name()}{find\_command\_by\_name()}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} find\+\_\+command\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_string}{String}}}]{name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structCmdInfo}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} find\+\_\+command\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structString}{String}}}]{name }\end{DoxyParamCaption})}
 
 
 
@@ -62,7 +62,7 @@ Referenced by \mbox{\hyperlink{read_8cpp_source_l00005}{asm\+\_\+read\+\_\+cmd()
 \index{cmd.cpp@{cmd.cpp}!find\_command\_by\_num@{find\_command\_by\_num}}
 \index{find\_command\_by\_num@{find\_command\_by\_num}!cmd.cpp@{cmd.cpp}}
 \doxysubsubsection{\texorpdfstring{find\_command\_by\_num()}{find\_command\_by\_num()}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{struct_cmd_info}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} find\+\_\+command\+\_\+by\+\_\+num (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{cmd_8h_ab1d5b54818808a2c92c5632aaf961cd0}{Cmd\+\_\+num\+\_\+t}}}]{num }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structCmdInfo}{Cmd\+Info}} \texorpdfstring{$\ast$}{*} find\+\_\+command\+\_\+by\+\_\+num (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{cmd_8h_ab1d5b54818808a2c92c5632aaf961cd0}{Cmd\+\_\+num\+\_\+t}}}]{num }\end{DoxyParamCaption})}
 
 
 
@@ -103,7 +103,7 @@ Referenced by \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+pars
 \index{cmd.cpp@{cmd.cpp}!find\_reg\_by\_name@{find\_reg\_by\_name}}
 \index{find\_reg\_by\_name@{find\_reg\_by\_name}!cmd.cpp@{cmd.cpp}}
 \doxysubsubsection{\texorpdfstring{find\_reg\_by\_name()}{find\_reg\_by\_name()}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} \texorpdfstring{$\ast$}{*} find\+\_\+reg\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_string}{String}}}]{name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structRegInfo}{Reg\+Info}} \texorpdfstring{$\ast$}{*} find\+\_\+reg\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structString}{String}}}]{name }\end{DoxyParamCaption})}
 
 
 
@@ -146,7 +146,7 @@ Referenced by \mbox{\hyperlink{read_8cpp_source_l00087}{asm\+\_\+read\+\_\+arg\+
 \index{cmd.cpp@{cmd.cpp}!find\_reg\_by\_num@{find\_reg\_by\_num}}
 \index{find\_reg\_by\_num@{find\_reg\_by\_num}!cmd.cpp@{cmd.cpp}}
 \doxysubsubsection{\texorpdfstring{find\_reg\_by\_num()}{find\_reg\_by\_num()}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{struct_reg_info}{Reg\+Info}} \texorpdfstring{$\ast$}{*} find\+\_\+reg\+\_\+by\+\_\+num (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{Reg\+Num\+\_\+t}}}]{reg }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structRegInfo}{Reg\+Info}} \texorpdfstring{$\ast$}{*} find\+\_\+reg\+\_\+by\+\_\+num (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{cmd_8h_a428ff6e9ffc07d578a8a207c72dc3366}{Reg\+Num\+\_\+t}}}]{reg }\end{DoxyParamCaption})}
 
 
 

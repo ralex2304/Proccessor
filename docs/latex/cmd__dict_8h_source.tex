@@ -10,126 +10,113 @@
 \DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00006}00006\ }
 \DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00007}00007\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(hlt,\ \ \ 0,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}halt\ -\/\ end\ of\ program"{}},\ \{\mbox{\hyperlink{spu__dsl_8h_a597f2881b60f9b4f9ae6451abaaa1b7c}{HALT}}();\})}
 \DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00008}00008\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00009}\mbox{\hyperlink{cmd__dict_8h_aef4901f07ef95f5a756bf191bff6be10}{00009}}\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(push,\ \ 1,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{spu__dsl_8h_ab61b6344b067c61cf8a583577051c78e}{ARG\_IMM\_DOUBLE}}\ |\ \mbox{\hyperlink{spu__dsl_8h_a2f622510378832f7dd7e9abdebaafac3}{ARG\_IMM\_INT}}\ |\ \mbox{\hyperlink{cmd__dict_8h_ae9eae0fca40f4dd404a8671abdbcd0eb}{ARG\_RAM}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00010}00010\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}push\ to\ stack"{}},\ \{}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a226e577a36ed0a410a8affc1cd05ce25}{CHECK\_AND\_THROW\_ERR}}(\mbox{\hyperlink{spu__dsl_8h_a487a6897858a9db1907ebf1906b9db7e}{IS\_ARG\_REG}}\ ||\ \mbox{\hyperlink{spu__dsl_8h_ae99b8cd524bcb719d3d5657bc927f24b}{IS\_ARG\_IMM\_DOUBLE}}\ ||\ \mbox{\hyperlink{spu__dsl_8h_a5876f6b74a68e69785a3c35bb674f058}{IS\_ARG\_IMM\_INT}},}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)"{}push\(\backslash\)"{}\ requires\ at\ least\ one\ argument."{}});}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00014}00014\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_ae12240a3f4de46ee0616d67825971f44}{PUSH}}(\mbox{\hyperlink{spu__dsl_8h_a52cb809ee1e57e683b950d9ed1842552}{GET\_RVALUE}}());}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00016}00016\ \})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00017}00017\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00018}\mbox{\hyperlink{cmd__dict_8h_ae9eae0fca40f4dd404a8671abdbcd0eb}{00018}}\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(pop,\ \ \ 2,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{spu__dsl_8h_a2f622510378832f7dd7e9abdebaafac3}{ARG\_IMM\_INT}}\ |\ \mbox{\hyperlink{cmd__dict_8h_ae9eae0fca40f4dd404a8671abdbcd0eb}{ARG\_RAM}},\ \ \textcolor{stringliteral}{"{}pop\ from\ stack\ and\ write\ somewhere"{}},\ \{}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00019}00019\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a226e577a36ed0a410a8affc1cd05ce25}{CHECK\_AND\_THROW\_ERR}}(\mbox{\hyperlink{spu__dsl_8h_a487a6897858a9db1907ebf1906b9db7e}{IS\_ARG\_REG}}\ ||\ \mbox{\hyperlink{spu__dsl_8h_a5876f6b74a68e69785a3c35bb674f058}{IS\_ARG\_IMM\_INT}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}pop\(\backslash\)"{}\ requires\ reg."{}});}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00020}00020\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00021}\mbox{\hyperlink{cmd__dict_8h_a60cb792d559a08ddff862dab65909e79}{00021}}\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a8e6708d01dec9fd978f58748eda35132}{POP}}(\mbox{\hyperlink{spu__dsl_8h_a4e676f0644b91fc997514d32a5f41f59}{GET\_LVALUE\_PTR}}());}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00009}\mbox{\hyperlink{cmd__dict_8h_a91f5099e373c218a99fd8a97012734a9}{00009}}\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(push,\ \ 1,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{spu__dsl_8h_ab61b6344b067c61cf8a583577051c78e}{ARG\_IMM\_DOUBLE}}\ |\ \mbox{\hyperlink{spu__dsl_8h_a2f622510378832f7dd7e9abdebaafac3}{ARG\_IMM\_INT}}\ |\ \mbox{\hyperlink{cmd__dict_8h_ae9eae0fca40f4dd404a8671abdbcd0eb}{ARG\_RAM}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}push\ to\ stack"{}},\ \{}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_ad2091db5b73879d5df44357bb53d54a2}{CHECK\_GET\_RVALUE\_ARGS}}();}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_ae12240a3f4de46ee0616d67825971f44}{PUSH}}(\mbox{\hyperlink{spu__dsl_8h_a52cb809ee1e57e683b950d9ed1842552}{GET\_RVALUE}}());}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00012}00012\ \})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00014}\mbox{\hyperlink{cmd__dict_8h_ae9eae0fca40f4dd404a8671abdbcd0eb}{00014}}\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(pop,\ \ \ 2,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{spu__dsl_8h_a2f622510378832f7dd7e9abdebaafac3}{ARG\_IMM\_INT}}\ |\ \mbox{\hyperlink{cmd__dict_8h_ae9eae0fca40f4dd404a8671abdbcd0eb}{ARG\_RAM}},\ \ \textcolor{stringliteral}{"{}pop\ from\ stack\ and\ write\ somewhere"{}},\ \{}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_aeb4375fa852a1fdffdb3355c1907169e}{CHECK\_GET\_LVALUE\_PTR\_ARGS}}();}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00016}\mbox{\hyperlink{cmd__dict_8h_a60cb792d559a08ddff862dab65909e79}{00016}}\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a8e6708d01dec9fd978f58748eda35132}{POP}}(\mbox{\hyperlink{spu__dsl_8h_a4e676f0644b91fc997514d32a5f41f59}{GET\_LVALUE\_PTR}}());}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00017}00017\ \})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00019}\mbox{\hyperlink{cmd__dict_8h_ad6a6105c10655aa6efd38dde46085e90}{00019}}\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(jmp,\ \ \ 3,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}jump"{}},\ \{}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_ac5b99e74858b18d3129fd7a4476dee1f}{CHECK\_JUMP\_DESTINATION\_ARGS}}();}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_aaf30322f59aa465eb1161227f8986838}{JUMP}}(\mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\_DESTINATION}}());}
 \DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00022}00022\ \})}
 \DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00023}00023\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00024}\mbox{\hyperlink{cmd__dict_8h_a7eca6420068c47942493dd892032904a}{00024}}\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(jmp,\ \ \ 3,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}jump"{}},\ \{}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a9df1b497775c087bfb7f8c39e4a0f3d0}{JUMP\_CHECK\_ARGS}}();}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_aaf30322f59aa465eb1161227f8986838}{JUMP}}(\mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\_DESTINATION}}());}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00028}00028\ \})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00030}\mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{00030}}\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(ja,\ \ \ \ 4,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}jump\ >"{}},\ \{}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a9df1b497775c087bfb7f8c39e4a0f3d0}{JUMP\_CHECK\_ARGS}}();}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00033}\mbox{\hyperlink{cmd__dict_8h_ace2ca7d464eb1e33055ce5915108ad15}{00033}}\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a8da47d72071c71c053638fde446eb8cf}{JUMP\_CLAUSE\_FUNC}}(\mbox{\hyperlink{spu__dsl_8h_af20bfd59843f7585f68991ebce472c8f}{IS\_GREATER\_IMM\_DOUBLE}},\ \mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\_DESTINATION}}());}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00034}00034\ \})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00035}00035\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00036}\mbox{\hyperlink{cmd__dict_8h_a5593e56b5987eeed0890eed1a52ccf6a}{00036}}\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(jae,\ \ \ 5,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}jump\ >="{}},\ \{}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a9df1b497775c087bfb7f8c39e4a0f3d0}{JUMP\_CHECK\_ARGS}}();}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00024}\mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{00024}}\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(ja,\ \ \ \ 4,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}jump\ >"{}},\ \{}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_ac5b99e74858b18d3129fd7a4476dee1f}{CHECK\_JUMP\_DESTINATION\_ARGS}}();}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00026}\mbox{\hyperlink{cmd__dict_8h_ace2ca7d464eb1e33055ce5915108ad15}{00026}}\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a8da47d72071c71c053638fde446eb8cf}{JUMP\_CLAUSE\_FUNC}}(\mbox{\hyperlink{spu__dsl_8h_af20bfd59843f7585f68991ebce472c8f}{IS\_GREATER\_IMM\_DOUBLE}},\ \mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\_DESTINATION}}());}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00027}00027\ \})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00029}\mbox{\hyperlink{cmd__dict_8h_a110c0605c7d18022cc27b568fd273514}{00029}}\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(jae,\ \ \ 5,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}jump\ >="{}},\ \{}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_ac5b99e74858b18d3129fd7a4476dee1f}{CHECK\_JUMP\_DESTINATION\_ARGS}}();}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a8da47d72071c71c053638fde446eb8cf}{JUMP\_CLAUSE\_FUNC}}(\mbox{\hyperlink{spu__dsl_8h_ad04464cd2bebd34a53966d4f46865b24}{IS\_GREATER\_EQUAL\_IMM\_DOUBLE}},\ \mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\_DESTINATION}}());}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00032}00032\ \})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00034}00034\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(jb,\ \ \ \ 6,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}jump\ <"{}},\ \{}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_ac5b99e74858b18d3129fd7a4476dee1f}{CHECK\_JUMP\_DESTINATION\_ARGS}}();}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a8da47d72071c71c053638fde446eb8cf}{JUMP\_CLAUSE\_FUNC}}(\mbox{\hyperlink{spu__dsl_8h_afd5d285cb1c8f414db8ebe957435d821}{IS\_LOWER\_IMM\_DOUBLE}},\ \mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\_DESTINATION}}());}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00037}00037\ \})}
 \DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a8da47d72071c71c053638fde446eb8cf}{JUMP\_CLAUSE\_FUNC}}(\mbox{\hyperlink{spu__dsl_8h_ad04464cd2bebd34a53966d4f46865b24}{IS\_GREATER\_EQUAL\_IMM\_DOUBLE}},\ \mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\_DESTINATION}}());}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00040}00040\ \})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00041}00041\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00042}00042\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(jb,\ \ \ \ 6,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}jump\ <"{}},\ \{}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a9df1b497775c087bfb7f8c39e4a0f3d0}{JUMP\_CHECK\_ARGS}}();}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00044}00044\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a8da47d72071c71c053638fde446eb8cf}{JUMP\_CLAUSE\_FUNC}}(\mbox{\hyperlink{spu__dsl_8h_afd5d285cb1c8f414db8ebe957435d821}{IS\_LOWER\_IMM\_DOUBLE}},\ \mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\_DESTINATION}}());}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00046}00046\ \})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00048}00048\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(jbe,\ \ \ 7,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}jump\ <="{}},\ \{}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a9df1b497775c087bfb7f8c39e4a0f3d0}{JUMP\_CHECK\_ARGS}}();}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a8da47d72071c71c053638fde446eb8cf}{JUMP\_CLAUSE\_FUNC}}(\mbox{\hyperlink{spu__dsl_8h_a340ff9bde723761c762599f264168925}{IS\_LOWER\_EQUAL\_IMM\_DOUBLE}},\ \mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\_DESTINATION}}());}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00039}00039\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(jbe,\ \ \ 7,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}jump\ <="{}},\ \{}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_ac5b99e74858b18d3129fd7a4476dee1f}{CHECK\_JUMP\_DESTINATION\_ARGS}}();}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a8da47d72071c71c053638fde446eb8cf}{JUMP\_CLAUSE\_FUNC}}(\mbox{\hyperlink{spu__dsl_8h_a340ff9bde723761c762599f264168925}{IS\_LOWER\_EQUAL\_IMM\_DOUBLE}},\ \mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\_DESTINATION}}());}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00042}00042\ \})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00044}00044\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(je,\ \ \ \ 8,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}jump\ =="{}},\ \{}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_ac5b99e74858b18d3129fd7a4476dee1f}{CHECK\_JUMP\_DESTINATION\_ARGS}}();}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a8da47d72071c71c053638fde446eb8cf}{JUMP\_CLAUSE\_FUNC}}(\mbox{\hyperlink{spu__dsl_8h_a26e58264549368d4389379a288396829}{IS\_EQUAL\_IMM\_DOUBLE}},\ \mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\_DESTINATION}}());}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00047}00047\ \})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00049}00049\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(jne,\ \ \ 9,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}jump\ !="{}},\ \{}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_ac5b99e74858b18d3129fd7a4476dee1f}{CHECK\_JUMP\_DESTINATION\_ARGS}}();}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a8da47d72071c71c053638fde446eb8cf}{JUMP\_CLAUSE\_FUNC}}(!\mbox{\hyperlink{spu__dsl_8h_a26e58264549368d4389379a288396829}{IS\_EQUAL\_IMM\_DOUBLE}},\ \mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\_DESTINATION}}());}
 \DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00052}00052\ \})}
 \DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00054}00054\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(je,\ \ \ \ 8,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}jump\ =="{}},\ \{}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a9df1b497775c087bfb7f8c39e4a0f3d0}{JUMP\_CHECK\_ARGS}}();}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00054}00054\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(jf,\ \ \ 10,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}jump\ on\ Fridays"{}},\ \{}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_ac5b99e74858b18d3129fd7a4476dee1f}{CHECK\_JUMP\_DESTINATION\_ARGS}}();}
 \DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a8da47d72071c71c053638fde446eb8cf}{JUMP\_CLAUSE\_FUNC}}(\mbox{\hyperlink{spu__dsl_8h_a26e58264549368d4389379a288396829}{IS\_EQUAL\_IMM\_DOUBLE}},\ \mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\_DESTINATION}}());}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00058}00058\ \})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00060}00060\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(jne,\ \ \ 9,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}jump\ !="{}},\ \{}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a9df1b497775c087bfb7f8c39e4a0f3d0}{JUMP\_CHECK\_ARGS}}();}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00062}00062\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a8da47d72071c71c053638fde446eb8cf}{JUMP\_CLAUSE\_FUNC}}(!\mbox{\hyperlink{spu__dsl_8h_a26e58264549368d4389379a288396829}{IS\_EQUAL\_IMM\_DOUBLE}},\ \mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\_DESTINATION}}());}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00064}00064\ \})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{spu__dsl_8h_a8caccf4e8da6d5009b7b4a8f0bb48098}{WEEKDAY}}()\ ==\ 5)}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_aaf30322f59aa465eb1161227f8986838}{JUMP}}(\mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\_DESTINATION}}());}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00059}00059\ \})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00061}00061\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(call,\ 11,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}call\ -\/\ go\ to\ procedure"{}},\ \{}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_ac5b99e74858b18d3129fd7a4476dee1f}{CHECK\_JUMP\_DESTINATION\_ARGS}}();}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_ae12240a3f4de46ee0616d67825971f44}{PUSH}}((\mbox{\hyperlink{spu__dsl_8h_a303b93cbec67fcc7b8c811304b46fd9a}{IMM\_DOUBLE\_T}})\mbox{\hyperlink{spu__dsl_8h_acde6104e0bb6e23b24a2fe8d1404e387}{GET\_NEXT\_INSTRUCTION\_PTR}}());}
 \DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00066}00066\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(jf,\ \ \ 10,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}jump\ on\ Fridays"{}},\ \{}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00067}00067\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a9df1b497775c087bfb7f8c39e4a0f3d0}{JUMP\_CHECK\_ARGS}}();}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00066}00066\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_aaf30322f59aa465eb1161227f8986838}{JUMP}}(\mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\_DESTINATION}}());}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00067}00067\ \})}
 \DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00068}00068\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{spu__dsl_8h_a8caccf4e8da6d5009b7b4a8f0bb48098}{WEEKDAY}}()\ ==\ 5)}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_aaf30322f59aa465eb1161227f8986838}{JUMP}}(\mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\_DESTINATION}}());}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00071}00071\ \})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00072}00072\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00073}00073\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(call,\ 11,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \textcolor{stringliteral}{"{}call\ -\/\ go\ to\ procedure"{}},\ \{}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00074}00074\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a9df1b497775c087bfb7f8c39e4a0f3d0}{JUMP\_CHECK\_ARGS}}();}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00069}00069\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(ret,\ \ 12,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}ret\ -\/\ end\ of\ procedure"{}},\ \{}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a303b93cbec67fcc7b8c811304b46fd9a}{IMM\_DOUBLE\_T}}\ a\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a8e6708d01dec9fd978f58748eda35132}{POP}}(\&a);}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00074}00074\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a38de650da373a0a117b55bb9ae3da189}{IMM\_INT\_T}}\ b\ =\ (\mbox{\hyperlink{spu__dsl_8h_a38de650da373a0a117b55bb9ae3da189}{IMM\_INT\_T}})a;}
 \DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00075}00075\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00076}00076\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_ae12240a3f4de46ee0616d67825971f44}{PUSH}}((\mbox{\hyperlink{spu__dsl_8h_a303b93cbec67fcc7b8c811304b46fd9a}{IMM\_DOUBLE\_T}})\mbox{\hyperlink{spu__dsl_8h_acde6104e0bb6e23b24a2fe8d1404e387}{GET\_NEXT\_INSTRUCTION\_PTR}}());}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00077}00077\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00078}00078\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_aaf30322f59aa465eb1161227f8986838}{JUMP}}(\mbox{\hyperlink{spu__dsl_8h_af83302c0334071493354c0c3ecc9c0ec}{JUMP\_DESTINATION}}());}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00079}00079\ \})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00076}00076\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_aaf30322f59aa465eb1161227f8986838}{JUMP}}(b);}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00077}00077\ \})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00079}00079\ }
 \DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00080}00080\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00081}00081\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(ret,\ \ 12,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}ret\ -\/\ end\ of\ procedure"{}},\ \{}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00081}00081\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(in\ ,\ \ 16,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}push\ one\ element\ to\ stack\ from\ user\ input"{}},\ \{}
 \DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00082}00082\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a303b93cbec67fcc7b8c811304b46fd9a}{IMM\_DOUBLE\_T}}\ a\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00083}00083\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00084}00084\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a8e6708d01dec9fd978f58748eda35132}{POP}}(\&a);}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00085}00085\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00086}00086\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a38de650da373a0a117b55bb9ae3da189}{IMM\_INT\_T}}\ b\ =\ (\mbox{\hyperlink{spu__dsl_8h_a38de650da373a0a117b55bb9ae3da189}{IMM\_INT\_T}})a;}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00083}00083\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a1f92e847fc8c4ba1353b03992c5eeb5a}{GET\_FROM\_INPUT}}(\&a);}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00085}00085\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_ae12240a3f4de46ee0616d67825971f44}{PUSH}}(a);}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00086}00086\ \})}
 \DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00087}00087\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_aaf30322f59aa465eb1161227f8986838}{JUMP}}(b);}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00089}00089\ \})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00088}00088\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(out,\ \ 17,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}pop\ and\ print\ element\ from\ stack"{}},\ \{}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a303b93cbec67fcc7b8c811304b46fd9a}{IMM\_DOUBLE\_T}}\ a\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a8e6708d01dec9fd978f58748eda35132}{POP}}(\&a);}
 \DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00091}00091\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00092}00092\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00093}00093\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(in\ ,\ \ 16,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}push\ one\ element\ to\ stack\ from\ user\ input"{}},\ \{}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00094}00094\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a303b93cbec67fcc7b8c811304b46fd9a}{IMM\_DOUBLE\_T}}\ a\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00095}00095\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a1f92e847fc8c4ba1353b03992c5eeb5a}{GET\_FROM\_INPUT}}(\&a);}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00096}00096\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00097}00097\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_ae12240a3f4de46ee0616d67825971f44}{PUSH}}(a);}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00098}00098\ \})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00099}00099\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00100}00100\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(out,\ \ 17,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}pop\ and\ print\ element\ from\ stack"{}},\ \{}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00101}00101\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a303b93cbec67fcc7b8c811304b46fd9a}{IMM\_DOUBLE\_T}}\ a\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00102}00102\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a8e6708d01dec9fd978f58748eda35132}{POP}}(\&a);}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a14f23f2619c0fefec5f6852ed0c2ba6a}{PRINT}}(a);}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00093}00093\ \})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00095}00095\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(add,\ \ 18,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}+"{}},\ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{spu__dsl_8h_a81c98de12ee60ca088f9addf8e178cb2}{BINARY\_OPERATOR}}(+);\})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00096}00096\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(sub,\ \ 19,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}-\/"{}},\ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{spu__dsl_8h_a81c98de12ee60ca088f9addf8e178cb2}{BINARY\_OPERATOR}}(-\/);\})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00097}00097\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(mul,\ \ 20,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}*"{}},\ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{spu__dsl_8h_a81c98de12ee60ca088f9addf8e178cb2}{BINARY\_OPERATOR}}(*);\})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00098}00098\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(div,\ \ 21,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}/"{}},\ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{spu__dsl_8h_a81c98de12ee60ca088f9addf8e178cb2}{BINARY\_OPERATOR}}(/);\})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00099}00099\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(sqrt,\ 22,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}sqaure\ root"{}},\ \{\mbox{\hyperlink{spu__dsl_8h_a0e78009ab0c6fe5165541468db781072}{UNARY\_OPERATOR}}(sqrt);\})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00100}00100\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(sin,\ \ 23,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}sinus"{}},\ \ \ \ \ \ \ \{\mbox{\hyperlink{spu__dsl_8h_a0e78009ab0c6fe5165541468db781072}{UNARY\_OPERATOR}}(sin);\})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00101}00101\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(cos,\ \ 24,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}cosinus"{}},\ \ \ \ \ \{\mbox{\hyperlink{spu__dsl_8h_a0e78009ab0c6fe5165541468db781072}{UNARY\_OPERATOR}}(cos);\})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00102}00102\ }
 \DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00103}00103\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00104}00104\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a14f23f2619c0fefec5f6852ed0c2ba6a}{PRINT}}(a);}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00105}00105\ \})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00106}00106\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00107}00107\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(add,\ \ 18,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}+"{}},\ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{spu__dsl_8h_a81c98de12ee60ca088f9addf8e178cb2}{BINARY\_OPERATOR}}(+);\})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00108}00108\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(sub,\ \ 19,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}-\/"{}},\ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{spu__dsl_8h_a81c98de12ee60ca088f9addf8e178cb2}{BINARY\_OPERATOR}}(-\/);\})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00109}00109\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(mul,\ \ 20,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}*"{}},\ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{spu__dsl_8h_a81c98de12ee60ca088f9addf8e178cb2}{BINARY\_OPERATOR}}(*);\})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00110}00110\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(div,\ \ 21,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}/"{}},\ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{spu__dsl_8h_a81c98de12ee60ca088f9addf8e178cb2}{BINARY\_OPERATOR}}(/);\})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00111}00111\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(sqrt,\ 22,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}sqaure\ root"{}},\ \{\mbox{\hyperlink{spu__dsl_8h_a0e78009ab0c6fe5165541468db781072}{UNARY\_OPERATOR}}(sqrt);\})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00112}00112\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(sin,\ \ 23,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}sinus"{}},\ \ \ \ \ \ \ \{\mbox{\hyperlink{spu__dsl_8h_a0e78009ab0c6fe5165541468db781072}{UNARY\_OPERATOR}}(sin);\})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00113}00113\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(cos,\ \ 24,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}cosinus"{}},\ \ \ \ \ \{\mbox{\hyperlink{spu__dsl_8h_a0e78009ab0c6fe5165541468db781072}{UNARY\_OPERATOR}}(cos);\})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00114}00114\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00115}00115\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00116}00116\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00117}00117\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(dmp,\ \ 31,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}spu\ data\ dump"{}},\ \{}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00118}00118\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a68e4a10cfd30e33ab1e506f696729336}{DUMP}}();}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00119}00119\ \})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00120}00120\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00121}00121\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(shw,\ \ 32,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \ \textcolor{stringliteral}{"{}Graphics\ update"{}},\ \{}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00122}00122\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a3cc39a683dd5b4be4a7cabb4d3af5635}{SHOW}}();}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00123}00123\ \})}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00124}00124\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00125}00125\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(fps,\ \ 33,\ \mbox{\hyperlink{spu__dsl_8h_ab61b6344b067c61cf8a583577051c78e}{ARG\_IMM\_DOUBLE}},\ \ \textcolor{stringliteral}{"{}Graphics\ update"{}},\ \{}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00126}00126\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a226e577a36ed0a410a8affc1cd05ce25}{CHECK\_AND\_THROW\_ERR}}(\mbox{\hyperlink{spu__dsl_8h_ae99b8cd524bcb719d3d5657bc927f24b}{IS\_ARG\_IMM\_DOUBLE}},\ \textcolor{stringliteral}{"{}\(\backslash\)"{}fps\(\backslash\)"{}\ requires\ fps\ number."{}});}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00127}00127\ }
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00128}00128\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_aaaa1798b15a07625cd552c20346c2e6e}{SET\_FPS}}(\mbox{\hyperlink{spu__dsl_8h_ab61b6344b067c61cf8a583577051c78e}{ARG\_IMM\_DOUBLE}});}
-\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00129}00129\ \})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00105}00105\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(dmp,\ \ 31,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \textcolor{stringliteral}{"{}spu\ data\ dump"{}},\ \{}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00106}00106\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a68e4a10cfd30e33ab1e506f696729336}{DUMP}}();}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00107}00107\ \})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00109}00109\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(shw,\ \ 32,\ \mbox{\hyperlink{cmd_8h_aa1f1249e7a2b85ca4b20b9dd072a562ea987f8fc7b774aef0a635c58ae03258c9}{ARG\_NONE}},\ \ \textcolor{stringliteral}{"{}Graphics\ update"{}},\ \{}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00110}00110\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_a3cc39a683dd5b4be4a7cabb4d3af5635}{SHOW}}();}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00111}00111\ \})}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00113}00113\ \mbox{\hyperlink{cmd_8h_a2bb21be9ee8eee6830a1e91886e03617}{DEF\_CMD}}(fps,\ \ 33,\ \mbox{\hyperlink{spu__dsl_8h_affc73a1d6edef707baa2c67176322169}{ARG\_REG}}\ |\ \mbox{\hyperlink{spu__dsl_8h_ab61b6344b067c61cf8a583577051c78e}{ARG\_IMM\_DOUBLE}}\ |\ \mbox{\hyperlink{spu__dsl_8h_a2f622510378832f7dd7e9abdebaafac3}{ARG\_IMM\_INT}}\ |\ \mbox{\hyperlink{cmd__dict_8h_ae9eae0fca40f4dd404a8671abdbcd0eb}{ARG\_RAM}}\ |\ \mbox{\hyperlink{cmd__dict_8h_afaec295d1133fe7eb6d88fc828fa4d86}{ARG\_LABEL}},\ \ \textcolor{stringliteral}{"{}Graphics\ update"{}},\ \{}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00114}00114\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_ad2091db5b73879d5df44357bb53d54a2}{CHECK\_GET\_RVALUE\_ARGS}}();}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00115}00115\ \ \ \ \ \mbox{\hyperlink{spu__dsl_8h_aaaa1798b15a07625cd552c20346c2e6e}{SET\_FPS}}(\mbox{\hyperlink{spu__dsl_8h_a52cb809ee1e57e683b950d9ed1842552}{GET\_RVALUE}}());}
+\DoxyCodeLine{\Hypertarget{cmd__dict_8h_source_l00116}00116\ \})}
 
 \end{DoxyCode}

@@ -34,11 +34,8 @@ build_spu:
 
 DOCS_TARGET = $(DOCS_DIR)/docs_generated
 
-doxygen dox: $(DOCS_TARGET)
-
-$(DOCS_TARGET): $(FILES:/%=%) | $(DOCS_DIR)
-	@echo "Doxygen generated %date% %time%" > $(DOCS_TARGET)
-	@doxygen.exe docs/Doxyfile
+doxygen dox: | $(DOCS_DIR)
+	@doxygen docs/Doxyfile
 
 $(DOCS_DIR):
 	@mkdir ./$@

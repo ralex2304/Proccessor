@@ -1,7 +1,7 @@
 var text__lib_8h =
 [
-    [ "const_String", "structconst___string.html", "structconst___string" ],
-    [ "String", "struct_string.html", "struct_string" ],
+    [ "const_String", "structconst__String.html", "structconst__String" ],
+    [ "String", "structString.html", "structString" ],
     [ "String_CONST", "text__lib_8h.html#a62644cba8542352b76b0e4bf9eb25c73", null ],
     [ "String_PRINTF", "text__lib_8h.html#a8bda955a9d6dede91b9f9319eb437476", null ],
     [ "String_TO_const", "text__lib_8h.html#a59a33ce1c7a0b31f7b0284850e355051", null ],

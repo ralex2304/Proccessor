@@ -1,0 +1,103 @@
+\doxysection{Cmd\+Info Struct Reference}
+\hypertarget{structCmdInfo}{}\label{structCmdInfo}\index{CmdInfo@{CmdInfo}}
+
+
+Keeps information about commans.  
+
+
+
+
+{\ttfamily \#include $<$cmd.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14}{Cmd\+Num}} \mbox{\hyperlink{structCmdInfo_a8c0cbd30b5f5d99be1e3b93668995c7e}{num}}
+\item 
+const \mbox{\hyperlink{structconst__String}{const\+\_\+\+String}} \mbox{\hyperlink{structCmdInfo_aa52b39e68b31e238350d26b360eba617}{name}} = \{\}
+\item 
+\mbox{\hyperlink{structArgsEnabled}{Args\+Enabled}} \mbox{\hyperlink{structCmdInfo_a9e4e9b8b68b1772fa4d9ee80fbb5099f}{is\+\_\+args}} = \{\}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structCmdInfo_ae96c1b352223eed37a7c9c16761e176d}{description}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Keeps information about commans. 
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00129}{129}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structCmdInfo_ae96c1b352223eed37a7c9c16761e176d}\label{structCmdInfo_ae96c1b352223eed37a7c9c16761e176d} 
+\index{CmdInfo@{CmdInfo}!description@{description}}
+\index{description@{description}!CmdInfo@{CmdInfo}}
+\doxysubsubsection{\texorpdfstring{description}{description}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} Cmd\+Info\+::description = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00134}{134}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{args__parser_8cpp_source_l00133}{print\+\_\+commands\+\_\+list()}}.
+
+\Hypertarget{structCmdInfo_a9e4e9b8b68b1772fa4d9ee80fbb5099f}\label{structCmdInfo_a9e4e9b8b68b1772fa4d9ee80fbb5099f} 
+\index{CmdInfo@{CmdInfo}!is\_args@{is\_args}}
+\index{is\_args@{is\_args}!CmdInfo@{CmdInfo}}
+\doxysubsubsection{\texorpdfstring{is\_args}{is\_args}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structArgsEnabled}{Args\+Enabled}} Cmd\+Info\+::is\+\_\+args = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00132}{132}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00132\ \{\};\ \ \ \textcolor{comment}{//<\ possible\ arguments}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{read_8cpp_source_l00143}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+double()}}, \mbox{\hyperlink{read_8cpp_source_l00118}{asm\+\_\+read\+\_\+arg\+\_\+imm\+\_\+int()}}, \mbox{\hyperlink{read_8cpp_source_l00168}{asm\+\_\+read\+\_\+arg\+\_\+label()}}, \mbox{\hyperlink{read_8cpp_source_l00087}{asm\+\_\+read\+\_\+arg\+\_\+reg()}}, \mbox{\hyperlink{read_8cpp_source_l00053}{asm\+\_\+read\+\_\+args\+\_\+ram()}}, \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{errors_8h_source_l00049}{cmd\+\_\+is\+\_\+arg\+\_\+required()}}, and \mbox{\hyperlink{args__parser_8cpp_source_l00133}{print\+\_\+commands\+\_\+list()}}.
+
+\Hypertarget{structCmdInfo_aa52b39e68b31e238350d26b360eba617}\label{structCmdInfo_aa52b39e68b31e238350d26b360eba617} 
+\index{CmdInfo@{CmdInfo}!name@{name}}
+\index{name@{name}!CmdInfo@{CmdInfo}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structconst__String}{const\+\_\+\+String}} Cmd\+Info\+::name = \{\}}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00131}{131}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00131\ \{\};\ \ \ \textcolor{comment}{//<\ command\ name}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{listing_8cpp_source_l00006}{asm\+\_\+write\+\_\+cmd\+\_\+listing()}}, \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}, and \mbox{\hyperlink{args__parser_8cpp_source_l00133}{print\+\_\+commands\+\_\+list()}}.
+
+\Hypertarget{structCmdInfo_a8c0cbd30b5f5d99be1e3b93668995c7e}\label{structCmdInfo_a8c0cbd30b5f5d99be1e3b93668995c7e} 
+\index{CmdInfo@{CmdInfo}!num@{num}}
+\index{num@{num}!CmdInfo@{CmdInfo}}
+\doxysubsubsection{\texorpdfstring{num}{num}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{cmd_8h_a797039060eebcda99793fb7f223a0b14}{Cmd\+Num}} Cmd\+Info\+::num}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00130}{130}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{read_8cpp_source_l00005}{asm\+\_\+read\+\_\+cmd()}}, and \mbox{\hyperlink{args__parser_8cpp_source_l00133}{print\+\_\+commands\+\_\+list()}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+shared/\mbox{\hyperlink{cmd_8h}{cmd.\+h}}\end{DoxyCompactItemize}

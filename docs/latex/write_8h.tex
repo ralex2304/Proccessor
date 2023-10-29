@@ -2,22 +2,22 @@
 \hypertarget{write_8h}{}\label{write_8h}\index{assembler/src/asm/write.h@{assembler/src/asm/write.h}}
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
-{\ttfamily \#include \"{}lib/utils/buf\+\_\+lib.\+h\"{}}\newline
-{\ttfamily \#include \"{}lib/utils/statuses.\+h\"{}}\newline
-{\ttfamily \#include \"{}listing.\+h\"{}}\newline
-{\ttfamily \#include \"{}errors.\+h\"{}}\newline
+{\ttfamily \#include "{}lib/utils/buf\+\_\+lib.\+h"{}}\newline
+{\ttfamily \#include "{}lib/utils/statuses.\+h"{}}\newline
+{\ttfamily \#include "{}listing.\+h"{}}\newline
+{\ttfamily \#include "{}errors.\+h"{}}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{write_8h_a6edb4bdc99e1b4b4010457026a0f672f}{asm\+\_\+write\+\_\+cmd}} (\mbox{\hyperlink{struct_asm}{Asm}} \texorpdfstring{$\ast$}{*}asm\+\_\+data, const \mbox{\hyperlink{struct_asm_line}{Asm\+Line}} \texorpdfstring{$\ast$}{*}line, FILE \texorpdfstring{$\ast$}{*}listing\+\_\+file)
+\mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{write_8h_a6edb4bdc99e1b4b4010457026a0f672f}{asm\+\_\+write\+\_\+cmd}} (\mbox{\hyperlink{structAsm}{Asm}} \texorpdfstring{$\ast$}{*}asm\+\_\+data, const \mbox{\hyperlink{structAsmLine}{Asm\+Line}} \texorpdfstring{$\ast$}{*}line, FILE \texorpdfstring{$\ast$}{*}listing\+\_\+file)
 \begin{DoxyCompactList}\small\item\em Writes one cmd to buf. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{write_8h_a4b00993b985bffa67501e9453def75ce}{asm\+\_\+write\+\_\+cmd\+\_\+bin}} (\mbox{\hyperlink{struct_buffer}{Buffer}} \texorpdfstring{$\ast$}{*}buf, const \mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}cmd, const bool final\+\_\+pass)
+\mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{write_8h_a4b00993b985bffa67501e9453def75ce}{asm\+\_\+write\+\_\+cmd\+\_\+bin}} (\mbox{\hyperlink{structBuffer}{Buffer}} \texorpdfstring{$\ast$}{*}buf, const \mbox{\hyperlink{structCmd}{Cmd}} \texorpdfstring{$\ast$}{*}cmd, const bool final\+\_\+pass)
 \begin{DoxyCompactList}\small\item\em Writes one cmd to bin file. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{write_8h_abd8a271bd3a0dffbae445526e8807a57}{asm\+\_\+write\+\_\+header}} (\mbox{\hyperlink{struct_buffer}{Buffer}} \texorpdfstring{$\ast$}{*}buf, FILE \texorpdfstring{$\ast$}{*}listing\+\_\+file, const bool final\+\_\+pass)
+\mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{write_8h_abd8a271bd3a0dffbae445526e8807a57}{asm\+\_\+write\+\_\+header}} (\mbox{\hyperlink{structBuffer}{Buffer}} \texorpdfstring{$\ast$}{*}buf, FILE \texorpdfstring{$\ast$}{*}listing\+\_\+file, const bool final\+\_\+pass)
 \begin{DoxyCompactList}\small\item\em Writes header. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{write_8h_aec51583b5b075e87e54a1c6989920d95}{asm\+\_\+write\+\_\+header\+\_\+bin}} (\mbox{\hyperlink{struct_buffer}{Buffer}} \texorpdfstring{$\ast$}{*}buf, const bool final\+\_\+pass)
+\mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} \mbox{\hyperlink{write_8h_aec51583b5b075e87e54a1c6989920d95}{asm\+\_\+write\+\_\+header\+\_\+bin}} (\mbox{\hyperlink{structBuffer}{Buffer}} \texorpdfstring{$\ast$}{*}buf, const bool final\+\_\+pass)
 \begin{DoxyCompactList}\small\item\em Writes header to bin buffer. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{write_8h_a382fac65c24b2691128e709d79a5e761}{asm\+\_\+calc\+\_\+cmd\+\_\+size}} (const \mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}cmd)
+size\+\_\+t \mbox{\hyperlink{write_8h_a382fac65c24b2691128e709d79a5e761}{asm\+\_\+calc\+\_\+cmd\+\_\+size}} (const \mbox{\hyperlink{structCmd}{Cmd}} \texorpdfstring{$\ast$}{*}cmd)
 \begin{DoxyCompactList}\small\item\em Calculates command size in bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -26,7 +26,7 @@ size\+\_\+t \mbox{\hyperlink{write_8h_a382fac65c24b2691128e709d79a5e761}{asm\+\_
 \index{write.h@{write.h}!asm\_calc\_cmd\_size@{asm\_calc\_cmd\_size}}
 \index{asm\_calc\_cmd\_size@{asm\_calc\_cmd\_size}!write.h@{write.h}}
 \doxysubsubsection{\texorpdfstring{asm\_calc\_cmd\_size()}{asm\_calc\_cmd\_size()}}
-{\footnotesize\ttfamily size\+\_\+t asm\+\_\+calc\+\_\+cmd\+\_\+size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily size\+\_\+t asm\+\_\+calc\+\_\+cmd\+\_\+size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCmd}{Cmd}} \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -47,9 +47,9 @@ Definition at line \mbox{\hyperlink{write_8h_source_l00057}{57}} of file \mbox{\
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(cmd-\/>\mbox{\hyperlink{struct_cmd_a0a38a0e6be202854d97c4637280f5914}{keys}})\ +\ cmd-\/>\mbox{\hyperlink{struct_cmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{struct_cmd_keys_a76f64f02295d9a30abdaf138ea275f6a}{reg}}\ *\ \textcolor{keyword}{sizeof}(cmd-\/>\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a49949ad6edf5cb3523025913f2c0adc5}{reg}})}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ cmd-\/>\mbox{\hyperlink{struct_cmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{struct_cmd_keys_a2520ae7bb6f891ca6ff62dd0f882a1f4}{imm\_int}}\ *\ \textcolor{keyword}{sizeof}(cmd-\/>\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a7280dbc4d3d9bee564f6815e969bdd07}{imm\_int}})}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ cmd-\/>\mbox{\hyperlink{struct_cmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{struct_cmd_keys_a5b1fdf0614537d3c515c99ce945906fa}{imm\_double}}\ *\ \textcolor{keyword}{sizeof}(cmd-\/>\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_af4f115f325b0b1e91f03bea48354fa82}{imm\_double}});}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(cmd-\/>\mbox{\hyperlink{structCmd_a0a38a0e6be202854d97c4637280f5914}{keys}})\ +\ cmd-\/>\mbox{\hyperlink{structCmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{structCmdKeys_a76f64f02295d9a30abdaf138ea275f6a}{reg}}\ *\ \textcolor{keyword}{sizeof}(cmd-\/>\mbox{\hyperlink{structCmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{structCmdArgs_a49949ad6edf5cb3523025913f2c0adc5}{reg}})}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ cmd-\/>\mbox{\hyperlink{structCmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{structCmdKeys_a2520ae7bb6f891ca6ff62dd0f882a1f4}{imm\_int}}\ *\ \textcolor{keyword}{sizeof}(cmd-\/>\mbox{\hyperlink{structCmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{structCmdArgs_a7280dbc4d3d9bee564f6815e969bdd07}{imm\_int}})}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ cmd-\/>\mbox{\hyperlink{structCmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{structCmdKeys_a5b1fdf0614537d3c515c99ce945906fa}{imm\_double}}\ *\ \textcolor{keyword}{sizeof}(cmd-\/>\mbox{\hyperlink{structCmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{structCmdArgs_af4f115f325b0b1e91f03bea48354fa82}{imm\_double}});}
 \DoxyCodeLine{00061\ \}}
 
 \end{DoxyCode}
@@ -61,7 +61,7 @@ References \mbox{\hyperlink{cmd_8h_source_l00176}{Cmd\+::args}}, \mbox{\hyperlin
 \index{write.h@{write.h}!asm\_write\_cmd@{asm\_write\_cmd}}
 \index{asm\_write\_cmd@{asm\_write\_cmd}!write.h@{write.h}}
 \doxysubsubsection{\texorpdfstring{asm\_write\_cmd()}{asm\_write\_cmd()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+write\+\_\+cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_asm}{Asm}} \texorpdfstring{$\ast$}{*}}]{asm\+\_\+data,  }\item[{const \mbox{\hyperlink{struct_asm_line}{Asm\+Line}} \texorpdfstring{$\ast$}{*}}]{line,  }\item[{FILE \texorpdfstring{$\ast$}{*}}]{listing\+\_\+file }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+write\+\_\+cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAsm}{Asm}} \texorpdfstring{$\ast$}{*}}]{asm\+\_\+data,  }\item[{const \mbox{\hyperlink{structAsmLine}{Asm\+Line}} \texorpdfstring{$\ast$}{*}}]{line,  }\item[{FILE \texorpdfstring{$\ast$}{*}}]{listing\+\_\+file }\end{DoxyParamCaption})}
 
 
 
@@ -77,7 +77,7 @@ Writes one cmd to buf.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\doxylink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
+\doxylink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
 \end{DoxyReturn}
 
 
@@ -89,13 +89,13 @@ Definition at line \mbox{\hyperlink{write_8cpp_source_l00003}{3}} of file \mbox{
 \DoxyCodeLine{00004\ \ \ \ \ assert(asm\_data);}
 \DoxyCodeLine{00005\ \ \ \ \ assert(line);}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordflow}{if}\ (asm\_data-\/>\mbox{\hyperlink{struct_asm_a2ac405dde59fcf5ece63bdecd499c335}{pass\_num}}\ ==\ asm\_data-\/>\mbox{\hyperlink{struct_asm_ab544e702fdec142cb2efd0688d8bc80a}{LAST\_PASS\_NUM}}\ \&\&\ listing\_file\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordflow}{if}\ (asm\_data-\/>\mbox{\hyperlink{structAsm_a2ac405dde59fcf5ece63bdecd499c335}{pass\_num}}\ ==\ asm\_data-\/>\mbox{\hyperlink{structAsm_ab544e702fdec142cb2efd0688d8bc80a}{LAST\_PASS\_NUM}}\ \&\&\ listing\_file\ !=\ \textcolor{keyword}{nullptr})}
 \DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{listing_8cpp_a1302ad2ce9935ef5f4f18f93ce8feabf}{asm\_write\_cmd\_listing}}(listing\_file,\ asm\_data,\ line));}
 \DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{write_8cpp_a4b00993b985bffa67501e9453def75ce}{asm\_write\_cmd\_bin}}(\&asm\_data-\/>\mbox{\hyperlink{struct_asm_ac48610455ccf97057b1790399147f482}{buf}},\ \&line-\/>\mbox{\hyperlink{struct_asm_line_a950aaae2050d4a998629a5570ce6b864}{cmd}},}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ asm\_data-\/>\mbox{\hyperlink{struct_asm_a2ac405dde59fcf5ece63bdecd499c335}{pass\_num}}\ ==\ asm\_data-\/>\mbox{\hyperlink{struct_asm_ab544e702fdec142cb2efd0688d8bc80a}{LAST\_PASS\_NUM}}));}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{write_8cpp_a4b00993b985bffa67501e9453def75ce}{asm\_write\_cmd\_bin}}(\&asm\_data-\/>\mbox{\hyperlink{structAsm_ac48610455ccf97057b1790399147f482}{buf}},\ \&line-\/>\mbox{\hyperlink{structAsmLine_a950aaae2050d4a998629a5570ce6b864}{cmd}},}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ asm\_data-\/>\mbox{\hyperlink{structAsm_a2ac405dde59fcf5ece63bdecd499c335}{pass\_num}}\ ==\ asm\_data-\/>\mbox{\hyperlink{structAsm_ab544e702fdec142cb2efd0688d8bc80a}{LAST\_PASS\_NUM}}));}
 \DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
 \DoxyCodeLine{00014\ \}}
 
 \end{DoxyCode}
@@ -111,7 +111,7 @@ Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00056}{asm\+\_\+parse\+\_\
 \index{write.h@{write.h}!asm\_write\_cmd\_bin@{asm\_write\_cmd\_bin}}
 \index{asm\_write\_cmd\_bin@{asm\_write\_cmd\_bin}!write.h@{write.h}}
 \doxysubsubsection{\texorpdfstring{asm\_write\_cmd\_bin()}{asm\_write\_cmd\_bin()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+write\+\_\+cmd\+\_\+bin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_buffer}{Buffer}} \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{const \mbox{\hyperlink{struct_cmd}{Cmd}} \texorpdfstring{$\ast$}{*}}]{cmd,  }\item[{const bool}]{final\+\_\+pass }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+write\+\_\+cmd\+\_\+bin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}} \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{const \mbox{\hyperlink{structCmd}{Cmd}} \texorpdfstring{$\ast$}{*}}]{cmd,  }\item[{const bool}]{final\+\_\+pass }\end{DoxyParamCaption})}
 
 
 
@@ -127,7 +127,7 @@ Writes one cmd to bin file.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\doxylink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
+\doxylink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
 \end{DoxyReturn}
 
 
@@ -138,21 +138,21 @@ Definition at line \mbox{\hyperlink{write_8cpp_source_l00025}{25}} of file \mbox
 \DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00026\ \ \ \ \ assert(buf);}
 \DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd-\/>\mbox{\hyperlink{struct_cmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}\ ==\ \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd-\/>\mbox{\hyperlink{structCmd_a8df32ebe09e03d38de8c20f6266611b4}{info}}\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
 \DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{write_8cpp_a134bece8ae487f74d82ee230bdb39393}{BUF\_CAT\_}}(cmd-\/>\mbox{\hyperlink{struct_cmd_a0a38a0e6be202854d97c4637280f5914}{keys}});}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{write_8cpp_a134bece8ae487f74d82ee230bdb39393}{BUF\_CAT\_}}(cmd-\/>\mbox{\hyperlink{structCmd_a0a38a0e6be202854d97c4637280f5914}{keys}});}
 \DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd-\/>\mbox{\hyperlink{struct_cmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{struct_cmd_keys_a76f64f02295d9a30abdaf138ea275f6a}{reg}})}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{write_8cpp_a134bece8ae487f74d82ee230bdb39393}{BUF\_CAT\_}}(cmd-\/>\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a49949ad6edf5cb3523025913f2c0adc5}{reg}});}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd-\/>\mbox{\hyperlink{structCmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{structCmdKeys_a76f64f02295d9a30abdaf138ea275f6a}{reg}})}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{write_8cpp_a134bece8ae487f74d82ee230bdb39393}{BUF\_CAT\_}}(cmd-\/>\mbox{\hyperlink{structCmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{structCmdArgs_a49949ad6edf5cb3523025913f2c0adc5}{reg}});}
 \DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd-\/>\mbox{\hyperlink{struct_cmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{struct_cmd_keys_a5b1fdf0614537d3c515c99ce945906fa}{imm\_double}})}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{write_8cpp_a134bece8ae487f74d82ee230bdb39393}{BUF\_CAT\_}}(cmd-\/>\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_af4f115f325b0b1e91f03bea48354fa82}{imm\_double}});}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd-\/>\mbox{\hyperlink{structCmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{structCmdKeys_a5b1fdf0614537d3c515c99ce945906fa}{imm\_double}})}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{write_8cpp_a134bece8ae487f74d82ee230bdb39393}{BUF\_CAT\_}}(cmd-\/>\mbox{\hyperlink{structCmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{structCmdArgs_af4f115f325b0b1e91f03bea48354fa82}{imm\_double}});}
 \DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd-\/>\mbox{\hyperlink{struct_cmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{struct_cmd_keys_a2520ae7bb6f891ca6ff62dd0f882a1f4}{imm\_int}})}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{write_8cpp_a134bece8ae487f74d82ee230bdb39393}{BUF\_CAT\_}}(cmd-\/>\mbox{\hyperlink{struct_cmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{struct_cmd_args_a7280dbc4d3d9bee564f6815e969bdd07}{imm\_int}});}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (cmd-\/>\mbox{\hyperlink{structCmd_a0a38a0e6be202854d97c4637280f5914}{keys}}.\mbox{\hyperlink{structCmdKeys_a2520ae7bb6f891ca6ff62dd0f882a1f4}{imm\_int}})}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{write_8cpp_a134bece8ae487f74d82ee230bdb39393}{BUF\_CAT\_}}(cmd-\/>\mbox{\hyperlink{structCmd_ad3fa66964fc662181ab833aef4a72db0}{args}}.\mbox{\hyperlink{structCmdArgs_a7280dbc4d3d9bee564f6815e969bdd07}{imm\_int}});}
 \DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
 \DoxyCodeLine{00043\ \}}
 
 \end{DoxyCode}
@@ -168,7 +168,7 @@ Referenced by \mbox{\hyperlink{write_8cpp_source_l00003}{asm\+\_\+write\+\_\+cmd
 \index{write.h@{write.h}!asm\_write\_header@{asm\_write\_header}}
 \index{asm\_write\_header@{asm\_write\_header}!write.h@{write.h}}
 \doxysubsubsection{\texorpdfstring{asm\_write\_header()}{asm\_write\_header()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+write\+\_\+header (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_buffer}{Buffer}} \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{FILE \texorpdfstring{$\ast$}{*}}]{listing\+\_\+file,  }\item[{const bool}]{final\+\_\+pass }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+write\+\_\+header (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}} \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{FILE \texorpdfstring{$\ast$}{*}}]{listing\+\_\+file,  }\item[{const bool}]{final\+\_\+pass }\end{DoxyParamCaption})}
 
 
 
@@ -184,7 +184,7 @@ Writes header.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\doxylink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
+\doxylink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
 \end{DoxyReturn}
 
 
@@ -201,7 +201,7 @@ Definition at line \mbox{\hyperlink{write_8cpp_source_l00049}{49}} of file \mbox
 \DoxyCodeLine{00055\ }
 \DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{statuses_8h_ae36d4e76cc7c3a31a1cd124e848597e6}{STATUS\_CHECK}}(\mbox{\hyperlink{write_8cpp_aec51583b5b075e87e54a1c6989920d95}{asm\_write\_header\_bin}}(buf,\ final\_pass));\ \textcolor{comment}{//<\ Bin\ write\ after\ listing!!!\ (changes\ cur\_byte)}}
 \DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
 \DoxyCodeLine{00059\ \}}
 
 \end{DoxyCode}
@@ -217,7 +217,7 @@ Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00083}{asm\+\_\+do\+\_\+pa
 \index{write.h@{write.h}!asm\_write\_header\_bin@{asm\_write\_header\_bin}}
 \index{asm\_write\_header\_bin@{asm\_write\_header\_bin}!write.h@{write.h}}
 \doxysubsubsection{\texorpdfstring{asm\_write\_header\_bin()}{asm\_write\_header\_bin()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+write\+\_\+header\+\_\+bin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_buffer}{Buffer}} \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{const bool}]{final\+\_\+pass }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses}} asm\+\_\+write\+\_\+header\+\_\+bin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuffer}{Buffer}} \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{const bool}]{final\+\_\+pass }\end{DoxyParamCaption})}
 
 
 
@@ -231,7 +231,7 @@ Writes header to bin buffer.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\doxylink{struct_status_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
+\doxylink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status\+::\+Statuses} 
 \end{DoxyReturn}
 
 
@@ -244,7 +244,7 @@ Definition at line \mbox{\hyperlink{write_8cpp_source_l00061}{61}} of file \mbox
 \DoxyCodeLine{00063\ }
 \DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{write_8cpp_a134bece8ae487f74d82ee230bdb39393}{BUF\_CAT\_}}(\mbox{\hyperlink{cmd_8h_a1ae26eb7c82ff33e2bc446801638e3be}{FILE\_HEADER}});}
 \DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_status_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
 \DoxyCodeLine{00067\ \}}
 
 \end{DoxyCode}

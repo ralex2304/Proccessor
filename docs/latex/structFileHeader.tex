@@ -1,0 +1,105 @@
+\doxysection{File\+Header Struct Reference}
+\hypertarget{structFileHeader}{}\label{structFileHeader}\index{FileHeader@{FileHeader}}
+
+
+Binary file header.  
+
+
+
+
+{\ttfamily \#include $<$cmd.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structFileHeader_a161aa6703e01462d26a20668a5fd4bf5}{check}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structFileHeader_a539d90ab0f7c0d4e57b7b36764132216}{sign}} = 0x554B
+\item 
+short \mbox{\hyperlink{structFileHeader_a3c0fb698efe175bbe23b23f8e4d614e5}{version}} = \mbox{\hyperlink{cmd_8h_ac6fd8a0b61158e50a7d52538ba0e5be9}{CMD\+\_\+\+VERSION}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Binary file header. 
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00158}{158}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structFileHeader_a161aa6703e01462d26a20668a5fd4bf5}\label{structFileHeader_a161aa6703e01462d26a20668a5fd4bf5} 
+\index{FileHeader@{FileHeader}!check@{check}}
+\index{check@{check}!FileHeader@{FileHeader}}
+\doxysubsubsection{\texorpdfstring{check()}{check()}}
+{\footnotesize\ttfamily bool File\+Header\+::check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{cmd_8cpp_source}{cmd.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structFileHeader_a539d90ab0f7c0d4e57b7b36764132216}{sign}}\ !=\ \mbox{\hyperlink{cmd_8h_a1ae26eb7c82ff33e2bc446801638e3be}{FILE\_HEADER}}.\mbox{\hyperlink{structFileHeader_a539d90ab0f7c0d4e57b7b36764132216}{sign}})\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structFileHeader_a539d90ab0f7c0d4e57b7b36764132216}{sign}})\ ==\ 2);}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ printf(\mbox{\hyperlink{console_8h_ad220b7c98ce4bd06bf25860ca62d7aba}{CONSOLE\_RED}}(\textcolor{stringliteral}{"{}Error.\ Wrong\ signature."{}})\ \textcolor{stringliteral}{"{}\ \(\backslash\)"{}\%c\%c\(\backslash\)"{}\ instead\ of\ \(\backslash\)"{}\%c\%c\(\backslash\)"{}\(\backslash\)n"{}},}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structFileHeader_a539d90ab0f7c0d4e57b7b36764132216}{sign}},\ \mbox{\hyperlink{structFileHeader_a539d90ab0f7c0d4e57b7b36764132216}{sign}}\ >>\ 8,\ \mbox{\hyperlink{cmd_8h_a1ae26eb7c82ff33e2bc446801638e3be}{FILE\_HEADER}}.\mbox{\hyperlink{structFileHeader_a539d90ab0f7c0d4e57b7b36764132216}{sign}},\ \mbox{\hyperlink{cmd_8h_a1ae26eb7c82ff33e2bc446801638e3be}{FILE\_HEADER}}.\mbox{\hyperlink{structFileHeader_a539d90ab0f7c0d4e57b7b36764132216}{sign}}\ >>\ 8);}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00010\ \ \ \ \ \}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structFileHeader_a3c0fb698efe175bbe23b23f8e4d614e5}{version}}\ !=\ \mbox{\hyperlink{cmd_8h_a1ae26eb7c82ff33e2bc446801638e3be}{FILE\_HEADER}}.\mbox{\hyperlink{structFileHeader_a3c0fb698efe175bbe23b23f8e4d614e5}{version}})\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ printf(\mbox{\hyperlink{console_8h_ad220b7c98ce4bd06bf25860ca62d7aba}{CONSOLE\_RED}}(\textcolor{stringliteral}{"{}Error.\ Wrong\ version."{}})\ \textcolor{stringliteral}{"{}\ \(\backslash\)"{}\%d\(\backslash\)"{}\ instead\ of\ \(\backslash\)"{}\%d\(\backslash\)"{}\(\backslash\)n"{}},}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structFileHeader_a3c0fb698efe175bbe23b23f8e4d614e5}{version}},\ \mbox{\hyperlink{cmd_8h_a1ae26eb7c82ff33e2bc446801638e3be}{FILE\_HEADER}}.\mbox{\hyperlink{structFileHeader_a3c0fb698efe175bbe23b23f8e4d614e5}{version}});}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00019\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{console_8h_source_l00033}{CONSOLE\+\_\+\+RED}}, \mbox{\hyperlink{cmd_8h_source_l00167}{FILE\+\_\+\+HEADER}}, \mbox{\hyperlink{cmd_8h_source_l00159}{sign}}, and \mbox{\hyperlink{cmd_8h_source_l00160}{version}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structFileHeader_a539d90ab0f7c0d4e57b7b36764132216}\label{structFileHeader_a539d90ab0f7c0d4e57b7b36764132216} 
+\index{FileHeader@{FileHeader}!sign@{sign}}
+\index{sign@{sign}!FileHeader@{FileHeader}}
+\doxysubsubsection{\texorpdfstring{sign}{sign}}
+{\footnotesize\ttfamily uint16\+\_\+t File\+Header\+::sign = 0x554B}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00159}{159}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{listing_8cpp_source_l00090}{asm\+\_\+write\+\_\+header\+\_\+listing()}}, \mbox{\hyperlink{cmd_8cpp_source_l00003}{check()}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00119}{disasm\+\_\+write\+\_\+header()}}.
+
+\Hypertarget{structFileHeader_a3c0fb698efe175bbe23b23f8e4d614e5}\label{structFileHeader_a3c0fb698efe175bbe23b23f8e4d614e5} 
+\index{FileHeader@{FileHeader}!version@{version}}
+\index{version@{version}!FileHeader@{FileHeader}}
+\doxysubsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily short File\+Header\+::version = \mbox{\hyperlink{cmd_8h_ac6fd8a0b61158e50a7d52538ba0e5be9}{CMD\+\_\+\+VERSION}}}
+
+
+
+Definition at line \mbox{\hyperlink{cmd_8h_source_l00160}{160}} of file \mbox{\hyperlink{cmd_8h_source}{cmd.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{listing_8cpp_source_l00090}{asm\+\_\+write\+\_\+header\+\_\+listing()}}, \mbox{\hyperlink{cmd_8cpp_source_l00003}{check()}}, and \mbox{\hyperlink{disassembler_8cpp_source_l00119}{disasm\+\_\+write\+\_\+header()}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+shared/\mbox{\hyperlink{cmd_8h}{cmd.\+h}}\item 
+shared/\mbox{\hyperlink{cmd_8cpp}{cmd.\+cpp}}\end{DoxyCompactItemize}
