@@ -1,56 +1,72 @@
 \doxysection{encoder.\+py}
-\hypertarget{encoder_8py_source}{}\label{encoder_8py_source}\index{Programs/badApple/encoder.py@{Programs/badApple/encoder.py}}
+\hypertarget{encoder_8py_source}{}\label{encoder_8py_source}\index{Programs/encoder.py@{Programs/encoder.py}}
 \mbox{\hyperlink{encoder_8py}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00001}\mbox{\hyperlink{namespaceencoder}{00001}}\ \textcolor{keyword}{import}\ cv2}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00002}00002\ \textcolor{keyword}{import}\ math}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00003}00003\ }
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00004}\mbox{\hyperlink{namespaceencoder_a7db2a7de5d88840c1c0a577166cb5068}{00004}}\ TARGET\_FPS\ =\ 6}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00005}00005\ }
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00006}\mbox{\hyperlink{namespaceencoder_a8c10245467eb1d3463c9ea64a41aa469}{00006}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceencoder_a8c10245467eb1d3463c9ea64a41aa469}{count\_color}}(bgr):}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00007}00007\ \ \ \ \ ret\ =\ 0}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00008}00008\ \ \ \ \ ret\ +=\ bgr[0]\ <<\ 0}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00009}00009\ \ \ \ \ ret\ +=\ bgr[1]\ <<\ 8}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00010}00010\ \ \ \ \ ret\ +=\ bgr[2]\ <<\ 16}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{return}\ ret}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00012}00012\ }
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00013}\mbox{\hyperlink{namespaceencoder_a3dd159bc88dcc094a37514f045fbe7a5}{00013}}\ cap\ =\ cv2.VideoCapture(\textcolor{stringliteral}{"{}./Programs/badApple/badApple.mp4"{}})}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00014}00014\ }
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00015}\mbox{\hyperlink{namespaceencoder_ac1dba33bb6a79530e9e21cb58cb9f979}{00015}}\ out\ =\ \textcolor{stringliteral}{"{}"{}}}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00016}00016\ out\ +=\ \textcolor{stringliteral}{"{}fps\ "{}}\ +\ str(TARGET\_FPS)\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00001}\mbox{\hyperlink{namespaceencoder}{00001}}\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00002}00002\ \textcolor{stringliteral}{mp4\ video\ to\ assembler\ code\ encoder}}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00003}00003\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00004}00004\ \textcolor{stringliteral}{console\ args:\ <input\ filename>\ <ouput\ filename>}}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00005}00005\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00007}\mbox{\hyperlink{namespaceencoder_a25b860667963ec08e8fc0f7d0ba786a6}{00007}}\ SCREEN\_WIDTH\ \ =\ 200}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00008}\mbox{\hyperlink{namespaceencoder_a565373885c7e9b55ab31cf8e9c2a3b89}{00008}}\ SCREEN\_HEIGHT\ =\ 200}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00010}\mbox{\hyperlink{namespaceencoder_ac8a900a4c9844588f3fadaada520e144}{00010}}\ VIDEO\_WIDTH\ \ \ =\ 200}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00011}\mbox{\hyperlink{namespaceencoder_a3e51e1b450741557b4f9dc725388494e}{00011}}\ VIDEO\_HEIGTH\ \ =\ 150}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00012}\mbox{\hyperlink{namespaceencoder_a7db2a7de5d88840c1c0a577166cb5068}{00012}}\ TARGET\_FPS\ =\ 6}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00014}00014\ \textcolor{keyword}{import}\ cv2}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00015}00015\ \textcolor{keyword}{import}\ math}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00016}00016\ \textcolor{keyword}{import}\ sys}
 \DoxyCodeLine{\Hypertarget{encoder_8py_source_l00017}00017\ }
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00018}\mbox{\hyperlink{namespaceencoder_a0b1b8944725c379b890b977af9ddc564}{00018}}\ FPS\ =\ int(cap.get(cv2.CAP\_PROP\_FPS))}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00020}\mbox{\hyperlink{namespaceencoder_a874cf2fc480d1e369f3850ba4bd0807c}{00020}}\ FRAME\_COUNT\ =\ int(cap.get(cv2.CAP\_PROP\_FRAME\_COUNT))\ -\/\ 10}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00022}\mbox{\hyperlink{namespaceencoder_a31e20d6561df491611d8880f27128aad}{00022}}\ bef\_frame\ =\ 0}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00023}00023\ \textcolor{keywordflow}{for}\ i\ \textcolor{keywordflow}{in}\ range(1,\ FRAME\_COUNT,\ math.ceil(FPS\ /\ TARGET\_FPS)):}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{if}\ i\ -\/\ bef\_frame\ >=\ 100:}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00025}00025\ \ \ \ \ \ \ \ \ print(i,\ \textcolor{stringliteral}{"{}/"{}},\ FRAME\_COUNT)}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ bef\_frame\ =\ i}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00028}00028\ \ \ \ \ cap.set(1,\ i)}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00029}\mbox{\hyperlink{namespaceencoder_ad13866f6af3dff53c3b46aeb0ff212e9}{00029}}\ \ \ \ \ res,\ frame\ =\ cap.read()\ \textcolor{comment}{\#frame\ has\ your\ pixel\ values}}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00030}00030\ }
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00031}00031\ \ \ \ \ \textcolor{comment}{\#Get\ frame\ height\ and\ width\ to\ access\ pixels}}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00032}\mbox{\hyperlink{namespaceencoder_a031f01761b07907dd80d635c4c31ab1b}{00032}}\ \ \ \ \ height,\ width,\ channels\ =\ frame.shape}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00033}00033\ \ \ \ \ frame\ =\ cv2.resize(frame,\ (96,\ 72),\ interpolation\ =\ cv2.INTER\_LANCZOS4)}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00034}00034\ }
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00035}00035\ \ \ \ \ \textcolor{comment}{\#Accessing\ BGR\ pixel\ values}}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{for}\ x\ \textcolor{keywordflow}{in}\ range(0,\ 96)\ :}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ y\ \textcolor{keywordflow}{in}\ range(0,\ 72)\ :}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ out\ +=\ \textcolor{stringliteral}{"{}push\ "{}}\ +\ str(\mbox{\hyperlink{namespaceencoder_a8c10245467eb1d3463c9ea64a41aa469}{count\_color}}(frame[y][x]))\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ out\ +=\ \textcolor{stringliteral}{"{}pop\ ["{}}\ +\ str(y\ *\ 100\ +\ x)\ +\ \textcolor{stringliteral}{"{}]\(\backslash\)n"{}}}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00041}00041\ \ \ \ \ out\ +=\ \textcolor{stringliteral}{"{}shw\(\backslash\)n"{}}}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00042}00042\ }
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00044}00044\ out\ +=\ \textcolor{stringliteral}{"{}hlt\(\backslash\)n"{}}}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00046}\mbox{\hyperlink{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45}{00046}}\ file\ =\ open(\textcolor{stringliteral}{"{}./Programs/badApple/main.code"{}},\ \textcolor{stringliteral}{"{}w"{}})}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00048}00048\ file.write(out)}
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00049}00049\ }
-\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00050}00050\ file.close()}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00018}\mbox{\hyperlink{namespaceencoder_a574387a2fada8649166ee3b7d117614f}{00018}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespaceencoder_a574387a2fada8649166ee3b7d117614f}{calc\_color}}(bgr):}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00019}00019\ \ \ \ \ ret\ =\ 0}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00020}00020\ \ \ \ \ ret\ +=\ bgr[0]\ <<\ 0}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00021}00021\ \ \ \ \ ret\ +=\ bgr[1]\ <<\ 8}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00022}00022\ \ \ \ \ ret\ +=\ bgr[2]\ <<\ 16}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{return}\ ret}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00025}\mbox{\hyperlink{namespaceencoder_a3dd159bc88dcc094a37514f045fbe7a5}{00025}}\ cap\ =\ cv2.VideoCapture(sys.argv[1])}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00027}\mbox{\hyperlink{namespaceencoder_ac1dba33bb6a79530e9e21cb58cb9f979}{00027}}\ out\ =\ \textcolor{stringliteral}{"{}"{}}}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00028}00028\ out\ +=\ \textcolor{stringliteral}{"{}fps\ "{}}\ +\ str(TARGET\_FPS)\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00030}\mbox{\hyperlink{namespaceencoder_a0b1b8944725c379b890b977af9ddc564}{00030}}\ FPS\ =\ int(cap.get(cv2.CAP\_PROP\_FPS))}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00032}\mbox{\hyperlink{namespaceencoder_a874cf2fc480d1e369f3850ba4bd0807c}{00032}}\ FRAME\_COUNT\ =\ int(cap.get(cv2.CAP\_PROP\_FRAME\_COUNT))\ -\/\ 10\ \textcolor{comment}{\#\ last\ frames\ are\ usually\ broken}}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00034}\mbox{\hyperlink{namespaceencoder_a8b705f55ab480aa44c2635ce4c88a6c6}{00034}}\ pixel\_arr\ =\ [0]\ *\ (SCREEN\_HEIGHT\ *\ SCREEN\_WIDTH)}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00036}\mbox{\hyperlink{namespaceencoder_a31e20d6561df491611d8880f27128aad}{00036}}\ bef\_frame\ =\ 0}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00037}00037\ \textcolor{keywordflow}{for}\ i\ \textcolor{keywordflow}{in}\ range(1,\ FRAME\_COUNT,\ math.ceil(FPS\ /\ TARGET\_FPS)):}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{if}\ i\ -\/\ bef\_frame\ >=\ 100:}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ print(i,\ \textcolor{stringliteral}{"{}/"{}},\ FRAME\_COUNT)}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00040}00040\ \ \ \ \ \ \ \ \ bef\_frame\ =\ i}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00042}00042\ \ \ \ \ cap.set(1,\ i)}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00043}\mbox{\hyperlink{namespaceencoder_ad13866f6af3dff53c3b46aeb0ff212e9}{00043}}\ \ \ \ \ res,\ frame\ =\ cap.read()\ \textcolor{comment}{\#frame\ has\ your\ pixel\ values}}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00045}00045\ \ \ \ \ \textcolor{comment}{\#Get\ frame\ height\ and\ width\ to\ access\ pixels}}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00046}\mbox{\hyperlink{namespaceencoder_a031f01761b07907dd80d635c4c31ab1b}{00046}}\ \ \ \ \ height,\ width,\ channels\ =\ frame.shape}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00047}00047\ \ \ \ \ frame\ =\ cv2.resize(frame,\ (VIDEO\_WIDTH,\ VIDEO\_HEIGTH),\ interpolation\ =\ cv2.INTER\_LANCZOS4)}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00049}00049\ \ \ \ \ \textcolor{comment}{\#Accessing\ BGR\ pixel\ values}}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{for}\ x\ \textcolor{keywordflow}{in}\ range(0,\ VIDEO\_WIDTH)\ :}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ y\ \textcolor{keywordflow}{in}\ range(0,\ VIDEO\_HEIGTH)\ :}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00052}\mbox{\hyperlink{namespaceencoder_afff0ff14a52b2a3cd1e4aa22d5ffd2aa}{00052}}\ \ \ \ \ \ \ \ \ \ \ \ \ color\ =\ \mbox{\hyperlink{namespaceencoder_a574387a2fada8649166ee3b7d117614f}{calc\_color}}(frame[y][x])}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ color\ !=\ pixel\_arr[y\ *\ SCREEN\_WIDTH\ +\ x]:}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\ +=\ \textcolor{stringliteral}{"{}push\ "{}}\ +\ str(color)\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\ +=\ \textcolor{stringliteral}{"{}pop\ ["{}}\ +\ str(y\ *\ SCREEN\_WIDTH\ +\ x)\ +\ \textcolor{stringliteral}{"{}]\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pixel\_arr[y\ *\ SCREEN\_WIDTH\ +\ x]\ =\ color}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00058}00058\ \ \ \ \ out\ +=\ \textcolor{stringliteral}{"{}shw\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00060}00060\ out\ +=\ \textcolor{stringliteral}{"{}hlt\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00062}\mbox{\hyperlink{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45}{00062}}\ file\ =\ open(sys.argv[2],\ \textcolor{stringliteral}{"{}w"{}})}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00064}00064\ file.write(out)}
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{encoder_8py_source_l00066}00066\ file.close()}
 
 \end{DoxyCode}

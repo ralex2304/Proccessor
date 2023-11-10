@@ -30,7 +30,11 @@ var cmd_8h =
       [ "RAX", "cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64ad8a2b3cfd37dc1215cf782d326e5186c", null ],
       [ "RBX", "cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a3fca113e3a8a54281655d842075690be", null ],
       [ "RCX", "cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a9319e76c0baaa9e53113184ab7d25944", null ],
-      [ "RDX", "cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a0358584dab0bc3a6ff014581cf6f4660", null ]
+      [ "RDX", "cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a0358584dab0bc3a6ff014581cf6f4660", null ],
+      [ "REX", "cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a75af5504f851771e17bc71028c858807", null ],
+      [ "RFX", "cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a0609a3c1819f218beff8b6e938d610e0", null ],
+      [ "RGX", "cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a85baec47690d87357e8c8acd928dc275", null ],
+      [ "RHX", "cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a1a112b538380cb3133df4e76f21b8f21", null ]
     ] ],
     [ "find_command_by_name", "cmd_8h.html#a354e23dddbbfc5534320a6c3ba894a5b", null ],
     [ "find_command_by_num", "cmd_8h.html#ae4f1f8a5e27cc0597a1762987ca19f7f", null ],

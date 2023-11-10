@@ -37,7 +37,7 @@
 \begin{DoxyItemize}
 \item {\bfseries{stk}} column means if function pushes or pops elements of stack
 \item {\bfseries{REG}}, {\bfseries{DOUBLE}}, {\bfseries{INT}}, {\bfseries{RAM}}, {\bfseries{LABEL}} columns mean if function can recieve arguments of this type
-\item Registers names\+: {\ttfamily rax}, {\ttfamily rbx}, {\ttfamily rcx}, {\ttfamily rdx}
+\item Registers names\+: {\ttfamily rax}, {\ttfamily rbx}, {\ttfamily rcx}, {\ttfamily rdx}, {\ttfamily rex}, {\ttfamily rfx}, {\ttfamily rgx}, {\ttfamily rhx}
 \end{DoxyItemize}\hypertarget{index_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{Basic}{Basic}}\label{index_autotoc_md7}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{9}{|X[-1]}|}
@@ -147,8 +147,12 @@ These functions pop 1 or 2 elements, make calculations and push result to stack
 
 \begin{DoxyItemize}
 \item Assembles in 2 passes
-\item Throws gcc-\/like designed syntax errors
 \item Optionally makes listing file with loads of useful information
+
+
+\item Throws gcc-\/like designed syntax errors\+:
+
+
 \end{DoxyItemize}\hypertarget{index_autotoc_md14}{}\doxysection{\texorpdfstring{Software processing unit}{Software processing unit}}\label{index_autotoc_md14}
 \hypertarget{index_autotoc_md15}{}\doxysubsection{\texorpdfstring{Command line flags}{Command line flags}}\label{index_autotoc_md15}
 
@@ -160,7 +164,7 @@ These functions pop 1 or 2 elements, make calculations and push result to stack
 \begin{DoxyItemize}
 \item Video mode
 \item \doxylink{structStack}{Stack}
-\item 4 Registers ({\ttfamily rax}, {\ttfamily rbx}, {\ttfamily rcx}, {\ttfamily rdx})
+\item 8 Registers ({\ttfamily rax}, {\ttfamily rbx}, {\ttfamily rcx}, {\ttfamily rdx}, {\ttfamily rex}, {\ttfamily rfx}, {\ttfamily rgx}, {\ttfamily rhx})
 \item RAM (acts as videomemory in video mode)
 \end{DoxyItemize}\hypertarget{index_autotoc_md17}{}\doxysection{\texorpdfstring{Disassembler}{Disassembler}}\label{index_autotoc_md17}
 \hypertarget{index_autotoc_md18}{}\doxysubsection{\texorpdfstring{Command line flags}{Command line flags}}\label{index_autotoc_md18}
@@ -181,30 +185,35 @@ You can find them in {\ttfamily Programs} directory
 \begin{DoxyItemize}
 \item {\bfseries{quad}} -\/ quad equations solver
 \item {\bfseries{rec\+Fact}}, {\bfseries{iter\+Fact}} -\/ recursive and iterative factorial calculation
-\item {\bfseries{circle}} -\/ draws circle in video mode
-\item {\bfseries{bad\+Apple}}, {\bfseries{doom}} -\/ bad apple and doom gameplay videos (you can generate code for them with \doxylink{namespacegen_ad6f9a21fef823e19e8e49589645c58ba}{gen.\+py} script)
-\end{DoxyItemize}\hypertarget{index_autotoc_md21}{}\doxysection{\texorpdfstring{Program features}{Program features}}\label{index_autotoc_md21}
+\item {\bfseries{circle}} -\/ draws circle in video mode (simple distance algorithm)
+\item {\bfseries{bresenham/line}}, {\bfseries{bresenham/circle}} -\/ draws line and circle using bresenham algorithm (python and assembler realisations)
+\item {\bfseries{bad\+Apple}}, {\bfseries{doom}} -\/ bad apple and doom gameplay videos (you can generate code for mp4 video with \doxylink{encoder_8py}{Programs/encoder.\+py} script)
+\end{DoxyItemize}
+
+  \hypertarget{index_autotoc_md21}{}\doxysection{\texorpdfstring{Program features}{Program features}}\label{index_autotoc_md21}
 
 \begin{DoxyItemize}
 \item advanced text parsing in assembler (non null-\/terminated strings tokenisation)
 \item code generation
 \item goto dispatch table (spu)
-\item assembling in 2 passes. The first pass is for detecting labels and size of output file, the second for writing file and listing
-\item cmd\+\_\+dict file, that contains all information about commands. You can change or add commands only in this file
+\item assembling in 2 passes. The first pass detects labels and size of output file, the second writes to file and listing
+\item {\ttfamily cmd\+\_\+dict} -\/ the only file for all information about commands
 \item DSL for commands actions
+\item video assembly code generator detects differnces and change only needed pixels. For example, bad\+Apple assemply code decreased by 3.\+5 times
 \end{DoxyItemize}\hypertarget{index_autotoc_md22}{}\doxysection{\texorpdfstring{Usage}{Usage}}\label{index_autotoc_md22}
 \hypertarget{index_autotoc_md23}{}\doxysubsection{\texorpdfstring{Build}{Build}}\label{index_autotoc_md23}
 {\ttfamily make build} -\/ build assembler, spu and disassembler
 
-{\ttfamily make build\+\_\+asm}, {\ttfamily make build\+\_\+spu}, {\ttfamily make disasm} -\/ build separatly\hypertarget{index_autotoc_md24}{}\doxysubsection{\texorpdfstring{Run}{Run}}\label{index_autotoc_md24}
-{\ttfamily make assemble prog="{}name"{}} -\/ only assemble ./\+Programs/"{}name"{}/main.code ({\ttfamily lst=1} may be added for listing generation)
+{\ttfamily make build\+\_\+asm}, {\ttfamily make build\+\_\+spu}, {\ttfamily make disasm} -\/ build separately\hypertarget{index_autotoc_md24}{}\doxysubsection{\texorpdfstring{Run}{Run}}\label{index_autotoc_md24}
+{\ttfamily make assemble prog="{}name"{}} -\/ only assemble {\ttfamily ./\+Programs/"{}name"{}/main.code} ({\ttfamily lst=1} may be added for listing generation)
 
-{\ttfamily make execute prog="{}name"{}} -\/ execute ./\+Programs/"{}name"{}/main.exec
+{\ttfamily make execute prog="{}name"{}} -\/ execute {\ttfamily ./\+Programs/"{}name"{}/main.exec}
 
-{\ttfamily make disassemble prog="{}name"{}} -\/ disassemble ./\+Programs/"{}name"{}/main.exec
+{\ttfamily make disassemble prog="{}name"{}} -\/ disassemble {\ttfamily ./\+Programs/"{}name"{}/main.exec}
 
-{\ttfamily make run prog="{}name"{}} -\/ assemble and execute program ./\+Programs/"{}name"{}/main.code ({\ttfamily lst=1} may be added for listing generation)\hypertarget{index_autotoc_md25}{}\doxysubsection{\texorpdfstring{Docs}{Docs}}\label{index_autotoc_md25}
-{\ttfamily make dox} or {\ttfamily make doxygen} -\/ generate docs\hypertarget{index_autotoc_md26}{}\doxysection{\texorpdfstring{Credits}{Credits}}\label{index_autotoc_md26}
+{\ttfamily make run prog="{}name"{}} -\/ assemble and execute program {\ttfamily ./\+Programs/"{}name"{}/main.code} ({\ttfamily lst=1} may be added for listing generation)\hypertarget{index_autotoc_md25}{}\doxysubsection{\texorpdfstring{Video encoding}{Video encoding}}\label{index_autotoc_md25}
+{\ttfamily make encode prog="{}name"{}} -\/ convert mp4 video to text program. Video must be here\+: {\ttfamily ./\+Programs/"{}name"{}/"{}name"{}.mp4}. Advanced settings are in {\ttfamily ./\+Programs/encoder.py}.\hypertarget{index_autotoc_md26}{}\doxysubsection{\texorpdfstring{Docs}{Docs}}\label{index_autotoc_md26}
+{\ttfamily make dox} or {\ttfamily make doxygen} -\/ generate docs\hypertarget{index_autotoc_md27}{}\doxysection{\texorpdfstring{Credits}{Credits}}\label{index_autotoc_md27}
 
 \begin{DoxyItemize}
 \item \href{https://github.com/ded32}{\texttt{ Ilya Dedinsky}} aka Ded as prepod

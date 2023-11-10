@@ -151,7 +151,7 @@ Definition at line \mbox{\hyperlink{file_8cpp_source_l00056}{56}} of file \mbox{
 \DoxyCodeLine{00058\ \ \ \ \ assert(filename);}
 \DoxyCodeLine{00059\ \ \ \ \ assert(mode);}
 \DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ *\mbox{\hyperlink{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45}{file}}\ =\ fopen(filename,\ mode);}
+\DoxyCodeLine{00061\ \ \ \ \ *\mbox{\hyperlink{namespacebresenham__circle_a8caab6a61269584c98c66634bb634d77}{file}}\ =\ fopen(filename,\ mode);}
 \DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{if}\ (*file\ ==\ \textcolor{keyword}{nullptr})\ \{}
 \DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Error\ opening\ file\ \%s:\(\backslash\)n"{}},\ filename);}
 \DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}"{}});}
@@ -202,7 +202,7 @@ Definition at line \mbox{\hyperlink{file_8cpp_source_l00003}{3}} of file \mbox{\
 \DoxyCodeLine{00008\ }
 \DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{long}\ file\_size\ =\ 0;}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \ \ \ \ FILE*\ \mbox{\hyperlink{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45}{file}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00011\ \ \ \ \ FILE*\ \mbox{\hyperlink{namespacebresenham__circle_a8caab6a61269584c98c66634bb634d77}{file}}\ =\ \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_abb897c7e353e490dd5c92b5a13d14fa6}{file\_open}}(\&file,\ filename,\ \textcolor{stringliteral}{"{}rb"{}}))}
 \DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604cad9d846606c1543b9870decd15337db6c}{Status::INP\_FILE\_ERROR}};}
 \DoxyCodeLine{00014\ }
@@ -270,7 +270,7 @@ Definition at line \mbox{\hyperlink{file_8cpp_source_l00038}{38}} of file \mbox{
 \DoxyCodeLine{00039\ \ \ \ \ assert(filename);}
 \DoxyCodeLine{00040\ \ \ \ \ assert(buf);}
 \DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \ \ FILE*\ \mbox{\hyperlink{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45}{file}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00042\ \ \ \ \ FILE*\ \mbox{\hyperlink{namespacebresenham__circle_a8caab6a61269584c98c66634bb634d77}{file}}\ =\ \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{00043\ }
 \DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{file_8cpp_abb897c7e353e490dd5c92b5a13d14fa6}{file\_open}}(\&file,\ filename,\ \textcolor{stringliteral}{"{}wb"{}}))}
 \DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};}

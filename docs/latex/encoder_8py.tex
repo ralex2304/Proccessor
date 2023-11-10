@@ -1,5 +1,5 @@
-\doxysection{Programs/bad\+Apple/encoder.py File Reference}
-\hypertarget{encoder_8py}{}\label{encoder_8py}\index{Programs/badApple/encoder.py@{Programs/badApple/encoder.py}}
+\doxysection{Programs/encoder.py File Reference}
+\hypertarget{encoder_8py}{}\label{encoder_8py}\index{Programs/encoder.py@{Programs/encoder.py}}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -8,14 +8,22 @@ namespace \mbox{\hyperlink{namespaceencoder}{encoder}}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{namespaceencoder_a8c10245467eb1d3463c9ea64a41aa469}{encoder.\+count\+\_\+color}} (bgr)
+\mbox{\hyperlink{namespaceencoder_a574387a2fada8649166ee3b7d117614f}{encoder.\+calc\+\_\+color}} (bgr)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
+int \mbox{\hyperlink{namespaceencoder_a25b860667963ec08e8fc0f7d0ba786a6}{encoder.\+SCREEN\+\_\+\+WIDTH}} = 200
+\item 
+int \mbox{\hyperlink{namespaceencoder_a565373885c7e9b55ab31cf8e9c2a3b89}{encoder.\+SCREEN\+\_\+\+HEIGHT}} = 200
+\item 
+int \mbox{\hyperlink{namespaceencoder_ac8a900a4c9844588f3fadaada520e144}{encoder.\+VIDEO\+\_\+\+WIDTH}} = 200
+\item 
+int \mbox{\hyperlink{namespaceencoder_a3e51e1b450741557b4f9dc725388494e}{encoder.\+VIDEO\+\_\+\+HEIGTH}} = 150
+\item 
 int \mbox{\hyperlink{namespaceencoder_a7db2a7de5d88840c1c0a577166cb5068}{encoder.\+TARGET\+\_\+\+FPS}} = 6
 \item 
-\mbox{\hyperlink{namespaceencoder_a3dd159bc88dcc094a37514f045fbe7a5}{encoder.\+cap}} = cv2.\+Video\+Capture("{}./Programs/bad\+Apple/bad\+Apple.\+mp4"{})
+\mbox{\hyperlink{namespaceencoder_a3dd159bc88dcc094a37514f045fbe7a5}{encoder.\+cap}} = cv2.\+Video\+Capture(sys.\+argv\mbox{[}1\mbox{]})
 \item 
 str \mbox{\hyperlink{namespaceencoder_ac1dba33bb6a79530e9e21cb58cb9f979}{encoder.\+out}} = "{}"{}
 \item 
@@ -23,11 +31,13 @@ str \mbox{\hyperlink{namespaceencoder_ac1dba33bb6a79530e9e21cb58cb9f979}{encoder
 \item 
 int \mbox{\hyperlink{namespaceencoder_a874cf2fc480d1e369f3850ba4bd0807c}{encoder.\+FRAME\+\_\+\+COUNT}} = int(cap.\+get(cv2.\+CAP\+\_\+\+PROP\+\_\+\+FRAME\+\_\+\+COUNT)) -\/ 10
 \item 
+list \mbox{\hyperlink{namespaceencoder_a8b705f55ab480aa44c2635ce4c88a6c6}{encoder.\+pixel\+\_\+arr}} = \mbox{[}0\mbox{]} \texorpdfstring{$\ast$}{*} (\mbox{\hyperlink{namespaceencoder_a565373885c7e9b55ab31cf8e9c2a3b89}{SCREEN\+\_\+\+HEIGHT}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceencoder_a25b860667963ec08e8fc0f7d0ba786a6}{SCREEN\+\_\+\+WIDTH}})
+\item 
 int \mbox{\hyperlink{namespaceencoder_a31e20d6561df491611d8880f27128aad}{encoder.\+bef\+\_\+frame}} = 0
 \item 
 \mbox{\hyperlink{namespaceencoder_adb91fe8a3fa212c5ab9dc9e4b7be75e0}{encoder.\+res}}
 \item 
-\mbox{\hyperlink{namespaceencoder_ad13866f6af3dff53c3b46aeb0ff212e9}{encoder.\+frame}} = cv2.\+resize(frame, (96, 72), interpolation = cv2.\+INTER\+\_\+\+LANCZOS4)
+\mbox{\hyperlink{namespaceencoder_ad13866f6af3dff53c3b46aeb0ff212e9}{encoder.\+frame}} = cv2.\+resize(frame, (\mbox{\hyperlink{namespaceencoder_ac8a900a4c9844588f3fadaada520e144}{VIDEO\+\_\+\+WIDTH}}, \mbox{\hyperlink{namespaceencoder_a3e51e1b450741557b4f9dc725388494e}{VIDEO\+\_\+\+HEIGTH}}), interpolation = cv2.\+INTER\+\_\+\+LANCZOS4)
 \item 
 \mbox{\hyperlink{namespaceencoder_ae301ba5648708b7170fb72994f481a38}{encoder.\+height}}
 \item 
@@ -35,5 +45,7 @@ int \mbox{\hyperlink{namespaceencoder_a31e20d6561df491611d8880f27128aad}{encoder
 \item 
 \mbox{\hyperlink{namespaceencoder_a031f01761b07907dd80d635c4c31ab1b}{encoder.\+channels}}
 \item 
-\mbox{\hyperlink{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45}{encoder.\+file}} = open("{}./Programs/bad\+Apple/main.\+code"{}, "{}w"{})
+\mbox{\hyperlink{namespaceencoder_afff0ff14a52b2a3cd1e4aa22d5ffd2aa}{encoder.\+color}} = \mbox{\hyperlink{namespaceencoder_a574387a2fada8649166ee3b7d117614f}{calc\+\_\+color}}(\mbox{\hyperlink{namespaceencoder_ad13866f6af3dff53c3b46aeb0ff212e9}{frame}}\mbox{[}y\mbox{]}\mbox{[}x\mbox{]})
+\item 
+\mbox{\hyperlink{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45}{encoder.\+file}} = open(sys.\+argv\mbox{[}2\mbox{]}, "{}w"{})
 \end{DoxyCompactItemize}

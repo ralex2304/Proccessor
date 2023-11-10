@@ -1,0 +1,151 @@
+\doxysection{bresenham\+\_\+line Namespace Reference}
+\hypertarget{namespacebresenham__line}{}\label{namespacebresenham__line}\index{bresenham\_line@{bresenham\_line}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacebresenham__line_a97302686b45a704e3162a7a30082eff0}{set\+\_\+color}} (x, y)
+\item 
+\mbox{\hyperlink{namespacebresenham__line_a389720e72267c1146b3b0add94978b3b}{draw\+\_\+line}} (x0, y0, x1, y1)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacebresenham__line_af2ad7680f2ef139dbe89a64ce2840f22}{SCREEN\+\_\+\+HEIGHT}} = 200
+\item 
+int \mbox{\hyperlink{namespacebresenham__line_a5c473afa11aad5069177dca59a8c5658}{SCREEN\+\_\+\+WIDTH}} = 200
+\item 
+str \mbox{\hyperlink{namespacebresenham__line_a5646170328298b19cbf64ac29c780c52}{out}} = "{}"{}
+\item 
+\mbox{\hyperlink{namespacebresenham__line_a240065a0f57157f2ced61612fd22e649}{file}} = open(sys.\+argv\mbox{[}1\mbox{]}, "{}w"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacebresenham__line_a389720e72267c1146b3b0add94978b3b}\label{namespacebresenham__line_a389720e72267c1146b3b0add94978b3b} 
+\index{bresenham\_line@{bresenham\_line}!draw\_line@{draw\_line}}
+\index{draw\_line@{draw\_line}!bresenham\_line@{bresenham\_line}}
+\doxysubsubsection{\texorpdfstring{draw\_line()}{draw\_line()}}
+{\footnotesize\ttfamily bresenham\+\_\+line.\+draw\+\_\+line (\begin{DoxyParamCaption}\item[{}]{x0,  }\item[{}]{y0,  }\item[{}]{x1,  }\item[{}]{y1 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{bresenham__line_8py_source_l00018}{18}} of file \mbox{\hyperlink{bresenham__line_8py_source}{bresenham\+\_\+line.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \textcolor{keyword}{def\ }draw\_line(x0,\ y0,\ x1,\ y1):}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{\#steep}}
+\DoxyCodeLine{00020\ \ \ \ \ steep\ =\ \textcolor{keyword}{False}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{if}\ abs(x0\ -\/\ x1)\ <\ abs(y0\ -\/\ y1):}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ x0,\ y0\ =\ y0,\ x0}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ x1,\ y1\ =\ y1,\ x1}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ steep\ =\ \textcolor{keyword}{True}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{\#x0\ to\ the\ left}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{if}\ x0\ >\ x1:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ x0,\ x1\ =\ x1,\ x0}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ y0,\ y1\ =\ y1,\ y0}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ dx\ =\ x1\ -\/\ x0}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ error2dx\ =\ 0}
+\DoxyCodeLine{00035\ \ \ \ \ derror2dy\ =\ 2\ *\ abs(y1\ -\/\ y0)}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ y\ =\ y0}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ y\_incr\ =\ (y0\ <\ y1)\ \textcolor{keywordflow}{if}\ 1\ \textcolor{keywordflow}{else}\ -\/1}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{for}\ x\ \textcolor{keywordflow}{in}\ range(x0,\ x1\ +\ 1):}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ steep:}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ set\_color(y,\ x)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ set\_color(x,\ y)}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ error2dx\ +=\ derror2dy}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ error2dx\ >\ dx:}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ error2dx\ -\/=\ 2*dx}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ y\_incr}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{bresenham__line_8py_source_l00018}{draw\+\_\+line()}}, and \mbox{\hyperlink{bresenham__line_8py_source_l00008}{set\+\_\+color()}}.
+
+
+
+Referenced by \mbox{\hyperlink{bresenham__line_8py_source_l00018}{draw\+\_\+line()}}.
+
+\Hypertarget{namespacebresenham__line_a97302686b45a704e3162a7a30082eff0}\label{namespacebresenham__line_a97302686b45a704e3162a7a30082eff0} 
+\index{bresenham\_line@{bresenham\_line}!set\_color@{set\_color}}
+\index{set\_color@{set\_color}!bresenham\_line@{bresenham\_line}}
+\doxysubsubsection{\texorpdfstring{set\_color()}{set\_color()}}
+{\footnotesize\ttfamily bresenham\+\_\+line.\+set\+\_\+color (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{bresenham__line_8py_source_l00008}{8}} of file \mbox{\hyperlink{bresenham__line_8py_source}{bresenham\+\_\+line.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \textcolor{keyword}{def\ }set\_color(x,\ y):}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{global}\ out}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{if}\ y\ <\ 0\ \textcolor{keywordflow}{or}\ y\ >=\ SCREEN\_HEIGHT\ \textcolor{keywordflow}{or}\ x\ <\ 0\ \textcolor{keywordflow}{or}\ x\ >=\ SCREEN\_WIDTH:}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ out\ +=\ \textcolor{stringliteral}{"{}push\ 255\(\backslash\)n"{}}}
+\DoxyCodeLine{00015\ \ \ \ \ out\ +=\ \textcolor{stringliteral}{"{}pop\ ["{}}\ +\ str(SCREEN\_WIDTH\ *\ y\ +\ x)\ +\ \textcolor{stringliteral}{"{}]\(\backslash\)n"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{bresenham__line_8py_source_l00018}{draw\+\_\+line()}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacebresenham__line_a240065a0f57157f2ced61612fd22e649}\label{namespacebresenham__line_a240065a0f57157f2ced61612fd22e649} 
+\index{bresenham\_line@{bresenham\_line}!file@{file}}
+\index{file@{file}!bresenham\_line@{bresenham\_line}}
+\doxysubsubsection{\texorpdfstring{file}{file}}
+{\footnotesize\ttfamily bresenham\+\_\+line.\+file = open(sys.\+argv\mbox{[}1\mbox{]}, "{}w"{})}
+
+
+
+Definition at line \mbox{\hyperlink{bresenham__line_8py_source_l00061}{61}} of file \mbox{\hyperlink{bresenham__line_8py_source}{bresenham\+\_\+line.\+py}}.
+
+\Hypertarget{namespacebresenham__line_a5646170328298b19cbf64ac29c780c52}\label{namespacebresenham__line_a5646170328298b19cbf64ac29c780c52} 
+\index{bresenham\_line@{bresenham\_line}!out@{out}}
+\index{out@{out}!bresenham\_line@{bresenham\_line}}
+\doxysubsubsection{\texorpdfstring{out}{out}}
+{\footnotesize\ttfamily str bresenham\+\_\+line.\+out = "{}"{}}
+
+
+
+Definition at line \mbox{\hyperlink{bresenham__line_8py_source_l00006}{6}} of file \mbox{\hyperlink{bresenham__line_8py_source}{bresenham\+\_\+line.\+py}}.
+
+\Hypertarget{namespacebresenham__line_af2ad7680f2ef139dbe89a64ce2840f22}\label{namespacebresenham__line_af2ad7680f2ef139dbe89a64ce2840f22} 
+\index{bresenham\_line@{bresenham\_line}!SCREEN\_HEIGHT@{SCREEN\_HEIGHT}}
+\index{SCREEN\_HEIGHT@{SCREEN\_HEIGHT}!bresenham\_line@{bresenham\_line}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_HEIGHT}{SCREEN\_HEIGHT}}
+{\footnotesize\ttfamily int bresenham\+\_\+line.\+SCREEN\+\_\+\+HEIGHT = 200}
+
+
+
+Definition at line \mbox{\hyperlink{bresenham__line_8py_source_l00003}{3}} of file \mbox{\hyperlink{bresenham__line_8py_source}{bresenham\+\_\+line.\+py}}.
+
+\Hypertarget{namespacebresenham__line_a5c473afa11aad5069177dca59a8c5658}\label{namespacebresenham__line_a5c473afa11aad5069177dca59a8c5658} 
+\index{bresenham\_line@{bresenham\_line}!SCREEN\_WIDTH@{SCREEN\_WIDTH}}
+\index{SCREEN\_WIDTH@{SCREEN\_WIDTH}!bresenham\_line@{bresenham\_line}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_WIDTH}{SCREEN\_WIDTH}}
+{\footnotesize\ttfamily int bresenham\+\_\+line.\+SCREEN\+\_\+\+WIDTH = 200}
+
+
+
+Definition at line \mbox{\hyperlink{bresenham__line_8py_source_l00004}{4}} of file \mbox{\hyperlink{bresenham__line_8py_source}{bresenham\+\_\+line.\+py}}.
+

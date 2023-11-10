@@ -4,6 +4,8 @@ var searchData=
   ['detor_1',['detor',['../structInputData.html#a007abeabd2f7b29f15b38b52cf4f7010',1,'InputData']]],
   ['disasm_5fparse_2',['disasm_parse',['../disassembler_8cpp.html#a6713d7a3995575e1981fb20ab849184a',1,'disasm_parse(const char *data, const size_t size, const char *output_filename, const bool debug_mode):&#160;disassembler.cpp'],['../disassembler_8h.html#a6713d7a3995575e1981fb20ab849184a',1,'disasm_parse(const char *data, const size_t size, const char *output_filename, const bool debug_mode):&#160;disassembler.cpp']]],
   ['disasm_5fwrite_5fheader_3',['disasm_write_header',['../disassembler_8cpp.html#acade6b71b297388f7d7b85f9bcdafe8d',1,'disasm_write_header(FILE *file, const FileHeader header):&#160;disassembler.cpp'],['../disassembler_8h.html#acade6b71b297388f7d7b85f9bcdafe8d',1,'disasm_write_header(FILE *file, const FileHeader header):&#160;disassembler.cpp']]],
-  ['dtor_4',['dtor',['../structAsm.html#adb1635527a72975c1ec0a9cf2019a995',1,'Asm::dtor()'],['../structBuffer.html#accef32f248ec05ad669b1de0dc3ae6a5',1,'Buffer::dtor()'],['../structsfmlWindow.html#a0d0b5803d8975fe0480d694c1780c690',1,'sfmlWindow::dtor()'],['../structSpuData.html#ab8279902c19cd3fd61a692f2781b0668',1,'SpuData::dtor()']]],
-  ['dump_5',['dump',['../structSpuData.html#ab1bb7ccafa41032692a8c88295fa92ff',1,'SpuData']]]
+  ['draw_5fcircle_4',['draw_circle',['../namespacebresenham__circle.html#a42e97cfea64057ed1a3108fdcd6524d7',1,'bresenham_circle']]],
+  ['draw_5fline_5',['draw_line',['../namespacebresenham__line.html#a389720e72267c1146b3b0add94978b3b',1,'bresenham_line']]],
+  ['dtor_6',['dtor',['../structAsm.html#adb1635527a72975c1ec0a9cf2019a995',1,'Asm::dtor()'],['../structBuffer.html#accef32f248ec05ad669b1de0dc3ae6a5',1,'Buffer::dtor()'],['../structsfmlWindow.html#a0d0b5803d8975fe0480d694c1780c690',1,'sfmlWindow::dtor()'],['../structSpuData.html#ab8279902c19cd3fd61a692f2781b0668',1,'SpuData::dtor()']]],
+  ['dump_7',['dump',['../structSpuData.html#ab1bb7ccafa41032692a8c88295fa92ff',1,'SpuData']]]
 ];

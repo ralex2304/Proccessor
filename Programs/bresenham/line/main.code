@@ -1,0 +1,195 @@
+push 1
+pop rax
+push 1
+pop rbx
+push 190
+pop rcx
+push 120
+pop rdx
+call draw_line
+
+shw
+in
+
+hlt
+
+; rax = x0 | rbx = y0 | rcx = x1 | rdx = y1
+draw_line:
+    ; rax = x0 | rbx = y0 | rcx = x1 | rdx = y1
+    push 0
+    pop rex
+    ; rax = x0 | rbx = y0 | rcx = x1 | rdx = y1 | rex = steep = 0
+
+    push rax
+    push rcx
+    sub
+    call abs
+
+    push rbx
+    push rdx
+    sub
+    call abs
+
+    jae not_steep
+    ; if abs(x0 - x1) < abs(y0 - y1):
+        ; swap(x0, y0)
+        push rax
+        push rbx
+        pop rax
+        pop rbx
+        ;swap(x1, y1)
+        push rcx
+        push rdx
+        pop rcx
+        pop rdx
+        ;steep = 1
+        push 1
+        pop rex
+    not_steep:
+
+    push rax
+    push rcx
+    jbe not_messed
+    ; if x0 > x1:
+        ; swap(x0, x1)
+        push rax
+        push rcx
+        pop rax
+        pop rcx
+        ; swap(y0, y1)
+        push rbx
+        push rdx
+        pop rbx
+        pop rdx
+    not_messed:
+    ; rax = x0 | rbx = y0 | rcx = x1 | rdx = y1 | rex = steep
+
+    ;
+    push rdx
+    push rbx
+    sub
+    call abs
+
+    push 2
+    mul
+    pop rfx
+
+    push rbx
+    push rdx
+    jae y_incr_else
+    ; y0 < y1
+        push 1
+        pop rdx
+        jmp y_incr_endif
+    y_incr_else:
+    ; else (y0 >= y1)
+        push -1
+        pop rdx
+    y_incr_endif:
+
+    push rcx
+    push rax
+    sub
+    pop rgx
+
+    push 0 ; error2dx in stack
+
+    ; rax = x = x0 | rbx = y = y0 | rcx = x1 | rdx = y_incr | rex = steep | rfx = derror2dy | rgx = dx || Stack = {error2dx}
+
+    for_x:
+        ; rax = x | rbx = y| rcx = x1 | rdx = y_incr | rex = steep | rfx = derror2dy | rgx = dx || Stack = {error2dx}
+        push rax
+        push rcx
+        ja for_x_break
+
+        push rex
+        push 1
+        jne is_steep_else
+        ; if steep:
+            push rbx
+            push rax
+            ; set_color:
+                push 200
+                mul
+                add
+                pop rhx
+                push 16777215 ;color
+                pop [rhx]
+
+            jmp is_steep_endif
+        is_steep_else:
+        ; else (steep == false):
+            push rax
+            push rbx
+            ; set_color:
+                push 200
+                mul
+                add
+                pop rhx
+                push 16777215 ;color
+                pop [rhx]
+
+        is_steep_endif:
+
+        pop rhx ; rhx = error2dx
+
+        push rhx
+        push rfx
+        add
+        pop rhx
+
+        push rhx
+        push rgx
+        jbe do_incr_endif
+        ; if error2dx > dx:
+            ; error2dx -= 2*dx
+            push rhx
+            push 2
+            push rgx
+            mul
+            sub
+            pop rhx
+            ; y += y_incr
+            push rbx
+            push rdx
+            add
+            pop rbx
+        do_incr_endif:
+
+        push rhx ; error2dx in stack
+
+        ; for increment
+        push rax+1
+        pop rax
+        jmp for_x
+    for_x_break:
+
+    pop rhx ;remove error2dx from stack
+
+    ret
+
+; uses rgx, rhx
+; arg in stack
+; ret in stack
+abs:
+    pop rhx ; ret_addr
+
+    pop rgx ; arg
+
+    push rgx
+
+    push rgx
+    push 0
+    ja abs_endif
+    ; if arg < 0:
+        push -1
+        mul
+
+    abs_endif:
+
+    push rhx
+    ret
+
+
+
+

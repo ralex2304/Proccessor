@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Processor: Programs/badApple/encoder.py Source File</title>
+<title>Processor: Programs/encoder.py Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,65 +97,81 @@ $(document).ready(function(){initNavTree('encoder_8py_source.html',''); initResi
   <div class="headertitle"><div class="title">encoder.py</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="encoder_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespaceencoder.html">    1</a></span><span class="keyword">import</span> cv2</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">import</span> math</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a7db2a7de5d88840c1c0a577166cb5068">    4</a></span>TARGET_FPS = 6</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="foldopen" id="foldopen00006" data-start="" data-end="">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a8c10245467eb1d3463c9ea64a41aa469">    6</a></span><span class="keyword">def </span><a class="code hl_function" href="namespaceencoder.html#a8c10245467eb1d3463c9ea64a41aa469">count_color</a>(bgr):</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    ret = 0</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    ret += bgr[0] &lt;&lt; 0</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    ret += bgr[1] &lt;&lt; 8</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    ret += bgr[2] &lt;&lt; 16</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">return</span> ret</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a3dd159bc88dcc094a37514f045fbe7a5">   13</a></span>cap = cv2.VideoCapture(<span class="stringliteral">&quot;./Programs/badApple/badApple.mp4&quot;</span>)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespaceencoder.html#ac1dba33bb6a79530e9e21cb58cb9f979">   15</a></span>out = <span class="stringliteral">&quot;&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>out += <span class="stringliteral">&quot;fps &quot;</span> + str(TARGET_FPS) + <span class="stringliteral">&quot;\n&quot;</span></div>
+<a href="encoder_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespaceencoder.html">    1</a></span><span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="stringliteral">mp4 video to assembler code encoder</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="stringliteral">console args: &lt;input filename&gt; &lt;ouput filename&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a25b860667963ec08e8fc0f7d0ba786a6">    7</a></span>SCREEN_WIDTH  = 200</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a565373885c7e9b55ab31cf8e9c2a3b89">    8</a></span>SCREEN_HEIGHT = 200</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="namespaceencoder.html#ac8a900a4c9844588f3fadaada520e144">   10</a></span>VIDEO_WIDTH   = 200</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a3e51e1b450741557b4f9dc725388494e">   11</a></span>VIDEO_HEIGTH  = 150</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a7db2a7de5d88840c1c0a577166cb5068">   12</a></span>TARGET_FPS = 6</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">import</span> cv2</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">import</span> math</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">import</span> sys</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a0b1b8944725c379b890b977af9ddc564">   18</a></span>FPS = int(cap.get(cv2.CAP_PROP_FPS))</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a874cf2fc480d1e369f3850ba4bd0807c">   20</a></span>FRAME_COUNT = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)) - 10</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a31e20d6561df491611d8880f27128aad">   22</a></span>bef_frame = 0</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(1, FRAME_COUNT, math.ceil(FPS / TARGET_FPS)):</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span> i - bef_frame &gt;= 100:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        print(i, <span class="stringliteral">&quot;/&quot;</span>, FRAME_COUNT)</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        bef_frame = i</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    cap.set(1, i)</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="namespaceencoder.html#ad13866f6af3dff53c3b46aeb0ff212e9">   29</a></span>    res, frame = cap.read() <span class="comment">#frame has your pixel values</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">#Get frame height and width to access pixels</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a031f01761b07907dd80d635c4c31ab1b">   32</a></span>    height, width, channels = frame.shape</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    frame = cv2.resize(frame, (96, 72), interpolation = cv2.INTER_LANCZOS4)</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">#Accessing BGR pixel values</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">for</span> x <span class="keywordflow">in</span> range(0, 96) :</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">for</span> y <span class="keywordflow">in</span> range(0, 72) :</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            out += <span class="stringliteral">&quot;push &quot;</span> + str(<a class="code hl_function" href="namespaceencoder.html#a8c10245467eb1d3463c9ea64a41aa469">count_color</a>(frame[y][x])) + <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            out += <span class="stringliteral">&quot;pop [&quot;</span> + str(y * 100 + x) + <span class="stringliteral">&quot;]\n&quot;</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    out += <span class="stringliteral">&quot;shw\n&quot;</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>out += <span class="stringliteral">&quot;hlt\n&quot;</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a7fdb946781a2d1ff8b72b6fbdd0d7b45">   46</a></span>file = open(<span class="stringliteral">&quot;./Programs/badApple/main.code&quot;</span>, <span class="stringliteral">&quot;w&quot;</span>)</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>file.write(out)</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>file.close()</div>
-<div class="ttc" id="anamespaceencoder_html_a8c10245467eb1d3463c9ea64a41aa469"><div class="ttname"><a href="namespaceencoder.html#a8c10245467eb1d3463c9ea64a41aa469">encoder.count_color</a></div><div class="ttdeci">count_color(bgr)</div><div class="ttdef"><b>Definition</b> <a href="encoder_8py_source.html#l00006">encoder.py:6</a></div></div>
+<div class="foldopen" id="foldopen00018" data-start="" data-end="">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a574387a2fada8649166ee3b7d117614f">   18</a></span><span class="keyword">def </span><a class="code hl_function" href="namespaceencoder.html#a574387a2fada8649166ee3b7d117614f">calc_color</a>(bgr):</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    ret = 0</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    ret += bgr[0] &lt;&lt; 0</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    ret += bgr[1] &lt;&lt; 8</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    ret += bgr[2] &lt;&lt; 16</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">return</span> ret</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a3dd159bc88dcc094a37514f045fbe7a5">   25</a></span>cap = cv2.VideoCapture(sys.argv[1])</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="namespaceencoder.html#ac1dba33bb6a79530e9e21cb58cb9f979">   27</a></span>out = <span class="stringliteral">&quot;&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>out += <span class="stringliteral">&quot;fps &quot;</span> + str(TARGET_FPS) + <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a0b1b8944725c379b890b977af9ddc564">   30</a></span>FPS = int(cap.get(cv2.CAP_PROP_FPS))</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a874cf2fc480d1e369f3850ba4bd0807c">   32</a></span>FRAME_COUNT = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)) - 10 <span class="comment"># last frames are usually broken</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a8b705f55ab480aa44c2635ce4c88a6c6">   34</a></span>pixel_arr = [0] * (SCREEN_HEIGHT * SCREEN_WIDTH)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a31e20d6561df491611d8880f27128aad">   36</a></span>bef_frame = 0</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(1, FRAME_COUNT, math.ceil(FPS / TARGET_FPS)):</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">if</span> i - bef_frame &gt;= 100:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        print(i, <span class="stringliteral">&quot;/&quot;</span>, FRAME_COUNT)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        bef_frame = i</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    cap.set(1, i)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="namespaceencoder.html#ad13866f6af3dff53c3b46aeb0ff212e9">   43</a></span>    res, frame = cap.read() <span class="comment">#frame has your pixel values</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">#Get frame height and width to access pixels</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a031f01761b07907dd80d635c4c31ab1b">   46</a></span>    height, width, channels = frame.shape</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    frame = cv2.resize(frame, (VIDEO_WIDTH, VIDEO_HEIGTH), interpolation = cv2.INTER_LANCZOS4)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">#Accessing BGR pixel values</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">for</span> x <span class="keywordflow">in</span> range(0, VIDEO_WIDTH) :</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">for</span> y <span class="keywordflow">in</span> range(0, VIDEO_HEIGTH) :</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespaceencoder.html#afff0ff14a52b2a3cd1e4aa22d5ffd2aa">   52</a></span>            color = <a class="code hl_function" href="namespaceencoder.html#a574387a2fada8649166ee3b7d117614f">calc_color</a>(frame[y][x])</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keywordflow">if</span> color != pixel_arr[y * SCREEN_WIDTH + x]:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                out += <span class="stringliteral">&quot;push &quot;</span> + str(color) + <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                out += <span class="stringliteral">&quot;pop [&quot;</span> + str(y * SCREEN_WIDTH + x) + <span class="stringliteral">&quot;]\n&quot;</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                pixel_arr[y * SCREEN_WIDTH + x] = color</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    out += <span class="stringliteral">&quot;shw\n&quot;</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>out += <span class="stringliteral">&quot;hlt\n&quot;</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="namespaceencoder.html#a7fdb946781a2d1ff8b72b6fbdd0d7b45">   62</a></span>file = open(sys.argv[2], <span class="stringliteral">&quot;w&quot;</span>)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>file.write(out)</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>file.close()</div>
+<div class="ttc" id="anamespaceencoder_html_a574387a2fada8649166ee3b7d117614f"><div class="ttname"><a href="namespaceencoder.html#a574387a2fada8649166ee3b7d117614f">encoder.calc_color</a></div><div class="ttdeci">calc_color(bgr)</div><div class="ttdef"><b>Definition</b> <a href="encoder_8py_source.html#l00018">encoder.py:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_4b8fc02e1ceb0b761fea04ca89149256.html">Programs</a></li><li class="navelem"><a class="el" href="dir_6e0c28a212427388e4a066af018be67f.html">badApple</a></li><li class="navelem"><a class="el" href="encoder_8py.html">encoder.py</a></li>
+    <li class="navelem"><a class="el" href="dir_4b8fc02e1ceb0b761fea04ca89149256.html">Programs</a></li><li class="navelem"><a class="el" href="encoder_8py.html">encoder.py</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

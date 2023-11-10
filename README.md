@@ -32,7 +32,7 @@ jmp label       ; jump to label named "label"
 
 - **REG**, **DOUBLE**, **INT**, **RAM**, **LABEL** columns mean if function can recieve arguments of this type
 
-- Registers names: `rax`, `rbx`, `rcx`, `rdx`
+- Registers names: `rax`, `rbx`, `rcx`, `rdx`, `rex`, `rfx`, `rgx`, `rhx`
 
 #### Basic
 
@@ -108,9 +108,16 @@ These functions pop 1 or 2 elements, make calculations and push result to stack
 - `-l` `<filename>` - enables and specifies listing file
 
 ### Features
+
 - Assembles in 2 passes
-- Throws gcc-like designed syntax errors
 - Optionally makes listing file with loads of useful information
+
+    <img src="img/listing.png" width="50%">
+
+- Throws gcc-like designed syntax errors:
+
+    <img src="img/syntax_error.png" width="50%">
+
 
 ## Software processing unit
 ### Command line flags
@@ -120,7 +127,7 @@ These functions pop 1 or 2 elements, make calculations and push result to stack
 ### Features
 - Video mode
 - Stack
-- 4 Registers (`rax`, `rbx`, `rcx`, `rdx`)
+- 8 Registers (`rax`, `rbx`, `rcx`, `rdx`, `rex`, `rfx`, `rgx`, `rhx`)
 - RAM (acts as videomemory in video mode)
 
 ## Disassembler
@@ -139,32 +146,42 @@ You can find them in `Programs` directory
 
 - **quad** - quad equations solver
 - **recFact**, **iterFact** - recursive and iterative factorial calculation
-- **circle** - draws circle in video mode
-- **badApple**, **doom** - bad apple and doom gameplay videos (you can generate code for them with gen.py script)
+- **circle** - draws circle in video mode (simple distance algorithm)
+- **bresenham/line**, **bresenham/circle** - draws line and circle using bresenham algorithm (python and assembler realisations)
+- **badApple**, **doom** - bad apple and doom gameplay videos (you can generate code for mp4 video with Programs/encoder.py script)
+
+<img src="img/bresenham_circle.png" height="200px">
+<img src="img/bad_apple.gif" height="200px">
+<img src="img/doom.gif" height="200px">
 
 # Program features
 - advanced text parsing in assembler (non null-terminated strings tokenisation)
 - code generation
 - goto dispatch table (spu)
-- assembling in 2 passes. The first pass is for detecting labels and size of output file, the second for writing file and listing
-- cmd_dict file, that contains all information about commands. You can change or add commands only in this file
+- assembling in 2 passes. The first pass detects labels and size of output file, the second writes to file and listing
+- `cmd_dict` - the only file for all information about commands
 - DSL for commands actions
+- video assembly code generator detects differnces and change only needed pixels. For example, badApple assemply code decreased by 3.5 times
 
 # Usage
 
 ## Build
 `make build` - build assembler, spu and disassembler
 
-`make build_asm`, `make build_spu`, `make disasm` - build separatly
+`make build_asm`, `make build_spu`, `make disasm` - build separately
 
 ## Run
-`make assemble prog="name"` - only assemble ./Programs/"name"/main.code (`lst=1` may be added for listing generation)
+`make assemble prog="name"` - only assemble `./Programs/"name"/main.code` (`lst=1` may be added for listing generation)
 
-`make execute prog="name"` - execute ./Programs/"name"/main.exec
+`make execute prog="name"` - execute `./Programs/"name"/main.exec`
 
-`make disassemble prog="name"` - disassemble ./Programs/"name"/main.exec
+`make disassemble prog="name"` - disassemble `./Programs/"name"/main.exec`
 
-`make run prog="name"` - assemble and execute program ./Programs/"name"/main.code (`lst=1` may be added for listing generation)
+`make run prog="name"` - assemble and execute program `./Programs/"name"/main.code` (`lst=1` may be added for listing generation)
+
+## Video encoding
+
+`make encode prog="name"` - convert mp4 video to text program. Video must be here: `./Programs/"name"/"name".mp4`. Advanced settings are in `./Programs/encoder.py`.
 
 ## Docs
 `make dox` or `make doxygen` - generate docs

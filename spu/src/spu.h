@@ -20,12 +20,12 @@
 #include "sfml/lib_sfml.h"
 #endif //< #ifdef GRAPHICS
 
-const size_t PIXEL_SIZE = 7;        //< one pixel size in graphics mode
+const size_t PIXEL_SIZE = 3;        //< one pixel size in graphics mode
 
-const size_t VIDEO_HEIGHT = 100;    //< video window height in "pixels"
-const size_t VIDEO_WIDTH  = 100;    //< video window width in "pixels"
+const size_t VIDEO_HEIGHT = 200;    //< video window height in "pixels"
+const size_t VIDEO_WIDTH  = 200;    //< video window width in "pixels"
 
-const size_t RAM_SIZE = 10000;        //< spu ram size
+const size_t RAM_SIZE = 40000;        //< spu ram size
 
 static_assert(RAM_SIZE >= VIDEO_HEIGHT * VIDEO_WIDTH);
 

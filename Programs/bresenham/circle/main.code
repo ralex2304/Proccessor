@@ -1,0 +1,207 @@
+push 89
+pop rax
+push 89
+pop rbx
+push 75
+pop rcx
+
+call draw_circle
+
+shw
+in
+
+hlt
+
+
+
+; rax = x0 | rbx = y0 | rcx = R
+draw_circle:
+    push 0
+    pop rdx
+
+    push rcx
+    pop rex
+    ; rax = x0 | rbx = y0 | rcx = R | rdx = x = 0 | rex = y = R
+
+    push rcx
+    push rcx
+    mul
+    pop rcx
+
+    ; rax = x0 | rbx = y0 | rcx = R^2 | rdx = x = 0 | rex = y = R
+
+    draw_while:
+        push rdx
+        push 0
+        jb draw_while_break
+
+        push rex
+        push 0
+        jb draw_while_break
+
+        call draw_pixels
+
+        ;r2 calc
+        push rdx+1
+        push rdx+1
+        mul
+
+        push rex+-1
+        push rex+-1
+        mul
+
+        add
+
+        push rcx
+        sub
+        pop rfx
+        ;r2 calc end
+        ; rax = x0 | rbx = y0 | rcx = R^2 | rdx = x | rex = y | rfx = r2
+
+        push rfx
+        push 0
+        jne jne1
+        ;if r2 == 0:
+            push rdx+1
+            pop rdx
+            push rex+-1
+            pop rex
+
+            jmp endif
+        jne1:
+
+        push rfx
+        push 0
+        jae jae1
+        ;if r2 < 0:
+
+            ;d2 calc
+            push 2
+            push rfx
+            push rex
+            add
+            mul
+
+            push 1
+            sub
+            pop rgx
+            ;d2 calc end
+            ; rax = x0 | rbx = y0 | rcx = R^2 | rdx = x | rex = y | rfx = r2 | rgx = d2
+
+            push rdx+1
+            pop rdx
+
+            push rgx
+            push 0
+            jbe endif
+            ;if d2 > 0
+                push rex+-1
+                pop rex
+            jmp endif
+        jae1:
+        ; if r2 > 0: (else)
+            ;d2 calc
+            push 2
+            push rfx
+            push rdx
+            sub
+            mul
+
+            push 1
+            sub
+            pop rgx
+            ;d2 calc end
+            ; rax = x0 | rbx = y0 | rcx = R^2 | rdx = x | rex = y | rfx = r2 | rgx = d2
+
+            push rex+-1
+            pop rex
+
+            push rgx
+            push 0
+            ja endif
+            ;if d2 <= 0
+                push rdx+1
+                pop rdx
+            jmp endif
+        endif:
+
+        jmp draw_while
+
+
+    draw_while_break:
+
+    ret
+
+
+draw_pixels:
+    ; rax = x0 | rbx = y0 | rcx = R^2 | rdx = x | rex = y
+
+    push rax
+    push rdx
+    add
+    pop rfx
+
+    push rbx
+    push rex
+    add
+    pop rgx
+
+    call set_color ; rfx = x | rgx = y
+
+    ; rax = x0 | rbx = y0 | rcx = R^2 | rdx = x | rex = y
+
+    push rax
+    push rdx
+    sub
+    pop rfx
+
+    push rbx
+    push rex
+    add
+    pop rgx
+
+    call set_color ; rfx = x | rgx = y
+
+    ; rax = x0 | rbx = y0 | rcx = R^2 | rdx = x | rex = y
+
+    push rax
+    push rdx
+    add
+    pop rfx
+
+    push rbx
+    push rex
+    sub
+    pop rgx
+
+    call set_color ; rfx = x | rgx = y
+
+    ; rax = x0 | rbx = y0 | rcx = R^2 | rdx = x | rex = y
+
+    push rax
+    push rdx
+    sub
+    pop rfx
+
+    push rbx
+    push rex
+    sub
+    pop rgx
+
+    call set_color ; rfx = x | rgx = y
+
+    ret
+
+; rfx = x | rgx = y
+set_color:
+    push rgx
+    push 200
+    mul
+    push rfx
+    add
+    pop rfx
+
+    push 16777215 ;color
+    pop [rfx]
+
+    ret

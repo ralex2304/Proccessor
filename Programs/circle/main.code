@@ -4,8 +4,8 @@ pop rax ;x
 push 0
 pop rbx ;y
 
-; width = 100
-; height = 100
+; width = 200
+; height = 200
 ; center = (49.5, 49.5)
 ; R = 45
 
@@ -27,7 +27,7 @@ for_y:
         push 45
         ja not_circle
             push rbx
-            push 100
+            push 200
             mul
             push rax
             add
@@ -42,7 +42,7 @@ for_y:
         pop rax
 
         push rax
-        push 100
+        push 200
         jb for_x
         push 0
         pop rax
@@ -51,7 +51,7 @@ for_y:
     pop rbx
 
     push rbx
-    push 100
+    push 200
     jb for_y
 
 shw

@@ -43,6 +43,10 @@ enum RegNums: RegNum_t {
     RBX = 1,
     RCX = 2,
     RDX = 3,
+    REX = 4,
+    RFX = 5,
+    RGX = 6,
+    RHX = 7,
 };
 
 /**
@@ -61,6 +65,10 @@ const RegInfo REGS_DICT[] {
     {RBX, String_CONST("rbx")},
     {RCX, String_CONST("rcx")},
     {RDX, String_CONST("rdx")},
+    {REX, String_CONST("rex")},
+    {RFX, String_CONST("rfx")},
+    {RGX, String_CONST("rgx")},
+    {RHX, String_CONST("rhx")},
 };
 
 const RegNum_t REGS_NUM = sizeof(REGS_DICT) / sizeof(RegInfo); //< SPU registers number

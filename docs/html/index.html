@@ -129,7 +129,7 @@ Common info</h3>
 <ul>
 <li><b>stk</b> column means if function pushes or pops elements of stack</li>
 <li><b>REG</b>, <b>DOUBLE</b>, <b>INT</b>, <b>RAM</b>, <b>LABEL</b> columns mean if function can recieve arguments of this type</li>
-<li>Registers names: <code>rax</code>, <code>rbx</code>, <code>rcx</code>, <code>rdx</code></li>
+<li>Registers names: <code>rax</code>, <code>rbx</code>, <code>rcx</code>, <code>rdx</code>, <code>rex</code>, <code>rfx</code>, <code>rgx</code>, <code>rhx</code></li>
 </ul>
 <h3><a class="anchor" id="autotoc_md7"></a>
 Basic</h3>
@@ -230,8 +230,12 @@ Command line flags</h2>
 Features</h2>
 <ul>
 <li>Assembles in 2 passes</li>
-<li>Throws gcc-like designed syntax errors</li>
-<li>Optionally makes listing file with loads of useful information</li>
+<li><p class="startli">Optionally makes listing file with loads of useful information</p>
+<p class="startli"><img src="img/listing.png" alt="" width="50%" class="inline"/></p>
+</li>
+<li><p class="startli">Throws gcc-like designed syntax errors:</p>
+<p class="startli"><img src="img/syntax_error.png" alt="" width="50%" class="inline"/></p>
+</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md14"></a>
 Software processing unit</h1>
@@ -246,7 +250,7 @@ Features</h2>
 <ul>
 <li>Video mode</li>
 <li><a class="el" href="structStack.html" title="Stack data struct.">Stack</a></li>
-<li>4 Registers (<code>rax</code>, <code>rbx</code>, <code>rcx</code>, <code>rdx</code>)</li>
+<li>8 Registers (<code>rax</code>, <code>rbx</code>, <code>rcx</code>, <code>rdx</code>, <code>rex</code>, <code>rfx</code>, <code>rgx</code>, <code>rhx</code>)</li>
 <li>RAM (acts as videomemory in video mode)</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md17"></a>
@@ -270,35 +274,41 @@ Examples</h1>
 <ul>
 <li><b>quad</b> - quad equations solver</li>
 <li><b>recFact</b>, <b>iterFact</b> - recursive and iterative factorial calculation</li>
-<li><b>circle</b> - draws circle in video mode</li>
-<li><b>badApple</b>, <b>doom</b> - bad apple and doom gameplay videos (you can generate code for them with <a class="el" href="namespacegen.html#ad6f9a21fef823e19e8e49589645c58ba">gen.py</a> script)</li>
+<li><b>circle</b> - draws circle in video mode (simple distance algorithm)</li>
+<li><b>bresenham/line</b>, <b>bresenham/circle</b> - draws line and circle using bresenham algorithm (python and assembler realisations)</li>
+<li><b>badApple</b>, <b>doom</b> - bad apple and doom gameplay videos (you can generate code for mp4 video with <a class="el" href="encoder_8py.html">Programs/encoder.py</a> script)</li>
 </ul>
+<p><img src="img/bresenham_circle.png" alt="" height="200px" class="inline"/> <img src="img/bad_apple.gif" alt="" height="200px" class="inline"/> <img src="img/doom.gif" alt="" height="200px" class="inline"/></p>
 <h1><a class="anchor" id="autotoc_md21"></a>
 Program features</h1>
 <ul>
 <li>advanced text parsing in assembler (non null-terminated strings tokenisation)</li>
 <li>code generation</li>
 <li>goto dispatch table (spu)</li>
-<li>assembling in 2 passes. The first pass is for detecting labels and size of output file, the second for writing file and listing</li>
-<li>cmd_dict file, that contains all information about commands. You can change or add commands only in this file</li>
+<li>assembling in 2 passes. The first pass detects labels and size of output file, the second writes to file and listing</li>
+<li><code>cmd_dict</code> - the only file for all information about commands</li>
 <li>DSL for commands actions</li>
+<li>video assembly code generator detects differnces and change only needed pixels. For example, badApple assemply code decreased by 3.5 times</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md22"></a>
 Usage</h1>
 <h2><a class="anchor" id="autotoc_md23"></a>
 Build</h2>
 <p><code>make build</code> - build assembler, spu and disassembler</p>
-<p><code>make build_asm</code>, <code>make build_spu</code>, <code>make disasm</code> - build separatly</p>
+<p><code>make build_asm</code>, <code>make build_spu</code>, <code>make disasm</code> - build separately</p>
 <h2><a class="anchor" id="autotoc_md24"></a>
 Run</h2>
-<p><code>make assemble prog="name"</code> - only assemble ./Programs/"name"/main.code (<code>lst=1</code> may be added for listing generation)</p>
-<p><code>make execute prog="name"</code> - execute ./Programs/"name"/main.exec</p>
-<p><code>make disassemble prog="name"</code> - disassemble ./Programs/"name"/main.exec</p>
-<p><code>make run prog="name"</code> - assemble and execute program ./Programs/"name"/main.code (<code>lst=1</code> may be added for listing generation)</p>
+<p><code>make assemble prog="name"</code> - only assemble <code>./Programs/"name"/main.code</code> (<code>lst=1</code> may be added for listing generation)</p>
+<p><code>make execute prog="name"</code> - execute <code>./Programs/"name"/main.exec</code></p>
+<p><code>make disassemble prog="name"</code> - disassemble <code>./Programs/"name"/main.exec</code></p>
+<p><code>make run prog="name"</code> - assemble and execute program <code>./Programs/"name"/main.code</code> (<code>lst=1</code> may be added for listing generation)</p>
 <h2><a class="anchor" id="autotoc_md25"></a>
+Video encoding</h2>
+<p><code>make encode prog="name"</code> - convert mp4 video to text program. Video must be here: <code>./Programs/"name"/"name".mp4</code>. Advanced settings are in <code>./Programs/encoder.py</code>.</p>
+<h2><a class="anchor" id="autotoc_md26"></a>
 Docs</h2>
 <p><code>make dox</code> or <code>make doxygen</code> - generate docs</p>
-<h1><a class="anchor" id="autotoc_md26"></a>
+<h1><a class="anchor" id="autotoc_md27"></a>
 Credits</h1>
 <ul>
 <li><a href="https://github.com/ded32">Ilya Dedinsky</a> aka Ded as prepod</li>

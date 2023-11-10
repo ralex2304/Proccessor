@@ -20,7 +20,9 @@ var searchData=
   ['disassembler_2ed_17',['disassembler.d',['../disassembler_8d.html',1,'']]],
   ['disassembler_2eh_18',['disassembler.h',['../disassembler_8h.html',1,'']]],
   ['dispatch_19',['DISPATCH',['../spu_8cpp.html#a8297cddbebf50a1736914db65c5724ae',1,'spu.cpp']]],
-  ['docs_20',['Docs',['../index.html#autotoc_md25',1,'']]],
-  ['dtor_21',['dtor',['../structSpuData.html#ab8279902c19cd3fd61a692f2781b0668',1,'SpuData::dtor()'],['../structsfmlWindow.html#a0d0b5803d8975fe0480d694c1780c690',1,'sfmlWindow::dtor()'],['../structBuffer.html#accef32f248ec05ad669b1de0dc3ae6a5',1,'Buffer::dtor()'],['../structAsm.html#adb1635527a72975c1ec0a9cf2019a995',1,'Asm::dtor()']]],
-  ['dump_22',['dump',['../structSpuData.html#ab1bb7ccafa41032692a8c88295fa92ff',1,'SpuData::dump()'],['../spu__dsl_8h.html#a68e4a10cfd30e33ab1e506f696729336',1,'DUMP:&#160;spu_dsl.h']]]
+  ['docs_20',['Docs',['../index.html#autotoc_md26',1,'']]],
+  ['draw_5fcircle_21',['draw_circle',['../namespacebresenham__circle.html#a42e97cfea64057ed1a3108fdcd6524d7',1,'bresenham_circle']]],
+  ['draw_5fline_22',['draw_line',['../namespacebresenham__line.html#a389720e72267c1146b3b0add94978b3b',1,'bresenham_line']]],
+  ['dtor_23',['dtor',['../structSpuData.html#ab8279902c19cd3fd61a692f2781b0668',1,'SpuData::dtor()'],['../structsfmlWindow.html#a0d0b5803d8975fe0480d694c1780c690',1,'sfmlWindow::dtor()'],['../structBuffer.html#accef32f248ec05ad669b1de0dc3ae6a5',1,'Buffer::dtor()'],['../structAsm.html#adb1635527a72975c1ec0a9cf2019a995',1,'Asm::dtor()']]],
+  ['dump_24',['dump',['../structSpuData.html#ab1bb7ccafa41032692a8c88295fa92ff',1,'SpuData::dump()'],['../spu__dsl_8h.html#a68e4a10cfd30e33ab1e506f696729336',1,'DUMP:&#160;spu_dsl.h']]]
 ];

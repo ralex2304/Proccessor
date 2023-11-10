@@ -10,11 +10,15 @@ var searchData=
   ['bef_5fframe_7',['bef_frame',['../namespaceencoder.html#a31e20d6561df491611d8880f27128aad',1,'encoder']]],
   ['bin_5fname_8',['bin_name',['../structAsmFilesInfo.html#ab400cbf62df08e6030237cef5a4d741b',1,'AsmFilesInfo']]],
   ['binary_5foperator_9',['BINARY_OPERATOR',['../spu__dsl_8h.html#a81c98de12ee60ca088f9addf8e178cb2',1,'spu_dsl.h']]],
-  ['buf_10',['buf',['../structAsm.html#ac48610455ccf97057b1790399147f482',1,'Asm']]],
-  ['buf_5fcat_5f_11',['BUF_CAT_',['../write_8cpp.html#a134bece8ae487f74d82ee230bdb39393',1,'write.cpp']]],
-  ['buf_5flib_2ecpp_12',['buf_lib.cpp',['../buf__lib_8cpp.html',1,'']]],
-  ['buf_5flib_2ed_13',['buf_lib.d',['../assembler_2build_2shared_2lib_2utils_2buf__lib_8d.html',1,'(Global Namespace)'],['../spu_2build_2shared_2lib_2utils_2buf__lib_8d.html',1,'(Global Namespace)'],['../disassembler_2build_2shared_2lib_2utils_2buf__lib_8d.html',1,'(Global Namespace)']]],
-  ['buf_5flib_2eh_14',['buf_lib.h',['../buf__lib_8h.html',1,'']]],
-  ['buffer_15',['Buffer',['../structBuffer.html',1,'']]],
-  ['build_16',['Build',['../index.html#autotoc_md23',1,'']]]
+  ['bresenham_5fcircle_10',['bresenham_circle',['../namespacebresenham__circle.html',1,'']]],
+  ['bresenham_5fcircle_2epy_11',['bresenham_circle.py',['../bresenham__circle_8py.html',1,'']]],
+  ['bresenham_5fline_12',['bresenham_line',['../namespacebresenham__line.html',1,'']]],
+  ['bresenham_5fline_2epy_13',['bresenham_line.py',['../bresenham__line_8py.html',1,'']]],
+  ['buf_14',['buf',['../structAsm.html#ac48610455ccf97057b1790399147f482',1,'Asm']]],
+  ['buf_5fcat_5f_15',['BUF_CAT_',['../write_8cpp.html#a134bece8ae487f74d82ee230bdb39393',1,'write.cpp']]],
+  ['buf_5flib_2ecpp_16',['buf_lib.cpp',['../buf__lib_8cpp.html',1,'']]],
+  ['buf_5flib_2ed_17',['buf_lib.d',['../spu_2build_2shared_2lib_2utils_2buf__lib_8d.html',1,'(Global Namespace)'],['../disassembler_2build_2shared_2lib_2utils_2buf__lib_8d.html',1,'(Global Namespace)'],['../assembler_2build_2shared_2lib_2utils_2buf__lib_8d.html',1,'(Global Namespace)']]],
+  ['buf_5flib_2eh_18',['buf_lib.h',['../buf__lib_8h.html',1,'']]],
+  ['buffer_19',['Buffer',['../structBuffer.html',1,'']]],
+  ['build_20',['Build',['../index.html#autotoc_md23',1,'']]]
 ];

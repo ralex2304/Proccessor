@@ -25,6 +25,10 @@ var searchData=
   ['res_22',['res',['../namespaceencoder.html#adb91fe8a3fa212c5ab9dc9e4b7be75e0',1,'encoder']]],
   ['resize_23',['resize',['../structBuffer.html#a6446660135f46c6a88fd863ec0a57a88',1,'Buffer']]],
   ['results_24',['Results',['../structStack.html#ae8242b5f1b2c3d98a6dbafc302e509d5',1,'Stack']]],
-  ['run_25',['Run',['../index.html#autotoc_md24',1,'']]],
-  ['runtime_5ferror_26',['RUNTIME_ERROR',['../structStatus.html#ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306',1,'Status']]]
+  ['rex_25',['REX',['../cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a75af5504f851771e17bc71028c858807',1,'cmd.h']]],
+  ['rfx_26',['RFX',['../cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a0609a3c1819f218beff8b6e938d610e0',1,'cmd.h']]],
+  ['rgx_27',['RGX',['../cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a85baec47690d87357e8c8acd928dc275',1,'cmd.h']]],
+  ['rhx_28',['RHX',['../cmd_8h.html#adc8d3ec079482a8a8b6861151bd4dc64a1a112b538380cb3133df4e76f21b8f21',1,'cmd.h']]],
+  ['run_29',['Run',['../index.html#autotoc_md24',1,'']]],
+  ['runtime_5ferror_30',['RUNTIME_ERROR',['../structStatus.html#ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306',1,'Status']]]
 ];

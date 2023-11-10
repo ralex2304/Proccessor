@@ -3,14 +3,22 @@
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{namespaceencoder_a8c10245467eb1d3463c9ea64a41aa469}{count\+\_\+color}} (bgr)
+\mbox{\hyperlink{namespaceencoder_a574387a2fada8649166ee3b7d117614f}{calc\+\_\+color}} (bgr)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
+int \mbox{\hyperlink{namespaceencoder_a25b860667963ec08e8fc0f7d0ba786a6}{SCREEN\+\_\+\+WIDTH}} = 200
+\item 
+int \mbox{\hyperlink{namespaceencoder_a565373885c7e9b55ab31cf8e9c2a3b89}{SCREEN\+\_\+\+HEIGHT}} = 200
+\item 
+int \mbox{\hyperlink{namespaceencoder_ac8a900a4c9844588f3fadaada520e144}{VIDEO\+\_\+\+WIDTH}} = 200
+\item 
+int \mbox{\hyperlink{namespaceencoder_a3e51e1b450741557b4f9dc725388494e}{VIDEO\+\_\+\+HEIGTH}} = 150
+\item 
 int \mbox{\hyperlink{namespaceencoder_a7db2a7de5d88840c1c0a577166cb5068}{TARGET\+\_\+\+FPS}} = 6
 \item 
-\mbox{\hyperlink{namespaceencoder_a3dd159bc88dcc094a37514f045fbe7a5}{cap}} = cv2.\+Video\+Capture("{}./Programs/bad\+Apple/bad\+Apple.\+mp4"{})
+\mbox{\hyperlink{namespaceencoder_a3dd159bc88dcc094a37514f045fbe7a5}{cap}} = cv2.\+Video\+Capture(sys.\+argv\mbox{[}1\mbox{]})
 \item 
 str \mbox{\hyperlink{namespaceencoder_ac1dba33bb6a79530e9e21cb58cb9f979}{out}} = "{}"{}
 \item 
@@ -18,11 +26,13 @@ str \mbox{\hyperlink{namespaceencoder_ac1dba33bb6a79530e9e21cb58cb9f979}{out}} =
 \item 
 int \mbox{\hyperlink{namespaceencoder_a874cf2fc480d1e369f3850ba4bd0807c}{FRAME\+\_\+\+COUNT}} = int(cap.\+get(cv2.\+CAP\+\_\+\+PROP\+\_\+\+FRAME\+\_\+\+COUNT)) -\/ 10
 \item 
+list \mbox{\hyperlink{namespaceencoder_a8b705f55ab480aa44c2635ce4c88a6c6}{pixel\+\_\+arr}} = \mbox{[}0\mbox{]} \texorpdfstring{$\ast$}{*} (\mbox{\hyperlink{namespaceencoder_a565373885c7e9b55ab31cf8e9c2a3b89}{SCREEN\+\_\+\+HEIGHT}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceencoder_a25b860667963ec08e8fc0f7d0ba786a6}{SCREEN\+\_\+\+WIDTH}})
+\item 
 int \mbox{\hyperlink{namespaceencoder_a31e20d6561df491611d8880f27128aad}{bef\+\_\+frame}} = 0
 \item 
 \mbox{\hyperlink{namespaceencoder_adb91fe8a3fa212c5ab9dc9e4b7be75e0}{res}}
 \item 
-\mbox{\hyperlink{namespaceencoder_ad13866f6af3dff53c3b46aeb0ff212e9}{frame}} = cv2.\+resize(frame, (96, 72), interpolation = cv2.\+INTER\+\_\+\+LANCZOS4)
+\mbox{\hyperlink{namespaceencoder_ad13866f6af3dff53c3b46aeb0ff212e9}{frame}} = cv2.\+resize(frame, (\mbox{\hyperlink{namespaceencoder_ac8a900a4c9844588f3fadaada520e144}{VIDEO\+\_\+\+WIDTH}}, \mbox{\hyperlink{namespaceencoder_a3e51e1b450741557b4f9dc725388494e}{VIDEO\+\_\+\+HEIGTH}}), interpolation = cv2.\+INTER\+\_\+\+LANCZOS4)
 \item 
 \mbox{\hyperlink{namespaceencoder_ae301ba5648708b7170fb72994f481a38}{height}}
 \item 
@@ -30,30 +40,39 @@ int \mbox{\hyperlink{namespaceencoder_a31e20d6561df491611d8880f27128aad}{bef\+\_
 \item 
 \mbox{\hyperlink{namespaceencoder_a031f01761b07907dd80d635c4c31ab1b}{channels}}
 \item 
-\mbox{\hyperlink{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45}{file}} = open("{}./Programs/bad\+Apple/main.\+code"{}, "{}w"{})
+\mbox{\hyperlink{namespaceencoder_afff0ff14a52b2a3cd1e4aa22d5ffd2aa}{color}} = \mbox{\hyperlink{namespaceencoder_a574387a2fada8649166ee3b7d117614f}{calc\+\_\+color}}(\mbox{\hyperlink{namespaceencoder_ad13866f6af3dff53c3b46aeb0ff212e9}{frame}}\mbox{[}y\mbox{]}\mbox{[}x\mbox{]})
+\item 
+\mbox{\hyperlink{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45}{file}} = open(sys.\+argv\mbox{[}2\mbox{]}, "{}w"{})
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}mp4 video to assembler code encoder
+
+console args: <input filename> <ouput filename>
+\end{DoxyVerb}
+ 
+
 \doxysubsection{Function Documentation}
-\Hypertarget{namespaceencoder_a8c10245467eb1d3463c9ea64a41aa469}\label{namespaceencoder_a8c10245467eb1d3463c9ea64a41aa469} 
-\index{encoder@{encoder}!count\_color@{count\_color}}
-\index{count\_color@{count\_color}!encoder@{encoder}}
-\doxysubsubsection{\texorpdfstring{count\_color()}{count\_color()}}
-{\footnotesize\ttfamily encoder.\+count\+\_\+color (\begin{DoxyParamCaption}\item[{}]{bgr }\end{DoxyParamCaption})}
+\Hypertarget{namespaceencoder_a574387a2fada8649166ee3b7d117614f}\label{namespaceencoder_a574387a2fada8649166ee3b7d117614f} 
+\index{encoder@{encoder}!calc\_color@{calc\_color}}
+\index{calc\_color@{calc\_color}!encoder@{encoder}}
+\doxysubsubsection{\texorpdfstring{calc\_color()}{calc\_color()}}
+{\footnotesize\ttfamily encoder.\+calc\+\_\+color (\begin{DoxyParamCaption}\item[{}]{bgr }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00006}{6}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00018}{18}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00006\ \textcolor{keyword}{def\ }count\_color(bgr):}
-\DoxyCodeLine{00007\ \ \ \ \ ret\ =\ 0}
-\DoxyCodeLine{00008\ \ \ \ \ ret\ +=\ bgr[0]\ <<\ 0}
-\DoxyCodeLine{00009\ \ \ \ \ ret\ +=\ bgr[1]\ <<\ 8}
-\DoxyCodeLine{00010\ \ \ \ \ ret\ +=\ bgr[2]\ <<\ 16}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{return}\ ret}
-\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{def\ }calc\_color(bgr):}
+\DoxyCodeLine{00019\ \ \ \ \ ret\ =\ 0}
+\DoxyCodeLine{00020\ \ \ \ \ ret\ +=\ bgr[0]\ <<\ 0}
+\DoxyCodeLine{00021\ \ \ \ \ ret\ +=\ bgr[1]\ <<\ 8}
+\DoxyCodeLine{00022\ \ \ \ \ ret\ +=\ bgr[2]\ <<\ 16}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{return}\ ret}
+\DoxyCodeLine{00024\ }
 
 \end{DoxyCode}
 
@@ -67,17 +86,17 @@ Definition at line \mbox{\hyperlink{encoder_8py_source_l00006}{6}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00022}{22}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00036}{36}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 \Hypertarget{namespaceencoder_a3dd159bc88dcc094a37514f045fbe7a5}\label{namespaceencoder_a3dd159bc88dcc094a37514f045fbe7a5} 
 \index{encoder@{encoder}!cap@{cap}}
 \index{cap@{cap}!encoder@{encoder}}
 \doxysubsubsection{\texorpdfstring{cap}{cap}}
-{\footnotesize\ttfamily encoder.\+cap = cv2.\+Video\+Capture("{}./Programs/bad\+Apple/bad\+Apple.\+mp4"{})}
+{\footnotesize\ttfamily encoder.\+cap = cv2.\+Video\+Capture(sys.\+argv\mbox{[}1\mbox{]})}
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00013}{13}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00025}{25}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 \Hypertarget{namespaceencoder_a031f01761b07907dd80d635c4c31ab1b}\label{namespaceencoder_a031f01761b07907dd80d635c4c31ab1b} 
 \index{encoder@{encoder}!channels@{channels}}
@@ -87,17 +106,27 @@ Definition at line \mbox{\hyperlink{encoder_8py_source_l00013}{13}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00032}{32}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00046}{46}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+
+\Hypertarget{namespaceencoder_afff0ff14a52b2a3cd1e4aa22d5ffd2aa}\label{namespaceencoder_afff0ff14a52b2a3cd1e4aa22d5ffd2aa} 
+\index{encoder@{encoder}!color@{color}}
+\index{color@{color}!encoder@{encoder}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily encoder.\+color = \mbox{\hyperlink{namespaceencoder_a574387a2fada8649166ee3b7d117614f}{calc\+\_\+color}}(\mbox{\hyperlink{namespaceencoder_ad13866f6af3dff53c3b46aeb0ff212e9}{frame}}\mbox{[}y\mbox{]}\mbox{[}x\mbox{]})}
+
+
+
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00052}{52}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 \Hypertarget{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45}\label{namespaceencoder_a7fdb946781a2d1ff8b72b6fbdd0d7b45} 
 \index{encoder@{encoder}!file@{file}}
 \index{file@{file}!encoder@{encoder}}
 \doxysubsubsection{\texorpdfstring{file}{file}}
-{\footnotesize\ttfamily encoder.\+file = open("{}./Programs/bad\+Apple/main.\+code"{}, "{}w"{})}
+{\footnotesize\ttfamily encoder.\+file = open(sys.\+argv\mbox{[}2\mbox{]}, "{}w"{})}
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00046}{46}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00062}{62}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 \Hypertarget{namespaceencoder_a0b1b8944725c379b890b977af9ddc564}\label{namespaceencoder_a0b1b8944725c379b890b977af9ddc564} 
 \index{encoder@{encoder}!FPS@{FPS}}
@@ -107,17 +136,17 @@ Definition at line \mbox{\hyperlink{encoder_8py_source_l00046}{46}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00018}{18}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00030}{30}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 \Hypertarget{namespaceencoder_ad13866f6af3dff53c3b46aeb0ff212e9}\label{namespaceencoder_ad13866f6af3dff53c3b46aeb0ff212e9} 
 \index{encoder@{encoder}!frame@{frame}}
 \index{frame@{frame}!encoder@{encoder}}
 \doxysubsubsection{\texorpdfstring{frame}{frame}}
-{\footnotesize\ttfamily encoder.\+frame = cv2.\+resize(frame, (96, 72), interpolation = cv2.\+INTER\+\_\+\+LANCZOS4)}
+{\footnotesize\ttfamily encoder.\+frame = cv2.\+resize(frame, (\mbox{\hyperlink{namespaceencoder_ac8a900a4c9844588f3fadaada520e144}{VIDEO\+\_\+\+WIDTH}}, \mbox{\hyperlink{namespaceencoder_a3e51e1b450741557b4f9dc725388494e}{VIDEO\+\_\+\+HEIGTH}}), interpolation = cv2.\+INTER\+\_\+\+LANCZOS4)}
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00029}{29}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00043}{43}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 \Hypertarget{namespaceencoder_a874cf2fc480d1e369f3850ba4bd0807c}\label{namespaceencoder_a874cf2fc480d1e369f3850ba4bd0807c} 
 \index{encoder@{encoder}!FRAME\_COUNT@{FRAME\_COUNT}}
@@ -127,7 +156,7 @@ Definition at line \mbox{\hyperlink{encoder_8py_source_l00029}{29}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00020}{20}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00032}{32}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 \Hypertarget{namespaceencoder_ae301ba5648708b7170fb72994f481a38}\label{namespaceencoder_ae301ba5648708b7170fb72994f481a38} 
 \index{encoder@{encoder}!height@{height}}
@@ -137,7 +166,7 @@ Definition at line \mbox{\hyperlink{encoder_8py_source_l00020}{20}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00032}{32}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00046}{46}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 \Hypertarget{namespaceencoder_ac1dba33bb6a79530e9e21cb58cb9f979}\label{namespaceencoder_ac1dba33bb6a79530e9e21cb58cb9f979} 
 \index{encoder@{encoder}!out@{out}}
@@ -147,7 +176,17 @@ Definition at line \mbox{\hyperlink{encoder_8py_source_l00032}{32}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00015}{15}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00027}{27}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+
+\Hypertarget{namespaceencoder_a8b705f55ab480aa44c2635ce4c88a6c6}\label{namespaceencoder_a8b705f55ab480aa44c2635ce4c88a6c6} 
+\index{encoder@{encoder}!pixel\_arr@{pixel\_arr}}
+\index{pixel\_arr@{pixel\_arr}!encoder@{encoder}}
+\doxysubsubsection{\texorpdfstring{pixel\_arr}{pixel\_arr}}
+{\footnotesize\ttfamily list encoder.\+pixel\+\_\+arr = \mbox{[}0\mbox{]} \texorpdfstring{$\ast$}{*} (\mbox{\hyperlink{namespaceencoder_a565373885c7e9b55ab31cf8e9c2a3b89}{SCREEN\+\_\+\+HEIGHT}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceencoder_a25b860667963ec08e8fc0f7d0ba786a6}{SCREEN\+\_\+\+WIDTH}})}
+
+
+
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00034}{34}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 \Hypertarget{namespaceencoder_adb91fe8a3fa212c5ab9dc9e4b7be75e0}\label{namespaceencoder_adb91fe8a3fa212c5ab9dc9e4b7be75e0} 
 \index{encoder@{encoder}!res@{res}}
@@ -157,7 +196,27 @@ Definition at line \mbox{\hyperlink{encoder_8py_source_l00015}{15}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00029}{29}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00043}{43}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+
+\Hypertarget{namespaceencoder_a565373885c7e9b55ab31cf8e9c2a3b89}\label{namespaceencoder_a565373885c7e9b55ab31cf8e9c2a3b89} 
+\index{encoder@{encoder}!SCREEN\_HEIGHT@{SCREEN\_HEIGHT}}
+\index{SCREEN\_HEIGHT@{SCREEN\_HEIGHT}!encoder@{encoder}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_HEIGHT}{SCREEN\_HEIGHT}}
+{\footnotesize\ttfamily int encoder.\+SCREEN\+\_\+\+HEIGHT = 200}
+
+
+
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00008}{8}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+
+\Hypertarget{namespaceencoder_a25b860667963ec08e8fc0f7d0ba786a6}\label{namespaceencoder_a25b860667963ec08e8fc0f7d0ba786a6} 
+\index{encoder@{encoder}!SCREEN\_WIDTH@{SCREEN\_WIDTH}}
+\index{SCREEN\_WIDTH@{SCREEN\_WIDTH}!encoder@{encoder}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_WIDTH}{SCREEN\_WIDTH}}
+{\footnotesize\ttfamily int encoder.\+SCREEN\+\_\+\+WIDTH = 200}
+
+
+
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00007}{7}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 \Hypertarget{namespaceencoder_a7db2a7de5d88840c1c0a577166cb5068}\label{namespaceencoder_a7db2a7de5d88840c1c0a577166cb5068} 
 \index{encoder@{encoder}!TARGET\_FPS@{TARGET\_FPS}}
@@ -167,7 +226,27 @@ Definition at line \mbox{\hyperlink{encoder_8py_source_l00029}{29}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00004}{4}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00012}{12}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+
+\Hypertarget{namespaceencoder_a3e51e1b450741557b4f9dc725388494e}\label{namespaceencoder_a3e51e1b450741557b4f9dc725388494e} 
+\index{encoder@{encoder}!VIDEO\_HEIGTH@{VIDEO\_HEIGTH}}
+\index{VIDEO\_HEIGTH@{VIDEO\_HEIGTH}!encoder@{encoder}}
+\doxysubsubsection{\texorpdfstring{VIDEO\_HEIGTH}{VIDEO\_HEIGTH}}
+{\footnotesize\ttfamily int encoder.\+VIDEO\+\_\+\+HEIGTH = 150}
+
+
+
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00011}{11}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+
+\Hypertarget{namespaceencoder_ac8a900a4c9844588f3fadaada520e144}\label{namespaceencoder_ac8a900a4c9844588f3fadaada520e144} 
+\index{encoder@{encoder}!VIDEO\_WIDTH@{VIDEO\_WIDTH}}
+\index{VIDEO\_WIDTH@{VIDEO\_WIDTH}!encoder@{encoder}}
+\doxysubsubsection{\texorpdfstring{VIDEO\_WIDTH}{VIDEO\_WIDTH}}
+{\footnotesize\ttfamily int encoder.\+VIDEO\+\_\+\+WIDTH = 200}
+
+
+
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00010}{10}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 
 \Hypertarget{namespaceencoder_a065c7415b4a0b8ce1416ebcdc08e3d8e}\label{namespaceencoder_a065c7415b4a0b8ce1416ebcdc08e3d8e} 
 \index{encoder@{encoder}!width@{width}}
@@ -177,5 +256,5 @@ Definition at line \mbox{\hyperlink{encoder_8py_source_l00004}{4}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{encoder_8py_source_l00032}{32}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
+Definition at line \mbox{\hyperlink{encoder_8py_source_l00046}{46}} of file \mbox{\hyperlink{encoder_8py_source}{encoder.\+py}}.
 

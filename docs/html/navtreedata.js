@@ -54,9 +54,10 @@ var NAVTREE =
     [ "Usage", "index.html#autotoc_md22", [
       [ "Build", "index.html#autotoc_md23", null ],
       [ "Run", "index.html#autotoc_md24", null ],
-      [ "Docs", "index.html#autotoc_md25", null ]
+      [ "Video encoding", "index.html#autotoc_md25", null ],
+      [ "Docs", "index.html#autotoc_md26", null ]
     ] ],
-    [ "Credits", "index.html#autotoc_md26", null ],
+    [ "Credits", "index.html#autotoc_md27", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -94,9 +95,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"disassembler_8cpp.html#adb430e0b85e35f2bde65b055c94ed91a",
-"read_8h.html#a59a62100931ce75bca2e3f7d484d9875",
-"structStack.html#ae8242b5f1b2c3d98a6dbafc302e509d5a2dbe0f67c49b72aef7d6253cdc1f9d43"
+"disassembler_2build_2shared_2lib_2text_2text__lib_8d.html",
+"namespaceencoder.html#a565373885c7e9b55ab31cf8e9c2a3b89",
+"structCmdArgs.html#a49949ad6edf5cb3523025913f2c0adc5"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

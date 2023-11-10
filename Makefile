@@ -2,7 +2,7 @@
 DOCS_DIR = docs
 
 
-.PHONY: assemble execute disassemble run
+.PHONY: assemble execute disassemble run build_asm build_disasm build_spu
 
 build: build_asm build_disasm build_spu
 
@@ -29,6 +29,11 @@ build_disasm:
 build_spu:
 	@cd ./spu && make
 
+
+.PHONY: encode
+
+encode:
+	@python3 Programs/encoder.py Programs/$(prog)/$(prog).mp4 Programs/$(prog)/main.code
 
 .PHONY: doxygen dox
 

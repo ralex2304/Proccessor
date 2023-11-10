@@ -1,0 +1,141 @@
+\doxysection{bresenham\+\_\+circle Namespace Reference}
+\hypertarget{namespacebresenham__circle}{}\label{namespacebresenham__circle}\index{bresenham\_circle@{bresenham\_circle}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacebresenham__circle_a059567f5be7d78595b31c0376856ad62}{set\+\_\+color}} (x, y)
+\item 
+\mbox{\hyperlink{namespacebresenham__circle_a42e97cfea64057ed1a3108fdcd6524d7}{draw\+\_\+circle}} (x0, y0, R)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacebresenham__circle_a45d74ad410a7a0e6710883cb1c0ef473}{SCREEN\+\_\+\+HEIGHT}} = 200
+\item 
+int \mbox{\hyperlink{namespacebresenham__circle_a838c477ff6b5560c0cf0b8d393771ea8}{SCREEN\+\_\+\+WIDTH}} = 200
+\item 
+str \mbox{\hyperlink{namespacebresenham__circle_a150f2c4d2382e4a95fc38f472092287d}{out}} = "{}"{}
+\item 
+\mbox{\hyperlink{namespacebresenham__circle_a8caab6a61269584c98c66634bb634d77}{file}} = open(sys.\+argv\mbox{[}1\mbox{]}, "{}w"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacebresenham__circle_a42e97cfea64057ed1a3108fdcd6524d7}\label{namespacebresenham__circle_a42e97cfea64057ed1a3108fdcd6524d7} 
+\index{bresenham\_circle@{bresenham\_circle}!draw\_circle@{draw\_circle}}
+\index{draw\_circle@{draw\_circle}!bresenham\_circle@{bresenham\_circle}}
+\doxysubsubsection{\texorpdfstring{draw\_circle()}{draw\_circle()}}
+{\footnotesize\ttfamily bresenham\+\_\+circle.\+draw\+\_\+circle (\begin{DoxyParamCaption}\item[{}]{x0,  }\item[{}]{y0,  }\item[{}]{R }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{bresenham__circle_8py_source_l00018}{18}} of file \mbox{\hyperlink{bresenham__circle_8py_source}{bresenham\+\_\+circle.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \textcolor{keyword}{def\ }draw\_circle(x0,\ y0,\ R):}
+\DoxyCodeLine{00019\ \ \ \ \ x\ =\ 0}
+\DoxyCodeLine{00020\ \ \ \ \ y\ =\ R}
+\DoxyCodeLine{00021\ \ \ \ \ R2\ =\ R**2}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{while}\ x\ >=\ 0\ \textcolor{keywordflow}{and}\ y\ >=\ 0:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ set\_color(x\ +\ x0,\ y\ +\ y0)}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ set\_color(-\/x\ +\ x0,\ -\/y\ +\ y0)}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ set\_color(x\ +\ x0,\ -\/y\ +\ y0)}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ set\_color(-\/x\ +\ x0,\ y\ +\ y0)}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ r2\ =\ (x\ +\ 1)**2\ +\ (y\ -\/\ 1)**2\ -\/\ R2}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ r2\ <\ 0:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ d2\ =\ 2*(r2\ +\ y)\ -\/\ 1}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ 1}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ d2\ >\ 0:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ -\/=\ 1}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{elif}\ r2\ >\ 0:}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ d2\ =\ 2*(r2\ -\/\ x)\ -\/\ 1}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ y\ -\/=\ 1}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ d2\ <=\ 0:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ 1}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ 1}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ y\ -\/=\ 1}
+\DoxyCodeLine{00042\ }
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{bresenham__circle_8py_source_l00018}{draw\+\_\+circle()}}, and \mbox{\hyperlink{bresenham__circle_8py_source_l00008}{set\+\_\+color()}}.
+
+
+
+Referenced by \mbox{\hyperlink{bresenham__circle_8py_source_l00018}{draw\+\_\+circle()}}.
+
+\Hypertarget{namespacebresenham__circle_a059567f5be7d78595b31c0376856ad62}\label{namespacebresenham__circle_a059567f5be7d78595b31c0376856ad62} 
+\index{bresenham\_circle@{bresenham\_circle}!set\_color@{set\_color}}
+\index{set\_color@{set\_color}!bresenham\_circle@{bresenham\_circle}}
+\doxysubsubsection{\texorpdfstring{set\_color()}{set\_color()}}
+{\footnotesize\ttfamily bresenham\+\_\+circle.\+set\+\_\+color (\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{bresenham__circle_8py_source_l00008}{8}} of file \mbox{\hyperlink{bresenham__circle_8py_source}{bresenham\+\_\+circle.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \textcolor{keyword}{def\ }set\_color(x,\ y):}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{global}\ out}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{if}\ y\ <\ 0\ \textcolor{keywordflow}{or}\ y\ >=\ SCREEN\_HEIGHT\ \textcolor{keywordflow}{or}\ x\ <\ 0\ \textcolor{keywordflow}{or}\ x\ >=\ SCREEN\_WIDTH:}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ out\ +=\ \textcolor{stringliteral}{"{}push\ 255\(\backslash\)n"{}}}
+\DoxyCodeLine{00015\ \ \ \ \ out\ +=\ \textcolor{stringliteral}{"{}pop\ ["{}}\ +\ str(SCREEN\_WIDTH\ *\ y\ +\ x)\ +\ \textcolor{stringliteral}{"{}]\(\backslash\)n"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{bresenham__circle_8py_source_l00018}{draw\+\_\+circle()}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacebresenham__circle_a8caab6a61269584c98c66634bb634d77}\label{namespacebresenham__circle_a8caab6a61269584c98c66634bb634d77} 
+\index{bresenham\_circle@{bresenham\_circle}!file@{file}}
+\index{file@{file}!bresenham\_circle@{bresenham\_circle}}
+\doxysubsubsection{\texorpdfstring{file}{file}}
+{\footnotesize\ttfamily bresenham\+\_\+circle.\+file = open(sys.\+argv\mbox{[}1\mbox{]}, "{}w"{})}
+
+
+
+Definition at line \mbox{\hyperlink{bresenham__circle_8py_source_l00050}{50}} of file \mbox{\hyperlink{bresenham__circle_8py_source}{bresenham\+\_\+circle.\+py}}.
+
+\Hypertarget{namespacebresenham__circle_a150f2c4d2382e4a95fc38f472092287d}\label{namespacebresenham__circle_a150f2c4d2382e4a95fc38f472092287d} 
+\index{bresenham\_circle@{bresenham\_circle}!out@{out}}
+\index{out@{out}!bresenham\_circle@{bresenham\_circle}}
+\doxysubsubsection{\texorpdfstring{out}{out}}
+{\footnotesize\ttfamily str bresenham\+\_\+circle.\+out = "{}"{}}
+
+
+
+Definition at line \mbox{\hyperlink{bresenham__circle_8py_source_l00006}{6}} of file \mbox{\hyperlink{bresenham__circle_8py_source}{bresenham\+\_\+circle.\+py}}.
+
+\Hypertarget{namespacebresenham__circle_a45d74ad410a7a0e6710883cb1c0ef473}\label{namespacebresenham__circle_a45d74ad410a7a0e6710883cb1c0ef473} 
+\index{bresenham\_circle@{bresenham\_circle}!SCREEN\_HEIGHT@{SCREEN\_HEIGHT}}
+\index{SCREEN\_HEIGHT@{SCREEN\_HEIGHT}!bresenham\_circle@{bresenham\_circle}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_HEIGHT}{SCREEN\_HEIGHT}}
+{\footnotesize\ttfamily int bresenham\+\_\+circle.\+SCREEN\+\_\+\+HEIGHT = 200}
+
+
+
+Definition at line \mbox{\hyperlink{bresenham__circle_8py_source_l00003}{3}} of file \mbox{\hyperlink{bresenham__circle_8py_source}{bresenham\+\_\+circle.\+py}}.
+
+\Hypertarget{namespacebresenham__circle_a838c477ff6b5560c0cf0b8d393771ea8}\label{namespacebresenham__circle_a838c477ff6b5560c0cf0b8d393771ea8} 
+\index{bresenham\_circle@{bresenham\_circle}!SCREEN\_WIDTH@{SCREEN\_WIDTH}}
+\index{SCREEN\_WIDTH@{SCREEN\_WIDTH}!bresenham\_circle@{bresenham\_circle}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_WIDTH}{SCREEN\_WIDTH}}
+{\footnotesize\ttfamily int bresenham\+\_\+circle.\+SCREEN\+\_\+\+WIDTH = 200}
+
+
+
+Definition at line \mbox{\hyperlink{bresenham__circle_8py_source_l00004}{4}} of file \mbox{\hyperlink{bresenham__circle_8py_source}{bresenham\+\_\+circle.\+py}}.
+

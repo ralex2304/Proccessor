@@ -1,0 +1,60 @@
+\doxysection{bresenham\+\_\+circle.\+py}
+\hypertarget{bresenham__circle_8py_source}{}\label{bresenham__circle_8py_source}\index{Programs/bresenham/circle/python/bresenham\_circle.py@{Programs/bresenham/circle/python/bresenham\_circle.py}}
+\mbox{\hyperlink{bresenham__circle_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00001}\mbox{\hyperlink{namespacebresenham__circle}{00001}}\ \textcolor{keyword}{import}\ sys}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00003}\mbox{\hyperlink{namespacebresenham__circle_a45d74ad410a7a0e6710883cb1c0ef473}{00003}}\ SCREEN\_HEIGHT\ =\ 200}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00004}\mbox{\hyperlink{namespacebresenham__circle_a838c477ff6b5560c0cf0b8d393771ea8}{00004}}\ SCREEN\_WIDTH\ \ =\ 200}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00006}\mbox{\hyperlink{namespacebresenham__circle_a150f2c4d2382e4a95fc38f472092287d}{00006}}\ out\ =\ \textcolor{stringliteral}{"{}"{}}}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00008}\mbox{\hyperlink{namespacebresenham__circle_a059567f5be7d78595b31c0376856ad62}{00008}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespacebresenham__circle_a059567f5be7d78595b31c0376856ad62}{set\_color}}(x,\ y):}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{global}\ out}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{if}\ y\ <\ 0\ \textcolor{keywordflow}{or}\ y\ >=\ SCREEN\_HEIGHT\ \textcolor{keywordflow}{or}\ x\ <\ 0\ \textcolor{keywordflow}{or}\ x\ >=\ SCREEN\_WIDTH:}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00014}00014\ \ \ \ \ out\ +=\ \textcolor{stringliteral}{"{}push\ 255\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00015}00015\ \ \ \ \ out\ +=\ \textcolor{stringliteral}{"{}pop\ ["{}}\ +\ str(SCREEN\_WIDTH\ *\ y\ +\ x)\ +\ \textcolor{stringliteral}{"{}]\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00018}\mbox{\hyperlink{namespacebresenham__circle_a42e97cfea64057ed1a3108fdcd6524d7}{00018}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespacebresenham__circle_a42e97cfea64057ed1a3108fdcd6524d7}{draw\_circle}}(x0,\ y0,\ R):}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00019}00019\ \ \ \ \ x\ =\ 0}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00020}00020\ \ \ \ \ y\ =\ R}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00021}00021\ \ \ \ \ R2\ =\ R**2}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{while}\ x\ >=\ 0\ \textcolor{keywordflow}{and}\ y\ >=\ 0:}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacebresenham__circle_a059567f5be7d78595b31c0376856ad62}{set\_color}}(x\ +\ x0,\ y\ +\ y0)}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacebresenham__circle_a059567f5be7d78595b31c0376856ad62}{set\_color}}(-\/x\ +\ x0,\ -\/y\ +\ y0)}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacebresenham__circle_a059567f5be7d78595b31c0376856ad62}{set\_color}}(x\ +\ x0,\ -\/y\ +\ y0)}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacebresenham__circle_a059567f5be7d78595b31c0376856ad62}{set\_color}}(-\/x\ +\ x0,\ y\ +\ y0)}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ r2\ =\ (x\ +\ 1)**2\ +\ (y\ -\/\ 1)**2\ -\/\ R2}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ r2\ <\ 0:}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ d2\ =\ 2*(r2\ +\ y)\ -\/\ 1}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ 1}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ d2\ >\ 0:}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y\ -\/=\ 1}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{elif}\ r2\ >\ 0:}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ d2\ =\ 2*(r2\ -\/\ x)\ -\/\ 1}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ y\ -\/=\ 1}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ d2\ <=\ 0:}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ 1}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ 1}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ y\ -\/=\ 1}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00043}00043\ \mbox{\hyperlink{namespacebresenham__circle_a42e97cfea64057ed1a3108fdcd6524d7}{draw\_circle}}(79,\ 102,\ 69)}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00045}00045\ out\ +=\ \textcolor{stringliteral}{"{}shw\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00047}00047\ out\ +=\ \textcolor{stringliteral}{"{}in\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00050}\mbox{\hyperlink{namespacebresenham__circle_a8caab6a61269584c98c66634bb634d77}{00050}}\ file\ =\ open(sys.argv[1],\ \textcolor{stringliteral}{"{}w"{}})}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00052}00052\ file.write(out)}
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{bresenham__circle_8py_source_l00054}00054\ file.close()}
+
+\end{DoxyCode}
