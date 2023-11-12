@@ -6,6 +6,7 @@ var text__lib_8h =
     [ "String_PRINTF", "text__lib_8h.html#a8bda955a9d6dede91b9f9319eb437476", null ],
     [ "String_TO_const", "text__lib_8h.html#a59a33ce1c7a0b31f7b0284850e355051", null ],
     [ "cntchar", "text__lib_8h.html#a97e0134cb3db1552c2b7f6f3ffa11698", null ],
+    [ "cntlines", "text__lib_8h.html#a3604312823056936bb0da6908f58706d", null ],
     [ "maybedigit", "text__lib_8h.html#a2ef98313b6fdeda656267fdaf1bfd364", null ],
     [ "split_line_with_special_delims", "text__lib_8h.html#aeeb6f730688f5cd5f8a1262398f2387d", null ],
     [ "split_text_to_lines", "text__lib_8h.html#a9fad299f3c741aa15b6aae9efa743daf", null ],

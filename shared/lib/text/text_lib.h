@@ -95,11 +95,30 @@ void split_line_with_special_delims(char* str, const char* delims, const char* s
  * @return size_t
  */
 inline size_t cntchar(const char* str, const char ch) {
+    assert(str);
+
     size_t cnt = 0;
 
     for (size_t i = 0; str[i] != '\0'; i++)
         if (str[i] == ch)
             cnt++;
+
+    return cnt;
+}
+
+/**
+ * @brief Counts line number in str
+ *
+ * @param str
+ * @param len
+ * @return size_t
+ */
+inline size_t cntlines(const char* str, const size_t len) {
+    assert(str);
+
+    size_t cnt = cntchar(str, '\n');
+    if (str[len - 1] != '\n')
+        cnt++;
 
     return cnt;
 }

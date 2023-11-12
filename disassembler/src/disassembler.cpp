@@ -2,7 +2,7 @@
 
 #define THROW_SYNTAX_ERROR_(text)  do {                                             \
             fprintf(stderr, CONSOLE_RED("Syntax error. " text) " Byte %zu\n", ip);  \
-            return Status::SYNTAX_ERROR;                                           \
+            return Status::SYNTAX_ERROR;                                            \
         } while(0)
 
 #define DATA_GET_VAL_(dest, val_t)  do {                                                \

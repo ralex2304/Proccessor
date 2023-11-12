@@ -7,28 +7,30 @@
 \DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00003}\mbox{\hyperlink{structInputData_ac8aaf8175b920369abfcfba744af844a}{00003}}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ \mbox{\hyperlink{structInputData_ac8aaf8175b920369abfcfba744af844a}{InputData::ctor}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename)\ \{}
 \DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00004}00004\ \ \ \ \ assert(filename);}
 \DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00005}00005\ }
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00006}00006\ \ \ \ \ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ res\ =\ \mbox{\hyperlink{file_8cpp_acda06f1ad7ecb836b8cf08abb873404a}{file\_open\_read\_close}}(filename,\ \&\mbox{\hyperlink{structInputData_a3ef948ecd7175ccc4c68bf9455bc15a5}{text}},\ 1);}
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{keywordflow}{if}\ (res\ !=\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}})}
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00009}00009\ }
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00010}00010\ \ \ \ \ assert(\mbox{\hyperlink{structInputData_a3ef948ecd7175ccc4c68bf9455bc15a5}{text}});}
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{keywordtype}{long}\ file\_size\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604c}{Status::Statuses}}\ res\ =\ \mbox{\hyperlink{file_8cpp_acda06f1ad7ecb836b8cf08abb873404a}{file\_open\_read\_close}}(filename,\ \&\mbox{\hyperlink{structInputData_a3ef948ecd7175ccc4c68bf9455bc15a5}{text}},\ 1,\ \&file\_size);}
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{if}\ (res\ !=\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}})}
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
 \DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{structInputData_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}}\ =\ \mbox{\hyperlink{text__lib_8h_a97e0134cb3db1552c2b7f6f3ffa11698}{cntchar}}(\mbox{\hyperlink{structInputData_a3ef948ecd7175ccc4c68bf9455bc15a5}{text}},\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00012}00012\ \ \ \ \ assert(\mbox{\hyperlink{structInputData_a3ef948ecd7175ccc4c68bf9455bc15a5}{text}});}
 \DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00013}00013\ }
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{structInputData_a21828a6c4ee0b4519f2956d450e4762b}{lines}}\ =\ (\mbox{\hyperlink{structString}{String}}*)calloc(\mbox{\hyperlink{structInputData_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}}\ +\ 1,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structString}{String}}));}
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structInputData_a21828a6c4ee0b4519f2956d450e4762b}{lines}}\ ==\ \textcolor{keyword}{nullptr})\ \{}
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Memory\ allocation\ error!\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7}{Status::MEMORY\_EXCEED}};}
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00018}00018\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{text__lib_8cpp_a9fad299f3c741aa15b6aae9efa743daf}{split\_text\_to\_lines}}(\mbox{\hyperlink{structInputData_a3ef948ecd7175ccc4c68bf9455bc15a5}{text}},\ \mbox{\hyperlink{structInputData_a21828a6c4ee0b4519f2956d450e4762b}{lines}});}
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{structInputData_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}}\ =\ \mbox{\hyperlink{text__lib_8h_a3604312823056936bb0da6908f58706d}{cntlines}}(\mbox{\hyperlink{structInputData_a3ef948ecd7175ccc4c68bf9455bc15a5}{text}},\ file\_size);}
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{structInputData_a21828a6c4ee0b4519f2956d450e4762b}{lines}}\ =\ (\mbox{\hyperlink{structString}{String}}*)calloc(\mbox{\hyperlink{structInputData_aab59d007503e1acdbdbc93be20ef0a7d}{lines\_cnt}}\ +\ 1,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structString}{String}}));}
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structInputData_a21828a6c4ee0b4519f2956d450e4762b}{lines}}\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Memory\ allocation\ error!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604cab31aa3b714185adf0908d38f4b44f9a7}{Status::MEMORY\_EXCEED}};}
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00020}00020\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00023}00023\ \}}
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00025}\mbox{\hyperlink{structInputData_a007abeabd2f7b29f15b38b52cf4f7010}{00025}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structInputData_a007abeabd2f7b29f15b38b52cf4f7010}{InputData::detor}}()\ \{}
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{macros_8h_a105949c59c998e38aad80266afac92bf}{FREE}}(\mbox{\hyperlink{structInputData_a21828a6c4ee0b4519f2956d450e4762b}{lines}});}
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{macros_8h_a105949c59c998e38aad80266afac92bf}{FREE}}(\mbox{\hyperlink{structInputData_a3ef948ecd7175ccc4c68bf9455bc15a5}{text}});}
-\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{text__lib_8cpp_a9fad299f3c741aa15b6aae9efa743daf}{split\_text\_to\_lines}}(\mbox{\hyperlink{structInputData_a3ef948ecd7175ccc4c68bf9455bc15a5}{text}},\ \mbox{\hyperlink{structInputData_a21828a6c4ee0b4519f2956d450e4762b}{lines}});}
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca7f9c6609a744cdaac1a9e27306d8f8b0}{Status::NORMAL\_WORK}};}
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00027}\mbox{\hyperlink{structInputData_a007abeabd2f7b29f15b38b52cf4f7010}{00027}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structInputData_a007abeabd2f7b29f15b38b52cf4f7010}{InputData::detor}}()\ \{}
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{macros_8h_a105949c59c998e38aad80266afac92bf}{FREE}}(\mbox{\hyperlink{structInputData_a21828a6c4ee0b4519f2956d450e4762b}{lines}});}
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{macros_8h_a105949c59c998e38aad80266afac92bf}{FREE}}(\mbox{\hyperlink{structInputData_a3ef948ecd7175ccc4c68bf9455bc15a5}{text}});}
+\DoxyCodeLine{\Hypertarget{text__proccessor_8cpp_source_l00030}00030\ \}}
 
 \end{DoxyCode}

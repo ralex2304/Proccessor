@@ -14,10 +14,10 @@ String String_strtok_line(char* input) {
     String ret = {};
     ret.str = str;
 
-    while (*str != '\r' && *str != '\n')
+    while (*str && *str != '\r' && *str != '\n')
         str++;
 
-    while ((*str == '\r') && *str) {
+    while (*str && (*str == '\r')) {
         if (ret.len == 0)
             ret.len = str - input;
 
@@ -26,6 +26,11 @@ String String_strtok_line(char* input) {
     }
     if (ret.len == 0)
         ret.len = str - input;
+
+    if (!*str) {
+        str = nullptr;
+        return ret;
+    }
 
     *str = '\0';
     str++;

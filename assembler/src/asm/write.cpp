@@ -20,10 +20,11 @@ Status::Statuses asm_write_cmd(Asm* asm_data, const AsmLine* line, FILE* listing
                                     return Status::MEMORY_EXCEED;                   \
                             } else                                                  \
                                 buf->capacity += sizeof(data_);                     \
-                            } while (0)
+                            } while(0)
 
 Status::Statuses asm_write_cmd_bin(Buffer* buf, const Cmd* cmd, const bool final_pass) {
     assert(buf);
+    assert(cmd);
 
     if (cmd->info == nullptr)
         return Status::NORMAL_WORK;

@@ -7,7 +7,7 @@ var searchData=
   ['imm_5fdouble_5ft_5fepsilon_4',['IMM_DOUBLE_T_EPSILON',['../cmd_8h.html#ac50f7fc061e4f07dc7fcd98c23a82bbd',1,'cmd.h']]],
   ['imm_5fdouble_5ft_5fprintf_5',['IMM_DOUBLE_T_PRINTF',['../cmd_8h.html#a8851999375ab12991d66ed751e1e2fdb',1,'cmd.h']]],
   ['imm_5fint_6',['imm_int',['../structCmdKeys.html#a2520ae7bb6f891ca6ff62dd0f882a1f4',1,'CmdKeys::imm_int'],['../structCmdArgs.html#a7280dbc4d3d9bee564f6815e969bdd07',1,'CmdArgs::imm_int'],['../structArgsEnabled.html#ae373f292dd5feae2be1e0be4e67c2caf',1,'ArgsEnabled::imm_int']]],
-  ['imm_5fint_5ft_7',['imm_int_t',['../spu__dsl_8h.html#a38de650da373a0a117b55bb9ae3da189',1,'IMM_INT_T:&#160;spu_dsl.h'],['../cmd_8h.html#a226f97678592b90d02bed2f62edf55c6',1,'Imm_int_t:&#160;cmd.h']]],
+  ['imm_5fint_5ft_7',['imm_int_t',['../cmd_8h.html#a226f97678592b90d02bed2f62edf55c6',1,'Imm_int_t:&#160;cmd.h'],['../spu__dsl_8h.html#a38de650da373a0a117b55bb9ae3da189',1,'IMM_INT_T:&#160;spu_dsl.h']]],
   ['imm_5fint_5ft_5fprintf_8',['IMM_INT_T_PRINTF',['../cmd_8h.html#ae358dd974987b830c99920a390e0b6f9',1,'cmd.h']]],
   ['info_9',['info',['../index.html#autotoc_md6',1,'Common info'],['../structCmd.html#a8df32ebe09e03d38de8c20f6266611b4',1,'Cmd::info']]],
   ['init_5fcapacity_10',['INIT_CAPACITY',['../structBuffer.html#afd5cd659ecca36f2c4c0ea31169f0d16',1,'Buffer']]],
