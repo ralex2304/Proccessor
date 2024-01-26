@@ -91,6 +91,7 @@ These functions pop 1 or 2 elements, make calculations and push result to stack
 |`sqrt`|  22  |-1+1| - |   -  | - | - |  -  | square root
 |`sin` |  23  |-1+1| - |   -  | - | - |  -  | sinus
 |`cos` |  24  |-1+1| - |   -  | - | - |  -  | cosinus
+|`pow` |  25  |-2+1| - |   -  | - | - |  -  | power
 
 #### Video mode
 

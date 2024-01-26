@@ -236,6 +236,17 @@ inline IMM_DOUBLE_T* get_lvalue_ptr_(SpuData* spu, const Cmd cmd) {
     PUSH((a) operator (b))
 
 /**
+ * @brief Pops two elements, pushes operator(A, B)
+ *
+ * @param operator
+ */
+#define BINARY_FUNC_OPERATOR(operator)  \
+    IMM_DOUBLE_T a = 0, b = 0;          \
+    POP(&b);                            \
+    POP(&a);                            \
+    PUSH(operator(a, b))
+
+/**
  * @brief Pops two elements. Compares them with operator and jumps if true
  *
  * @param operator

@@ -56,12 +56,16 @@ Definition at line \mbox{\hyperlink{spu_8cpp_source_l00104}{104}} of file \mbox{
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(\&dest,\ data\ +\ *cur\_byte,\ \textcolor{keyword}{sizeof}(val\_t));\ \(\backslash\)}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *cur\_byte\ +=\ \textcolor{keyword}{sizeof}(val\_t);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ DATA\_GET\_VAL\_(dest,\ val\_t)\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(\&dest,\ data\ +\ *cur\_byte,\ sizeof(val\_t));\ \(\backslash\)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *cur\_byte\ +=\ sizeof(val\_t);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while(0)}}
 
 \end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{spu_8cpp_source_l00109}{spu\+\_\+read\+\_\+cmd()}}.
+
 \Hypertarget{spu_8cpp_a07f7f733de112dbcf463dba91a948282}\label{spu_8cpp_a07f7f733de112dbcf463dba91a948282} 
 \index{spu.cpp@{spu.cpp}!DEF\_CMD@{DEF\_CMD}}
 \index{DEF\_CMD@{DEF\_CMD}!spu.cpp@{spu.cpp}}
@@ -108,10 +112,10 @@ Definition at line \mbox{\hyperlink{spu_8cpp_source_l00077}{77}} of file \mbox{\
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_ad220b7c98ce4bd06bf25860ca62d7aba}{CONSOLE\_RED}}(\textcolor{stringliteral}{"{}Runtime\ error\ occured.\ "{}}\ text));\ \(\backslash\)}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306}{Status::RUNTIME\_ERROR}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ THROW\_RUNTIME\_ERROR\_(text)\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ CONSOLE\_RED("{}Runtime\ error\ occured.\ "{}\ text));\ \(\backslash\)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ return\ Status::RUNTIME\_ERROR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ while(0)}}
 
 \end{DoxyCode}
 \Hypertarget{spu_8cpp_a52ea00555388d76aef5567107cee7132}\label{spu_8cpp_a52ea00555388d76aef5567107cee7132} 
@@ -134,12 +138,16 @@ Definition at line \mbox{\hyperlink{spu_8cpp_source_l00077}{77}} of file \mbox{\
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_ad220b7c98ce4bd06bf25860ca62d7aba}{CONSOLE\_RED}}(\textcolor{stringliteral}{"{}Runtime\ error\ occured.\ "{}}\ text));\ \(\backslash\)}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604cabb0661a3ff6979a3b12c03dad05bf306}{Status::RUNTIME\_ERROR}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ THROW\_RUNTIME\_ERROR\_(text)\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ CONSOLE\_RED("{}Runtime\ error\ occured.\ "{}\ text));\ \(\backslash\)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ return\ Status::RUNTIME\_ERROR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ while(0)}}
 
 \end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{spu_8cpp_source_l00137}{spu\+\_\+execute()}}, and \mbox{\hyperlink{spu_8cpp_source_l00082}{spu\+\_\+parse\+\_\+and\+\_\+execute()}}.
+
 
 
 \doxysubsection{Function Documentation}

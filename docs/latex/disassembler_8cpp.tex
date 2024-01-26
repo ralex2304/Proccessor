@@ -42,12 +42,16 @@ Definition at line \mbox{\hyperlink{disassembler_8cpp_source_l00008}{8}} of file
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(\&dest,\ data\ +\ cur\_byte,\ \textcolor{keyword}{sizeof}(val\_t));\ \ \(\backslash\)}
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cur\_byte\ +=\ \textcolor{keyword}{sizeof}(val\_t);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ DATA\_GET\_VAL\_(dest,\ val\_t)\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(\&dest,\ data\ +\ cur\_byte,\ sizeof(val\_t));\ \ \(\backslash\)}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cur\_byte\ +=\ sizeof(val\_t);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while(0)}}
 
 \end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}.
+
 \Hypertarget{disassembler_8cpp_a5ed4437d6ccd8c1be2e787923b44018f}\label{disassembler_8cpp_a5ed4437d6ccd8c1be2e787923b44018f} 
 \index{disassembler.cpp@{disassembler.cpp}!F\_PRINTF\_@{F\_PRINTF\_}}
 \index{F\_PRINTF\_@{F\_PRINTF\_}!disassembler.cpp@{disassembler.cpp}}
@@ -72,16 +76,20 @@ Definition at line \mbox{\hyperlink{disassembler_8cpp_source_l00013}{13}} of fil
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ printf\_res\ =\ \mbox{\hyperlink{file_8cpp_acecf8d97922690834a1cd9ba8915a82b}{file\_printf}}(file,\ \_\_VA\_ARGS\_\_);\ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (printf\_res\ ==\ EOF)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\_close(file);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printed\_cnt\ +=\ printf\_res;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ F\_PRINTF\_(...)\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int\ printf\_res\ =\ file\_printf(file,\ \_\_VA\_ARGS\_\_);\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (printf\_res\ ==\ EOF)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\_close(file);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ Status::OUT\_FILE\_ERROR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printed\_cnt\ +=\ printf\_res;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while(0)}}
 
 \end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}.
+
 \Hypertarget{disassembler_8cpp_a82ac9ef1e62798eb8e30c7723d8929d2}\label{disassembler_8cpp_a82ac9ef1e62798eb8e30c7723d8929d2} 
 \index{disassembler.cpp@{disassembler.cpp}!F\_PRINTF\_CHECK\_@{F\_PRINTF\_CHECK\_}}
 \index{F\_PRINTF\_CHECK\_@{F\_PRINTF\_CHECK\_}!disassembler.cpp@{disassembler.cpp}}
@@ -102,12 +110,16 @@ Definition at line \mbox{\hyperlink{disassembler_8cpp_source_l00114}{114}} of fi
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (printf\ ==\ EOF)\ \ \(\backslash\)}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ EOF;\ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ F\_PRINTF\_CHECK\_(printf)\ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (printf\ ==\ EOF)\ \ \(\backslash\)}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ EOF;\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while(0)}}
 
 \end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{disassembler_8cpp_source_l00119}{disasm\+\_\+write\+\_\+header()}}.
+
 \Hypertarget{disassembler_8cpp_adb430e0b85e35f2bde65b055c94ed91a}\label{disassembler_8cpp_adb430e0b85e35f2bde65b055c94ed91a} 
 \index{disassembler.cpp@{disassembler.cpp}!THROW\_SYNTAX\_ERROR\_@{THROW\_SYNTAX\_ERROR\_}}
 \index{THROW\_SYNTAX\_ERROR\_@{THROW\_SYNTAX\_ERROR\_}!disassembler.cpp@{disassembler.cpp}}
@@ -128,12 +140,16 @@ Definition at line \mbox{\hyperlink{disassembler_8cpp_source_l00003}{3}} of file
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \mbox{\hyperlink{console_8h_ad220b7c98ce4bd06bf25860ca62d7aba}{CONSOLE\_RED}}(\textcolor{stringliteral}{"{}Syntax\ error.\ "{}}\ text)\ \textcolor{stringliteral}{"{}\ Byte\ \%zu\(\backslash\)n"{}},\ ip);\ \ \(\backslash\)}
-\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604cabb9ae17ad4d7d55ccce75d9d38d7926e}{Status::SYNTAX\_ERROR}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ THROW\_SYNTAX\_ERROR\_(text)\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ CONSOLE\_RED("{}Syntax\ error.\ "{}\ text)\ "{}\ Byte\ \%zu\(\backslash\)n"{},\ ip);\ \ \(\backslash\)}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ return\ Status::SYNTAX\_ERROR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ while(0)}}
 
 \end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{disassembler_8cpp_source_l00022}{disasm\+\_\+parse()}}.
+
 
 
 \doxysubsection{Function Documentation}

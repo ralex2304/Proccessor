@@ -41,12 +41,16 @@ Definition at line \mbox{\hyperlink{macros_8h_source_l00009}{9}} of file \mbox{\
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ free(ptr);\ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptr\ =\ \textcolor{keyword}{nullptr};\ \ \(\backslash\)}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (0)}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ FREE(ptr)\ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ free(ptr);\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptr\ =\ nullptr;\ \ \(\backslash\)}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while\ (0)}}
 
 \end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{text__proccessor_8cpp_source_l00027}{Input\+Data\+::detor()}}, \mbox{\hyperlink{buf__lib_8cpp_source_l00016}{Buffer\+::dtor()}}, \mbox{\hyperlink{spu_8cpp_source_l00030}{Spu\+Data\+::dtor()}}, \mbox{\hyperlink{disassembler_2src_2main_8cpp_source_l00024}{main()}}, and \mbox{\hyperlink{stack_8cpp_source_l00069}{stk\+\_\+dtor()}}.
+
 \Hypertarget{macros_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}\label{macros_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f} 
 \index{macros.h@{macros.h}!MAX@{MAX}}
 \index{MAX@{MAX}!macros.h@{macros.h}}
@@ -57,6 +61,10 @@ Definition at line \mbox{\hyperlink{macros_8h_source_l00009}{9}} of file \mbox{\
 
 Definition at line \mbox{\hyperlink{macros_8h_source_l00007}{7}} of file \mbox{\hyperlink{macros_8h_source}{macros.\+h}}.
 
+
+
+Referenced by \mbox{\hyperlink{spu_8cpp_source_l00048}{Spu\+Data\+::dump()}}.
+
 \Hypertarget{macros_8h_a3acffbd305ee72dcd4593c0d8af64a4f}\label{macros_8h_a3acffbd305ee72dcd4593c0d8af64a4f} 
 \index{macros.h@{macros.h}!MIN@{MIN}}
 \index{MIN@{MIN}!macros.h@{macros.h}}
@@ -66,6 +74,10 @@ Definition at line \mbox{\hyperlink{macros_8h_source_l00007}{7}} of file \mbox{\
 
 
 Definition at line \mbox{\hyperlink{macros_8h_source_l00006}{6}} of file \mbox{\hyperlink{macros_8h_source}{macros.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{spu_8cpp_source_l00048}{Spu\+Data\+::dump()}}.
 
 
 

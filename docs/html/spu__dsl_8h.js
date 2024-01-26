@@ -3,6 +3,7 @@ var spu__dsl_8h =
     [ "ARG_IMM_DOUBLE", "spu__dsl_8h.html#ab61b6344b067c61cf8a583577051c78e", null ],
     [ "ARG_IMM_INT", "spu__dsl_8h.html#a2f622510378832f7dd7e9abdebaafac3", null ],
     [ "ARG_REG", "spu__dsl_8h.html#affc73a1d6edef707baa2c67176322169", null ],
+    [ "BINARY_FUNC_OPERATOR", "spu__dsl_8h.html#a081b379fb84cfcfd90bdd9a47e4c0c63", null ],
     [ "BINARY_OPERATOR", "spu__dsl_8h.html#a81c98de12ee60ca088f9addf8e178cb2", null ],
     [ "CHECK_AND_THROW_ERR", "spu__dsl_8h.html#a226e577a36ed0a410a8affc1cd05ce25", null ],
     [ "CHECK_GET_LVALUE_PTR_ARGS", "spu__dsl_8h.html#aeb4375fa852a1fdffdb3355c1907169e", null ],

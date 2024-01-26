@@ -99,6 +99,7 @@ DEF_CMD(div,  21, ARG_NONE, "/",           {BINARY_OPERATOR(/);})
 DEF_CMD(sqrt, 22, ARG_NONE, "sqaure root", {UNARY_OPERATOR(sqrt);})
 DEF_CMD(sin,  23, ARG_NONE, "sinus",       {UNARY_OPERATOR(sin);})
 DEF_CMD(cos,  24, ARG_NONE, "cosinus",     {UNARY_OPERATOR(cos);})
+DEF_CMD(pow,  25, ARG_NONE, "power",       {BINARY_FUNC_OPERATOR(pow);})
 
 
 

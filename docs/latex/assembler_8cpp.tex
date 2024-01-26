@@ -44,14 +44,18 @@ Definition at line \mbox{\hyperlink{assembler_8cpp_source_l00008}{8}} of file \m
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!func\_)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_VA\_ARGS\_\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structStatus_ab31bb94cc29a302cab703638615b604ca816faaf263abbf59886706abd008f003}{Status::OUT\_FILE\_ERROR}};\ \ \(\backslash\)}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ FILE\_CHECK\_(func\_,\ ...)\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!func\_)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_VA\_ARGS\_\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ Status::OUT\_FILE\_ERROR;\ \ \(\backslash\)}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while(0)}}
 
 \end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00083}{asm\+\_\+do\+\_\+pass()}}.
+
 \Hypertarget{assembler_8cpp_ab2dc970b54859fa32bab4d3204a0a2b5}\label{assembler_8cpp_ab2dc970b54859fa32bab4d3204a0a2b5} 
 \index{assembler.cpp@{assembler.cpp}!LOCAL\_DTOR\_@{LOCAL\_DTOR\_}}
 \index{LOCAL\_DTOR\_@{LOCAL\_DTOR\_}!assembler.cpp@{assembler.cpp}}
@@ -71,11 +75,15 @@ Definition at line \mbox{\hyperlink{assembler_8cpp_source_l00004}{4}} of file \m
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ asm\_data.dtor();\(\backslash\)}
-\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ LOCAL\_DTOR\_()\ \ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ asm\_data.dtor();\(\backslash\)}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while(0)}}
 
 \end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00015}{assemeble\+\_\+and\+\_\+write()}}.
+
 \Hypertarget{assembler_8cpp_aaaf08e4360cf604f52f9a4595a34d28a}\label{assembler_8cpp_aaaf08e4360cf604f52f9a4595a34d28a} 
 \index{assembler.cpp@{assembler.cpp}!THROW\_SYNTAX\_ERROR\_@{THROW\_SYNTAX\_ERROR\_}}
 \index{THROW\_SYNTAX\_ERROR\_@{THROW\_SYNTAX\_ERROR\_}!assembler.cpp@{assembler.cpp}}
@@ -85,6 +93,10 @@ Definition at line \mbox{\hyperlink{assembler_8cpp_source_l00004}{4}} of file \m
 
 
 Definition at line \mbox{\hyperlink{assembler_8cpp_source_l00054}{54}} of file \mbox{\hyperlink{assembler_8cpp_source}{assembler.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{assembler_8cpp_source_l00056}{asm\+\_\+parse\+\_\+and\+\_\+write\+\_\+line()}}.
 
 
 

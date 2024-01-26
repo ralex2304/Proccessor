@@ -54,9 +54,15 @@ Definition at line \mbox{\hyperlink{stack_8cpp_source_l00219}{219}} of file \mbo
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{stringliteral}{"{}\ descr\ "{}}\(\backslash\)n\textcolor{stringliteral}{"{})));}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#define\ PRINT\_ERR\_(code,\ descr)\ \ if\ ((err\_code)\ \&\ Stack::code)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_printf(\&log\_file,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HTML\_TEXT(HTML\_RED("{}!!!\ "{}\ \#code\ "{}:\ "{}\ descr\ "{}\(\backslash\)n"{})));}}
 
 \end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{stack_8cpp_source_l00223}{stk\+\_\+print\+\_\+error()}}, and \mbox{\hyperlink{stack_8cpp_source_l00253}{stk\+\_\+print\+\_\+error\+\_\+to\+\_\+user()}}.
+
 \Hypertarget{stack_8cpp_a4f9e8dba978737f226f1698e5d4ac66f}\label{stack_8cpp_a4f9e8dba978737f226f1698e5d4ac66f} 
 \index{stack.cpp@{stack.cpp}!PRINT\_ERR\_@{PRINT\_ERR\_}}
 \index{PRINT\_ERR\_@{PRINT\_ERR\_}!stack.cpp@{stack.cpp}}
@@ -75,7 +81,9 @@ Definition at line \mbox{\hyperlink{stack_8cpp_source_l00219}{219}} of file \mbo
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{stringliteral}{"{}\ descr\ "{}}\(\backslash\)n\textcolor{stringliteral}{"{})));}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#define\ PRINT\_ERR\_(code,\ descr)\ \ if\ ((err\_code)\ \&\ Stack::code)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_printf(\&log\_file,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HTML\_TEXT(HTML\_RED("{}!!!\ "{}\ \#code\ "{}:\ "{}\ descr\ "{}\(\backslash\)n"{})));}}
 
 \end{DoxyCode}
 

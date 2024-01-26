@@ -24,7 +24,7 @@
 &&cmd_dispatch_do_sqrt,
 &&cmd_dispatch_do_sin,
 &&cmd_dispatch_do_cos,
-&&cmd_dispatch_do_error,
+&&cmd_dispatch_do_pow,
 &&cmd_dispatch_do_error,
 &&cmd_dispatch_do_error,
 &&cmd_dispatch_do_error,

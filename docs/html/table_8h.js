@@ -20,6 +20,7 @@ var table_8h =
     [ "cmd_dispatch_do_mul", "table_8h.html#aa44d617addac5582a38103427a4bb6fe", null ],
     [ "cmd_dispatch_do_out", "table_8h.html#a1e156e8450c55ccfcf7ececc8892f9d1", null ],
     [ "cmd_dispatch_do_pop", "table_8h.html#ad260387f73cfbf02ebc2225845411b0a", null ],
+    [ "cmd_dispatch_do_pow", "table_8h.html#a829d768f08d851cb98e2a915f1be70d2", null ],
     [ "cmd_dispatch_do_push", "table_8h.html#a0dbcc6e19ec379cdb5cff12f8c2298e0", null ],
     [ "cmd_dispatch_do_ret", "table_8h.html#a185fa4931b941f5746c005dd900b2ba1", null ],
     [ "cmd_dispatch_do_shw", "table_8h.html#acdac9b3cc51163ed59985a91b56279dd", null ],
