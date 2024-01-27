@@ -25,7 +25,7 @@
 &&cmd_dispatch_do_sin,
 &&cmd_dispatch_do_cos,
 &&cmd_dispatch_do_pow,
-&&cmd_dispatch_do_error,
+&&cmd_dispatch_do_ln,
 &&cmd_dispatch_do_error,
 &&cmd_dispatch_do_error,
 &&cmd_dispatch_do_error,

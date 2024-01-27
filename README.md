@@ -92,6 +92,7 @@ These functions pop 1 or 2 elements, make calculations and push result to stack
 |`sin` |  23  |-1+1| - |   -  | - | - |  -  | sinus
 |`cos` |  24  |-1+1| - |   -  | - | - |  -  | cosinus
 |`pow` |  25  |-2+1| - |   -  | - | - |  -  | power
+|`ln`  |  26  |-1+1| - |   -  | - | - |  -  | natural log
 
 #### Video mode
 
