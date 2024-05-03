@@ -41,8 +41,8 @@ Status::Statuses assemeble_and_write(const InputData* input_data, const AsmFiles
 
 
     // Binary file write
-    STATUS_CHECK(file_open_write_bytes_close(asm_data.files.bin_name,
-                                             asm_data.buf.data, asm_data.buf.size), LOCAL_DTOR_());
+    STATUS_CHECK(file_open_write_bytes_close(asm_data.files.bin_name, asm_data.buf.data,
+                                             (size_t)asm_data.buf.size), LOCAL_DTOR_());
 
     LOCAL_DTOR_();
 

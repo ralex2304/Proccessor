@@ -14,8 +14,6 @@
 
 const short CMD_VERSION = 1;        //< commands dict version
 
-const size_t MAX_LABEL_NUM = 128;   //< maximum number of labels in program (array size)
-
 const size_t MAX_LINE_LEN = 64;     //< max command text line len
 
 const size_t CMD_MAX_NUM = 255;
@@ -91,7 +89,7 @@ typedef long Imm_int_t; //< int immutable arguments type
  */
 struct CmdArgs {
     Imm_double_t imm_double = NAN;
-    unsigned char reg = -1;
+    unsigned char reg = 0xFF;
     Imm_int_t imm_int = 0;
 };
 

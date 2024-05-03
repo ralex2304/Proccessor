@@ -29,6 +29,15 @@ build_disasm:
 build_spu:
 	@cd ./spu && make
 
+clean_asm:
+	@cd ./assembler && make clean
+
+clean_disasm:
+	@cd ./disassembler && make clean
+
+clean_spu:
+	@cd ./spu && make clean
+
 
 .PHONY: encode
 
@@ -45,5 +54,5 @@ doxygen dox: | $(DOCS_DIR)
 $(DOCS_DIR):
 	@mkdir ./$@
 
-clean:
+clean: clean_asm clean_disasm clean_spu
 	@rm -rf ./$(DOCS_TARGET)

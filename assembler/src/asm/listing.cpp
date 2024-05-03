@@ -70,7 +70,7 @@ Status::Statuses asm_write_cmd_listing(FILE* file, const Asm* asm_data, const As
 
     if (cmd->keys.imm_int) {
         if (cmd->info->is_args.label && !cmd->keys.ram) {
-            const_String label_name = asm_get_label_name(asm_data->labels, cmd->args.imm_int);
+            const_String label_name = asm_get_label_name(asm_data, cmd->args.imm_int);
             F_PRINTF_CHECK_(file_printf(file, "%.*s (" IMM_INT_T_PRINTF ")",
                                 String_PRINTF(label_name), cmd->args.imm_int));
         } else

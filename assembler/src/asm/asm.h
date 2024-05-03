@@ -1,6 +1,8 @@
 #ifndef ASM_H_
 #define ASM_H_
 
+#include <stdlib.h>
+
 #include "lib/utils/buf_lib.h"
 #include "lib/text/text_lib.h"
 #include "cmd.h"
@@ -43,15 +45,18 @@ struct AsmFilesInfo {
  */
 struct Asm {
     static const size_t LAST_PASS_NUM = ASM_PASSES_NUM - 1; //< number of last assembly pass
+    static const size_t DEFAULT_LABEL_ARR_SIZE = 128;
 
     bool ctor(const ssize_t buf_capacity);
     void dtor();
+    bool resize_labels_arr();
 
     Buffer buf = {};                        //< output buffer
 
     size_t pass_num = 0;                    //< asm pass number
 
-    JumpLabel labels[MAX_LABEL_NUM] = {};   //< labels dictionary
+    JumpLabel* labels = nullptr;            //< labels dictionary
+    size_t labels_capacity = 0;
 
     AsmFilesInfo files = {};                //< input and output files info
 };

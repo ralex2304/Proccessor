@@ -38,10 +38,10 @@ Status::Statuses asm_get_label_addr(const String name, const Asm* asm_data,
 /**
  * @brief Returns label name by addr
  *
- * @param lables
+ * @param asm_data
  * @param addr
  * @return const_String
  */
-const_String asm_get_label_name(const JumpLabel* lables, const Imm_int_t addr);
+const_String asm_get_label_name(const Asm* asm_data, const Imm_int_t addr);
 
 #endif //< #ifndef ASM_JUM_H_

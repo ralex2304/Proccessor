@@ -4,6 +4,8 @@
 main.out*
 main
 build
+compile_commands.json
+/.cache
 *.code-workspace
 Programs/badApple/main.code
 Programs/badApple/main.exec
