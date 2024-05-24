@@ -21,8 +21,13 @@ Status::Statuses asm_new_label(const String name, const size_t addr,
         }
     }
 
+    size_t old_cap = asm_data->labels_capacity;
+
     if (!asm_data->resize_labels_arr())
         return Status::MEMORY_EXCEED;
+
+    asm_data->labels[old_cap].name = name;
+    asm_data->labels[old_cap].addr = (ssize_t)addr;
 
     return Status::NORMAL_WORK;
 }
