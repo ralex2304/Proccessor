@@ -19,7 +19,7 @@ Status::Statuses asm_read_cmd(Asm* asm_data, AsmLine* line) {
         }
 
         if (asm_data->pass_num == 0)
-            STATUS_CHECK(asm_new_label(line->tokens[line->cur_token], asm_data->buf.capacity,
+            STATUS_CHECK(asm_new_label(line->tokens[line->cur_token], (size_t)asm_data->buf.capacity,
                                        asm_data, line));
 
         line->cur_token += 2;
@@ -151,6 +151,12 @@ Status::Statuses asm_read_arg_imm_double(const Asm* asm_data, AsmLine* line) {
         line->cmd.keys.imm_double || !maybedigit(tokens[*cur_token].str[0]))
             return Status::NORMAL_WORK;
 
+    bool is_exp = false;
+    if (tokens[*cur_token].str[tokens[*cur_token].len - 1] == 'e') {
+        is_exp = true;
+        tokens[*cur_token].len += tokens[*cur_token + 1].len;
+    }
+
     int sscanf_num = 0;
     int sscanf_res = String_sscanf(tokens[*cur_token], IMM_DOUBLE_T_PRINTF "%n",
                                    &line->cmd.args.imm_double, &sscanf_num);
@@ -160,7 +166,7 @@ Status::Statuses asm_read_arg_imm_double(const Asm* asm_data, AsmLine* line) {
                                 String_PRINTF(tokens[*cur_token]));
 
     line->cmd.keys.imm_double = true;
-    *cur_token += 1;
+    *cur_token += is_exp ? 2 : 1;
 
     return Status::NORMAL_WORK;
 }
