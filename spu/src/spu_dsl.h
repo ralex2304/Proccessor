@@ -150,7 +150,7 @@ inline IMM_DOUBLE_T* get_lvalue_ptr_(SpuData* spu, const Cmd cmd) {
 
 #define SHOW() THROW_RUNTIME_ERROR_("SHOW() command called, but graphics is disabled.");
 
-#define SET_FPS() THROW_RUNTIME_ERROR_("SET_FPS() command called, but graphics is disabled.");
+#define SET_FPS(fps_) THROW_RUNTIME_ERROR_("SET_FPS() command called, but graphics is disabled.");
 
 #endif //< #ifdef GRAPHICS
 
