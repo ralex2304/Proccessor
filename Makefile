@@ -16,6 +16,10 @@ execute:
 	@echo // Make: Running
 	@cd spu && ./main -i ../Programs/$(prog)/main.exec
 
+perf_execute:
+	sudo perf record -o ./perf/$(name).data --call-graph dwarf ./spu/main -i Programs/$(prog)/main.exec
+	sudo chmod a=rwx ./perf/$(name).data
+
 disassemble:
 	@echo // Make: Disassembling
 	@cd disassembler && ./main -i ../Programs/$(prog)/main.exec -o ../Programs/$(prog)/main.disasm -d
