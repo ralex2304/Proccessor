@@ -154,7 +154,8 @@ Status::Statuses asm_read_arg_imm_double(const Asm* asm_data, AsmLine* line) {
     bool is_exp = false;
     if (tokens[*cur_token].str[tokens[*cur_token].len - 1] == 'e') {
         is_exp = true;
-        tokens[*cur_token].len += tokens[*cur_token + 1].len;
+        tokens[*cur_token].str[tokens[*cur_token].len] = '+';
+        tokens[*cur_token].len += tokens[*cur_token + 1].len + 1;
     }
 
     int sscanf_num = 0;
