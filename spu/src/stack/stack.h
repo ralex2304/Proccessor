@@ -28,7 +28,7 @@ struct VarCodeData {
  * @brief Stack data struct
  */
 struct Stack {
-    static const ssize_t DEFAULT_CAPACITY = 8;
+    static const ssize_t DEFAULT_CAPACITY = 1024;
     static const ssize_t UNITIALISED_CAPACITY = -1;
     static const Elem_t POISON; //< initialised in stack.cpp
 
@@ -181,7 +181,7 @@ inline ssize_t stk_resize_calc_down(Stack* stk) {
 
     ssize_t new_cap = stk->capacity;
 
-    if (stk->size * 4 <= new_cap && new_cap >= (ssize_t)stk->DEFAULT_CAPACITY * 2)
+    if (new_cap >= (ssize_t)stk->DEFAULT_CAPACITY * 2 && stk->size * 4 <= new_cap)
         new_cap /= 2;
 
     return new_cap;

@@ -97,6 +97,9 @@ int stk_dtor(Stack* stk) {
 int stk_resize(Stack* stk, size_t new_size) {
     int res = STK_ASSERT(stk);
 
+    if (new_size == (size_t)stk->capacity)
+        return Stack::OK;
+
     if (new_size == 0) {
         res |= stk->INVALID_CAPACITY;
         STK_OK(stk, res);
